@@ -1,0 +1,424 @@
+:root {
+  /* Light Mode - Clean & Professional */
+  --background: hsl(0 0% 100%);
+  --foreground: hsl(240 10% 3.9%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(240 10% 3.9%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(240 10% 3.9%);
+  --primary: hsl(47.9 95.8% 53.1%); /* Banana Yellow */
+  --primary-foreground: hsl(26 83.3% 14.1%);
+  --secondary: hsl(240 4.8% 95.9%);
+  --secondary-foreground: hsl(240 5.9% 10%);
+  --muted: hsl(240 4.8% 95.9%);
+  --muted-foreground: hsl(240 3.8% 46.1%);
+  --accent: hsl(240 4.8% 95.9%);
+  --accent-foreground: hsl(240 5.9% 10%);
+  --destructive: hsl(0 84.2% 60.2%);
+  --destructive-foreground: hsl(0 0% 98%);
+  --border: hsl(240 5.9% 90%);
+  --input: hsl(240 5.9% 90%);
+  --ring: hsl(47.9 95.8% 53.1%);
+  --radius: 0.5rem;
+  --chart-1: hsl(12 76% 61%);
+  --chart-2: hsl(173 58% 39%);
+  --chart-3: hsl(197 37% 24%);
+  --chart-4: hsl(43 74% 66%);
+  --chart-5: hsl(27 87% 67%);
+  --sidebar: hsl(0 0% 98%);
+  --sidebar-foreground: hsl(240 5.3% 26.1%);
+  --sidebar-primary: hsl(240 5.9% 10%);
+  --sidebar-primary-foreground: hsl(0 0% 98%);
+  --sidebar-accent: hsl(240 4.8% 95.9%);
+  --sidebar-accent-foreground: hsl(240 5.9% 10%);
+  --sidebar-border: hsl(220 13% 91%);
+  --sidebar-ring: hsl(217.2 91.2% 59.8%);
+  --font-sans: Geist, ui-sans-serif, sans-serif, system-ui;
+  --font-serif: Aleo, ui-serif, serif;
+  --font-mono: Geist Mono, ui-monospace, monospace;
+
+  /* ===== Light Mode Glass & Border System ===== */
+  /* Inverted opacity: dark uses white/opacity, light uses black/opacity */
+  --bg-glass-subtle: hsl(0 0% 0% / 0.02);
+  --bg-glass-strong: hsl(0 0% 98% / 0.9);
+
+  --border-glass-subtle: hsl(0 0% 0% / 0.05);
+  --border-glass: hsl(0 0% 0% / 0.1);
+  --border-primary-glass: hsl(48 96% 45% / 0.3);
+
+  --shadow-glow-primary: 0 0 20px -5px rgba(250, 180, 0, 0.25);
+  --radius-card: 0.75rem;
+
+  /* Semantic Component Tokens - Light Mode */
+  --sidebar-card-bg: hsl(0 0% 0% / 0.02);
+  --sidebar-card-border: hsl(0 0% 0% / 0.08);
+
+  --section-bg: hsl(0 0% 0% / 0.02);
+  --section-header-bg: hsl(0 0% 0% / 0.03);
+
+  --stats-bar-bg: hsl(0 0% 0% / 0.03);
+  --stats-divider: hsl(0 0% 0% / 0.1);
+
+  --input-bg: hsl(0 0% 100%);
+  --input-border: hsl(0 0% 0% / 0.15);
+  --input-border-focus: hsl(48 96% 45% / 0.6);
+
+  --border-subtle: hsl(0 0% 0% / 0.05);
+  --border-medium: hsl(0 0% 0% / 0.1);
+  --border-strong: hsl(0 0% 0% / 0.2);
+
+  /* Extended Glass System - Light Mode */
+  --glass-hint: hsl(0 0% 0% / 0.01);
+  --glass-hint-alt: hsl(0 0% 100% / 0.5);
+
+  --overlay: hsl(0 0% 0% / 0.4);
+  --overlay-strong: hsl(0 0% 0% / 0.7);
+  --overlay-gradient-start: hsl(0 0% 0% / 0.7);
+  --overlay-gradient-mid: hsl(0 0% 0% / 0.3);
+
+  --select-bg: hsl(0 0% 100%);
+  --select-hover: hsl(0 0% 96%);
+
+  --popover-bg: hsl(0 0% 100%);
+  --tooltip-bg: hsl(0 0% 20%);
+
+  /* Text System - Light Mode */
+  --text-primary: hsl(0 0% 10%);
+  --text-secondary: hsl(0 0% 30%);
+  --text-tertiary: hsl(0 0% 45%);
+  --text-quaternary: hsl(0 0% 60%);
+
+  --shadow-x: 0px;
+  --shadow-y: 4px;
+  --shadow-blur: 8px;
+  --shadow-spread: -1px;
+  --shadow-opacity: 0.1;
+  --shadow-color: hsl(0 0% 0%);
+  --shadow-2xs: 0px 4px 8px -1px hsl(0 0% 0% / 0.05);
+  --shadow-xs: 0px 4px 8px -1px hsl(0 0% 0% / 0.05);
+  --shadow-sm: 0px 4px 8px -1px hsl(0 0% 0% / 0.1), 0px 1px 2px -2px hsl(0 0% 0% / 0.1);
+  --shadow: 0px 4px 8px -1px hsl(0 0% 0% / 0.1), 0px 1px 2px -2px hsl(0 0% 0% / 0.1);
+  --shadow-md: 0px 4px 8px -1px hsl(0 0% 0% / 0.1), 0px 2px 4px -2px hsl(0 0% 0% / 0.1);
+  --shadow-lg: 0px 4px 8px -1px hsl(0 0% 0% / 0.1), 0px 4px 6px -2px hsl(0 0% 0% / 0.1);
+  --shadow-xl: 0px 4px 8px -1px hsl(0 0% 0% / 0.1), 0px 8px 10px -2px hsl(0 0% 0% / 0.1);
+  --shadow-2xl: 0px 4px 8px -1px hsl(0 0% 0% / 0.25);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+}
+
+.dark {
+  /* Cyber-Banana Dark Mode */
+  /* bg-black/95 on white ≈ rgba(0,0,0,0.95) blended ≈ #0d0d0d ≈ hsl(0 0% 5%) */
+  --background: hsl(0 0% 5%); /* NOT pure black - dark gray */
+  --foreground: hsl(0 0% 98%);
+
+  --card: hsl(0 0% 0%); /* Pure black for cards */
+  --card-foreground: hsl(0 0% 98%);
+
+  --popover: hsl(0 0% 5%);
+  --popover-foreground: hsl(0 0% 98%);
+
+  --primary: hsl(48 96% 53%); /* #FACC15 - Neon Banana */
+  --primary-foreground: hsl(0 0% 0%);
+
+  --secondary: hsl(0 0% 10%); /* rgba(255,255,255,0.1) equivalent */
+  --secondary-foreground: hsl(0 0% 98%);
+
+  --muted: hsl(0 0% 5%); /* rgba(255,255,255,0.05) equivalent */
+  --muted-foreground: hsl(240 3.8% 72%); /* Increased from 64% for WCAG 4.5:1 contrast */
+
+  --accent: hsl(0 0% 10%);
+  --accent-foreground: hsl(0 0% 98%);
+
+  --destructive: hsl(0 62.8% 30.6%);
+  --destructive-foreground: hsl(0 0% 98%);
+
+  --border: hsl(0 0% 15%); /* Subtle border - white/10 equivalent */
+  --input: hsl(0 0% 10%);
+  --ring: hsl(48 96% 53%);
+
+  --chart-1: hsl(220 70% 50%);
+  --chart-2: hsl(160 60% 45%);
+  --chart-3: hsl(30 80% 55%);
+  --chart-4: hsl(280 65% 60%);
+  --chart-5: hsl(340 75% 55%);
+
+  --sidebar: hsl(0 0% 5%);
+  --sidebar-foreground: hsl(0 0% 95%);
+  --sidebar-primary: hsl(48 96% 53%);
+  --sidebar-primary-foreground: hsl(0 0% 0%);
+  --sidebar-accent: hsl(0 0% 10%);
+  --sidebar-accent-foreground: hsl(0 0% 95%);
+  --sidebar-border: hsl(0 0% 15%);
+  --sidebar-ring: hsl(48 96% 53%);
+
+  /* Glass & Glow System */
+  --bg-glass-subtle: hsl(0 0% 100% / 0.05);
+  --bg-glass-strong: hsl(0 0% 8% / 0.85); /* Warmer gray instead of pure black */
+  
+  --border-glass-subtle: hsl(0 0% 100% / 0.05);
+  --border-glass: hsl(0 0% 100% / 0.1);
+  --border-primary-glass: hsl(48 96% 53% / 0.2);
+
+  --shadow-glow-primary: 0 0 20px -5px rgba(250,204,21,0.4);
+  --radius-card: 0.75rem;
+
+  /* ===== Semantic Component Tokens ===== */
+  /* These map directly to HTML prototype values for 1:1 parity */
+  
+  /* Sidebar Card */
+  --sidebar-card-bg: hsl(0 0% 0% / 0.4);
+  --sidebar-card-border: hsl(0 0% 100% / 0.05);
+  
+  /* Section Card */
+  --section-bg: hsl(0 0% 0% / 0.6);
+  --section-header-bg: hsl(0 0% 100% / 0.02);
+  
+  /* Stats Bar */
+  --stats-bar-bg: hsl(0 0% 0% / 0.4);
+  --stats-divider: hsl(0 0% 100% / 0.1);
+  
+  /* Input Fields */
+  --input-bg: hsl(0 0% 0% / 0.6);
+  --input-border: hsl(0 0% 100% / 0.1);
+  --input-border-focus: hsl(48 96% 53% / 0.5);
+  
+  /* Common Borders */
+  --border-subtle: hsl(0 0% 100% / 0.05);
+  --border-medium: hsl(0 0% 100% / 0.1);
+  --border-strong: hsl(0 0% 100% / 0.25);
+  
+  /* ===== Extended Glass System ===== */
+  /* Glass Hint - barely visible, for subtle layering */
+  --glass-hint: hsl(0 0% 100% / 0.02);
+  --glass-hint-alt: hsl(0 0% 0% / 0.2);
+  
+  /* Overlay System - for modal backdrops, image overlays */
+  --overlay: hsl(0 0% 0% / 0.5);
+  --overlay-strong: hsl(0 0% 0% / 0.9);
+  --overlay-gradient-start: hsl(0 0% 0% / 0.9);
+  --overlay-gradient-mid: hsl(0 0% 0% / 0.4);
+  
+  /* Select/Dropdown System */
+  --select-bg: hsl(0 0% 0% / 0.5);
+  --select-hover: hsl(0 0% 20%);
+  
+  /* Popover/Tooltip System */
+  --popover-bg: hsl(0 0% 8% / 0.95);
+  --tooltip-bg: hsl(0 0% 8% / 0.8);
+  
+  /* Text System - semantic text colors */
+  --text-primary: hsl(0 0% 100%);
+  --text-secondary: hsl(0 0% 80%);
+  --text-tertiary: hsl(0 0% 60%);
+  --text-quaternary: hsl(0 0% 45%);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Glass System Mappings */
+  --color-glass-subtle: var(--bg-glass-subtle);
+  --color-glass-strong: var(--bg-glass-strong);
+  
+  --color-border-glass-subtle: var(--border-glass-subtle);
+  --color-border-glass: var(--border-glass);
+  --color-border-primary-glass: var(--border-primary-glass);
+
+  --shadow-glow-primary: var(--shadow-glow-primary);
+  
+  --radius-card: var(--radius-card);
+
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-serif: var(--font-serif);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --shadow-2xs: var(--shadow-2xs);
+  --shadow-xs: var(--shadow-xs);
+  --shadow-sm: var(--shadow-sm);
+  --shadow: var(--shadow);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+  --shadow-2xl: var(--shadow-2xl);
+
+  /* ===== Semantic Component Mappings ===== */
+  /* Sidebar Card */
+  --color-sidebar-card-bg: var(--sidebar-card-bg);
+  --color-sidebar-card-border: var(--sidebar-card-border);
+  
+  /* Section Card */
+  --color-section-bg: var(--section-bg);
+  --color-section-header-bg: var(--section-header-bg);
+  
+  /* Stats Bar */
+  --color-stats-bar-bg: var(--stats-bar-bg);
+  --color-stats-divider: var(--stats-divider);
+  
+  /* Input Fields */
+  --color-input-bg: var(--input-bg);
+  --color-input-border: var(--input-border);
+  --color-input-border-focus: var(--input-border-focus);
+  
+  /* Common Borders */
+  --color-border-subtle: var(--border-subtle);
+  --color-border-medium: var(--border-medium);
+  --color-border-strong: var(--border-strong);
+  
+  /* ===== Extended Glass System Mappings ===== */
+  --color-glass-hint: var(--glass-hint);
+  --color-glass-hint-alt: var(--glass-hint-alt);
+  
+  /* Overlay */
+  --color-overlay: var(--overlay);
+  --color-overlay-strong: var(--overlay-strong);
+  
+  /* Select/Dropdown */
+  --color-select-bg: var(--select-bg);
+  --color-select-hover: var(--select-hover);
+  
+  /* Popover/Tooltip */
+  --color-popover-bg: var(--popover-bg);
+  --color-tooltip-bg: var(--tooltip-bg);
+  
+  /* Text System */
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-text-quaternary: var(--text-quaternary);
+}
+
+/* ===== Motion Discipline System (v5.0) ===== */
+/* Animation keyframes organized by priority level */
+
+/* L1: Signature Animations - Only for the most important CTA (limit: 1 per page) */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px -5px rgba(250, 204, 21, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 35px -5px rgba(250, 204, 21, 0.6);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* L3: Decorative Animations - For backgrounds (8s+, very slow) */
+@keyframes glow-slow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes glow-medium {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.02);
+  }
+}
+
+/* One-time entrance animation */
+@keyframes pulse-once {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Scanline effect for Stats section */
+@keyframes scanline {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}
+
+/* Animation utility classes */
+.animate-glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(250, 204, 21, 0.1) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+.animate-glow-slow {
+  animation: glow-slow 8s ease-in-out infinite;
+}
+
+.animate-glow-medium {
+  animation: glow-medium 4s ease-in-out infinite;
+}
+
+.animate-pulse-once {
+  animation: pulse-once 0.6s ease-out forwards;
+}
+
+.animate-scanline {
+  animation: scanline 8s linear infinite;
+}

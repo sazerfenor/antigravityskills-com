@@ -1,0 +1,572 @@
+{
+  "_comment": "=== 集中式區塊顯示控制 ===",
+  "section_visibility": {
+    "_comment": "控制主頁各區塊的顯示/隱藏。設為 false 可隱藏對應區塊。",
+    "show_header": true,
+    "show_hero": true,
+    "show_hero_buttons": false,
+    "show_hero_avatars": false,
+    "show_hero_award": false,
+    "show_hero_tip": false,
+    "show_generator": true,
+    "show_logos": true,
+    "show_benefits": false,
+    "show_features": true,
+    "show_stats": true,
+    "show_gallery": true,
+    "show_testimonials": true,
+    "show_faq": true,
+    "show_cta": true,
+    "show_subscribe": true,
+    "show_footer": true,
+    "show_core_modules": true
+  },
+  "header": {
+    "id": "header",
+    "brand": {
+      "title": "Nano Banana Ultra",
+      "logo": {
+        "src": "/logo.png",
+        "alt": "Nano Banana Ultra - Banana Pro 驅動的 AI 圖像生成器"
+      },
+      "url": "/"
+    },
+    "nav": {
+      "items": [
+        {
+          "title": "生成器",
+          "url": "/ai-image-generator",
+          "icon": "Zap"
+        },
+        {
+          "title": "探索",
+          "url": "/prompts",
+          "icon": "Telescope"
+        },
+        {
+          "title": "定價",
+          "url": "/pricing",
+          "icon": "CreditCard"
+        },
+        {
+          "title": "更新日誌",
+          "url": "/changelog",
+          "icon": "Megaphone"
+        }
+      ]
+    },
+    "buttons": [],
+    "user_nav": {
+      "show_name": true,
+      "show_credits": true,
+      "show_sign_out": true,
+      "items": [
+        {
+          "title": "帳單",
+          "url": "/settings/billing",
+          "icon": "CreditCard"
+        },
+        {
+          "title": "活動紀錄",
+          "url": "/activity",
+          "icon": "Activity"
+        }
+      ]
+    },
+    "show_sign": true,
+    "show_theme": false,
+    "show_locale": true
+  },
+  "hero": {
+    "id": "hero",
+    "title": "Nano Banana Ultra：少打字，多創作",
+    "highlight_text": "Ultra",
+    "description": "輸入幾個字，<strong>Nano Banana Ultra</strong> 自動補全專業參數邏輯。輕鬆一點即可生成穩定、高保真的藝術作品，完美呈現您的創意。",
+    "announcement": {
+      "badge": "✨ 新功能",
+      "title": "V2.0 邏輯矩陣正式上線！",
+      "url": "/ai-image-generator"
+    },
+    "tip": "🎁 立即體驗：輸入「一隻貓」獲取專業提示詞",
+    "buttons": [
+      {
+        "title": "開始創作",
+        "icon": "Zap",
+        "url": "/ai-image-generator",
+        "target": "_self",
+        "variant": "default"
+      },
+      {
+        "title": "探索畫廊",
+        "icon": "Telescope",
+        "url": "/prompts",
+        "target": "_self",
+        "variant": "outline"
+      }
+    ],
+    "input": {
+      "placeholder": "描述您的創意...",
+      "button": "生成"
+    },
+    "show_buttons": false,
+    "show_avatars": false,
+    "avatars_tip": "創作者每天都在生成驚艷的 AI 藝術作品",
+    "show_award": false,
+    "show_tip": false
+  },
+  "logos": {
+    "title": "深受全球創作者信賴，支援主流 AI 模型：",
+    "items": [
+      {
+        "title": "Midjourney",
+        "url": "https://www.midjourney.com",
+        "size": "h-20 w-20",
+        "image": {
+          "src": "/imgs/logos/midjourney.svg",
+          "alt": "Midjourney AI 圖像生成器標誌 - Nano Banana 相容"
+        }
+      },
+      {
+        "title": "DALL-E 3",
+        "url": "https://openai.com/dall-e-3",
+        "size": "h-15 w-15",
+        "image": {
+          "src": "/imgs/logos/openai.svg",
+          "alt": "OpenAI DALL-E 3 標誌 - Nano Banana 相容"
+        }
+      },
+      {
+        "title": "Stable Diffusion",
+        "url": "https://stability.ai",
+        "size": "h-15 w-15",
+        "featured": true,
+        "image": {
+          "src": "/imgs/logos/stability.svg",
+          "alt": "Stability AI Stable Diffusion 標誌 - Nano Banana 相容"
+        }
+      },
+      {
+        "title": "Flux",
+        "url": "https://blackforestlabs.ai",
+        "size": "h-15 w-15",
+        "image": {
+          "src": "/imgs/logos/flux.svg",
+          "alt": "Black Forest Labs Flux 標誌 - Nano Banana 相容"
+        }
+      },
+      {
+        "title": "Leonardo",
+        "url": "https://leonardo.ai",
+        "size": "h-15 w-15",
+        "image": {
+          "src": "/imgs/logos/leonardo.svg",
+          "alt": "Leonardo AI 標誌 - Nano Banana 相容"
+        }
+      }
+    ]
+  },
+  "benefits": {
+    "id": "benefits",
+    "title": "創建令人讚嘆的提示詞",
+    "label": "效果",
+    "description": "不再浪費積分生成失敗的圖片。我們的優化器確保您的提示詞在生成前就已完美。",
+    "items": [
+      {
+        "title": "一鍵專家調參",
+        "description": "不懂專業相機設定？我們的 AI 會自動為您的提示詞添加專業燈光、構圖和鏡頭參數。",
+        "icon": "RiNextjsFill",
+        "image": {
+          "src": "/imgs/features/user-billing.png",
+          "alt": "benefits"
+        }
+      },
+      {
+        "title": "智慧風格遷移",
+        "description": "喜歡某個風格？一鍵將該視覺風格套用到您的文字提示詞，無需複雜的工程操作。",
+        "icon": "RiClapperboardAiLine",
+        "image": {
+          "src": "/imgs/features/admin-settings.png",
+          "alt": "benefits"
+        }
+      },
+      {
+        "title": "最大化積分價值",
+        "description": "優化後的提示詞意味著更少的失敗生成。充分發揮您付費 AI 工具的最大價值。",
+        "icon": "RiCodeFill",
+        "image": {
+          "src": "/imgs/features/user-billing.png",
+          "alt": "benefits"
+        }
+      }
+    ]
+  },
+  "generator": {
+    "title": "AI 提示詞生成器：簡單輸入，專業輸出",
+    "description": "輸入一個簡單的創意，Nano Banana 自動補全專業邏輯。"
+  },
+  "core_modules": {
+    "id": "core-modules",
+    "title": "Nano Banana Ultra 的運作原理",
+    "description": "簡單輸入。智慧邏輯。驚艷輸出。"
+  },
+  "features": {
+    "id": "features",
+    "header_badge": "Powered by Nano Banana™",
+    "header_title": "邏輯解密",
+    "header_highlight": "解密",
+    "header_description": "看看<strong>意圖挖掘引擎</strong>如何將您的原始輸入解構為結構化的邏輯矩陣，適用於<span class=\"text-white\">任何 AI 圖像生成器</span>。",
+    "title": "專業功能，零複雜度",
+    "description": "您只需提供創意，Nano Banana 處理所有複雜細節。",
+    "items": [
+      {
+        "title": "心智閱讀邏輯",
+        "description": "不懂相機設定？沒關係。Nano Banana 會從您的簡短創意中推斷出完美的燈光和風格。",
+        "icon": "RiNextjsFill"
+      },
+      {
+        "title": "穩定可預測",
+        "description": "不再靠運氣。每次生成都能獲得一致、高保真的結果。",
+        "icon": "RiKey2Fill"
+      },
+      {
+        "title": "提示詞潤色",
+        "description": "進階文法修正和關鍵詞增強，讓 AI 更準確理解您的意圖。",
+        "icon": "RiDatabase2Line"
+      },
+      {
+        "title": "視覺除錯",
+        "description": "了解為什麼某個提示詞有效。我們的工具會分解視覺元素。",
+        "icon": "RiBarChart2Line"
+      },
+      {
+        "title": "模型專屬優化",
+        "description": "自動格式化 --v、--ar、--stylize 等參數。",
+        "icon": "RiCloudy2Fill"
+      },
+      {
+        "title": "社群與支援",
+        "description": "加入數千名創作者。獲取幫助、分享成果、發現技巧。",
+        "icon": "RiRobot2Line"
+      }
+    ]
+  },
+  "stats": {
+    "id": "stats",
+    "title": "深受全球創作者信賴",
+    "description": "簡單提示詞，驚艷成果。",
+    "items": [
+      {
+        "title": "10+",
+        "description": "支援的 AI 模型"
+      },
+      {
+        "title": "500+",
+        "description": "提示詞範本"
+      },
+      {
+        "title": "99%",
+        "description": "用戶滿意度"
+      }
+    ]
+  },
+  "gallery": {
+    "id": "gallery",
+    "title": "探索 Nano Banana Ultra 資料庫",
+    "description": "每張圖片都始於一個簡單創意。複製提示詞，創作您自己的作品。",
+    "buttons": [
+      {
+        "text": "探索熱門提示詞",
+        "url": "/prompts",
+        "icon": "ArrowRight"
+      }
+    ]
+  },
+  "testimonials": {
+    "id": "testimonials",
+    "title": "社群回饋",
+    "description": "頂尖創作者使用 Nano Banana 驅動他們的工作流程。",
+    "items": [
+      {
+        "name": "AdMaster Pro",
+        "role": "商業視覺設計",
+        "quote": "我的客戶需要「高轉換率的食品攝影」，而且要立即交付。Nano Banana 的意圖挖掘完美掌握了燈光邏輯，無需我猜測關鍵詞。這不只是生成器，更是創意總監。",
+        "rating": 5,
+        "image": {
+          "src": "https://r2.bananaprompts.info/avatars/1765554543494-85b048ce-9e83-48a5-a91c-c4dc3bcedda9.webp",
+          "alt": "AdMaster Pro 頭像"
+        }
+      },
+      {
+        "name": "Sarah Vogue",
+        "role": "虛擬時尚部落客",
+        "quote": "在數位時尚中達到極致擬真以前總是碰運氣。有了 Nano Banana Ultra，布料質感和膚色在每張照片中都保持一致。對我的虛擬伸展台來說不可或缺。",
+        "rating": 5,
+        "image": {
+          "src": "https://r2.bananaprompts.info/avatars/1765552329130-162a3b57-949b-4a78-8e84-578e60067ae0.webp",
+          "alt": "Sarah Vogue 頭像"
+        }
+      },
+      {
+        "name": "Dr. Linus Graph",
+        "role": "資料視覺化專家",
+        "quote": "我將複雜數據轉化為清晰的資訊圖表。Nano Banana 比任何其他模型都更能理解抽象邏輯結構，完美遵循我提示詞中的資訊層級。",
+        "rating": 5,
+        "image": {
+          "src": "https://r2.bananaprompts.info/avatars/1765551824866-b8b09b1d-77e3-404e-9e34-64a990b113e0.webp",
+          "alt": "Dr. Linus Graph 頭像"
+        }
+      },
+      {
+        "name": "Render Foundry",
+        "role": "3D 產品工作室",
+        "quote": "對於商業素材，「差不多」是不夠的。邏輯引擎讓我們精確控制攝影棚燈光和材質屬性，自動化了我們整個產品模型工作流程。",
+        "rating": 5,
+        "image": {
+          "src": "https://r2.bananaprompts.info/avatars/1765554024600-5f5d7771-780a-48b7-a524-1d6738c49240.webp",
+          "alt": "Render Foundry 頭像"
+        }
+      },
+      {
+        "name": "void_walker",
+        "role": "數位超現實主義者",
+        "quote": "探索現實的邊界需要一個理解夢境邏輯的工具。Nano Banana Ultra 讓我能挖掘深層潛意識意圖，並將其轉化為視覺超現實主義。",
+        "rating": 5,
+        "image": {
+          "src": "https://r2.bananaprompts.info/avatars/1765554777125-5d545f98-5993-4b7a-8074-996c92402b27.webp",
+          "alt": "void_walker 頭像"
+        }
+      }
+    ]
+  },
+  "faq": {
+    "id": "faq",
+    "title": "常見問題",
+    "description": "還有其他問題？歡迎透過 Discord 或電子郵件聯繫我們。",
+    "tip": "找不到想要的答案？<a href='mailto:support@nanobananaultra.com' class='text-primary font-medium hover:underline'>聯繫我們的客服團隊</a>",
+    "items": [
+      {
+        "question": "什麼是 Nano Banana Ultra？",
+        "answer": "Nano Banana Ultra 是一個獨立的優化平台，幫助您從 Nano Banana AI 模型獲得 Ultra 級別的效果。輸入幾個字，我們的意圖挖掘引擎會將其擴展為專業提示詞——然後使用 Nano Banana 或 Nano Banana Pro 生成驚艷圖像。注意：Nano Banana Ultra 與 Google 或其 Nano Banana 模型沒有隸屬、認可或贊助關係。"
+      },
+      {
+        "question": "Nano Banana Ultra 和 Nano Banana Pro 一樣嗎？",
+        "answer": "不一樣。Nano Banana 和 Nano Banana Pro 是 Google 開發的 AI 圖像生成模型。Nano Banana Ultra 是我們的獨立優化平台，幫助您打造更好的提示詞，從這些模型獲得 Ultra 級別的品質。"
+      },
+      {
+        "question": "Nano Banana Ultra 免費使用嗎？",
+        "answer": "是的！您無需註冊即可免費生成提示詞——每天最多 3 次。註冊後可獲得免費積分用於圖像生成。需要更多？請查看我們的定價頁面了解積分方案。"
+      },
+      {
+        "question": "我可以在 Nano Banana Ultra 上生成圖片嗎？",
+        "answer": "可以。我們的 Live Logic Lab 讓您使用 Nano Banana 模型同時生成優化後的提示詞和即時圖像預覽。您也可以複製提示詞在其他 AI 圖像工具中使用。"
+      },
+      {
+        "question": "我需要提示詞工程技能嗎？",
+        "answer": "完全不需要。只需輸入簡單的創意，如「人像」或「海邊夕陽」。我們的意圖挖掘引擎會分析您的意圖，自動添加專業細節——燈光、構圖、風格等。"
+      },
+      {
+        "question": "Banana 和 Banana Pro 模式有什麼區別？",
+        "answer": "這是指我們用於生成的 AI 模型。Banana 模式使用輕量級 Nano Banana 模型，快速生成連貫結果——適合日常使用。Banana Pro 模式使用進階 Nano Banana Pro 模型，進行深度語義擴展，輸出更高保真度。"
+      },
+      {
+        "question": "智慧調整功能如何運作？",
+        "answer": "智慧調整讓您一鍵微調提示詞。調整燈光、相機角度、風格和其他參數，無需打字——只需從選項中選擇，觀看您的提示詞演變。"
+      },
+      {
+        "question": "我可以使用社群畫廊的提示詞嗎？",
+        "answer": "當然可以。瀏覽我們的畫廊，找到您喜歡的風格，點擊「Remix」作為起點。每個作品都包含完整提示詞——複製它、自訂它、創作屬於您的作品。"
+      },
+      {
+        "question": "提示詞可以商用嗎？",
+        "answer": "可以。您擁有在 Nano Banana Ultra 上創建的提示詞，可用於任何用途。對於在我們平台上生成的圖像，請查看我們的服務條款了解商業使用細節。"
+      }
+    ]
+  },
+  "ai_image_generator_faq": {
+    "id": "ai_image_generator_faq",
+    "title": "AI 圖像生成器常見問題",
+    "description": "關於我們 AI 圖像生成工具的常見問題。",
+    "items": [
+      {
+        "question": "什麼是 Nano Banana Ultra AI 圖像生成器？",
+        "answer": "Nano Banana Ultra 是一款前沿的網頁工具，讓任何人都能使用人工智慧創建專業圖像。它將文字描述轉化為視覺作品，還能使用 Gemini 和 FLUX 等先進模型編輯現有照片。"
+      },
+      {
+        "question": "Nano Banana Ultra AI 圖像生成器免費嗎？",
+        "answer": "是的，我們為所有用戶提供每日免費積分。您可以無需訂閱，使用 Gemini 等模型生成高品質 AI 圖像。"
+      },
+      {
+        "question": "生成的圖像可以商用嗎？",
+        "answer": "可以！在 Nano Banana Ultra 生成的圖像附帶商業使用授權，您可將其用於行銷、產品或創意專案。"
+      },
+      {
+        "question": "以圖生圖功能如何運作？",
+        "answer": "以圖生圖功能讓您上傳一張現有照片作為參考。AI 會根據您的文字提示修改圖像的風格、構圖或細節，同時保留您上傳內容的核心結構。"
+      },
+      {
+        "question": "支援哪些 AI 模型？",
+        "answer": "我們支援多種頂尖模型，包括 Google Gemini、OpenAI GPT-4o 和 FLUX.1，涵蓋從寫實到動漫等多種藝術風格。"
+      },
+      {
+        "question": "如何寫出有效的提示詞？",
+        "answer": "請具體描述主題、風格、燈光和氛圍。您也可以使用我們內建的「AI 提示詞優化器」，自動將簡單創意增強為專業提示詞。"
+      },
+      {
+        "question": "下載的圖像是什麼格式？",
+        "answer": "圖像提供高解析度 PNG 或 JPG 格式，適用於網頁展示和印刷。"
+      }
+    ]
+  },
+  "cta": {
+    "id": "cta",
+    "title": "準備好創作了嗎？只需輸入幾個字。",
+    "description": "輸入一個簡短的創意，Nano Banana 處理剩下的一切。立即免費開始。",
+    "buttons": [
+      {
+        "title": "開始創作",
+        "url": "/ai-image-generator",
+        "target": "_self",
+        "icon": "Zap"
+      },
+      {
+        "title": "探索畫廊",
+        "url": "/prompts",
+        "target": "_self",
+        "variant": "outline",
+        "icon": "Telescope"
+      }
+    ]
+  },
+  "subscribe": {
+    "id": "subscribe",
+    "title": "每週獲取獨家 Banana Pro 技巧",
+    "description": "訂閱獲取獨家 Banana Pro 提示詞、技巧，以及新功能搶先體驗。",
+    "submit": {
+      "input": {
+        "placeholder": "輸入您的電子郵件"
+      },
+      "button": {
+        "title": "訂閱"
+      },
+      "action": "/api/subscribe"
+    },
+    "show_subscribe": false
+  },
+  "footer": {
+    "id": "footer",
+    "brand": {
+      "title": "Nano Banana Ultra",
+      "description": "將簡單創意轉化為專業 AI 藝術。適用於任何平台的終極 AI 提示詞工程工具，打造驚艷視覺作品。",
+      "logo": {
+        "src": "/logo.png",
+        "alt": "Nano Banana Ultra - Banana Pro 驅動的 AI 圖像生成器"
+      },
+      "url": "/"
+    },
+    "copyright": "© 2026 Nano Banana Ultra. 保留所有權利。",
+    "disclaimer": "Nano Banana Ultra 為獨立平台，與 Google LLC 無隸屬、認可或贊助關係。Nano Banana 和 Nano Banana Pro 為 Google LLC 的商標。",
+    "nav": {
+      "items": [
+        {
+          "title": "產品",
+          "children": [
+            {
+              "title": "生成器",
+              "url": "/ai-image-generator",
+              "target": "_self"
+            },
+            {
+              "title": "畫廊",
+              "url": "/prompts",
+              "target": "_self"
+            },
+            {
+              "title": "定價",
+              "url": "/pricing",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "資源",
+          "children": [
+            {
+              "title": "部落格",
+              "url": "/blog",
+              "target": "_self"
+            },
+            {
+              "title": "文件",
+              "url": "/docs",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "法律條款",
+          "children": [
+            {
+              "title": "隱私權政策",
+              "url": "/privacy-policy",
+              "target": "_self"
+            },
+            {
+              "title": "服務條款",
+              "url": "/terms-of-service",
+              "target": "_self"
+            },
+            {
+              "title": "退款政策",
+              "url": "/refund-policy",
+              "target": "_self"
+            },
+            {
+              "title": "Cookie 政策",
+              "url": "/cookie-policy",
+              "target": "_self"
+            },
+            {
+              "title": "社群準則",
+              "url": "/community-guidelines",
+              "target": "_self"
+            },
+            {
+              "title": "DMCA 政策",
+              "url": "/dmca-policy",
+              "target": "_self"
+            }
+          ]
+        }
+      ]
+    },
+    "social": {
+      "items": [
+        {
+          "title": "電子郵件",
+          "icon": "Mail",
+          "url": "mailto:support@nanobananaultra.com",
+          "target": "_self"
+        }
+      ]
+    },
+    "agreement": {
+      "items": [
+        {
+          "title": "隱私權政策",
+          "url": "/privacy-policy"
+        },
+        {
+          "title": "服務條款",
+          "url": "/terms-of-service"
+        },
+        {
+          "title": "退款政策",
+          "url": "/refund-policy"
+        }
+      ]
+    },
+    "show_theme": false,
+    "show_locale": true,
+    "show_social": false
+  }
+}

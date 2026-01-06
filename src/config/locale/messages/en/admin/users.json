@@ -1,0 +1,78 @@
+{
+  "fields": {
+    "id": "ID",
+    "name": "Name",
+    "avatar": "Avatar",
+    "email": "Email",
+    "email_verified": "Email Verified",
+    "remaining_credits": "Remaining Credits",
+    "created_at": "Created At",
+    "actions": "Actions",
+    "roles": "Roles"
+  },
+  "list": {
+    "title": "Users",
+    "crumbs": {
+      "admin": "Admin",
+      "users": "Users"
+    },
+    "buttons": {
+      "add": "Add User",
+      "edit": "Edit User",
+      "view": "View User",
+      "delete": "Delete User",
+      "edit_roles": "Edit Roles",
+      "grant_credits": "Grant Credits"
+    },
+    "search": {
+      "email": {
+        "title": "Email",
+        "placeholder": "Email"
+      }
+    }
+  },
+  "edit": {
+    "title": "Edit User",
+    "crumbs": {
+      "admin": "Admin",
+      "users": "Users",
+      "edit": "Edit"
+    },
+    "buttons": {
+      "submit": "Update"
+    }
+  },
+  "edit_roles": {
+    "title": "Edit Roles",
+    "crumbs": {
+      "admin": "Admin",
+      "users": "Users",
+      "edit_roles": "Edit Roles"
+    },
+    "buttons": {
+      "submit": "Update"
+    }
+  },
+  "grant_credits": {
+    "title": "Grant Credits",
+    "description": "Grant credits to this user's account",
+    "crumbs": {
+      "admin": "Admin",
+      "users": "Users",
+      "grant_credits": "Grant Credits"
+    },
+    "fields": {
+      "user": "User",
+      "current_credits": "Current Credits",
+      "amount": "Credits Amount",
+      "amount_placeholder": "Enter credits amount (1-10000)",
+      "valid_days": "Valid Days",
+      "valid_days_tip": "0 or empty means never expires",
+      "reason": "Reason (Optional)",
+      "reason_placeholder": "e.g., Promotional gift, bug compensation..."
+    },
+    "buttons": {
+      "submit": "Grant Credits"
+    }
+  }
+}

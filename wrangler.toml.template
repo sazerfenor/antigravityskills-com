@@ -1,0 +1,99 @@
+# Wrangler Configuration Template
+# ================================
+# ⚠️ 这是模板文件，不包含敏感信息
+#
+# 使用步骤:
+# 1. 复制此文件为 wrangler.toml: cp wrangler.toml.template wrangler.toml
+# 2. 替换所有 YOUR_* 占位符为实际值
+# 3. 部署命令: pnpm cf:deploy
+#
+# 如何获取 Cloudflare 资源 ID:
+# - Hyperdrive: wrangler hyperdrive create <name> --connection-string <db-url>
+# - KV: wrangler kv:namespace create <name>
+# - D1: wrangler d1 create <name>
+
+# TODO: 设置你的项目名称
+name = "your-project-name"
+main = ".open-next/worker.js"
+compatibility_date = "2025-03-01"
+compatibility_flags = ["nodejs_compat"]
+
+[assets]
+binding = "ASSETS"
+directory = ".open-next/assets"
+
+# ============================================
+# Hyperdrive (Database Connection Pool)
+# ============================================
+[[hyperdrive]]
+binding = "HYPERDRIVE"
+id = "YOUR_HYPERDRIVE_ID"  # wrangler hyperdrive create 后获取
+localConnectionString = "postgresql://USER:PASSWORD@HOST:PORT/DATABASE"
+
+# ============================================
+# KV Namespaces
+# ============================================
+# 画廊缓存 (浏览量统计)
+[[kv_namespaces]]
+binding = "GALLERY_KV"
+id = "YOUR_GALLERY_KV_ID"
+
+# Cases 向量搜索缓存
+[[kv_namespaces]]
+binding = "CASES_KV"
+id = "YOUR_CASES_KV_ID"
+
+# 会话缓存
+[[kv_namespaces]]
+binding = "SESSION_KV"
+id = "YOUR_SESSION_KV_ID"
+
+# ============================================
+# D1 Database (可选，如果使用 D1 而非 PostgreSQL)
+# ============================================
+[[d1_databases]]
+binding = "DB"
+database_name = "your-project-db"  # TODO: 设置你的数据库名
+database_id = "YOUR_D1_DATABASE_ID"
+
+# ============================================
+# Observability
+# ============================================
+[observability]
+enabled = true
+
+# ============================================
+# Environment Variables
+# ============================================
+[vars]
+# TODO: 设置你的应用 URL 和名称
+NEXT_PUBLIC_APP_URL = "https://your-domain.com"
+NEXT_PUBLIC_APP_NAME = "Your App Name"
+
+# 主题配置
+NEXT_PUBLIC_THEME = "default"
+NEXT_PUBLIC_APPEARANCE = "system"
+
+# 数据库配置
+DATABASE_PROVIDER = "turso"
+DB_SINGLETON_ENABLED = "false"
+DB_MAX_CONNECTIONS = "10"
+
+# ⚠️ 认证密钥 - 必须设置安全的随机值
+# 生成方法: openssl rand -base64 32
+AUTH_SECRET = "YOUR_AUTH_SECRET"
+AUTH_URL = "https://your-domain.com"
+
+# ============================================
+# Build Configuration
+# ============================================
+[build]
+keep_names = false
+
+# ============================================
+# Cron Triggers (可选)
+# ============================================
+# OpenNext 不支持 scheduled() handler
+# 使用外部 cron 服务调用 /api/cron/* 端点
+# [triggers]
+# crons = ["*/5 * * * *"]

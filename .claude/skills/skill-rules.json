@@ -1,0 +1,556 @@
+{
+    "version": "1.0",
+    "description": "BananaPrompts 项目的 Skill 自动激活规则",
+    "skills": {
+        "google-official-seo-guide": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "high",
+            "description": "Google 官方 SEO 指南，结构化数据，搜索优化",
+            "promptTriggers": {
+                "keywords": [
+                    "SEO",
+                    "搜索优化",
+                    "结构化数据",
+                    "schema",
+                    "rich results",
+                    "hreflang",
+                    "sitemap",
+                    "meta tags",
+                    "canonical",
+                    "robots.txt",
+                    "indexing",
+                    "crawling",
+                    "Search Console",
+                    "动态标题",
+                    "专家点评",
+                    "seoSlug"
+                ],
+                "intentPatterns": [
+                    "(优化|improve|add).*?(SEO|搜索|search)",
+                    "(create|generate|add).*?(structured data|schema|结构化)",
+                    "(how to|best practice).*?(SEO|ranking|搜索排名)"
+                ]
+            },
+            "fileTriggers": {
+                "pathPatterns": [
+                    "**/api/admin/seo/**",
+                    "**/seo*.ts",
+                    "**/sitemap*"
+                ]
+            }
+        },
+        "internationalizing-websites": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "medium",
+            "description": "Next.js 国际化，多语言支持",
+            "promptTriggers": {
+                "keywords": [
+                    "i18n",
+                    "国际化",
+                    "多语言",
+                    "localization",
+                    "翻译",
+                    "translation",
+                    "hreflang",
+                    "locale"
+                ],
+                "intentPatterns": [
+                    "(add|implement).*?(language|语言|i18n)",
+                    "(translate|翻译).*?"
+                ]
+            },
+            "fileTriggers": {
+                "pathPatterns": [
+                    "**/i18n/**",
+                    "**/locales/**",
+                    "**/[locale]/**"
+                ]
+            }
+        },
+        "skill-developer": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "high",
+            "description": "创建和管理 Claude Code Skills",
+            "promptTriggers": {
+                "keywords": [
+                    "skill system",
+                    "create skill",
+                    "开发 skill",
+                    "skill triggers",
+                    "skill rules",
+                    "hook system",
+                    "skill-rules.json"
+                ],
+                "intentPatterns": [
+                    "(how do|how does|explain).*?skill",
+                    "(create|add|modify|build|开发).*?skill",
+                    "skill.*?(work|trigger|activate|system)"
+                ]
+            }
+        },
+        "backend-dev-guidelines": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "high",
+            "description": "后端开发规范 - API Routes, Services, Models",
+            "promptTriggers": {
+                "keywords": [
+                    "API",
+                    "endpoint",
+                    "route",
+                    "controller",
+                    "service",
+                    "model",
+                    "middleware",
+                    "validation",
+                    "Zod",
+                    "Drizzle",
+                    "database"
+                ],
+                "intentPatterns": [
+                    "(create|add|implement).*?(route|endpoint|API|service|model)",
+                    "(fix|handle|debug).*?(error|exception|backend)",
+                    "(how to|best practice).*?(API|route|service)"
+                ]
+            },
+            "fileTriggers": {
+                "pathPatterns": [
+                    "src/app/api/**/*.ts",
+                    "src/shared/services/**/*.ts",
+                    "src/shared/models/**/*.ts"
+                ],
+                "pathExclusions": [
+                    "**/*.test.ts"
+                ]
+            }
+        },
+        "frontend-dev-guidelines": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "high",
+            "description": "前端开发规范 - React, Tailwind, Radix UI",
+            "promptTriggers": {
+                "keywords": [
+                    "component",
+                    "组件",
+                    "UI",
+                    "page",
+                    "页面",
+                    "modal",
+                    "form",
+                    "Tailwind",
+                    "Radix",
+                    "React",
+                    "前端"
+                ],
+                "intentPatterns": [
+                    "(create|add|make|build).*?(component|UI|page|组件|页面)",
+                    "(how to|best practice).*?(component|react|前端)"
+                ]
+            },
+            "fileTriggers": {
+                "pathPatterns": [
+                    "src/app/**/page.tsx",
+                    "src/shared/blocks/**/*.tsx",
+                    "src/shared/components/**/*.tsx",
+                    "src/themes/**/*.tsx"
+                ]
+            }
+        },
+        "webapp-testing": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "medium",
+            "description": "Playwright Web 应用测试",
+            "promptTriggers": {
+                "keywords": [
+                    "test",
+                    "测试",
+                    "playwright",
+                    "e2e",
+                    "automation",
+                    "screenshot"
+                ],
+                "intentPatterns": [
+                    "(test|测试).*?(page|页面|component|组件)",
+                    "(automate|自动化).*?"
+                ]
+            }
+        },
+        "mcp-builder": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "medium",
+            "description": "MCP Server 开发",
+            "promptTriggers": {
+                "keywords": [
+                    "MCP",
+                    "Model Context Protocol",
+                    "mcp server",
+                    "tool integration"
+                ],
+                "intentPatterns": [
+                    "(create|build).*?MCP",
+                    "(integrate|集成).*?(external|API)"
+                ]
+            }
+        },
+        "changelog-generator": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "medium",
+            "description": "从 git 提交生成更新日志",
+            "promptTriggers": {
+                "keywords": [
+                    "changelog",
+                    "release notes",
+                    "更新日志",
+                    "版本记录"
+                ],
+                "intentPatterns": [
+                    "(generate|create|生成).*?(changelog|release notes|更新日志)"
+                ]
+            }
+        },
+        "content-research-writer": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "medium",
+            "description": "内容研究和写作辅助",
+            "promptTriggers": {
+                "keywords": [
+                    "write",
+                    "写作",
+                    "research",
+                    "研究",
+                    "article",
+                    "文章",
+                    "documentation",
+                    "文档"
+                ],
+                "intentPatterns": [
+                    "(write|撰写).*?(article|文章|doc|文档)",
+                    "(research|研究).*?"
+                ]
+            }
+        },
+        "deploying-to-production": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "medium",
+            "description": "生产部署 - GitHub + Vercel",
+            "promptTriggers": {
+                "keywords": [
+                    "deploy",
+                    "部署",
+                    "production",
+                    "生产",
+                    "Vercel",
+                    "GitHub",
+                    "上线"
+                ],
+                "intentPatterns": [
+                    "(deploy|部署).*?(production|生产|Vercel)",
+                    "(push|发布).*?(production|生产)"
+                ]
+            }
+        },
+        "document-skills-pdf": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "medium",
+            "description": "PDF 文档处理",
+            "promptTriggers": {
+                "keywords": [
+                    "PDF",
+                    "extract",
+                    "merge",
+                    "split",
+                    "文档"
+                ],
+                "intentPatterns": [
+                    "(extract|提取).*?PDF",
+                    "(merge|合并|split|拆分).*?PDF"
+                ]
+            }
+        },
+        "image-enhancer": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "medium",
+            "description": "图片增强和优化",
+            "promptTriggers": {
+                "keywords": [
+                    "image",
+                    "图片",
+                    "enhance",
+                    "增强",
+                    "upscale",
+                    "resolution",
+                    "分辨率"
+                ],
+                "intentPatterns": [
+                    "(enhance|improve|增强|优化).*?(image|图片)",
+                    "(upscale|提升).*?(resolution|分辨率)"
+                ]
+            }
+        },
+        "error-tracking": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "high",
+            "description": "错误追踪和日志记录",
+            "promptTriggers": {
+                "keywords": [
+                    "error handling",
+                    "错误处理",
+                    "exception",
+                    "logging",
+                    "日志",
+                    "logError"
+                ],
+                "intentPatterns": [
+                    "(add|implement).*?(error handling|错误处理)",
+                    "(fix|handle|catch).*?(error|exception|错误)"
+                ]
+            },
+            "fileTriggers": {
+                "pathPatterns": [
+                    "**/error-logger.ts",
+                    "**/error_report.ts"
+                ]
+            }
+        },
+        "artifacts-builder": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "high",
+            "description": "使用 React/Tailwind/shadcn 构建 UI 组件和 artifacts",
+            "promptTriggers": {
+                "keywords": [
+                    "artifact",
+                    "shadcn",
+                    "UI组件",
+                    "界面设计",
+                    "React组件",
+                    "Tailwind组件",
+                    "原型",
+                    "prototype"
+                ],
+                "intentPatterns": [
+                    "(create|build|make|设计|构建).*?(artifact|UI|界面|组件)",
+                    "(design|设计).*?(interface|界面|交互)"
+                ]
+            }
+        },
+        "canvas-design": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "medium",
+            "description": "视觉设计 - PNG/PDF 海报、艺术作品",
+            "promptTriggers": {
+                "keywords": [
+                    "poster",
+                    "海报",
+                    "visual design",
+                    "视觉设计",
+                    "canvas",
+                    "artwork",
+                    "艺术",
+                    "PNG",
+                    "PDF设计"
+                ],
+                "intentPatterns": [
+                    "(create|design|make|制作|设计).*?(poster|海报|artwork|艺术品)",
+                    "(visual|视觉).*?(design|设计)"
+                ]
+            }
+        },
+        "brand-guidelines": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "medium",
+            "description": "品牌设计规范 - 颜色、排版、视觉标识",
+            "promptTriggers": {
+                "keywords": [
+                    "brand",
+                    "品牌",
+                    "branding",
+                    "logo",
+                    "标志",
+                    "color palette",
+                    "配色",
+                    "typography",
+                    "排版",
+                    "视觉标识"
+                ],
+                "intentPatterns": [
+                    "(create|design|apply).*?(brand|品牌|logo)",
+                    "(brand|品牌).*?(guideline|规范|标准)"
+                ]
+            }
+        },
+        "theme-factory": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "medium",
+            "description": "主题系统 - 专业字体和颜色主题",
+            "promptTriggers": {
+                "keywords": [
+                    "theme",
+                    "主题",
+                    "dark mode",
+                    "暗色模式",
+                    "light mode",
+                    "亮色模式",
+                    "color scheme",
+                    "配色方案",
+                    "font theme",
+                    "字体主题"
+                ],
+                "intentPatterns": [
+                    "(create|apply|switch).*?(theme|主题)",
+                    "(dark|light|暗色|亮色).*?(mode|模式)"
+                ]
+            }
+        },
+        "prompt-engineering": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "high",
+            "description": "Prompt Engineering 最佳实践和技巧",
+            "promptTriggers": {
+                "keywords": [
+                    "prompt",
+                    "提示词",
+                    "prompt engineering",
+                    "提示工程",
+                    "few-shot",
+                    "chain of thought",
+                    "思维链",
+                    "system prompt",
+                    "系统提示",
+                    "LLM优化"
+                ],
+                "intentPatterns": [
+                    "(write|create|optimize|编写|优化).*?(prompt|提示词)",
+                    "(improve|enhance).*?(prompt|提示)",
+                    "prompt.*?(technique|技巧|best practice|最佳实践)"
+                ]
+            }
+        },
+        "software-architecture": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "high",
+            "description": "软件架构设计 - Clean Architecture, SOLID, DDD",
+            "promptTriggers": {
+                "keywords": [
+                    "architecture",
+                    "架构",
+                    "SOLID",
+                    "DDD",
+                    "clean architecture",
+                    "整洁架构",
+                    "design pattern",
+                    "设计模式",
+                    "microservice",
+                    "微服务",
+                    "模块化"
+                ],
+                "intentPatterns": [
+                    "(design|implement|重构).*?(architecture|架构)",
+                    "(apply|use).*?(pattern|模式|SOLID|DDD)",
+                    "(refactor|重构).*?(code|代码|structure|结构)"
+                ]
+            }
+        },
+        "internal-comms": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "medium",
+            "description": "内部沟通文档 - 更新报告、FAQ、通讯",
+            "promptTriggers": {
+                "keywords": [
+                    "internal",
+                    "内部",
+                    "newsletter",
+                    "通讯",
+                    "status report",
+                    "状态报告",
+                    "project update",
+                    "项目更新",
+                    "FAQ",
+                    "3P update"
+                ],
+                "intentPatterns": [
+                    "(write|create|draft).*?(report|报告|update|更新)",
+                    "(internal|内部).*?(communication|沟通|文档)"
+                ]
+            }
+        },
+        "meeting-insights-analyzer": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "medium",
+            "description": "会议记录分析 - 行为模式、发言比例",
+            "promptTriggers": {
+                "keywords": [
+                    "meeting",
+                    "会议",
+                    "transcript",
+                    "记录",
+                    "meeting notes",
+                    "会议纪要",
+                    "speaking ratio",
+                    "发言比例"
+                ],
+                "intentPatterns": [
+                    "(analyze|分析).*?(meeting|会议)",
+                    "(meeting|会议).*?(insight|洞察|pattern|模式)"
+                ]
+            }
+        },
+        "document-skills": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "medium",
+            "description": "文档处理 - Word, Excel, PPT, PDF",
+            "promptTriggers": {
+                "keywords": [
+                    "Word",
+                    "Excel",
+                    "PowerPoint",
+                    "PPT",
+                    "docx",
+                    "xlsx",
+                    "pptx",
+                    "spreadsheet",
+                    "表格",
+                    "幻灯片",
+                    "slides"
+                ],
+                "intentPatterns": [
+                    "(create|edit|read|generate).*?(Word|Excel|PPT|文档|表格|幻灯片)",
+                    "(export|导出).*?(docx|xlsx|pptx)"
+                ]
+            }
+        }
+    },
+    "notes": {
+        "enforcement_types": {
+            "suggest": "建议使用，不阻止执行",
+            "block": "必须使用 skill 才能继续",
+            "warn": "显示警告但允许继续"
+        },
+        "priority_levels": {
+            "critical": "最高 - 始终触发",
+            "high": "重要 - 大多数匹配时触发",
+            "medium": "中等 - 明确匹配时触发",
+            "low": "可选 - 仅明确请求时触发"
+        }
+    }
+}

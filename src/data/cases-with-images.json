@@ -1,0 +1,825 @@
+{
+  "version": "2.0.0",
+  "updatedAt": "2025-12-05T12:07:03.865Z",
+  "r2Prefix": "ai/image/generated/gemini",
+  "baseUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/",
+  "totalImages": 136,
+  "images": [
+    {
+      "caseId": "example_1",
+      "filename": "ukiyoe-flash-card-bananaprompts-info-Y73H5CVX.jpeg",
+      "r2Key": "ai/image/generated/gemini/ukiyoe-flash-card-bananaprompts-info-Y73H5CVX.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/ukiyoe-flash-card-bananaprompts-info-Y73H5CVX.jpeg"
+    },
+    {
+      "caseId": "example_2",
+      "filename": "generate-image-from-coordinates-bananaprompts-info-Arx_enaa.jpeg",
+      "r2Key": "ai/image/generated/gemini/generate-image-from-coordinates-bananaprompts-info-Arx_enaa.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/generate-image-from-coordinates-bananaprompts-info-Arx_enaa.jpeg"
+    },
+    {
+      "caseId": "example_3",
+      "filename": "thirty-identical-characters-in-tokyo-apartment-bananaprompts-info-Gol0uk4X.jpeg",
+      "r2Key": "ai/image/generated/gemini/thirty-identical-characters-in-tokyo-apartment-bananaprompts-info-Gol0uk4X.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/thirty-identical-characters-in-tokyo-apartment-bananaprompts-info-Gol0uk4X.jpeg"
+    },
+    {
+      "caseId": "example_4",
+      "filename": "generate-flowchart-from-document-bananaprompts-info-3dAP3wT-.jpeg",
+      "r2Key": "ai/image/generated/gemini/generate-flowchart-from-document-bananaprompts-info-3dAP3wT-.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/generate-flowchart-from-document-bananaprompts-info-3dAP3wT-.jpeg"
+    },
+    {
+      "caseId": "example_5",
+      "filename": "create-ppt-from-article-bananaprompts-info-7y0FOytR.jpeg",
+      "r2Key": "ai/image/generated/gemini/create-ppt-from-article-bananaprompts-info-7y0FOytR.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/create-ppt-from-article-bananaprompts-info-7y0FOytR.jpeg"
+    },
+    {
+      "caseId": "example_6",
+      "filename": "character-deconstruction-bananaprompts-info-TjiPzCiJ.jpeg",
+      "r2Key": "ai/image/generated/gemini/character-deconstruction-bananaprompts-info-TjiPzCiJ.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/character-deconstruction-bananaprompts-info-TjiPzCiJ.jpeg"
+    },
+    {
+      "caseId": "example_7",
+      "filename": "behind-the-scenes-of-item-creation-bananaprompts-info-zBo8CO-I.jpeg",
+      "r2Key": "ai/image/generated/gemini/behind-the-scenes-of-item-creation-bananaprompts-info-zBo8CO-I.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/behind-the-scenes-of-item-creation-bananaprompts-info-zBo8CO-I.jpeg"
+    },
+    {
+      "caseId": "example_8",
+      "filename": "childrens-literacy-newsletter-bananaprompts-info-QGXdLaXK.jpeg",
+      "r2Key": "ai/image/generated/gemini/childrens-literacy-newsletter-bananaprompts-info-QGXdLaXK.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/childrens-literacy-newsletter-bananaprompts-info-QGXdLaXK.jpeg"
+    },
+    {
+      "caseId": "example_9",
+      "filename": "generate-material-texture-bananaprompts-info-mxB2l8pf.jpeg",
+      "r2Key": "ai/image/generated/gemini/generate-material-texture-bananaprompts-info-mxB2l8pf.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/generate-material-texture-bananaprompts-info-mxB2l8pf.jpeg"
+    },
+    {
+      "caseId": "example_10",
+      "filename": "stylized-creature-overlooking-city-bananaprompts-info-ho9LEe3h.jpeg",
+      "r2Key": "ai/image/generated/gemini/stylized-creature-overlooking-city-bananaprompts-info-ho9LEe3h.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/stylized-creature-overlooking-city-bananaprompts-info-ho9LEe3h.jpeg"
+    },
+    {
+      "caseId": "example_11",
+      "filename": "toy-disassembly-display-bananaprompts-info-AZdc-UqL.jpeg",
+      "r2Key": "ai/image/generated/gemini/toy-disassembly-display-bananaprompts-info-AZdc-UqL.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/toy-disassembly-display-bananaprompts-info-AZdc-UqL.jpeg"
+    },
+    {
+      "caseId": "example_12",
+      "filename": "fluffy-plush-toy-bananaprompts-info-g3rnOSAu.jpeg",
+      "r2Key": "ai/image/generated/gemini/fluffy-plush-toy-bananaprompts-info-g3rnOSAu.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/fluffy-plush-toy-bananaprompts-info-g3rnOSAu.jpeg"
+    },
+    {
+      "caseId": "example_13",
+      "filename": "crystal-texture-emoji-bananaprompts-info-wvWztmXc.jpeg",
+      "r2Key": "ai/image/generated/gemini/crystal-texture-emoji-bananaprompts-info-wvWztmXc.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/crystal-texture-emoji-bananaprompts-info-wvWztmXc.jpeg"
+    },
+    {
+      "caseId": "example_14",
+      "filename": "fluffy-inflatable-toy-bananaprompts-info-PNiRRRYt.jpeg",
+      "r2Key": "ai/image/generated/gemini/fluffy-inflatable-toy-bananaprompts-info-PNiRRRYt.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/fluffy-inflatable-toy-bananaprompts-info-PNiRRRYt.jpeg"
+    },
+    {
+      "caseId": "example_15",
+      "filename": "hand-drawn-isometric-view-bananaprompts-info-_KYwvcqZ.jpeg",
+      "r2Key": "ai/image/generated/gemini/hand-drawn-isometric-view-bananaprompts-info-_KYwvcqZ.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/hand-drawn-isometric-view-bananaprompts-info-_KYwvcqZ.jpeg"
+    },
+    {
+      "caseId": "example_16",
+      "filename": "reveal-behind-the-scenes-of-photo-creation-bananaprompts-info-Z1lfoQGN.jpeg",
+      "r2Key": "ai/image/generated/gemini/reveal-behind-the-scenes-of-photo-creation-bananaprompts-info-Z1lfoQGN.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/reveal-behind-the-scenes-of-photo-creation-bananaprompts-info-Z1lfoQGN.jpeg"
+    },
+    {
+      "caseId": "example_17",
+      "filename": "facial-analysis-infographic-bananaprompts-info-f-5AXwif.jpeg",
+      "r2Key": "ai/image/generated/gemini/facial-analysis-infographic-bananaprompts-info-f-5AXwif.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/facial-analysis-infographic-bananaprompts-info-f-5AXwif.jpeg"
+    },
+    {
+      "caseId": "example_18",
+      "filename": "historical-newspaper-bananaprompts-info-gsbgKYwP.jpeg",
+      "r2Key": "ai/image/generated/gemini/historical-newspaper-bananaprompts-info-gsbgKYwP.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/historical-newspaper-bananaprompts-info-gsbgKYwP.jpeg"
+    },
+    {
+      "caseId": "example_19",
+      "filename": "character-relationship-chart-bananaprompts-info-W6IGNyOz.jpeg",
+      "r2Key": "ai/image/generated/gemini/character-relationship-chart-bananaprompts-info-W6IGNyOz.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/character-relationship-chart-bananaprompts-info-W6IGNyOz.jpeg"
+    },
+    {
+      "caseId": "example_20",
+      "filename": "otome-game-setting-collection-bananaprompts-info-ncrC1hOS.jpeg",
+      "r2Key": "ai/image/generated/gemini/otome-game-setting-collection-bananaprompts-info-ncrC1hOS.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/otome-game-setting-collection-bananaprompts-info-ncrC1hOS.jpeg"
+    },
+    {
+      "caseId": "example_21",
+      "filename": "character-level-evolution-bananaprompts-info-ggaTg_BK.jpeg",
+      "r2Key": "ai/image/generated/gemini/character-level-evolution-bananaprompts-info-ggaTg_BK.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/character-level-evolution-bananaprompts-info-ggaTg_BK.jpeg"
+    },
+    {
+      "caseId": "example_22",
+      "filename": "recursive-image-bananaprompts-info-t5880q9h.jpeg",
+      "r2Key": "ai/image/generated/gemini/recursive-image-bananaprompts-info-t5880q9h.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/recursive-image-bananaprompts-info-t5880q9h.jpeg"
+    },
+    {
+      "caseId": "example_23",
+      "filename": "multi-character-crossover-comic-bananaprompts-info-5sDfsLnd.jpeg",
+      "r2Key": "ai/image/generated/gemini/multi-character-crossover-comic-bananaprompts-info-5sDfsLnd.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/multi-character-crossover-comic-bananaprompts-info-5sDfsLnd.jpeg"
+    },
+    {
+      "caseId": "example_24",
+      "filename": "figure-garage-kit-bananaprompts-info-l9COUBqJ.jpeg",
+      "r2Key": "ai/image/generated/gemini/figure-garage-kit-bananaprompts-info-l9COUBqJ.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/figure-garage-kit-bananaprompts-info-l9COUBqJ.jpeg"
+    },
+    {
+      "caseId": "example_25",
+      "filename": "celebrity-quote-card-bananaprompts-info-hJWl2baq.jpeg",
+      "r2Key": "ai/image/generated/gemini/celebrity-quote-card-bananaprompts-info-hJWl2baq.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/celebrity-quote-card-bananaprompts-info-hJWl2baq.jpeg"
+    },
+    {
+      "caseId": "example_26",
+      "filename": "qingming-shanghe-tu-style-image-bananaprompts-info-2YYBdhi1.jpeg",
+      "r2Key": "ai/image/generated/gemini/qingming-shanghe-tu-style-image-bananaprompts-info-2YYBdhi1.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/qingming-shanghe-tu-style-image-bananaprompts-info-2YYBdhi1.jpeg"
+    },
+    {
+      "caseId": "example_27",
+      "filename": "movie-storyboard-creation-bananaprompts-info-TCg--PN7.jpeg",
+      "r2Key": "ai/image/generated/gemini/movie-storyboard-creation-bananaprompts-info-TCg--PN7.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/movie-storyboard-creation-bananaprompts-info-TCg--PN7.jpeg"
+    },
+    {
+      "caseId": "example_28",
+      "filename": "blackboard-chalk-drawing-bananaprompts-info-qPjIuu-B.jpeg",
+      "r2Key": "ai/image/generated/gemini/blackboard-chalk-drawing-bananaprompts-info-qPjIuu-B.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/blackboard-chalk-drawing-bananaprompts-info-qPjIuu-B.jpeg"
+    },
+    {
+      "caseId": "example_29",
+      "filename": "miniature-self-portrait-bananaprompts-info-K2EcV0jx.jpeg",
+      "r2Key": "ai/image/generated/gemini/miniature-self-portrait-bananaprompts-info-K2EcV0jx.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/miniature-self-portrait-bananaprompts-info-K2EcV0jx.jpeg"
+    },
+    {
+      "caseId": "example_30",
+      "filename": "generate-biography-from-wikipedia-bananaprompts-info-Nf6SAJGs.jpeg",
+      "r2Key": "ai/image/generated/gemini/generate-biography-from-wikipedia-bananaprompts-info-Nf6SAJGs.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/generate-biography-from-wikipedia-bananaprompts-info-Nf6SAJGs.jpeg"
+    },
+    {
+      "caseId": "example_31",
+      "filename": "stylized-map-bananaprompts-info-XHrXpH0S.jpeg",
+      "r2Key": "ai/image/generated/gemini/stylized-map-bananaprompts-info-XHrXpH0S.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/stylized-map-bananaprompts-info-XHrXpH0S.jpeg"
+    },
+    {
+      "caseId": "case_1",
+      "filename": "illustration-to-figure-bananaprompts-info-tamLeih7.jpeg",
+      "r2Key": "ai/image/generated/gemini/illustration-to-figure-bananaprompts-info-tamLeih7.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/illustration-to-figure-bananaprompts-info-tamLeih7.jpeg"
+    },
+    {
+      "caseId": "case_2",
+      "filename": "generate-ground-view-from-map-arrow-bananaprompts-info-AaH7EUbh.jpeg",
+      "r2Key": "ai/image/generated/gemini/generate-ground-view-from-map-arrow-bananaprompts-info-AaH7EUbh.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/generate-ground-view-from-map-arrow-bananaprompts-info-AaH7EUbh.jpeg"
+    },
+    {
+      "caseId": "case_3",
+      "filename": "eiffel-tower-bananaprompts-info-T1aFoXuk.jpeg",
+      "r2Key": "ai/image/generated/gemini/eiffel-tower-bananaprompts-info-T1aFoXuk.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/eiffel-tower-bananaprompts-info-T1aFoXuk.jpeg"
+    },
+    {
+      "caseId": "case_4",
+      "filename": "extract-3d-buildingsmake-isometric-models-bananaprompts-info-SLOUtK-q.jpeg",
+      "r2Key": "ai/image/generated/gemini/extract-3d-buildingsmake-isometric-models-bananaprompts-info-SLOUtK-q.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/extract-3d-buildingsmake-isometric-models-bananaprompts-info-SLOUtK-q.jpeg"
+    },
+    {
+      "caseId": "case_5",
+      "filename": "photos-of-yourself-in-different-eras-bananaprompts-info-Z6D8xViu.jpeg",
+      "r2Key": "ai/image/generated/gemini/photos-of-yourself-in-different-eras-bananaprompts-info-Z6D8xViu.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/photos-of-yourself-in-different-eras-bananaprompts-info-Z6D8xViu.jpeg"
+    },
+    {
+      "caseId": "case_6",
+      "filename": "multi-reference-image-generation-bananaprompts-info-BcQK_Qh8.jpeg",
+      "r2Key": "ai/image/generated/gemini/multi-reference-image-generation-bananaprompts-info-BcQK_Qh8.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/multi-reference-image-generation-bananaprompts-info-BcQK_Qh8.jpeg"
+    },
+    {
+      "caseId": "case_7",
+      "filename": "automatic-photo-editing-bananaprompts-info-FNJWQulh.jpeg",
+      "r2Key": "ai/image/generated/gemini/automatic-photo-editing-bananaprompts-info-FNJWQulh.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/automatic-photo-editing-bananaprompts-info-FNJWQulh.jpeg"
+    },
+    {
+      "caseId": "case_8",
+      "filename": "hand-drawing-controls-multi-character-poses-bananaprompts-info-QuKhYON0.jpeg",
+      "r2Key": "ai/image/generated/gemini/hand-drawing-controls-multi-character-poses-bananaprompts-info-QuKhYON0.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/hand-drawing-controls-multi-character-poses-bananaprompts-info-QuKhYON0.jpeg"
+    },
+    {
+      "caseId": "case_9",
+      "filename": "cross-view-image-generation-bananaprompts-info-bxzQArTM.jpeg",
+      "r2Key": "ai/image/generated/gemini/cross-view-image-generation-bananaprompts-info-bxzQArTM.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/cross-view-image-generation-bananaprompts-info-bxzQArTM.jpeg"
+    },
+    {
+      "caseId": "case_10",
+      "filename": "uploaded-image-character-bananaprompts-info-CIy-tvwl.jpeg",
+      "r2Key": "ai/image/generated/gemini/uploaded-image-character-bananaprompts-info-CIy-tvwl.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/uploaded-image-character-bananaprompts-info-CIy-tvwl.jpeg"
+    },
+    {
+      "caseId": "case_11",
+      "filename": "girl-cosplaying-illustration-bananaprompts-info-mCdV-Ynj.jpeg",
+      "r2Key": "ai/image/generated/gemini/girl-cosplaying-illustration-bananaprompts-info-mCdV-Ynj.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/girl-cosplaying-illustration-bananaprompts-info-mCdV-Ynj.jpeg"
+    },
+    {
+      "caseId": "case_12",
+      "filename": "generate-character-design-bananaprompts-info-xVDNM4nq.jpeg",
+      "r2Key": "ai/image/generated/gemini/generate-character-design-bananaprompts-info-xVDNM4nq.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/generate-character-design-bananaprompts-info-xVDNM4nq.jpeg"
+    },
+    {
+      "caseId": "case_13",
+      "filename": "character-bananaprompts-info-MJSAROtU.jpeg",
+      "r2Key": "ai/image/generated/gemini/character-bananaprompts-info-MJSAROtU.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/character-bananaprompts-info-MJSAROtU.jpeg"
+    },
+    {
+      "caseId": "case_14",
+      "filename": "article-infographic-bananaprompts-info-DGakKE1o.jpeg",
+      "r2Key": "ai/image/generated/gemini/article-infographic-bananaprompts-info-DGakKE1o.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/article-infographic-bananaprompts-info-DGakKE1o.jpeg"
+    },
+    {
+      "caseId": "case_15",
+      "filename": "change-multiple-hairstyles-bananaprompts-info-9jngXdzd.jpeg",
+      "r2Key": "ai/image/generated/gemini/change-multiple-hairstyles-bananaprompts-info-9jngXdzd.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/change-multiple-hairstyles-bananaprompts-info-9jngXdzd.jpeg"
+    },
+    {
+      "caseId": "case_16",
+      "filename": "model-annotation-explanation-diagram-bananaprompts-info-8atAiuP3.jpeg",
+      "r2Key": "ai/image/generated/gemini/model-annotation-explanation-diagram-bananaprompts-info-8atAiuP3.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/model-annotation-explanation-diagram-bananaprompts-info-8atAiuP3.jpeg"
+    },
+    {
+      "caseId": "case_17",
+      "filename": "custom-marble-sculpture-bananaprompts-info-aOVgSL30.jpeg",
+      "r2Key": "ai/image/generated/gemini/custom-marble-sculpture-bananaprompts-info-aOVgSL30.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/custom-marble-sculpture-bananaprompts-info-aOVgSL30.jpeg"
+    },
+    {
+      "caseId": "case_18",
+      "filename": "cook-based-on-ingredients-bananaprompts-info-savadN9L.jpeg",
+      "r2Key": "ai/image/generated/gemini/cook-based-on-ingredients-bananaprompts-info-savadN9L.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/cook-based-on-ingredients-bananaprompts-info-savadN9L.jpeg"
+    },
+    {
+      "caseId": "case_19",
+      "filename": "math-problem-reasoning-bananaprompts-info-Ooi9MWqe.jpeg",
+      "r2Key": "ai/image/generated/gemini/math-problem-reasoning-bananaprompts-info-Ooi9MWqe.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/math-problem-reasoning-bananaprompts-info-Ooi9MWqe.jpeg"
+    },
+    {
+      "caseId": "case_20",
+      "filename": "uploaded-image-bananaprompts-info-yjT_shlh.jpeg",
+      "r2Key": "ai/image/generated/gemini/uploaded-image-bananaprompts-info-yjT_shlh.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/uploaded-image-bananaprompts-info-yjT_shlh.jpeg"
+    },
+    {
+      "caseId": "case_21",
+      "filename": "person-wearing-outfit-bananaprompts-info-R_L05a62.jpeg",
+      "r2Key": "ai/image/generated/gemini/person-wearing-outfit-bananaprompts-info-R_L05a62.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/person-wearing-outfit-bananaprompts-info-R_L05a62.jpeg"
+    },
+    {
+      "caseId": "case_22",
+      "filename": "persons-clothing-bananaprompts-info-HCKNdkCO.jpeg",
+      "r2Key": "ai/image/generated/gemini/persons-clothing-bananaprompts-info-HCKNdkCO.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/persons-clothing-bananaprompts-info-HCKNdkCO.jpeg"
+    },
+    {
+      "caseId": "case_23",
+      "filename": "multi-view-result-generation-bananaprompts-info-3mw_1Kup.jpeg",
+      "r2Key": "ai/image/generated/gemini/multi-view-result-generation-bananaprompts-info-3mw_1Kup.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/multi-view-result-generation-bananaprompts-info-3mw_1Kup.jpeg"
+    },
+    {
+      "caseId": "case_25",
+      "filename": "character-pose-modification-bananaprompts-info-XgRU8btQ.jpeg",
+      "r2Key": "ai/image/generated/gemini/character-pose-modification-bananaprompts-info-XgRU8btQ.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/character-pose-modification-bananaprompts-info-XgRU8btQ.jpeg"
+    },
+    {
+      "caseId": "case_28",
+      "filename": "knowledge-reasoning-image-generation-bananaprompts-info-LhAgqH0f.jpeg",
+      "r2Key": "ai/image/generated/gemini/knowledge-reasoning-image-generation-bananaprompts-info-LhAgqH0f.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/knowledge-reasoning-image-generation-bananaprompts-info-LhAgqH0f.jpeg"
+    },
+    {
+      "caseId": "case_29",
+      "filename": "image-analysis-bananaprompts-info-SNvxvIxe.jpeg",
+      "r2Key": "ai/image/generated/gemini/image-analysis-bananaprompts-info-SNvxvIxe.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/image-analysis-bananaprompts-info-SNvxvIxe.jpeg"
+    },
+    {
+      "caseId": "case_30",
+      "filename": "explosive-food-bananaprompts-info-G_K7eyxT.jpeg",
+      "r2Key": "ai/image/generated/gemini/explosive-food-bananaprompts-info-G_K7eyxT.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/explosive-food-bananaprompts-info-G_K7eyxT.jpeg"
+    },
+    {
+      "caseId": "case_31",
+      "filename": "superhero-comic-book-strip-bananaprompts-info--W8xpDj1.jpeg",
+      "r2Key": "ai/image/generated/gemini/superhero-comic-book-strip-bananaprompts-info--W8xpDj1.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/superhero-comic-book-strip-bananaprompts-info--W8xpDj1.jpeg"
+    },
+    {
+      "caseId": "case_32",
+      "filename": "action-figure-bananaprompts-info-FHeu3DBq.jpeg",
+      "r2Key": "ai/image/generated/gemini/action-figure-bananaprompts-info-FHeu3DBq.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/action-figure-bananaprompts-info-FHeu3DBq.jpeg"
+    },
+    {
+      "caseId": "case_33",
+      "filename": "map-to-isometric-buildings-bananaprompts-info-FCfI7kEo.jpeg",
+      "r2Key": "ai/image/generated/gemini/map-to-isometric-buildings-bananaprompts-info-FCfI7kEo.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/map-to-isometric-buildings-bananaprompts-info-FCfI7kEo.jpeg"
+    },
+    {
+      "caseId": "case_34",
+      "filename": "character-expression-bananaprompts-info-whO-Y9xU.jpeg",
+      "r2Key": "ai/image/generated/gemini/character-expression-bananaprompts-info-whO-Y9xU.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/character-expression-bananaprompts-info-whO-Y9xU.jpeg"
+    },
+    {
+      "caseId": "case_35",
+      "filename": "illustration-drawing-process-four-panel-bananaprompts-info--jqgYCNa.jpeg",
+      "r2Key": "ai/image/generated/gemini/illustration-drawing-process-four-panel-bananaprompts-info--jqgYCNa.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/illustration-drawing-process-four-panel-bananaprompts-info--jqgYCNa.jpeg"
+    },
+    {
+      "caseId": "case_36",
+      "filename": "makeup-transfer-bananaprompts-info-jgVnGOEh.jpeg",
+      "r2Key": "ai/image/generated/gemini/makeup-transfer-bananaprompts-info-jgVnGOEh.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/makeup-transfer-bananaprompts-info-jgVnGOEh.jpeg"
+    },
+    {
+      "caseId": "case_37",
+      "filename": "makeup-analysis-bananaprompts-info-tyIb7ypI.jpeg",
+      "r2Key": "ai/image/generated/gemini/makeup-analysis-bananaprompts-info-tyIb7ypI.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/makeup-analysis-bananaprompts-info-tyIb7ypI.jpeg"
+    },
+    {
+      "caseId": "case_38",
+      "filename": "google-maps-view-of-middle-earth-bananaprompts-info-6I_LLiLc.jpeg",
+      "r2Key": "ai/image/generated/gemini/google-maps-view-of-middle-earth-bananaprompts-info-6I_LLiLc.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/google-maps-view-of-middle-earth-bananaprompts-info-6I_LLiLc.jpeg"
+    },
+    {
+      "caseId": "case_39",
+      "filename": "typographic-illustration-of-bicycle-scene-bananaprompts-info-LMZGtHDJ.jpeg",
+      "r2Key": "ai/image/generated/gemini/typographic-illustration-of-bicycle-scene-bananaprompts-info-LMZGtHDJ.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/typographic-illustration-of-bicycle-scene-bananaprompts-info-LMZGtHDJ.jpeg"
+    },
+    {
+      "caseId": "case_40",
+      "filename": "multiple-character-poses-generation-bananaprompts-info-HaNaSSxb.jpeg",
+      "r2Key": "ai/image/generated/gemini/multiple-character-poses-generation-bananaprompts-info-HaNaSSxb.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/multiple-character-poses-generation-bananaprompts-info-HaNaSSxb.jpeg"
+    },
+    {
+      "caseId": "case_41",
+      "filename": "product-can-packaging-bananaprompts-info-FH97gxPp.jpeg",
+      "r2Key": "ai/image/generated/gemini/product-can-packaging-bananaprompts-info-FH97gxPp.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/product-can-packaging-bananaprompts-info-FH97gxPp.jpeg"
+    },
+    {
+      "caseId": "case_42",
+      "filename": "frosted-glass-effect-overlay-bananaprompts-info-57mLVAaV.jpeg",
+      "r2Key": "ai/image/generated/gemini/frosted-glass-effect-overlay-bananaprompts-info-57mLVAaV.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/frosted-glass-effect-overlay-bananaprompts-info-57mLVAaV.jpeg"
+    },
+    {
+      "caseId": "case_43",
+      "filename": "chibi-character-bananaprompts-info-bsjO-oVn.jpeg",
+      "r2Key": "ai/image/generated/gemini/chibi-character-bananaprompts-info-bsjO-oVn.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/chibi-character-bananaprompts-info-bsjO-oVn.jpeg"
+    },
+    {
+      "caseId": "case_44",
+      "filename": "character-bananaprompts-info-9D3jD0sC.jpeg",
+      "r2Key": "ai/image/generated/gemini/character-bananaprompts-info-9D3jD0sC.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/character-bananaprompts-info-9D3jD0sC.jpeg"
+    },
+    {
+      "caseId": "case_45",
+      "filename": "lego-minifigure-packaging-box-bananaprompts-info-m9KcO62C.jpeg",
+      "r2Key": "ai/image/generated/gemini/lego-minifigure-packaging-box-bananaprompts-info-m9KcO62C.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/lego-minifigure-packaging-box-bananaprompts-info-m9KcO62C.jpeg"
+    },
+    {
+      "caseId": "case_46",
+      "filename": "person-as-gundam-model-kit-bananaprompts-info-3kPfeQag.jpeg",
+      "r2Key": "ai/image/generated/gemini/person-as-gundam-model-kit-bananaprompts-info-3kPfeQag.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/person-as-gundam-model-kit-bananaprompts-info-3kPfeQag.jpeg"
+    },
+    {
+      "caseId": "case_47",
+      "filename": "hardware-exploded-view-bananaprompts-info-RTTB8V2V.jpeg",
+      "r2Key": "ai/image/generated/gemini/hardware-exploded-view-bananaprompts-info-RTTB8V2V.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/hardware-exploded-view-bananaprompts-info-RTTB8V2V.jpeg"
+    },
+    {
+      "caseId": "case_48",
+      "filename": "food-calorie-annotation-bananaprompts-info-Td4_syl4.jpeg",
+      "r2Key": "ai/image/generated/gemini/food-calorie-annotation-bananaprompts-info-Td4_syl4.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/food-calorie-annotation-bananaprompts-info-Td4_syl4.jpeg"
+    },
+    {
+      "caseId": "case_49",
+      "filename": "extract-subject-and-place-on-transparent-layer-bananaprompts-info-OWvtIHWS.jpeg",
+      "r2Key": "ai/image/generated/gemini/extract-subject-and-place-on-transparent-layer-bananaprompts-info-OWvtIHWS.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/extract-subject-and-place-on-transparent-layer-bananaprompts-info-OWvtIHWS.jpeg"
+    },
+    {
+      "caseId": "case_50",
+      "filename": "outpainting-checkerboard-repair-bananaprompts-info-sycaNbv8.jpeg",
+      "r2Key": "ai/image/generated/gemini/outpainting-checkerboard-repair-bananaprompts-info-sycaNbv8.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/outpainting-checkerboard-repair-bananaprompts-info-sycaNbv8.jpeg"
+    },
+    {
+      "caseId": "case_51",
+      "filename": "turn-old-mapscene-into-modern-looking-photo-bananaprompts-info-WOkwhXSn.jpeg",
+      "r2Key": "ai/image/generated/gemini/turn-old-mapscene-into-modern-looking-photo-bananaprompts-info-WOkwhXSn.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/turn-old-mapscene-into-modern-looking-photo-bananaprompts-info-WOkwhXSn.jpeg"
+    },
+    {
+      "caseId": "case_52",
+      "filename": "fashion-moodboard-collage-bananaprompts-info-mad3snYQ.jpeg",
+      "r2Key": "ai/image/generated/gemini/fashion-moodboard-collage-bananaprompts-info-mad3snYQ.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/fashion-moodboard-collage-bananaprompts-info-mad3snYQ.jpeg"
+    },
+    {
+      "caseId": "case_53",
+      "filename": "cute-premium-product-photo-bananaprompts-info-ZHBhBr7p.jpeg",
+      "r2Key": "ai/image/generated/gemini/cute-premium-product-photo-bananaprompts-info-ZHBhBr7p.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/cute-premium-product-photo-bananaprompts-info-ZHBhBr7p.jpeg"
+    },
+    {
+      "caseId": "case_54",
+      "filename": "place-an-anime-statue-in-reality-bananaprompts-info-eXLXYkWp.jpeg",
+      "r2Key": "ai/image/generated/gemini/place-an-anime-statue-in-reality-bananaprompts-info-eXLXYkWp.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/place-an-anime-statue-in-reality-bananaprompts-info-eXLXYkWp.jpeg"
+    },
+    {
+      "caseId": "case_57",
+      "filename": "manga-style-conversion-bananaprompts-info-AbckDq8L.jpeg",
+      "r2Key": "ai/image/generated/gemini/manga-style-conversion-bananaprompts-info-AbckDq8L.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/manga-style-conversion-bananaprompts-info-AbckDq8L.jpeg"
+    },
+    {
+      "caseId": "case_58",
+      "filename": "isometric-holographic-wireframe-bananaprompts-info-TvADwKrH.jpeg",
+      "r2Key": "ai/image/generated/gemini/isometric-holographic-wireframe-bananaprompts-info-TvADwKrH.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/isometric-holographic-wireframe-bananaprompts-info-TvADwKrH.jpeg"
+    },
+    {
+      "caseId": "case_59",
+      "filename": "minecraft-style-scene-bananaprompts-info-9eMJMBqZ.jpeg",
+      "r2Key": "ai/image/generated/gemini/minecraft-style-scene-bananaprompts-info-9eMJMBqZ.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/minecraft-style-scene-bananaprompts-info-9eMJMBqZ.jpeg"
+    },
+    {
+      "caseId": "case_60",
+      "filename": "3d-logo-render-bananaprompts-info-hEdWc4-r.jpeg",
+      "r2Key": "ai/image/generated/gemini/3d-logo-render-bananaprompts-info-hEdWc4-r.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/3d-logo-render-bananaprompts-info-hEdWc4-r.jpeg"
+    },
+    {
+      "caseId": "case_61",
+      "filename": "residential-floor-plan-3d-rendering-bananaprompts-info-j5jk__s_.jpeg",
+      "r2Key": "ai/image/generated/gemini/residential-floor-plan-3d-rendering-bananaprompts-info-j5jk__s_.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/residential-floor-plan-3d-rendering-bananaprompts-info-j5jk__s_.jpeg"
+    },
+    {
+      "caseId": "case_62",
+      "filename": "reset-camera-parameters-bananaprompts-info-w7hUUVv3.jpeg",
+      "r2Key": "ai/image/generated/gemini/reset-camera-parameters-bananaprompts-info-w7hUUVv3.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/reset-camera-parameters-bananaprompts-info-w7hUUVv3.jpeg"
+    },
+    {
+      "caseId": "case_63",
+      "filename": "make-an-id-photo-bananaprompts-info-rle4Y5Uz.jpeg",
+      "r2Key": "ai/image/generated/gemini/make-an-id-photo-bananaprompts-info-rle4Y5Uz.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/make-an-id-photo-bananaprompts-info-rle4Y5Uz.jpeg"
+    },
+    {
+      "caseId": "case_64",
+      "filename": "scene-a6-folding-card-bananaprompts-info-Ew9BNmJf.jpeg",
+      "r2Key": "ai/image/generated/gemini/scene-a6-folding-card-bananaprompts-info-Ew9BNmJf.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/scene-a6-folding-card-bananaprompts-info-Ew9BNmJf.jpeg"
+    },
+    {
+      "caseId": "case_65",
+      "filename": "design-a-chess-set-bananaprompts-info-BUouuXcP.jpeg",
+      "r2Key": "ai/image/generated/gemini/design-a-chess-set-bananaprompts-info-BUouuXcP.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/design-a-chess-set-bananaprompts-info-BUouuXcP.jpeg"
+    },
+    {
+      "caseId": "case_66",
+      "filename": "split-era-room-photo-bananaprompts-info-uzNGRQnj.jpeg",
+      "r2Key": "ai/image/generated/gemini/split-era-room-photo-bananaprompts-info-uzNGRQnj.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/split-era-room-photo-bananaprompts-info-uzNGRQnj.jpeg"
+    },
+    {
+      "caseId": "case_67",
+      "filename": "jewelry-collection-bananaprompts-info-0XVDLhvY.jpeg",
+      "r2Key": "ai/image/generated/gemini/jewelry-collection-bananaprompts-info-0XVDLhvY.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/jewelry-collection-bananaprompts-info-0XVDLhvY.jpeg"
+    },
+    {
+      "caseId": "case_68",
+      "filename": "merchandise-design-bananaprompts-info-rzln4FsG.jpeg",
+      "r2Key": "ai/image/generated/gemini/merchandise-design-bananaprompts-info-rzln4FsG.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/merchandise-design-bananaprompts-info-rzln4FsG.jpeg"
+    },
+    {
+      "caseId": "example_69",
+      "filename": "virtual-holographic-anime-girl-projection-bananaprompts-info-peEMB9VW.jpeg",
+      "r2Key": "ai/image/generated/gemini/virtual-holographic-anime-girl-projection-bananaprompts-info-peEMB9VW.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/virtual-holographic-anime-girl-projection-bananaprompts-info-peEMB9VW.jpeg"
+    },
+    {
+      "caseId": "example_70",
+      "filename": "giant-figure-scaffolding-bananaprompts-info-KSA4XJVy.jpeg",
+      "r2Key": "ai/image/generated/gemini/giant-figure-scaffolding-bananaprompts-info-KSA4XJVy.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/giant-figure-scaffolding-bananaprompts-info-KSA4XJVy.jpeg"
+    },
+    {
+      "caseId": "example_71",
+      "filename": "building-extraction-from-remote-sensing-image-bananaprompts-info-uEe9-YfG.jpeg",
+      "r2Key": "ai/image/generated/gemini/building-extraction-from-remote-sensing-image-bananaprompts-info-uEe9-YfG.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/building-extraction-from-remote-sensing-image-bananaprompts-info-uEe9-YfG.jpeg"
+    },
+    {
+      "caseId": "example_72",
+      "filename": "component-extraction-bananaprompts-info-4lvyKOOI.jpeg",
+      "r2Key": "ai/image/generated/gemini/component-extraction-bananaprompts-info-4lvyKOOI.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/component-extraction-bananaprompts-info-4lvyKOOI.jpeg"
+    },
+    {
+      "caseId": "example_73",
+      "filename": "remove-burger-ingredients-bananaprompts-info-Z9JjhkKX.jpeg",
+      "r2Key": "ai/image/generated/gemini/remove-burger-ingredients-bananaprompts-info-Z9JjhkKX.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/remove-burger-ingredients-bananaprompts-info-Z9JjhkKX.jpeg"
+    },
+    {
+      "caseId": "example_74",
+      "filename": "uploaded-image-bananaprompts-info-tfPVX6WW.jpeg",
+      "r2Key": "ai/image/generated/gemini/uploaded-image-bananaprompts-info-tfPVX6WW.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/uploaded-image-bananaprompts-info-tfPVX6WW.jpeg"
+    },
+    {
+      "caseId": "example_75",
+      "filename": "generate-miniature-scene-from-image-bananaprompts-info-LC2FHZz5.jpeg",
+      "r2Key": "ai/image/generated/gemini/generate-miniature-scene-from-image-bananaprompts-info-LC2FHZz5.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/generate-miniature-scene-from-image-bananaprompts-info-LC2FHZz5.jpeg"
+    },
+    {
+      "caseId": "example_76",
+      "filename": "educational-comic-bananaprompts-info-iy1n8s7A.jpeg",
+      "r2Key": "ai/image/generated/gemini/educational-comic-bananaprompts-info-iy1n8s7A.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/educational-comic-bananaprompts-info-iy1n8s7A.jpeg"
+    },
+    {
+      "caseId": "example_77",
+      "filename": "emoji-stickers-bananaprompts-info-Vrz7IiRO.jpeg",
+      "r2Key": "ai/image/generated/gemini/emoji-stickers-bananaprompts-info-Vrz7IiRO.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/emoji-stickers-bananaprompts-info-Vrz7IiRO.jpeg"
+    },
+    {
+      "caseId": "example_78",
+      "filename": "restore-partially-eaten-food-bananaprompts-info-j7BYECUB.jpeg",
+      "r2Key": "ai/image/generated/gemini/restore-partially-eaten-food-bananaprompts-info-j7BYECUB.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/restore-partially-eaten-food-bananaprompts-info-j7BYECUB.jpeg"
+    },
+    {
+      "caseId": "example_79",
+      "filename": "fighting-game-interface-creation-bananaprompts-info-lkhlfFqA.jpeg",
+      "r2Key": "ai/image/generated/gemini/fighting-game-interface-creation-bananaprompts-info-lkhlfFqA.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/fighting-game-interface-creation-bananaprompts-info-lkhlfFqA.jpeg"
+    },
+    {
+      "caseId": "example_80",
+      "filename": "model-cross-section-bananaprompts-info-G6zpyOkP.jpeg",
+      "r2Key": "ai/image/generated/gemini/model-cross-section-bananaprompts-info-G6zpyOkP.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/model-cross-section-bananaprompts-info-G6zpyOkP.jpeg"
+    },
+    {
+      "caseId": "example_81",
+      "filename": "pirate-wanted-poster-bananaprompts-info-wie1BDkM.jpeg",
+      "r2Key": "ai/image/generated/gemini/pirate-wanted-poster-bananaprompts-info-wie1BDkM.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/pirate-wanted-poster-bananaprompts-info-wie1BDkM.jpeg"
+    },
+    {
+      "caseId": "example_82",
+      "filename": "merchandise-display-shelf-bananaprompts-info-TF5vS0z_.jpeg",
+      "r2Key": "ai/image/generated/gemini/merchandise-display-shelf-bananaprompts-info-TF5vS0z_.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/merchandise-display-shelf-bananaprompts-info-TF5vS0z_.jpeg"
+    },
+    {
+      "caseId": "example_83",
+      "filename": "comic-convention-booth-bananaprompts-info-rC6o9pin.jpeg",
+      "r2Key": "ai/image/generated/gemini/comic-convention-booth-bananaprompts-info-rC6o9pin.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/comic-convention-booth-bananaprompts-info-rC6o9pin.jpeg"
+    },
+    {
+      "caseId": "example_84",
+      "filename": "line-art-to-doodle-drawing-bananaprompts-info-QR1AtCgy.jpeg",
+      "r2Key": "ai/image/generated/gemini/line-art-to-doodle-drawing-bananaprompts-info-QR1AtCgy.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/line-art-to-doodle-drawing-bananaprompts-info-QR1AtCgy.jpeg"
+    },
+    {
+      "caseId": "example_85",
+      "filename": "contemporary-art-exhibition-space-bananaprompts-info-bbCM8pwK.jpeg",
+      "r2Key": "ai/image/generated/gemini/contemporary-art-exhibition-space-bananaprompts-info-bbCM8pwK.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/contemporary-art-exhibition-space-bananaprompts-info-bbCM8pwK.jpeg"
+    },
+    {
+      "caseId": "example_86",
+      "filename": "dark-gothic-tarot-card-featuring-a-person-bananaprompts-info-VyUd3F-Q.jpeg",
+      "r2Key": "ai/image/generated/gemini/dark-gothic-tarot-card-featuring-a-person-bananaprompts-info-VyUd3F-Q.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/dark-gothic-tarot-card-featuring-a-person-bananaprompts-info-VyUd3F-Q.jpeg"
+    },
+    {
+      "caseId": "example_87",
+      "filename": "black-and-white-evolution-chart-bananaprompts-info-jmpF2vIE.jpeg",
+      "r2Key": "ai/image/generated/gemini/black-and-white-evolution-chart-bananaprompts-info-jmpF2vIE.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/black-and-white-evolution-chart-bananaprompts-info-jmpF2vIE.jpeg"
+    },
+    {
+      "caseId": "example_88",
+      "filename": "glass-bottle-souvenir-bananaprompts-info-D3Po_I2S.jpeg",
+      "r2Key": "ai/image/generated/gemini/glass-bottle-souvenir-bananaprompts-info-D3Po_I2S.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/glass-bottle-souvenir-bananaprompts-info-D3Po_I2S.jpeg"
+    },
+    {
+      "caseId": "example_89",
+      "filename": "miniature-store-bananaprompts-info-LD1sZ-3J.jpeg",
+      "r2Key": "ai/image/generated/gemini/miniature-store-bananaprompts-info-LD1sZ-3J.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/miniature-store-bananaprompts-info-LD1sZ-3J.jpeg"
+    },
+    {
+      "caseId": "example_90",
+      "filename": "fictional-vtuber-streaming-screen-bananaprompts-info-ZEAUpynG.jpeg",
+      "r2Key": "ai/image/generated/gemini/fictional-vtuber-streaming-screen-bananaprompts-info-ZEAUpynG.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/fictional-vtuber-streaming-screen-bananaprompts-info-ZEAUpynG.jpeg"
+    },
+    {
+      "caseId": "example_91",
+      "filename": "train-station-movie-poster-bananaprompts-info-OuQCcyUo.jpeg",
+      "r2Key": "ai/image/generated/gemini/train-station-movie-poster-bananaprompts-info-OuQCcyUo.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/train-station-movie-poster-bananaprompts-info-OuQCcyUo.jpeg"
+    },
+    {
+      "caseId": "example_92",
+      "filename": "movie-lounge-bananaprompts-info-vu4UPrtR.jpeg",
+      "r2Key": "ai/image/generated/gemini/movie-lounge-bananaprompts-info-vu4UPrtR.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/movie-lounge-bananaprompts-info-vu4UPrtR.jpeg"
+    },
+    {
+      "caseId": "example_93",
+      "filename": "slice-object-with-cartoon-explosion-effect-bananaprompts-info-KXP6rzo5.jpeg",
+      "r2Key": "ai/image/generated/gemini/slice-object-with-cartoon-explosion-effect-bananaprompts-info-KXP6rzo5.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/slice-object-with-cartoon-explosion-effect-bananaprompts-info-KXP6rzo5.jpeg"
+    },
+    {
+      "caseId": "example_94",
+      "filename": "character-themed-train-bananaprompts-info-7sCHH71e.jpeg",
+      "r2Key": "ai/image/generated/gemini/character-themed-train-bananaprompts-info-7sCHH71e.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/character-themed-train-bananaprompts-info-7sCHH71e.jpeg"
+    },
+    {
+      "caseId": "example_95",
+      "filename": "photorealistic-theme-park-bananaprompts-info-fm555fpP.jpeg",
+      "r2Key": "ai/image/generated/gemini/photorealistic-theme-park-bananaprompts-info-fm555fpP.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/photorealistic-theme-park-bananaprompts-info-fm555fpP.jpeg"
+    },
+    {
+      "caseId": "example_96",
+      "filename": "fictional-constellations-bananaprompts-info-VUP4zjFi.jpeg",
+      "r2Key": "ai/image/generated/gemini/fictional-constellations-bananaprompts-info-VUP4zjFi.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/fictional-constellations-bananaprompts-info-VUP4zjFi.jpeg"
+    },
+    {
+      "caseId": "example_97",
+      "filename": "image-as-iphone-lock-screen-wallpaper-bananaprompts-info-4U7YFhRz.jpeg",
+      "r2Key": "ai/image/generated/gemini/image-as-iphone-lock-screen-wallpaper-bananaprompts-info-4U7YFhRz.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/image-as-iphone-lock-screen-wallpaper-bananaprompts-info-4U7YFhRz.jpeg"
+    },
+    {
+      "caseId": "example_98",
+      "filename": "movie-poster-generation-bananaprompts-info-7vdz2rPF.jpeg",
+      "r2Key": "ai/image/generated/gemini/movie-poster-generation-bananaprompts-info-7vdz2rPF.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/movie-poster-generation-bananaprompts-info-7vdz2rPF.jpeg"
+    },
+    {
+      "caseId": "example_99",
+      "filename": "turn-x-account-into-floppy-disk-bananaprompts-info-RnDRapq5.jpeg",
+      "r2Key": "ai/image/generated/gemini/turn-x-account-into-floppy-disk-bananaprompts-info-RnDRapq5.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/turn-x-account-into-floppy-disk-bananaprompts-info-RnDRapq5.jpeg"
+    },
+    {
+      "caseId": "example_100",
+      "filename": "uploaded-images-object-bananaprompts-info-i8eDQNzv.jpeg",
+      "r2Key": "ai/image/generated/gemini/uploaded-images-object-bananaprompts-info-i8eDQNzv.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/uploaded-images-object-bananaprompts-info-i8eDQNzv.jpeg"
+    },
+    {
+      "caseId": "example_101",
+      "filename": "fisheye-peephole-illustration-bananaprompts-info-v2ybNV84.jpeg",
+      "r2Key": "ai/image/generated/gemini/fisheye-peephole-illustration-bananaprompts-info-v2ybNV84.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/fisheye-peephole-illustration-bananaprompts-info-v2ybNV84.jpeg"
+    },
+    {
+      "caseId": "example_102",
+      "filename": "superhero-interior-design-bananaprompts-info-vWarx1tl.jpeg",
+      "r2Key": "ai/image/generated/gemini/superhero-interior-design-bananaprompts-info-vWarx1tl.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/superhero-interior-design-bananaprompts-info-vWarx1tl.jpeg"
+    },
+    {
+      "caseId": "example_103",
+      "filename": "custom-claw-machine-bananaprompts-info-byOa_Lw8.jpeg",
+      "r2Key": "ai/image/generated/gemini/custom-claw-machine-bananaprompts-info-byOa_Lw8.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/custom-claw-machine-bananaprompts-info-byOa_Lw8.jpeg"
+    },
+    {
+      "caseId": "example_104",
+      "filename": "typography-logo-design-bananaprompts-info-OHtVQ5o3.jpeg",
+      "r2Key": "ai/image/generated/gemini/typography-logo-design-bananaprompts-info-OHtVQ5o3.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/typography-logo-design-bananaprompts-info-OHtVQ5o3.jpeg"
+    },
+    {
+      "caseId": "example_105",
+      "filename": "rpg-character-status-ui-bananaprompts-info-iQmaIJIc.jpeg",
+      "r2Key": "ai/image/generated/gemini/rpg-character-status-ui-bananaprompts-info-iQmaIJIc.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/rpg-character-status-ui-bananaprompts-info-iQmaIJIc.jpeg"
+    },
+    {
+      "caseId": "example_106",
+      "filename": "explanatory-diagram-bananaprompts-info-dxC4_2re.jpeg",
+      "r2Key": "ai/image/generated/gemini/explanatory-diagram-bananaprompts-info-dxC4_2re.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/explanatory-diagram-bananaprompts-info-dxC4_2re.jpeg"
+    },
+    {
+      "caseId": "example_107",
+      "filename": "drawing-on-a-pen-display-bananaprompts-info-zFjM6Ha5.jpeg",
+      "r2Key": "ai/image/generated/gemini/drawing-on-a-pen-display-bananaprompts-info-zFjM6Ha5.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/drawing-on-a-pen-display-bananaprompts-info-zFjM6Ha5.jpeg"
+    },
+    {
+      "caseId": "example_108",
+      "filename": "create-line-stamp-image-bananaprompts-info-doBW0c_W.jpeg",
+      "r2Key": "ai/image/generated/gemini/create-line-stamp-image-bananaprompts-info-doBW0c_W.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/create-line-stamp-image-bananaprompts-info-doBW0c_W.jpeg"
+    },
+    {
+      "caseId": "example_109",
+      "filename": "therapy-for-childhood-self-bananaprompts-info-g4zVazLp.jpeg",
+      "r2Key": "ai/image/generated/gemini/therapy-for-childhood-self-bananaprompts-info-g4zVazLp.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/therapy-for-childhood-self-bananaprompts-info-g4zVazLp.jpeg"
+    },
+    {
+      "caseId": "example_110",
+      "filename": "pixar-style-portrait-bananaprompts-info-SZbWJYBV.jpeg",
+      "r2Key": "ai/image/generated/gemini/pixar-style-portrait-bananaprompts-info-SZbWJYBV.jpeg",
+      "fullUrl": "https://r2.bananaprompts.info/ai/image/generated/gemini/pixar-style-portrait-bananaprompts-info-SZbWJYBV.jpeg"
+    }
+  ]
+}

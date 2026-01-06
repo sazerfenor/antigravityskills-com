@@ -1,0 +1,25 @@
+# 🚀 Static Asset Caching Headers
+# These tell Cloudflare CDN to cache assets aggressively
+
+# Next.js build assets (hashed, safe to cache forever)
+/_next/static/*
+  Cache-Control: public,max-age=31536000,immutable
+
+# Local images folder
+/imgs/*
+  Cache-Control: public,max-age=31536000,immutable
+
+# Cursor SVG files
+/cursors/*
+  Cache-Control: public,max-age=31536000,immutable
+
+# Favicon and manifest
+/favicon.ico
+  Cache-Control: public,max-age=86400
+
+/site.webmanifest
+  Cache-Control: public,max-age=86400
+
+# Fonts (if any in public)
+/fonts/*
+  Cache-Control: public,max-age=31536000,immutable

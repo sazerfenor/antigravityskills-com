@@ -1,0 +1,23 @@
+{
+  "templateName": "nanobananaultra",
+  "templateVersion": "1.0.0",
+  "coreVersion": "1.0.0",
+  "schemaVersion": "28",
+  "lastUpdated": "2026-01-05",
+  "description": "Nano Banana Ultra - AI Image Generator",
+  "repository": "https://github.com/nanobananaultra/nanobananaultra",
+  "documentation": {
+    "setup": "参见 TEMPLATE_SETUP.md",
+    "brandConfig": "src/config/brand.ts",
+    "envExample": ".env.example"
+  },
+  "requiredSteps": [
+    "1. 复制 .env.example 为 .env.development 并填写配置",
+    "2. 修改 src/config/brand.ts 设置品牌信息",
+    "3. 替换 public/ 目录下的 logo 和图标",
+    "4. 运行 pnpm install && pnpm db:push",
+    "5. 运行 pnpm rbac:init 初始化权限",
+    "6. 运行 pnpm dev 启动开发服务器",
+    "7. 访问 /admin/settings 配置 AI、支付、存储等 API Key"
+  ]
+}

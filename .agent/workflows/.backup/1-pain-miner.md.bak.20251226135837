@@ -1,0 +1,150 @@
+---
+description: 深潜挖掘 B2B 痛点 - 多维数据交叉验证商业机会 (Reddit/Trends/Upwork)
+---
+
+# Pain Miner Orchestrator
+
+协调 7 个专属 Agent 完成痛点挖掘流程。
+
+> **架构**: 多 Agent 协调系统 (v7.0)
+> **v7.0 变更**: 拆分验证阶段，新增 `trends-validator` + `demand-validator`
+
+---
+
+## 🌐 Language Protocol
+
+| 场景 | 语言 |
+|:--|:--|
+| 执行报告 | **中文** (强制) |
+| 数据库字段值 | 英文 |
+
+---
+
+## Agent 清单
+
+| Agent | 职责 | 文件 |
+|-------|------|------|
+| domain-explorer | 领域探索、Subreddit 发现 | [domain-explorer.md](pain-miner/domain-explorer.md) |
+| subreddit-miner | 社区深挖、帖子收集 | [subreddit-miner.md](pain-miner/subreddit-miner.md) |
+| post-analyzer | 帖子分析、痛点提取 | [post-analyzer.md](pain-miner/post-analyzer.md) |
+| keyword-extractor | 关键词提取、SEO 策略 | [keyword-extractor.md](pain-miner/keyword-extractor.md) |
+| **trends-validator** | Google Trends 验证 | [trends-validator.md](pain-miner/trends-validator.md) |
+| **demand-validator** | Upwork 付费需求验证 | [demand-validator.md](pain-miner/demand-validator.md) |
+| gold-curator | 最终验证、金矿管理 | [gold-curator.md](pain-miner/gold-curator.md) |
+| report-generator | 报告生成与验证 | [report-generator.md](pain-miner/report-generator.md) |
+
+---
+
+## 数据文件
+
+| 文件 | 路径 |
+|------|------|
+| 数据库 | `pain-miner-dashboard/pain-miner.db` |
+| 报告 | `pain-miner-dashboard/docs/reports/` |
+
+---
+
+## 执行 SLA
+
+> ⛔ **MANDATORY**: 每个 Agent 必须达成最低标准。
+
+| Agent | 最低执行标准 |
+|-------|------------|
+| Domain Explorer | 至少搜索 2 个抱怨词 |
+| Subreddit Miner | 处理所有 new Subreddit |
+| Post Analyzer | MIN(5, 未分析总数) |
+| Keyword Extractor | 提取 2+ 竞品词 |
+| Trends Validator | 处理所有 new/pending 关键词 |
+| Demand Validator | 处理所有 trends_validated 关键词 |
+| Gold Curator | 处理所有 verified 关键词 |
+
+---
+
+## 执行流程
+
+// turbo-all
+
+### Step 1: 检查数据库状态
+
+```sql
+SELECT status, COUNT(*) FROM subreddits GROUP BY status;
+SELECT status, COUNT(*) FROM keywords GROUP BY status;
+SELECT COUNT(*) FROM leads WHERE analyzed = 0;
+SELECT COUNT(*) FROM gold_leads;
+```
+
+输出:
+```markdown
+📊 **DB Status**:
+- Subreddits: X new / Y verified
+- Keywords: X new / Y verified
+- Leads: X unanalyzed
+- Gold Leads: X total
+```
+
+### Step 2: 执行 Agent 流水线
+
+> ⚡ **自动执行**: 按顺序执行全部 Agent。
+
+```mermaid
+flowchart LR
+    A1[domain-explorer] --> A2[subreddit-miner]
+    A2 --> A3[post-analyzer]
+    A3 --> A4[keyword-extractor]
+    A4 --> A5[trends-validator]
+    A4 --> A6[demand-validator]
+    A5 --> A7[gold-curator]
+    A6 --> A7
+    A7 --> A8[report-generator]
+```
+
+**执行步骤**:
+1. **Domain Explorer** - 执行 Step 1-6
+2. **Subreddit Miner** - 执行 Step 1-6
+3. **Post Analyzer** - 执行 Step 1-5，输出 TOP 5 痛点
+4. **Keyword Extractor** - 执行 Step 1-4
+5. **Trends Validator** - 执行 Step 1-6 (可与 6 并行)
+6. **Demand Validator** - 执行 Step 1-5 (可与 5 并行)
+7. **Gold Curator** - 执行 Step 1-6
+8. **Report Generator** - 执行 Step 1-6
+
+### Step 3: 生成报告
+
+调用 `report-generator.md`：
+- 验证数据一致性
+- 验证 GATE 保留
+- 生成最终报告
+
+---
+
+## 协调规则
+
+> [!IMPORTANT]
+> **单一职责**: Orchestrator 只负责调度，不执行任何具体的数据操作。
+
+- ❌ 不直接写入数据库 (只读)
+- ❌ 不执行 web 搜索
+- ✅ 调用 Agent (执行其步骤)
+- ✅ 汇总并输出结果
+
+---
+
+## 循环保护常量
+
+| Agent | 常量 | 值 |
+|-------|------|-----|
+| Subreddit Miner | MAX_SUBREDDITS | 10 |
+| Post Analyzer | MAX_LEADS | 20 |
+| Keyword Extractor | MAX_KEYWORDS_PER_LEAD | 10 |
+| Trends Validator | MAX_KEYWORDS | 15 |
+| Gold Curator | MAX_GOLD_LEADS | 20 |
+
+---
+
+## 禁止词列表
+
+报告中不得出现：`simulated`, `demo`, `模拟`, `placeholder`, `TODO`
+
+---
+
+**Version**: 7.0 | **Type**: Orchestrator | **Updated**: 2025-12-26

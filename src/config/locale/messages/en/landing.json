@@ -1,0 +1,572 @@
+{
+  "_comment": "=== CENTRALIZED SECTION VISIBILITY CONTROL ===",
+  "section_visibility": {
+    "_comment": "Control which sections are displayed on the landing page. Set to false to hide a section.",
+    "show_header": true,
+    "show_hero": true,
+    "show_hero_buttons": false,
+    "show_hero_avatars": false,
+    "show_hero_award": false,
+    "show_hero_tip": false,
+    "show_generator": true,
+    "show_logos": true,
+    "show_benefits": false,
+    "show_features": true,
+    "show_stats": true,
+    "show_gallery": true,
+    "show_testimonials": true,
+    "show_faq": true,
+    "show_cta": true,
+    "show_subscribe": true,
+    "show_footer": true,
+    "show_core_modules": true
+  },
+  "header": {
+    "id": "header",
+    "brand": {
+      "title": "Nano Banana Ultra",
+      "logo": {
+        "src": "/logo.png",
+        "alt": "Nano Banana Ultra - AI Image Generator powered by Banana Pro"
+      },
+      "url": "/"
+    },
+    "nav": {
+      "items": [
+        {
+          "title": "Generator",
+          "url": "/ai-image-generator",
+          "icon": "Zap"
+        },
+        {
+          "title": "Explore",
+          "url": "/prompts",
+          "icon": "Telescope"
+        },
+        {
+          "title": "Pricing",
+          "url": "/pricing",
+          "icon": "CreditCard"
+        },
+        {
+          "title": "Changelog",
+          "url": "/changelog",
+          "icon": "Megaphone"
+        }
+      ]
+    },
+    "buttons": [],
+    "user_nav": {
+      "show_name": true,
+      "show_credits": true,
+      "show_sign_out": true,
+      "items": [
+        {
+          "title": "Billing",
+          "url": "/settings/billing",
+          "icon": "CreditCard"
+        },
+        {
+          "title": "Activity",
+          "url": "/activity",
+          "icon": "Activity"
+        }
+      ]
+    },
+    "show_sign": true,
+    "show_theme": false,
+    "show_locale": true
+  },
+  "hero": {
+    "id": "hero",
+    "title": "Nano Banana Ultra: Type Less, Create More",
+    "highlight_text": "Ultra",
+    "description": "Enter a few words. <strong>Nano Banana Ultra</strong> fills in the professional logic. Just click to generate stable, high-fidelity art that matches your vision.",
+    "announcement": {
+      "badge": "✨ New",
+      "title": "V2.0 Logic Matrix is Live!",
+      "url": "/ai-image-generator"
+    },
+    "tip": "🎁 Try it now: Type 'a cat' and get a pro prompt",
+    "buttons": [
+      {
+        "title": "Start Creating",
+        "icon": "Zap",
+        "url": "/ai-image-generator",
+        "target": "_self",
+        "variant": "default"
+      },
+      {
+        "title": "Explore Gallery",
+        "icon": "Telescope",
+        "url": "/prompts",
+        "target": "_self",
+        "variant": "outline"
+      }
+    ],
+    "input": {
+      "placeholder": "Describe your idea...",
+      "button": "Generate"
+    },
+    "show_buttons": false,
+    "show_avatars": false,
+    "avatars_tip": "Creators are generating stunning AI art every day",
+    "show_award": false,
+    "show_tip": false
+  },
+  "logos": {
+    "title": "Trusted by creators using the world's top AI models:",
+    "items": [
+      {
+        "title": "Midjourney",
+        "url": "https://www.midjourney.com",
+        "size": "h-20 w-20",
+        "image": {
+          "src": "/imgs/logos/midjourney.svg",
+          "alt": "Midjourney AI image generator logo - Nano Banana compatible"
+        }
+      },
+      {
+        "title": "DALL-E 3",
+        "url": "https://openai.com/dall-e-3",
+        "size": "h-15 w-15",
+        "image": {
+          "src": "/imgs/logos/openai.svg",
+          "alt": "OpenAI DALL-E 3 logo - Nano Banana compatible"
+        }
+      },
+      {
+        "title": "Stable Diffusion",
+        "url": "https://stability.ai",
+        "size": "h-15 w-15",
+        "featured": true,
+        "image": {
+          "src": "/imgs/logos/stability.svg",
+          "alt": "Stability AI Stable Diffusion logo - Nano Banana compatible"
+        }
+      },
+      {
+        "title": "Flux",
+        "url": "https://blackforestlabs.ai",
+        "size": "h-15 w-15",
+        "image": {
+          "src": "/imgs/logos/flux.svg",
+          "alt": "Black Forest Labs Flux logo - Nano Banana compatible"
+        }
+      },
+      {
+        "title": "Leonardo",
+        "url": "https://leonardo.ai",
+        "size": "h-15 w-15",
+        "image": {
+          "src": "/imgs/logos/leonardo.svg",
+          "alt": "Leonardo AI logo - Nano Banana compatible"
+        }
+      }
+    ]
+  },
+  "benefits": {
+    "id": "benefits",
+    "title": "Create Prompts That Make People Say WOW",
+    "label": "Results",
+    "description": "Stop wasting credits on bad generations. Our optimizer ensures your prompt is perfect before you hit generate.",
+    "items": [
+      {
+        "title": "Instant Expert Tuning",
+        "description": "Don't know technical camera settings? Our AI inserts professional lighting, composition, and lens terms into your prompt.",
+        "icon": "RiNextjsFill",
+        "image": {
+          "src": "/imgs/features/user-billing.png",
+          "alt": "benefits"
+        }
+      },
+      {
+        "title": "Smart Style Transfer",
+        "description": "Like a style? One click applies that exact visual vibe to your text prompt. No complex engineering required.",
+        "icon": "RiClapperboardAiLine",
+        "image": {
+          "src": "/imgs/features/admin-settings.png",
+          "alt": "benefits"
+        }
+      },
+      {
+        "title": "Maximize Your Token Value",
+        "description": "Optimized prompts mean fewer failed generations on your paid AI tools. Get the best out of every model.",
+        "icon": "RiCodeFill",
+        "image": {
+          "src": "/imgs/features/user-billing.png",
+          "alt": "benefits"
+        }
+      }
+    ]
+  },
+  "generator": {
+    "title": "AI Prompt Generator: Short Input, Pro Output",
+    "description": "Type a simple idea. Nano Banana adds the professional logic."
+  },
+  "core_modules": {
+    "id": "core-modules",
+    "title": "How Nano Banana Ultra Works",
+    "description": "Simple input. Smart logic. Stunning output."
+  },
+  "features": {
+    "id": "features",
+    "header_badge": "Powered by Nano Banana™",
+    "header_title": "Logic Declassified",
+    "header_highlight": "Declassified",
+    "header_description": "See how the <strong>Intent Mining Engine</strong> deconstructs your raw input into a structured Logic Matrix ready for <span class=\"text-white\">any AI image generator</span>.",
+    "title": "Pro Features, Zero Complexity",
+    "description": "You provide the idea. Nano Banana handles the complexity.",
+    "items": [
+      {
+        "title": "Mind-Reading Logic",
+        "description": "Don't know camera settings? Don't care. Nano Banana infers the perfect lighting and style from your short idea.",
+        "icon": "RiNextjsFill"
+      },
+      {
+        "title": "Stable & Predictable",
+        "description": "No more random lottery. Get consistent, high-fidelity results every time you generate.",
+        "icon": "RiKey2Fill"
+      },
+      {
+        "title": "Prompt Polish",
+        "description": "Advanced grammar correction and keyword enhancement for better AI understanding.",
+        "icon": "RiDatabase2Line"
+      },
+      {
+        "title": "Visual Debugging",
+        "description": "Understand why a prompt works. Our tool breaks down the visual elements.",
+        "icon": "RiBarChart2Line"
+      },
+      {
+        "title": "Model-Specific Optimization",
+        "description": "Automatically formats parameters like --v, --ar, and --stylize.",
+        "icon": "RiCloudy2Fill"
+      },
+      {
+        "title": "Community & Support",
+        "description": "Join thousands of creators. Get help, share results, discover tips.",
+        "icon": "RiRobot2Line"
+      }
+    ]
+  },
+  "stats": {
+    "id": "stats",
+    "title": "Trusted by Creators Worldwide",
+    "description": "Simple prompts. Stunning results.",
+    "items": [
+      {
+        "title": "10+",
+        "description": "AI Models Supported"
+      },
+      {
+        "title": "500+",
+        "description": "Prompt Templates"
+      },
+      {
+        "title": "99%",
+        "description": "User Satisfaction"
+      }
+    ]
+  },
+  "gallery": {
+    "id": "gallery",
+    "title": "Explore the Nano Banana Ultra Library",
+    "description": "Every image started with a simple idea. Copy the prompt and create your own.",
+    "buttons": [
+      {
+        "text": "Explore trending prompts",
+        "url": "/prompts",
+        "icon": "ArrowRight"
+      }
+    ]
+  },
+  "testimonials": {
+    "id": "testimonials",
+    "title": "Community Feedback",
+    "description": "Top creators powering their workflow with Nano Banana.",
+    "items": [
+      {
+        "name": "AdMaster Pro",
+        "role": "Commercial Visuals",
+        "quote": "My client needed 'high-conversion food photography' instantly. Nano Banana's Intent Mining nailed the lighting logic without me guessing keywords. It's not just a generator; it's a creative director.",
+        "rating": 5,
+        "image": {
+          "src": "https://r2.bananaprompts.info/avatars/1765554543494-85b048ce-9e83-48a5-a91c-c4dc3bcedda9.webp",
+          "alt": "AdMaster Pro avatar"
+        }
+      },
+      {
+        "name": "Sarah Vogue",
+        "role": "Virtual Fashion Blogger",
+        "quote": "Achieving ultimate photorealism in digital fashion used to be hit-or-miss. With Nano Banana Ultra, the fabric textures and skin tones are consistent across every shot. Essential for my virtual runway.",
+        "rating": 5,
+        "image": {
+          "src": "https://r2.bananaprompts.info/avatars/1765552329130-162a3b57-949b-4a78-8e84-578e60067ae0.webp",
+          "alt": "Sarah Vogue avatar"
+        }
+      },
+      {
+        "name": "Dr. Linus Graph",
+        "role": "Data Viz Specialist",
+        "quote": "I turn complex data into clear infographics. Nano Banana understands abstract logical structures better than any other model. It respects the hierarchy of information in my prompts perfectly.",
+        "rating": 5,
+        "image": {
+          "src": "https://r2.bananaprompts.info/avatars/1765551824866-b8b09b1d-77e3-404e-9e34-64a990b113e0.webp",
+          "alt": "Dr. Linus Graph avatar"
+        }
+      },
+      {
+        "name": "Render Foundry",
+        "role": "3D Product Studio",
+        "quote": "For commercial assets, 'close enough' isn't enough. The Logic Engine gives us precise control over studio lighting and material properties. It's automated our entire product mockup workflow.",
+        "rating": 5,
+        "image": {
+          "src": "https://r2.bananaprompts.info/avatars/1765554024600-5f5d7771-780a-48b7-a524-1d6738c49240.webp",
+          "alt": "Render Foundry avatar"
+        }
+      },
+      {
+        "name": "void_walker",
+        "role": "Digital Surrealist",
+        "quote": "Exploring the boundaries of reality requires a tool that understands dream logic. Nano Banana Ultra allows me to mine deep subconscious intent and translate it into visual surrealism.",
+        "rating": 5,
+        "image": {
+          "src": "https://r2.bananaprompts.info/avatars/1765554777125-5d545f98-5993-4b7a-8074-996c92402b27.webp",
+          "alt": "void_walker avatar"
+        }
+      }
+    ]
+  },
+  "faq": {
+    "id": "faq",
+    "title": "FAQ",
+    "description": "Have another question? Contact us on Discord or by email.",
+    "tip": "Can't find what you're looking for? <a href='mailto:support@nanobananaultra.com' class='text-primary font-medium hover:underline'>Contact our support team</a>",
+    "items": [
+      {
+        "question": "What is Nano Banana Ultra?",
+        "answer": "Nano Banana Ultra is an independent optimization platform that helps you get Ultra-level results from Nano Banana AI models. Enter a few words, and our Intent Mining engine expands it into a professional prompt—then generates stunning images using Nano Banana or Nano Banana Pro. Note: Nano Banana Ultra is not affiliated with, endorsed by, or sponsored by Google or its Nano Banana models."
+      },
+      {
+        "question": "Is Nano Banana Ultra the same as Nano Banana Pro?",
+        "answer": "No. Nano Banana and Nano Banana Pro are AI image generation models developed by Google. Nano Banana Ultra is our independent optimization platform that helps you craft better prompts and get Ultra-level quality from these models."
+      },
+      {
+        "question": "Is Nano Banana Ultra free to use?",
+        "answer": "Yes! You can generate prompts for free without signing up—up to 3 times per day. Register to get free credits for image generation. Need more? Check our pricing page for credit packages."
+      },
+      {
+        "question": "Can I generate images on Nano Banana Ultra?",
+        "answer": "Yes. Our Live Logic Lab lets you generate both the optimized prompt and an instant image preview using Nano Banana models. You can also copy the prompt to use with other AI image tools."
+      },
+      {
+        "question": "Do I need prompt engineering skills?",
+        "answer": "Not at all. Just enter a simple idea like 'portrait' or 'sunset beach'. Our Intent Mining Engine analyzes your intent and automatically adds professional details—lighting, composition, style, and more."
+      },
+      {
+        "question": "What's the difference between Banana and Banana Pro modes?",
+        "answer": "These refer to the AI models we use for generation. Banana mode uses the lightweight Nano Banana model for quick, coherent results—perfect for everyday use. Banana Pro mode uses the advanced Nano Banana Pro model for deep semantic expansion with higher fidelity output."
+      },
+      {
+        "question": "How does Smart Refinement work?",
+        "answer": "Smart Refinement lets you fine-tune your prompts with a single click. Adjust lighting, camera angle, style, and other parameters without typing—just select from the options and watch your prompt evolve."
+      },
+      {
+        "question": "Can I use prompts from the community gallery?",
+        "answer": "Absolutely. Browse our gallery, find a style you love, and click 'Remix' to use it as your starting point. Every creation includes the full prompt—copy it, customize it, and make it your own."
+      },
+      {
+        "question": "Can I use the prompts commercially?",
+        "answer": "Yes. You own the prompts you create on Nano Banana Ultra and can use them for any purpose. For images generated on our platform, please review our terms of service for commercial use details."
+      }
+    ]
+  },
+  "ai_image_generator_faq": {
+    "id": "ai_image_generator_faq",
+    "title": "AI Image Generator FAQ",
+    "description": "Common questions about our AI image generation tool.",
+    "items": [
+      {
+        "question": "What is Nano Banana Ultra AI Image Generator?",
+        "answer": "Nano Banana Ultra is a cutting-edge web tool that allows anyone to create professional images using artificial intelligence. It transforms text descriptions into visuals and can even edit existing photos using advanced models like Gemini and FLUX."
+      },
+      {
+        "question": "Is Nano Banana Ultra AI Image Generator free?",
+        "answer": "Yes, we offer free daily credits for all users. You can generate high-quality AI images using Gemini and other models without any subscription."
+      },
+      {
+        "question": "Can I use generated images for commercial purposes?",
+        "answer": "Yes! Images generated on Nano Banana Ultra come with a commercial usage license, meaning you own the rights to your creations for marketing, products, or creative projects."
+      },
+      {
+        "question": "How does the Image-to-Image feature work?",
+        "answer": "Image-to-Image allows you to upload an existing photo as a reference. The AI then uses your text prompts to modify the image's style, composition, or details while preserving the core structure of your upload."
+      },
+      {
+        "question": "Which AI models are supported?",
+        "answer": "We support multiple state-of-the-art models including Google Gemini, OpenAI GPT-4o, and FLUX.1 for diverse artistic styles, from photorealistic to anime."
+      },
+      {
+        "question": "How do I write effective prompts?",
+        "answer": "Be specific about subject, style, lighting, and mood. You can also use our built-in 'AI Prompt Optimizer' to automatically enhance your simple ideas into professional prompts."
+      },
+      {
+        "question": "What formats are the images downloaded in?",
+        "answer": "Images are provided in high-resolution PNG or JPG formats, optimized for both web use and printing."
+      }
+    ]
+  },
+  "cta": {
+    "id": "cta",
+    "title": "Ready to Create? Just Type a Few Words.",
+    "description": "Enter a short idea. Nano Banana handles the rest. Start free today.",
+    "buttons": [
+      {
+        "title": "Start Creating",
+        "url": "/ai-image-generator",
+        "target": "_self",
+        "icon": "Zap"
+      },
+      {
+        "title": "Explore Gallery",
+        "url": "/prompts",
+        "target": "_self",
+        "variant": "outline",
+        "icon": "Telescope"
+      }
+    ]
+  },
+  "subscribe": {
+    "id": "subscribe",
+    "title": "Get Exclusive Banana Pro Tips Weekly",
+    "description": "Subscribe for exclusive Banana Pro prompts, tips, and early access to new features.",
+    "submit": {
+      "input": {
+        "placeholder": "Enter your email"
+      },
+      "button": {
+        "title": "Subscribe"
+      },
+      "action": "/api/subscribe"
+    },
+    "show_subscribe": false
+  },
+  "footer": {
+    "id": "footer",
+    "brand": {
+      "title": "Nano Banana Ultra",
+      "description": "Turn simple ideas into professional AI art. The ultimate AI prompt engineering tool for stunning visual creation on any platform.",
+      "logo": {
+        "src": "/logo.png",
+        "alt": "Nano Banana Ultra - AI Image Generator powered by Banana Pro"
+      },
+      "url": "/"
+    },
+    "copyright": "© 2026 Nano Banana Ultra. All rights reserved.",
+    "disclaimer": "Nano Banana Ultra is an independent platform and is not affiliated with, endorsed by, or sponsored by Google LLC. Nano Banana and Nano Banana Pro are trademarks of Google LLC.",
+    "nav": {
+      "items": [
+        {
+          "title": "Product",
+          "children": [
+            {
+              "title": "Generator",
+              "url": "/ai-image-generator",
+              "target": "_self"
+            },
+            {
+              "title": "Gallery",
+              "url": "/prompts",
+              "target": "_self"
+            },
+            {
+              "title": "Pricing",
+              "url": "/pricing",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "Resources",
+          "children": [
+            {
+              "title": "Blog",
+              "url": "/blog",
+              "target": "_self"
+            },
+            {
+              "title": "Docs",
+              "url": "/docs",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "Legal",
+          "children": [
+            {
+              "title": "Privacy Policy",
+              "url": "/privacy-policy",
+              "target": "_self"
+            },
+            {
+              "title": "Terms of Service",
+              "url": "/terms-of-service",
+              "target": "_self"
+            },
+            {
+              "title": "Refund Policy",
+              "url": "/refund-policy",
+              "target": "_self"
+            },
+            {
+              "title": "Cookie Policy",
+              "url": "/cookie-policy",
+              "target": "_self"
+            },
+            {
+              "title": "Community Guidelines",
+              "url": "/community-guidelines",
+              "target": "_self"
+            },
+            {
+              "title": "DMCA Policy",
+              "url": "/dmca-policy",
+              "target": "_self"
+            }
+          ]
+        }
+      ]
+    },
+    "social": {
+      "items": [
+        {
+          "title": "Email",
+          "icon": "Mail",
+          "url": "mailto:support@nanobananaultra.com",
+          "target": "_self"
+        }
+      ]
+    },
+    "agreement": {
+      "items": [
+        {
+          "title": "Privacy Policy",
+          "url": "/privacy-policy"
+        },
+        {
+          "title": "Terms of Service",
+          "url": "/terms-of-service"
+        },
+        {
+          "title": "Refund Policy",
+          "url": "/refund-policy"
+        }
+      ]
+    },
+    "show_theme": false,
+    "show_locale": true,
+    "show_social": false
+  }
+}

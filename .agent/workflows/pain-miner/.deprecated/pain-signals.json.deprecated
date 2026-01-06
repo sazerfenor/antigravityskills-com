@@ -1,0 +1,67 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Pain Signal Patterns",
+    "description": "三类高价值语义特征，用于 post-analyzer.md 的痛点识别",
+    "version": "1.0",
+    "pain_patterns": {
+        "frustration": {
+            "description": "挫折表达 - 直接指向现有解决方案的缺陷",
+            "keywords": [
+                "struggling with",
+                "hate",
+                "nightmare",
+                "waste of time",
+                "broken",
+                "terrible",
+                "worst",
+                "frustrated",
+                "annoying",
+                "painful",
+                "losing my mind",
+                "driving me crazy"
+            ],
+            "weight": 0.8
+        },
+        "alternative_seeking": {
+            "description": "替代方案寻求 - 揭示竞争对手弱点和价格敏感度",
+            "keywords": [
+                "alternative to",
+                "too expensive",
+                "switch from",
+                "looking for something like",
+                "replacement for",
+                "cheaper than",
+                "free version of",
+                "open source alternative",
+                "better than",
+                "instead of"
+            ],
+            "weight": 0.9
+        },
+        "feature_gap": {
+            "description": "功能缺口 - 最直接的需求声明",
+            "keywords": [
+                "I wish there was",
+                "Why isn't there",
+                "If only there was",
+                "Would pay for",
+                "Need a tool that",
+                "Does anyone know a tool for",
+                "Looking for a way to",
+                "Is there any app",
+                "Would happily pay"
+            ],
+            "weight": 1.0
+        }
+    },
+    "extraction_rules": {
+        "min_keyword_matches": 1,
+        "context_window": 50,
+        "priority_order": [
+            "feature_gap",
+            "alternative_seeking",
+            "frustration"
+        ],
+        "case_insensitive": true
+    }
+}

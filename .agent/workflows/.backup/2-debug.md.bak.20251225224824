@@ -1,0 +1,192 @@
+---
+description: 智能调试工作流 - 错误分类、自动修复、系统化调试
+---
+
+# Debug Workflow
+
+智能诊断和修复各类错误，根据错误类型自动选择最合适的调试策略。
+
+> **推荐模型**: Gemini (快速诊断) / Opus 4.5 Thinking (复杂问题)
+> **请务必全程使用中文回答。**
+
+---
+
+## 📚 Agent 与 Skill 引用
+
+### Agents (8 个)
+
+| Agent | 文件路径 | 触发场景 |
+|-------|---------|---------|
+| **auto-error-resolver** | [auto-error-resolver.md](debug/auto-error-resolver.md) | TypeScript 编译错误 (`tsc`, IDE 红线) |
+| **frontend-error-fixer** | [frontend-error-fixer.md](debug/frontend-error-fixer.md) | 浏览器/UI 错误 (控制台, 渲染问题) |
+| **auth-route-debugger** | [auth-route-debugger.md](debug/auth-route-debugger.md) | 认证/路由错误 (401, 403, 404) |
+| **error-detective** | [error-detective.md](debug/error-detective.md) | 日志分析/分布式系统/跨服务关联 |
+| **debugger** | [debugger.md](debug/debugger.md) | **默认**: 所有其他类型 |
+| **debugging-strategies** | [debugging-strategies.md](debug/debugging-strategies.md) | 系统化调试方法论 (间歇性Bug/性能问题) |
+| **error-handling-patterns** | [error-handling-patterns.md](debug/error-handling-patterns.md) | 错误处理模式 (Result Type, Circuit Breaker) |
+| **error-tracking** | [error-tracking.md](debug/error-tracking.md) | Sentry v8 集成与监控 |
+
+---
+
+## 执行步骤
+
+// turbo-all
+
+### Step 0: 错误分类
+
+首先确定错误类型：
+
+| 错误特征 | 分类 | 使用 Agent |
+|---------|------|-----------|
+| `tsc` 报错、IDE 红线、`TS\d+` 错误码 | TypeScript 编译 | `auto-error-resolver` |
+| 浏览器控制台报错、渲染异常、CSS 问题 | UI/前端运行时 | `frontend-error-fixer` |
+| 401 Unauthorized, 403 Forbidden, 路由 404 | 认证/路由 | `auth-route-debugger` |
+| 日志分析、分布式追踪、跨服务错误 | 分布式系统 | `error-detective` |
+| API 4xx/5xx、数据库错误、测试失败、逻辑错误 | **其他** | `debugger` |
+
+### Step 1: 加载对应 Agent
+
+根据 Step 0 的分类，调用对应 Agent：
+
+- TypeScript 编译错误 → Call /auto-error-resolver
+- 浏览器/UI 错误 → Call /frontend-error-fixer
+- 认证/路由错误 → Call /auth-route-debugger
+- 其他类型 → Call /debugger
+
+### Step 2: 执行诊断
+
+**通用诊断流程**:
+
+1. **捕获错误信息**
+   - 错误消息和堆栈跟踪
+   - 重现步骤
+   - 环境信息
+
+2. **定位问题**
+   ```bash
+   # 查看最近修改
+   git diff --name-only HEAD~3
+   
+   # 搜索错误关键词
+   grep -rn "{错误关键词}" src/
+   ```
+
+3. **形成假设**
+   - 最近变更了什么？
+   - 工作环境和故障环境有什么不同？
+   - 可能的失败点在哪里？
+
+4. **测试假设**
+   - 二分法缩小范围
+   - 添加策略性日志
+   - 隔离组件测试
+
+### Step 3: 实施修复
+
+- 最小化修改，只修相关代码
+- 保留现有功能
+- 添加必要的错误处理
+
+### Step 4: 验证修复
+
+```bash
+# TypeScript 错误
+npx tsc --noEmit
+
+# 测试
+npm test
+
+# 构建
+npm run build
+```
+
+---
+
+## 复杂问题处理
+
+若 Step 2-4 未能解决问题，调用专门 Agent：
+
+### 使用 `debugging-strategies` Agent
+
+Call /debugging-strategies
+
+适用于：
+- 间歇性 Bug
+- 性能问题
+- 生产环境专属问题
+- 需要 Git Bisect 的回归问题
+
+### 使用 `error-handling-patterns` Agent
+
+Call /error-handling-patterns
+
+适用于：
+- 需要重构错误处理逻辑
+- 实现 Circuit Breaker
+- 添加重试机制
+
+### 使用 `error-tracking` Agent
+
+Call /error-tracking
+
+适用于：
+- 配置 Sentry 监控
+- 需要追踪生产环境错误
+- 添加性能监控
+
+---
+
+## 输出格式
+
+```markdown
+# 🔧 调试报告
+
+**错误类型**: {TypeScript/UI/认证/其他}
+**使用 Agent**: {agent-name}
+**诊断日期**: {日期}
+
+## 问题摘要
+
+- **错误消息**: `{error message}`
+- **位置**: `{file}` L{line}
+- **重现步骤**: (如适用)
+
+## 根因分析
+
+{详细说明问题的根本原因}
+
+**证据**:
+- {支持诊断的证据 1}
+- {支持诊断的证据 2}
+
+## 修复方案
+
+```{language}
+// ❌ 问题代码
+{bad_code}
+
+// ✅ 修复后
+{good_code}
+```
+
+## 验证结果
+
+- [ ] TypeScript 编译通过
+- [ ] 测试通过
+- [ ] 构建成功
+
+## 预防建议
+
+{如何避免类似问题再次发生}
+```
+
+---
+
+## 相关文件
+
+- Agent 目录：`.agent/workflows/debug/`
+- Skill 目录：`.agent/doc/skills/`
+
+---
+
+**Version**: 1.0 | **Created**: 2025-12-21

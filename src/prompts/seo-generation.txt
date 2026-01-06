@@ -1,0 +1,90 @@
+3.  **FAQ Content:** MUST focus on the **Technical Details** (Visuals/Tech) found in the prompt.
+
+# Phase 0: Subject Extraction (Smart Cleaning)
+* **Case A (User provided Subject):** Use "{{subject}}" strictly. **Convert to Title Case** (e.g. "Realistic 3D Figurine").
+* **Case B (Subject is EMPTY):** You MUST extract the main visual subject from the prompt.
+    * ⚠️ **CRITICAL CLEANING:** IGNORE text inside brackets `[...]` or `(...)` (e.g., "foto enviada em anexo", "insert photo"). Look for the actual object/scene.
+    * **Format:** Convert extracted subject to **Title Case**.
+
+# Phase 1: Dynamic Headers (Subject-Centric & Localized)
+Generate H2 headers in the **Detected Language**.
+* **about:** "Overview/About..." + {{subject}}
+* **breakdown:** "Key Elements/Breakdown..." + {{subject}}
+* **analysis:** "Visual Analysis/Style..." + {{subject}}
+* **faq:** "FAQ/Mastering..." + {{subject}}
+
+# Phase 2: FAQ Generation (Context-Aware / Technical)
+Generate 3 specific questions in the **Detected Language**.
+* **Rule:** Ask about **Technique** (Lighting, Material, Composition) found in the prompt. Do not force the subject keyword if it sounds robotic.
+
+# Phase 3: Tagging (Strict Whitelist - English Only)
+* **Language:** ALWAYS English (even if prompt is non-English).
+* **Categories:** Style, Tech/Engine, Material/Light ONLY.
+* **STRICT BAN:**
+    * ❌ NO Adjectives (e.g., Ultra-Realistic, Vibrant, Best).
+    * ❌ NO Resolution (e.g., 4K, 8K).
+    * ❌ NO Generic terms (Photography, Art, Image).
+    * ❌ NO Model Names.
+    * ❌ NO Subject Repetition.
+
+# Phase 4: Expert Commentary (V11.0 - Conversion Booster)
+Generate professional insights in the **Detected Language**:
+
+**whyItWorks** (2-3 sentences):
+* Analyze the technical strengths of this prompt
+* Focus on: composition techniques, lighting choices, material combinations
+* Example: "This prompt excels because 'backlighting' + 'translucent material' creates realistic depth."
+
+**optimizationTips** (2-3 sentences):
+* Identify 1-2 potential failure points and solutions
+* Be specific and actionable
+* Example: "For sharper details, increase CFG scale to 15. If hands distort, add 'malformed hands' to negative prompt."
+
+**modelAdvantage** (1-2 sentences):
+* Emphasize why {{model}} excels at this style
+* Create exclusivity and FOMO
+* Example: "{{model}} is optimized for subsurface scattering - other models may render this as opaque."
+
+# Output Format (JSON)
+{
+  "detectedLanguage": "The language code (e.g., 'pt-BR', 'en').",
+
+  "subject": "The Core Subject (Title Case). If input was empty, return the EXTRACTED cleaned subject.",
+  
+  "seoTitle": "Formula (in Detected Language): [Adjective] {{subject}} Generator - [Context/Style]. CRITICAL CHECK: If {{subject}} already starts with an adjective, do NOT add a redundant one.",
+  
+  "seoDescription": "Natural description in Detected Language. Include '{{subject}}' naturally.",
+  
+  "seoKeywords": "comma-separated, 5-8 LSI keywords in Detected Language.",
+  
+  "seoSlugKeywords": "kebab-case-english: Translate {{subject}} to English + 1-2 modifiers. (e.g., 'sports-bike-portrait').",
+  
+  "contentIntro": "Intro in Detected Language about this {{subject}} prompt...",
+  
+  "promptBreakdown": "One concise sentence listing core elements in Detected Language.",
+  
+  "imageAlt": "Natural description in Detected Language: [Subject] + [Style]. No 'Image of'.",
+
+  "dynamicHeaders": {
+      "about": "H2 in Detected Language containing '{{subject}}'", 
+      "breakdown": "H2 in Detected Language containing '{{subject}}'",
+      "analysis": "H2 in Detected Language containing '{{subject}}'",
+      "faq": "H2 in Detected Language containing '{{subject}}'"
+  },
+
+  "faqItems": [
+      {
+        "question": "Technical Question in Detected Language?", 
+        "answer": "Answer in Detected Language."
+      }
+  ],
+
+  "visualTags": ["Tag1 (English)", "Tag2 (English)", "Tag3 (English)"],
+  "useCases": ["Usage 1 (Detected Lang)", "Usage 2 (Detected Lang)"],
+  
+  "expertCommentary": {
+    "whyItWorks": "Technical explanation in Detected Language (2-3 sentences). Why is this prompt effective?",
+    "optimizationTips": "Practical advice in Detected Language (2-3 sentences). Potential issues and solutions.",
+    "modelAdvantage": "Why {{model}} excels at this style (1-2 sentences in Detected Language). Create exclusivity."
+  }
+}

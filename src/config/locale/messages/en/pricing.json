@@ -1,0 +1,392 @@
+{
+  "metadata": {
+    "title": "Nano Banana Pro Pricing | Buy Credits for Google's Nano Banana AI Art",
+    "description": "Get affordable Nano Banana Pro credits starting at $9. Unlock advanced prompt optimization for Google Gemini Nano & Photoshop workflows. Fast generation, no expiry.",
+    "keywords": "nano banana pro, nano banana ai, google nano banana, gemini nano banana, nano banana photoshop, nano banana prompt generator, buy nano banana credits"
+  },
+  "pricing": {
+    "id": "pricing",
+    "sr_only_title": "Nano Banana Pro Pricing & Credit Packs",
+    "title": "Get Nano Banana Pro Credits for Premium AI Art",
+    "description": "Unlock the full power of Google's Nano Banana AI. Choose credits that never expire, or subscribe for maximum savings.",
+    "groups": [
+      {
+        "name": "credit-packs",
+        "title": "Pay as you go",
+        "description": "No subscription, no strings attached"
+      },
+      {
+        "name": "monthly",
+        "title": "Monthly"
+      },
+      {
+        "name": "yearly",
+        "title": "Yearly",
+        "is_featured": true,
+        "label": "Best Value"
+      },
+      {
+        "name": "team",
+        "title": "Team Plans"
+      }
+    ],
+    "items": [
+      {
+        "title": "Trial",
+        "description": "Try Nano Banana AI",
+        "features": [
+          "150 Flexible Credits",
+          "~15 images OR 150 optimizations",
+          "Mix & match freely",
+          "Never expires"
+        ],
+        "interval": "one-time",
+        "amount": 900,
+        "currency": "USD",
+        "price": "$9",
+        "original_price": "",
+        "unit": "",
+        "is_featured": false,
+        "tip": "Test Google Nano Banana quality. No auto-renew.",
+        "button": {
+          "title": "Buy Credits",
+          "url": "/sign-up?plan=trial",
+          "icon": "RiFlashlightFill"
+        },
+        "product_id": "pack-trial",
+        "product_name": "Trial Pack",
+        "credits": 150,
+        "valid_days": -1,
+        "group": "credit-packs"
+      },
+      {
+        "title": "Starter",
+        "description": "For Banana Pro",
+        "features": [
+          "1,000 Flexible Credits",
+          "~100 images OR 1,000 optimizations",
+          "Mix & match freely",
+          "Priority support included"
+        ],
+        "interval": "one-time",
+        "amount": 3700,
+        "currency": "USD",
+        "price": "$37",
+        "original_price": "",
+        "unit": "",
+        "is_featured": false,
+        "tip": "Perfect for mastering Nano Banana tutorials.",
+        "button": {
+          "title": "Buy Credits",
+          "url": "/sign-up?plan=starter",
+          "icon": "RiFlashlightFill"
+        },
+        "product_id": "pack-starter",
+        "product_name": "Starter Pack",
+        "credits": 1000,
+        "valid_days": -1,
+        "group": "credit-packs"
+      },
+      {
+        "title": "Growth",
+        "description": "Creator's Choice",
+        "features": [
+          "2,700 Flexible Credits",
+          "~270 images OR 2,700 optimizations",
+          "Mix & match freely",
+          "Priority support included"
+        ],
+        "interval": "one-time",
+        "amount": 9700,
+        "currency": "USD",
+        "price": "$97",
+        "original_price": "",
+        "unit": "",
+        "is_featured": true,
+        "tip": "Stock up under $100.",
+        "button": {
+          "title": "Buy Credits",
+          "url": "/sign-up?plan=growth",
+          "icon": "RiFlashlightFill"
+        },
+        "product_id": "pack-growth",
+        "product_name": "Growth Pack",
+        "credits": 2700,
+        "valid_days": -1,
+        "group": "credit-packs"
+      },
+      {
+        "title": "Pro Pack",
+        "description": "Nano Banana Pro Power",
+        "features": [
+          "7,000 Flexible Credits",
+          "~700 images OR 7,000 optimizations",
+          "Mix & match freely",
+          "Priority support included"
+        ],
+        "interval": "one-time",
+        "amount": 19700,
+        "currency": "USD",
+        "price": "$197",
+        "original_price": "",
+        "unit": "",
+        "is_featured": false,
+        "tip": "Ideal for Photoshop & Architecture workflows.",
+        "button": {
+          "title": "Buy Credits",
+          "url": "/sign-up?plan=pro-pack",
+          "icon": "RiFlashlightFill"
+        },
+        "product_id": "pack-pro",
+        "product_name": "Pro Pack",
+        "credits": 7000,
+        "valid_days": -1,
+        "group": "credit-packs"
+      },
+      {
+        "title": "Studio",
+        "description": "Bulk Savings",
+        "features": [
+          "40,000 Flexible Credits",
+          "~4,000 images OR 40,000 optimizations",
+          "Mix & match freely",
+          "Dedicated support · 52% savings"
+        ],
+        "interval": "one-time",
+        "amount": 99700,
+        "currency": "USD",
+        "price": "$997",
+        "original_price": "",
+        "unit": "",
+        "is_featured": false,
+        "tip": "🔥 Save 52% instantly.",
+        "button": {
+          "title": "Buy Credits",
+          "url": "/sign-up?plan=studio",
+          "icon": "RiFlashlightFill"
+        },
+        "product_id": "pack-studio",
+        "product_name": "Studio Pack",
+        "credits": 40000,
+        "valid_days": -1,
+        "group": "credit-packs"
+      },
+      {
+        "title": "Basic",
+        "description": "Lite - Dip your toes in",
+        "features": [
+          "1,200 Flexible Credits/month",
+          "~120 images OR 1,200 optimizations",
+          "Mix & match freely",
+          "Cancel anytime"
+        ],
+        "interval": "month",
+        "amount": 2700,
+        "currency": "USD",
+        "price": "$27",
+        "original_price": "",
+        "unit": "/ month",
+        "is_featured": false,
+        "tip": "Cancel anytime.",
+        "button": {
+          "title": "Subscribe",
+          "url": "/sign-up?plan=basic-monthly",
+          "icon": "RiFlashlightFill"
+        },
+        "product_id": "basic-monthly",
+        "product_name": "Basic Monthly",
+        "credits": 1200,
+        "valid_days": 30,
+        "group": "monthly",
+        "plan_name": "Basic"
+      },
+      {
+        "title": "Pro",
+        "description": "Most Popular",
+        "label": "Popular",
+        "features": [
+          "4,000 Flexible Credits/month",
+          "~400 images OR 4,000 optimizations",
+          "Mix & match freely",
+          "Priority support included"
+        ],
+        "interval": "month",
+        "amount": 4700,
+        "currency": "USD",
+        "price": "$47",
+        "original_price": "",
+        "unit": "/ month",
+        "is_featured": true,
+        "tip": "Enough to ship your product.",
+        "button": {
+          "title": "Subscribe",
+          "url": "/sign-up?plan=pro-monthly",
+          "icon": "RiFlashlightFill"
+        },
+        "product_id": "pro-monthly",
+        "product_name": "Pro Monthly",
+        "credits": 4000,
+        "valid_days": 30,
+        "group": "monthly",
+        "plan_name": "Pro"
+      },
+      {
+        "title": "Basic",
+        "description": "Smart Saver",
+        "features": [
+          "12,000 Flexible Credits/year",
+          "~1,200 images OR 12,000 optimizations",
+          "Mix & match freely",
+          "4 months free equivalent"
+        ],
+        "interval": "year",
+        "amount": 19700,
+        "currency": "USD",
+        "price": "$197",
+        "original_price": "",
+        "unit": "/ year",
+        "equivalent_monthly": "$16/mo",
+        "is_featured": false,
+        "tip": "Get 4 months free equivalent.",
+        "button": {
+          "title": "Subscribe Yearly",
+          "url": "/sign-up?plan=basic-yearly",
+          "icon": "RiFlashlightFill"
+        },
+        "product_id": "basic-yearly",
+        "product_name": "Basic Yearly",
+        "credits": 12000,
+        "valid_days": 365,
+        "group": "yearly",
+        "plan_name": "Basic"
+      },
+      {
+        "title": "Pro",
+        "description": "Best Value",
+        "label": "🔥 Best Value",
+        "features": [
+          "48,000 Flexible Credits/year",
+          "~4,800 images OR 48,000 optimizations",
+          "Mix & match freely",
+          "⚡ Lock in $29/mo forever"
+        ],
+        "interval": "year",
+        "amount": 34700,
+        "currency": "USD",
+        "price": "$347",
+        "original_price": "$497",
+        "unit": "/ year",
+        "equivalent_monthly": "$29/mo",
+        "is_featured": true,
+        "tip": "⚡ Launch Special: Lock in the $29/mo rate forever.",
+        "button": {
+          "title": "Subscribe Yearly",
+          "url": "/sign-up?plan=pro-yearly",
+          "icon": "RiFlashlightFill"
+        },
+        "product_id": "pro-yearly",
+        "product_name": "Pro Yearly",
+        "credits": 48000,
+        "valid_days": 365,
+        "group": "yearly",
+        "plan_name": "Pro"
+      },
+      {
+        "title": "Power",
+        "description": "Pro Studio",
+        "features": [
+          "200,000 Flexible Credits/year",
+          "~20,000 images OR 200K optimizations",
+          "Mix & match freely",
+          "Dedicated support · Commercial license"
+        ],
+        "interval": "year",
+        "amount": 99700,
+        "currency": "USD",
+        "price": "$997",
+        "original_price": "",
+        "unit": "/ year",
+        "equivalent_monthly": "$83/mo",
+        "is_featured": false,
+        "tip": "Maximum output, minimum cost.",
+        "button": {
+          "title": "Subscribe Yearly",
+          "url": "/sign-up?plan=power-yearly",
+          "icon": "RiFlashlightFill"
+        },
+        "product_id": "power-yearly",
+        "product_name": "Power Yearly",
+        "credits": 200000,
+        "valid_days": 365,
+        "group": "yearly",
+        "plan_name": "Power"
+      },
+      {
+        "title": "Team Pro",
+        "description": "Department Ready",
+        "label": "🔥 Ultra Value",
+        "features": [
+          "500,000 Flexible Credits/year",
+          "~50,000 images OR 500K optimizations",
+          "10 team seats included",
+          "Centralized billing & collab tools"
+        ],
+        "interval": "year",
+        "amount": 299700,
+        "currency": "USD",
+        "price": "$2,997",
+        "original_price": "",
+        "unit": "/ year",
+        "is_featured": false,
+        "tip": "10 Seats, Centralized Billing, Priority Support",
+        "button": {
+          "title": "Contact Sales",
+          "url": "/contact?plan=team-pro",
+          "icon": "RiFlashlightFill"
+        },
+        "product_id": "team-pro-yearly",
+        "product_name": "Team Pro Yearly",
+        "credits": 500000,
+        "valid_days": 365,
+        "group": "team",
+        "plan_name": "Team Pro"
+      },
+      {
+        "title": "Team Max",
+        "description": "Enterprise Scale",
+        "features_title": "Includes",
+        "features": [
+          "2,000,000 credits/year (200,000 images)",
+          "Unlimited team seats",
+          "API access included",
+          "Dedicated account manager",
+          "P-Card Friendly (Under $10k)",
+          "Lowest cost per unit"
+        ],
+        "interval": "year",
+        "amount": 999700,
+        "currency": "USD",
+        "price": "$9,997",
+        "original_price": "",
+        "unit": "/ year",
+        "is_featured": true,
+        "tip": "Lowest Cost Per Unit, API Access, P-Card Friendly",
+        "button": {
+          "title": "Contact Sales",
+          "url": "/contact?plan=team-max",
+          "icon": "RiFlashlightFill"
+        },
+        "product_id": "team-max-yearly",
+        "product_name": "Team Max Yearly",
+        "credits": 2000000,
+        "valid_days": 365,
+        "group": "team",
+        "plan_name": "Team Max"
+      }
+    ]
+  },
+  "page": {
+    "current_plan": "Current Plan",
+    "processing": "Processing"
+  }
+}

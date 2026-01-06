@@ -1,0 +1,22 @@
+{
+  "metadata": {
+    "title": "Changelog | Nano Banana Ultra",
+    "description": "Follow our journey. Every feature, fix, and improvement we ship."
+  },
+  "page": {
+    "title": "Changelog",
+    "description": "Building in public. Follow every update as we ship.",
+    "back": "Back to Changelog",
+    "toc": "On This Page",
+    "related_links": "Try It Out",
+    "no_content": "No updates yet. Check back soon!",
+    "from_feedback": "Inspired by User Feedback"
+  },
+  "tags": {
+    "new": "New",
+    "improved": "Improved",
+    "fixed": "Fixed",
+    "deprecated": "Deprecated",
+    "security": "Security"
+  }
+}

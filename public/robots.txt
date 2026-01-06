@@ -1,0 +1,12 @@
+# Robots.txt - Nano Banana Ultra
+# Controls search engine crawler access
+
+User-agent: *
+Disallow: /*?*q=
+Disallow: /settings/*
+Disallow: /activity/*
+Disallow: /admin/*
+Disallow: /preview/*
+
+# Sitemap
+Sitemap: https://nanobananaultra.com/sitemap.xml
