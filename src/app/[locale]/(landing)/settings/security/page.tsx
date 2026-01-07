@@ -96,7 +96,6 @@ export default async function SecurityPage() {
             icon: 'RiLockPasswordLine',
           },
         ]}
-        className="max-w-md"
       />
       <PanelCard
         title={t('delete_account.title')}
@@ -112,7 +111,6 @@ export default async function SecurityPage() {
             icon: 'RiDeleteBinLine',
           },
         ]}
-        className="max-w-md"
       />
     </div>
   );

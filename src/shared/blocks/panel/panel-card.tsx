@@ -33,8 +33,10 @@ export function PanelCard({
   children?: ReactNode;
   className?: string;
 }) {
+  const hasFooter = buttons && buttons.length > 0;
+
   return (
-    <CardComponent className={cn('overflow-hidden pb-0', className)}>
+    <CardComponent className={cn('overflow-hidden', className)}>
       {(title || description) && (
         <CardHeader>
           <CardTitle>
@@ -52,11 +54,11 @@ export function PanelCard({
         </CardHeader>
       )}
       {(content || children) && (
-        <CardContent className="text-muted-foreground">
+        <CardContent className={cn("text-muted-foreground", hasFooter && "pb-6")}>
           {content || children}
         </CardContent>
       )}
-      {buttons && buttons.length > 0 && (
+      {hasFooter && (
         <CardFooter className="bg-muted flex justify-start gap-4 py-4">
           {buttons.map((button, idx) => (
             <Button

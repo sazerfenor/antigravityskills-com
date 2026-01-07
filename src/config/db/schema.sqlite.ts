@@ -575,6 +575,8 @@ export const communityPost = sqliteTable(
     params: text('params'),
     model: text('model'),
     aspectRatio: text('aspect_ratio'),
+    // Gallery 大类分类字段
+    category: text('category').default('photography'),
     title: text('title'),
     description: text('description'),
     status: text('status').notNull().default('pending'),
@@ -612,6 +614,7 @@ export const communityPost = sqliteTable(
     index('idx_community_post_status_likes').on(table.status, table.likeCount),
     index('idx_community_post_user').on(table.userId),
     index('idx_community_post_seo_slug').on(table.seoSlug),
+    index('idx_community_post_category').on(table.category, table.status),
   ]
 );
 

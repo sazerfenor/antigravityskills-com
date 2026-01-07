@@ -37,6 +37,49 @@ interface CaseData {
   optimizedPrompt: string;
 }
 
+/**
+ * 清理 Prompt 中的 XML 标签
+ * 导出供 prompt-pipeline.ts 复用
+ */
+export function cleanPromptXmlTags(prompt: string): string {
+  return (prompt || '')
+    .replace(/<[^>]+>/g, '') // 移除所有 XML 标签
+    .replace(/\s+/g, ' ')    // 合并多余空格
+    .trim();
+}
+
+/**
+ * 创建单个 community_post 记录
+ * 导出供 prompt-pipeline.ts 复用
+ */
+export async function createCommunityPostFromCase(params: {
+  userId: string;
+  imageUrl: string;
+  prompt: string;
+  title: string;
+  model?: string;
+}): Promise<string> {
+  const postId = uuidv4();
+  const now = new Date();
+  const cleanPrompt = cleanPromptXmlTags(params.prompt);
+
+  await db().insert(communityPost).values({
+    id: postId,
+    userId: params.userId,
+    imageUrl: params.imageUrl,
+    prompt: cleanPrompt,
+    title: params.title,
+    model: params.model || 'gemini-3-pro-image-preview',
+    status: 'pending',
+    viewCount: 0,
+    likeCount: 0,
+    createdAt: now,
+    updatedAt: now,
+  });
+
+  return postId;
+}
+
 async function main() {
   console.log('🚀 开始批量插入虚拟作者帖子...\n');
 
@@ -114,33 +157,17 @@ async function main() {
         continue;
       }
 
-      // 创建 community_post 记录
-      const postId = uuidv4();
-      const now = new Date();
-
-      // 清理 optimizedPrompt 中的 XML 标签
-      const cleanPrompt = (caseData.optimizedPrompt || '')
-        .replace(/<[^>]+>/g, '') // 移除所有 XML 标签
-        .replace(/\s+/g, ' ')    // 合并多余空格
-        .trim();
-
       try {
-        await db().insert(communityPost).values({
-          id: postId,
+        const postId = await createCommunityPostFromCase({
           userId: userId,
           imageUrl: image.fullUrl,
-          prompt: cleanPrompt,
+          prompt: caseData.optimizedPrompt,
           title: caseData.title,
-          model: 'gemini-2.5-flash-image', // Nano Banana
-          status: 'pending', // 待审核
-          viewCount: 0,
-          likeCount: 0,
-          createdAt: now,
-          updatedAt: now,
+          model: 'gemini-2.5-flash-image',
         });
 
         insertedCount++;
-        console.log(`  ✅ 创建帖子: ${caseData.title}`);
+        console.log(`  ✅ 创建帖子: ${caseData.title} (${postId})`);
       } catch (error: any) {
         console.log(`  ❌ 插入失败: ${error.message}`);
         skippedCount++;

@@ -2,14 +2,21 @@
   "fields": {
     "email": "Email",
     "name": "Name",
+    "bio": "Bio",
     "avatar": "Avatar"
+  },
+  "placeholders": {
+    "bio": "Tell us about yourself..."
   },
   "edit": {
     "title": "Profile",
-    "description": "Update your profile",
+    "description": "Customize how others see you",
     "crumbs": {
       "settings": "Settings",
       "profile": "Profile"
+    },
+    "messages": {
+      "success": "Profile updated"
     },
     "buttons": {
       "submit": "Save"

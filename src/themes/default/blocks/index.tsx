@@ -7,6 +7,7 @@ export { FeaturesList } from './features-list';
 export { FeaturesStep } from './features-step';
 export { Footer } from './footer';
 export { Gallery } from './gallery';
+export { GalleryEntrance } from './gallery-entrance';
 export { Header } from './header';
 export { Hero } from './hero';
 export { Logos } from './logos';

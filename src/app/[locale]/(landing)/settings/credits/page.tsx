@@ -129,10 +129,14 @@ export default async function CreditsPage({
             icon: 'Coins',
           },
         ]}
-        className="max-w-md"
       >
-        <div className="text-primary text-3xl font-bold">
-          {remainingCredits}
+        <div className="flex items-baseline gap-2">
+          <span className="text-primary text-4xl font-bold tabular-nums">
+            {remainingCredits}
+          </span>
+          <span className="text-muted-foreground text-sm">
+            {t('view.credits_unit')}
+          </span>
         </div>
       </PanelCard>
       <TableCard title={t('list.title')} tabs={tabs} table={table} />

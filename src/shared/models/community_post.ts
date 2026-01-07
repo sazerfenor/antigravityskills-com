@@ -422,7 +422,7 @@ export async function incrementLikeCount(postId: string, delta: number): Promise
  */
 export async function recalculateLikeCount(postId: string): Promise<void> {
   const { reaction } = await import('@/config/db/schema');
-  
+
   const [result] = await db()
     .select({ count: count() })
     .from(reaction)
@@ -434,4 +434,119 @@ export async function recalculateLikeCount(postId: string): Promise<void> {
     .update(communityPost)
     .set({ likeCount })
     .where(eq(communityPost.id, postId));
+}
+
+// ============================================
+// Gallery Entrance 相关方法
+// ============================================
+
+/**
+ * Gallery 分类常量
+ */
+export const GALLERY_CATEGORIES = [
+  'photography',        // 摄影 (50.2%)
+  'art-illustration',   // 艺术与插画 (18.0%)
+  'design',             // 设计 (15.0%)
+  'commercial-product', // 商业与产品 (7.1%)
+  'character-design',   // 角色设计 (5.4%)
+] as const;
+
+export type GalleryCategory = (typeof GALLERY_CATEGORIES)[number];
+
+/**
+ * 按分类统计帖子数量，并获取每个分类的封面图
+ * 封面图取自该分类下互动量最高的帖子
+ */
+export async function getCategoryStats(): Promise<{
+  category: string;
+  count: number;
+  coverImage: string | null;
+}[]> {
+  // 获取每个分类的帖子数量
+  const countResults = await db()
+    .select({
+      category: communityPost.category,
+      count: count(),
+    })
+    .from(communityPost)
+    .where(eq(communityPost.status, CommunityPostStatus.PUBLISHED))
+    .groupBy(communityPost.category);
+
+  // 获取每个分类中互动量最高的帖子作为封面
+  const categoryStats = await Promise.all(
+    countResults.map(async (row: { category: string | null; count: number }) => {
+      // 获取该分类下最热门帖子的封面图
+      const [topPost] = await db()
+        .select({
+          imageUrl: communityPost.imageUrl,
+          thumbnailUrl: communityPost.thumbnailUrl,
+        })
+        .from(communityPost)
+        .where(
+          and(
+            eq(communityPost.category, row.category ?? 'photography'),
+            eq(communityPost.status, CommunityPostStatus.PUBLISHED)
+          )
+        )
+        .orderBy(
+          sql`(${communityPost.likeCount} + ${communityPost.viewCount}) DESC`
+        )
+        .limit(1);
+
+      return {
+        category: row.category ?? 'photography',
+        count: row.count,
+        coverImage: topPost?.thumbnailUrl || topPost?.imageUrl || null,
+      };
+    })
+  );
+
+  return categoryStats;
+}
+
+/**
+ * 获取热门帖子（用于 Trending 话题提取）
+ * 基于 likeCount + viewCount 排序
+ */
+export async function getHotPosts(options: {
+  limit: number;
+  days?: number;
+}): Promise<CommunityPost[]> {
+  const { limit, days = 7 } = options;
+
+  // 计算时间范围
+  const sinceDate = new Date();
+  sinceDate.setDate(sinceDate.getDate() - days);
+
+  const result = await db()
+    .select({
+      id: communityPost.id,
+      userId: communityPost.userId,
+      imageUrl: communityPost.imageUrl,
+      thumbnailUrl: communityPost.thumbnailUrl,
+      prompt: communityPost.prompt,
+      model: communityPost.model,
+      title: communityPost.title,
+      category: communityPost.category,
+      status: communityPost.status,
+      viewCount: communityPost.viewCount,
+      likeCount: communityPost.likeCount,
+      visualTags: communityPost.visualTags,
+      seoSlug: communityPost.seoSlug,
+      createdAt: communityPost.createdAt,
+      publishedAt: communityPost.publishedAt,
+    })
+    .from(communityPost)
+    .where(
+      and(
+        eq(communityPost.status, CommunityPostStatus.PUBLISHED),
+        sql`${communityPost.publishedAt} >= ${sinceDate.getTime() / 1000}`
+      )
+    )
+    .orderBy(
+      sql`(${communityPost.likeCount} + ${communityPost.viewCount}) DESC`
+    )
+    .limit(limit);
+
+  return result as unknown as CommunityPost[];
 }

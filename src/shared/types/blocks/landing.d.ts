@@ -160,8 +160,26 @@ export interface GalleryItem extends SectionItem {
   tags?: string[];
 }
 
+// Gallery Entrance - Category Card Data
+export interface GalleryCategoryItem {
+  slug: string;           // photography, art-illustration, etc.
+  title: string;          // Display name
+  count: number;          // Prompt count
+  icon: string;           // Lucide icon name
+  coverImage: string;     // Cover image URL
+}
+
+// Gallery Entrance - Trending Topic Data
+export interface GalleryTrendingItem {
+  slug: string;           // face-lock, y2k-flash, etc.
+  title: string;          // Display name
+  count: number;          // Prompt count
+}
+
 export interface Gallery extends Section {
   items?: GalleryItem[];
+  categories?: GalleryCategoryItem[];
+  trending?: GalleryTrendingItem[];
 }
 
 // landing props for landing page component

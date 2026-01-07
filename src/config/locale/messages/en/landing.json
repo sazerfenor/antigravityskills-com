@@ -271,11 +271,12 @@
   },
   "gallery": {
     "id": "gallery",
-    "title": "Explore the Nano Banana Ultra Library",
-    "description": "Every image started with a simple idea. Copy the prompt and create your own.",
+    "title": "Curated Collections",
+    "description": "Explore prompts by style and category",
+    "_comment": "categories and trending data are now fetched dynamically from the database via getGalleryEntranceData() service",
     "buttons": [
       {
-        "text": "Explore trending prompts",
+        "text": "View All Collections",
         "url": "/prompts",
         "icon": "ArrowRight"
       }

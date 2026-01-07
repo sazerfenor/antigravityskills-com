@@ -1,0 +1,26 @@
+{
+  "prompts": [
+    {
+      "id": "prompt_001",
+      "prompt": "A beautiful anime girl with long blue hair, wearing a traditional Japanese kimono, standing in a cherry blossom garden during sunset. The petals are gently falling around her. Soft lighting, detailed illustration, Studio Ghibli style.",
+      "title": "Cherry Blossom Anime Portrait",
+      "subject": "anime girl"
+    },
+    {
+      "id": "prompt_002",
+      "prompt": "A majestic golden dragon flying through thunderclouds, lightning crackling around its scales. Epic fantasy art style, highly detailed, cinematic lighting, 8K resolution.",
+      "title": "Thunder Dragon Epic",
+      "subject": "dragon"
+    },
+    {
+      "id": "prompt_003",
+      "prompt": "Modern minimalist living room interior design with floor-to-ceiling windows overlooking a city skyline at night. Warm ambient lighting, scandinavian furniture, indoor plants. Architectural photography style.",
+      "title": "Modern Living Room Design",
+      "subject": "interior design"
+    }
+  ],
+  "config": {
+    "userId": "YOUR_USER_ID_HERE",
+    "autoPublish": true
+  }
+}

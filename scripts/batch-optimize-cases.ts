@@ -36,7 +36,8 @@ if (!ADMIN_COOKIE) {
   process.exit(1);
 }
 
-interface Case {
+// 导出类型供 prompt-pipeline.ts 复用
+export interface Case {
   id: string;
   title: string;
   prompt: string;
@@ -53,7 +54,7 @@ interface Case {
   };
 }
 
-interface OptimizedCase {
+export interface OptimizedCase {
   id: string;
   title: string;
   originalPrompt: string;
@@ -119,7 +120,8 @@ function saveOptimizedCases(cases: OptimizedCase[]): void {
   }, null, 2));
 }
 
-async function optimizeCase(caseItem: Case): Promise<OptimizedCase | null> {
+// 导出供 prompt-pipeline.ts 复用
+export async function optimizeCase(caseItem: Case): Promise<OptimizedCase | null> {
   try {
     const body: any = {
       userPrompt: caseItem.prompt,

@@ -16,6 +16,8 @@
     "tip": "Your subscription will auto renew on {date}",
     "end_tip": "Your subscription will be auto canceled on {date}",
     "no_subscription": "No plan",
+    "free_tier": "Free Tier",
+    "upgrade_hint": "Upgrade to unlock more generations",
     "buttons": {
       "adjust": "Adjust Plan",
       "subscribe": "Subscribe",

@@ -25,11 +25,28 @@ import {
   DialogTitle,
   DialogFooter,
 } from '@/shared/components/ui/dialog';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/shared/components/ui/select';
 import { useDebug } from '@/shared/contexts/debug';
 import { BlockCard } from '@/shared/components/admin/block-card';
 import { getContentSections } from '@/shared/lib/content-sections-converter';
 import { getModelDisplayName } from '@/shared/lib/model-names';
 import type { ContentSection, ContentSections } from '@/shared/schemas/api-schemas';
+import { GALLERY_CATEGORIES } from '@/shared/models/community_post';
+
+// Category 显示名称映射
+const CATEGORY_LABELS: Record<string, string> = {
+  'photography': 'Photography',
+  'art-illustration': 'Art & Illustration',
+  'design': 'Design',
+  'commercial-product': 'Commercial & Product',
+  'character-design': 'Character Design',
+};
 
 
 interface AdminGallerySEOEditProps {
@@ -48,6 +65,7 @@ export function AdminGallerySEOEdit({ post, aiTask }: AdminGallerySEOEditProps) 
   const [seoDescription, setSeoDescription] = useState(post.seoDescription || '');
   const [seoKeywords, setSeoKeywords] = useState(post.seoKeywords || '');
   const [seoSlugKeywords, setSeoSlugKeywords] = useState(post.seoSlugKeywords || '');
+  const [category, setCategory] = useState(post.category || 'photography'); // 🆕 Gallery 分类
   const [contentIntro, setContentIntro] = useState(post.contentIntro || '');
   const [promptBreakdown, setPromptBreakdown] = useState(post.promptBreakdown || '');
   const [imageAlt, setImageAlt] = useState(post.imageAlt || '');
@@ -303,6 +321,21 @@ export function AdminGallerySEOEdit({ post, aiTask }: AdminGallerySEOEditProps) 
         setCoreSubject(data.subject);
       }
 
+      // 🆕 V16.0: 自动填充 Gallery Category
+      if (data.galleryCategory && data.galleryCategory !== 'unknown') {
+        setCategory(data.galleryCategory);
+
+        // 根据置信度显示不同提示
+        if (data.categoryConfidence === 'low') {
+          toast.warning(`⚠️ AI 分类为 "${CATEGORY_LABELS[data.galleryCategory] || data.galleryCategory}"，但置信度较低，请人工复核`);
+        } else if (data.categoryConfidence === 'medium') {
+          toast.info(`📂 AI 分类为 "${CATEGORY_LABELS[data.galleryCategory] || data.galleryCategory}"（置信度中等）`);
+        }
+        // high confidence: no additional toast, already shown in success message
+      } else if (data.galleryCategory === 'unknown') {
+        toast.warning('⚠️ AI 无法自动分类，请手动选择 Gallery Category');
+      }
+
       toast.success('✨ AI已生成所有SEO内容！');
     } catch (error) {
       console.error('AI generation error:', error);
@@ -362,6 +395,7 @@ export function AdminGallerySEOEdit({ post, aiTask }: AdminGallerySEOEditProps) 
           seoDescription,
           seoKeywords,
           seoSlugKeywords,
+          category, // 🆕 Gallery 分类
           contentIntro,
           promptBreakdown,
           imageAlt,
@@ -425,6 +459,7 @@ export function AdminGallerySEOEdit({ post, aiTask }: AdminGallerySEOEditProps) 
           seoDescription,
           seoKeywords,
           seoSlugKeywords,
+          category, // 🆕 Gallery 分类
           contentIntro,
           promptBreakdown,
           imageAlt,
@@ -800,6 +835,26 @@ export function AdminGallerySEOEdit({ post, aiTask }: AdminGallerySEOEditProps) 
                 rows={3}
                 className="resize-y"
               />
+            </div>
+
+            {/* 🆕 Gallery Category 选择器 */}
+            <div className="space-y-2">
+              <Label htmlFor="category">Gallery Category</Label>
+              <Select value={category} onValueChange={setCategory}>
+                <SelectTrigger id="category">
+                  <SelectValue placeholder="Select a category" />
+                </SelectTrigger>
+                <SelectContent>
+                  {GALLERY_CATEGORIES.map((cat) => (
+                    <SelectItem key={cat} value={cat}>
+                      {CATEGORY_LABELS[cat] || cat}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              <p className="text-xs text-muted-foreground">
+                用于首页 Gallery 入口分类统计
+              </p>
             </div>
 
             <div className="grid grid-cols-2 gap-4">

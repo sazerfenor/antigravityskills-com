@@ -27,7 +27,7 @@ export default async function ProfilePage() {
         title: t('fields.bio'),
         type: 'textarea',
         attributes: {
-          placeholder: 'Tell us about yourself...',
+          placeholder: t('placeholders.bio'),
           maxLength: 500,
           rows: 3,
         },
@@ -45,12 +45,13 @@ export default async function ProfilePage() {
     data: user,
     passby: {
       user: user,
+      successMessage: t('edit.messages.success'),
     },
     submit: {
       handler: async (data: FormData, passby: any) => {
         'use server';
 
-        const { user } = passby;
+        const { user, successMessage } = passby;
         if (!user) {
           throw new Error('no auth');
         }
@@ -74,7 +75,7 @@ export default async function ProfilePage() {
 
         return {
           status: 'success',
-          message: 'Profile updated',
+          message: successMessage,
           redirect_url: '/settings/profile',
         };
       },

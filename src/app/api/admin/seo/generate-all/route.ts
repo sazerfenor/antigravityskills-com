@@ -237,7 +237,15 @@ async function callStage1(
   aiModel: string,
   temperature: number,
   geminiProvider: any
-): Promise<{ anchor: string; microFocus: string; intent: string; plannedBlocks: any[]; _debug: { prompt: string; rawResponse: string } }> {
+): Promise<{
+  anchor: string;
+  microFocus: string;
+  intent: string;
+  plannedBlocks: any[];
+  galleryCategory: string;
+  categoryConfidence: 'high' | 'medium' | 'low';
+  _debug: { prompt: string; rawResponse: string };
+}> {
   const aiPrompt = promptTemplate
     .replace(/\{\{prompt\}\}/g, userPrompt)
     .replace(/\{\{model\}\}/g, modelName);
@@ -267,6 +275,8 @@ async function callStage1(
     microFocus: parsed.microFocus || '',
     intent: parsed.intent || 'Artistic',
     plannedBlocks: parsed.plannedBlocks || [{ id: 'block_1', type: 'rich-text', intent: 'Intro' }],
+    galleryCategory: parsed.galleryCategory || 'unknown',
+    categoryConfidence: parsed.categoryConfidence || 'low',
     _debug: { prompt: aiPrompt, rawResponse: aiText },
   };
 }
@@ -523,6 +533,9 @@ async function generateSEOContentWithAI(
       subject: titleCasedSubject,
       // V15.0 GEO Fields
       snippetSummary: stage2Result.snippetSummary || null,
+      // V16.0 Auto Category Fields
+      galleryCategory: stage1Result.galleryCategory,
+      categoryConfidence: stage1Result.categoryConfidence,
       debugInfo,
     };
   } catch (error) {
@@ -555,6 +568,9 @@ async function generateSEOContentWithAI(
       microFocus: '',
       subject: fallbackSubject,
       snippetSummary: null, // V15.0: Fallback has no snippet
+      // V16.0: Fallback uses unknown category with low confidence
+      galleryCategory: 'unknown',
+      categoryConfidence: 'low' as const,
       debugInfo: { error: String(error) },
     };
   }
@@ -672,13 +688,40 @@ Explain your analysis in \`_reasoning\`:
 - \`faq-accordion\`: Technical Q&A. (Max 1).
 - \`tags\`: **5-8** strictly visual keywords. (Max 1).
 
+### 6. Classify GALLERY CATEGORY (MANDATORY)
+YOU MUST select exactly ONE category for homepage gallery display.
+⚠️ This is DIFFERENT from "intent" - intent affects writing style, category affects gallery navigation.
+
+**Available Categories**:
+| Slug | Visual Indicators | Examples |
+|------|-------------------|----------|
+| \`photography\` | Photorealistic, camera terms (ISO, aperture, lens), real-world scenes | Portrait, landscape, street photo |
+| \`art-illustration\` | Anime, manga, digital painting, watercolor, concept art, illustration | Anime girl, fantasy art, comic style |
+| \`design\` | Logo, UI/UX, poster, typography, pattern, mockup, layout | Logo design, app UI, poster |
+| \`commercial-product\` | Product shot, packaging, advertising, marketing, brand | Product mockup, ad creative |
+| \`character-design\` | Game character, mascot, avatar, creature, OC (original character) | Game hero, mascot design |
+
+**Decision Rules** (apply in order, first match wins):
+1. If VISUAL CONTEXT has \`art_style: anime/manga/illustration/comic\` → \`art-illustration\`
+2. If prompt mentions "product", "mockup", "packaging", "brand", "advertisement" → \`commercial-product\`
+3. If primary focus is character appearance/outfit/design (not scene) → \`character-design\`
+4. If contains "logo", "poster", "layout", "UI", "banner", "icon" → \`design\`
+5. If photorealistic OR camera terms (ISO, f/2.8, 85mm, bokeh) → \`photography\`
+6. If NONE clearly fit → output \`unknown\` and explain in _reasoning
+
+**Confidence Levels**:
+- \`high\`: Clear match to one category (e.g., "anime girl" → art-illustration)
+- \`medium\`: Could fit multiple but one is most likely
+- \`low\`: Ambiguous, recommend manual review
+
 ## OUTPUT FORMAT (Strict JSON)
 {
   "_reasoning": {
     "contextAnalysis": "VISUAL CONTEXT shows art_style=anime, lighting=golden_hour...",
     "conflictResolution": "No conflicts detected / Form specifies anime, using over prompt text...",
     "microFocusSelection": "Golden Hour is the most distinctive parameter because...",
-    "voiceSelection": "Artistic intent detected, recommending Curator voice..."
+    "voiceSelection": "Artistic intent detected, recommending Curator voice...",
+    "categorySelection": "Detected anime style, assigning art-illustration with high confidence"
   },
   "anchor": "string (2-5 words)",
   "microFocus": "string (unique angle)",
@@ -691,6 +734,8 @@ Explain your analysis in \`_reasoning\`:
     { "id": "block_3", "type": "comparison-table", "intent": "Compare attributes..." },
     { "id": "block_4", "type": "tags", "intent": "List 5-8 descriptive keywords..." }
   ],
+  "galleryCategory": "photography | art-illustration | design | commercial-product | character-design | unknown",
+  "categoryConfidence": "high | medium | low",
   "antiTemplatingCommitment": {
     "blocksStartWith": "checklist",
     "blocksEndWith": "faq-accordion",

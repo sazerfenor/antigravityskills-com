@@ -19,6 +19,7 @@
   },
   "view": {
     "title": "Credits Balance",
+    "credits_unit": "credits available",
     "buttons": {
       "purchase": "Purchase Credits"
     }

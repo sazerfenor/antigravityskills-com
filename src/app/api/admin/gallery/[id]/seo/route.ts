@@ -44,6 +44,7 @@ export async function PATCH(
       seoDescription: seoData.seoDescription,
       seoKeywords: seoData.seoKeywords,
       seoSlugKeywords: seoData.seoSlugKeywords,
+      category: seoData.category, // 🆕 Gallery 分类
       contentIntro: seoData.contentIntro,
       promptBreakdown: seoData.promptBreakdown,
       imageAlt: seoData.imageAlt,

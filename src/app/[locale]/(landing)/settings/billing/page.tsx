@@ -234,29 +234,37 @@ export default async function BillingPage({
         label={currentSubscription?.status}
         title={t('view.title')}
         buttons={buttons}
-        className="max-w-md"
       >
-        <div className="text-primary text-3xl font-bold">
-          {currentSubscription?.planName || t('view.no_subscription')}
-        </div>
         {currentSubscription ? (
           <>
-            {currentSubscription?.status === SubscriptionStatus.ACTIVE ||
-            currentSubscription?.status === SubscriptionStatus.TRIALING ? (
+            <div className="text-primary text-3xl font-bold">
+              {currentSubscription.planName}
+            </div>
+            {currentSubscription.status === SubscriptionStatus.ACTIVE ||
+            currentSubscription.status === SubscriptionStatus.TRIALING ? (
               <div className="text-muted-foreground mt-4 text-sm font-normal">
                 {t('view.tip', {
-                  date: format(new Date(currentSubscription?.currentPeriodEnd!), 'yyyy-MM-dd'),
+                  date: format(new Date(currentSubscription.currentPeriodEnd!), 'yyyy-MM-dd'),
                 })}
               </div>
             ) : (
               <div className="text-destructive mt-4 text-sm font-normal">
                 {t('view.end_tip', {
-                  date: format(new Date(currentSubscription?.canceledEndAt!), 'yyyy-MM-dd'),
+                  date: format(new Date(currentSubscription.canceledEndAt!), 'yyyy-MM-dd'),
                 })}
               </div>
             )}
           </>
-        ) : null}
+        ) : (
+          <div>
+            <div className="text-muted-foreground text-2xl font-medium">
+              {t('view.free_tier')}
+            </div>
+            <p className="text-muted-foreground/60 mt-2 text-sm">
+              {t('view.upgrade_hint')}
+            </p>
+          </div>
+        )}
       </PanelCard>
       <TableCard title={t('list.title')} tabs={tabs} table={table} />
     </div>

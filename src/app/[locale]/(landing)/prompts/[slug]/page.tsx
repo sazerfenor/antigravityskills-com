@@ -66,7 +66,8 @@ export async function generateMetadata({
   return {
     title,
     description,
-    keywords: post.seoKeywords || undefined,
+    // V16.0: 移除 meta keywords - 主流搜索引擎（Google 自 2009 年起）已不再使用
+    // keywords: post.seoKeywords || undefined,
     alternates: {
       canonical: canonicalUrl,
       languages: {

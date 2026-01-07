@@ -53,7 +53,7 @@ interface AuthorInfo {
   cases: Array<{ caseId: string; titleEN: string; titleCN: string; postUrl: string }>;
 }
 
-interface GeneratedItem {
+export interface GeneratedItem {
   caseId: string;
   title: string;
   localImagePath: string;
@@ -118,7 +118,8 @@ function getOriginalAuthorInfo(caseId: string, authorHandle: string, authorInfoM
   };
 }
 
-function stripXmlTags(prompt: string): string {
+// 导出供 prompt-pipeline.ts 复用
+export function stripXmlTags(prompt: string): string {
   return prompt.replace(/<\/?[^>]+(>|$)/g, '').trim();
 }
 
@@ -136,7 +137,8 @@ async function downloadImage(url: string, filepath: string): Promise<void> {
   fs.writeFileSync(filepath, buffer);
 }
 
-async function generateAndDownload(
+// 导出供 prompt-pipeline.ts 复用
+export async function generateAndDownload(
   caseData: any,
   authorInfoMap: Record<string, AuthorInfo>,
   promptToVirtualUser: Map<string, VirtualAuthorInserted>

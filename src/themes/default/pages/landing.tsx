@@ -6,7 +6,7 @@ import {
   CoreModules,
   Features,
   FeaturesAccordion,
-  Gallery,
+  GalleryEntrance,
   Hero,
 } from '@/themes/default/blocks';
 import { LandingGallerySkeleton, GeneratorSectionSkeleton } from '@/themes/default/components/skeletons';
@@ -48,11 +48,9 @@ export default async function LandingPage({
         </Suspense>
       )}
 
-      {/* Gallery wrapped in Suspense for streaming render - uses LandingGallerySkeleton for layout matching */}
+      {/* Gallery Entrance - Curated Collections */}
       {v.show_gallery !== false && page.gallery && (
-        <Suspense fallback={<LandingGallerySkeleton />}>
-          <Gallery gallery={page.gallery} />
-        </Suspense>
+        <GalleryEntrance gallery={page.gallery} />
       )}
 
       {v.show_core_modules !== false && <CoreModules coreModules={page.core_modules} />}
