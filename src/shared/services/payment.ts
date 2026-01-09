@@ -169,7 +169,7 @@ let paymentService: PaymentManager | null = null;
  * get payment service instance
  */
 export async function getPaymentService(): Promise<PaymentManager> {
-  if (true) {
+  if (!paymentService) {
     const configs = await getAllConfigs();
     paymentService = getPaymentServiceWithConfigs(configs);
   }
