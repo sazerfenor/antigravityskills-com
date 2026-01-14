@@ -22,12 +22,19 @@ export async function POST(request: Request) {
       return respErr('Forbidden: Missing admin.seo.write permission', 403);
     }
 
-    const { postId, prompt, model, imageUrl, subject } = await request.json() as {
+    const { postId, prompt, model, imageUrl, subject, groundTruth } = await request.json() as {
       postId: string;
       prompt: string;
       model: string;
       imageUrl: string;
       subject?: string; // 新增：可选的核心主体
+
+      // Ground Truth 分类（从原始数据传递）
+      groundTruth?: {
+        category: string;
+        subcategory: string;
+        visualTags: string[];
+      };
     };
 
     if (!prompt || !model || !postId) {
@@ -77,8 +84,8 @@ export async function POST(request: Request) {
       }
     }
 
-    // 2-7. AI 生成所有内容（传递subject + optimizationData + formValuesData）
-    const aiResult = await generateSEOContentWithAI(prompt, model, subject, optimizationData, formValuesData);
+    // 2-7. AI 生成所有内容（传递subject + optimizationData + formValuesData + groundTruth）
+    const aiResult = await generateSEOContentWithAI(prompt, model, subject, optimizationData, formValuesData, groundTruth);
 
     // V15.0: 生成 SEO Slug (新格式: [microFocus-prefix]-[keywords]-[shortId])
     let seoSlug: string;
@@ -257,7 +264,7 @@ async function callStage1(
     model: aiModel,
     prompt: aiPrompt,
     temperature: temperature,
-    maxTokens: 1024, // Stage 1 needs less tokens
+    maxTokens: 2048, // V15.0 需要更多 tokens 来输出 _reasoning 等复杂结构
     jsonMode: true,
   });
 
@@ -346,7 +353,12 @@ async function generateSEOContentWithAI(
   model: string,
   userSubject?: string,
   optimizationData?: any,
-  formValuesData?: FormValuesData | null
+  formValuesData?: FormValuesData | null,
+  groundTruth?: {
+    category: string;
+    subcategory: string;
+    visualTags: string[];
+  }
 ) {
   // TODO: 自定义你的模型显示名称
   const modelName = model.includes('gemini-3') ? 'Pro' : 'Standard';
@@ -363,9 +375,9 @@ async function generateSEOContentWithAI(
 
   const stage1Prompt = configs.seo_prompt_stage1 || getDefaultStage1Prompt();
   const stage2Prompt = configs.seo_prompt_stage2 || getDefaultStage2Prompt();
-  const aiModel = configs.seo_generation_model || 'gemini-3.0-flash-preview';
+  const aiModel = configs.seo_generation_model || 'gemini-3-flash-preview';
   const temperature = parseFloat(configs.seo_generation_temperature || '0.7');
-  const maxTokens = parseInt(configs.seo_generation_max_tokens || '2048');
+  const maxTokens = parseInt(configs.seo_generation_max_tokens || '4096'); // V15.0 需要更多 tokens 输出完整的 contentSections
 
   try {
     // 获取 AI Provider
@@ -380,6 +392,29 @@ async function generateSEOContentWithAI(
     // Prepare Prompt with Optimization Context if available
     let effectivePrompt = prompt;
     let formValuesInjected = false;
+
+    // V16.0: 注入 Ground Truth 分类（最高优先级，不可覆盖）
+    if (groundTruth) {
+      const groundTruthContext = `## GROUND TRUTH CLASSIFICATION (MANDATORY - DO NOT OVERRIDE)
+
+**CRITICAL**: These classifications come from authoritative source data and MUST be used exactly as provided:
+
+- **Category**: ${groundTruth.category}
+- **Subcategory**: ${groundTruth.subcategory}
+- **Visual Tags**: ${groundTruth.visualTags.join(', ')}
+
+**INSTRUCTIONS**:
+1. Use the provided category EXACTLY - do not infer or change it
+2. Set galleryCategory = "${groundTruth.category}"
+3. Set categoryConfidence = "high"
+4. Use the provided visual tags as context for SEO keywords
+5. Do not generate new category classifications
+
+---
+`;
+      effectivePrompt = `${groundTruthContext}\n${effectivePrompt}`;
+      console.log('[V16.0] Ground Truth injected:', groundTruth);
+    }
 
     // V15.0: 注入 VISUAL CONTEXT (Ground Truth) - 优先级最高
     if (formValuesData?.formValues) {
@@ -540,75 +575,9 @@ async function generateSEOContentWithAI(
     };
   } catch (error) {
     console.error('[AI Generate] Two-stage generation failed:', error);
-    
-    // Fallback: Return simple placeholder content
-    const fallbackSubject = userSubject || 'AI Image';
-    const toTitleCase = (str: string) => str.replace(/\b\w/g, (char) => char.toUpperCase());
-    const titleCasedFallback = toTitleCase(fallbackSubject);
-    
-    return {
-      // TODO: 自定义你的品牌名称
-      seoTitle: `${titleCasedFallback} - ${modelName} | Your Brand`,
-      h1Title: titleCasedFallback,
-      seoDescription: `Explore ${titleCasedFallback} AI image generation with ${modelName}.`,
-      seoKeywords: [titleCasedFallback.toLowerCase()],
-      seoSlugKeywords: titleCasedFallback.toLowerCase().replace(/\s+/g, '-'),
-      contentIntro: '',
-      promptBreakdown: '',
-      imageAlt: `${titleCasedFallback} generated with ${modelName}`,
-      dynamicHeaders: '{}',
-      faqItems: '[]',
-      visualTags: '[]',
-      useCases: '[]',
-      expertCommentary: null,
-      remixIdeas: [],
-      relatedConcepts: [],
-      contentSections: [],
-      anchor: titleCasedFallback,
-      microFocus: '',
-      subject: fallbackSubject,
-      snippetSummary: null, // V15.0: Fallback has no snippet
-      // V16.0: Fallback uses unknown category with low confidence
-      galleryCategory: 'unknown',
-      categoryConfidence: 'low' as const,
-      debugInfo: { error: String(error) },
-    };
+    // 失败就是失败，不要返回假数据
+    throw error;
   }
-}
-
-// ===== Fallback 简单生成函数 =====
-
-function generateSEOTitleFallback(prompt: string, modelName: string): string {
-  return `PLACEHOLDER_TITLE - ${modelName}`;
-}
-
-function generateSEODescriptionFallback(prompt: string): string {
-  return `PLACEHOLDER_DESCRIPTION: This is a fallback description when AI generation fails.`;
-}
-
-function generateFAQFallback(prompt: string, modelName: string): Array<{question: string, answer: string}> {
-  return [
-    {
-      question: `PLACEHOLDER_FAQ_QUESTION_1: What model is this?`,
-      answer: `PLACEHOLDER_FAQ_ANSWER_1: ${modelName} fallback answer.`
-    },
-    {
-      question: `PLACEHOLDER_FAQ_QUESTION_2: Can I modify?`,
-      answer: `PLACEHOLDER_FAQ_ANSWER_2: Yes, this is fallback content.`
-    },
-    {
-      question: `PLACEHOLDER_FAQ_QUESTION_3: How to use?`,
-      answer: `PLACEHOLDER_FAQ_ANSWER_3: Copy and use, this is fallback.`
-    }
-  ];
-}
-
-function generateVisualTagsFallback(prompt: string): string[] {
-  return ['PLACEHOLDER_TAG_1', 'PLACEHOLDER_TAG_2', 'PLACEHOLDER_TAG_3'];
-}
-
-function generateUseCasesFallback(prompt: string): string[] {
-  return ['PLACEHOLDER_USE_CASE_1', 'PLACEHOLDER_USE_CASE_2', 'PLACEHOLDER_USE_CASE_3'];
 }
 
 // ===== Helper: 获取默认 Prompt 模板 (V15.0 Master Edition) =====

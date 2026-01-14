@@ -79,8 +79,8 @@
   },
   "hero": {
     "id": "hero",
-    "title": "Nano Banana Ultra: Type Less, Create More",
-    "highlight_text": "Ultra",
+    "title": "Nano Banana Ultra: Your Professional AI Art Studio",
+    "highlight_text": "Nano Banana Ultra",
     "description": "Enter a few words. <strong>Nano Banana Ultra</strong> fills in the professional logic. Just click to generate stable, high-fidelity art that matches your vision.",
     "announcement": {
       "badge": "✨ New",
@@ -201,59 +201,59 @@
     ]
   },
   "generator": {
-    "title": "AI Prompt Generator: Short Input, Pro Output",
-    "description": "Type a simple idea. Nano Banana adds the professional logic."
+    "title": "Ultra Prompt Lab: Input Ideas, Output Masterpieces",
+    "description": "Type a simple idea. Nano Banana Ultra adds the professional logic."
   },
   "core_modules": {
     "id": "core-modules",
-    "title": "How Nano Banana Ultra Works",
-    "description": "Simple input. Smart logic. Stunning output."
+    "title": "Inside the Ultra Engine",
+    "description": "Simple input. Ultra logic. Stunning output."
   },
   "features": {
     "id": "features",
     "header_badge": "Powered by Nano Banana™",
-    "header_title": "Logic Declassified",
-    "header_highlight": "Declassified",
-    "header_description": "See how the <strong>Intent Mining Engine</strong> deconstructs your raw input into a structured Logic Matrix ready for <span class=\"text-white\">any AI image generator</span>.",
-    "title": "Pro Features, Zero Complexity",
-    "description": "You provide the idea. Nano Banana handles the complexity.",
+    "header_title": "The Ultra Engine Explained",
+    "header_highlight": "Ultra Engine",
+    "header_description": "See how the <strong>Ultra Intent Analysis</strong> deconstructs your raw input into a structured Ultra Matrix ready for <span class=\"text-white\">any AI image generator</span>.",
+    "title": "Ultra Features, Zero Complexity",
+    "description": "You provide the idea. Nano Banana Ultra handles the complexity.",
     "items": [
       {
-        "title": "Mind-Reading Logic",
-        "description": "Don't know camera settings? Don't care. Nano Banana infers the perfect lighting and style from your short idea.",
+        "title": "Ultra Intent Reading",
+        "description": "Don't know camera settings? Don't care. Nano Banana Ultra infers the perfect lighting and style from your short idea.",
         "icon": "RiNextjsFill"
       },
       {
-        "title": "Stable & Predictable",
-        "description": "No more random lottery. Get consistent, high-fidelity results every time you generate.",
+        "title": "Ultra Stable Output",
+        "description": "No more random lottery. Get consistent, ultra-fidelity results every time you generate.",
         "icon": "RiKey2Fill"
       },
       {
-        "title": "Prompt Polish",
-        "description": "Advanced grammar correction and keyword enhancement for better AI understanding.",
+        "title": "Ultra Prompt Polish",
+        "description": "Advanced grammar correction and keyword enhancement for superior AI understanding.",
         "icon": "RiDatabase2Line"
       },
       {
-        "title": "Visual Debugging",
-        "description": "Understand why a prompt works. Our tool breaks down the visual elements.",
+        "title": "Ultra Visual Breakdown",
+        "description": "Understand why a prompt works. Our Ultra tool breaks down the visual elements.",
         "icon": "RiBarChart2Line"
       },
       {
-        "title": "Model-Specific Optimization",
-        "description": "Automatically formats parameters like --v, --ar, and --stylize.",
+        "title": "Ultra Model Optimization",
+        "description": "Automatically formats parameters like --v, --ar, and --stylize for any model.",
         "icon": "RiCloudy2Fill"
       },
       {
-        "title": "Community & Support",
-        "description": "Join thousands of creators. Get help, share results, discover tips.",
+        "title": "Ultra Community",
+        "description": "Join thousands of Ultra creators. Get help, share results, discover tips.",
         "icon": "RiRobot2Line"
       }
     ]
   },
   "stats": {
     "id": "stats",
-    "title": "Trusted by Creators Worldwide",
-    "description": "Simple prompts. Stunning results.",
+    "title": "Ultra in Numbers",
+    "description": "Simple prompts. Ultra results.",
     "items": [
       {
         "title": "10+",
@@ -271,7 +271,7 @@
   },
   "gallery": {
     "id": "gallery",
-    "title": "Curated Collections",
+    "title": "Ultra Gallery: Community Creations",
     "description": "Explore prompts by style and category",
     "_comment": "categories and trending data are now fetched dynamically from the database via getGalleryEntranceData() service",
     "buttons": [
@@ -284,13 +284,13 @@
   },
   "testimonials": {
     "id": "testimonials",
-    "title": "Community Feedback",
-    "description": "Top creators powering their workflow with Nano Banana.",
+    "title": "Ultra Creators Speak",
+    "description": "Top creators powering their workflow with Nano Banana Ultra.",
     "items": [
       {
         "name": "AdMaster Pro",
         "role": "Commercial Visuals",
-        "quote": "My client needed 'high-conversion food photography' instantly. Nano Banana's Intent Mining nailed the lighting logic without me guessing keywords. It's not just a generator; it's a creative director.",
+        "quote": "My client needed 'high-conversion food photography' instantly. Nano Banana Ultra's Intent Analysis nailed the lighting logic without me guessing keywords. It's not just a generator; it's a creative director.",
         "rating": 5,
         "image": {
           "src": "https://r2.bananaprompts.info/avatars/1765554543494-85b048ce-9e83-48a5-a91c-c4dc3bcedda9.webp",
@@ -341,45 +341,45 @@
   },
   "faq": {
     "id": "faq",
-    "title": "FAQ",
+    "title": "Ultra FAQ",
     "description": "Have another question? Contact us on Discord or by email.",
     "tip": "Can't find what you're looking for? <a href='mailto:support@nanobananaultra.com' class='text-primary font-medium hover:underline'>Contact our support team</a>",
     "items": [
       {
-        "question": "What is Nano Banana Ultra?",
-        "answer": "Nano Banana Ultra is an independent optimization platform that helps you get Ultra-level results from Nano Banana AI models. Enter a few words, and our Intent Mining engine expands it into a professional prompt—then generates stunning images using Nano Banana or Nano Banana Pro. Note: Nano Banana Ultra is not affiliated with, endorsed by, or sponsored by Google or its Nano Banana models."
+        "question": "What makes Nano Banana Ultra different?",
+        "answer": "Nano Banana Ultra is the official Ultra-level optimization platform for Nano Banana AI models. Our proprietary Ultra Intent Analysis technology transforms short ideas into professional prompts, delivering consistent Ultra-quality results. Note: Nano Banana Ultra is an independent platform not affiliated with Google."
       },
       {
-        "question": "Is Nano Banana Ultra the same as Nano Banana Pro?",
-        "answer": "No. Nano Banana and Nano Banana Pro are AI image generation models developed by Google. Nano Banana Ultra is our independent optimization platform that helps you craft better prompts and get Ultra-level quality from these models."
+        "question": "How is Ultra different from standard Nano Banana?",
+        "answer": "While Nano Banana and Nano Banana Pro are Google's AI image models, Nano Banana Ultra is our optimization layer that maximizes their potential. Think of Ultra as the professional studio that brings out the best in these powerful models."
       },
       {
-        "question": "Is Nano Banana Ultra free to use?",
-        "answer": "Yes! You can generate prompts for free without signing up—up to 3 times per day. Register to get free credits for image generation. Need more? Check our pricing page for credit packages."
+        "question": "What's included in the free Ultra tier?",
+        "answer": "Free Ultra users get 3 prompt generations per day without signup. Create an account to receive bonus Ultra credits for image generation. Premium credit packages are available for power users."
       },
       {
-        "question": "Can I generate images on Nano Banana Ultra?",
-        "answer": "Yes. Our Live Logic Lab lets you generate both the optimized prompt and an instant image preview using Nano Banana models. You can also copy the prompt to use with other AI image tools."
+        "question": "Does Ultra support image generation?",
+        "answer": "Yes! The Ultra Prompt Lab generates both optimized prompts and instant image previews. Export your Ultra-enhanced prompts to any compatible AI image platform."
       },
       {
-        "question": "Do I need prompt engineering skills?",
-        "answer": "Not at all. Just enter a simple idea like 'portrait' or 'sunset beach'. Our Intent Mining Engine analyzes your intent and automatically adds professional details—lighting, composition, style, and more."
+        "question": "Do I need technical skills to use Ultra?",
+        "answer": "Zero technical skills required. Simply type a short idea like 'sunset portrait' and Ultra Intent Analysis automatically adds professional parameters—lighting, composition, camera settings, and artistic style."
       },
       {
-        "question": "What's the difference between Banana and Banana Pro modes?",
-        "answer": "These refer to the AI models we use for generation. Banana mode uses the lightweight Nano Banana model for quick, coherent results—perfect for everyday use. Banana Pro mode uses the advanced Nano Banana Pro model for deep semantic expansion with higher fidelity output."
+        "question": "What are Ultra and Ultra Pro modes?",
+        "answer": "Ultra mode uses the fast Nano Banana model for quick iterations. Ultra Pro mode leverages Nano Banana Pro for maximum fidelity and semantic depth—ideal for professional and commercial work."
       },
       {
-        "question": "How does Smart Refinement work?",
-        "answer": "Smart Refinement lets you fine-tune your prompts with a single click. Adjust lighting, camera angle, style, and other parameters without typing—just select from the options and watch your prompt evolve."
+        "question": "How does Ultra Refinement work?",
+        "answer": "Ultra Refinement is our one-click enhancement system. Adjust lighting, perspective, style intensity, and more through intuitive controls—no prompt editing required."
       },
       {
-        "question": "Can I use prompts from the community gallery?",
-        "answer": "Absolutely. Browse our gallery, find a style you love, and click 'Remix' to use it as your starting point. Every creation includes the full prompt—copy it, customize it, and make it your own."
+        "question": "Can I remix prompts from the Ultra Gallery?",
+        "answer": "Absolutely! Browse the Ultra Gallery, find inspiring styles, and click 'Ultra Remix' to use any prompt as your creative starting point. Full prompt transparency on every creation."
       },
       {
-        "question": "Can I use the prompts commercially?",
-        "answer": "Yes. You own the prompts you create on Nano Banana Ultra and can use them for any purpose. For images generated on our platform, please review our terms of service for commercial use details."
+        "question": "Are Ultra-generated prompts commercially usable?",
+        "answer": "Yes. All prompts created with Nano Banana Ultra are yours to use commercially. For generated images, see our terms of service for full licensing details."
       }
     ]
   },
@@ -420,8 +420,8 @@
   },
   "cta": {
     "id": "cta",
-    "title": "Ready to Create? Just Type a Few Words.",
-    "description": "Enter a short idea. Nano Banana handles the rest. Start free today.",
+    "title": "Start Your Ultra Journey Today",
+    "description": "Enter a short idea. Nano Banana Ultra handles the rest. Start free today.",
     "buttons": [
       {
         "title": "Start Creating",
@@ -457,15 +457,15 @@
     "id": "footer",
     "brand": {
       "title": "Nano Banana Ultra",
-      "description": "Turn simple ideas into professional AI art. The ultimate AI prompt engineering tool for stunning visual creation on any platform.",
+      "description": "The Ultra-level AI art studio. Transform ideas into professional visuals with our proprietary Ultra optimization technology.",
       "logo": {
         "src": "/logo.png",
-        "alt": "Nano Banana Ultra - AI Image Generator powered by Banana Pro"
+        "alt": "Nano Banana Ultra - Ultra-Level AI Image Generation Platform"
       },
       "url": "/"
     },
     "copyright": "© 2026 Nano Banana Ultra. All rights reserved.",
-    "disclaimer": "Nano Banana Ultra is an independent platform and is not affiliated with, endorsed by, or sponsored by Google LLC. Nano Banana and Nano Banana Pro are trademarks of Google LLC.",
+    "disclaimer": "Nano Banana Ultra is the official Ultra optimization platform. This is an independent service not affiliated with, endorsed by, or sponsored by Google LLC or its subsidiaries. Nano Banana™ and Nano Banana Pro™ are trademarks owned by Google LLC.",
     "nav": {
       "items": [
         {

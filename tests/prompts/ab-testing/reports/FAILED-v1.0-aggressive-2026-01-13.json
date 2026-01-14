@@ -1,0 +1,1278 @@
+{
+  "metadata": {
+    "test_date": "2026-01-13T19:22:41.771Z",
+    "total_tests": 9,
+    "baseline_version": "v1.0-baseline",
+    "optimized_version": "v2.0-optimized"
+  },
+  "semantic_analysis": {
+    "total_tests": 9,
+    "avg_similarity": 0.682,
+    "min_similarity": 0.257,
+    "max_similarity": 0.778,
+    "primary_intent_match_rate": 0.889,
+    "content_category_match_rate": 1,
+    "breaking_changes_count": 9,
+    "breaking_changes": [
+      {
+        "test_id": "edge_no_primary_intent",
+        "similarity": 0.7333333333333334,
+        "missing_fields": [
+          "art_style",
+          "character_age",
+          "outfit",
+          "mood"
+        ]
+      },
+      {
+        "test_id": "edge_implicit_style",
+        "similarity": 0.7777777777777779,
+        "missing_fields": [
+          "clay_texture",
+          "texture_detail",
+          "surface_quality"
+        ]
+      },
+      {
+        "test_id": "normal_photography",
+        "similarity": 0.7200000000000001,
+        "missing_fields": [
+          "beach_type",
+          "lighting_nuance",
+          "subject_pose",
+          "water_interaction"
+        ]
+      },
+      {
+        "test_id": "normal_anime_style",
+        "similarity": 0.7000000000000001,
+        "missing_fields": [
+          "main_subject_hair_color",
+          "ghibli_movie_inspiration",
+          "weather_conditions",
+          "painterly_texture",
+          "visual_complexity"
+        ]
+      },
+      {
+        "test_id": "complex_3d_clay",
+        "similarity": 0.7666666666666668,
+        "missing_fields": [
+          "texture",
+          "character_expression",
+          "clay_type",
+          "gloss_level"
+        ]
+      },
+      {
+        "test_id": "edge_style_transfer",
+        "similarity": 0.2571428571428572,
+        "missing_fields": [
+          "lighting_variation",
+          "portrait_mood",
+          "shot_composition",
+          "color_palette",
+          "light_direction",
+          "shadow_intensity"
+        ]
+      },
+      {
+        "test_id": "edge_ambiguity",
+        "similarity": 0.7600000000000001,
+        "missing_fields": [
+          "facial_hair",
+          "subject_mood",
+          "background_environment"
+        ]
+      },
+      {
+        "test_id": "performance_short_prompt",
+        "similarity": 0.7454545454545456,
+        "missing_fields": [
+          "girl_appearance",
+          "portrait_style",
+          "outfit_style",
+          "facial_expression"
+        ]
+      },
+      {
+        "test_id": "performance_long_prompt",
+        "similarity": 0.675,
+        "missing_fields": [
+          "outfit",
+          "main_subject_hair",
+          "background_style",
+          "lighting_setup",
+          "clay_surface_detail",
+          "clay_gloss"
+        ]
+      }
+    ]
+  },
+  "token_analysis": {
+    "total_tests": 9,
+    "totals": {
+      "baseline_tokens": 6335,
+      "optimized_tokens": 5840,
+      "reduction_tokens": 495,
+      "reduction_percentage": 7.81,
+      "cost_savings_usd": 0.000147
+    },
+    "averages": {
+      "baseline_tokens": 704,
+      "optimized_tokens": 649,
+      "reduction_tokens": 55
+    },
+    "target_achieved": false
+  },
+  "quality_analysis": {
+    "total_tests": 9,
+    "averages": {
+      "repetition_reduction_percent": -4.17,
+      "completeness_delta": 0,
+      "response_time_delta_ms": -25427,
+      "prompt_length_delta": -20
+    },
+    "quality_degradation": {
+      "worse_repetition_count": 4,
+      "worse_completeness_count": 0
+    },
+    "target_achieved": false
+  },
+  "detailed_comparisons": {
+    "semantic": [
+      {
+        "test_id": "edge_no_primary_intent",
+        "similarity_score": 0.7333333333333334,
+        "primary_intent_match": true,
+        "content_category_match": true,
+        "fields_overlap": 0.3333333333333333,
+        "missing_fields": [
+          "art_style",
+          "character_age",
+          "outfit",
+          "mood"
+        ],
+        "extra_fields": [
+          "age_group",
+          "outfit_style",
+          "hairstyle",
+          "action_pose"
+        ],
+        "is_breaking_change": true,
+        "details": {
+          "baseline_primary_intent": null,
+          "optimized_primary_intent": null,
+          "baseline_field_count": 8,
+          "optimized_field_count": 8,
+          "field_id_overlap": [
+            "environment",
+            "lighting_style",
+            "camera_angle",
+            "depth_of_field"
+          ]
+        }
+      },
+      {
+        "test_id": "edge_implicit_style",
+        "similarity_score": 0.7777777777777779,
+        "primary_intent_match": true,
+        "content_category_match": true,
+        "fields_overlap": 0.4444444444444444,
+        "missing_fields": [
+          "clay_texture",
+          "texture_detail",
+          "surface_quality"
+        ],
+        "extra_fields": [
+          "clay_texture_detail",
+          "scene_lighting"
+        ],
+        "is_breaking_change": true,
+        "details": {
+          "baseline_primary_intent": "3D Clay Style",
+          "optimized_primary_intent": "3D Clay Style",
+          "baseline_field_count": 7,
+          "optimized_field_count": 6,
+          "field_id_overlap": [
+            "character_proportions",
+            "handcrafted_aesthetic",
+            "clay_color_palette",
+            "gloss_level"
+          ]
+        }
+      },
+      {
+        "test_id": "normal_photography",
+        "similarity_score": 0.7200000000000001,
+        "primary_intent_match": true,
+        "content_category_match": true,
+        "fields_overlap": 0.3,
+        "missing_fields": [
+          "beach_type",
+          "lighting_nuance",
+          "subject_pose",
+          "water_interaction"
+        ],
+        "extra_fields": [
+          "background_scene",
+          "lighting_atmosphere",
+          "subject_expression"
+        ],
+        "is_breaking_change": true,
+        "details": {
+          "baseline_primary_intent": null,
+          "optimized_primary_intent": null,
+          "baseline_field_count": 7,
+          "optimized_field_count": 6,
+          "field_id_overlap": [
+            "outfit_style",
+            "camera_angle",
+            "depth_of_field"
+          ]
+        }
+      },
+      {
+        "test_id": "normal_anime_style",
+        "similarity_score": 0.7000000000000001,
+        "primary_intent_match": true,
+        "content_category_match": true,
+        "fields_overlap": 0.25,
+        "missing_fields": [
+          "main_subject_hair_color",
+          "ghibli_movie_inspiration",
+          "weather_conditions",
+          "painterly_texture",
+          "visual_complexity"
+        ],
+        "extra_fields": [
+          "hair_color",
+          "weather_condition",
+          "line_weight",
+          "color_saturation"
+        ],
+        "is_breaking_change": true,
+        "details": {
+          "baseline_primary_intent": "Studio Ghibli Style",
+          "optimized_primary_intent": "Studio Ghibli Style",
+          "baseline_field_count": 8,
+          "optimized_field_count": 7,
+          "field_id_overlap": [
+            "main_subject_type",
+            "landscape_type",
+            "scene_time_of_day"
+          ]
+        }
+      },
+      {
+        "test_id": "complex_3d_clay",
+        "similarity_score": 0.7666666666666668,
+        "primary_intent_match": true,
+        "content_category_match": true,
+        "fields_overlap": 0.4166666666666667,
+        "missing_fields": [
+          "texture",
+          "character_expression",
+          "clay_type",
+          "gloss_level"
+        ],
+        "extra_fields": [
+          "clay_texture",
+          "clay_glossiness",
+          "sculpting_complexity"
+        ],
+        "is_breaking_change": true,
+        "details": {
+          "baseline_primary_intent": "3D Clay Style",
+          "optimized_primary_intent": "3D Clay Style",
+          "baseline_field_count": 9,
+          "optimized_field_count": 8,
+          "field_id_overlap": [
+            "main_subject",
+            "color_palette",
+            "camera_angle",
+            "lighting_style",
+            "depth_of_field"
+          ]
+        }
+      },
+      {
+        "test_id": "edge_style_transfer",
+        "similarity_score": 0.2571428571428572,
+        "primary_intent_match": false,
+        "content_category_match": true,
+        "fields_overlap": 0.14285714285714285,
+        "missing_fields": [
+          "lighting_variation",
+          "portrait_mood",
+          "shot_composition",
+          "color_palette",
+          "light_direction",
+          "shadow_intensity"
+        ],
+        "extra_fields": [
+          "background_source",
+          "outfit_source",
+          "lighting_style",
+          "facelock_identity",
+          "face_similarity",
+          "film_grain"
+        ],
+        "is_breaking_change": true,
+        "details": {
+          "baseline_primary_intent": "Dramatic Lighting",
+          "optimized_primary_intent": "Dramatic Lighting Style Transfer",
+          "baseline_field_count": 8,
+          "optimized_field_count": 8,
+          "field_id_overlap": [
+            "camera_angle",
+            "depth_of_field"
+          ]
+        }
+      },
+      {
+        "test_id": "edge_ambiguity",
+        "similarity_score": 0.7600000000000001,
+        "primary_intent_match": true,
+        "content_category_match": true,
+        "fields_overlap": 0.4,
+        "missing_fields": [
+          "facial_hair",
+          "subject_mood",
+          "background_environment"
+        ],
+        "extra_fields": [
+          "facial_hair_style",
+          "mood",
+          "clothing_style"
+        ],
+        "is_breaking_change": true,
+        "details": {
+          "baseline_primary_intent": null,
+          "optimized_primary_intent": null,
+          "baseline_field_count": 7,
+          "optimized_field_count": 7,
+          "field_id_overlap": [
+            "ethnicity",
+            "camera_angle",
+            "depth_of_field",
+            "lighting_style"
+          ]
+        }
+      },
+      {
+        "test_id": "performance_short_prompt",
+        "similarity_score": 0.7454545454545456,
+        "primary_intent_match": true,
+        "content_category_match": true,
+        "fields_overlap": 0.36363636363636365,
+        "missing_fields": [
+          "girl_appearance",
+          "portrait_style",
+          "outfit_style",
+          "facial_expression"
+        ],
+        "extra_fields": [
+          "photography_style",
+          "subject_features",
+          "outfit_choice"
+        ],
+        "is_breaking_change": true,
+        "details": {
+          "baseline_primary_intent": null,
+          "optimized_primary_intent": null,
+          "baseline_field_count": 8,
+          "optimized_field_count": 7,
+          "field_id_overlap": [
+            "background_scene",
+            "camera_angle",
+            "lighting_style",
+            "depth_of_field"
+          ]
+        }
+      },
+      {
+        "test_id": "performance_long_prompt",
+        "similarity_score": 0.675,
+        "primary_intent_match": true,
+        "content_category_match": true,
+        "fields_overlap": 0.1875,
+        "missing_fields": [
+          "outfit",
+          "main_subject_hair",
+          "background_style",
+          "lighting_setup",
+          "clay_surface_detail",
+          "clay_gloss"
+        ],
+        "extra_fields": [
+          "ethnicity",
+          "age_group",
+          "hair_details",
+          "outfit_details",
+          "clay_texture",
+          "lighting_style",
+          "gloss_level"
+        ],
+        "is_breaking_change": true,
+        "details": {
+          "baseline_primary_intent": "3D Clay Style",
+          "optimized_primary_intent": "3D Clay Style",
+          "baseline_field_count": 9,
+          "optimized_field_count": 10,
+          "field_id_overlap": [
+            "atmosphere",
+            "camera_angle",
+            "depth_of_field"
+          ]
+        }
+      }
+    ],
+    "token": [
+      {
+        "test_id": "edge_no_primary_intent",
+        "baseline": {
+          "test_id": "edge_no_primary_intent",
+          "layer": "intent-analyzer",
+          "input_tokens": 1,
+          "output_tokens": 556,
+          "total_tokens": 557,
+          "estimated_cost_usd": 0.000167
+        },
+        "optimized": {
+          "test_id": "edge_no_primary_intent",
+          "layer": "intent-analyzer",
+          "input_tokens": 1,
+          "output_tokens": 562,
+          "total_tokens": 563,
+          "estimated_cost_usd": 0.000169
+        },
+        "reduction": {
+          "input_tokens": 0,
+          "output_tokens": -6,
+          "total_tokens": -6,
+          "percentage": -1.08
+        },
+        "cost_savings_usd": -0.000002
+      },
+      {
+        "test_id": "edge_implicit_style",
+        "baseline": {
+          "test_id": "edge_implicit_style",
+          "layer": "intent-analyzer",
+          "input_tokens": 12,
+          "output_tokens": 679,
+          "total_tokens": 691,
+          "estimated_cost_usd": 0.000205
+        },
+        "optimized": {
+          "test_id": "edge_implicit_style",
+          "layer": "intent-analyzer",
+          "input_tokens": 12,
+          "output_tokens": 623,
+          "total_tokens": 635,
+          "estimated_cost_usd": 0.000188
+        },
+        "reduction": {
+          "input_tokens": 0,
+          "output_tokens": 56,
+          "total_tokens": 56,
+          "percentage": 8.1
+        },
+        "cost_savings_usd": 0.000017
+      },
+      {
+        "test_id": "normal_photography",
+        "baseline": {
+          "test_id": "normal_photography",
+          "layer": "intent-analyzer",
+          "input_tokens": 7,
+          "output_tokens": 706,
+          "total_tokens": 713,
+          "estimated_cost_usd": 0.000212
+        },
+        "optimized": {
+          "test_id": "normal_photography",
+          "layer": "intent-analyzer",
+          "input_tokens": 7,
+          "output_tokens": 536,
+          "total_tokens": 543,
+          "estimated_cost_usd": 0.000161
+        },
+        "reduction": {
+          "input_tokens": 0,
+          "output_tokens": 170,
+          "total_tokens": 170,
+          "percentage": 23.84
+        },
+        "cost_savings_usd": 0.000051
+      },
+      {
+        "test_id": "normal_anime_style",
+        "baseline": {
+          "test_id": "normal_anime_style",
+          "layer": "intent-analyzer",
+          "input_tokens": 12,
+          "output_tokens": 682,
+          "total_tokens": 694,
+          "estimated_cost_usd": 0.000205
+        },
+        "optimized": {
+          "test_id": "normal_anime_style",
+          "layer": "intent-analyzer",
+          "input_tokens": 12,
+          "output_tokens": 639,
+          "total_tokens": 651,
+          "estimated_cost_usd": 0.000193
+        },
+        "reduction": {
+          "input_tokens": 0,
+          "output_tokens": 43,
+          "total_tokens": 43,
+          "percentage": 6.2
+        },
+        "cost_savings_usd": 0.000012
+      },
+      {
+        "test_id": "complex_3d_clay",
+        "baseline": {
+          "test_id": "complex_3d_clay",
+          "layer": "intent-analyzer",
+          "input_tokens": 22,
+          "output_tokens": 767,
+          "total_tokens": 789,
+          "estimated_cost_usd": 0.000232
+        },
+        "optimized": {
+          "test_id": "complex_3d_clay",
+          "layer": "intent-analyzer",
+          "input_tokens": 22,
+          "output_tokens": 696,
+          "total_tokens": 718,
+          "estimated_cost_usd": 0.00021
+        },
+        "reduction": {
+          "input_tokens": 0,
+          "output_tokens": 71,
+          "total_tokens": 71,
+          "percentage": 9
+        },
+        "cost_savings_usd": 0.000022
+      },
+      {
+        "test_id": "edge_style_transfer",
+        "baseline": {
+          "test_id": "edge_style_transfer",
+          "layer": "intent-analyzer",
+          "input_tokens": 17,
+          "output_tokens": 761,
+          "total_tokens": 778,
+          "estimated_cost_usd": 0.00023
+        },
+        "optimized": {
+          "test_id": "edge_style_transfer",
+          "layer": "intent-analyzer",
+          "input_tokens": 17,
+          "output_tokens": 788,
+          "total_tokens": 805,
+          "estimated_cost_usd": 0.000238
+        },
+        "reduction": {
+          "input_tokens": 0,
+          "output_tokens": -27,
+          "total_tokens": -27,
+          "percentage": -3.47
+        },
+        "cost_savings_usd": -0.000008
+      },
+      {
+        "test_id": "edge_ambiguity",
+        "baseline": {
+          "test_id": "edge_ambiguity",
+          "layer": "intent-analyzer",
+          "input_tokens": 3,
+          "output_tokens": 450,
+          "total_tokens": 453,
+          "estimated_cost_usd": 0.000135
+        },
+        "optimized": {
+          "test_id": "edge_ambiguity",
+          "layer": "intent-analyzer",
+          "input_tokens": 3,
+          "output_tokens": 489,
+          "total_tokens": 492,
+          "estimated_cost_usd": 0.000147
+        },
+        "reduction": {
+          "input_tokens": 0,
+          "output_tokens": -39,
+          "total_tokens": -39,
+          "percentage": -8.61
+        },
+        "cost_savings_usd": -0.000012
+      },
+      {
+        "test_id": "performance_short_prompt",
+        "baseline": {
+          "test_id": "performance_short_prompt",
+          "layer": "intent-analyzer",
+          "input_tokens": 1,
+          "output_tokens": 557,
+          "total_tokens": 558,
+          "estimated_cost_usd": 0.000167
+        },
+        "optimized": {
+          "test_id": "performance_short_prompt",
+          "layer": "intent-analyzer",
+          "input_tokens": 1,
+          "output_tokens": 486,
+          "total_tokens": 487,
+          "estimated_cost_usd": 0.000146
+        },
+        "reduction": {
+          "input_tokens": 0,
+          "output_tokens": 71,
+          "total_tokens": 71,
+          "percentage": 12.72
+        },
+        "cost_savings_usd": 0.000021
+      },
+      {
+        "test_id": "performance_long_prompt",
+        "baseline": {
+          "test_id": "performance_long_prompt",
+          "layer": "intent-analyzer",
+          "input_tokens": 103,
+          "output_tokens": 999,
+          "total_tokens": 1102,
+          "estimated_cost_usd": 0.000307
+        },
+        "optimized": {
+          "test_id": "performance_long_prompt",
+          "layer": "intent-analyzer",
+          "input_tokens": 103,
+          "output_tokens": 843,
+          "total_tokens": 946,
+          "estimated_cost_usd": 0.000261
+        },
+        "reduction": {
+          "input_tokens": 0,
+          "output_tokens": 156,
+          "total_tokens": 156,
+          "percentage": 14.16
+        },
+        "cost_savings_usd": 0.000046
+      }
+    ],
+    "quality": [
+      {
+        "test_id": "edge_no_primary_intent",
+        "baseline": {
+          "test_id": "edge_no_primary_intent",
+          "keyword_repetition_rate": 0.125,
+          "repeated_keywords": [
+            {
+              "keyword": "photography",
+              "count": 2
+            },
+            {
+              "keyword": "girl",
+              "count": 2
+            },
+            {
+              "keyword": "depth",
+              "count": 2
+            }
+          ],
+          "fields_completeness": 0.75,
+          "ambiguity_trigger_rate": 1,
+          "response_time_ms": 41560,
+          "prompt_length": 468
+        },
+        "optimized": {
+          "test_id": "edge_no_primary_intent",
+          "keyword_repetition_rate": 0.093,
+          "repeated_keywords": [
+            {
+              "keyword": "photography",
+              "count": 3
+            },
+            {
+              "keyword": "that",
+              "count": 2
+            }
+          ],
+          "fields_completeness": 0.75,
+          "ambiguity_trigger_rate": 1,
+          "response_time_ms": 35566,
+          "prompt_length": 529
+        },
+        "improvements": {
+          "repetition_reduction": 25.6,
+          "completeness_delta": 0,
+          "response_time_delta_ms": -5994,
+          "prompt_length_delta": 61
+        }
+      },
+      {
+        "test_id": "edge_implicit_style",
+        "baseline": {
+          "test_id": "edge_implicit_style",
+          "keyword_repetition_rate": 0.189,
+          "repeated_keywords": [
+            {
+              "keyword": "clay",
+              "count": 4
+            },
+            {
+              "keyword": "style",
+              "count": 2
+            },
+            {
+              "keyword": "authentic",
+              "count": 2
+            },
+            {
+              "keyword": "that",
+              "count": 2
+            }
+          ],
+          "fields_completeness": 1,
+          "ambiguity_trigger_rate": 1,
+          "response_time_ms": 46980,
+          "prompt_length": 512
+        },
+        "optimized": {
+          "test_id": "edge_implicit_style",
+          "keyword_repetition_rate": 0.068,
+          "repeated_keywords": [
+            {
+              "keyword": "clay",
+              "count": 3
+            }
+          ],
+          "fields_completeness": 1,
+          "ambiguity_trigger_rate": 1,
+          "response_time_ms": 33680,
+          "prompt_length": 408
+        },
+        "improvements": {
+          "repetition_reduction": 64.02,
+          "completeness_delta": 0,
+          "response_time_delta_ms": -13300,
+          "prompt_length_delta": -104
+        }
+      },
+      {
+        "test_id": "normal_photography",
+        "baseline": {
+          "test_id": "normal_photography",
+          "keyword_repetition_rate": 0.217,
+          "repeated_keywords": [
+            {
+              "keyword": "golden",
+              "count": 3
+            },
+            {
+              "keyword": "hour",
+              "count": 3
+            },
+            {
+              "keyword": "portrait",
+              "count": 3
+            },
+            {
+              "keyword": "beach",
+              "count": 2
+            },
+            {
+              "keyword": "this",
+              "count": 2
+            },
+            {
+              "keyword": "soft",
+              "count": 2
+            }
+          ],
+          "fields_completeness": 0.75,
+          "ambiguity_trigger_rate": 1,
+          "response_time_ms": 31846,
+          "prompt_length": 652
+        },
+        "optimized": {
+          "test_id": "normal_photography",
+          "keyword_repetition_rate": 0.226,
+          "repeated_keywords": [
+            {
+              "keyword": "photography",
+              "count": 3
+            },
+            {
+              "keyword": "beach",
+              "count": 3
+            },
+            {
+              "keyword": "golden",
+              "count": 2
+            },
+            {
+              "keyword": "hour",
+              "count": 2
+            },
+            {
+              "keyword": "portrait",
+              "count": 2
+            },
+            {
+              "keyword": "light",
+              "count": 2
+            }
+          ],
+          "fields_completeness": 0.75,
+          "ambiguity_trigger_rate": 1,
+          "response_time_ms": 34960,
+          "prompt_length": 596
+        },
+        "improvements": {
+          "repetition_reduction": -4.15,
+          "completeness_delta": 0,
+          "response_time_delta_ms": 3114,
+          "prompt_length_delta": -56
+        }
+      },
+      {
+        "test_id": "normal_anime_style",
+        "baseline": {
+          "test_id": "normal_anime_style",
+          "keyword_repetition_rate": 0.185,
+          "repeated_keywords": [
+            {
+              "keyword": "studio",
+              "count": 2
+            },
+            {
+              "keyword": "ghibli",
+              "count": 2
+            },
+            {
+              "keyword": "style",
+              "count": 2
+            },
+            {
+              "keyword": "anime",
+              "count": 2
+            },
+            {
+              "keyword": "vibrant",
+              "count": 2
+            },
+            {
+              "keyword": "hair",
+              "count": 2
+            }
+          ],
+          "fields_completeness": 1,
+          "ambiguity_trigger_rate": 1,
+          "response_time_ms": 57589,
+          "prompt_length": 606
+        },
+        "optimized": {
+          "test_id": "normal_anime_style",
+          "keyword_repetition_rate": 0.167,
+          "repeated_keywords": [
+            {
+              "keyword": "with",
+              "count": 3
+            },
+            {
+              "keyword": "studio",
+              "count": 2
+            },
+            {
+              "keyword": "ghibli",
+              "count": 2
+            },
+            {
+              "keyword": "style",
+              "count": 2
+            },
+            {
+              "keyword": "that",
+              "count": 2
+            }
+          ],
+          "fields_completeness": 1,
+          "ambiguity_trigger_rate": 1,
+          "response_time_ms": 30753,
+          "prompt_length": 596
+        },
+        "improvements": {
+          "repetition_reduction": 9.73,
+          "completeness_delta": 0,
+          "response_time_delta_ms": -26836,
+          "prompt_length_delta": -10
+        }
+      },
+      {
+        "test_id": "complex_3d_clay",
+        "baseline": {
+          "test_id": "complex_3d_clay",
+          "keyword_repetition_rate": 0.127,
+          "repeated_keywords": [
+            {
+              "keyword": "clay",
+              "count": 3
+            },
+            {
+              "keyword": "style",
+              "count": 2
+            },
+            {
+              "keyword": "soft",
+              "count": 2
+            }
+          ],
+          "fields_completeness": 1,
+          "ambiguity_trigger_rate": 1,
+          "response_time_ms": 40012,
+          "prompt_length": 541
+        },
+        "optimized": {
+          "test_id": "complex_3d_clay",
+          "keyword_repetition_rate": 0.234,
+          "repeated_keywords": [
+            {
+              "keyword": "that",
+              "count": 3
+            },
+            {
+              "keyword": "clay",
+              "count": 2
+            },
+            {
+              "keyword": "style",
+              "count": 2
+            },
+            {
+              "keyword": "tactile",
+              "count": 2
+            },
+            {
+              "keyword": "soft",
+              "count": 2
+            },
+            {
+              "keyword": "light",
+              "count": 2
+            },
+            {
+              "keyword": "with",
+              "count": 2
+            }
+          ],
+          "fields_completeness": 1,
+          "ambiguity_trigger_rate": 1,
+          "response_time_ms": 36619,
+          "prompt_length": 583
+        },
+        "improvements": {
+          "repetition_reduction": -84.25,
+          "completeness_delta": 0,
+          "response_time_delta_ms": -3393,
+          "prompt_length_delta": 42
+        }
+      },
+      {
+        "test_id": "edge_style_transfer",
+        "baseline": {
+          "test_id": "edge_style_transfer",
+          "keyword_repetition_rate": 0.277,
+          "repeated_keywords": [
+            {
+              "keyword": "dramatic",
+              "count": 2
+            },
+            {
+              "keyword": "lighting",
+              "count": 2
+            },
+            {
+              "keyword": "photography",
+              "count": 2
+            },
+            {
+              "keyword": "from",
+              "count": 2
+            },
+            {
+              "keyword": "face",
+              "count": 2
+            },
+            {
+              "keyword": "source",
+              "count": 2
+            },
+            {
+              "keyword": "light",
+              "count": 2
+            },
+            {
+              "keyword": "shadow",
+              "count": 2
+            },
+            {
+              "keyword": "subjects",
+              "count": 2
+            }
+          ],
+          "fields_completeness": 1,
+          "ambiguity_trigger_rate": 1,
+          "response_time_ms": 50801,
+          "prompt_length": 649
+        },
+        "optimized": {
+          "test_id": "edge_style_transfer",
+          "keyword_repetition_rate": 0.29,
+          "repeated_keywords": [
+            {
+              "keyword": "dramatic",
+              "count": 4
+            },
+            {
+              "keyword": "style",
+              "count": 4
+            },
+            {
+              "keyword": "lighting",
+              "count": 3
+            },
+            {
+              "keyword": "transfer",
+              "count": 3
+            },
+            {
+              "keyword": "that",
+              "count": 2
+            },
+            {
+              "keyword": "with",
+              "count": 2
+            }
+          ],
+          "fields_completeness": 1,
+          "ambiguity_trigger_rate": 0,
+          "response_time_ms": 51868,
+          "prompt_length": 565
+        },
+        "improvements": {
+          "repetition_reduction": -4.69,
+          "completeness_delta": 0,
+          "response_time_delta_ms": 1067,
+          "prompt_length_delta": -84
+        }
+      },
+      {
+        "test_id": "edge_ambiguity",
+        "baseline": {
+          "test_id": "edge_ambiguity",
+          "keyword_repetition_rate": 0.266,
+          "repeated_keywords": [
+            {
+              "keyword": "middle",
+              "count": 3
+            },
+            {
+              "keyword": "eastern",
+              "count": 3
+            },
+            {
+              "keyword": "photography",
+              "count": 3
+            },
+            {
+              "keyword": "with",
+              "count": 3
+            },
+            {
+              "keyword": "beard",
+              "count": 3
+            },
+            {
+              "keyword": "male",
+              "count": 2
+            },
+            {
+              "keyword": "portrait",
+              "count": 2
+            },
+            {
+              "keyword": "textures",
+              "count": 2
+            }
+          ],
+          "fields_completeness": 0.75,
+          "ambiguity_trigger_rate": 0,
+          "response_time_ms": 230179,
+          "prompt_length": 775
+        },
+        "optimized": {
+          "test_id": "edge_ambiguity",
+          "keyword_repetition_rate": 0.038,
+          "repeated_keywords": [
+            {
+              "keyword": "beard",
+              "count": 2
+            }
+          ],
+          "fields_completeness": 0.75,
+          "ambiguity_trigger_rate": 0,
+          "response_time_ms": 39199,
+          "prompt_length": 542
+        },
+        "improvements": {
+          "repetition_reduction": 85.71,
+          "completeness_delta": 0,
+          "response_time_delta_ms": -190980,
+          "prompt_length_delta": -233
+        }
+      },
+      {
+        "test_id": "performance_short_prompt",
+        "baseline": {
+          "test_id": "performance_short_prompt",
+          "keyword_repetition_rate": 0.051,
+          "repeated_keywords": [
+            {
+              "keyword": "that",
+              "count": 2
+            }
+          ],
+          "fields_completeness": 0.75,
+          "ambiguity_trigger_rate": 1,
+          "response_time_ms": 32039,
+          "prompt_length": 398
+        },
+        "optimized": {
+          "test_id": "performance_short_prompt",
+          "keyword_repetition_rate": 0.123,
+          "repeated_keywords": [
+            {
+              "keyword": "soft",
+              "count": 3
+            },
+            {
+              "keyword": "photography",
+              "count": 2
+            },
+            {
+              "keyword": "into",
+              "count": 2
+            },
+            {
+              "keyword": "with",
+              "count": 2
+            }
+          ],
+          "fields_completeness": 0.75,
+          "ambiguity_trigger_rate": 1,
+          "response_time_ms": 33895,
+          "prompt_length": 682
+        },
+        "improvements": {
+          "repetition_reduction": -141.18,
+          "completeness_delta": 0,
+          "response_time_delta_ms": 1856,
+          "prompt_length_delta": 284
+        }
+      },
+      {
+        "test_id": "performance_long_prompt",
+        "baseline": {
+          "test_id": "performance_long_prompt",
+          "keyword_repetition_rate": 0.205,
+          "repeated_keywords": [
+            {
+              "keyword": "clay",
+              "count": 4
+            },
+            {
+              "keyword": "with",
+              "count": 4
+            },
+            {
+              "keyword": "style",
+              "count": 2
+            },
+            {
+              "keyword": "rendered",
+              "count": 2
+            },
+            {
+              "keyword": "golden",
+              "count": 2
+            },
+            {
+              "keyword": "textures",
+              "count": 2
+            }
+          ],
+          "fields_completeness": 1,
+          "ambiguity_trigger_rate": 1,
+          "response_time_ms": 35777,
+          "prompt_length": 714
+        },
+        "optimized": {
+          "test_id": "performance_long_prompt",
+          "keyword_repetition_rate": 0.181,
+          "repeated_keywords": [
+            {
+              "keyword": "clay",
+              "count": 3
+            },
+            {
+              "keyword": "with",
+              "count": 3
+            },
+            {
+              "keyword": "golden",
+              "count": 3
+            },
+            {
+              "keyword": "style",
+              "count": 2
+            },
+            {
+              "keyword": "sculpted",
+              "count": 2
+            }
+          ],
+          "fields_completeness": 1,
+          "ambiguity_trigger_rate": 1,
+          "response_time_ms": 41398,
+          "prompt_length": 630
+        },
+        "improvements": {
+          "repetition_reduction": 11.71,
+          "completeness_delta": 0,
+          "response_time_delta_ms": 5621,
+          "prompt_length_delta": -84
+        }
+      }
+    ]
+  },
+  "recommendation": {
+    "decision": "NO-GO",
+    "passed_checks": 1,
+    "total_checks": 5,
+    "checks": {
+      "token_reduction_achieved": false,
+      "semantic_similarity_ok": false,
+      "no_breaking_changes": false,
+      "quality_not_degraded": true,
+      "repetition_reduced": false
+    },
+    "reasons": [
+      "需要进一步优化或调整策略"
+    ]
+  }
+}

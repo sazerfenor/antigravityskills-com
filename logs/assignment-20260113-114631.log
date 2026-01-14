@@ -1,0 +1,379 @@
+============================================================
+🧠 AI 驱动的 Prompt-Persona 智能匹配
+============================================================
+📂 输入文件: prompts-input-enriched.json
+📊 Prompt 数量: 3573
+[dotenv@17.2.2] injecting env (0) from .env.development -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+[dotenv@17.2.2] injecting env (16) from .env -- tip: 📡 auto-backup env with Radar: https://dotenvx.com/radar
+👥 虚拟人格数量: 43
+
+📊 人格分布:
+  photography: 18 人
+  art-illustration: 9 人
+  design: 8 人
+  character-design: 4 人
+  commercial-product: 4 人
+
+📊 Prompt 分布:
+  design: 507 个
+  photography: 1978 个
+  art-illustration: 651 个
+  commercial-product: 247 个
+  character-design: 190 个
+[getConfigs] Attempting to fetch configs from database...
+[getConfigs] Successfully loaded 10 configs
+
+🔄 处理分类: design (507 prompts, 8 personas)
+   目标: 每人 64 个 prompts
+   批次 1: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 79 (line 3 column 29)
+   批次 2: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 78 (line 3 column 27)
+   批次 3: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 79 (line 3 column 28)
+   批次 4: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 81 (line 3 column 30)
+   批次 5: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 88 (line 3 column 37)
+   批次 6: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 79 (line 3 column 28)
+   批次 7: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 85 (line 3 column 35)
+   批次 8: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 82 (line 3 column 32)
+   批次 9: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 78 (line 3 column 28)
+   批次 10: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 80 (line 3 column 29)
+   批次 11: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 77 (line 3 column 26)
+   批次 12: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 87 (line 3 column 37)
+   批次 13: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 84 (line 3 column 34)
+   批次 14: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 84 (line 3 column 34)
+   批次 15: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 80 (line 3 column 29)
+   批次 16: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 88 (line 3 column 39)
+   批次 17: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 123 (line 7 column 21)
+   批次 18: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 81 (line 3 column 31)
+   批次 19: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 87 (line 3 column 36)
+   批次 20: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 76 (line 3 column 25)
+   批次 21: 7 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 80 (line 3 column 29)
+
+🔄 处理分类: photography (1978 prompts, 18 personas)
+   目标: 每人 110 个 prompts
+   批次 1: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 79 (line 3 column 28)
+   批次 2: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 76 (line 3 column 25)
+   批次 3: 25 prompts
+   ❌ AI 匹配失败: Expected double-quoted property name in JSON at position 113 (line 6 column 22)
+   批次 4: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 112 (line 6 column 14)
+   批次 5: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 67 (line 3 column 16)
+   批次 6: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 77 (line 3 column 26)
+   批次 7: 25 prompts
+   ❌ AI 匹配失败: Expected double-quoted property name in JSON at position 120 (line 6 column 25)
+   批次 8: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 77 (line 3 column 26)
+   批次 9: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 78 (line 3 column 27)
+   批次 10: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 75 (line 3 column 24)
+   批次 11: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 77 (line 3 column 26)
+   批次 12: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 118 (line 6 column 17)
+   批次 13: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 76 (line 3 column 25)
+   批次 14: 25 prompts
+   ❌ AI 匹配失败: Expected double-quoted property name in JSON at position 113 (line 6 column 17)
+   批次 15: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 81 (line 4 column 24)
+   批次 16: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 77 (line 3 column 26)
+   批次 17: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 79 (line 3 column 28)
+   批次 18: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 80 (line 3 column 29)
+   批次 19: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 118 (line 6 column 23)
+   批次 20: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 80 (line 3 column 29)
+   批次 21: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 81 (line 3 column 30)
+   批次 22: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 78 (line 3 column 27)
+   批次 23: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 76 (line 3 column 26)
+   批次 24: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 78 (line 3 column 27)
+   批次 25: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 77 (line 3 column 26)
+   批次 26: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 76 (line 3 column 25)
+   批次 27: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 76 (line 3 column 25)
+   批次 28: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 80 (line 3 column 29)
+   批次 29: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 75 (line 3 column 24)
+   批次 30: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 114 (line 6 column 18)
+   批次 31: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 69 (line 3 column 18)
+   批次 32: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 77 (line 3 column 26)
+   批次 33: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 77 (line 3 column 26)
+   批次 34: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 78 (line 3 column 27)
+   批次 35: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 83 (line 3 column 32)
+   批次 36: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 78 (line 3 column 27)
+   批次 37: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 75 (line 3 column 24)
+   批次 38: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 78 (line 3 column 27)
+   批次 39: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 79 (line 3 column 28)
+   批次 40: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 77 (line 3 column 26)
+   批次 41: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 80 (line 3 column 29)
+   批次 42: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 79 (line 3 column 28)
+   批次 43: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 79 (line 3 column 28)
+   批次 44: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 79 (line 3 column 28)
+   批次 45: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 78 (line 3 column 27)
+   批次 46: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 76 (line 3 column 25)
+   批次 47: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 78 (line 3 column 27)
+   批次 48: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 77 (line 3 column 27)
+   批次 49: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 73 (line 3 column 22)
+   批次 50: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 79 (line 3 column 28)
+   批次 51: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 78 (line 3 column 27)
+   批次 52: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 77 (line 3 column 26)
+   批次 53: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 111 (line 6 column 18)
+   批次 54: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 113 (line 6 column 14)
+   批次 55: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 78 (line 3 column 27)
+   批次 56: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 77 (line 3 column 27)
+   批次 57: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 75 (line 3 column 24)
+   批次 58: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 113 (line 6 column 15)
+   批次 59: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 80 (line 3 column 29)
+   批次 60: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 80 (line 3 column 29)
+   批次 61: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 117 (line 6 column 23)
+   批次 62: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 77 (line 3 column 26)
+   批次 63: 25 prompts
+   ❌ AI 匹配失败: Expected double-quoted property name in JSON at position 120 (line 6 column 25)
+   批次 64: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 80 (line 3 column 29)
+   批次 65: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 79 (line 3 column 29)
+   批次 66: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 115 (line 7 column 4)
+   批次 67: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 79 (line 3 column 30)
+   批次 68: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 76 (line 3 column 25)
+   批次 69: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 78 (line 3 column 27)
+   批次 70: 25 prompts
+   ❌ AI 匹配失败: Expected double-quoted property name in JSON at position 119 (line 6 column 25)
+   批次 71: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 80 (line 3 column 29)
+   批次 72: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 82 (line 3 column 31)
+   批次 73: 25 prompts
+   ❌ AI 匹配失败: Expected double-quoted property name in JSON at position 117 (line 6 column 25)
+   批次 74: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 122 (line 6 column 21)
+   批次 75: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 80 (line 3 column 29)
+   批次 76: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 80 (line 3 column 29)
+   批次 77: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 117 (line 7 column 6)
+   批次 78: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 80 (line 3 column 29)
+   批次 79: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 81 (line 3 column 30)
+   批次 80: 3 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 84 (line 3 column 33)
+
+🔄 处理分类: art-illustration (651 prompts, 9 personas)
+   目标: 每人 73 个 prompts
+   批次 1: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 85 (line 3 column 34)
+   批次 2: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 83 (line 3 column 32)
+   批次 3: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 77 (line 3 column 26)
+   批次 4: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 84 (line 3 column 35)
+   批次 5: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 81 (line 3 column 30)
+   批次 6: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 77 (line 3 column 26)
+   批次 7: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 81 (line 3 column 30)
+   批次 8: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 78 (line 3 column 27)
+   批次 9: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 82 (line 3 column 31)
+   批次 10: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 83 (line 3 column 32)
+   批次 11: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 111 (line 6 column 18)
+   批次 12: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 81 (line 3 column 30)
+   批次 13: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 82 (line 3 column 31)
+   批次 14: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 81 (line 3 column 30)
+   批次 15: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 85 (line 3 column 34)
+   批次 16: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 81 (line 3 column 31)
+   批次 17: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 83 (line 3 column 32)
+   批次 18: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 80 (line 3 column 29)
+   批次 19: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 81 (line 3 column 30)
+   批次 20: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 85 (line 3 column 35)
+   批次 21: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 122 (line 7 column 6)
+   批次 22: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 83 (line 3 column 33)
+   批次 23: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 80 (line 3 column 29)
+   批次 24: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 79 (line 3 column 28)
+   批次 25: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 106 (line 5 column 38)
+   批次 26: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 83 (line 3 column 32)
+   批次 27: 1 prompts
+
+🔄 处理分类: commercial-product (247 prompts, 4 personas)
+   目标: 每人 62 个 prompts
+   批次 1: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 79 (line 3 column 28)
+   批次 2: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 84 (line 3 column 33)
+   批次 3: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 81 (line 3 column 30)
+   批次 4: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 75 (line 3 column 24)
+   批次 5: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 77 (line 3 column 27)
+   批次 6: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 79 (line 3 column 28)
+   批次 7: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 77 (line 3 column 26)
+   批次 8: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 81 (line 3 column 30)
+   批次 9: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 77 (line 3 column 27)
+   批次 10: 22 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 79 (line 3 column 28)
+
+🔄 处理分类: character-design (190 prompts, 4 personas)
+   目标: 每人 48 个 prompts
+   批次 1: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 79 (line 3 column 28)
+   批次 2: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 78 (line 3 column 27)
+   批次 3: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 79 (line 3 column 28)
+   批次 4: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 78 (line 3 column 27)
+   批次 5: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 80 (line 3 column 30)
+   批次 6: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 76 (line 3 column 25)
+   批次 7: 25 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 79 (line 3 column 29)
+   批次 8: 15 prompts
+   ❌ AI 匹配失败: Unterminated string in JSON at position 80 (line 3 column 29)
+
+✅ 已更新输入文件: prompts-input-enriched.json
+
+📊 分配统计:
+  mthorne: 159 个
+  skywardlena: 159 个
+  vincepix: 159 个
+  elenav77: 158 个
+  wingbeats: 158 个
+  tobiasw92: 157 个
+  marcusv84: 157 个
+  vincelabs: 81 个
+  claireeats: 79 个
+  julianv82: 79 个
+  claramartin: 79 个
+  crustncrumb: 79 个
+  pvox: 79 个
+  heyitsjenna: 79 个
+  sorenk92: 79 个
+  julesv: 79 个
+  raymondz: 79 个
+  lucasblue: 79 个
+  squishyguy: 78 个
+  neonfern: 78 个
+  papergrain: 78 个
+  clarkev: 78 个
+  grayv0id: 78 个
+  inkndata: 78 个
+  smallworlds: 78 个
+  mikeyv: 77 个
+  benjaminc: 69 个
+  kernedout: 61 个
+  inkandgold: 61 个
+  stefkicks: 61 个
+  marcusw91: 61 个
+  ellieb: 61 个
+  natetypes: 61 个
+  livv91: 60 个
+  jaxflux: 60 个
+  lucasdrinks: 59 个
+  erikv7: 59 个
+  hro88: 53 个
+  yukinon94: 53 个
+  mossybrushes: 52 个
+  jaxv: 46 个
+  vtess: 46 个
+  vincenzo88: 45 个
+
+✅ 智能分配完成！

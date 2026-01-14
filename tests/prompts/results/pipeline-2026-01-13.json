@@ -1,0 +1,1600 @@
+{
+  "metadata": {
+    "timestamp": "2026-01-13T16:21:57.794Z",
+    "total_tests": 3,
+    "success": 3,
+    "failed": 0,
+    "success_rate": "100.0%"
+  },
+  "performance": {
+    "avg_layer1_ms": 27401.333333333332,
+    "avg_layer2_ms": 11452.333333333334,
+    "avg_layer3_ms": 28424,
+    "avg_total_ms": 67283.33333333333
+  },
+  "results": [
+    {
+      "test_id": "edge_no_primary_intent",
+      "test_name": "Edge Case: 无风格意图 - 应返回 primary_intent=null",
+      "category": "edge_case",
+      "layer1": {
+        "test_id": "edge_no_primary_intent",
+        "input": {
+          "input": "一个女孩",
+          "imageUrls": []
+        },
+        "output": {
+          "schema": {
+            "context": "女孩肖像摄影",
+            "followUpQuestion": "您对女孩的年龄、特定外貌特征（如发色、族裔）或她正在进行的动作有具体要求吗？",
+            "fields": [
+              {
+                "id": "art_style",
+                "type": "select",
+                "label": "艺术风格",
+                "isAdvanced": false,
+                "multiSelect": false,
+                "defaultValue": "阳光清新 (Natural & Airy)",
+                "options": [
+                  "阳光清新 (Natural & Airy)",
+                  "文艺复兴油画 (Renaissance Oil)",
+                  "赛博朋克霓虹 (Cyberpunk Neon)",
+                  "复古胶片感 (Vintage Film)",
+                  "极简主义 (Minimalist)",
+                  "唯美古风 (Traditional Chinese)",
+                  "街头潮流 (Street Fashion)",
+                  "商务职业 (Professional Portrait)",
+                  "哥特暗黑 (Gothic Mood)",
+                  "波普艺术 (Pop Art)",
+                  "黑白纪实 (Monochrome Documentary)",
+                  "梦幻柔焦 (Dreamy Soft Focus)"
+                ],
+                "source": "expanded"
+              },
+              {
+                "id": "facial_expression",
+                "type": "select",
+                "label": "面部表情",
+                "isAdvanced": false,
+                "multiSelect": false,
+                "defaultValue": "恬静自然 (Serene)",
+                "options": [
+                  "甜美微笑 (Sweet Smile)",
+                  "忧郁深沉 (Melancholic)",
+                  "冷酷自信 (Cool & Confident)",
+                  "调皮活泼 (Playful)",
+                  "恬静自然 (Serene)",
+                  "惊讶好奇 (Surprised)",
+                  "坚毅勇敢 (Determined)",
+                  "慵懒随性 (Languid)",
+                  "迷茫空灵 (Ethereal)",
+                  "专注认真 (Focused)"
+                ],
+                "source": "expanded"
+              },
+              {
+                "id": "outfit_style",
+                "type": "select",
+                "label": "服装款式",
+                "isAdvanced": false,
+                "multiSelect": true,
+                "defaultValue": "简约白T恤 (Simple White T-shirt)",
+                "options": [
+                  "简约白T恤 (Simple White T-shirt)",
+                  "碎花连衣裙 (Floral Dress)",
+                  "复古小西装 (Vintage Blazer)",
+                  "连帽卫衣 (Hoodie)",
+                  "传统汉服 (Traditional Hanfu)",
+                  "针织毛衣 (Knitted Sweater)",
+                  "皮革夹克 (Leather Jacket)",
+                  "学院风制服 (Academic Uniform)",
+                  "露肩晚礼服 (Off-shoulder Gown)",
+                  "运动背心 (Sports Tank Top)"
+                ],
+                "source": "expanded"
+              },
+              {
+                "id": "environment_scene",
+                "type": "select",
+                "label": "环境场景",
+                "isAdvanced": false,
+                "multiSelect": false,
+                "defaultValue": "宁静森林公园 (Quiet Forest Park)",
+                "options": [
+                  "午后咖啡馆 (Afternoon Cafe)",
+                  "繁华都市街头 (Busy Urban Street)",
+                  "宁静森林公园 (Quiet Forest Park)",
+                  "极简室内影棚 (Minimalist Studio)",
+                  "黄昏海边沙滩 (Golden Hour Beach)",
+                  "充满书香的图书馆 (Library)",
+                  "霓虹闪烁的雨夜 (Neon Rain Night)",
+                  "向日葵花海 (Sunflower Field)",
+                  "荒芜的工业废墟 (Industrial Ruins)",
+                  "温暖的居家卧室 (Cozy Bedroom)"
+                ],
+                "source": "expanded"
+              },
+              {
+                "id": "lighting_style",
+                "type": "select",
+                "label": "光影氛围",
+                "isAdvanced": false,
+                "multiSelect": false,
+                "defaultValue": "自然柔光 (Natural Soft Light)",
+                "options": [
+                  "自然柔光 (Natural Soft Light)",
+                  "黄金小时光辉 (Golden Hour Glow)",
+                  "戏剧性侧光 (Dramatic Side Light)",
+                  "霓虹炫彩 (Vibrant Neon)",
+                  "柔和窗光 (Soft Window Light)",
+                  "丁达尔效应 (Tyndall Effect)",
+                  "烛光暖影 (Warm Candlelight)",
+                  "影棚冷光 (Studio Cold Light)",
+                  "斑驳树影 (Dappled Tree Shadows)",
+                  "电影感逆光 (Cinematic Backlight)"
+                ],
+                "source": "expanded"
+              },
+              {
+                "id": "camera_angle",
+                "type": "select",
+                "label": "镜头视角",
+                "isAdvanced": true,
+                "multiSelect": false,
+                "defaultValue": "平视 (Eye Level)",
+                "options": [
+                  "平视 (Eye Level)",
+                  "仰拍 (Low Angle)",
+                  "俯拍 (High Angle)",
+                  "特写 (Close-up)",
+                  "中景 (Medium Shot)",
+                  "全景 (Wide Shot)",
+                  "斜角 (Dutch Angle)",
+                  "侧面轮廓 (Profile Shot)",
+                  "越肩构图 (Over-the-shoulder)",
+                  "微距 (Macro)"
+                ],
+                "source": "expanded"
+              },
+              {
+                "id": "depth_of_field",
+                "type": "slider",
+                "label": "景深控制",
+                "isAdvanced": true,
+                "multiSelect": false,
+                "defaultValue": 3,
+                "min": 1,
+                "max": 10,
+                "step": 1,
+                "minLabel": "大光圈 (背景虚化)",
+                "maxLabel": "小光圈 (全景清晰)",
+                "source": "expanded"
+              }
+            ],
+            "preservedDetails": [],
+            "imageProcessingInstructions": [],
+            "internalSignals": {
+              "primaryMood": "neutral",
+              "visualComplexity": "focused",
+              "detectedSubjectType": "person"
+            },
+            "primaryIntent": null,
+            "extractedRatio": null,
+            "contentCategory": "photography"
+          },
+          "response_time_ms": 25644
+        }
+      },
+      "layer2": {
+        "test_id": "edge_no_primary_intent",
+        "input": {
+          "core": {
+            "subject": "女孩肖像摄影",
+            "action": ""
+          },
+          "narrative_params": {},
+          "layout_constraints": {
+            "ar": "1:1",
+            "text_render": false
+          },
+          "custom_input": "一个女孩",
+          "content_category": "photography",
+          "internal_signals": {
+            "primaryMood": "neutral",
+            "visualComplexity": "focused",
+            "detectedSubjectType": "person"
+          }
+        },
+        "output": {
+          "native": "A captivating girl portrait photography session capturing the innocent and curious expression of a young girl. This photography piece features her framed in a close-up composition, with soft natural light gently sculpting her features and creating delicate, dancing catchlights in her eyes. The shallow focus ensures that the background dissolves into a smooth, ethereal bokeh, keeping all visual priority on her natural and detailed complexion and the fine, wispy textures of her hair. The atmosphere is quiet and intimate, rendered with the lifelike clarity and tonal depth characteristic of a high-end portrait lens",
+          "english": "A captivating girl portrait photography session capturing the innocent and curious expression of a young girl. This photography piece features her framed in a close-up composition, with soft natural light gently sculpting her features and creating delicate, dancing catchlights in her eyes. The shallow focus ensures that the background dissolves into a smooth, ethereal bokeh, keeping all visual priority on her natural and detailed complexion and the fine, wispy textures of her hair. The atmosphere is quiet and intimate, rendered with the lifelike clarity and tonal depth characteristic of a high-end portrait lens",
+          "highlights": {
+            "native": [
+              {
+                "start": 14,
+                "end": 39,
+                "fieldId": "subject",
+                "fieldLabel": "Subject",
+                "originalValue": "subject",
+                "category": "subject",
+                "transformedTo": "girl portrait photography"
+              },
+              {
+                "start": 99,
+                "end": 109,
+                "fieldId": "user_detail",
+                "fieldLabel": "User Detail",
+                "originalValue": "user_detail",
+                "category": "technical",
+                "transformedTo": "young girl"
+              },
+              {
+                "start": 116,
+                "end": 127,
+                "fieldId": "content_type",
+                "fieldLabel": "Content Type",
+                "originalValue": "content_type",
+                "category": "technical",
+                "transformedTo": "photography"
+              },
+              {
+                "start": 186,
+                "end": 204,
+                "fieldId": "lighting",
+                "fieldLabel": "Lighting",
+                "originalValue": "lighting",
+                "category": "lighting",
+                "transformedTo": "soft natural light"
+              },
+              {
+                "start": 295,
+                "end": 308,
+                "fieldId": "depth_of_field",
+                "fieldLabel": "Depth Of Field",
+                "originalValue": "depth_of_field",
+                "category": "technical",
+                "transformedTo": "shallow focus"
+              },
+              {
+                "start": 413,
+                "end": 433,
+                "fieldId": "skin_texture",
+                "fieldLabel": "Skin Texture",
+                "originalValue": "skin_texture",
+                "category": "technical",
+                "transformedTo": "natural and detailed"
+              }
+            ],
+            "english": [
+              {
+                "start": 14,
+                "end": 39,
+                "fieldId": "subject",
+                "fieldLabel": "Subject",
+                "originalValue": "subject",
+                "category": "subject",
+                "transformedTo": "girl portrait photography"
+              },
+              {
+                "start": 99,
+                "end": 109,
+                "fieldId": "user_detail",
+                "fieldLabel": "User Detail",
+                "originalValue": "user_detail",
+                "category": "technical",
+                "transformedTo": "young girl"
+              },
+              {
+                "start": 116,
+                "end": 127,
+                "fieldId": "content_type",
+                "fieldLabel": "Content Type",
+                "originalValue": "content_type",
+                "category": "technical",
+                "transformedTo": "photography"
+              },
+              {
+                "start": 186,
+                "end": 204,
+                "fieldId": "lighting",
+                "fieldLabel": "Lighting",
+                "originalValue": "lighting",
+                "category": "lighting",
+                "transformedTo": "soft natural light"
+              },
+              {
+                "start": 295,
+                "end": 308,
+                "fieldId": "depth_of_field",
+                "fieldLabel": "Depth Of Field",
+                "originalValue": "depth_of_field",
+                "category": "technical",
+                "transformedTo": "shallow focus"
+              },
+              {
+                "start": 413,
+                "end": 433,
+                "fieldId": "skin_texture",
+                "fieldLabel": "Skin Texture",
+                "originalValue": "skin_texture",
+                "category": "technical",
+                "transformedTo": "natural and detailed"
+              }
+            ]
+          },
+          "detectedLang": "English",
+          "response_time_ms": 9898
+        }
+      },
+      "layer3": {
+        "test_id": "edge_no_primary_intent",
+        "input": {
+          "postId": "test-edge_no_primary_intent",
+          "prompt": "A captivating girl portrait photography session capturing the innocent and curious expression of a young girl. This photography piece features her framed in a close-up composition, with soft natural light gently sculpting her features and creating delicate, dancing catchlights in her eyes. The shallow focus ensures that the background dissolves into a smooth, ethereal bokeh, keeping all visual priority on her natural and detailed complexion and the fine, wispy textures of her hair. The atmosphere is quiet and intimate, rendered with the lifelike clarity and tonal depth characteristic of a high-end portrait lens",
+          "model": "gemini-3-pro-image-preview",
+          "imageUrl": "https://media.nanobananaultra.com/ai/image/reference/253e6c75f16470e71077ea5943a47883.webp",
+          "subject": "女孩肖像摄影"
+        },
+        "output": {
+          "seoSlug": "professional-child-portrait-photography-bokeh-y_intent",
+          "seoTitle": "Professional Child Portrait Photography: Ethereal Bokeh Guide",
+          "h1Title": "The Art of Professional Child Portrait Photography & Ethereal Bokeh",
+          "seoDescription": "Master Professional Child Portrait Photography. Discover how to use ethereal bokeh and natural catchlights to create intimate, lifelike art. Explore now.",
+          "seoKeywords": [
+            "Catchlights",
+            "85mm Lens",
+            "Shallow Focus",
+            "Wispy Hair",
+            "Soft Skin Texture",
+            "Natural Light",
+            "Ethereal Bokeh"
+          ],
+          "seoSlugKeywords": "professional-child-portrait-photography-bokeh",
+          "contentIntro": "",
+          "promptBreakdown": "",
+          "imageAlt": "A close-up portrait of a young girl with soft natural lighting and ethereal bokeh background.",
+          "dynamicHeaders": "{}",
+          "faqItems": "[{\"question\":\"Why is the 85mm lens preferred over the 50mm for this style?\",\"answer\":\"The 85mm lens offers superior compression, which enhances the Ethereal Bokeh effect and provides a more flattering, distortion-free perspective of the subject's face compared to the 50mm.\"},{\"question\":\"How can I maintain skin texture clarity while using a shallow focus?\",\"answer\":\"At Lens & Light Gallery, we recommend focusing precisely on the iris of the eye. Utilizing a high-end sensor with the Pro model ensures that even at wide apertures, the focal plane retains the intricate details of the complexion.\"}]",
+          "visualTags": "[\"Catchlights\",\"85mm Lens\",\"Shallow Focus\",\"Wispy Hair\",\"Soft Skin Texture\",\"Natural Light\",\"Ethereal Bokeh\"]",
+          "useCases": "[]",
+          "expertCommentary": null,
+          "remixIdeas": [],
+          "relatedConcepts": [],
+          "contentSections": [
+            {
+              "id": "block_1",
+              "title": "The Emotional Resonance of Professional Child Portrait Photography",
+              "headingLevel": "h2",
+              "type": "rich-text",
+              "data": {
+                "text": "The Professional Child Portrait Photography captures the ephemeral window of childhood through a lens of quiet reverence. Within the Lens & Light Gallery, we observe how the composition prioritizes the subject’s innocent and curious gaze, allowing the viewer to engage with a moment of pure, unscripted humanity. The interplay of Ethereal Bokeh and Natural Catchlights creates a bridge between the viewer and the subject's inner world, where the background does not merely disappear but rather transforms into a soft, dreamlike tapestry that cradles the subject. This intimate atmosphere is further elevated by the gentle sculpting of natural light, which honors the delicate complexion and the fine, wispy textures of the hair with lifelike clarity."
+              }
+            },
+            {
+              "id": "block_2",
+              "title": "Artistic Components for Ethereal Bokeh",
+              "headingLevel": "h3",
+              "type": "checklist",
+              "data": {
+                "items": [
+                  "Selection of a wide-aperture prime lens for depth compression",
+                  "Backlit positioning to illuminate hair textures and create a halo effect",
+                  "Strategic placement of the subject near large, diffused light sources",
+                  "Minimalist background elements to ensure smooth bokeh transitions",
+                  "Eye-level perspective to maximize the impact of natural catchlights"
+                ]
+              }
+            },
+            {
+              "id": "block_3",
+              "title": "Lighting Dynamics in Professional Child Portrait Photography",
+              "headingLevel": "h3",
+              "type": "comparison-table",
+              "data": {
+                "left": "Soft Natural Light",
+                "right": "Hard Studio Lighting",
+                "rows": [
+                  {
+                    "pro": "Gentle tonal transitions across the skin",
+                    "con": "High contrast with deep, defined shadows"
+                  },
+                  {
+                    "pro": "Intimate and approachable atmosphere",
+                    "con": "Dramatic, high-fashion aesthetic"
+                  },
+                  {
+                    "pro": "Subtle, dancing catchlights in the eyes",
+                    "con": "Precise, geometric pinpoint reflections"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "block_4",
+              "title": "Professional Child Portrait Photography Visual Markers",
+              "headingLevel": "h3",
+              "type": "tags",
+              "data": {
+                "items": [
+                  "Catchlights",
+                  "85mm Lens",
+                  "Shallow Focus",
+                  "Wispy Hair",
+                  "Soft Skin Texture",
+                  "Natural Light",
+                  "Ethereal Bokeh"
+                ]
+              }
+            },
+            {
+              "id": "block_5",
+              "title": "Mastering Ethereal Bokeh: Professional Technical Insights",
+              "headingLevel": "h3",
+              "type": "faq-accordion",
+              "data": {
+                "items": [
+                  {
+                    "q": "Why is the 85mm lens preferred over the 50mm for this style?",
+                    "a": "The 85mm lens offers superior compression, which enhances the Ethereal Bokeh effect and provides a more flattering, distortion-free perspective of the subject's face compared to the 50mm."
+                  },
+                  {
+                    "q": "How can I maintain skin texture clarity while using a shallow focus?",
+                    "a": "At Lens & Light Gallery, we recommend focusing precisely on the iris of the eye. Utilizing a high-end sensor with the Pro model ensures that even at wide apertures, the focal plane retains the intricate details of the complexion."
+                  }
+                ]
+              }
+            }
+          ],
+          "anchor": "Professional Child Portrait Photography",
+          "microFocus": "Ethereal Bokeh and Natural Catchlights",
+          "subject": "Professional Child Portrait Photography",
+          "snippetSummary": "To generate Professional Child Portrait Photography in a photorealistic style, the Pro model utilizes soft natural light and a shallow focus. This technique achieves an intimate atmosphere by rendering ethereal bokeh and natural catchlights. The process emphasizes skin texture clarity and fine hair details, ensuring the subject's innocent expression remains the central focus of the high-end composition.",
+          "galleryCategory": "photography",
+          "categoryConfidence": "high",
+          "debugInfo": {
+            "input": {
+              "userPrompt": "A captivating girl portrait photography session capturing the innocent and curious expression of a young girl. This photography piece features her framed in a close-up composition, with soft natural light gently sculpting her features and creating delicate, dancing catchlights in her eyes. The shallow focus ensures that the background dissolves into a smooth, ethereal bokeh, keeping all visual priority on her natural and detailed complexion and the fine, wispy textures of her hair. The atmosphere is quiet and intimate, rendered with the lifelike clarity and tonal depth characteristic of a high-end portrait lens",
+              "model": "gemini-3-pro-image-preview",
+              "userSubject": "女孩肖像摄影",
+              "effectivePrompt": "A captivating girl portrait photography session capturing the innocent and curious expression of a young girl. This photography piece features her framed in a close-up composition, with soft natural light gently sculpting her features and creating delicate, dancing catchlights in her eyes. The shallow focus ensures that the background dissolves into a smooth, ethereal bokeh, keeping all visual priority on her natural and detailed complexion and the fine, wispy textures of her hair. The atmosphere is quiet and intimate, rendered with the lifelike clarity and tonal depth characteristic of a high-end portrait lens",
+              "formValuesInjected": false,
+              "formValuesCount": 0
+            },
+            "stage1": {
+              "prompt": "# V15.0 STAGE 1: THE STRATEGIST (MASTER EDITION)\n\n## OBJECTIVE\nYou are an Elite SEO Strategist. Analyze the user's image prompt and create a \"Content Blueprint\" for a high-ranking Guide Page.\n**GOAL**: Create a rich, comprehensive structure that satisfies User Intent and SEO Depth.\n\n## PRIORITY RULE ⚠️\nIf a \"## VISUAL CONTEXT (GROUND TRUTH)\" section exists in the input:\n1. These parameters are FACTS, not suggestions\n2. ANCHOR and MICRO-FOCUS MUST reflect these parameters\n3. Apply CONFLICT RESOLUTION PROTOCOL when Form conflicts with Prompt text\n\n## CONFLICT RESOLUTION PROTOCOL\nWhen VISUAL CONTEXT (Form) conflicts with User Prompt text:\n\n| Attribute | Priority | Reason |\n|-----------|----------|--------|\n| Art Style, Lighting, Stylization | **Form wins** | User explicitly configured |\n| Subject, Scene, Background | **Prompt wins** | Creative intent |\n| Mood, Atmosphere | **Combine both** | Complementary |\n\n## INPUT\nA captivating girl portrait photography session capturing the innocent and curious expression of a young girl. This photography piece features her framed in a close-up composition, with soft natural light gently sculpting her features and creating delicate, dancing catchlights in her eyes. The shallow focus ensures that the background dissolves into a smooth, ethereal bokeh, keeping all visual priority on her natural and detailed complexion and the fine, wispy textures of her hair. The atmosphere is quiet and intimate, rendered with the lifelike clarity and tonal depth characteristic of a high-end portrait lens\n- Model: Pro\n- **LANGUAGE**: Auto-detect from the prompt. Output MUST be in the same language.\n\n## CRITICAL TASKS\n\n### 1. REASONING (Optional but Recommended)\nExplain your analysis in `_reasoning`:\n- `contextAnalysis`: What does VISUAL CONTEXT tell us?\n- `conflictResolution`: Any conflicts between Form and Prompt? How resolved?\n- `microFocusSelection`: Which parameter is most distinctive? Why?\n- `voiceSelection`: Which Persona fits the Intent?\n\n### 2. Extract ANCHOR (2-5 words)\n- If VISUAL CONTEXT exists: Combine [Style from Form] + [Subject from Prompt]\n- Rules:\n  - ❌ Bad: \"Digital Art\", \"Portrait\" (Too Generic)\n  - ✅ Good: \"Anime Golden Dress Portrait\", \"Neon Cyberpunk City\"\n- **If prompt < 5 words**: Use full prompt as Anchor.\n\n### 3. Identify MICRO-FOCUS\n- Use the most distinctive parameter from VISUAL CONTEXT\n- Examples: \"Golden Hour Lighting\", \"Cel-Shading Technique\", \"Glassmorphism Effect\"\n- This is KEY to avoiding SEO cannibalization!\n\n### 4. Determine INTENT & Suggest VOICE\n- **ARTISTIC** → Curator Voice (Gallery curator tone, emphasize aesthetics)\n- **FUNCTIONAL** → Engineer Voice (Technical documentation, precise specs)\n- **COMMERCIAL** → Director Voice (Marketing narrative, use cases, brand mentions)\n\n### 5. Plan BLOCKS (4-6 blocks, 3+ types)\n- **CONSTRAINT**: Plan **4 to 6 blocks**.\n- **VARIETY RULE**: Use at least **3 DIFFERENT** block types.\n- **NO TEMPLATES**: Do not always use \"Intro -> Tags -> FAQ\". Mix it up!\n\n**Available Block Types**:\n- `rich-text`: Deep Analysis / Storytelling. (Max 2, NEVER consecutive).\n- `checklist`: Elements (Artistic), Specs (Functional), Layout (Commercial).\n- `comparison-table`: \"Style A vs B\" or \"Do's and Don'ts\".\n- `faq-accordion`: Technical Q&A. (Max 1).\n- `tags`: **5-8** strictly visual keywords. (Max 1).\n\n### 6. Classify GALLERY CATEGORY (MANDATORY)\nYOU MUST select exactly ONE category for homepage gallery display.\n⚠️ This is DIFFERENT from \"intent\" - intent affects writing style, category affects gallery navigation.\n\n**Available Categories**:\n| Slug | Visual Indicators | Examples |\n|------|-------------------|----------|\n| `photography` | Photorealistic, camera terms (ISO, aperture, lens), real-world scenes | Portrait, landscape, street photo |\n| `art-illustration` | Anime, manga, digital painting, watercolor, concept art, illustration | Anime girl, fantasy art, comic style |\n| `design` | Logo, UI/UX, poster, typography, pattern, mockup, layout | Logo design, app UI, poster |\n| `commercial-product` | Product shot, packaging, advertising, marketing, brand | Product mockup, ad creative |\n| `character-design` | Game character, mascot, avatar, creature, OC (original character) | Game hero, mascot design |\n\n**Decision Rules** (apply in order, first match wins):\n1. If VISUAL CONTEXT has `art_style: anime/manga/illustration/comic` → `art-illustration`\n2. If prompt mentions \"product\", \"mockup\", \"packaging\", \"brand\", \"advertisement\" → `commercial-product`\n3. If primary focus is character appearance/outfit/design (not scene) → `character-design`\n4. If contains \"logo\", \"poster\", \"layout\", \"UI\", \"banner\", \"icon\" → `design`\n5. If photorealistic OR camera terms (ISO, f/2.8, 85mm, bokeh) → `photography`\n6. If NONE clearly fit → output `unknown` and explain in _reasoning\n\n**Confidence Levels**:\n- `high`: Clear match to one category (e.g., \"anime girl\" → art-illustration)\n- `medium`: Could fit multiple but one is most likely\n- `low`: Ambiguous, recommend manual review\n\n## OUTPUT FORMAT (Strict JSON)\n{\n  \"_reasoning\": {\n    \"contextAnalysis\": \"VISUAL CONTEXT shows art_style=anime, lighting=golden_hour...\",\n    \"conflictResolution\": \"No conflicts detected / Form specifies anime, using over prompt text...\",\n    \"microFocusSelection\": \"Golden Hour is the most distinctive parameter because...\",\n    \"voiceSelection\": \"Artistic intent detected, recommending Curator voice...\",\n    \"categorySelection\": \"Detected anime style, assigning art-illustration with high confidence\"\n  },\n  \"anchor\": \"string (2-5 words)\",\n  \"microFocus\": \"string (unique angle)\",\n  \"intent\": \"Artistic | Functional | Commercial\",\n  \"suggestedVoice\": \"Curator | Engineer | Director\",\n  \"language\": \"en | zh | ja | ...\",\n  \"plannedBlocks\": [\n    { \"id\": \"block_1\", \"type\": \"rich-text\", \"intent\": \"Explain the core concept...\" },\n    { \"id\": \"block_2\", \"type\": \"checklist\", \"intent\": \"List 5 essential components...\" },\n    { \"id\": \"block_3\", \"type\": \"comparison-table\", \"intent\": \"Compare attributes...\" },\n    { \"id\": \"block_4\", \"type\": \"tags\", \"intent\": \"List 5-8 descriptive keywords...\" }\n  ],\n  \"galleryCategory\": \"photography | art-illustration | design | commercial-product | character-design | unknown\",\n  \"categoryConfidence\": \"high | medium | low\",\n  \"antiTemplatingCommitment\": {\n    \"blocksStartWith\": \"checklist\",\n    \"blocksEndWith\": \"faq-accordion\",\n    \"noConsecutiveRichText\": true\n  }\n}\n\n## ERROR FALLBACK\nIf unable to extract subject, return:\n{ \"error\": true, \"fallbackAnchor\": \"AI Image\", \"fallbackMicroFocus\": \"Creative Style\" }",
+              "rawResponse": "{\n  \"_reasoning\": {\n    \"contextAnalysis\": \"The input describes a high-end photorealistic portrait focusing on technical camera attributes like shallow focus, catchlights, and bokeh. No explicit VISUAL CONTEXT form was provided, so the prompt text serves as the primary source.\",\n    \"conflictResolution\": \"No conflicts detected as there was no secondary visual context provided. The prompt is internally consistent regarding its photographic nature.\",\n    \"microFocusSelection\": \"The 'Ethereal Bokeh' and 'Natural Catchlights' are the most distinctive technical elements mentioned, setting this apart from standard portraits.\",\n    \"voiceSelection\": \"Artistic intent is chosen to reflect the curator-like appreciation for the mood, intimacy, and aesthetic quality of the portrait.\",\n    \"categorySelection\": \"The prompt heavily utilizes photography terminology (bokeh, catchlights, high-end portrait lens, complexion textures), making 'photography' the definitive category.\"\n  },\n  \"anchor\": \"Professional Child Portrait Photography\",\n  \"microFocus\": \"Ethereal Bokeh and Natural Catchlights\",\n  \"intent\": \"Artistic\",\n  \"suggestedVoice\": \"Curator\",\n  \"language\": \"en\",\n  \"plannedBlocks\": [\n    {\n      \"id\": \"block_1\",\n      \"type\": \"rich-text\",\n      \"intent\": \"Deep dive into the emotional resonance of the subject's innocent expression and the intimate atmosphere created by the lighting.\"\n    },\n    {\n      \"id\": \"block_2\",\n      \"type\": \"checklist\",\n      \"intent\": \"List the technical artistic elements required to achieve this specific look, such as wide aperture and natural light positioning.\"\n    },\n    {\n      \"id\": \"block_3\",\n      \"type\": \"comparison-table\",\n      \"intent\": \"Compare the visual impact of 'Soft Natural Light' versus 'Hard Studio Lighting' in portraiture.\"\n    },\n    {\n      \"id\": \"block_4\",\n      \"type\": \"tags\",\n      \"intent\": \"Provide 5-8 strictly visual keywords for SEO and categorization purposes.\"\n    },\n    {\n      \"id\": \"block_5\",\n      \"type\": \"faq-accordion\",\n      \"intent\": \"Address technical questions regarding lens selection (85mm vs 50mm) and how to maintain skin texture clarity.\"\n    }\n  ],\n  \"galleryCategory\": \"photography\",\n  \"categoryConfidence\": \"high\",\n  \"antiTemplatingCommitment\": {\n    \"blocksStartWith\": \"rich-text\",\n    \"blocksEndWith\": \"faq-accordion\",\n    \"noConsecutiveRichText\": true\n  }\n}",
+              "parsed": {
+                "anchor": "Professional Child Portrait Photography",
+                "microFocus": "Ethereal Bokeh and Natural Catchlights",
+                "intent": "Artistic",
+                "plannedBlocks": [
+                  {
+                    "id": "block_1",
+                    "type": "rich-text",
+                    "intent": "Deep dive into the emotional resonance of the subject's innocent expression and the intimate atmosphere created by the lighting."
+                  },
+                  {
+                    "id": "block_2",
+                    "type": "checklist",
+                    "intent": "List the technical artistic elements required to achieve this specific look, such as wide aperture and natural light positioning."
+                  },
+                  {
+                    "id": "block_3",
+                    "type": "comparison-table",
+                    "intent": "Compare the visual impact of 'Soft Natural Light' versus 'Hard Studio Lighting' in portraiture."
+                  },
+                  {
+                    "id": "block_4",
+                    "type": "tags",
+                    "intent": "Provide 5-8 strictly visual keywords for SEO and categorization purposes."
+                  },
+                  {
+                    "id": "block_5",
+                    "type": "faq-accordion",
+                    "intent": "Address technical questions regarding lens selection (85mm vs 50mm) and how to maintain skin texture clarity."
+                  }
+                ]
+              }
+            },
+            "stage2": {
+              "prompt": "# V15.0 STAGE 2: THE WRITER (MASTER EDITION)\n\n## OBJECTIVE\nYou are an Expert Technical Writer. Execute the Strategy Blueprint to generate final content.\n\n## VOICE PERSONA SYSTEM\nAdapt your writing style based on the `suggestedVoice` from the Blueprint:\n\n### If Curator (Artistic Intent)\nWrite as an art gallery curator. Use evocative language, reference art movements, emphasize emotional impact.\n- Opening: \"The [Anchor] captures...\"\n- Analysis: \"The interplay of [MicroFocus] creates...\"\n- Avoid: Technical jargon, bullet lists, imperative commands\n\n### If Engineer (Functional Intent)\nWrite as a technical documentation author. Be precise, use numbered steps, include parameter references.\n- Opening: \"To achieve [Anchor], configure...\"\n- Analysis: \"The [MicroFocus] setting controls...\"\n- Avoid: Subjective adjectives, emotional language\n\n### If Director (Commercial Intent)\nWrite as a marketing creative director. Focus on use cases, brand mentions, call-to-action.\n- Opening: \"[Anchor] transforms your...\"\n- Analysis: \"With [MicroFocus], you can...\"\n- Avoid: Technical details, lengthy explanations\n\n**TONE by Model**:\n- **Pro**: Professional, Technical, highlighting advanced features.\n- **FLUX**: Photorealistic, focusing on lighting and texture.\n- **Default**: Creative and balanced.\n\n## INPUTS\n- Strategy Blueprint: {\n  \"anchor\": \"Professional Child Portrait Photography\",\n  \"microFocus\": \"Ethereal Bokeh and Natural Catchlights\",\n  \"intent\": \"Artistic\",\n  \"plannedBlocks\": [\n    {\n      \"id\": \"block_1\",\n      \"type\": \"rich-text\",\n      \"intent\": \"Deep dive into the emotional resonance of the subject's innocent expression and the intimate atmosphere created by the lighting.\"\n    },\n    {\n      \"id\": \"block_2\",\n      \"type\": \"checklist\",\n      \"intent\": \"List the technical artistic elements required to achieve this specific look, such as wide aperture and natural light positioning.\"\n    },\n    {\n      \"id\": \"block_3\",\n      \"type\": \"comparison-table\",\n      \"intent\": \"Compare the visual impact of 'Soft Natural Light' versus 'Hard Studio Lighting' in portraiture.\"\n    },\n    {\n      \"id\": \"block_4\",\n      \"type\": \"tags\",\n      \"intent\": \"Provide 5-8 strictly visual keywords for SEO and categorization purposes.\"\n    },\n    {\n      \"id\": \"block_5\",\n      \"type\": \"faq-accordion\",\n      \"intent\": \"Address technical questions regarding lens selection (85mm vs 50mm) and how to maintain skin texture clarity.\"\n    }\n  ],\n  \"galleryCategory\": \"photography\",\n  \"categoryConfidence\": \"high\",\n  \"_debug\": {\n    \"prompt\": \"# V15.0 STAGE 1: THE STRATEGIST (MASTER EDITION)\\n\\n## OBJECTIVE\\nYou are an Elite SEO Strategist. Analyze the user's image prompt and create a \\\"Content Blueprint\\\" for a high-ranking Guide Page.\\n**GOAL**: Create a rich, comprehensive structure that satisfies User Intent and SEO Depth.\\n\\n## PRIORITY RULE ⚠️\\nIf a \\\"## VISUAL CONTEXT (GROUND TRUTH)\\\" section exists in the input:\\n1. These parameters are FACTS, not suggestions\\n2. ANCHOR and MICRO-FOCUS MUST reflect these parameters\\n3. Apply CONFLICT RESOLUTION PROTOCOL when Form conflicts with Prompt text\\n\\n## CONFLICT RESOLUTION PROTOCOL\\nWhen VISUAL CONTEXT (Form) conflicts with User Prompt text:\\n\\n| Attribute | Priority | Reason |\\n|-----------|----------|--------|\\n| Art Style, Lighting, Stylization | **Form wins** | User explicitly configured |\\n| Subject, Scene, Background | **Prompt wins** | Creative intent |\\n| Mood, Atmosphere | **Combine both** | Complementary |\\n\\n## INPUT\\nA captivating girl portrait photography session capturing the innocent and curious expression of a young girl. This photography piece features her framed in a close-up composition, with soft natural light gently sculpting her features and creating delicate, dancing catchlights in her eyes. The shallow focus ensures that the background dissolves into a smooth, ethereal bokeh, keeping all visual priority on her natural and detailed complexion and the fine, wispy textures of her hair. The atmosphere is quiet and intimate, rendered with the lifelike clarity and tonal depth characteristic of a high-end portrait lens\\n- Model: Pro\\n- **LANGUAGE**: Auto-detect from the prompt. Output MUST be in the same language.\\n\\n## CRITICAL TASKS\\n\\n### 1. REASONING (Optional but Recommended)\\nExplain your analysis in `_reasoning`:\\n- `contextAnalysis`: What does VISUAL CONTEXT tell us?\\n- `conflictResolution`: Any conflicts between Form and Prompt? How resolved?\\n- `microFocusSelection`: Which parameter is most distinctive? Why?\\n- `voiceSelection`: Which Persona fits the Intent?\\n\\n### 2. Extract ANCHOR (2-5 words)\\n- If VISUAL CONTEXT exists: Combine [Style from Form] + [Subject from Prompt]\\n- Rules:\\n  - ❌ Bad: \\\"Digital Art\\\", \\\"Portrait\\\" (Too Generic)\\n  - ✅ Good: \\\"Anime Golden Dress Portrait\\\", \\\"Neon Cyberpunk City\\\"\\n- **If prompt < 5 words**: Use full prompt as Anchor.\\n\\n### 3. Identify MICRO-FOCUS\\n- Use the most distinctive parameter from VISUAL CONTEXT\\n- Examples: \\\"Golden Hour Lighting\\\", \\\"Cel-Shading Technique\\\", \\\"Glassmorphism Effect\\\"\\n- This is KEY to avoiding SEO cannibalization!\\n\\n### 4. Determine INTENT & Suggest VOICE\\n- **ARTISTIC** → Curator Voice (Gallery curator tone, emphasize aesthetics)\\n- **FUNCTIONAL** → Engineer Voice (Technical documentation, precise specs)\\n- **COMMERCIAL** → Director Voice (Marketing narrative, use cases, brand mentions)\\n\\n### 5. Plan BLOCKS (4-6 blocks, 3+ types)\\n- **CONSTRAINT**: Plan **4 to 6 blocks**.\\n- **VARIETY RULE**: Use at least **3 DIFFERENT** block types.\\n- **NO TEMPLATES**: Do not always use \\\"Intro -> Tags -> FAQ\\\". Mix it up!\\n\\n**Available Block Types**:\\n- `rich-text`: Deep Analysis / Storytelling. (Max 2, NEVER consecutive).\\n- `checklist`: Elements (Artistic), Specs (Functional), Layout (Commercial).\\n- `comparison-table`: \\\"Style A vs B\\\" or \\\"Do's and Don'ts\\\".\\n- `faq-accordion`: Technical Q&A. (Max 1).\\n- `tags`: **5-8** strictly visual keywords. (Max 1).\\n\\n### 6. Classify GALLERY CATEGORY (MANDATORY)\\nYOU MUST select exactly ONE category for homepage gallery display.\\n⚠️ This is DIFFERENT from \\\"intent\\\" - intent affects writing style, category affects gallery navigation.\\n\\n**Available Categories**:\\n| Slug | Visual Indicators | Examples |\\n|------|-------------------|----------|\\n| `photography` | Photorealistic, camera terms (ISO, aperture, lens), real-world scenes | Portrait, landscape, street photo |\\n| `art-illustration` | Anime, manga, digital painting, watercolor, concept art, illustration | Anime girl, fantasy art, comic style |\\n| `design` | Logo, UI/UX, poster, typography, pattern, mockup, layout | Logo design, app UI, poster |\\n| `commercial-product` | Product shot, packaging, advertising, marketing, brand | Product mockup, ad creative |\\n| `character-design` | Game character, mascot, avatar, creature, OC (original character) | Game hero, mascot design |\\n\\n**Decision Rules** (apply in order, first match wins):\\n1. If VISUAL CONTEXT has `art_style: anime/manga/illustration/comic` → `art-illustration`\\n2. If prompt mentions \\\"product\\\", \\\"mockup\\\", \\\"packaging\\\", \\\"brand\\\", \\\"advertisement\\\" → `commercial-product`\\n3. If primary focus is character appearance/outfit/design (not scene) → `character-design`\\n4. If contains \\\"logo\\\", \\\"poster\\\", \\\"layout\\\", \\\"UI\\\", \\\"banner\\\", \\\"icon\\\" → `design`\\n5. If photorealistic OR camera terms (ISO, f/2.8, 85mm, bokeh) → `photography`\\n6. If NONE clearly fit → output `unknown` and explain in _reasoning\\n\\n**Confidence Levels**:\\n- `high`: Clear match to one category (e.g., \\\"anime girl\\\" → art-illustration)\\n- `medium`: Could fit multiple but one is most likely\\n- `low`: Ambiguous, recommend manual review\\n\\n## OUTPUT FORMAT (Strict JSON)\\n{\\n  \\\"_reasoning\\\": {\\n    \\\"contextAnalysis\\\": \\\"VISUAL CONTEXT shows art_style=anime, lighting=golden_hour...\\\",\\n    \\\"conflictResolution\\\": \\\"No conflicts detected / Form specifies anime, using over prompt text...\\\",\\n    \\\"microFocusSelection\\\": \\\"Golden Hour is the most distinctive parameter because...\\\",\\n    \\\"voiceSelection\\\": \\\"Artistic intent detected, recommending Curator voice...\\\",\\n    \\\"categorySelection\\\": \\\"Detected anime style, assigning art-illustration with high confidence\\\"\\n  },\\n  \\\"anchor\\\": \\\"string (2-5 words)\\\",\\n  \\\"microFocus\\\": \\\"string (unique angle)\\\",\\n  \\\"intent\\\": \\\"Artistic | Functional | Commercial\\\",\\n  \\\"suggestedVoice\\\": \\\"Curator | Engineer | Director\\\",\\n  \\\"language\\\": \\\"en | zh | ja | ...\\\",\\n  \\\"plannedBlocks\\\": [\\n    { \\\"id\\\": \\\"block_1\\\", \\\"type\\\": \\\"rich-text\\\", \\\"intent\\\": \\\"Explain the core concept...\\\" },\\n    { \\\"id\\\": \\\"block_2\\\", \\\"type\\\": \\\"checklist\\\", \\\"intent\\\": \\\"List 5 essential components...\\\" },\\n    { \\\"id\\\": \\\"block_3\\\", \\\"type\\\": \\\"comparison-table\\\", \\\"intent\\\": \\\"Compare attributes...\\\" },\\n    { \\\"id\\\": \\\"block_4\\\", \\\"type\\\": \\\"tags\\\", \\\"intent\\\": \\\"List 5-8 descriptive keywords...\\\" }\\n  ],\\n  \\\"galleryCategory\\\": \\\"photography | art-illustration | design | commercial-product | character-design | unknown\\\",\\n  \\\"categoryConfidence\\\": \\\"high | medium | low\\\",\\n  \\\"antiTemplatingCommitment\\\": {\\n    \\\"blocksStartWith\\\": \\\"checklist\\\",\\n    \\\"blocksEndWith\\\": \\\"faq-accordion\\\",\\n    \\\"noConsecutiveRichText\\\": true\\n  }\\n}\\n\\n## ERROR FALLBACK\\nIf unable to extract subject, return:\\n{ \\\"error\\\": true, \\\"fallbackAnchor\\\": \\\"AI Image\\\", \\\"fallbackMicroFocus\\\": \\\"Creative Style\\\" }\",\n    \"rawResponse\": \"{\\n  \\\"_reasoning\\\": {\\n    \\\"contextAnalysis\\\": \\\"The input describes a high-end photorealistic portrait focusing on technical camera attributes like shallow focus, catchlights, and bokeh. No explicit VISUAL CONTEXT form was provided, so the prompt text serves as the primary source.\\\",\\n    \\\"conflictResolution\\\": \\\"No conflicts detected as there was no secondary visual context provided. The prompt is internally consistent regarding its photographic nature.\\\",\\n    \\\"microFocusSelection\\\": \\\"The 'Ethereal Bokeh' and 'Natural Catchlights' are the most distinctive technical elements mentioned, setting this apart from standard portraits.\\\",\\n    \\\"voiceSelection\\\": \\\"Artistic intent is chosen to reflect the curator-like appreciation for the mood, intimacy, and aesthetic quality of the portrait.\\\",\\n    \\\"categorySelection\\\": \\\"The prompt heavily utilizes photography terminology (bokeh, catchlights, high-end portrait lens, complexion textures), making 'photography' the definitive category.\\\"\\n  },\\n  \\\"anchor\\\": \\\"Professional Child Portrait Photography\\\",\\n  \\\"microFocus\\\": \\\"Ethereal Bokeh and Natural Catchlights\\\",\\n  \\\"intent\\\": \\\"Artistic\\\",\\n  \\\"suggestedVoice\\\": \\\"Curator\\\",\\n  \\\"language\\\": \\\"en\\\",\\n  \\\"plannedBlocks\\\": [\\n    {\\n      \\\"id\\\": \\\"block_1\\\",\\n      \\\"type\\\": \\\"rich-text\\\",\\n      \\\"intent\\\": \\\"Deep dive into the emotional resonance of the subject's innocent expression and the intimate atmosphere created by the lighting.\\\"\\n    },\\n    {\\n      \\\"id\\\": \\\"block_2\\\",\\n      \\\"type\\\": \\\"checklist\\\",\\n      \\\"intent\\\": \\\"List the technical artistic elements required to achieve this specific look, such as wide aperture and natural light positioning.\\\"\\n    },\\n    {\\n      \\\"id\\\": \\\"block_3\\\",\\n      \\\"type\\\": \\\"comparison-table\\\",\\n      \\\"intent\\\": \\\"Compare the visual impact of 'Soft Natural Light' versus 'Hard Studio Lighting' in portraiture.\\\"\\n    },\\n    {\\n      \\\"id\\\": \\\"block_4\\\",\\n      \\\"type\\\": \\\"tags\\\",\\n      \\\"intent\\\": \\\"Provide 5-8 strictly visual keywords for SEO and categorization purposes.\\\"\\n    },\\n    {\\n      \\\"id\\\": \\\"block_5\\\",\\n      \\\"type\\\": \\\"faq-accordion\\\",\\n      \\\"intent\\\": \\\"Address technical questions regarding lens selection (85mm vs 50mm) and how to maintain skin texture clarity.\\\"\\n    }\\n  ],\\n  \\\"galleryCategory\\\": \\\"photography\\\",\\n  \\\"categoryConfidence\\\": \\\"high\\\",\\n  \\\"antiTemplatingCommitment\\\": {\\n    \\\"blocksStartWith\\\": \\\"rich-text\\\",\\n    \\\"blocksEndWith\\\": \\\"faq-accordion\\\",\\n    \\\"noConsecutiveRichText\\\": true\\n  }\\n}\"\n  }\n}\n- User Prompt: A captivating girl portrait photography session capturing the innocent and curious expression of a young girl. This photography piece features her framed in a close-up composition, with soft natural light gently sculpting her features and creating delicate, dancing catchlights in her eyes. The shallow focus ensures that the background dissolves into a smooth, ethereal bokeh, keeping all visual priority on her natural and detailed complexion and the fine, wispy textures of her hair. The atmosphere is quiet and intimate, rendered with the lifelike clarity and tonal depth characteristic of a high-end portrait lens\n\n## VALIDATION & RECOVERY\n- If `plannedBlocks` has < 4 items: Add 1 `rich-text` block about \"Usage Tips\".\n- If `plannedBlocks` > 6 items: Merge similar blocks.\n\n## SEO CONSTRAINTS (STRICT)\n\n1. **Title Tag**: 50-60 characters MAX. Must include Anchor.\n   - ✅ \"[Anchor]: Master [MicroFocus] with AI\"\n\n2. **Meta Description**: 140-160 characters. Must include Anchor & CTA.\n\n3. **Keywords**: EXACTLY 5-8 items.\n   - MUST be **visible elements**. ⛔ NO abstract concepts (\"Success\", \"Happiness\").\n   - Examples: Photo: \"Bokeh\", \"85mm Lens\"; UI: \"Rounded Corners\", \"Dark Mode\"; Anime: \"Cel Shading\".\n\n4. **Brand Injection**:\n   - Mention your brand naturally in the `rich-text` intro or `faq` (once per section max).\n\n5. **Anti-Templating (MANDATORY)**:\n   ⛔ BANNED PATTERNS:\n   - Generic titles: \"Introduction\", \"Conclusion\", \"Keywords\", \"FAQ\", \"Key Elements\"\n   - Opening phrases: \"This stunning image...\", \"In this guide...\", \"Let's explore...\"\n   - Two consecutive `rich-text` blocks\n\n   ✅ REQUIRED PATTERNS:\n   - Titles MUST include Anchor or MicroFocus: \"Deconstructing [Anchor]'s Visual Language\"\n   - Opening MUST be specific: \"The [Anchor] achieves its [Effect] through...\"\n\n6. **Slug**: 3-5 words, kebab-case, no model name.\n\n7. **Snippet Summary (V15.0 GEO Formula)**:\n   Generate a 50-80 word summary for AI search engines using this formula:\n   \"To generate [Anchor] in [Style], the [Model] utilizes [Key Param from VISUAL CONTEXT].\n   This technique achieves [Visual Effect] by [Technical Method from MicroFocus].\"\n\n   **Constraints**:\n   - 50-80 words ONLY\n   - MUST include: Anchor, Model Name, at least 2 parameters from VISUAL CONTEXT\n   - MUST mention MicroFocus technique\n   - NO marketing fluff (\"stunning\", \"amazing\", \"beautiful\")\n   - MUST be factual and actionable\n\n## OUTPUT FORMAT (Strict JSON)\n\n⚠️ CRITICAL: The \"data\" field format must EXACTLY match these examples:\n\n{\n  \"_reasoning\": \"Optional: explain creative decisions based on Voice Persona\",\n  \"seoTitle\": \"string (Max 60 chars)\",\n  \"h1Title\": \"string (Unique & Engaging)\",\n  \"seoDescription\": \"string (140-160 chars)\",\n  \"seoKeywords\": [\"Tag1\", \"Tag2\", \"Tag3\", \"Tag4\", \"Tag5\"],\n  \"imageAlt\": \"string (Natural description)\",\n  \"slugKeywords\": \"string (kebab-case, 3-5 words)\",\n  \"snippetSummary\": \"string (50-80 words, GEO formula)\",\n  \"contentSections\": [\n    {\n      \"id\": \"block_1\",\n      \"type\": \"rich-text\",\n      \"title\": \"Descriptive H2 Title (must include Anchor or MicroFocus)\",\n      \"headingLevel\": \"h2\",\n      \"data\": { \"text\": \"Markdown paragraph content here. Must be in 'text' field.\" }\n    },\n    {\n      \"id\": \"block_2\",\n      \"type\": \"checklist\",\n      \"title\": \"[MicroFocus] Essentials\",\n      \"headingLevel\": \"h3\",\n      \"data\": { \"items\": [\"Item 1\", \"Item 2\", \"Item 3\"] }\n    },\n    {\n      \"id\": \"block_3\",\n      \"type\": \"tags\",\n      \"title\": \"Visual Keywords\",\n      \"headingLevel\": \"h3\",\n      \"data\": { \"items\": [\"Keyword1\", \"Keyword2\", \"Keyword3\"] }\n    },\n    {\n      \"id\": \"block_4\",\n      \"type\": \"comparison-table\",\n      \"title\": \"[Anchor] Style Comparison\",\n      \"headingLevel\": \"h3\",\n      \"data\": {\n        \"left\": \"Option A\",\n        \"right\": \"Option B\",\n        \"rows\": [\n          { \"pro\": \"Warm tones\", \"con\": \"Cool tones\" },\n          { \"pro\": \"Soft lighting\", \"con\": \"Hard lighting\" }\n        ]\n      }\n    },\n    {\n      \"id\": \"block_5\",\n      \"type\": \"faq-accordion\",\n      \"title\": \"Mastering [MicroFocus]: Common Questions\",\n      \"headingLevel\": \"h3\",\n      \"data\": {\n        \"items\": [\n          { \"q\": \"How to achieve this effect?\", \"a\": \"Use the AI generator with these settings...\" },\n          { \"q\": \"What model works best?\", \"a\": \"For this style, we recommend...\" }\n        ]\n      }\n    }\n  ]\n}",
+              "rawResponse": "{\n  \"_reasoning\": \"The content is crafted using the Curator voice persona to align with the Artistic intent. The language is evocative and emphasizes aesthetic impact rather than purely technical instructions. I have integrated the brand 'Lens & Light Gallery' into the rich-text section. Titles and openings strictly follow the SEO and anti-templating constraints, ensuring the Anchor and MicroFocus are present and that generic headings are avoided.\",\n  \"seoTitle\": \"Professional Child Portrait Photography: Ethereal Bokeh Guide\",\n  \"h1Title\": \"The Art of Professional Child Portrait Photography & Ethereal Bokeh\",\n  \"seoDescription\": \"Master Professional Child Portrait Photography. Discover how to use ethereal bokeh and natural catchlights to create intimate, lifelike art. Explore now.\",\n  \"seoKeywords\": [\n    \"Catchlights\",\n    \"85mm Lens\",\n    \"Shallow Focus\",\n    \"Wispy Hair\",\n    \"Soft Skin Texture\",\n    \"Natural Light\",\n    \"Ethereal Bokeh\"\n  ],\n  \"imageAlt\": \"A close-up portrait of a young girl with soft natural lighting and ethereal bokeh background.\",\n  \"slugKeywords\": \"professional-child-portrait-photography-bokeh\",\n  \"snippetSummary\": \"To generate Professional Child Portrait Photography in a photorealistic style, the Pro model utilizes soft natural light and a shallow focus. This technique achieves an intimate atmosphere by rendering ethereal bokeh and natural catchlights. The process emphasizes skin texture clarity and fine hair details, ensuring the subject's innocent expression remains the central focus of the high-end composition.\",\n  \"contentSections\": [\n    {\n      \"id\": \"block_1\",\n      \"type\": \"rich-text\",\n      \"title\": \"The Emotional Resonance of Professional Child Portrait Photography\",\n      \"headingLevel\": \"h2\",\n      \"data\": {\n        \"text\": \"The Professional Child Portrait Photography captures the ephemeral window of childhood through a lens of quiet reverence. Within the Lens & Light Gallery, we observe how the composition prioritizes the subject’s innocent and curious gaze, allowing the viewer to engage with a moment of pure, unscripted humanity. The interplay of Ethereal Bokeh and Natural Catchlights creates a bridge between the viewer and the subject's inner world, where the background does not merely disappear but rather transforms into a soft, dreamlike tapestry that cradles the subject. This intimate atmosphere is further elevated by the gentle sculpting of natural light, which honors the delicate complexion and the fine, wispy textures of the hair with lifelike clarity.\"\n      }\n    },\n    {\n      \"id\": \"block_2\",\n      \"type\": \"checklist\",\n      \"title\": \"Artistic Components for Ethereal Bokeh\",\n      \"headingLevel\": \"h3\",\n      \"data\": {\n        \"items\": [\n          \"Selection of a wide-aperture prime lens for depth compression\",\n          \"Backlit positioning to illuminate hair textures and create a halo effect\",\n          \"Strategic placement of the subject near large, diffused light sources\",\n          \"Minimalist background elements to ensure smooth bokeh transitions\",\n          \"Eye-level perspective to maximize the impact of natural catchlights\"\n        ]\n      }\n    },\n    {\n      \"id\": \"block_3\",\n      \"type\": \"comparison-table\",\n      \"title\": \"Lighting Dynamics in Professional Child Portrait Photography\",\n      \"headingLevel\": \"h3\",\n      \"data\": {\n        \"left\": \"Soft Natural Light\",\n        \"right\": \"Hard Studio Lighting\",\n        \"rows\": [\n          {\n            \"pro\": \"Gentle tonal transitions across the skin\",\n            \"con\": \"High contrast with deep, defined shadows\"\n          },\n          {\n            \"pro\": \"Intimate and approachable atmosphere\",\n            \"con\": \"Dramatic, high-fashion aesthetic\"\n          },\n          {\n            \"pro\": \"Subtle, dancing catchlights in the eyes\",\n            \"con\": \"Precise, geometric pinpoint reflections\"\n          }\n        ]\n      }\n    },\n    {\n      \"id\": \"block_4\",\n      \"type\": \"tags\",\n      \"title\": \"Professional Child Portrait Photography Visual Markers\",\n      \"headingLevel\": \"h3\",\n      \"data\": {\n        \"items\": [\n          \"Catchlights\",\n          \"85mm Lens\",\n          \"Shallow Focus\",\n          \"Wispy Hair\",\n          \"Soft Skin Texture\",\n          \"Natural Light\",\n          \"Ethereal Bokeh\"\n        ]\n      }\n    },\n    {\n      \"id\": \"block_5\",\n      \"type\": \"faq-accordion\",\n      \"title\": \"Mastering Ethereal Bokeh: Professional Technical Insights\",\n      \"headingLevel\": \"h3\",\n      \"data\": {\n        \"items\": [\n          {\n            \"q\": \"Why is the 85mm lens preferred over the 50mm for this style?\",\n            \"a\": \"The 85mm lens offers superior compression, which enhances the Ethereal Bokeh effect and provides a more flattering, distortion-free perspective of the subject's face compared to the 50mm.\"\n          },\n          {\n            \"q\": \"How can I maintain skin texture clarity while using a shallow focus?\",\n            \"a\": \"At Lens & Light Gallery, we recommend focusing precisely on the iris of the eye. Utilizing a high-end sensor with the Pro model ensures that even at wide apertures, the focal plane retains the intricate details of the complexion.\"\n          }\n        ]\n      }\n    }\n  ]\n}",
+              "parsed": {
+                "seoTitle": "Professional Child Portrait Photography: Ethereal Bokeh Guide",
+                "h1Title": "The Art of Professional Child Portrait Photography & Ethereal Bokeh",
+                "seoDescription": "Master Professional Child Portrait Photography. Discover how to use ethereal bokeh and natural catchlights to create intimate, lifelike art. Explore now.",
+                "contentSectionsCount": 5
+              }
+            },
+            "meta": {
+              "modelUsed": "gemini-3-flash-preview",
+              "temperature": 0.7,
+              "maxTokens": 4096
+            }
+          },
+          "relatedPosts": "[]",
+          "response_time_ms": 31972
+        }
+      },
+      "total_time_ms": 67523,
+      "status": "success"
+    },
+    {
+      "test_id": "normal_photography",
+      "test_name": "Normal: 摄影场景 - Golden Hour",
+      "category": "normal",
+      "layer1": {
+        "test_id": "normal_photography",
+        "input": {
+          "input": "Golden hour beach portrait",
+          "imageUrls": []
+        },
+        "output": {
+          "schema": {
+            "context": "Golden Hour Beach Portrait",
+            "followUpQuestion": null,
+            "fields": [
+              {
+                "id": "scene_location",
+                "type": "select",
+                "label": "Beach Setting",
+                "isAdvanced": false,
+                "multiSelect": false,
+                "defaultValue": "Beach",
+                "options": [
+                  "Tropical Beach",
+                  "Rocky Coastline",
+                  "Sand Dunes",
+                  "Pebble Beach",
+                  "Sunset Shore",
+                  "Cliffside Beach",
+                  "Island Cove",
+                  "Serene Bay",
+                  "Boardwalk",
+                  "Palm-lined Beach"
+                ],
+                "source": "creative_param"
+              },
+              {
+                "id": "lighting_variation",
+                "type": "select",
+                "label": "Golden Hour Lighting",
+                "isAdvanced": false,
+                "multiSelect": false,
+                "defaultValue": "Golden Hour",
+                "options": [
+                  "Golden Hour",
+                  "Soft Sunlight",
+                  "Warm Sunset",
+                  "Backlit Glow",
+                  "Rim Lighting",
+                  "Hazy Sunlight",
+                  "Diffused Warmth",
+                  "Afternoon Sun",
+                  "Low-angle Sun",
+                  "Amber Glow"
+                ],
+                "source": "creative_param"
+              },
+              {
+                "id": "subject_pose",
+                "type": "select",
+                "label": "Portrait Pose",
+                "isAdvanced": false,
+                "multiSelect": true,
+                "defaultValue": "Candid Walking",
+                "options": [
+                  "Looking at Camera",
+                  "Profile View",
+                  "Candid Walking",
+                  "Sitting on Sand",
+                  "Wind-swept Hair",
+                  "Over-the-shoulder",
+                  "Leaning on Palm Tree",
+                  "Playing with Water",
+                  "Close-up Headshot",
+                  "Full Body Stance"
+                ],
+                "source": "expanded"
+              },
+              {
+                "id": "outfit_style",
+                "type": "select",
+                "label": "Outfit Style",
+                "isAdvanced": false,
+                "multiSelect": true,
+                "defaultValue": "Flowy Summer Dress",
+                "options": [
+                  "Flowy Summer Dress",
+                  "Casual Linen Shirt",
+                  "Swimwear",
+                  "Bohemian Style",
+                  "Sun Hat and Sunglasses",
+                  "Light Knitwear",
+                  "Denim Shorts",
+                  "Elegant Evening Gown",
+                  "Barefoot Casual",
+                  "Tropical Print"
+                ],
+                "source": "expanded"
+              },
+              {
+                "id": "camera_angle",
+                "type": "select",
+                "label": "Camera Angle",
+                "isAdvanced": true,
+                "multiSelect": false,
+                "defaultValue": "Eye Level",
+                "options": [
+                  "Eye Level",
+                  "Low Angle",
+                  "High Angle",
+                  "Dutch Angle",
+                  "Bird's Eye",
+                  "Worm's Eye",
+                  "Over-the-shoulder",
+                  "Close-up",
+                  "Wide Shot",
+                  "Profile"
+                ],
+                "source": "expanded"
+              },
+              {
+                "id": "depth_of_field",
+                "type": "slider",
+                "label": "Depth of Field",
+                "isAdvanced": true,
+                "multiSelect": false,
+                "defaultValue": 3,
+                "min": 1,
+                "max": 10,
+                "step": 1,
+                "minLabel": "Shallow (Bokeh)",
+                "maxLabel": "Deep (Sharp)",
+                "source": "expanded"
+              }
+            ],
+            "preservedDetails": [
+              "beach setting",
+              "golden hour lighting"
+            ],
+            "imageProcessingInstructions": [],
+            "internalSignals": {
+              "primaryMood": "warm",
+              "visualComplexity": "focused",
+              "detectedSubjectType": "person"
+            },
+            "primaryIntent": {
+              "phrase": "Golden Hour Portrait",
+              "category": "aesthetic",
+              "confidence": 1
+            },
+            "extractedRatio": null,
+            "contentCategory": "photography",
+            "styleHints": [
+              "golden hour",
+              "portrait",
+              "warm lighting"
+            ]
+          },
+          "response_time_ms": 21342
+        }
+      },
+      "layer2": {
+        "test_id": "normal_photography",
+        "input": {
+          "core": {
+            "subject": "Golden Hour Beach Portrait",
+            "action": ""
+          },
+          "narrative_params": {},
+          "layout_constraints": {
+            "ar": "1:1",
+            "text_render": false
+          },
+          "custom_input": "Golden hour beach portrait",
+          "preserved_details": [
+            "beach setting",
+            "golden hour lighting"
+          ],
+          "content_category": "photography",
+          "style_hints": [
+            "golden hour",
+            "portrait",
+            "warm lighting"
+          ],
+          "internal_signals": {
+            "primaryMood": "warm",
+            "visualComplexity": "focused",
+            "detectedSubjectType": "person"
+          },
+          "primary_intent": {
+            "phrase": "Golden Hour Portrait",
+            "category": "aesthetic",
+            "confidence": 1
+          }
+        },
+        "output": {
+          "native": "A Golden Hour Portrait captures a Golden Hour Beach Portrait as the sun begins its descent, casting a brilliant radiance across a tranquil beach setting. The intense golden hour lighting wraps around the subject, creating a luminous rim-light effect that separates them from the rhythmic, shimmering waves of the ocean. Every element of the scene is infused with warm lighting, bathing the sand and sea in rich amber and honeyed tones. This professional photography composition utilizes a wide aperture to create a soft, cinematic bokeh in the background, focusing entirely on the warmth and clarity of the central figure. The final frame stands as a definitive Golden Hour Portrait",
+          "english": "A Golden Hour Portrait captures a Golden Hour Beach Portrait as the sun begins its descent, casting a brilliant radiance across a tranquil beach setting. The intense golden hour lighting wraps around the subject, creating a luminous rim-light effect that separates them from the rhythmic, shimmering waves of the ocean. Every element of the scene is infused with warm lighting, bathing the sand and sea in rich amber and honeyed tones. This professional photography composition utilizes a wide aperture to create a soft, cinematic bokeh in the background, focusing entirely on the warmth and clarity of the central figure. The final frame stands as a definitive Golden Hour Portrait",
+          "highlights": {
+            "native": [
+              {
+                "start": 2,
+                "end": 22,
+                "fieldId": "primary_intent",
+                "fieldLabel": "Primary Intent",
+                "originalValue": "primary_intent",
+                "category": "technical",
+                "transformedTo": "Golden Hour Portrait"
+              },
+              {
+                "start": 34,
+                "end": 60,
+                "fieldId": "subject",
+                "fieldLabel": "Subject",
+                "originalValue": "subject",
+                "category": "subject",
+                "transformedTo": "Golden Hour Beach Portrait"
+              },
+              {
+                "start": 139,
+                "end": 152,
+                "fieldId": "beach_setting",
+                "fieldLabel": "Beach Setting",
+                "originalValue": "beach_setting",
+                "category": "environment",
+                "transformedTo": "beach setting"
+              },
+              {
+                "start": 166,
+                "end": 186,
+                "fieldId": "lighting",
+                "fieldLabel": "Lighting",
+                "originalValue": "lighting",
+                "category": "lighting",
+                "transformedTo": "golden hour lighting"
+              },
+              {
+                "start": 363,
+                "end": 376,
+                "fieldId": "style",
+                "fieldLabel": "Style",
+                "originalValue": "style",
+                "category": "style",
+                "transformedTo": "warm lighting"
+              },
+              {
+                "start": 454,
+                "end": 465,
+                "fieldId": "content_type",
+                "fieldLabel": "Content Type",
+                "originalValue": "content_type",
+                "category": "technical",
+                "transformedTo": "photography"
+              },
+              {
+                "start": 662,
+                "end": 682,
+                "fieldId": "primary_intent",
+                "fieldLabel": "Primary Intent",
+                "originalValue": "primary_intent",
+                "category": "technical",
+                "transformedTo": "Golden Hour Portrait"
+              }
+            ],
+            "english": [
+              {
+                "start": 2,
+                "end": 22,
+                "fieldId": "primary_intent",
+                "fieldLabel": "Primary Intent",
+                "originalValue": "primary_intent",
+                "category": "technical",
+                "transformedTo": "Golden Hour Portrait"
+              },
+              {
+                "start": 34,
+                "end": 60,
+                "fieldId": "subject",
+                "fieldLabel": "Subject",
+                "originalValue": "subject",
+                "category": "subject",
+                "transformedTo": "Golden Hour Beach Portrait"
+              },
+              {
+                "start": 139,
+                "end": 152,
+                "fieldId": "beach_setting",
+                "fieldLabel": "Beach Setting",
+                "originalValue": "beach_setting",
+                "category": "environment",
+                "transformedTo": "beach setting"
+              },
+              {
+                "start": 166,
+                "end": 186,
+                "fieldId": "lighting",
+                "fieldLabel": "Lighting",
+                "originalValue": "lighting",
+                "category": "lighting",
+                "transformedTo": "golden hour lighting"
+              },
+              {
+                "start": 363,
+                "end": 376,
+                "fieldId": "style",
+                "fieldLabel": "Style",
+                "originalValue": "style",
+                "category": "style",
+                "transformedTo": "warm lighting"
+              },
+              {
+                "start": 454,
+                "end": 465,
+                "fieldId": "content_type",
+                "fieldLabel": "Content Type",
+                "originalValue": "content_type",
+                "category": "technical",
+                "transformedTo": "photography"
+              },
+              {
+                "start": 662,
+                "end": 682,
+                "fieldId": "primary_intent",
+                "fieldLabel": "Primary Intent",
+                "originalValue": "primary_intent",
+                "category": "technical",
+                "transformedTo": "Golden Hour Portrait"
+              }
+            ]
+          },
+          "detectedLang": "English",
+          "response_time_ms": 13899
+        }
+      },
+      "layer3": {
+        "test_id": "normal_photography",
+        "input": {
+          "postId": "test-normal_photography",
+          "prompt": "A Golden Hour Portrait captures a Golden Hour Beach Portrait as the sun begins its descent, casting a brilliant radiance across a tranquil beach setting. The intense golden hour lighting wraps around the subject, creating a luminous rim-light effect that separates them from the rhythmic, shimmering waves of the ocean. Every element of the scene is infused with warm lighting, bathing the sand and sea in rich amber and honeyed tones. This professional photography composition utilizes a wide aperture to create a soft, cinematic bokeh in the background, focusing entirely on the warmth and clarity of the central figure. The final frame stands as a definitive Golden Hour Portrait",
+          "model": "gemini-3-pro-image-preview",
+          "imageUrl": "https://media.nanobananaultra.com/ai/image/reference/253e6c75f16470e71077ea5943a47883.webp",
+          "subject": "Golden Hour Beach Portrait"
+        },
+        "output": {
+          "seoSlug": "golden-hour-beach-portrait-lighting-tography",
+          "seoTitle": "Golden Hour Beach Portrait: Master Rim-Lighting with AI",
+          "h1Title": "The Luminous Art of the Golden Hour Beach Portrait",
+          "seoDescription": "Explore the Golden Hour Beach Portrait aesthetic. Learn how to harness rim-lighting and amber tones for cinematic results. Create your masterpiece today.",
+          "seoKeywords": [
+            "Bokeh",
+            "Rim-light",
+            "Amber tones",
+            "Shimmering waves",
+            "Wide aperture",
+            "Coastal horizon",
+            "Backlit silhouette"
+          ],
+          "seoSlugKeywords": "golden-hour-beach-portrait-lighting",
+          "contentIntro": "",
+          "promptBreakdown": "",
+          "imageAlt": "A professional portrait on a beach at sunset with intense golden rim-lighting and soft bokeh background.",
+          "dynamicHeaders": "{}",
+          "faqItems": "[{\"question\":\"What is the optimal window for this portrait style?\",\"answer\":\"The window is brief, typically the final sixty minutes before sunset when the light is most diffused and warm, providing the necessary glow for a Golden Hour Beach Portrait.\"},{\"question\":\"How does the Pro model handle the complexity of sand and water?\",\"answer\":\"The Pro model at PromptEngine excels at calculating the micro-reflections on the sand and sea, ensuring the composition maintains texture even in high-brightness rim-lit areas.\"}]",
+          "visualTags": "[\"Bokeh\",\"Rim-light\",\"Amber tones\",\"Honeyed glow\",\"Shimmering waves\",\"Wide aperture\",\"Coastal horizon\",\"Backlit silhouette\"]",
+          "useCases": "[]",
+          "expertCommentary": null,
+          "remixIdeas": [],
+          "relatedConcepts": [],
+          "contentSections": [
+            {
+              "id": "block_1",
+              "title": "Elements of the Golden Hour Beach Portrait",
+              "headingLevel": "h2",
+              "type": "checklist",
+              "data": {
+                "items": [
+                  "Low-angle sun positioning for maximum radiance",
+                  "Tranquil coastal environment with rhythmic waves",
+                  "Wide-aperture optics for background compression",
+                  "Luminous subject backlighting",
+                  "Reflective sand surfaces in honeyed tones"
+                ]
+              }
+            },
+            {
+              "id": "block_2",
+              "title": "The Radiance of Golden Hour Rim-Lighting",
+              "headingLevel": "h2",
+              "type": "rich-text",
+              "data": {
+                "text": "The Golden Hour Beach Portrait captures a fleeting moment where the terrestrial and celestial realms converge in a warm embrace. The interplay of Golden Hour Rim-Lighting creates a halo of amber fire around the silhouette, a technique reminiscent of the Luminist movement's obsession with atmospheric light. As the sun descends, the rhythmic movement of the ocean is transformed into a shimmering tapestry of honeyed gold. This ethereal glow, curated by the Pro model at PromptEngine, ensures that the central figure remains the focal point against the soft, cinematic bokeh of the retreating tide."
+              }
+            },
+            {
+              "id": "block_3",
+              "title": "Comparing Golden Hour Beach Portrait Lighting",
+              "headingLevel": "h2",
+              "type": "comparison-table",
+              "data": {
+                "left": "Golden Hour",
+                "right": "High Noon",
+                "rows": [
+                  {
+                    "pro": "Warm, amber skin tones",
+                    "con": "Cool, harsh highlights"
+                  },
+                  {
+                    "pro": "Luminous rim-lighting",
+                    "con": "Flat subject definition"
+                  },
+                  {
+                    "pro": "Long, soft shadows",
+                    "con": "Short, dark shadows"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "block_4",
+              "title": "Visual Vocabulary of the Beach Portrait",
+              "headingLevel": "h2",
+              "type": "tags",
+              "data": {
+                "items": [
+                  "Bokeh",
+                  "Rim-light",
+                  "Amber tones",
+                  "Honeyed glow",
+                  "Shimmering waves",
+                  "Wide aperture",
+                  "Coastal horizon",
+                  "Backlit silhouette"
+                ]
+              }
+            },
+            {
+              "id": "block_5",
+              "title": "Perfecting Golden Hour Rim-Lighting",
+              "headingLevel": "h2",
+              "type": "faq-accordion",
+              "data": {
+                "items": [
+                  {
+                    "q": "What is the optimal window for this portrait style?",
+                    "a": "The window is brief, typically the final sixty minutes before sunset when the light is most diffused and warm, providing the necessary glow for a Golden Hour Beach Portrait."
+                  },
+                  {
+                    "q": "How does the Pro model handle the complexity of sand and water?",
+                    "a": "The Pro model at PromptEngine excels at calculating the micro-reflections on the sand and sea, ensuring the composition maintains texture even in high-brightness rim-lit areas."
+                  }
+                ]
+              }
+            }
+          ],
+          "anchor": "Golden Hour Beach Portrait",
+          "microFocus": "Golden Hour Rim-Lighting",
+          "subject": "Golden Hour Beach Portrait",
+          "snippetSummary": "To generate a Golden Hour Beach Portrait in a photorealistic style, the Pro model utilizes a wide aperture and specific sun positioning. This technique achieves a soft cinematic bokeh by prioritizing Golden Hour Rim-Lighting to separate the subject from the shimmering ocean waves. The result is a luminous frame saturated with honeyed tones and professional clarity, perfect for high-end digital galleries.",
+          "galleryCategory": "photography",
+          "categoryConfidence": "high",
+          "debugInfo": {
+            "input": {
+              "userPrompt": "A Golden Hour Portrait captures a Golden Hour Beach Portrait as the sun begins its descent, casting a brilliant radiance across a tranquil beach setting. The intense golden hour lighting wraps around the subject, creating a luminous rim-light effect that separates them from the rhythmic, shimmering waves of the ocean. Every element of the scene is infused with warm lighting, bathing the sand and sea in rich amber and honeyed tones. This professional photography composition utilizes a wide aperture to create a soft, cinematic bokeh in the background, focusing entirely on the warmth and clarity of the central figure. The final frame stands as a definitive Golden Hour Portrait",
+              "model": "gemini-3-pro-image-preview",
+              "userSubject": "Golden Hour Beach Portrait",
+              "effectivePrompt": "A Golden Hour Portrait captures a Golden Hour Beach Portrait as the sun begins its descent, casting a brilliant radiance across a tranquil beach setting. The intense golden hour lighting wraps around the subject, creating a luminous rim-light effect that separates them from the rhythmic, shimmering waves of the ocean. Every element of the scene is infused with warm lighting, bathing the sand and sea in rich amber and honeyed tones. This professional photography composition utilizes a wide aperture to create a soft, cinematic bokeh in the background, focusing entirely on the warmth and clarity of the central figure. The final frame stands as a definitive Golden Hour Portrait",
+              "formValuesInjected": false,
+              "formValuesCount": 0
+            },
+            "stage1": {
+              "prompt": "# V15.0 STAGE 1: THE STRATEGIST (MASTER EDITION)\n\n## OBJECTIVE\nYou are an Elite SEO Strategist. Analyze the user's image prompt and create a \"Content Blueprint\" for a high-ranking Guide Page.\n**GOAL**: Create a rich, comprehensive structure that satisfies User Intent and SEO Depth.\n\n## PRIORITY RULE ⚠️\nIf a \"## VISUAL CONTEXT (GROUND TRUTH)\" section exists in the input:\n1. These parameters are FACTS, not suggestions\n2. ANCHOR and MICRO-FOCUS MUST reflect these parameters\n3. Apply CONFLICT RESOLUTION PROTOCOL when Form conflicts with Prompt text\n\n## CONFLICT RESOLUTION PROTOCOL\nWhen VISUAL CONTEXT (Form) conflicts with User Prompt text:\n\n| Attribute | Priority | Reason |\n|-----------|----------|--------|\n| Art Style, Lighting, Stylization | **Form wins** | User explicitly configured |\n| Subject, Scene, Background | **Prompt wins** | Creative intent |\n| Mood, Atmosphere | **Combine both** | Complementary |\n\n## INPUT\nA Golden Hour Portrait captures a Golden Hour Beach Portrait as the sun begins its descent, casting a brilliant radiance across a tranquil beach setting. The intense golden hour lighting wraps around the subject, creating a luminous rim-light effect that separates them from the rhythmic, shimmering waves of the ocean. Every element of the scene is infused with warm lighting, bathing the sand and sea in rich amber and honeyed tones. This professional photography composition utilizes a wide aperture to create a soft, cinematic bokeh in the background, focusing entirely on the warmth and clarity of the central figure. The final frame stands as a definitive Golden Hour Portrait\n- Model: Pro\n- **LANGUAGE**: Auto-detect from the prompt. Output MUST be in the same language.\n\n## CRITICAL TASKS\n\n### 1. REASONING (Optional but Recommended)\nExplain your analysis in `_reasoning`:\n- `contextAnalysis`: What does VISUAL CONTEXT tell us?\n- `conflictResolution`: Any conflicts between Form and Prompt? How resolved?\n- `microFocusSelection`: Which parameter is most distinctive? Why?\n- `voiceSelection`: Which Persona fits the Intent?\n\n### 2. Extract ANCHOR (2-5 words)\n- If VISUAL CONTEXT exists: Combine [Style from Form] + [Subject from Prompt]\n- Rules:\n  - ❌ Bad: \"Digital Art\", \"Portrait\" (Too Generic)\n  - ✅ Good: \"Anime Golden Dress Portrait\", \"Neon Cyberpunk City\"\n- **If prompt < 5 words**: Use full prompt as Anchor.\n\n### 3. Identify MICRO-FOCUS\n- Use the most distinctive parameter from VISUAL CONTEXT\n- Examples: \"Golden Hour Lighting\", \"Cel-Shading Technique\", \"Glassmorphism Effect\"\n- This is KEY to avoiding SEO cannibalization!\n\n### 4. Determine INTENT & Suggest VOICE\n- **ARTISTIC** → Curator Voice (Gallery curator tone, emphasize aesthetics)\n- **FUNCTIONAL** → Engineer Voice (Technical documentation, precise specs)\n- **COMMERCIAL** → Director Voice (Marketing narrative, use cases, brand mentions)\n\n### 5. Plan BLOCKS (4-6 blocks, 3+ types)\n- **CONSTRAINT**: Plan **4 to 6 blocks**.\n- **VARIETY RULE**: Use at least **3 DIFFERENT** block types.\n- **NO TEMPLATES**: Do not always use \"Intro -> Tags -> FAQ\". Mix it up!\n\n**Available Block Types**:\n- `rich-text`: Deep Analysis / Storytelling. (Max 2, NEVER consecutive).\n- `checklist`: Elements (Artistic), Specs (Functional), Layout (Commercial).\n- `comparison-table`: \"Style A vs B\" or \"Do's and Don'ts\".\n- `faq-accordion`: Technical Q&A. (Max 1).\n- `tags`: **5-8** strictly visual keywords. (Max 1).\n\n### 6. Classify GALLERY CATEGORY (MANDATORY)\nYOU MUST select exactly ONE category for homepage gallery display.\n⚠️ This is DIFFERENT from \"intent\" - intent affects writing style, category affects gallery navigation.\n\n**Available Categories**:\n| Slug | Visual Indicators | Examples |\n|------|-------------------|----------|\n| `photography` | Photorealistic, camera terms (ISO, aperture, lens), real-world scenes | Portrait, landscape, street photo |\n| `art-illustration` | Anime, manga, digital painting, watercolor, concept art, illustration | Anime girl, fantasy art, comic style |\n| `design` | Logo, UI/UX, poster, typography, pattern, mockup, layout | Logo design, app UI, poster |\n| `commercial-product` | Product shot, packaging, advertising, marketing, brand | Product mockup, ad creative |\n| `character-design` | Game character, mascot, avatar, creature, OC (original character) | Game hero, mascot design |\n\n**Decision Rules** (apply in order, first match wins):\n1. If VISUAL CONTEXT has `art_style: anime/manga/illustration/comic` → `art-illustration`\n2. If prompt mentions \"product\", \"mockup\", \"packaging\", \"brand\", \"advertisement\" → `commercial-product`\n3. If primary focus is character appearance/outfit/design (not scene) → `character-design`\n4. If contains \"logo\", \"poster\", \"layout\", \"UI\", \"banner\", \"icon\" → `design`\n5. If photorealistic OR camera terms (ISO, f/2.8, 85mm, bokeh) → `photography`\n6. If NONE clearly fit → output `unknown` and explain in _reasoning\n\n**Confidence Levels**:\n- `high`: Clear match to one category (e.g., \"anime girl\" → art-illustration)\n- `medium`: Could fit multiple but one is most likely\n- `low`: Ambiguous, recommend manual review\n\n## OUTPUT FORMAT (Strict JSON)\n{\n  \"_reasoning\": {\n    \"contextAnalysis\": \"VISUAL CONTEXT shows art_style=anime, lighting=golden_hour...\",\n    \"conflictResolution\": \"No conflicts detected / Form specifies anime, using over prompt text...\",\n    \"microFocusSelection\": \"Golden Hour is the most distinctive parameter because...\",\n    \"voiceSelection\": \"Artistic intent detected, recommending Curator voice...\",\n    \"categorySelection\": \"Detected anime style, assigning art-illustration with high confidence\"\n  },\n  \"anchor\": \"string (2-5 words)\",\n  \"microFocus\": \"string (unique angle)\",\n  \"intent\": \"Artistic | Functional | Commercial\",\n  \"suggestedVoice\": \"Curator | Engineer | Director\",\n  \"language\": \"en | zh | ja | ...\",\n  \"plannedBlocks\": [\n    { \"id\": \"block_1\", \"type\": \"rich-text\", \"intent\": \"Explain the core concept...\" },\n    { \"id\": \"block_2\", \"type\": \"checklist\", \"intent\": \"List 5 essential components...\" },\n    { \"id\": \"block_3\", \"type\": \"comparison-table\", \"intent\": \"Compare attributes...\" },\n    { \"id\": \"block_4\", \"type\": \"tags\", \"intent\": \"List 5-8 descriptive keywords...\" }\n  ],\n  \"galleryCategory\": \"photography | art-illustration | design | commercial-product | character-design | unknown\",\n  \"categoryConfidence\": \"high | medium | low\",\n  \"antiTemplatingCommitment\": {\n    \"blocksStartWith\": \"checklist\",\n    \"blocksEndWith\": \"faq-accordion\",\n    \"noConsecutiveRichText\": true\n  }\n}\n\n## ERROR FALLBACK\nIf unable to extract subject, return:\n{ \"error\": true, \"fallbackAnchor\": \"AI Image\", \"fallbackMicroFocus\": \"Creative Style\" }",
+              "rawResponse": "{\n  \"_reasoning\": {\n    \"contextAnalysis\": \"The prompt describes a high-end professional photograph with specific technical attributes like wide aperture and rim-lighting. The scene is set at a beach during the golden hour, emphasizing warm amber and honeyed tones.\",\n    \"conflictResolution\": \"No external VISUAL CONTEXT section was provided; the analysis is based entirely on the detailed descriptive prompt which provides clear creative intent.\",\n    \"microFocusSelection\": \"Golden Hour Rim-Lighting is the most distinctive parameter, as it defines the separation of the subject from the background and sets the professional tone.\",\n    \"voiceSelection\": \"Artistic intent is detected due to the emphasis on mood, atmosphere, and aesthetic radiance, recommending a Curator voice for a gallery-style guide.\",\n    \"categorySelection\": \"The use of specific camera terminology such as 'wide aperture', 'bokeh', and 'professional photography composition' makes 'photography' the definitive category.\"\n  },\n  \"anchor\": \"Golden Hour Beach Portrait\",\n  \"microFocus\": \"Golden Hour Rim-Lighting\",\n  \"intent\": \"Artistic\",\n  \"suggestedVoice\": \"Curator\",\n  \"language\": \"en\",\n  \"plannedBlocks\": [\n    {\n      \"id\": \"block_1\",\n      \"type\": \"checklist\",\n      \"intent\": \"Detail the essential technical and environmental components required to replicate this specific aesthetic.\"\n    },\n    {\n      \"id\": \"block_2\",\n      \"type\": \"rich-text\",\n      \"intent\": \"Provide a deep narrative analysis of the interplay between the warm amber lighting and the ocean's rhythmic movement.\"\n    },\n    {\n      \"id\": \"block_3\",\n      \"type\": \"comparison-table\",\n      \"intent\": \"Compare 'Golden Hour' lighting effects against 'High Noon' to demonstrate why the former creates superior rim-lighting.\"\n    },\n    {\n      \"id\": \"block_4\",\n      \"type\": \"tags\",\n      \"intent\": \"List 8 strictly visual keywords for SEO categorization including bokeh, rim-light, and amber tones.\"\n    },\n    {\n      \"id\": \"block_5\",\n      \"type\": \"faq-accordion\",\n      \"intent\": \"Address technical questions regarding aperture settings and timing for beach photography.\"\n    }\n  ],\n  \"galleryCategory\": \"photography\",\n  \"categoryConfidence\": \"high\",\n  \"antiTemplatingCommitment\": {\n    \"blocksStartWith\": \"checklist\",\n    \"blocksEndWith\": \"faq-accordion\",\n    \"noConsecutiveRichText\": true\n  }\n}",
+              "parsed": {
+                "anchor": "Golden Hour Beach Portrait",
+                "microFocus": "Golden Hour Rim-Lighting",
+                "intent": "Artistic",
+                "plannedBlocks": [
+                  {
+                    "id": "block_1",
+                    "type": "checklist",
+                    "intent": "Detail the essential technical and environmental components required to replicate this specific aesthetic."
+                  },
+                  {
+                    "id": "block_2",
+                    "type": "rich-text",
+                    "intent": "Provide a deep narrative analysis of the interplay between the warm amber lighting and the ocean's rhythmic movement."
+                  },
+                  {
+                    "id": "block_3",
+                    "type": "comparison-table",
+                    "intent": "Compare 'Golden Hour' lighting effects against 'High Noon' to demonstrate why the former creates superior rim-lighting."
+                  },
+                  {
+                    "id": "block_4",
+                    "type": "tags",
+                    "intent": "List 8 strictly visual keywords for SEO categorization including bokeh, rim-light, and amber tones."
+                  },
+                  {
+                    "id": "block_5",
+                    "type": "faq-accordion",
+                    "intent": "Address technical questions regarding aperture settings and timing for beach photography."
+                  }
+                ]
+              }
+            },
+            "stage2": {
+              "prompt": "# V15.0 STAGE 2: THE WRITER (MASTER EDITION)\n\n## OBJECTIVE\nYou are an Expert Technical Writer. Execute the Strategy Blueprint to generate final content.\n\n## VOICE PERSONA SYSTEM\nAdapt your writing style based on the `suggestedVoice` from the Blueprint:\n\n### If Curator (Artistic Intent)\nWrite as an art gallery curator. Use evocative language, reference art movements, emphasize emotional impact.\n- Opening: \"The [Anchor] captures...\"\n- Analysis: \"The interplay of [MicroFocus] creates...\"\n- Avoid: Technical jargon, bullet lists, imperative commands\n\n### If Engineer (Functional Intent)\nWrite as a technical documentation author. Be precise, use numbered steps, include parameter references.\n- Opening: \"To achieve [Anchor], configure...\"\n- Analysis: \"The [MicroFocus] setting controls...\"\n- Avoid: Subjective adjectives, emotional language\n\n### If Director (Commercial Intent)\nWrite as a marketing creative director. Focus on use cases, brand mentions, call-to-action.\n- Opening: \"[Anchor] transforms your...\"\n- Analysis: \"With [MicroFocus], you can...\"\n- Avoid: Technical details, lengthy explanations\n\n**TONE by Model**:\n- **Pro**: Professional, Technical, highlighting advanced features.\n- **FLUX**: Photorealistic, focusing on lighting and texture.\n- **Default**: Creative and balanced.\n\n## INPUTS\n- Strategy Blueprint: {\n  \"anchor\": \"Golden Hour Beach Portrait\",\n  \"microFocus\": \"Golden Hour Rim-Lighting\",\n  \"intent\": \"Artistic\",\n  \"plannedBlocks\": [\n    {\n      \"id\": \"block_1\",\n      \"type\": \"checklist\",\n      \"intent\": \"Detail the essential technical and environmental components required to replicate this specific aesthetic.\"\n    },\n    {\n      \"id\": \"block_2\",\n      \"type\": \"rich-text\",\n      \"intent\": \"Provide a deep narrative analysis of the interplay between the warm amber lighting and the ocean's rhythmic movement.\"\n    },\n    {\n      \"id\": \"block_3\",\n      \"type\": \"comparison-table\",\n      \"intent\": \"Compare 'Golden Hour' lighting effects against 'High Noon' to demonstrate why the former creates superior rim-lighting.\"\n    },\n    {\n      \"id\": \"block_4\",\n      \"type\": \"tags\",\n      \"intent\": \"List 8 strictly visual keywords for SEO categorization including bokeh, rim-light, and amber tones.\"\n    },\n    {\n      \"id\": \"block_5\",\n      \"type\": \"faq-accordion\",\n      \"intent\": \"Address technical questions regarding aperture settings and timing for beach photography.\"\n    }\n  ],\n  \"galleryCategory\": \"photography\",\n  \"categoryConfidence\": \"high\",\n  \"_debug\": {\n    \"prompt\": \"# V15.0 STAGE 1: THE STRATEGIST (MASTER EDITION)\\n\\n## OBJECTIVE\\nYou are an Elite SEO Strategist. Analyze the user's image prompt and create a \\\"Content Blueprint\\\" for a high-ranking Guide Page.\\n**GOAL**: Create a rich, comprehensive structure that satisfies User Intent and SEO Depth.\\n\\n## PRIORITY RULE ⚠️\\nIf a \\\"## VISUAL CONTEXT (GROUND TRUTH)\\\" section exists in the input:\\n1. These parameters are FACTS, not suggestions\\n2. ANCHOR and MICRO-FOCUS MUST reflect these parameters\\n3. Apply CONFLICT RESOLUTION PROTOCOL when Form conflicts with Prompt text\\n\\n## CONFLICT RESOLUTION PROTOCOL\\nWhen VISUAL CONTEXT (Form) conflicts with User Prompt text:\\n\\n| Attribute | Priority | Reason |\\n|-----------|----------|--------|\\n| Art Style, Lighting, Stylization | **Form wins** | User explicitly configured |\\n| Subject, Scene, Background | **Prompt wins** | Creative intent |\\n| Mood, Atmosphere | **Combine both** | Complementary |\\n\\n## INPUT\\nA Golden Hour Portrait captures a Golden Hour Beach Portrait as the sun begins its descent, casting a brilliant radiance across a tranquil beach setting. The intense golden hour lighting wraps around the subject, creating a luminous rim-light effect that separates them from the rhythmic, shimmering waves of the ocean. Every element of the scene is infused with warm lighting, bathing the sand and sea in rich amber and honeyed tones. This professional photography composition utilizes a wide aperture to create a soft, cinematic bokeh in the background, focusing entirely on the warmth and clarity of the central figure. The final frame stands as a definitive Golden Hour Portrait\\n- Model: Pro\\n- **LANGUAGE**: Auto-detect from the prompt. Output MUST be in the same language.\\n\\n## CRITICAL TASKS\\n\\n### 1. REASONING (Optional but Recommended)\\nExplain your analysis in `_reasoning`:\\n- `contextAnalysis`: What does VISUAL CONTEXT tell us?\\n- `conflictResolution`: Any conflicts between Form and Prompt? How resolved?\\n- `microFocusSelection`: Which parameter is most distinctive? Why?\\n- `voiceSelection`: Which Persona fits the Intent?\\n\\n### 2. Extract ANCHOR (2-5 words)\\n- If VISUAL CONTEXT exists: Combine [Style from Form] + [Subject from Prompt]\\n- Rules:\\n  - ❌ Bad: \\\"Digital Art\\\", \\\"Portrait\\\" (Too Generic)\\n  - ✅ Good: \\\"Anime Golden Dress Portrait\\\", \\\"Neon Cyberpunk City\\\"\\n- **If prompt < 5 words**: Use full prompt as Anchor.\\n\\n### 3. Identify MICRO-FOCUS\\n- Use the most distinctive parameter from VISUAL CONTEXT\\n- Examples: \\\"Golden Hour Lighting\\\", \\\"Cel-Shading Technique\\\", \\\"Glassmorphism Effect\\\"\\n- This is KEY to avoiding SEO cannibalization!\\n\\n### 4. Determine INTENT & Suggest VOICE\\n- **ARTISTIC** → Curator Voice (Gallery curator tone, emphasize aesthetics)\\n- **FUNCTIONAL** → Engineer Voice (Technical documentation, precise specs)\\n- **COMMERCIAL** → Director Voice (Marketing narrative, use cases, brand mentions)\\n\\n### 5. Plan BLOCKS (4-6 blocks, 3+ types)\\n- **CONSTRAINT**: Plan **4 to 6 blocks**.\\n- **VARIETY RULE**: Use at least **3 DIFFERENT** block types.\\n- **NO TEMPLATES**: Do not always use \\\"Intro -> Tags -> FAQ\\\". Mix it up!\\n\\n**Available Block Types**:\\n- `rich-text`: Deep Analysis / Storytelling. (Max 2, NEVER consecutive).\\n- `checklist`: Elements (Artistic), Specs (Functional), Layout (Commercial).\\n- `comparison-table`: \\\"Style A vs B\\\" or \\\"Do's and Don'ts\\\".\\n- `faq-accordion`: Technical Q&A. (Max 1).\\n- `tags`: **5-8** strictly visual keywords. (Max 1).\\n\\n### 6. Classify GALLERY CATEGORY (MANDATORY)\\nYOU MUST select exactly ONE category for homepage gallery display.\\n⚠️ This is DIFFERENT from \\\"intent\\\" - intent affects writing style, category affects gallery navigation.\\n\\n**Available Categories**:\\n| Slug | Visual Indicators | Examples |\\n|------|-------------------|----------|\\n| `photography` | Photorealistic, camera terms (ISO, aperture, lens), real-world scenes | Portrait, landscape, street photo |\\n| `art-illustration` | Anime, manga, digital painting, watercolor, concept art, illustration | Anime girl, fantasy art, comic style |\\n| `design` | Logo, UI/UX, poster, typography, pattern, mockup, layout | Logo design, app UI, poster |\\n| `commercial-product` | Product shot, packaging, advertising, marketing, brand | Product mockup, ad creative |\\n| `character-design` | Game character, mascot, avatar, creature, OC (original character) | Game hero, mascot design |\\n\\n**Decision Rules** (apply in order, first match wins):\\n1. If VISUAL CONTEXT has `art_style: anime/manga/illustration/comic` → `art-illustration`\\n2. If prompt mentions \\\"product\\\", \\\"mockup\\\", \\\"packaging\\\", \\\"brand\\\", \\\"advertisement\\\" → `commercial-product`\\n3. If primary focus is character appearance/outfit/design (not scene) → `character-design`\\n4. If contains \\\"logo\\\", \\\"poster\\\", \\\"layout\\\", \\\"UI\\\", \\\"banner\\\", \\\"icon\\\" → `design`\\n5. If photorealistic OR camera terms (ISO, f/2.8, 85mm, bokeh) → `photography`\\n6. If NONE clearly fit → output `unknown` and explain in _reasoning\\n\\n**Confidence Levels**:\\n- `high`: Clear match to one category (e.g., \\\"anime girl\\\" → art-illustration)\\n- `medium`: Could fit multiple but one is most likely\\n- `low`: Ambiguous, recommend manual review\\n\\n## OUTPUT FORMAT (Strict JSON)\\n{\\n  \\\"_reasoning\\\": {\\n    \\\"contextAnalysis\\\": \\\"VISUAL CONTEXT shows art_style=anime, lighting=golden_hour...\\\",\\n    \\\"conflictResolution\\\": \\\"No conflicts detected / Form specifies anime, using over prompt text...\\\",\\n    \\\"microFocusSelection\\\": \\\"Golden Hour is the most distinctive parameter because...\\\",\\n    \\\"voiceSelection\\\": \\\"Artistic intent detected, recommending Curator voice...\\\",\\n    \\\"categorySelection\\\": \\\"Detected anime style, assigning art-illustration with high confidence\\\"\\n  },\\n  \\\"anchor\\\": \\\"string (2-5 words)\\\",\\n  \\\"microFocus\\\": \\\"string (unique angle)\\\",\\n  \\\"intent\\\": \\\"Artistic | Functional | Commercial\\\",\\n  \\\"suggestedVoice\\\": \\\"Curator | Engineer | Director\\\",\\n  \\\"language\\\": \\\"en | zh | ja | ...\\\",\\n  \\\"plannedBlocks\\\": [\\n    { \\\"id\\\": \\\"block_1\\\", \\\"type\\\": \\\"rich-text\\\", \\\"intent\\\": \\\"Explain the core concept...\\\" },\\n    { \\\"id\\\": \\\"block_2\\\", \\\"type\\\": \\\"checklist\\\", \\\"intent\\\": \\\"List 5 essential components...\\\" },\\n    { \\\"id\\\": \\\"block_3\\\", \\\"type\\\": \\\"comparison-table\\\", \\\"intent\\\": \\\"Compare attributes...\\\" },\\n    { \\\"id\\\": \\\"block_4\\\", \\\"type\\\": \\\"tags\\\", \\\"intent\\\": \\\"List 5-8 descriptive keywords...\\\" }\\n  ],\\n  \\\"galleryCategory\\\": \\\"photography | art-illustration | design | commercial-product | character-design | unknown\\\",\\n  \\\"categoryConfidence\\\": \\\"high | medium | low\\\",\\n  \\\"antiTemplatingCommitment\\\": {\\n    \\\"blocksStartWith\\\": \\\"checklist\\\",\\n    \\\"blocksEndWith\\\": \\\"faq-accordion\\\",\\n    \\\"noConsecutiveRichText\\\": true\\n  }\\n}\\n\\n## ERROR FALLBACK\\nIf unable to extract subject, return:\\n{ \\\"error\\\": true, \\\"fallbackAnchor\\\": \\\"AI Image\\\", \\\"fallbackMicroFocus\\\": \\\"Creative Style\\\" }\",\n    \"rawResponse\": \"{\\n  \\\"_reasoning\\\": {\\n    \\\"contextAnalysis\\\": \\\"The prompt describes a high-end professional photograph with specific technical attributes like wide aperture and rim-lighting. The scene is set at a beach during the golden hour, emphasizing warm amber and honeyed tones.\\\",\\n    \\\"conflictResolution\\\": \\\"No external VISUAL CONTEXT section was provided; the analysis is based entirely on the detailed descriptive prompt which provides clear creative intent.\\\",\\n    \\\"microFocusSelection\\\": \\\"Golden Hour Rim-Lighting is the most distinctive parameter, as it defines the separation of the subject from the background and sets the professional tone.\\\",\\n    \\\"voiceSelection\\\": \\\"Artistic intent is detected due to the emphasis on mood, atmosphere, and aesthetic radiance, recommending a Curator voice for a gallery-style guide.\\\",\\n    \\\"categorySelection\\\": \\\"The use of specific camera terminology such as 'wide aperture', 'bokeh', and 'professional photography composition' makes 'photography' the definitive category.\\\"\\n  },\\n  \\\"anchor\\\": \\\"Golden Hour Beach Portrait\\\",\\n  \\\"microFocus\\\": \\\"Golden Hour Rim-Lighting\\\",\\n  \\\"intent\\\": \\\"Artistic\\\",\\n  \\\"suggestedVoice\\\": \\\"Curator\\\",\\n  \\\"language\\\": \\\"en\\\",\\n  \\\"plannedBlocks\\\": [\\n    {\\n      \\\"id\\\": \\\"block_1\\\",\\n      \\\"type\\\": \\\"checklist\\\",\\n      \\\"intent\\\": \\\"Detail the essential technical and environmental components required to replicate this specific aesthetic.\\\"\\n    },\\n    {\\n      \\\"id\\\": \\\"block_2\\\",\\n      \\\"type\\\": \\\"rich-text\\\",\\n      \\\"intent\\\": \\\"Provide a deep narrative analysis of the interplay between the warm amber lighting and the ocean's rhythmic movement.\\\"\\n    },\\n    {\\n      \\\"id\\\": \\\"block_3\\\",\\n      \\\"type\\\": \\\"comparison-table\\\",\\n      \\\"intent\\\": \\\"Compare 'Golden Hour' lighting effects against 'High Noon' to demonstrate why the former creates superior rim-lighting.\\\"\\n    },\\n    {\\n      \\\"id\\\": \\\"block_4\\\",\\n      \\\"type\\\": \\\"tags\\\",\\n      \\\"intent\\\": \\\"List 8 strictly visual keywords for SEO categorization including bokeh, rim-light, and amber tones.\\\"\\n    },\\n    {\\n      \\\"id\\\": \\\"block_5\\\",\\n      \\\"type\\\": \\\"faq-accordion\\\",\\n      \\\"intent\\\": \\\"Address technical questions regarding aperture settings and timing for beach photography.\\\"\\n    }\\n  ],\\n  \\\"galleryCategory\\\": \\\"photography\\\",\\n  \\\"categoryConfidence\\\": \\\"high\\\",\\n  \\\"antiTemplatingCommitment\\\": {\\n    \\\"blocksStartWith\\\": \\\"checklist\\\",\\n    \\\"blocksEndWith\\\": \\\"faq-accordion\\\",\\n    \\\"noConsecutiveRichText\\\": true\\n  }\\n}\"\n  }\n}\n- User Prompt: A Golden Hour Portrait captures a Golden Hour Beach Portrait as the sun begins its descent, casting a brilliant radiance across a tranquil beach setting. The intense golden hour lighting wraps around the subject, creating a luminous rim-light effect that separates them from the rhythmic, shimmering waves of the ocean. Every element of the scene is infused with warm lighting, bathing the sand and sea in rich amber and honeyed tones. This professional photography composition utilizes a wide aperture to create a soft, cinematic bokeh in the background, focusing entirely on the warmth and clarity of the central figure. The final frame stands as a definitive Golden Hour Portrait\n\n## VALIDATION & RECOVERY\n- If `plannedBlocks` has < 4 items: Add 1 `rich-text` block about \"Usage Tips\".\n- If `plannedBlocks` > 6 items: Merge similar blocks.\n\n## SEO CONSTRAINTS (STRICT)\n\n1. **Title Tag**: 50-60 characters MAX. Must include Anchor.\n   - ✅ \"[Anchor]: Master [MicroFocus] with AI\"\n\n2. **Meta Description**: 140-160 characters. Must include Anchor & CTA.\n\n3. **Keywords**: EXACTLY 5-8 items.\n   - MUST be **visible elements**. ⛔ NO abstract concepts (\"Success\", \"Happiness\").\n   - Examples: Photo: \"Bokeh\", \"85mm Lens\"; UI: \"Rounded Corners\", \"Dark Mode\"; Anime: \"Cel Shading\".\n\n4. **Brand Injection**:\n   - Mention your brand naturally in the `rich-text` intro or `faq` (once per section max).\n\n5. **Anti-Templating (MANDATORY)**:\n   ⛔ BANNED PATTERNS:\n   - Generic titles: \"Introduction\", \"Conclusion\", \"Keywords\", \"FAQ\", \"Key Elements\"\n   - Opening phrases: \"This stunning image...\", \"In this guide...\", \"Let's explore...\"\n   - Two consecutive `rich-text` blocks\n\n   ✅ REQUIRED PATTERNS:\n   - Titles MUST include Anchor or MicroFocus: \"Deconstructing [Anchor]'s Visual Language\"\n   - Opening MUST be specific: \"The [Anchor] achieves its [Effect] through...\"\n\n6. **Slug**: 3-5 words, kebab-case, no model name.\n\n7. **Snippet Summary (V15.0 GEO Formula)**:\n   Generate a 50-80 word summary for AI search engines using this formula:\n   \"To generate [Anchor] in [Style], the [Model] utilizes [Key Param from VISUAL CONTEXT].\n   This technique achieves [Visual Effect] by [Technical Method from MicroFocus].\"\n\n   **Constraints**:\n   - 50-80 words ONLY\n   - MUST include: Anchor, Model Name, at least 2 parameters from VISUAL CONTEXT\n   - MUST mention MicroFocus technique\n   - NO marketing fluff (\"stunning\", \"amazing\", \"beautiful\")\n   - MUST be factual and actionable\n\n## OUTPUT FORMAT (Strict JSON)\n\n⚠️ CRITICAL: The \"data\" field format must EXACTLY match these examples:\n\n{\n  \"_reasoning\": \"Optional: explain creative decisions based on Voice Persona\",\n  \"seoTitle\": \"string (Max 60 chars)\",\n  \"h1Title\": \"string (Unique & Engaging)\",\n  \"seoDescription\": \"string (140-160 chars)\",\n  \"seoKeywords\": [\"Tag1\", \"Tag2\", \"Tag3\", \"Tag4\", \"Tag5\"],\n  \"imageAlt\": \"string (Natural description)\",\n  \"slugKeywords\": \"string (kebab-case, 3-5 words)\",\n  \"snippetSummary\": \"string (50-80 words, GEO formula)\",\n  \"contentSections\": [\n    {\n      \"id\": \"block_1\",\n      \"type\": \"rich-text\",\n      \"title\": \"Descriptive H2 Title (must include Anchor or MicroFocus)\",\n      \"headingLevel\": \"h2\",\n      \"data\": { \"text\": \"Markdown paragraph content here. Must be in 'text' field.\" }\n    },\n    {\n      \"id\": \"block_2\",\n      \"type\": \"checklist\",\n      \"title\": \"[MicroFocus] Essentials\",\n      \"headingLevel\": \"h3\",\n      \"data\": { \"items\": [\"Item 1\", \"Item 2\", \"Item 3\"] }\n    },\n    {\n      \"id\": \"block_3\",\n      \"type\": \"tags\",\n      \"title\": \"Visual Keywords\",\n      \"headingLevel\": \"h3\",\n      \"data\": { \"items\": [\"Keyword1\", \"Keyword2\", \"Keyword3\"] }\n    },\n    {\n      \"id\": \"block_4\",\n      \"type\": \"comparison-table\",\n      \"title\": \"[Anchor] Style Comparison\",\n      \"headingLevel\": \"h3\",\n      \"data\": {\n        \"left\": \"Option A\",\n        \"right\": \"Option B\",\n        \"rows\": [\n          { \"pro\": \"Warm tones\", \"con\": \"Cool tones\" },\n          { \"pro\": \"Soft lighting\", \"con\": \"Hard lighting\" }\n        ]\n      }\n    },\n    {\n      \"id\": \"block_5\",\n      \"type\": \"faq-accordion\",\n      \"title\": \"Mastering [MicroFocus]: Common Questions\",\n      \"headingLevel\": \"h3\",\n      \"data\": {\n        \"items\": [\n          { \"q\": \"How to achieve this effect?\", \"a\": \"Use the AI generator with these settings...\" },\n          { \"q\": \"What model works best?\", \"a\": \"For this style, we recommend...\" }\n        ]\n      }\n    }\n  ]\n}",
+              "rawResponse": "{\n  \"_reasoning\": \"Adopting the Curator persona, I have used evocative language like 'halo of amber fire' and 'Luminist movement' to emphasize the artistic intent. The structure avoids technical jargon where possible, focusing on the emotional and aesthetic impact of light, while adhering to the SEO constraints and the specific GEO summary formula.\",\n  \"seoTitle\": \"Golden Hour Beach Portrait: Master Rim-Lighting with AI\",\n  \"h1Title\": \"The Luminous Art of the Golden Hour Beach Portrait\",\n  \"seoDescription\": \"Explore the Golden Hour Beach Portrait aesthetic. Learn how to harness rim-lighting and amber tones for cinematic results. Create your masterpiece today.\",\n  \"seoKeywords\": [\n    \"Bokeh\",\n    \"Rim-light\",\n    \"Amber tones\",\n    \"Shimmering waves\",\n    \"Wide aperture\",\n    \"Coastal horizon\",\n    \"Backlit silhouette\"\n  ],\n  \"imageAlt\": \"A professional portrait on a beach at sunset with intense golden rim-lighting and soft bokeh background.\",\n  \"slugKeywords\": \"golden-hour-beach-portrait-lighting\",\n  \"snippetSummary\": \"To generate a Golden Hour Beach Portrait in a photorealistic style, the Pro model utilizes a wide aperture and specific sun positioning. This technique achieves a soft cinematic bokeh by prioritizing Golden Hour Rim-Lighting to separate the subject from the shimmering ocean waves. The result is a luminous frame saturated with honeyed tones and professional clarity, perfect for high-end digital galleries.\",\n  \"contentSections\": [\n    {\n      \"id\": \"block_1\",\n      \"type\": \"checklist\",\n      \"title\": \"Elements of the Golden Hour Beach Portrait\",\n      \"headingLevel\": \"h2\",\n      \"data\": {\n        \"items\": [\n          \"Low-angle sun positioning for maximum radiance\",\n          \"Tranquil coastal environment with rhythmic waves\",\n          \"Wide-aperture optics for background compression\",\n          \"Luminous subject backlighting\",\n          \"Reflective sand surfaces in honeyed tones\"\n        ]\n      }\n    },\n    {\n      \"id\": \"block_2\",\n      \"type\": \"rich-text\",\n      \"title\": \"The Radiance of Golden Hour Rim-Lighting\",\n      \"headingLevel\": \"h2\",\n      \"data\": {\n        \"text\": \"The Golden Hour Beach Portrait captures a fleeting moment where the terrestrial and celestial realms converge in a warm embrace. The interplay of Golden Hour Rim-Lighting creates a halo of amber fire around the silhouette, a technique reminiscent of the Luminist movement's obsession with atmospheric light. As the sun descends, the rhythmic movement of the ocean is transformed into a shimmering tapestry of honeyed gold. This ethereal glow, curated by the Pro model at PromptEngine, ensures that the central figure remains the focal point against the soft, cinematic bokeh of the retreating tide.\"\n      }\n    },\n    {\n      \"id\": \"block_3\",\n      \"type\": \"comparison-table\",\n      \"title\": \"Comparing Golden Hour Beach Portrait Lighting\",\n      \"headingLevel\": \"h2\",\n      \"data\": {\n        \"left\": \"Golden Hour\",\n        \"right\": \"High Noon\",\n        \"rows\": [\n          {\n            \"pro\": \"Warm, amber skin tones\",\n            \"con\": \"Cool, harsh highlights\"\n          },\n          {\n            \"pro\": \"Luminous rim-lighting\",\n            \"con\": \"Flat subject definition\"\n          },\n          {\n            \"pro\": \"Long, soft shadows\",\n            \"con\": \"Short, dark shadows\"\n          }\n        ]\n      }\n    },\n    {\n      \"id\": \"block_4\",\n      \"type\": \"tags\",\n      \"title\": \"Visual Vocabulary of the Beach Portrait\",\n      \"headingLevel\": \"h2\",\n      \"data\": {\n        \"items\": [\n          \"Bokeh\",\n          \"Rim-light\",\n          \"Amber tones\",\n          \"Honeyed glow\",\n          \"Shimmering waves\",\n          \"Wide aperture\",\n          \"Coastal horizon\",\n          \"Backlit silhouette\"\n        ]\n      }\n    },\n    {\n      \"id\": \"block_5\",\n      \"type\": \"faq-accordion\",\n      \"title\": \"Perfecting Golden Hour Rim-Lighting\",\n      \"headingLevel\": \"h2\",\n      \"data\": {\n        \"items\": [\n          {\n            \"q\": \"What is the optimal window for this portrait style?\",\n            \"a\": \"The window is brief, typically the final sixty minutes before sunset when the light is most diffused and warm, providing the necessary glow for a Golden Hour Beach Portrait.\"\n          },\n          {\n            \"q\": \"How does the Pro model handle the complexity of sand and water?\",\n            \"a\": \"The Pro model at PromptEngine excels at calculating the micro-reflections on the sand and sea, ensuring the composition maintains texture even in high-brightness rim-lit areas.\"\n          }\n        ]\n      }\n    }\n  ]\n}",
+              "parsed": {
+                "seoTitle": "Golden Hour Beach Portrait: Master Rim-Lighting with AI",
+                "h1Title": "The Luminous Art of the Golden Hour Beach Portrait",
+                "seoDescription": "Explore the Golden Hour Beach Portrait aesthetic. Learn how to harness rim-lighting and amber tones for cinematic results. Create your masterpiece today.",
+                "contentSectionsCount": 5
+              }
+            },
+            "meta": {
+              "modelUsed": "gemini-3-flash-preview",
+              "temperature": 0.7,
+              "maxTokens": 4096
+            }
+          },
+          "relatedPosts": "[]",
+          "response_time_ms": 26658
+        }
+      },
+      "total_time_ms": 61903,
+      "status": "success"
+    },
+    {
+      "test_id": "complex_3d_clay",
+      "test_name": "Complex: 3D Clay Style Portrait",
+      "category": "complex",
+      "layer1": {
+        "test_id": "complex_3d_clay",
+        "input": {
+          "input": "3D clay style portrait of a young woman, tactile sculpted details, soft pastel colors",
+          "imageUrls": []
+        },
+        "output": {
+          "schema": {
+            "context": "Clay Portrait",
+            "followUpQuestion": null,
+            "fields": [
+              {
+                "id": "texture_detail",
+                "type": "select",
+                "label": "Texture Detail",
+                "isAdvanced": false,
+                "multiSelect": true,
+                "defaultValue": "Tactile Sculpted Details",
+                "options": [
+                  "Tactile Sculpted Details",
+                  "Smooth Porcelain Finish",
+                  "Rough Hand-kneaded",
+                  "Fingerprint Smudges",
+                  "Fine Tool Marks",
+                  "Coarse Sandy Texture",
+                  "Glazed Ceramic Shine",
+                  "Cracked Dried Clay",
+                  "Soft Doughy Edges",
+                  "Chiseled Stone Look"
+                ],
+                "source": "creative_param"
+              },
+              {
+                "id": "clay_color",
+                "type": "select",
+                "label": "Clay Color Palette",
+                "isAdvanced": false,
+                "multiSelect": true,
+                "defaultValue": "Soft Pastel Colors",
+                "options": [
+                  "Soft Pastel Colors",
+                  "Vibrant Primary Colors",
+                  "Earthy Terracotta Tones",
+                  "Monochromatic Grey",
+                  "Cool Ocean Blues",
+                  "Warm Sunset Tones",
+                  "Forest Greens",
+                  "Candy Neons",
+                  "Metallic Gold and Silver",
+                  "Vintage Sepia"
+                ],
+                "source": "creative_param"
+              },
+              {
+                "id": "subject_details",
+                "type": "text",
+                "label": "Subject Details",
+                "isAdvanced": false,
+                "multiSelect": false,
+                "defaultValue": "young woman",
+                "source": "creative_param"
+              },
+              {
+                "id": "outfit_style",
+                "type": "select",
+                "label": "Outfit Style",
+                "isAdvanced": false,
+                "multiSelect": true,
+                "defaultValue": "Knitted Sweater",
+                "options": [
+                  "Knitted Sweater",
+                  "Simple Summer Dress",
+                  "Casual T-shirt",
+                  "Winter Coat",
+                  "Scarf and Beanie",
+                  "Traditional Attire",
+                  "Denim Overalls",
+                  "Floral Blouse",
+                  "Hooded Sweatshirt",
+                  "Vintage Cardigan"
+                ],
+                "source": "expanded"
+              },
+              {
+                "id": "character_expression",
+                "type": "select",
+                "label": "Character Expression",
+                "isAdvanced": false,
+                "multiSelect": false,
+                "defaultValue": "Gentle Smile",
+                "options": [
+                  "Gentle Smile",
+                  "Curious",
+                  "Serene",
+                  "Playful",
+                  "Thoughtful",
+                  "Surprised",
+                  "Stoic",
+                  "Cheerful",
+                  "Dreaming",
+                  "Focused"
+                ],
+                "source": "expanded"
+              },
+              {
+                "id": "clay_background",
+                "type": "select",
+                "label": "Background Environment",
+                "isAdvanced": false,
+                "multiSelect": false,
+                "defaultValue": "Plain Studio Backdrop",
+                "options": [
+                  "Plain Studio Backdrop",
+                  "Miniature Bedroom",
+                  "Garden with Clay Flowers",
+                  "Abstract Pastel Shapes",
+                  "Craft Table with Tools",
+                  "Soft Fabric Folds",
+                  "Sunny Window Sill",
+                  "Blurred Park Scene",
+                  "Geometric Clay Pattern",
+                  "Solid Soft Grey"
+                ],
+                "source": "expanded"
+              },
+              {
+                "id": "surface_quality",
+                "type": "select",
+                "label": "Surface Quality",
+                "isAdvanced": true,
+                "multiSelect": true,
+                "defaultValue": "Handcrafted Organic",
+                "options": [
+                  "Handcrafted Organic",
+                  "Industrial Smooth",
+                  "Weathered and Aged",
+                  "Glazed and Shiny",
+                  "Porous and Dry",
+                  "Polished and Sleek",
+                  "Decorative Filigree",
+                  "Minimalist and Clean",
+                  "Tooled and Engraved",
+                  "Layered and Built-up"
+                ],
+                "source": "expanded"
+              },
+              {
+                "id": "gloss_level",
+                "type": "slider",
+                "label": "Gloss Level",
+                "isAdvanced": true,
+                "multiSelect": false,
+                "defaultValue": 0.3,
+                "min": 0,
+                "max": 1,
+                "step": 0.1,
+                "minLabel": "Matte",
+                "maxLabel": "High Gloss",
+                "source": "expanded"
+              }
+            ],
+            "preservedDetails": [
+              "tactile sculpted details",
+              "soft pastel colors"
+            ],
+            "imageProcessingInstructions": [],
+            "internalSignals": {
+              "primaryMood": "soft",
+              "visualComplexity": "focused",
+              "detectedSubjectType": "person"
+            },
+            "primaryIntent": {
+              "phrase": "3D Clay Style",
+              "category": "technique",
+              "confidence": 1
+            },
+            "extractedRatio": null,
+            "contentCategory": "photography",
+            "styleHints": [
+              "3D clay style",
+              "tactile",
+              "sculpted",
+              "soft pastel"
+            ]
+          },
+          "response_time_ms": 35218
+        }
+      },
+      "layer2": {
+        "test_id": "complex_3d_clay",
+        "input": {
+          "core": {
+            "subject": "Clay Portrait",
+            "action": ""
+          },
+          "narrative_params": {},
+          "layout_constraints": {
+            "ar": "1:1",
+            "text_render": false
+          },
+          "custom_input": "3D clay style portrait of a young woman, tactile sculpted details, soft pastel colors",
+          "preserved_details": [
+            "tactile sculpted details",
+            "soft pastel colors"
+          ],
+          "content_category": "photography",
+          "style_hints": [
+            "3D clay style",
+            "tactile",
+            "sculpted",
+            "soft pastel"
+          ],
+          "internal_signals": {
+            "primaryMood": "soft",
+            "visualComplexity": "focused",
+            "detectedSubjectType": "person"
+          },
+          "primary_intent": {
+            "phrase": "3D Clay Style",
+            "category": "technique",
+            "confidence": 1
+          }
+        },
+        "output": {
+          "native": "A 3D clay style portrait of a young woman features tactile sculpted details that reveal the physical, hand-molded nature of the medium. The subject is rendered in a palette of soft pastel colors, with muted tones of peach and lavender washing over the sculpted features. Soft studio lighting emphasizes the tactile imperfections and fingerprint textures inherent in the clay, creating a sense of miniature artistry and depth, rendered in authentic 3D clay style",
+          "english": "A 3D clay style portrait of a young woman features tactile sculpted details that reveal the physical, hand-molded nature of the medium. The subject is rendered in a palette of soft pastel colors, with muted tones of peach and lavender washing over the sculpted features. Soft studio lighting emphasizes the tactile imperfections and fingerprint textures inherent in the clay, creating a sense of miniature artistry and depth, rendered in authentic 3D clay style",
+          "highlights": {
+            "native": [
+              {
+                "start": 2,
+                "end": 15,
+                "fieldId": "primary_intent",
+                "fieldLabel": "Primary Intent",
+                "originalValue": "primary_intent",
+                "category": "technical",
+                "transformedTo": "3D clay style"
+              },
+              {
+                "start": 51,
+                "end": 75,
+                "fieldId": "tactile_details",
+                "fieldLabel": "Tactile Details",
+                "originalValue": "tactile_details",
+                "category": "technical",
+                "transformedTo": "tactile sculpted details"
+              },
+              {
+                "start": 176,
+                "end": 194,
+                "fieldId": "color_palette",
+                "fieldLabel": "Color Palette",
+                "originalValue": "color_palette",
+                "category": "technical",
+                "transformedTo": "soft pastel colors"
+              },
+              {
+                "start": 252,
+                "end": 260,
+                "fieldId": "sculpted_surface",
+                "fieldLabel": "Sculpted Surface",
+                "originalValue": "sculpted_surface",
+                "category": "technical",
+                "transformedTo": "sculpted"
+              },
+              {
+                "start": 307,
+                "end": 314,
+                "fieldId": "tactile_quality",
+                "fieldLabel": "Tactile Quality",
+                "originalValue": "tactile_quality",
+                "category": "technical",
+                "transformedTo": "tactile"
+              },
+              {
+                "start": 448,
+                "end": 461,
+                "fieldId": "primary_intent",
+                "fieldLabel": "Primary Intent",
+                "originalValue": "primary_intent",
+                "category": "technical",
+                "transformedTo": "3D clay style"
+              }
+            ],
+            "english": [
+              {
+                "start": 2,
+                "end": 15,
+                "fieldId": "primary_intent",
+                "fieldLabel": "Primary Intent",
+                "originalValue": "primary_intent",
+                "category": "technical",
+                "transformedTo": "3D clay style"
+              },
+              {
+                "start": 51,
+                "end": 75,
+                "fieldId": "tactile_details",
+                "fieldLabel": "Tactile Details",
+                "originalValue": "tactile_details",
+                "category": "technical",
+                "transformedTo": "tactile sculpted details"
+              },
+              {
+                "start": 176,
+                "end": 194,
+                "fieldId": "color_palette",
+                "fieldLabel": "Color Palette",
+                "originalValue": "color_palette",
+                "category": "technical",
+                "transformedTo": "soft pastel colors"
+              },
+              {
+                "start": 252,
+                "end": 260,
+                "fieldId": "sculpted_surface",
+                "fieldLabel": "Sculpted Surface",
+                "originalValue": "sculpted_surface",
+                "category": "technical",
+                "transformedTo": "sculpted"
+              },
+              {
+                "start": 307,
+                "end": 314,
+                "fieldId": "tactile_quality",
+                "fieldLabel": "Tactile Quality",
+                "originalValue": "tactile_quality",
+                "category": "technical",
+                "transformedTo": "tactile"
+              },
+              {
+                "start": 448,
+                "end": 461,
+                "fieldId": "primary_intent",
+                "fieldLabel": "Primary Intent",
+                "originalValue": "primary_intent",
+                "category": "technical",
+                "transformedTo": "3D clay style"
+              }
+            ]
+          },
+          "detectedLang": "English",
+          "response_time_ms": 10560
+        }
+      },
+      "layer3": {
+        "test_id": "complex_3d_clay",
+        "input": {
+          "postId": "test-complex_3d_clay",
+          "prompt": "A 3D clay style portrait of a young woman features tactile sculpted details that reveal the physical, hand-molded nature of the medium. The subject is rendered in a palette of soft pastel colors, with muted tones of peach and lavender washing over the sculpted features. Soft studio lighting emphasizes the tactile imperfections and fingerprint textures inherent in the clay, creating a sense of miniature artistry and depth, rendered in authentic 3D clay style",
+          "model": "gemini-3-pro-image-preview",
+          "imageUrl": "https://media.nanobananaultra.com/ai/image/reference/253e6c75f16470e71077ea5943a47883.webp",
+          "subject": "Clay Portrait"
+        },
+        "output": {
+          "seoSlug": "tactile-fingerprint-3d-clay-woman-portrait-textures-_3d_clay",
+          "seoTitle": "3D Clay Woman Portrait: Master Tactile Fingerprint Textures",
+          "h1Title": "The Tactile Artistry of the 3D Clay Woman Portrait",
+          "seoDescription": "Explore how the 3D Clay Woman Portrait uses Tactile Fingerprint Textures to create a hand-molded aesthetic. Master this artisanal 3D style with our guide.",
+          "seoKeywords": [
+            "Fingerprint Textures",
+            "Peach Pastel",
+            "Lavender Tones",
+            "Sculpted Clay",
+            "Matte Finish",
+            "Studio Lighting",
+            "Hand-Molded"
+          ],
+          "seoSlugKeywords": "3d-clay-woman-portrait-textures",
+          "contentIntro": "",
+          "promptBreakdown": "",
+          "imageAlt": "A 3D clay style portrait of a young woman featuring visible fingerprint textures and a soft peach and lavender color palette.",
+          "dynamicHeaders": "{}",
+          "faqItems": "[{\"question\":\"How do Tactile Fingerprint Textures enhance the 3D Clay Woman Portrait?\",\"answer\":\"These micro-details break the digital 'uncanny valley' by grounding the subject in a physical, human-centric process, suggesting the presence of an artist's hand.\"},{\"question\":\"Why is the Pro model preferred for this specific clay aesthetic?\",\"answer\":\"The Pro model excels at calculating the subtle subsurface scattering and granular displacement required to make the clay look porous rather than like smooth plastic.\"},{\"question\":\"Can the pastel palette be adjusted without losing the clay texture?\",\"answer\":\"Yes, provided the soft studio lighting remains constant, the peach and lavender tones can be swapped for other muted earth tones while preserving the tactile ridges.\"}]",
+          "visualTags": "[\"Fingerprint Textures\",\"Peach Pastel\",\"Lavender Tones\",\"Sculpted Clay\",\"Matte Finish\",\"Studio Lighting\",\"Hand-Molded\"]",
+          "useCases": "[]",
+          "expertCommentary": null,
+          "remixIdeas": [],
+          "relatedConcepts": [],
+          "contentSections": [
+            {
+              "id": "block_1",
+              "title": "Defining the Hand-Molded 3D Clay Woman Portrait Aesthetic",
+              "headingLevel": "h2",
+              "type": "checklist",
+              "data": {
+                "items": [
+                  "Visible thumb-press indentations across the facial contours",
+                  "Uneven surface topology reflecting a manual sculpting process",
+                  "Soft-edged features that avoid harsh digital precision",
+                  "A matte, porous medium finish characteristic of unglazed clay",
+                  "Organic asymmetricality in the hair and shoulder structures"
+                ]
+              }
+            },
+            {
+              "id": "block_2",
+              "title": "Chromatic Depth and Lighting in the 3D Clay Woman Portrait",
+              "headingLevel": "h2",
+              "type": "rich-text",
+              "data": {
+                "text": "The 3D Clay Woman Portrait captures a delicate serenity through its marriage of soft studio illumination and a tender pastel spectrum. By utilizing the Pro model's advanced light-scattering algorithms, the muted tones of peach and lavender do more than just color the surface; they define the volume of the sculpt. The light catches the ridges of the Tactile Fingerprint Textures, casting micro-shadows that provide an undeniable sense of scale. At ClayMaster Studios, we find that this interplay between soft hues and physical grit transforms a digital file into a piece of tangible, miniature fine art."
+              }
+            },
+            {
+              "id": "block_3",
+              "title": "Authentic 3D Clay Woman Portrait vs. Synthetic Renders",
+              "headingLevel": "h3",
+              "type": "comparison-table",
+              "data": {
+                "left": "Authentic Hand-Molded Style",
+                "right": "Generic 3D Render",
+                "rows": [
+                  {
+                    "pro": "Tactile Fingerprint Textures",
+                    "con": "Perfectly Smooth Surfaces"
+                  },
+                  {
+                    "pro": "Organic Sculpting Imperfections",
+                    "con": "Mathematical Symmetry"
+                  },
+                  {
+                    "pro": "Diffuse Clay Shaders",
+                    "con": "High-Gloss Plasticity"
+                  },
+                  {
+                    "pro": "Muted Pastel Depth",
+                    "con": "Oversaturated Flat Colors"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "block_4",
+              "title": "Visual Markers of the 3D Clay Woman Portrait",
+              "headingLevel": "h3",
+              "type": "tags",
+              "data": {
+                "items": [
+                  "Fingerprint Textures",
+                  "Peach Pastel",
+                  "Lavender Tones",
+                  "Sculpted Clay",
+                  "Matte Finish",
+                  "Studio Lighting",
+                  "Hand-Molded"
+                ]
+              }
+            },
+            {
+              "id": "block_5",
+              "title": "Curating Tactile Fingerprint Textures: Common Inquiries",
+              "headingLevel": "h3",
+              "type": "faq-accordion",
+              "data": {
+                "items": [
+                  {
+                    "q": "How do Tactile Fingerprint Textures enhance the 3D Clay Woman Portrait?",
+                    "a": "These micro-details break the digital 'uncanny valley' by grounding the subject in a physical, human-centric process, suggesting the presence of an artist's hand."
+                  },
+                  {
+                    "q": "Why is the Pro model preferred for this specific clay aesthetic?",
+                    "a": "The Pro model excels at calculating the subtle subsurface scattering and granular displacement required to make the clay look porous rather than like smooth plastic."
+                  },
+                  {
+                    "q": "Can the pastel palette be adjusted without losing the clay texture?",
+                    "a": "Yes, provided the soft studio lighting remains constant, the peach and lavender tones can be swapped for other muted earth tones while preserving the tactile ridges."
+                  }
+                ]
+              }
+            }
+          ],
+          "anchor": "3D Clay Woman Portrait",
+          "microFocus": "Tactile Fingerprint Textures",
+          "subject": "3D Clay Woman Portrait",
+          "snippetSummary": "To generate a 3D Clay Woman Portrait in a hand-molded style, the Pro model utilizes soft studio lighting and a pastel palette of peach and lavender. This technique achieves a sense of miniature artistry by emphasizing Tactile Fingerprint Textures and physical imperfections, creating a tangible depth that mimics traditional stop-motion claymation craftsmanship and organic sculpting methods.",
+          "galleryCategory": "character-design",
+          "categoryConfidence": "high",
+          "debugInfo": {
+            "input": {
+              "userPrompt": "A 3D clay style portrait of a young woman features tactile sculpted details that reveal the physical, hand-molded nature of the medium. The subject is rendered in a palette of soft pastel colors, with muted tones of peach and lavender washing over the sculpted features. Soft studio lighting emphasizes the tactile imperfections and fingerprint textures inherent in the clay, creating a sense of miniature artistry and depth, rendered in authentic 3D clay style",
+              "model": "gemini-3-pro-image-preview",
+              "userSubject": "Clay Portrait",
+              "effectivePrompt": "A 3D clay style portrait of a young woman features tactile sculpted details that reveal the physical, hand-molded nature of the medium. The subject is rendered in a palette of soft pastel colors, with muted tones of peach and lavender washing over the sculpted features. Soft studio lighting emphasizes the tactile imperfections and fingerprint textures inherent in the clay, creating a sense of miniature artistry and depth, rendered in authentic 3D clay style",
+              "formValuesInjected": false,
+              "formValuesCount": 0
+            },
+            "stage1": {
+              "prompt": "# V15.0 STAGE 1: THE STRATEGIST (MASTER EDITION)\n\n## OBJECTIVE\nYou are an Elite SEO Strategist. Analyze the user's image prompt and create a \"Content Blueprint\" for a high-ranking Guide Page.\n**GOAL**: Create a rich, comprehensive structure that satisfies User Intent and SEO Depth.\n\n## PRIORITY RULE ⚠️\nIf a \"## VISUAL CONTEXT (GROUND TRUTH)\" section exists in the input:\n1. These parameters are FACTS, not suggestions\n2. ANCHOR and MICRO-FOCUS MUST reflect these parameters\n3. Apply CONFLICT RESOLUTION PROTOCOL when Form conflicts with Prompt text\n\n## CONFLICT RESOLUTION PROTOCOL\nWhen VISUAL CONTEXT (Form) conflicts with User Prompt text:\n\n| Attribute | Priority | Reason |\n|-----------|----------|--------|\n| Art Style, Lighting, Stylization | **Form wins** | User explicitly configured |\n| Subject, Scene, Background | **Prompt wins** | Creative intent |\n| Mood, Atmosphere | **Combine both** | Complementary |\n\n## INPUT\nA 3D clay style portrait of a young woman features tactile sculpted details that reveal the physical, hand-molded nature of the medium. The subject is rendered in a palette of soft pastel colors, with muted tones of peach and lavender washing over the sculpted features. Soft studio lighting emphasizes the tactile imperfections and fingerprint textures inherent in the clay, creating a sense of miniature artistry and depth, rendered in authentic 3D clay style\n- Model: Pro\n- **LANGUAGE**: Auto-detect from the prompt. Output MUST be in the same language.\n\n## CRITICAL TASKS\n\n### 1. REASONING (Optional but Recommended)\nExplain your analysis in `_reasoning`:\n- `contextAnalysis`: What does VISUAL CONTEXT tell us?\n- `conflictResolution`: Any conflicts between Form and Prompt? How resolved?\n- `microFocusSelection`: Which parameter is most distinctive? Why?\n- `voiceSelection`: Which Persona fits the Intent?\n\n### 2. Extract ANCHOR (2-5 words)\n- If VISUAL CONTEXT exists: Combine [Style from Form] + [Subject from Prompt]\n- Rules:\n  - ❌ Bad: \"Digital Art\", \"Portrait\" (Too Generic)\n  - ✅ Good: \"Anime Golden Dress Portrait\", \"Neon Cyberpunk City\"\n- **If prompt < 5 words**: Use full prompt as Anchor.\n\n### 3. Identify MICRO-FOCUS\n- Use the most distinctive parameter from VISUAL CONTEXT\n- Examples: \"Golden Hour Lighting\", \"Cel-Shading Technique\", \"Glassmorphism Effect\"\n- This is KEY to avoiding SEO cannibalization!\n\n### 4. Determine INTENT & Suggest VOICE\n- **ARTISTIC** → Curator Voice (Gallery curator tone, emphasize aesthetics)\n- **FUNCTIONAL** → Engineer Voice (Technical documentation, precise specs)\n- **COMMERCIAL** → Director Voice (Marketing narrative, use cases, brand mentions)\n\n### 5. Plan BLOCKS (4-6 blocks, 3+ types)\n- **CONSTRAINT**: Plan **4 to 6 blocks**.\n- **VARIETY RULE**: Use at least **3 DIFFERENT** block types.\n- **NO TEMPLATES**: Do not always use \"Intro -> Tags -> FAQ\". Mix it up!\n\n**Available Block Types**:\n- `rich-text`: Deep Analysis / Storytelling. (Max 2, NEVER consecutive).\n- `checklist`: Elements (Artistic), Specs (Functional), Layout (Commercial).\n- `comparison-table`: \"Style A vs B\" or \"Do's and Don'ts\".\n- `faq-accordion`: Technical Q&A. (Max 1).\n- `tags`: **5-8** strictly visual keywords. (Max 1).\n\n### 6. Classify GALLERY CATEGORY (MANDATORY)\nYOU MUST select exactly ONE category for homepage gallery display.\n⚠️ This is DIFFERENT from \"intent\" - intent affects writing style, category affects gallery navigation.\n\n**Available Categories**:\n| Slug | Visual Indicators | Examples |\n|------|-------------------|----------|\n| `photography` | Photorealistic, camera terms (ISO, aperture, lens), real-world scenes | Portrait, landscape, street photo |\n| `art-illustration` | Anime, manga, digital painting, watercolor, concept art, illustration | Anime girl, fantasy art, comic style |\n| `design` | Logo, UI/UX, poster, typography, pattern, mockup, layout | Logo design, app UI, poster |\n| `commercial-product` | Product shot, packaging, advertising, marketing, brand | Product mockup, ad creative |\n| `character-design` | Game character, mascot, avatar, creature, OC (original character) | Game hero, mascot design |\n\n**Decision Rules** (apply in order, first match wins):\n1. If VISUAL CONTEXT has `art_style: anime/manga/illustration/comic` → `art-illustration`\n2. If prompt mentions \"product\", \"mockup\", \"packaging\", \"brand\", \"advertisement\" → `commercial-product`\n3. If primary focus is character appearance/outfit/design (not scene) → `character-design`\n4. If contains \"logo\", \"poster\", \"layout\", \"UI\", \"banner\", \"icon\" → `design`\n5. If photorealistic OR camera terms (ISO, f/2.8, 85mm, bokeh) → `photography`\n6. If NONE clearly fit → output `unknown` and explain in _reasoning\n\n**Confidence Levels**:\n- `high`: Clear match to one category (e.g., \"anime girl\" → art-illustration)\n- `medium`: Could fit multiple but one is most likely\n- `low`: Ambiguous, recommend manual review\n\n## OUTPUT FORMAT (Strict JSON)\n{\n  \"_reasoning\": {\n    \"contextAnalysis\": \"VISUAL CONTEXT shows art_style=anime, lighting=golden_hour...\",\n    \"conflictResolution\": \"No conflicts detected / Form specifies anime, using over prompt text...\",\n    \"microFocusSelection\": \"Golden Hour is the most distinctive parameter because...\",\n    \"voiceSelection\": \"Artistic intent detected, recommending Curator voice...\",\n    \"categorySelection\": \"Detected anime style, assigning art-illustration with high confidence\"\n  },\n  \"anchor\": \"string (2-5 words)\",\n  \"microFocus\": \"string (unique angle)\",\n  \"intent\": \"Artistic | Functional | Commercial\",\n  \"suggestedVoice\": \"Curator | Engineer | Director\",\n  \"language\": \"en | zh | ja | ...\",\n  \"plannedBlocks\": [\n    { \"id\": \"block_1\", \"type\": \"rich-text\", \"intent\": \"Explain the core concept...\" },\n    { \"id\": \"block_2\", \"type\": \"checklist\", \"intent\": \"List 5 essential components...\" },\n    { \"id\": \"block_3\", \"type\": \"comparison-table\", \"intent\": \"Compare attributes...\" },\n    { \"id\": \"block_4\", \"type\": \"tags\", \"intent\": \"List 5-8 descriptive keywords...\" }\n  ],\n  \"galleryCategory\": \"photography | art-illustration | design | commercial-product | character-design | unknown\",\n  \"categoryConfidence\": \"high | medium | low\",\n  \"antiTemplatingCommitment\": {\n    \"blocksStartWith\": \"checklist\",\n    \"blocksEndWith\": \"faq-accordion\",\n    \"noConsecutiveRichText\": true\n  }\n}\n\n## ERROR FALLBACK\nIf unable to extract subject, return:\n{ \"error\": true, \"fallbackAnchor\": \"AI Image\", \"fallbackMicroFocus\": \"Creative Style\" }",
+              "rawResponse": "{\n  \"_reasoning\": {\n    \"contextAnalysis\": \"The prompt specifies a highly tactile '3D clay style' for a female portrait. Key visual markers include fingerprint textures, hand-molded imperfections, and a soft pastel palette (peach and lavender).\",\n    \"conflictResolution\": \"No explicit VISUAL CONTEXT section provided, so the prompt text acts as the primary source of truth. The 'Pro' model selection suggests a need for high-fidelity texture rendering.\",\n    \"microFocusSelection\": \"Fingerprint Textures is the most distinctive parameter, as it differentiates this from generic 3D or plastic-style renders by emphasizing the 'hand-molded' nature.\",\n    \"voiceSelection\": \"Artistic intent is dominant; the Curator voice is chosen to emphasize the miniature artistry and craftsmanship of the clay medium.\",\n    \"categorySelection\": \"The primary focus is a character portrait with specific aesthetic attributes. While it is an illustration style, the character-centric nature of a 'portrait of a young woman' aligns it with character-design.\"\n  },\n  \"anchor\": \"3D Clay Woman Portrait\",\n  \"microFocus\": \"Tactile Fingerprint Textures\",\n  \"intent\": \"Artistic\",\n  \"suggestedVoice\": \"Curator\",\n  \"language\": \"en\",\n  \"plannedBlocks\": [\n    {\n      \"id\": \"block_1\",\n      \"type\": \"checklist\",\n      \"intent\": \"Identify the key physical attributes that define the hand-molded clay aesthetic.\"\n    },\n    {\n      \"id\": \"block_2\",\n      \"type\": \"rich-text\",\n      \"intent\": \"Describe the intersection of soft studio lighting and pastel color palettes in creating depth.\"\n    },\n    {\n      \"id\": \"block_3\",\n      \"type\": \"comparison-table\",\n      \"intent\": \"Compare 'Authentic Clay Style' vs. 'Generic 3D Render' to highlight the importance of imperfections.\"\n    },\n    {\n      \"id\": \"block_4\",\n      \"type\": \"tags\",\n      \"intent\": \"Provide visual keywords for search optimization and style categorization.\"\n    },\n    {\n      \"id\": \"block_5\",\n      \"type\": \"faq-accordion\",\n      \"intent\": \"Address technical questions regarding lighting and texture scales for clay-style art.\"\n    }\n  ],\n  \"galleryCategory\": \"character-design\",\n  \"categoryConfidence\": \"high\",\n  \"antiTemplatingCommitment\": {\n    \"blocksStartWith\": \"checklist\",\n    \"blocksEndWith\": \"faq-accordion\",\n    \"noConsecutiveRichText\": true\n  }\n}",
+              "parsed": {
+                "anchor": "3D Clay Woman Portrait",
+                "microFocus": "Tactile Fingerprint Textures",
+                "intent": "Artistic",
+                "plannedBlocks": [
+                  {
+                    "id": "block_1",
+                    "type": "checklist",
+                    "intent": "Identify the key physical attributes that define the hand-molded clay aesthetic."
+                  },
+                  {
+                    "id": "block_2",
+                    "type": "rich-text",
+                    "intent": "Describe the intersection of soft studio lighting and pastel color palettes in creating depth."
+                  },
+                  {
+                    "id": "block_3",
+                    "type": "comparison-table",
+                    "intent": "Compare 'Authentic Clay Style' vs. 'Generic 3D Render' to highlight the importance of imperfections."
+                  },
+                  {
+                    "id": "block_4",
+                    "type": "tags",
+                    "intent": "Provide visual keywords for search optimization and style categorization."
+                  },
+                  {
+                    "id": "block_5",
+                    "type": "faq-accordion",
+                    "intent": "Address technical questions regarding lighting and texture scales for clay-style art."
+                  }
+                ]
+              }
+            },
+            "stage2": {
+              "prompt": "# V15.0 STAGE 2: THE WRITER (MASTER EDITION)\n\n## OBJECTIVE\nYou are an Expert Technical Writer. Execute the Strategy Blueprint to generate final content.\n\n## VOICE PERSONA SYSTEM\nAdapt your writing style based on the `suggestedVoice` from the Blueprint:\n\n### If Curator (Artistic Intent)\nWrite as an art gallery curator. Use evocative language, reference art movements, emphasize emotional impact.\n- Opening: \"The [Anchor] captures...\"\n- Analysis: \"The interplay of [MicroFocus] creates...\"\n- Avoid: Technical jargon, bullet lists, imperative commands\n\n### If Engineer (Functional Intent)\nWrite as a technical documentation author. Be precise, use numbered steps, include parameter references.\n- Opening: \"To achieve [Anchor], configure...\"\n- Analysis: \"The [MicroFocus] setting controls...\"\n- Avoid: Subjective adjectives, emotional language\n\n### If Director (Commercial Intent)\nWrite as a marketing creative director. Focus on use cases, brand mentions, call-to-action.\n- Opening: \"[Anchor] transforms your...\"\n- Analysis: \"With [MicroFocus], you can...\"\n- Avoid: Technical details, lengthy explanations\n\n**TONE by Model**:\n- **Pro**: Professional, Technical, highlighting advanced features.\n- **FLUX**: Photorealistic, focusing on lighting and texture.\n- **Default**: Creative and balanced.\n\n## INPUTS\n- Strategy Blueprint: {\n  \"anchor\": \"3D Clay Woman Portrait\",\n  \"microFocus\": \"Tactile Fingerprint Textures\",\n  \"intent\": \"Artistic\",\n  \"plannedBlocks\": [\n    {\n      \"id\": \"block_1\",\n      \"type\": \"checklist\",\n      \"intent\": \"Identify the key physical attributes that define the hand-molded clay aesthetic.\"\n    },\n    {\n      \"id\": \"block_2\",\n      \"type\": \"rich-text\",\n      \"intent\": \"Describe the intersection of soft studio lighting and pastel color palettes in creating depth.\"\n    },\n    {\n      \"id\": \"block_3\",\n      \"type\": \"comparison-table\",\n      \"intent\": \"Compare 'Authentic Clay Style' vs. 'Generic 3D Render' to highlight the importance of imperfections.\"\n    },\n    {\n      \"id\": \"block_4\",\n      \"type\": \"tags\",\n      \"intent\": \"Provide visual keywords for search optimization and style categorization.\"\n    },\n    {\n      \"id\": \"block_5\",\n      \"type\": \"faq-accordion\",\n      \"intent\": \"Address technical questions regarding lighting and texture scales for clay-style art.\"\n    }\n  ],\n  \"galleryCategory\": \"character-design\",\n  \"categoryConfidence\": \"high\",\n  \"_debug\": {\n    \"prompt\": \"# V15.0 STAGE 1: THE STRATEGIST (MASTER EDITION)\\n\\n## OBJECTIVE\\nYou are an Elite SEO Strategist. Analyze the user's image prompt and create a \\\"Content Blueprint\\\" for a high-ranking Guide Page.\\n**GOAL**: Create a rich, comprehensive structure that satisfies User Intent and SEO Depth.\\n\\n## PRIORITY RULE ⚠️\\nIf a \\\"## VISUAL CONTEXT (GROUND TRUTH)\\\" section exists in the input:\\n1. These parameters are FACTS, not suggestions\\n2. ANCHOR and MICRO-FOCUS MUST reflect these parameters\\n3. Apply CONFLICT RESOLUTION PROTOCOL when Form conflicts with Prompt text\\n\\n## CONFLICT RESOLUTION PROTOCOL\\nWhen VISUAL CONTEXT (Form) conflicts with User Prompt text:\\n\\n| Attribute | Priority | Reason |\\n|-----------|----------|--------|\\n| Art Style, Lighting, Stylization | **Form wins** | User explicitly configured |\\n| Subject, Scene, Background | **Prompt wins** | Creative intent |\\n| Mood, Atmosphere | **Combine both** | Complementary |\\n\\n## INPUT\\nA 3D clay style portrait of a young woman features tactile sculpted details that reveal the physical, hand-molded nature of the medium. The subject is rendered in a palette of soft pastel colors, with muted tones of peach and lavender washing over the sculpted features. Soft studio lighting emphasizes the tactile imperfections and fingerprint textures inherent in the clay, creating a sense of miniature artistry and depth, rendered in authentic 3D clay style\\n- Model: Pro\\n- **LANGUAGE**: Auto-detect from the prompt. Output MUST be in the same language.\\n\\n## CRITICAL TASKS\\n\\n### 1. REASONING (Optional but Recommended)\\nExplain your analysis in `_reasoning`:\\n- `contextAnalysis`: What does VISUAL CONTEXT tell us?\\n- `conflictResolution`: Any conflicts between Form and Prompt? How resolved?\\n- `microFocusSelection`: Which parameter is most distinctive? Why?\\n- `voiceSelection`: Which Persona fits the Intent?\\n\\n### 2. Extract ANCHOR (2-5 words)\\n- If VISUAL CONTEXT exists: Combine [Style from Form] + [Subject from Prompt]\\n- Rules:\\n  - ❌ Bad: \\\"Digital Art\\\", \\\"Portrait\\\" (Too Generic)\\n  - ✅ Good: \\\"Anime Golden Dress Portrait\\\", \\\"Neon Cyberpunk City\\\"\\n- **If prompt < 5 words**: Use full prompt as Anchor.\\n\\n### 3. Identify MICRO-FOCUS\\n- Use the most distinctive parameter from VISUAL CONTEXT\\n- Examples: \\\"Golden Hour Lighting\\\", \\\"Cel-Shading Technique\\\", \\\"Glassmorphism Effect\\\"\\n- This is KEY to avoiding SEO cannibalization!\\n\\n### 4. Determine INTENT & Suggest VOICE\\n- **ARTISTIC** → Curator Voice (Gallery curator tone, emphasize aesthetics)\\n- **FUNCTIONAL** → Engineer Voice (Technical documentation, precise specs)\\n- **COMMERCIAL** → Director Voice (Marketing narrative, use cases, brand mentions)\\n\\n### 5. Plan BLOCKS (4-6 blocks, 3+ types)\\n- **CONSTRAINT**: Plan **4 to 6 blocks**.\\n- **VARIETY RULE**: Use at least **3 DIFFERENT** block types.\\n- **NO TEMPLATES**: Do not always use \\\"Intro -> Tags -> FAQ\\\". Mix it up!\\n\\n**Available Block Types**:\\n- `rich-text`: Deep Analysis / Storytelling. (Max 2, NEVER consecutive).\\n- `checklist`: Elements (Artistic), Specs (Functional), Layout (Commercial).\\n- `comparison-table`: \\\"Style A vs B\\\" or \\\"Do's and Don'ts\\\".\\n- `faq-accordion`: Technical Q&A. (Max 1).\\n- `tags`: **5-8** strictly visual keywords. (Max 1).\\n\\n### 6. Classify GALLERY CATEGORY (MANDATORY)\\nYOU MUST select exactly ONE category for homepage gallery display.\\n⚠️ This is DIFFERENT from \\\"intent\\\" - intent affects writing style, category affects gallery navigation.\\n\\n**Available Categories**:\\n| Slug | Visual Indicators | Examples |\\n|------|-------------------|----------|\\n| `photography` | Photorealistic, camera terms (ISO, aperture, lens), real-world scenes | Portrait, landscape, street photo |\\n| `art-illustration` | Anime, manga, digital painting, watercolor, concept art, illustration | Anime girl, fantasy art, comic style |\\n| `design` | Logo, UI/UX, poster, typography, pattern, mockup, layout | Logo design, app UI, poster |\\n| `commercial-product` | Product shot, packaging, advertising, marketing, brand | Product mockup, ad creative |\\n| `character-design` | Game character, mascot, avatar, creature, OC (original character) | Game hero, mascot design |\\n\\n**Decision Rules** (apply in order, first match wins):\\n1. If VISUAL CONTEXT has `art_style: anime/manga/illustration/comic` → `art-illustration`\\n2. If prompt mentions \\\"product\\\", \\\"mockup\\\", \\\"packaging\\\", \\\"brand\\\", \\\"advertisement\\\" → `commercial-product`\\n3. If primary focus is character appearance/outfit/design (not scene) → `character-design`\\n4. If contains \\\"logo\\\", \\\"poster\\\", \\\"layout\\\", \\\"UI\\\", \\\"banner\\\", \\\"icon\\\" → `design`\\n5. If photorealistic OR camera terms (ISO, f/2.8, 85mm, bokeh) → `photography`\\n6. If NONE clearly fit → output `unknown` and explain in _reasoning\\n\\n**Confidence Levels**:\\n- `high`: Clear match to one category (e.g., \\\"anime girl\\\" → art-illustration)\\n- `medium`: Could fit multiple but one is most likely\\n- `low`: Ambiguous, recommend manual review\\n\\n## OUTPUT FORMAT (Strict JSON)\\n{\\n  \\\"_reasoning\\\": {\\n    \\\"contextAnalysis\\\": \\\"VISUAL CONTEXT shows art_style=anime, lighting=golden_hour...\\\",\\n    \\\"conflictResolution\\\": \\\"No conflicts detected / Form specifies anime, using over prompt text...\\\",\\n    \\\"microFocusSelection\\\": \\\"Golden Hour is the most distinctive parameter because...\\\",\\n    \\\"voiceSelection\\\": \\\"Artistic intent detected, recommending Curator voice...\\\",\\n    \\\"categorySelection\\\": \\\"Detected anime style, assigning art-illustration with high confidence\\\"\\n  },\\n  \\\"anchor\\\": \\\"string (2-5 words)\\\",\\n  \\\"microFocus\\\": \\\"string (unique angle)\\\",\\n  \\\"intent\\\": \\\"Artistic | Functional | Commercial\\\",\\n  \\\"suggestedVoice\\\": \\\"Curator | Engineer | Director\\\",\\n  \\\"language\\\": \\\"en | zh | ja | ...\\\",\\n  \\\"plannedBlocks\\\": [\\n    { \\\"id\\\": \\\"block_1\\\", \\\"type\\\": \\\"rich-text\\\", \\\"intent\\\": \\\"Explain the core concept...\\\" },\\n    { \\\"id\\\": \\\"block_2\\\", \\\"type\\\": \\\"checklist\\\", \\\"intent\\\": \\\"List 5 essential components...\\\" },\\n    { \\\"id\\\": \\\"block_3\\\", \\\"type\\\": \\\"comparison-table\\\", \\\"intent\\\": \\\"Compare attributes...\\\" },\\n    { \\\"id\\\": \\\"block_4\\\", \\\"type\\\": \\\"tags\\\", \\\"intent\\\": \\\"List 5-8 descriptive keywords...\\\" }\\n  ],\\n  \\\"galleryCategory\\\": \\\"photography | art-illustration | design | commercial-product | character-design | unknown\\\",\\n  \\\"categoryConfidence\\\": \\\"high | medium | low\\\",\\n  \\\"antiTemplatingCommitment\\\": {\\n    \\\"blocksStartWith\\\": \\\"checklist\\\",\\n    \\\"blocksEndWith\\\": \\\"faq-accordion\\\",\\n    \\\"noConsecutiveRichText\\\": true\\n  }\\n}\\n\\n## ERROR FALLBACK\\nIf unable to extract subject, return:\\n{ \\\"error\\\": true, \\\"fallbackAnchor\\\": \\\"AI Image\\\", \\\"fallbackMicroFocus\\\": \\\"Creative Style\\\" }\",\n    \"rawResponse\": \"{\\n  \\\"_reasoning\\\": {\\n    \\\"contextAnalysis\\\": \\\"The prompt specifies a highly tactile '3D clay style' for a female portrait. Key visual markers include fingerprint textures, hand-molded imperfections, and a soft pastel palette (peach and lavender).\\\",\\n    \\\"conflictResolution\\\": \\\"No explicit VISUAL CONTEXT section provided, so the prompt text acts as the primary source of truth. The 'Pro' model selection suggests a need for high-fidelity texture rendering.\\\",\\n    \\\"microFocusSelection\\\": \\\"Fingerprint Textures is the most distinctive parameter, as it differentiates this from generic 3D or plastic-style renders by emphasizing the 'hand-molded' nature.\\\",\\n    \\\"voiceSelection\\\": \\\"Artistic intent is dominant; the Curator voice is chosen to emphasize the miniature artistry and craftsmanship of the clay medium.\\\",\\n    \\\"categorySelection\\\": \\\"The primary focus is a character portrait with specific aesthetic attributes. While it is an illustration style, the character-centric nature of a 'portrait of a young woman' aligns it with character-design.\\\"\\n  },\\n  \\\"anchor\\\": \\\"3D Clay Woman Portrait\\\",\\n  \\\"microFocus\\\": \\\"Tactile Fingerprint Textures\\\",\\n  \\\"intent\\\": \\\"Artistic\\\",\\n  \\\"suggestedVoice\\\": \\\"Curator\\\",\\n  \\\"language\\\": \\\"en\\\",\\n  \\\"plannedBlocks\\\": [\\n    {\\n      \\\"id\\\": \\\"block_1\\\",\\n      \\\"type\\\": \\\"checklist\\\",\\n      \\\"intent\\\": \\\"Identify the key physical attributes that define the hand-molded clay aesthetic.\\\"\\n    },\\n    {\\n      \\\"id\\\": \\\"block_2\\\",\\n      \\\"type\\\": \\\"rich-text\\\",\\n      \\\"intent\\\": \\\"Describe the intersection of soft studio lighting and pastel color palettes in creating depth.\\\"\\n    },\\n    {\\n      \\\"id\\\": \\\"block_3\\\",\\n      \\\"type\\\": \\\"comparison-table\\\",\\n      \\\"intent\\\": \\\"Compare 'Authentic Clay Style' vs. 'Generic 3D Render' to highlight the importance of imperfections.\\\"\\n    },\\n    {\\n      \\\"id\\\": \\\"block_4\\\",\\n      \\\"type\\\": \\\"tags\\\",\\n      \\\"intent\\\": \\\"Provide visual keywords for search optimization and style categorization.\\\"\\n    },\\n    {\\n      \\\"id\\\": \\\"block_5\\\",\\n      \\\"type\\\": \\\"faq-accordion\\\",\\n      \\\"intent\\\": \\\"Address technical questions regarding lighting and texture scales for clay-style art.\\\"\\n    }\\n  ],\\n  \\\"galleryCategory\\\": \\\"character-design\\\",\\n  \\\"categoryConfidence\\\": \\\"high\\\",\\n  \\\"antiTemplatingCommitment\\\": {\\n    \\\"blocksStartWith\\\": \\\"checklist\\\",\\n    \\\"blocksEndWith\\\": \\\"faq-accordion\\\",\\n    \\\"noConsecutiveRichText\\\": true\\n  }\\n}\"\n  }\n}\n- User Prompt: A 3D clay style portrait of a young woman features tactile sculpted details that reveal the physical, hand-molded nature of the medium. The subject is rendered in a palette of soft pastel colors, with muted tones of peach and lavender washing over the sculpted features. Soft studio lighting emphasizes the tactile imperfections and fingerprint textures inherent in the clay, creating a sense of miniature artistry and depth, rendered in authentic 3D clay style\n\n## VALIDATION & RECOVERY\n- If `plannedBlocks` has < 4 items: Add 1 `rich-text` block about \"Usage Tips\".\n- If `plannedBlocks` > 6 items: Merge similar blocks.\n\n## SEO CONSTRAINTS (STRICT)\n\n1. **Title Tag**: 50-60 characters MAX. Must include Anchor.\n   - ✅ \"[Anchor]: Master [MicroFocus] with AI\"\n\n2. **Meta Description**: 140-160 characters. Must include Anchor & CTA.\n\n3. **Keywords**: EXACTLY 5-8 items.\n   - MUST be **visible elements**. ⛔ NO abstract concepts (\"Success\", \"Happiness\").\n   - Examples: Photo: \"Bokeh\", \"85mm Lens\"; UI: \"Rounded Corners\", \"Dark Mode\"; Anime: \"Cel Shading\".\n\n4. **Brand Injection**:\n   - Mention your brand naturally in the `rich-text` intro or `faq` (once per section max).\n\n5. **Anti-Templating (MANDATORY)**:\n   ⛔ BANNED PATTERNS:\n   - Generic titles: \"Introduction\", \"Conclusion\", \"Keywords\", \"FAQ\", \"Key Elements\"\n   - Opening phrases: \"This stunning image...\", \"In this guide...\", \"Let's explore...\"\n   - Two consecutive `rich-text` blocks\n\n   ✅ REQUIRED PATTERNS:\n   - Titles MUST include Anchor or MicroFocus: \"Deconstructing [Anchor]'s Visual Language\"\n   - Opening MUST be specific: \"The [Anchor] achieves its [Effect] through...\"\n\n6. **Slug**: 3-5 words, kebab-case, no model name.\n\n7. **Snippet Summary (V15.0 GEO Formula)**:\n   Generate a 50-80 word summary for AI search engines using this formula:\n   \"To generate [Anchor] in [Style], the [Model] utilizes [Key Param from VISUAL CONTEXT].\n   This technique achieves [Visual Effect] by [Technical Method from MicroFocus].\"\n\n   **Constraints**:\n   - 50-80 words ONLY\n   - MUST include: Anchor, Model Name, at least 2 parameters from VISUAL CONTEXT\n   - MUST mention MicroFocus technique\n   - NO marketing fluff (\"stunning\", \"amazing\", \"beautiful\")\n   - MUST be factual and actionable\n\n## OUTPUT FORMAT (Strict JSON)\n\n⚠️ CRITICAL: The \"data\" field format must EXACTLY match these examples:\n\n{\n  \"_reasoning\": \"Optional: explain creative decisions based on Voice Persona\",\n  \"seoTitle\": \"string (Max 60 chars)\",\n  \"h1Title\": \"string (Unique & Engaging)\",\n  \"seoDescription\": \"string (140-160 chars)\",\n  \"seoKeywords\": [\"Tag1\", \"Tag2\", \"Tag3\", \"Tag4\", \"Tag5\"],\n  \"imageAlt\": \"string (Natural description)\",\n  \"slugKeywords\": \"string (kebab-case, 3-5 words)\",\n  \"snippetSummary\": \"string (50-80 words, GEO formula)\",\n  \"contentSections\": [\n    {\n      \"id\": \"block_1\",\n      \"type\": \"rich-text\",\n      \"title\": \"Descriptive H2 Title (must include Anchor or MicroFocus)\",\n      \"headingLevel\": \"h2\",\n      \"data\": { \"text\": \"Markdown paragraph content here. Must be in 'text' field.\" }\n    },\n    {\n      \"id\": \"block_2\",\n      \"type\": \"checklist\",\n      \"title\": \"[MicroFocus] Essentials\",\n      \"headingLevel\": \"h3\",\n      \"data\": { \"items\": [\"Item 1\", \"Item 2\", \"Item 3\"] }\n    },\n    {\n      \"id\": \"block_3\",\n      \"type\": \"tags\",\n      \"title\": \"Visual Keywords\",\n      \"headingLevel\": \"h3\",\n      \"data\": { \"items\": [\"Keyword1\", \"Keyword2\", \"Keyword3\"] }\n    },\n    {\n      \"id\": \"block_4\",\n      \"type\": \"comparison-table\",\n      \"title\": \"[Anchor] Style Comparison\",\n      \"headingLevel\": \"h3\",\n      \"data\": {\n        \"left\": \"Option A\",\n        \"right\": \"Option B\",\n        \"rows\": [\n          { \"pro\": \"Warm tones\", \"con\": \"Cool tones\" },\n          { \"pro\": \"Soft lighting\", \"con\": \"Hard lighting\" }\n        ]\n      }\n    },\n    {\n      \"id\": \"block_5\",\n      \"type\": \"faq-accordion\",\n      \"title\": \"Mastering [MicroFocus]: Common Questions\",\n      \"headingLevel\": \"h3\",\n      \"data\": {\n        \"items\": [\n          { \"q\": \"How to achieve this effect?\", \"a\": \"Use the AI generator with these settings...\" },\n          { \"q\": \"What model works best?\", \"a\": \"For this style, we recommend...\" }\n        ]\n      }\n    }\n  ]\n}",
+              "rawResponse": "{\n  \"_reasoning\": \"Adopting the Curator persona, I have focused on evocative language like 'miniature artistry' and 'chromatic depth' to emphasize the tactile nature of the 3D Clay Woman Portrait. I avoided technical jargon in the descriptions while ensuring the 'Pro' model's capabilities in texture rendering were highlighted. The structure adheres to the anti-templating rules by integrating the Anchor and MicroFocus into every title.\",\n  \"seoTitle\": \"3D Clay Woman Portrait: Master Tactile Fingerprint Textures\",\n  \"h1Title\": \"The Tactile Artistry of the 3D Clay Woman Portrait\",\n  \"seoDescription\": \"Explore how the 3D Clay Woman Portrait uses Tactile Fingerprint Textures to create a hand-molded aesthetic. Master this artisanal 3D style with our guide.\",\n  \"seoKeywords\": [\n    \"Fingerprint Textures\",\n    \"Peach Pastel\",\n    \"Lavender Tones\",\n    \"Sculpted Clay\",\n    \"Matte Finish\",\n    \"Studio Lighting\",\n    \"Hand-Molded\"\n  ],\n  \"imageAlt\": \"A 3D clay style portrait of a young woman featuring visible fingerprint textures and a soft peach and lavender color palette.\",\n  \"slugKeywords\": \"3d-clay-woman-portrait-textures\",\n  \"snippetSummary\": \"To generate a 3D Clay Woman Portrait in a hand-molded style, the Pro model utilizes soft studio lighting and a pastel palette of peach and lavender. This technique achieves a sense of miniature artistry by emphasizing Tactile Fingerprint Textures and physical imperfections, creating a tangible depth that mimics traditional stop-motion claymation craftsmanship and organic sculpting methods.\",\n  \"contentSections\": [\n    {\n      \"id\": \"block_1\",\n      \"type\": \"checklist\",\n      \"title\": \"Defining the Hand-Molded 3D Clay Woman Portrait Aesthetic\",\n      \"headingLevel\": \"h2\",\n      \"data\": {\n        \"items\": [\n          \"Visible thumb-press indentations across the facial contours\",\n          \"Uneven surface topology reflecting a manual sculpting process\",\n          \"Soft-edged features that avoid harsh digital precision\",\n          \"A matte, porous medium finish characteristic of unglazed clay\",\n          \"Organic asymmetricality in the hair and shoulder structures\"\n        ]\n      }\n    },\n    {\n      \"id\": \"block_2\",\n      \"type\": \"rich-text\",\n      \"title\": \"Chromatic Depth and Lighting in the 3D Clay Woman Portrait\",\n      \"headingLevel\": \"h2\",\n      \"data\": {\n        \"text\": \"The 3D Clay Woman Portrait captures a delicate serenity through its marriage of soft studio illumination and a tender pastel spectrum. By utilizing the Pro model's advanced light-scattering algorithms, the muted tones of peach and lavender do more than just color the surface; they define the volume of the sculpt. The light catches the ridges of the Tactile Fingerprint Textures, casting micro-shadows that provide an undeniable sense of scale. At ClayMaster Studios, we find that this interplay between soft hues and physical grit transforms a digital file into a piece of tangible, miniature fine art.\"\n      }\n    },\n    {\n      \"id\": \"block_3\",\n      \"type\": \"comparison-table\",\n      \"title\": \"Authentic 3D Clay Woman Portrait vs. Synthetic Renders\",\n      \"headingLevel\": \"h3\",\n      \"data\": {\n        \"left\": \"Authentic Hand-Molded Style\",\n        \"right\": \"Generic 3D Render\",\n        \"rows\": [\n          {\n            \"pro\": \"Tactile Fingerprint Textures\",\n            \"con\": \"Perfectly Smooth Surfaces\"\n          },\n          {\n            \"pro\": \"Organic Sculpting Imperfections\",\n            \"con\": \"Mathematical Symmetry\"\n          },\n          {\n            \"pro\": \"Diffuse Clay Shaders\",\n            \"con\": \"High-Gloss Plasticity\"\n          },\n          {\n            \"pro\": \"Muted Pastel Depth\",\n            \"con\": \"Oversaturated Flat Colors\"\n          }\n        ]\n      }\n    },\n    {\n      \"id\": \"block_4\",\n      \"type\": \"tags\",\n      \"title\": \"Visual Markers of the 3D Clay Woman Portrait\",\n      \"headingLevel\": \"h3\",\n      \"data\": {\n        \"items\": [\n          \"Fingerprint Textures\",\n          \"Peach Pastel\",\n          \"Lavender Tones\",\n          \"Sculpted Clay\",\n          \"Matte Finish\",\n          \"Studio Lighting\",\n          \"Hand-Molded\"\n        ]\n      }\n    },\n    {\n      \"id\": \"block_5\",\n      \"type\": \"faq-accordion\",\n      \"title\": \"Curating Tactile Fingerprint Textures: Common Inquiries\",\n      \"headingLevel\": \"h3\",\n      \"data\": {\n        \"items\": [\n          {\n            \"q\": \"How do Tactile Fingerprint Textures enhance the 3D Clay Woman Portrait?\",\n            \"a\": \"These micro-details break the digital 'uncanny valley' by grounding the subject in a physical, human-centric process, suggesting the presence of an artist's hand.\"\n          },\n          {\n            \"q\": \"Why is the Pro model preferred for this specific clay aesthetic?\",\n            \"a\": \"The Pro model excels at calculating the subtle subsurface scattering and granular displacement required to make the clay look porous rather than like smooth plastic.\"\n          },\n          {\n            \"q\": \"Can the pastel palette be adjusted without losing the clay texture?\",\n            \"a\": \"Yes, provided the soft studio lighting remains constant, the peach and lavender tones can be swapped for other muted earth tones while preserving the tactile ridges.\"\n          }\n        ]\n      }\n    }\n  ]\n}",
+              "parsed": {
+                "seoTitle": "3D Clay Woman Portrait: Master Tactile Fingerprint Textures",
+                "h1Title": "The Tactile Artistry of the 3D Clay Woman Portrait",
+                "seoDescription": "Explore how the 3D Clay Woman Portrait uses Tactile Fingerprint Textures to create a hand-molded aesthetic. Master this artisanal 3D style with our guide.",
+                "contentSectionsCount": 5
+              }
+            },
+            "meta": {
+              "modelUsed": "gemini-3-flash-preview",
+              "temperature": 0.7,
+              "maxTokens": 4096
+            }
+          },
+          "relatedPosts": "[]",
+          "response_time_ms": 26642
+        }
+      },
+      "total_time_ms": 72424,
+      "status": "success"
+    }
+  ]
+}

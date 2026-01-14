@@ -10,7 +10,7 @@
 import { NextRequest } from 'next/server';
 import { respData, respErr } from '@/shared/lib/resp';
 import { db } from '@/core/db';
-import { user } from '@/config/db/schema';
+import { user, virtualPersona } from '@/config/db/schema';
 import { eq } from 'drizzle-orm';
 import { getSignUser } from '@/shared/models/user';
 import { hasAnyRole, ROLES } from '@/shared/services/rbac';
@@ -30,28 +30,46 @@ export async function GET(request: NextRequest) {
       return respErr('Admin permission required', 403);
     }
 
-    // 从数据库获取所有虚拟作者
+    // 从数据库获取所有虚拟作者，JOIN virtual_persona 获取完整信息
     const virtualAuthors = await db()
       .select({
         id: user.id,
-        displayName: user.name,
-        username: user.email, // 从 email 提取 username
+        username: user.name,  // 只用 name 作为用户名
         bio: user.bio,
-        isVirtual: user.isVirtual,
+        image: user.image,
+        // 从 virtual_persona 获取完整信息
+        category: virtualPersona.primaryCategory,
+        specialties: virtualPersona.specialties,
+        styleKeywords: virtualPersona.styleKeywords,
+        workflowType: virtualPersona.workflowType,
+        workflowDescription: virtualPersona.workflowDescription,
+        preferredTools: virtualPersona.preferredTools,
+        dislikes: virtualPersona.dislikes,
+        personalityTraits: virtualPersona.personalityTraits,
+        communicationStyle: virtualPersona.communicationStyle,
+        activityLevel: virtualPersona.activityLevel,
       })
       .from(user)
+      .leftJoin(virtualPersona, eq(user.id, virtualPersona.userId))
       .where(eq(user.isVirtual, true));
 
-    // 格式化数据
-    const formattedAuthors = virtualAuthors.map(author => ({
+    // 格式化数据，解析 JSON 字段
+    const formattedAuthors = virtualAuthors.map((author: any) => ({
       id: author.id,
-      displayName: author.displayName,
-      // 从 email 提取 username: virtual+{username}@... -> username
-      username: author.username?.replace('virtual+', '').split('@')[0] || author.displayName.toLowerCase().replace(/\s+/g, '_'),
+      username: author.username || '',
       bio: author.bio || '',
-      category: '', // 从数据库没有存储这个，可以忽略
-      tags: [],
-      matchedPromptIds: [], // 需要从映射文件获取
+      category: author.category || '',
+      image: author.image || undefined,
+      // 解析 JSON 字段
+      specialties: author.specialties ? JSON.parse(author.specialties) : [],
+      styleKeywords: author.styleKeywords ? JSON.parse(author.styleKeywords) : [],
+      workflowType: author.workflowType || 'pure_ai',
+      workflowDescription: author.workflowDescription || '',
+      preferredTools: author.preferredTools ? JSON.parse(author.preferredTools) : [],
+      dislikes: author.dislikes ? JSON.parse(author.dislikes) : [],
+      personalityTraits: author.personalityTraits ? JSON.parse(author.personalityTraits) : null,
+      communicationStyle: author.communicationStyle || 'casual',
+      activityLevel: author.activityLevel || 'moderate',
     }));
 
     return respData({

@@ -165,16 +165,16 @@ export async function getErrorReportStats(days: number = 7): Promise<{
   // 统计
   const stats = {
     totalErrors: allErrors.length,
-    pendingErrors: allErrors.filter((e) => e.status === ErrorReportStatus.PENDING)
+    pendingErrors: allErrors.filter((e: any) => e.status === ErrorReportStatus.PENDING)
       .length,
-    resolvedErrors: allErrors.filter((e) => e.status === ErrorReportStatus.RESOLVED)
+    resolvedErrors: allErrors.filter((e: any) => e.status === ErrorReportStatus.RESOLVED)
       .length,
     errorsByType: {} as Record<string, number>,
     errorsByFeature: {} as Record<string, number>,
   };
 
   // 按类型统计
-  allErrors.forEach((error) => {
+  allErrors.forEach((error: any) => {
     stats.errorsByType[error.errorType] =
       (stats.errorsByType[error.errorType] || 0) + 1;
     stats.errorsByFeature[error.feature] =

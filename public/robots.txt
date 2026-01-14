@@ -1,12 +1,38 @@
 # Robots.txt - Nano Banana Ultra
-# Controls search engine crawler access
+# Strict control to prevent AI content detection
 
 User-agent: *
-Disallow: /*?*q=
-Disallow: /settings/*
-Disallow: /activity/*
-Disallow: /admin/*
-Disallow: /preview/*
 
-# Sitemap
-Sitemap: https://nanobananaultra.com/sitemap.xml
+# ✅ ONLY allow these pages (whitelist approach)
+Allow: /$
+Allow: /pricing$
+Allow: /ai-image-generator$
+
+# ❌ Block everything else
+Disallow: /
+
+# 🚫 Explicitly block legal pages (no indexing)
+Disallow: /privacy-policy
+Disallow: /terms-of-service
+Disallow: /refund-policy
+Disallow: /cookie-policy
+Disallow: /dmca-policy
+Disallow: /community-guidelines
+
+# 🚫 Block user-generated content areas
+Disallow: /prompts/
+Disallow: /explore
+Disallow: /blog/
+
+# 🚫 Block internal pages
+Disallow: /settings/
+Disallow: /activity/
+Disallow: /admin/
+Disallow: /preview/
+Disallow: /chat/
+Disallow: /user/
+Disallow: /profile/
+Disallow: /*?*
+
+# Sitemap (temporarily disabled to reduce crawl scope)
+# Sitemap: https://nanobananaultra.com/sitemap.xml

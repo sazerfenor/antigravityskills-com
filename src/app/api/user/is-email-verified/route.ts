@@ -3,7 +3,7 @@ import { isEmailVerified } from '@/shared/models/user';
 
 export async function POST(req: Request) {
   try {
-    const body = await req.json().catch(() => ({}));
+    const body = await req.json().catch(() => ({})) as any;
     const email = String(body?.email || '')
       .trim()
       .toLowerCase();

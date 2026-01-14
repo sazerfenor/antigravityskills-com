@@ -18,6 +18,27 @@ const nextConfig = {
   output: process.env.VERCEL ? undefined : 'standalone',
   reactStrictMode: false,
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+
+  // ⭐ Cloudflare Workers + Turso 关键配置
+  serverExternalPackages: [
+    '@libsql/client',
+    '@libsql/isomorphic-ws',
+    '@tursodatabase/serverless',
+    'mysql2',
+    '@planetscale/database',
+  ],
+
+  // Webpack configuration to handle postgres module for Cloudflare Workers
+  webpack: (config, { isServer, nextRuntime }) => {
+    // For Edge Runtime (Cloudflare Workers), replace postgres module with empty module
+    if (isServer && nextRuntime === 'edge') {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        postgres: false,
+      };
+    }
+    return config;
+  },
   images: {
     remotePatterns: [
       {

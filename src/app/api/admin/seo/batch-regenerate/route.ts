@@ -79,6 +79,7 @@ export async function POST(request: Request) {
           seoSlug: generateData.data.seoSlug,
           seoTitle: generateData.data.seoTitle,
           h1Title: generateData.data.h1Title,
+          title: generateData.data.h1Title || generateData.data.seoTitle || generateData.data.anchor || 'Untitled Post', // 🔧 P0 Fix: 自动填充 title
           seoDescription: generateData.data.seoDescription,
           seoKeywords: generateData.data.seoKeywords,
           seoSlugKeywords: generateData.data.seoSlugKeywords,

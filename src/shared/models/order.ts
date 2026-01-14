@@ -191,7 +191,7 @@ export async function updateOrderInTransaction({
   }
 
   // need transaction
-  const result = await db().transaction(async (tx) => {
+  const result = await db().transaction(async (tx: any) => {
     let result: any = {
       order: null,
       subscription: null,
@@ -289,7 +289,7 @@ export async function updateSubscriptionInTransaction({
   }
 
   // need transaction
-  const result = await db().transaction(async (tx) => {
+  const result = await db().transaction(async (tx: any) => {
     let result: any = {
       order: null,
       subscription: null,

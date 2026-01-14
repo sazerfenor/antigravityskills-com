@@ -1,0 +1,211 @@
+{
+  "metadata": {
+    "test_date": "2026-01-13T16:03:47.330Z",
+    "total_cases": 9,
+    "passed": 9,
+    "failed": 0,
+    "errors": 0,
+    "success_rate": 100
+  },
+  "performance": {
+    "average_response_time_ms": 33101,
+    "min_response_time_ms": 23030,
+    "max_response_time_ms": 66068,
+    "average_input_tokens": 20
+  },
+  "test_results": [
+    {
+      "test_id": "edge_no_primary_intent",
+      "test_name": "Edge Case: 无风格意图 - 应返回 primary_intent=null",
+      "category": "edge_case",
+      "status": "pass",
+      "response_time_ms": 24527,
+      "estimated_input_tokens": 1,
+      "validation_results": {
+        "primary_intent_must_be_null": true,
+        "context_not_empty": true,
+        "fields_count_gte": true
+      },
+      "response_summary": {
+        "primary_intent": null,
+        "content_category": "photography",
+        "fields_count": 7
+      }
+    },
+    {
+      "test_id": "edge_implicit_style",
+      "test_name": "Edge Case: 隐式风格 - 应检测到 Clay",
+      "category": "edge_case",
+      "status": "pass",
+      "response_time_ms": 27288,
+      "estimated_input_tokens": 12,
+      "validation_results": {
+        "primary_intent_not_null": true,
+        "phrase_includes_clay": true,
+        "confidence_high": true
+      },
+      "response_summary": {
+        "primary_intent": {
+          "phrase": "3D Clay Style",
+          "category": "technique",
+          "confidence": 0.8
+        },
+        "content_category": "other",
+        "fields_count": 7
+      }
+    },
+    {
+      "test_id": "normal_photography",
+      "test_name": "Normal: 摄影场景 - Golden Hour",
+      "category": "normal",
+      "status": "pass",
+      "response_time_ms": 23517,
+      "estimated_input_tokens": 7,
+      "validation_results": {
+        "content_category_is_photography": true
+      },
+      "response_summary": {
+        "primary_intent": {
+          "phrase": "Golden Hour Aesthetic",
+          "category": "aesthetic",
+          "confidence": 0.8
+        },
+        "content_category": "photography",
+        "fields_count": 7
+      }
+    },
+    {
+      "test_id": "normal_anime_style",
+      "test_name": "Normal: Anime 风格 - 明确风格关键词",
+      "category": "normal",
+      "status": "pass",
+      "response_time_ms": 36495,
+      "estimated_input_tokens": 12,
+      "validation_results": {
+        "primary_intent_not_null": true
+      },
+      "response_summary": {
+        "primary_intent": {
+          "phrase": "Studio Ghibli Style",
+          "category": "style",
+          "confidence": 1
+        },
+        "content_category": "other",
+        "fields_count": 9
+      }
+    },
+    {
+      "test_id": "complex_3d_clay",
+      "test_name": "Complex: 3D Clay Style Portrait",
+      "category": "complex",
+      "status": "pass",
+      "response_time_ms": 28230,
+      "estimated_input_tokens": 22,
+      "validation_results": {},
+      "response_summary": {
+        "primary_intent": {
+          "phrase": "3D Clay Style",
+          "category": "technique",
+          "confidence": 1
+        },
+        "content_category": "photography",
+        "fields_count": 8
+      }
+    },
+    {
+      "test_id": "edge_style_transfer",
+      "test_name": "Edge Case: Style Transfer - 用户照片 + 引用图片",
+      "category": "edge_case",
+      "status": "pass",
+      "response_time_ms": 66068,
+      "estimated_input_tokens": 17,
+      "validation_results": {},
+      "response_summary": {
+        "primary_intent": {
+          "phrase": "Dramatic Lighting Portrait",
+          "category": "aesthetic",
+          "confidence": 1
+        },
+        "content_category": "photography",
+        "fields_count": 6
+      }
+    },
+    {
+      "test_id": "edge_ambiguity",
+      "test_name": "Edge Case: Ambiguity Detection - 多模态冲突检测",
+      "category": "edge_case",
+      "status": "pass",
+      "response_time_ms": 40377,
+      "estimated_input_tokens": 3,
+      "validation_results": {
+        "ambiguities_detected": true
+      },
+      "response_summary": {
+        "primary_intent": null,
+        "content_category": "photography",
+        "fields_count": 10
+      }
+    },
+    {
+      "test_id": "performance_short_prompt",
+      "test_name": "Performance: 最短 Prompt - Token 消耗基准",
+      "category": "performance",
+      "status": "pass",
+      "response_time_ms": 23030,
+      "estimated_input_tokens": 1,
+      "validation_results": {
+        "content_category_is_photography": true,
+        "context_not_empty": true,
+        "fields_count_gte": true
+      },
+      "response_summary": {
+        "primary_intent": null,
+        "content_category": "photography",
+        "fields_count": 7
+      }
+    },
+    {
+      "test_id": "performance_long_prompt",
+      "test_name": "Performance: 长 Prompt - Token 消耗上限",
+      "category": "performance",
+      "status": "pass",
+      "response_time_ms": 28378,
+      "estimated_input_tokens": 103,
+      "validation_results": {
+        "context_not_empty": true,
+        "fields_count_gte": true
+      },
+      "response_summary": {
+        "primary_intent": {
+          "phrase": "3D Clay Style",
+          "category": "technique",
+          "confidence": 1
+        },
+        "content_category": "photography",
+        "fields_count": 8
+      }
+    }
+  ],
+  "category_breakdown": {
+    "edge_case": {
+      "passed": 4,
+      "failed": 0,
+      "total": 4
+    },
+    "normal": {
+      "passed": 2,
+      "failed": 0,
+      "total": 2
+    },
+    "complex": {
+      "passed": 1,
+      "failed": 0,
+      "total": 1
+    },
+    "performance": {
+      "passed": 2,
+      "failed": 0,
+      "total": 2
+    }
+  }
+}

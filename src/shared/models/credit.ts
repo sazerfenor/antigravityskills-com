@@ -150,17 +150,19 @@ export async function consumeCredits({
   scene,
   description,
   metadata,
+  tx: externalTx,
 }: {
   userId: string;
   credits: number; // credits to consume
   scene?: string;
   description?: string;
   metadata?: string;
+  tx?: any; // 可选的外部事务，用于避免嵌套事务冲突
 }) {
   const currentTime = new Date();
 
-  // consume credits
-  const result = await db().transaction(async (tx) => {
+  // 事务逻辑抽取为独立函数
+  const executeConsumeLogic = async (tx: any) => {
     // 1. check credits balance
     const [creditsBalance] = await tx
       .select({
@@ -284,9 +286,13 @@ export async function consumeCredits({
     await tx.insert(credit).values(consumedCredit);
 
     return consumedCredit;
-  });
+  };
 
-  return result;
+  // 如果传入了外部事务，直接使用；否则创建新事务
+  if (externalTx) {
+    return executeConsumeLogic(externalTx);
+  }
+  return db().transaction(executeConsumeLogic);
 }
 
 // get remaining credits
@@ -514,7 +520,7 @@ export async function revokeCreditsForOrder(orderNo: string): Promise<{
   }
 
   try {
-    const result = await db().transaction(async (tx) => {
+    const result = await db().transaction(async (tx: any) => {
       // 1. Find all active credits granted for this order
       const creditsToRevoke = await tx
         .select()
@@ -537,11 +543,11 @@ export async function revokeCreditsForOrder(orderNo: string): Promise<{
 
       // 2. Calculate total credits being revoked (for logging)
       const totalRemaining = creditsToRevoke.reduce(
-        (sum, c) => sum + (c.remainingCredits || 0),
+        (sum: number, c: any) => sum + (c.remainingCredits || 0),
         0
       );
       const totalOriginal = creditsToRevoke.reduce(
-        (sum, c) => sum + (c.credits || 0),
+        (sum: number, c: any) => sum + (c.credits || 0),
         0
       );
 

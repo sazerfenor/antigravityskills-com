@@ -121,5 +121,5 @@ export async function getPostsByTag(tagId: string): Promise<string[]> {
     .from(postTag)
     .where(eq(postTag.tagId, tagId));
 
-  return result.map((r) => r.postId);
+  return result.map((r: any) => r.postId);
 }

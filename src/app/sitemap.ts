@@ -1,8 +1,8 @@
 import { MetadataRoute } from 'next';
-import { db } from '@/core/db';
-import { communityPost, post } from '@/config/db/schema';
-import { eq, isNotNull } from 'drizzle-orm';
-import { CommunityPostStatus } from '@/shared/models/community_post';
+// import { db } from '@/core/db';
+// import { communityPost, post } from '@/config/db/schema';
+// import { eq, isNotNull } from 'drizzle-orm';
+// import { CommunityPostStatus } from '@/shared/models/community_post';
 import { brandConfig } from '@/config';
 
 // Use domain from brand config (configured in src/config/brand.ts)
@@ -12,16 +12,39 @@ const BASE_URL = brandConfig.domain;
 const STATIC_LAST_MODIFIED = new Date('2025-12-18');
 
 /**
- * Dynamic Sitemap Generator for SEO
- * 
- * Generates sitemap.xml at build time (or on-demand with ISR).
- * Includes all static pages and dynamically fetches all published prompts from database.
- * 
- * SEO Benefits:
- * - All new prompts are automatically discoverable by search engines
- * - Priority is calculated based on page importance
- * - LastModified reflects actual content updates
+ * Minimal Sitemap Generator - Reduced Crawl Scope
+ *
+ * ⚠️ TEMPORARY: This is a minimal sitemap to prevent AI content detection.
+ * Only includes 3 core pages as per robots.txt whitelist.
+ *
+ * When ready to expand SEO, uncomment the code below to restore full sitemap.
  */
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  // Only 3 pages allowed for crawling (matching robots.txt)
+  return [
+    {
+      url: BASE_URL,
+      lastModified: STATIC_LAST_MODIFIED,
+      changeFrequency: 'daily',
+      priority: 1.0,
+    },
+    {
+      url: `${BASE_URL}/pricing`,
+      lastModified: STATIC_LAST_MODIFIED,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${BASE_URL}/ai-image-generator`,
+      lastModified: STATIC_LAST_MODIFIED,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+  ];
+}
+
+/* ==================== COMMENTED OUT - RESTORE WHEN READY ====================
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // 1. Static pages with high priority
   const staticPages: MetadataRoute.Sitemap = [
@@ -125,8 +148,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       );
 
     promptPages = posts
-      .filter((post) => post.seoSlug) // Only include posts with SEO slugs
-      .map((post) => {
+      .filter((post: any) => post.seoSlug) // Only include posts with SEO slugs
+      .map((post: any) => {
         // Calculate priority based on likes (0.5 to 0.8)
         const likeBonus = Math.min((post.likeCount ?? 0) * 0.01, 0.3);
         const priority = Math.round((0.5 + likeBonus) * 10) / 10;
@@ -160,8 +183,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       .where(eq(post.status, 'published'));
 
     blogPages = blogPosts
-      .filter((p) => p.slug)
-      .map((p) => ({
+      .filter((p: any) => p.slug)
+      .map((p: any) => ({
         url: `${BASE_URL}/blog/${p.slug}`,
         lastModified: p.updatedAt ?? new Date(),
         changeFrequency: 'weekly' as const,
@@ -175,3 +198,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [...staticPages, ...promptPages, ...blogPages];
 }
+
+============================================================================== */

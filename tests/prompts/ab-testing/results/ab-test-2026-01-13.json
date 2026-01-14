@@ -1,0 +1,3394 @@
+[
+  {
+    "testCaseId": "test_case_1_short",
+    "testCaseName": "超短内容",
+    "version": "baseline",
+    "timestamp": "2026-01-13T21:37:10.276Z",
+    "stages": {
+      "stage1_intent": {
+        "success": true,
+        "data": {
+          "context": "Cute Cat Photography",
+          "followUpQuestion": null,
+          "fields": [
+            {
+              "id": "cat_expression",
+              "type": "select",
+              "label": "Cat Expression",
+              "isAdvanced": false,
+              "multiSelect": true,
+              "defaultValue": "Cute",
+              "options": [
+                "Cute",
+                "Curious",
+                "Sleepy",
+                "Playful",
+                "Grumpy",
+                "Majestic",
+                "Scared",
+                "Content",
+                "Surprised",
+                "Mischievous"
+              ],
+              "source": "creative_param"
+            },
+            {
+              "id": "cat_breed",
+              "type": "select",
+              "label": "Cat Breed",
+              "isAdvanced": false,
+              "multiSelect": true,
+              "defaultValue": "Domestic Shorthair",
+              "options": [
+                "Domestic Shorthair",
+                "Persian",
+                "Siamese",
+                "Maine Coon",
+                "Bengal",
+                "Ragdoll",
+                "Scottish Fold",
+                "Sphynx",
+                "British Shorthair",
+                "Abyssinian"
+              ],
+              "source": "expanded"
+            },
+            {
+              "id": "fur_pattern",
+              "type": "select",
+              "label": "Fur Pattern",
+              "isAdvanced": false,
+              "multiSelect": true,
+              "defaultValue": "Solid",
+              "options": [
+                "Solid",
+                "Tabby",
+                "Calico",
+                "Tuxedo",
+                "Tortoiseshell",
+                "Bicolor",
+                "Colorpoint",
+                "Spotted",
+                "Marbled",
+                "Smoked"
+              ],
+              "source": "expanded"
+            },
+            {
+              "id": "cat_action",
+              "type": "select",
+              "label": "Cat Action",
+              "isAdvanced": false,
+              "multiSelect": true,
+              "defaultValue": "Sitting Quietly",
+              "options": [
+                "Sitting Quietly",
+                "Sleeping",
+                "Playing with Yarn",
+                "Pouncing",
+                "Stretching",
+                "Grooming",
+                "Chasing a Toy",
+                "Staring at Camera",
+                "Yawning",
+                "Hiding in a Box"
+              ],
+              "source": "expanded"
+            },
+            {
+              "id": "environment",
+              "type": "select",
+              "label": "Setting/Environment",
+              "isAdvanced": false,
+              "multiSelect": true,
+              "defaultValue": "Cozy Living Room",
+              "options": [
+                "Cozy Living Room",
+                "Sunlit Windowsill",
+                "Lush Garden",
+                "Minimalist Studio",
+                "Pet Cafe",
+                "Modern Kitchen",
+                "Rooftop View",
+                "Forest Path",
+                "On a Soft Bed",
+                "Next to a Fireplace"
+              ],
+              "source": "expanded"
+            },
+            {
+              "id": "lighting_style",
+              "type": "select",
+              "label": "Lighting Style",
+              "isAdvanced": true,
+              "multiSelect": true,
+              "defaultValue": "Natural Daylight",
+              "options": [
+                "Natural Daylight",
+                "Golden Hour",
+                "Soft Indoor Lighting",
+                "Dramatic Rim Light",
+                "High-Key White",
+                "Low-Key Moody",
+                "Neon Glow",
+                "Overcast Diffused",
+                "Candlelight",
+                "Studio Spotlight"
+              ],
+              "source": "expanded"
+            },
+            {
+              "id": "camera_angle",
+              "type": "select",
+              "label": "Camera Angle",
+              "isAdvanced": true,
+              "multiSelect": false,
+              "defaultValue": "Eye Level",
+              "options": [
+                "Eye Level",
+                "Low Angle",
+                "High Angle",
+                "Bird's Eye",
+                "Worm's Eye",
+                "Close-up",
+                "Wide Shot",
+                "Profile",
+                "Macro",
+                "Dutch Angle"
+              ],
+              "source": "expanded"
+            },
+            {
+              "id": "depth_of_field",
+              "type": "slider",
+              "label": "Depth of Field",
+              "isAdvanced": true,
+              "multiSelect": false,
+              "defaultValue": 3,
+              "min": 1,
+              "max": 10,
+              "step": 1,
+              "minLabel": "Shallow (Bokeh)",
+              "maxLabel": "Deep (Sharp)",
+              "source": "expanded"
+            }
+          ],
+          "preservedDetails": [],
+          "imageProcessingInstructions": [],
+          "internalSignals": {
+            "primaryMood": "playful",
+            "visualComplexity": "focused",
+            "detectedSubjectType": "other"
+          },
+          "primaryIntent": null,
+          "extractedRatio": null,
+          "contentCategory": "photography"
+        },
+        "duration": 29294
+      },
+      "stage2_field": {
+        "success": true,
+        "data": {
+          "core": {
+            "subject": "cute cat",
+            "action": ""
+          },
+          "narrative_params": {
+            "cat_expression": {
+              "value": "Cute",
+              "strength": 0.7
+            },
+            "cat_breed": {
+              "value": "Domestic Shorthair",
+              "strength": 0.7
+            },
+            "fur_pattern": {
+              "value": "Solid",
+              "strength": 0.7
+            },
+            "cat_action": {
+              "value": "Sitting Quietly",
+              "strength": 0.7
+            },
+            "environment": {
+              "value": "Cozy Living Room",
+              "strength": 0.7
+            },
+            "lighting_style": {
+              "value": "Natural Daylight",
+              "strength": 0.7
+            },
+            "camera_angle": {
+              "value": "Eye Level",
+              "strength": 0.7
+            },
+            "depth_of_field": {
+              "value": "3",
+              "strength": 0.7
+            }
+          },
+          "content_category": "photography",
+          "primary_intent": null,
+          "internal_signals": {
+            "primaryMood": "playful",
+            "visualComplexity": "focused",
+            "detectedSubjectType": "other"
+          },
+          "image_processing_instructions": []
+        },
+        "duration": 0
+      },
+      "stage3_compiler": {
+        "success": true,
+        "data": {
+          "native": "A professional photography capture of a domestic shorthair with a solid coat, sitting quietly in the soft atmosphere of a cozy living room. The cat's cute expression is rendered with clarity, its eyes meeting the lens from an eye level perspective that creates an intimate, engaging connection. Natural daylight illuminates the scene, highlighting the fine texture of the coat, while the 3 ensures the surrounding home environment recedes into a soft, creamy bokeh",
+          "english": "A professional photography capture of a domestic shorthair with a solid coat, sitting quietly in the soft atmosphere of a cozy living room. The cat's cute expression is rendered with clarity, its eyes meeting the lens from an eye level perspective that creates an intimate, engaging connection. Natural daylight illuminates the scene, highlighting the fine texture of the coat, while the 3 ensures the surrounding home environment recedes into a soft, creamy bokeh",
+          "detectedLang": "English",
+          "highlights": {
+            "native": [
+              {
+                "start": 40,
+                "end": 58,
+                "fieldId": "cat_breed",
+                "fieldLabel": "Cat Breed",
+                "originalValue": "Domestic Shorthair",
+                "category": "technical",
+                "transformedTo": "domestic shorthair"
+              },
+              {
+                "start": 66,
+                "end": 71,
+                "fieldId": "fur_pattern",
+                "fieldLabel": "Fur Pattern",
+                "originalValue": "Solid",
+                "category": "technical",
+                "transformedTo": "solid"
+              },
+              {
+                "start": 78,
+                "end": 93,
+                "fieldId": "cat_action",
+                "fieldLabel": "Cat Action",
+                "originalValue": "Sitting Quietly",
+                "category": "technical",
+                "transformedTo": "sitting quietly"
+              },
+              {
+                "start": 122,
+                "end": 138,
+                "fieldId": "environment",
+                "fieldLabel": "Environment",
+                "originalValue": "Cozy Living Room",
+                "category": "environment",
+                "transformedTo": "cozy living room"
+              },
+              {
+                "start": 150,
+                "end": 154,
+                "fieldId": "cat_expression",
+                "fieldLabel": "Cat Expression",
+                "originalValue": "Cute",
+                "category": "technical",
+                "transformedTo": "cute"
+              },
+              {
+                "start": 226,
+                "end": 235,
+                "fieldId": "camera_angle",
+                "fieldLabel": "Camera Angle",
+                "originalValue": "Eye Level",
+                "category": "technical",
+                "transformedTo": "eye level"
+              },
+              {
+                "start": 295,
+                "end": 311,
+                "fieldId": "lighting_style",
+                "fieldLabel": "Lighting Style",
+                "originalValue": "Natural Daylight",
+                "category": "lighting",
+                "transformedTo": "Natural daylight"
+              },
+              {
+                "start": 388,
+                "end": 389,
+                "fieldId": "depth_of_field",
+                "fieldLabel": "Depth Of Field",
+                "originalValue": "3",
+                "category": "technical",
+                "transformedTo": "3"
+              }
+            ],
+            "english": [
+              {
+                "start": 40,
+                "end": 58,
+                "fieldId": "cat_breed",
+                "fieldLabel": "Cat Breed",
+                "originalValue": "Domestic Shorthair",
+                "category": "technical",
+                "transformedTo": "domestic shorthair"
+              },
+              {
+                "start": 66,
+                "end": 71,
+                "fieldId": "fur_pattern",
+                "fieldLabel": "Fur Pattern",
+                "originalValue": "Solid",
+                "category": "technical",
+                "transformedTo": "solid"
+              },
+              {
+                "start": 78,
+                "end": 93,
+                "fieldId": "cat_action",
+                "fieldLabel": "Cat Action",
+                "originalValue": "Sitting Quietly",
+                "category": "technical",
+                "transformedTo": "sitting quietly"
+              },
+              {
+                "start": 122,
+                "end": 138,
+                "fieldId": "environment",
+                "fieldLabel": "Environment",
+                "originalValue": "Cozy Living Room",
+                "category": "environment",
+                "transformedTo": "cozy living room"
+              },
+              {
+                "start": 150,
+                "end": 154,
+                "fieldId": "cat_expression",
+                "fieldLabel": "Cat Expression",
+                "originalValue": "Cute",
+                "category": "technical",
+                "transformedTo": "cute"
+              },
+              {
+                "start": 226,
+                "end": 235,
+                "fieldId": "camera_angle",
+                "fieldLabel": "Camera Angle",
+                "originalValue": "Eye Level",
+                "category": "technical",
+                "transformedTo": "eye level"
+              },
+              {
+                "start": 295,
+                "end": 311,
+                "fieldId": "lighting_style",
+                "fieldLabel": "Lighting Style",
+                "originalValue": "Natural Daylight",
+                "category": "lighting",
+                "transformedTo": "Natural daylight"
+              },
+              {
+                "start": 388,
+                "end": 389,
+                "fieldId": "depth_of_field",
+                "fieldLabel": "Depth Of Field",
+                "originalValue": "3",
+                "category": "technical",
+                "transformedTo": "3"
+              }
+            ]
+          }
+        },
+        "duration": 11950
+      }
+    },
+    "finalOutput": {
+      "nativePrompt": "A professional photography capture of a domestic shorthair with a solid coat, sitting quietly in the soft atmosphere of a cozy living room. The cat's cute expression is rendered with clarity, its eyes meeting the lens from an eye level perspective that creates an intimate, engaging connection. Natural daylight illuminates the scene, highlighting the fine texture of the coat, while the 3 ensures the surrounding home environment recedes into a soft, creamy bokeh",
+      "englishPrompt": "A professional photography capture of a domestic shorthair with a solid coat, sitting quietly in the soft atmosphere of a cozy living room. The cat's cute expression is rendered with clarity, its eyes meeting the lens from an eye level perspective that creates an intimate, engaging connection. Natural daylight illuminates the scene, highlighting the fine texture of the coat, while the 3 ensures the surrounding home environment recedes into a soft, creamy bokeh"
+    }
+  },
+  {
+    "testCaseId": "test_case_2_long",
+    "testCaseName": "超长 Prompt",
+    "version": "baseline",
+    "timestamp": "2026-01-13T21:37:53.524Z",
+    "stages": {
+      "stage1_intent": {
+        "success": true,
+        "data": {
+          "context": "Otaku-style Mirror Selfie Photography",
+          "followUpQuestion": null,
+          "fields": [
+            {
+              "id": "exposure_compensation",
+              "type": "slider",
+              "label": "Exposure Compensation",
+              "isAdvanced": false,
+              "multiSelect": false,
+              "defaultValue": -0.3,
+              "min": -2,
+              "max": 2,
+              "step": 0.1,
+              "minLabel": "Darker",
+              "maxLabel": "Brighter",
+              "source": "user_constraint"
+            },
+            {
+              "id": "focal_length",
+              "type": "text",
+              "label": "Focal Length",
+              "isAdvanced": true,
+              "multiSelect": false,
+              "defaultValue": "26mm",
+              "source": "user_constraint"
+            },
+            {
+              "id": "aperture",
+              "type": "text",
+              "label": "Aperture (f-stop)",
+              "isAdvanced": true,
+              "multiSelect": false,
+              "defaultValue": "f/1.8",
+              "source": "user_constraint"
+            },
+            {
+              "id": "outfit_top",
+              "type": "select",
+              "label": "Top Outfit Choice",
+              "isAdvanced": false,
+              "multiSelect": false,
+              "defaultValue": "light blue cropped knit cardigan, top two buttons fastened, blue French-style bra faintly visible",
+              "options": [
+                "light blue cropped knit cardigan, top two buttons fastened, blue French-style bra faintly visible",
+                "Oversized baby blue hoodie with cat ears",
+                "White and blue striped crop top with lace trim",
+                "Periwinkle off-shoulder knit sweater",
+                "Sky blue ribbed camisole with silk texture",
+                "Pale blue school uniform shirt, unbuttoned collar",
+                "Navy blue oversized graphic tee with anime print",
+                "Blue lace-trimmed tank top",
+                "Soft blue button-up blouse, tied at waist",
+                "Denim jacket over a blue crop top"
+              ],
+              "source": "creative_param"
+            },
+            {
+              "id": "outfit_bottom",
+              "type": "select",
+              "label": "Bottom Outfit Choice",
+              "isAdvanced": false,
+              "multiSelect": false,
+              "defaultValue": "denim ultra-short shorts with blue satin ribbon bows on hips",
+              "options": [
+                "denim ultra-short shorts with blue satin ribbon bows on hips",
+                "Pleated baby blue mini skirt",
+                "High-waisted denim shorts with frayed edges",
+                "Frilly blue bloomers with white lace",
+                "Navy blue cargo shorts",
+                "Blue and white checkered tennis skirt",
+                "Light wash denim micro-skirt",
+                "White shorts with blue floral patterns",
+                "Blue satin pajama shorts",
+                "Distressed denim shorts with ribbon laces"
+              ],
+              "source": "creative_param"
+            },
+            {
+              "id": "hairstyle",
+              "type": "select",
+              "label": "Hairstyle",
+              "isAdvanced": false,
+              "multiSelect": false,
+              "defaultValue": "waist-length straight medium brown hair with slightly curled ends",
+              "options": [
+                "waist-length straight medium brown hair with slightly curled ends",
+                "Twin tails with blue ribbon bows",
+                "Messy bun with loose strands and blue clips",
+                "Straight bob with blunt bangs",
+                "Long wavy hair with blue highlights",
+                "Double braids with blue elastic bands",
+                "High ponytail with a blue scrunchie",
+                "Shoulder-length hair with inner blue dye",
+                "Loose waves with a cat-ear headband",
+                "Half-up half-down style with a blue bow"
+              ],
+              "source": "creative_param"
+            },
+            {
+              "id": "background_theme",
+              "type": "select",
+              "label": "Room Background Theme",
+              "isAdvanced": false,
+              "multiSelect": false,
+              "defaultValue": "otaku computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp",
+              "options": [
+                "otaku computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp",
+                "Retro arcade-inspired room with blue neon accents",
+                "Minimalist tech workstation with monochromatic blue hardware",
+                "Cozy bedroom with floor-to-ceiling manga shelves and blue LED strips",
+                "High-tech gaming setup with triple monitors and blue liquid cooling",
+                "Lo-fi aesthetic study space with blue stationery and plants",
+                "Cyberpunk-themed tech corner with glowing blue cables",
+                "Pastel-colored plushie-filled desk with blue accessories",
+                "Japanese-style room with modern blue PC setup",
+                "Streamer-style room with blue ring light and acoustic panels"
+              ],
+              "source": "creative_param"
+            },
+            {
+              "id": "color_palette",
+              "type": "select",
+              "label": "Color Palette",
+              "isAdvanced": false,
+              "multiSelect": false,
+              "defaultValue": "shades of blue (baby blue, sky blue, periwinkle), no pink or magenta",
+              "options": [
+                "shades of blue (baby blue, sky blue, periwinkle), no pink or magenta",
+                "Monochrome Blue (Navy to Powder Blue)",
+                "Blue and White Minimalist",
+                "Cool Cyan and Electric Blue",
+                "Pastel Blue and Silver",
+                "Deep Ocean Blue and Teal",
+                "Blue and Soft Gray",
+                "Frozen Aesthetic (Ice Blue and White)",
+                "Midnight Blue and Periwinkle",
+                "Blue and Pale Yellow Accents"
+              ],
+              "source": "creative_param"
+            },
+            {
+              "id": "camera_angle",
+              "type": "select",
+              "label": "Camera Angle",
+              "isAdvanced": true,
+              "multiSelect": false,
+              "defaultValue": "High Angle",
+              "options": [
+                "Eye Level",
+                "Low Angle",
+                "High Angle",
+                "Dutch Angle",
+                "Bird's Eye",
+                "Worm's Eye",
+                "Over-the-shoulder",
+                "Close-up",
+                "Wide Shot",
+                "Profile"
+              ],
+              "source": "expanded"
+            },
+            {
+              "id": "depth_of_field",
+              "type": "slider",
+              "label": "Depth of Field",
+              "isAdvanced": true,
+              "multiSelect": false,
+              "defaultValue": 10,
+              "min": 1,
+              "max": 10,
+              "step": 1,
+              "minLabel": "Shallow (Bokeh)",
+              "maxLabel": "Deep (Sharp)",
+              "source": "expanded"
+            },
+            {
+              "id": "lighting_style",
+              "type": "select",
+              "label": "Lighting Style",
+              "isAdvanced": true,
+              "multiSelect": false,
+              "defaultValue": "soft diffused daylight from left window through sheer curtains, 5200K",
+              "options": [
+                "soft diffused daylight from left window through sheer curtains, 5200K",
+                "Natural Daylight",
+                "Golden Hour",
+                "Blue Hour",
+                "Studio Softbox",
+                "Dramatic Rim Light",
+                "Neon/Cyberpunk",
+                "Overcast Diffused",
+                "Candlelight",
+                "Moonlight"
+              ],
+              "source": "expanded"
+            }
+          ],
+          "preservedDetails": [
+            "25-year-old East Asian woman",
+            "slim body with defined waist",
+            "blue mascot phone case",
+            "three anime figures",
+            "pagoda poster",
+            "cat-shaped desk lamp",
+            "originally pink elements replaced with blue",
+            "slight contrapposto, torso leaning back, holding smartphone in front of face",
+            "blue and white horizontal striped over-the-knee socks",
+            "no artificial blur, no beauty filters, no CGI feel"
+          ],
+          "imageProcessingInstructions": [],
+          "internalSignals": {
+            "primaryMood": "cozy and tech-oriented",
+            "visualComplexity": "complex",
+            "detectedSubjectType": "person"
+          },
+          "primaryIntent": {
+            "phrase": "Otaku-style Mirror Selfie",
+            "category": "aesthetic",
+            "confidence": 1
+          },
+          "extractedRatio": "1:1",
+          "contentCategory": "photography",
+          "styleHints": [
+            "otaku-style",
+            "mirror selfie",
+            "natural photography",
+            "blue aesthetic",
+            "Y2K-adjacent"
+          ]
+        },
+        "duration": 36993
+      },
+      "stage2_field": {
+        "success": true,
+        "data": {
+          "core": {
+            "subject": "A 25-year-old East",
+            "action": ""
+          },
+          "narrative_params": {
+            "exposure_compensation": {
+              "value": "-0.3",
+              "strength": 0.7
+            },
+            "focal_length": {
+              "value": "26mm",
+              "strength": 0.7
+            },
+            "aperture": {
+              "value": "f/1.8",
+              "strength": 0.7
+            },
+            "outfit_top": {
+              "value": "light blue cropped knit cardigan, top two buttons fastened, blue French-style bra faintly visible",
+              "strength": 0.7
+            },
+            "outfit_bottom": {
+              "value": "denim ultra-short shorts with blue satin ribbon bows on hips",
+              "strength": 0.7
+            },
+            "hairstyle": {
+              "value": "waist-length straight medium brown hair with slightly curled ends",
+              "strength": 0.7
+            },
+            "background_theme": {
+              "value": "otaku computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp",
+              "strength": 0.7
+            },
+            "color_palette": {
+              "value": "shades of blue (baby blue, sky blue, periwinkle), no pink or magenta",
+              "strength": 0.7
+            },
+            "camera_angle": {
+              "value": "High Angle",
+              "strength": 0.7
+            },
+            "depth_of_field": {
+              "value": "10",
+              "strength": 0.7
+            },
+            "lighting_style": {
+              "value": "soft diffused daylight from left window through sheer curtains, 5200K",
+              "strength": 0.7
+            }
+          },
+          "content_category": "photography",
+          "style_hints": [
+            "otaku-style",
+            "mirror selfie",
+            "natural photography",
+            "blue aesthetic",
+            "Y2K-adjacent"
+          ],
+          "primary_intent": {
+            "phrase": "Otaku-style Mirror Selfie",
+            "category": "aesthetic",
+            "confidence": 1
+          },
+          "internal_signals": {
+            "primaryMood": "cozy and tech-oriented",
+            "visualComplexity": "complex",
+            "detectedSubjectType": "person"
+          },
+          "image_processing_instructions": []
+        },
+        "duration": 1
+      },
+      "stage3_compiler": {
+        "success": true,
+        "data": {
+          "native": "An Otaku-style Mirror Selfie captures a 25-year-old East Asian woman from a high angle, her reflection framed within the curated sanctuary of her bedroom. She is styled in a light blue cropped knit cardigan with only the top two buttons fastened, allowing a blue French-style bra to be faintly visible beneath the knit. This is paired with denim ultra-short shorts featuring blue satin ribbon bows on the hips, while her waist-length straight medium brown hair falls in elegant lines with slightly curled ends. \n\nThe otaku computer corner behind her provides a rich narrative of her interests, featuring a white desk topped with a monitor with blue wallpaper, a mechanical keyboard, and a blue desk mat. A PC tower with blue lighting glows softly near a collection of anime figures, a pagoda poster, and a whimsical cat-shaped desk lamp. The entire scene adheres to a strict shades of blue aesthetic, incorporating baby blue and periwinkle while ensuring no pink or magenta disrupts the theme. \n\nThe image is captured with the naturalism of a smartphone, utilizing a 26mm perspective and an f/1.8 that provides a 10 to keep the subject and her environment in meaningful focus. Soft diffused daylight at 5200K filters through sheer curtains from a window to the left, while a slight -0.3 adds a touch of moody realism to this Y2K-adjacent composition. The final shot stands as an authentic, high-confidence Otaku-style Mirror Selfie",
+          "english": "An Otaku-style Mirror Selfie captures a 25-year-old East Asian woman from a high angle, her reflection framed within the curated sanctuary of her bedroom. She is styled in a light blue cropped knit cardigan with only the top two buttons fastened, allowing a blue French-style bra to be faintly visible beneath the knit. This is paired with denim ultra-short shorts featuring blue satin ribbon bows on the hips, while her waist-length straight medium brown hair falls in elegant lines with slightly curled ends. \n\nThe otaku computer corner behind her provides a rich narrative of her interests, featuring a white desk topped with a monitor with blue wallpaper, a mechanical keyboard, and a blue desk mat. A PC tower with blue lighting glows softly near a collection of anime figures, a pagoda poster, and a whimsical cat-shaped desk lamp. The entire scene adheres to a strict shades of blue aesthetic, incorporating baby blue and periwinkle while ensuring no pink or magenta disrupts the theme. \n\nThe image is captured with the naturalism of a smartphone, utilizing a 26mm perspective and an f/1.8 that provides a 10 to keep the subject and her environment in meaningful focus. Soft diffused daylight at 5200K filters through sheer curtains from a window to the left, while a slight -0.3 adds a touch of moody realism to this Y2K-adjacent composition. The final shot stands as an authentic, high-confidence Otaku-style Mirror Selfie",
+          "detectedLang": "English",
+          "highlights": {
+            "native": [
+              {
+                "start": 3,
+                "end": 28,
+                "fieldId": "primary_intent",
+                "fieldLabel": "Primary Intent",
+                "originalValue": "primary_intent",
+                "category": "technical",
+                "transformedTo": "Otaku-style Mirror Selfie"
+              },
+              {
+                "start": 76,
+                "end": 86,
+                "fieldId": "camera_angle",
+                "fieldLabel": "Camera Angle",
+                "originalValue": "High Angle",
+                "category": "technical",
+                "transformedTo": "high angle"
+              },
+              {
+                "start": 174,
+                "end": 206,
+                "fieldId": "outfit_top",
+                "fieldLabel": "Outfit Top",
+                "originalValue": "light blue cropped knit cardigan, top two buttons fastened, blue French-style bra faintly visible",
+                "category": "technical",
+                "transformedTo": "light blue cropped knit cardigan"
+              },
+              {
+                "start": 258,
+                "end": 279,
+                "fieldId": "outfit_top",
+                "fieldLabel": "Outfit Top",
+                "originalValue": "light blue cropped knit cardigan, top two buttons fastened, blue French-style bra faintly visible",
+                "category": "technical",
+                "transformedTo": "blue French-style bra"
+              },
+              {
+                "start": 340,
+                "end": 409,
+                "fieldId": "outfit_bottom",
+                "fieldLabel": "Outfit Bottom",
+                "originalValue": "denim ultra-short shorts with blue satin ribbon bows on hips",
+                "category": "technical",
+                "transformedTo": "denim ultra-short shorts featuring blue satin ribbon bows on the hips"
+              },
+              {
+                "start": 421,
+                "end": 460,
+                "fieldId": "hairstyle",
+                "fieldLabel": "Hairstyle",
+                "originalValue": "waist-length straight medium brown hair with slightly curled ends",
+                "category": "technical",
+                "transformedTo": "waist-length straight medium brown hair"
+              },
+              {
+                "start": 489,
+                "end": 509,
+                "fieldId": "hairstyle",
+                "fieldLabel": "Hairstyle",
+                "originalValue": "waist-length straight medium brown hair with slightly curled ends",
+                "category": "technical",
+                "transformedTo": "slightly curled ends"
+              },
+              {
+                "start": 517,
+                "end": 538,
+                "fieldId": "background_theme",
+                "fieldLabel": "Background Theme",
+                "originalValue": "otaku computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp",
+                "category": "environment",
+                "transformedTo": "otaku computer corner"
+              },
+              {
+                "start": 606,
+                "end": 616,
+                "fieldId": "background_theme",
+                "fieldLabel": "Background Theme",
+                "originalValue": "otaku computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp",
+                "category": "environment",
+                "transformedTo": "white desk"
+              },
+              {
+                "start": 631,
+                "end": 658,
+                "fieldId": "background_theme",
+                "fieldLabel": "Background Theme",
+                "originalValue": "otaku computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp",
+                "category": "environment",
+                "transformedTo": "monitor with blue wallpaper"
+              },
+              {
+                "start": 662,
+                "end": 681,
+                "fieldId": "background_theme",
+                "fieldLabel": "Background Theme",
+                "originalValue": "otaku computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp",
+                "category": "environment",
+                "transformedTo": "mechanical keyboard"
+              },
+              {
+                "start": 689,
+                "end": 702,
+                "fieldId": "background_theme",
+                "fieldLabel": "Background Theme",
+                "originalValue": "otaku computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp",
+                "category": "environment",
+                "transformedTo": "blue desk mat"
+              },
+              {
+                "start": 706,
+                "end": 733,
+                "fieldId": "background_theme",
+                "fieldLabel": "Background Theme",
+                "originalValue": "otaku computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp",
+                "category": "environment",
+                "transformedTo": "PC tower with blue lighting"
+              },
+              {
+                "start": 768,
+                "end": 781,
+                "fieldId": "background_theme",
+                "fieldLabel": "Background Theme",
+                "originalValue": "otaku computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp",
+                "category": "environment",
+                "transformedTo": "anime figures"
+              },
+              {
+                "start": 785,
+                "end": 798,
+                "fieldId": "background_theme",
+                "fieldLabel": "Background Theme",
+                "originalValue": "otaku computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp",
+                "category": "environment",
+                "transformedTo": "pagoda poster"
+              },
+              {
+                "start": 816,
+                "end": 836,
+                "fieldId": "background_theme",
+                "fieldLabel": "Background Theme",
+                "originalValue": "otaku computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp",
+                "category": "environment",
+                "transformedTo": "cat-shaped desk lamp"
+              },
+              {
+                "start": 875,
+                "end": 889,
+                "fieldId": "color_palette",
+                "fieldLabel": "Color Palette",
+                "originalValue": "shades of blue (baby blue, sky blue, periwinkle), no pink or magenta",
+                "category": "technical",
+                "transformedTo": "shades of blue"
+              },
+              {
+                "start": 1067,
+                "end": 1071,
+                "fieldId": "focal_length",
+                "fieldLabel": "Focal Length",
+                "originalValue": "26mm",
+                "category": "technical",
+                "transformedTo": "26mm"
+              },
+              {
+                "start": 1091,
+                "end": 1096,
+                "fieldId": "aperture",
+                "fieldLabel": "Aperture",
+                "originalValue": "f/1.8",
+                "category": "technical",
+                "transformedTo": "f/1.8"
+              },
+              {
+                "start": 1113,
+                "end": 1115,
+                "fieldId": "depth_of_field",
+                "fieldLabel": "Depth Of Field",
+                "originalValue": "10",
+                "category": "technical",
+                "transformedTo": "10"
+              },
+              {
+                "start": 1177,
+                "end": 1208,
+                "fieldId": "lighting_style",
+                "fieldLabel": "Lighting Style",
+                "originalValue": "soft diffused daylight from left window through sheer curtains, 5200K",
+                "category": "lighting",
+                "transformedTo": "Soft diffused daylight at 5200K"
+              },
+              {
+                "start": 1225,
+                "end": 1239,
+                "fieldId": "lighting_style",
+                "fieldLabel": "Lighting Style",
+                "originalValue": "soft diffused daylight from left window through sheer curtains, 5200K",
+                "category": "lighting",
+                "transformedTo": "sheer curtains"
+              },
+              {
+                "start": 1282,
+                "end": 1286,
+                "fieldId": "exposure_compensation",
+                "fieldLabel": "Exposure Compensation",
+                "originalValue": "-0.3",
+                "category": "technical",
+                "transformedTo": "-0.3"
+              },
+              {
+                "start": 1406,
+                "end": 1431,
+                "fieldId": "primary_intent",
+                "fieldLabel": "Primary Intent",
+                "originalValue": "primary_intent",
+                "category": "technical",
+                "transformedTo": "Otaku-style Mirror Selfie"
+              }
+            ],
+            "english": [
+              {
+                "start": 3,
+                "end": 28,
+                "fieldId": "primary_intent",
+                "fieldLabel": "Primary Intent",
+                "originalValue": "primary_intent",
+                "category": "technical",
+                "transformedTo": "Otaku-style Mirror Selfie"
+              },
+              {
+                "start": 76,
+                "end": 86,
+                "fieldId": "camera_angle",
+                "fieldLabel": "Camera Angle",
+                "originalValue": "High Angle",
+                "category": "technical",
+                "transformedTo": "high angle"
+              },
+              {
+                "start": 174,
+                "end": 206,
+                "fieldId": "outfit_top",
+                "fieldLabel": "Outfit Top",
+                "originalValue": "light blue cropped knit cardigan, top two buttons fastened, blue French-style bra faintly visible",
+                "category": "technical",
+                "transformedTo": "light blue cropped knit cardigan"
+              },
+              {
+                "start": 258,
+                "end": 279,
+                "fieldId": "outfit_top",
+                "fieldLabel": "Outfit Top",
+                "originalValue": "light blue cropped knit cardigan, top two buttons fastened, blue French-style bra faintly visible",
+                "category": "technical",
+                "transformedTo": "blue French-style bra"
+              },
+              {
+                "start": 340,
+                "end": 409,
+                "fieldId": "outfit_bottom",
+                "fieldLabel": "Outfit Bottom",
+                "originalValue": "denim ultra-short shorts with blue satin ribbon bows on hips",
+                "category": "technical",
+                "transformedTo": "denim ultra-short shorts featuring blue satin ribbon bows on the hips"
+              },
+              {
+                "start": 421,
+                "end": 460,
+                "fieldId": "hairstyle",
+                "fieldLabel": "Hairstyle",
+                "originalValue": "waist-length straight medium brown hair with slightly curled ends",
+                "category": "technical",
+                "transformedTo": "waist-length straight medium brown hair"
+              },
+              {
+                "start": 489,
+                "end": 509,
+                "fieldId": "hairstyle",
+                "fieldLabel": "Hairstyle",
+                "originalValue": "waist-length straight medium brown hair with slightly curled ends",
+                "category": "technical",
+                "transformedTo": "slightly curled ends"
+              },
+              {
+                "start": 517,
+                "end": 538,
+                "fieldId": "background_theme",
+                "fieldLabel": "Background Theme",
+                "originalValue": "otaku computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp",
+                "category": "environment",
+                "transformedTo": "otaku computer corner"
+              },
+              {
+                "start": 606,
+                "end": 616,
+                "fieldId": "background_theme",
+                "fieldLabel": "Background Theme",
+                "originalValue": "otaku computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp",
+                "category": "environment",
+                "transformedTo": "white desk"
+              },
+              {
+                "start": 631,
+                "end": 658,
+                "fieldId": "background_theme",
+                "fieldLabel": "Background Theme",
+                "originalValue": "otaku computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp",
+                "category": "environment",
+                "transformedTo": "monitor with blue wallpaper"
+              },
+              {
+                "start": 662,
+                "end": 681,
+                "fieldId": "background_theme",
+                "fieldLabel": "Background Theme",
+                "originalValue": "otaku computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp",
+                "category": "environment",
+                "transformedTo": "mechanical keyboard"
+              },
+              {
+                "start": 689,
+                "end": 702,
+                "fieldId": "background_theme",
+                "fieldLabel": "Background Theme",
+                "originalValue": "otaku computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp",
+                "category": "environment",
+                "transformedTo": "blue desk mat"
+              },
+              {
+                "start": 706,
+                "end": 733,
+                "fieldId": "background_theme",
+                "fieldLabel": "Background Theme",
+                "originalValue": "otaku computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp",
+                "category": "environment",
+                "transformedTo": "PC tower with blue lighting"
+              },
+              {
+                "start": 768,
+                "end": 781,
+                "fieldId": "background_theme",
+                "fieldLabel": "Background Theme",
+                "originalValue": "otaku computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp",
+                "category": "environment",
+                "transformedTo": "anime figures"
+              },
+              {
+                "start": 785,
+                "end": 798,
+                "fieldId": "background_theme",
+                "fieldLabel": "Background Theme",
+                "originalValue": "otaku computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp",
+                "category": "environment",
+                "transformedTo": "pagoda poster"
+              },
+              {
+                "start": 816,
+                "end": 836,
+                "fieldId": "background_theme",
+                "fieldLabel": "Background Theme",
+                "originalValue": "otaku computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp",
+                "category": "environment",
+                "transformedTo": "cat-shaped desk lamp"
+              },
+              {
+                "start": 875,
+                "end": 889,
+                "fieldId": "color_palette",
+                "fieldLabel": "Color Palette",
+                "originalValue": "shades of blue (baby blue, sky blue, periwinkle), no pink or magenta",
+                "category": "technical",
+                "transformedTo": "shades of blue"
+              },
+              {
+                "start": 1067,
+                "end": 1071,
+                "fieldId": "focal_length",
+                "fieldLabel": "Focal Length",
+                "originalValue": "26mm",
+                "category": "technical",
+                "transformedTo": "26mm"
+              },
+              {
+                "start": 1091,
+                "end": 1096,
+                "fieldId": "aperture",
+                "fieldLabel": "Aperture",
+                "originalValue": "f/1.8",
+                "category": "technical",
+                "transformedTo": "f/1.8"
+              },
+              {
+                "start": 1113,
+                "end": 1115,
+                "fieldId": "depth_of_field",
+                "fieldLabel": "Depth Of Field",
+                "originalValue": "10",
+                "category": "technical",
+                "transformedTo": "10"
+              },
+              {
+                "start": 1177,
+                "end": 1208,
+                "fieldId": "lighting_style",
+                "fieldLabel": "Lighting Style",
+                "originalValue": "soft diffused daylight from left window through sheer curtains, 5200K",
+                "category": "lighting",
+                "transformedTo": "Soft diffused daylight at 5200K"
+              },
+              {
+                "start": 1225,
+                "end": 1239,
+                "fieldId": "lighting_style",
+                "fieldLabel": "Lighting Style",
+                "originalValue": "soft diffused daylight from left window through sheer curtains, 5200K",
+                "category": "lighting",
+                "transformedTo": "sheer curtains"
+              },
+              {
+                "start": 1282,
+                "end": 1286,
+                "fieldId": "exposure_compensation",
+                "fieldLabel": "Exposure Compensation",
+                "originalValue": "-0.3",
+                "category": "technical",
+                "transformedTo": "-0.3"
+              },
+              {
+                "start": 1406,
+                "end": 1431,
+                "fieldId": "primary_intent",
+                "fieldLabel": "Primary Intent",
+                "originalValue": "primary_intent",
+                "category": "technical",
+                "transformedTo": "Otaku-style Mirror Selfie"
+              }
+            ]
+          }
+        },
+        "duration": 12809
+      }
+    },
+    "finalOutput": {
+      "nativePrompt": "An Otaku-style Mirror Selfie captures a 25-year-old East Asian woman from a high angle, her reflection framed within the curated sanctuary of her bedroom. She is styled in a light blue cropped knit cardigan with only the top two buttons fastened, allowing a blue French-style bra to be faintly visible beneath the knit. This is paired with denim ultra-short shorts featuring blue satin ribbon bows on the hips, while her waist-length straight medium brown hair falls in elegant lines with slightly curled ends. \n\nThe otaku computer corner behind her provides a rich narrative of her interests, featuring a white desk topped with a monitor with blue wallpaper, a mechanical keyboard, and a blue desk mat. A PC tower with blue lighting glows softly near a collection of anime figures, a pagoda poster, and a whimsical cat-shaped desk lamp. The entire scene adheres to a strict shades of blue aesthetic, incorporating baby blue and periwinkle while ensuring no pink or magenta disrupts the theme. \n\nThe image is captured with the naturalism of a smartphone, utilizing a 26mm perspective and an f/1.8 that provides a 10 to keep the subject and her environment in meaningful focus. Soft diffused daylight at 5200K filters through sheer curtains from a window to the left, while a slight -0.3 adds a touch of moody realism to this Y2K-adjacent composition. The final shot stands as an authentic, high-confidence Otaku-style Mirror Selfie",
+      "englishPrompt": "An Otaku-style Mirror Selfie captures a 25-year-old East Asian woman from a high angle, her reflection framed within the curated sanctuary of her bedroom. She is styled in a light blue cropped knit cardigan with only the top two buttons fastened, allowing a blue French-style bra to be faintly visible beneath the knit. This is paired with denim ultra-short shorts featuring blue satin ribbon bows on the hips, while her waist-length straight medium brown hair falls in elegant lines with slightly curled ends. \n\nThe otaku computer corner behind her provides a rich narrative of her interests, featuring a white desk topped with a monitor with blue wallpaper, a mechanical keyboard, and a blue desk mat. A PC tower with blue lighting glows softly near a collection of anime figures, a pagoda poster, and a whimsical cat-shaped desk lamp. The entire scene adheres to a strict shades of blue aesthetic, incorporating baby blue and periwinkle while ensuring no pink or magenta disrupts the theme. \n\nThe image is captured with the naturalism of a smartphone, utilizing a 26mm perspective and an f/1.8 that provides a 10 to keep the subject and her environment in meaningful focus. Soft diffused daylight at 5200K filters through sheer curtains from a window to the left, while a slight -0.3 adds a touch of moody realism to this Y2K-adjacent composition. The final shot stands as an authentic, high-confidence Otaku-style Mirror Selfie"
+    }
+  },
+  {
+    "testCaseId": "test_case_3_image",
+    "testCaseName": "带图片的测试用例（冲突检测）",
+    "version": "baseline",
+    "timestamp": "2026-01-13T21:38:45.329Z",
+    "stages": {
+      "stage1_intent": {
+        "success": true,
+        "data": {
+          "context": "Identity Transformation Portrait",
+          "followUpQuestion": null,
+          "fields": [
+            {
+              "id": "subject_identity",
+              "type": "select",
+              "label": "Should the portrait preserve the features from your photo or follow the text description?",
+              "isAdvanced": false,
+              "multiSelect": false,
+              "defaultValue": "Bearded Western woman, blonde hair",
+              "options": [
+                "Bearded Western woman, blonde hair",
+                "East Asian man, clean-shaven",
+                "Bearded East Asian man",
+                "Western woman, clean-shaven",
+                "Hybrid Western-Asian features, blonde beard",
+                "Blonde East Asian woman, clean-shaven",
+                "Western man, thick beard, blonde hair",
+                "East Asian man, blonde hair, clean-shaven",
+                "Bearded Western woman, short hair",
+                "Androgynous features, blonde hair, thick beard"
+              ],
+              "source": "ambiguity_resolution"
+            },
+            {
+              "id": "color_scheme",
+              "type": "select",
+              "label": "Would you like the final image to be in black and white like the photo or in color?",
+              "isAdvanced": false,
+              "multiSelect": false,
+              "defaultValue": "Black and white",
+              "options": [
+                "Black and white",
+                "Full color",
+                "Sepia tone",
+                "High-contrast monochrome",
+                "Muted vintage colors",
+                "Cyberpunk neon palette",
+                "Cool blue tones",
+                "Warm golden hour colors",
+                "Selective colorization",
+                "Film-noir aesthetic"
+              ],
+              "source": "ambiguity_resolution"
+            },
+            {
+              "id": "outfit_style",
+              "type": "select",
+              "label": "Outfit Style",
+              "isAdvanced": false,
+              "multiSelect": true,
+              "defaultValue": "Black trench coat",
+              "options": [
+                "Black trench coat",
+                "Leather motorcycle jacket",
+                "Classic wool overcoat",
+                "Hooded techwear parka",
+                "Denim jacket with fur collar",
+                "Sleek velvet blazer",
+                "Vintage bomber jacket",
+                "Distressed leather duster",
+                "Modern minimalist peacoat",
+                "Tailored charcoal suit jacket"
+              ],
+              "source": "creative_param"
+            },
+            {
+              "id": "lighting_style",
+              "type": "select",
+              "label": "Lighting Style",
+              "isAdvanced": false,
+              "multiSelect": true,
+              "defaultValue": "Cinematic side-lighting",
+              "options": [
+                "Cinematic side-lighting",
+                "Dramatic rim light",
+                "Urban neon glow",
+                "Soft streetlamp illumination",
+                "High-contrast chiaroscuro",
+                "Moody low-key lighting",
+                "Golden hour bokeh",
+                "Cold moonlight",
+                "Dynamic spotlighting",
+                "Diffused urban fog light"
+              ],
+              "source": "creative_param"
+            },
+            {
+              "id": "facelock_identity",
+              "type": "toggle",
+              "label": "Preserve Face Identity",
+              "isAdvanced": false,
+              "multiSelect": false,
+              "defaultValue": true,
+              "source": "image_derived"
+            },
+            {
+              "id": "face_similarity",
+              "type": "slider",
+              "label": "Face Similarity Strength",
+              "isAdvanced": true,
+              "multiSelect": false,
+              "defaultValue": 0.8,
+              "min": 0.5,
+              "max": 1,
+              "step": 0.05,
+              "minLabel": "Subtle Blend",
+              "maxLabel": "Exact Match",
+              "source": "image_derived"
+            },
+            {
+              "id": "camera_angle",
+              "type": "select",
+              "label": "Camera Angle",
+              "isAdvanced": true,
+              "multiSelect": false,
+              "defaultValue": "Eye Level",
+              "options": [
+                "Eye Level",
+                "Low Angle",
+                "High Angle",
+                "Dutch Angle",
+                "Bird's Eye",
+                "Worm's Eye",
+                "Over-the-shoulder",
+                "Close-up",
+                "Wide Shot",
+                "Profile"
+              ],
+              "source": "expanded"
+            },
+            {
+              "id": "depth_of_field",
+              "type": "slider",
+              "label": "Depth of Field",
+              "isAdvanced": true,
+              "multiSelect": false,
+              "defaultValue": 3,
+              "min": 1,
+              "max": 10,
+              "step": 1,
+              "minLabel": "Shallow (Bokeh)",
+              "maxLabel": "Deep (Sharp)",
+              "source": "expanded"
+            },
+            {
+              "id": "film_grain_intensity",
+              "type": "slider",
+              "label": "Film Grain Intensity",
+              "isAdvanced": true,
+              "multiSelect": false,
+              "defaultValue": 0.4,
+              "min": 0,
+              "max": 1,
+              "step": 0.1,
+              "minLabel": "Digital Clean",
+              "maxLabel": "Heavy Grit",
+              "source": "expanded"
+            }
+          ],
+          "preservedDetails": [
+            "urban night street background",
+            "cinematic side-lighting",
+            "bokeh background lights",
+            "wearing a black trench coat",
+            "film grain texture",
+            "A black and white cinematic portrait of an East Asian man with short black hair and a clean-shaven face. He is wearing a dark trench coat against a blurred urban night background with bokeh lights."
+          ],
+          "imageProcessingInstructions": [
+            {
+              "imageIndex": 0,
+              "role": "face_source",
+              "instruction": "Use the composition, lighting, and background from this image. Transform the subject's identity to match the text prompt while maintaining the cinematic black and white aesthetic."
+            }
+          ],
+          "internalSignals": {
+            "referenceIntent": "face_swap",
+            "primaryMood": "moody",
+            "visualComplexity": "focused",
+            "detectedSubjectType": "person"
+          },
+          "primaryIntent": null,
+          "extractedRatio": null,
+          "contentCategory": "photography",
+          "styleHints": [
+            "cinematic",
+            "black and white",
+            "urban night",
+            "bokeh",
+            "film grain"
+          ],
+          "imageDescriptions": [
+            "A black and white cinematic portrait of an East Asian man with short black hair and a clean-shaven face. He is wearing a dark trench coat against a blurred urban night background with bokeh lights."
+          ]
+        },
+        "duration": 31736
+      },
+      "stage2_field": {
+        "success": true,
+        "data": {
+          "core": {
+            "subject": "Bearded Western woman, blonde hair",
+            "action": ""
+          },
+          "narrative_params": {
+            "color_scheme": {
+              "value": "Black and white",
+              "strength": 0.7
+            },
+            "outfit_style": {
+              "value": "Black trench coat",
+              "strength": 0.7
+            },
+            "lighting_style": {
+              "value": "Cinematic side-lighting",
+              "strength": 0.7
+            },
+            "face_similarity": {
+              "value": "0.8",
+              "strength": 0.7
+            },
+            "camera_angle": {
+              "value": "Eye Level",
+              "strength": 0.7
+            },
+            "depth_of_field": {
+              "value": "3",
+              "strength": 0.7
+            },
+            "film_grain_intensity": {
+              "value": "0.4",
+              "strength": 0.7
+            }
+          },
+          "content_category": "photography",
+          "style_hints": [
+            "cinematic",
+            "black and white",
+            "urban night",
+            "bokeh",
+            "film grain"
+          ],
+          "primary_intent": null,
+          "image_descriptions": [
+            "A black and white cinematic portrait of an East Asian man with short black hair and a clean-shaven face. He is wearing a dark trench coat against a blurred urban night background with bokeh lights."
+          ],
+          "internal_signals": {
+            "referenceIntent": "face_swap",
+            "primaryMood": "moody",
+            "visualComplexity": "focused",
+            "detectedSubjectType": "person"
+          },
+          "image_processing_instructions": [
+            {
+              "imageIndex": 0,
+              "role": "face_source",
+              "instruction": "Use the composition, lighting, and background from this image. Transform the subject's identity to match the text prompt while maintaining the cinematic black and white aesthetic."
+            }
+          ]
+        },
+        "duration": 0
+      },
+      "stage3_compiler": {
+        "success": true,
+        "data": {
+          "native": "A cinematic black and white portrait of a bearded Western woman with blonde hair, adopting the composition, lighting, and urban night background from the provided image. Clad in a black trench coat, she stands amidst the city shadows as cinematic side-lighting carves her profile with high-contrast drama. The eye level perspective captures her expression with a 0.8 fidelity, while a 3 dissolves the distant street lamps into a soft, glowing bokeh. A subtle 0.4 permeates the frame, grounding the photography in a gritty, filmic aesthetic that preserves the mood of the original reference while transforming the identity of the subject",
+          "english": "A cinematic black and white portrait of a bearded Western woman with blonde hair, adopting the composition, lighting, and urban night background from the provided image. Clad in a black trench coat, she stands amidst the city shadows as cinematic side-lighting carves her profile with high-contrast drama. The eye level perspective captures her expression with a 0.8 fidelity, while a 3 dissolves the distant street lamps into a soft, glowing bokeh. A subtle 0.4 permeates the frame, grounding the photography in a gritty, filmic aesthetic that preserves the mood of the original reference while transforming the identity of the subject",
+          "detectedLang": "English",
+          "highlights": {
+            "native": [
+              {
+                "start": 12,
+                "end": 27,
+                "fieldId": "color_scheme",
+                "fieldLabel": "Color Scheme",
+                "originalValue": "Black and white",
+                "category": "technical",
+                "transformedTo": "black and white"
+              },
+              {
+                "start": 42,
+                "end": 63,
+                "fieldId": "subject",
+                "fieldLabel": "Subject",
+                "originalValue": "subject",
+                "category": "subject",
+                "transformedTo": "bearded Western woman"
+              },
+              {
+                "start": 69,
+                "end": 80,
+                "fieldId": "hair_style",
+                "fieldLabel": "Hair Style",
+                "originalValue": "hair_style",
+                "category": "technical",
+                "transformedTo": "blonde hair"
+              },
+              {
+                "start": 150,
+                "end": 168,
+                "fieldId": "reference",
+                "fieldLabel": "Reference",
+                "originalValue": "reference",
+                "category": "technical",
+                "transformedTo": "the provided image"
+              },
+              {
+                "start": 180,
+                "end": 197,
+                "fieldId": "outfit_style",
+                "fieldLabel": "Outfit Style",
+                "originalValue": "Black trench coat",
+                "category": "technical",
+                "transformedTo": "black trench coat"
+              },
+              {
+                "start": 237,
+                "end": 260,
+                "fieldId": "lighting_style",
+                "fieldLabel": "Lighting Style",
+                "originalValue": "Cinematic side-lighting",
+                "category": "lighting",
+                "transformedTo": "cinematic side-lighting"
+              },
+              {
+                "start": 310,
+                "end": 319,
+                "fieldId": "camera_angle",
+                "fieldLabel": "Camera Angle",
+                "originalValue": "Eye Level",
+                "category": "technical",
+                "transformedTo": "eye level"
+              },
+              {
+                "start": 363,
+                "end": 366,
+                "fieldId": "face_similarity",
+                "fieldLabel": "Face Similarity",
+                "originalValue": "0.8",
+                "category": "technical",
+                "transformedTo": "0.8"
+              },
+              {
+                "start": 385,
+                "end": 386,
+                "fieldId": "depth_of_field",
+                "fieldLabel": "Depth Of Field",
+                "originalValue": "3",
+                "category": "technical",
+                "transformedTo": "3"
+              },
+              {
+                "start": 459,
+                "end": 462,
+                "fieldId": "film_grain_intensity",
+                "fieldLabel": "Film Grain Intensity",
+                "originalValue": "0.4",
+                "category": "technical",
+                "transformedTo": "0.4"
+              }
+            ],
+            "english": [
+              {
+                "start": 12,
+                "end": 27,
+                "fieldId": "color_scheme",
+                "fieldLabel": "Color Scheme",
+                "originalValue": "Black and white",
+                "category": "technical",
+                "transformedTo": "black and white"
+              },
+              {
+                "start": 42,
+                "end": 63,
+                "fieldId": "subject",
+                "fieldLabel": "Subject",
+                "originalValue": "subject",
+                "category": "subject",
+                "transformedTo": "bearded Western woman"
+              },
+              {
+                "start": 69,
+                "end": 80,
+                "fieldId": "hair_style",
+                "fieldLabel": "Hair Style",
+                "originalValue": "hair_style",
+                "category": "technical",
+                "transformedTo": "blonde hair"
+              },
+              {
+                "start": 150,
+                "end": 168,
+                "fieldId": "reference",
+                "fieldLabel": "Reference",
+                "originalValue": "reference",
+                "category": "technical",
+                "transformedTo": "the provided image"
+              },
+              {
+                "start": 180,
+                "end": 197,
+                "fieldId": "outfit_style",
+                "fieldLabel": "Outfit Style",
+                "originalValue": "Black trench coat",
+                "category": "technical",
+                "transformedTo": "black trench coat"
+              },
+              {
+                "start": 237,
+                "end": 260,
+                "fieldId": "lighting_style",
+                "fieldLabel": "Lighting Style",
+                "originalValue": "Cinematic side-lighting",
+                "category": "lighting",
+                "transformedTo": "cinematic side-lighting"
+              },
+              {
+                "start": 310,
+                "end": 319,
+                "fieldId": "camera_angle",
+                "fieldLabel": "Camera Angle",
+                "originalValue": "Eye Level",
+                "category": "technical",
+                "transformedTo": "eye level"
+              },
+              {
+                "start": 363,
+                "end": 366,
+                "fieldId": "face_similarity",
+                "fieldLabel": "Face Similarity",
+                "originalValue": "0.8",
+                "category": "technical",
+                "transformedTo": "0.8"
+              },
+              {
+                "start": 385,
+                "end": 386,
+                "fieldId": "depth_of_field",
+                "fieldLabel": "Depth Of Field",
+                "originalValue": "3",
+                "category": "technical",
+                "transformedTo": "3"
+              },
+              {
+                "start": 459,
+                "end": 462,
+                "fieldId": "film_grain_intensity",
+                "fieldLabel": "Film Grain Intensity",
+                "originalValue": "0.4",
+                "category": "technical",
+                "transformedTo": "0.4"
+              }
+            ]
+          }
+        },
+        "duration": 8787
+      }
+    },
+    "finalOutput": {
+      "nativePrompt": "A cinematic black and white portrait of a bearded Western woman with blonde hair, adopting the composition, lighting, and urban night background from the provided image. Clad in a black trench coat, she stands amidst the city shadows as cinematic side-lighting carves her profile with high-contrast drama. The eye level perspective captures her expression with a 0.8 fidelity, while a 3 dissolves the distant street lamps into a soft, glowing bokeh. A subtle 0.4 permeates the frame, grounding the photography in a gritty, filmic aesthetic that preserves the mood of the original reference while transforming the identity of the subject",
+      "englishPrompt": "A cinematic black and white portrait of a bearded Western woman with blonde hair, adopting the composition, lighting, and urban night background from the provided image. Clad in a black trench coat, she stands amidst the city shadows as cinematic side-lighting carves her profile with high-contrast drama. The eye level perspective captures her expression with a 0.8 fidelity, while a 3 dissolves the distant street lamps into a soft, glowing bokeh. A subtle 0.4 permeates the frame, grounding the photography in a gritty, filmic aesthetic that preserves the mood of the original reference while transforming the identity of the subject"
+    }
+  },
+  {
+    "testCaseId": "test_case_1_short",
+    "testCaseName": "超短内容",
+    "version": "optimized",
+    "timestamp": "2026-01-13T21:39:27.853Z",
+    "stages": {
+      "stage1_intent": {
+        "success": true,
+        "data": {
+          "context": "Cute Cat Portrait",
+          "followUpQuestion": null,
+          "fields": [
+            {
+              "id": "cat_expression",
+              "type": "select",
+              "label": "Cat Expression",
+              "isAdvanced": false,
+              "multiSelect": true,
+              "defaultValue": "cute",
+              "options": [
+                "cute",
+                "playful",
+                "sleepy",
+                "curious",
+                "grumpy",
+                "majestic",
+                "surprised",
+                "sneaky",
+                "yawning",
+                "determined"
+              ],
+              "source": "creative_param"
+            },
+            {
+              "id": "cat_breed",
+              "type": "select",
+              "label": "Cat Breed",
+              "isAdvanced": false,
+              "multiSelect": true,
+              "defaultValue": "Domestic Shorthair",
+              "options": [
+                "Domestic Shorthair",
+                "Persian",
+                "Maine Coon",
+                "Siamese",
+                "British Shorthair",
+                "Ragdoll",
+                "Bengal",
+                "Sphynx",
+                "Scottish Fold",
+                "Abyssinian"
+              ],
+              "source": "expanded"
+            },
+            {
+              "id": "fur_color_pattern",
+              "type": "select",
+              "label": "Fur Color and Pattern",
+              "isAdvanced": false,
+              "multiSelect": true,
+              "defaultValue": "Orange Tabby",
+              "options": [
+                "Orange Tabby",
+                "Solid White",
+                "Solid Black",
+                "Calico",
+                "Tuxedo",
+                "Grey Tabby",
+                "Tortoiseshell",
+                "Pointed (Siamese-style)",
+                "Cream",
+                "Blue-Grey"
+              ],
+              "source": "expanded"
+            },
+            {
+              "id": "cat_activity",
+              "type": "select",
+              "label": "Cat Activity",
+              "isAdvanced": false,
+              "multiSelect": true,
+              "defaultValue": "Looking at Camera",
+              "options": [
+                "Looking at Camera",
+                "Sitting Still",
+                "Chasing a Toy",
+                "Sleeping Curled Up",
+                "Peeking behind a corner",
+                "Stretching",
+                "Grooming",
+                "Pouncing",
+                "Eating",
+                "Walking gracefully"
+              ],
+              "source": "expanded"
+            },
+            {
+              "id": "environment",
+              "type": "select",
+              "label": "Environment",
+              "isAdvanced": false,
+              "multiSelect": true,
+              "defaultValue": "Sunny Windowsill",
+              "options": [
+                "Sunny Windowsill",
+                "Cozy Living Room",
+                "Garden Grass",
+                "Soft Blanket",
+                "Kitchen Counter",
+                "Cardboard Box",
+                "Cat Tree",
+                "Modern Apartment",
+                "Autumn Leaves",
+                "Wooden Porch"
+              ],
+              "source": "expanded"
+            },
+            {
+              "id": "lighting_style",
+              "type": "select",
+              "label": "Lighting Style",
+              "isAdvanced": true,
+              "multiSelect": false,
+              "defaultValue": "Natural Daylight",
+              "options": [
+                "Natural Daylight",
+                "Golden Hour",
+                "Soft Window Light",
+                "Studio Softbox",
+                "Dramatic Rim Light",
+                "Overcast Diffused",
+                "Candlelight",
+                "Warm Interior Lamps",
+                "Moonlight",
+                "High-Key Bright"
+              ],
+              "source": "expanded"
+            },
+            {
+              "id": "camera_angle",
+              "type": "select",
+              "label": "Camera Angle",
+              "isAdvanced": true,
+              "multiSelect": false,
+              "defaultValue": "Eye Level",
+              "options": [
+                "Eye Level",
+                "Low Angle",
+                "High Angle",
+                "Close-up",
+                "Wide Shot",
+                "Profile View",
+                "Bird's Eye",
+                "Worm's Eye",
+                "Macro Detail",
+                "Over-the-shoulder"
+              ],
+              "source": "expanded"
+            },
+            {
+              "id": "depth_of_field",
+              "type": "slider",
+              "label": "Depth of Field",
+              "isAdvanced": true,
+              "multiSelect": false,
+              "defaultValue": 3,
+              "min": 1,
+              "max": 10,
+              "step": 1,
+              "minLabel": "Shallow (Bokeh)",
+              "maxLabel": "Deep (Sharp)",
+              "source": "expanded"
+            }
+          ],
+          "preservedDetails": [],
+          "imageProcessingInstructions": [],
+          "internalSignals": {
+            "primaryMood": "playful",
+            "visualComplexity": "focused",
+            "detectedSubjectType": "other"
+          },
+          "primaryIntent": null,
+          "extractedRatio": null,
+          "contentCategory": "photography"
+        },
+        "duration": 23156
+      },
+      "stage2_field": {
+        "success": true,
+        "data": {
+          "core": {
+            "subject": "cute cat",
+            "action": ""
+          },
+          "narrative_params": {
+            "cat_expression": {
+              "value": "cute",
+              "strength": 0.7
+            },
+            "cat_breed": {
+              "value": "Domestic Shorthair",
+              "strength": 0.7
+            },
+            "fur_color_pattern": {
+              "value": "Orange Tabby",
+              "strength": 0.7
+            },
+            "cat_activity": {
+              "value": "Looking at Camera",
+              "strength": 0.7
+            },
+            "environment": {
+              "value": "Sunny Windowsill",
+              "strength": 0.7
+            },
+            "lighting_style": {
+              "value": "Natural Daylight",
+              "strength": 0.7
+            },
+            "camera_angle": {
+              "value": "Eye Level",
+              "strength": 0.7
+            },
+            "depth_of_field": {
+              "value": "3",
+              "strength": 0.7
+            }
+          },
+          "content_category": "photography",
+          "primary_intent": null,
+          "internal_signals": {
+            "primaryMood": "playful",
+            "visualComplexity": "focused",
+            "detectedSubjectType": "other"
+          },
+          "image_processing_instructions": []
+        },
+        "duration": 0
+      },
+      "stage3_compiler": {
+        "success": true,
+        "data": {
+          "native": "A photography of a Domestic Shorthair with a vibrant Orange Tabby coat, looking at camera with a cute and curious gaze. The cat is perched comfortably on a sunny windowsill as natural daylight pours in, highlighting the soft textures of its fur and creating a warm, inviting atmosphere. Captured at an eye level perspective, the composition utilizes a 3 setting to gently blur the background, ensuring the viewer's attention remains fixed on the cat's expressive face and delicate whiskers",
+          "english": "A photography of a Domestic Shorthair with a vibrant Orange Tabby coat, looking at camera with a cute and curious gaze. The cat is perched comfortably on a sunny windowsill as natural daylight pours in, highlighting the soft textures of its fur and creating a warm, inviting atmosphere. Captured at an eye level perspective, the composition utilizes a 3 setting to gently blur the background, ensuring the viewer's attention remains fixed on the cat's expressive face and delicate whiskers",
+          "detectedLang": "English",
+          "highlights": {
+            "native": [
+              {
+                "start": 19,
+                "end": 37,
+                "fieldId": "cat_breed",
+                "fieldLabel": "Cat Breed",
+                "originalValue": "Domestic Shorthair",
+                "category": "technical",
+                "transformedTo": "Domestic Shorthair"
+              },
+              {
+                "start": 53,
+                "end": 65,
+                "fieldId": "fur_color_pattern",
+                "fieldLabel": "Fur Color Pattern",
+                "originalValue": "Orange Tabby",
+                "category": "technical",
+                "transformedTo": "Orange Tabby"
+              },
+              {
+                "start": 72,
+                "end": 89,
+                "fieldId": "cat_activity",
+                "fieldLabel": "Cat Activity",
+                "originalValue": "Looking at Camera",
+                "category": "technical",
+                "transformedTo": "looking at camera"
+              },
+              {
+                "start": 97,
+                "end": 101,
+                "fieldId": "cat_expression",
+                "fieldLabel": "Cat Expression",
+                "originalValue": "cute",
+                "category": "technical",
+                "transformedTo": "cute"
+              },
+              {
+                "start": 156,
+                "end": 172,
+                "fieldId": "environment",
+                "fieldLabel": "Environment",
+                "originalValue": "Sunny Windowsill",
+                "category": "environment",
+                "transformedTo": "sunny windowsill"
+              },
+              {
+                "start": 176,
+                "end": 192,
+                "fieldId": "lighting_style",
+                "fieldLabel": "Lighting Style",
+                "originalValue": "Natural Daylight",
+                "category": "lighting",
+                "transformedTo": "natural daylight"
+              },
+              {
+                "start": 302,
+                "end": 311,
+                "fieldId": "camera_angle",
+                "fieldLabel": "Camera Angle",
+                "originalValue": "Eye Level",
+                "category": "technical",
+                "transformedTo": "eye level"
+              },
+              {
+                "start": 352,
+                "end": 353,
+                "fieldId": "depth_of_field",
+                "fieldLabel": "Depth Of Field",
+                "originalValue": "3",
+                "category": "technical",
+                "transformedTo": "3"
+              }
+            ],
+            "english": [
+              {
+                "start": 19,
+                "end": 37,
+                "fieldId": "cat_breed",
+                "fieldLabel": "Cat Breed",
+                "originalValue": "Domestic Shorthair",
+                "category": "technical",
+                "transformedTo": "Domestic Shorthair"
+              },
+              {
+                "start": 53,
+                "end": 65,
+                "fieldId": "fur_color_pattern",
+                "fieldLabel": "Fur Color Pattern",
+                "originalValue": "Orange Tabby",
+                "category": "technical",
+                "transformedTo": "Orange Tabby"
+              },
+              {
+                "start": 72,
+                "end": 89,
+                "fieldId": "cat_activity",
+                "fieldLabel": "Cat Activity",
+                "originalValue": "Looking at Camera",
+                "category": "technical",
+                "transformedTo": "looking at camera"
+              },
+              {
+                "start": 97,
+                "end": 101,
+                "fieldId": "cat_expression",
+                "fieldLabel": "Cat Expression",
+                "originalValue": "cute",
+                "category": "technical",
+                "transformedTo": "cute"
+              },
+              {
+                "start": 156,
+                "end": 172,
+                "fieldId": "environment",
+                "fieldLabel": "Environment",
+                "originalValue": "Sunny Windowsill",
+                "category": "environment",
+                "transformedTo": "sunny windowsill"
+              },
+              {
+                "start": 176,
+                "end": 192,
+                "fieldId": "lighting_style",
+                "fieldLabel": "Lighting Style",
+                "originalValue": "Natural Daylight",
+                "category": "lighting",
+                "transformedTo": "natural daylight"
+              },
+              {
+                "start": 302,
+                "end": 311,
+                "fieldId": "camera_angle",
+                "fieldLabel": "Camera Angle",
+                "originalValue": "Eye Level",
+                "category": "technical",
+                "transformedTo": "eye level"
+              },
+              {
+                "start": 352,
+                "end": 353,
+                "fieldId": "depth_of_field",
+                "fieldLabel": "Depth Of Field",
+                "originalValue": "3",
+                "category": "technical",
+                "transformedTo": "3"
+              }
+            ]
+          }
+        },
+        "duration": 9065
+      }
+    },
+    "finalOutput": {
+      "nativePrompt": "A photography of a Domestic Shorthair with a vibrant Orange Tabby coat, looking at camera with a cute and curious gaze. The cat is perched comfortably on a sunny windowsill as natural daylight pours in, highlighting the soft textures of its fur and creating a warm, inviting atmosphere. Captured at an eye level perspective, the composition utilizes a 3 setting to gently blur the background, ensuring the viewer's attention remains fixed on the cat's expressive face and delicate whiskers",
+      "englishPrompt": "A photography of a Domestic Shorthair with a vibrant Orange Tabby coat, looking at camera with a cute and curious gaze. The cat is perched comfortably on a sunny windowsill as natural daylight pours in, highlighting the soft textures of its fur and creating a warm, inviting atmosphere. Captured at an eye level perspective, the composition utilizes a 3 setting to gently blur the background, ensuring the viewer's attention remains fixed on the cat's expressive face and delicate whiskers"
+    }
+  },
+  {
+    "testCaseId": "test_case_2_long",
+    "testCaseName": "超长 Prompt",
+    "version": "optimized",
+    "timestamp": "2026-01-13T21:40:02.080Z",
+    "stages": {
+      "stage1_intent": {
+        "success": true,
+        "data": {
+          "context": "Blue Otaku Bedroom Mirror Selfie",
+          "followUpQuestion": null,
+          "fields": [
+            {
+              "id": "focal_length",
+              "type": "text",
+              "label": "Focal Length",
+              "isAdvanced": true,
+              "multiSelect": false,
+              "defaultValue": "26mm",
+              "source": "user_constraint"
+            },
+            {
+              "id": "aperture",
+              "type": "text",
+              "label": "Aperture",
+              "isAdvanced": true,
+              "multiSelect": false,
+              "defaultValue": "f/1.8",
+              "source": "user_constraint"
+            },
+            {
+              "id": "exposure_compensation",
+              "type": "text",
+              "label": "Exposure Compensation",
+              "isAdvanced": true,
+              "multiSelect": false,
+              "defaultValue": "-0.3EV",
+              "source": "user_constraint"
+            },
+            {
+              "id": "outfit_top",
+              "type": "text",
+              "label": "Top Outfit Detail",
+              "isAdvanced": false,
+              "multiSelect": false,
+              "defaultValue": "light blue cropped knit cardigan, top two buttons fastened, blue French-style bra faintly visible",
+              "source": "creative_param"
+            },
+            {
+              "id": "outfit_bottom",
+              "type": "text",
+              "label": "Bottom Outfit Detail",
+              "isAdvanced": false,
+              "multiSelect": false,
+              "defaultValue": "denim ultra-short shorts with blue satin ribbon bows on hips",
+              "source": "creative_param"
+            },
+            {
+              "id": "hairstyle",
+              "type": "text",
+              "label": "Hairstyle",
+              "isAdvanced": false,
+              "multiSelect": false,
+              "defaultValue": "waist-length straight medium brown hair with slightly curled ends",
+              "source": "creative_param"
+            },
+            {
+              "id": "background_details",
+              "type": "text",
+              "label": "Background Elements",
+              "isAdvanced": false,
+              "multiSelect": false,
+              "defaultValue": "otaku-style computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp, glass of water, green leafy plant",
+              "source": "creative_param"
+            },
+            {
+              "id": "color_palette",
+              "type": "select",
+              "label": "Color Palette",
+              "isAdvanced": false,
+              "multiSelect": true,
+              "defaultValue": "Blue Tones (Baby Blue to Sky Blue)",
+              "options": [
+                "Blue Tones (Baby Blue to Sky Blue)",
+                "Monochrome Periwinkle",
+                "Deep Navy and White",
+                "Pastel Blue Gradient",
+                "Cyberpunk Blue and Cyan",
+                "Cool Winter Blues",
+                "Oceanic Blue Tones",
+                "Soft Blue and Silver",
+                "Ice Blue Minimalist",
+                "Electric Blue Accents"
+              ],
+              "source": "creative_param"
+            },
+            {
+              "id": "photography_framing",
+              "type": "select",
+              "label": "Framing & Angle",
+              "isAdvanced": false,
+              "multiSelect": false,
+              "defaultValue": "Mid-thigh to Head, Slightly High Angle",
+              "options": [
+                "Mid-thigh to Head, Slightly High Angle",
+                "Full Body, Eye Level",
+                "Waist-up, Mirror Centered",
+                "Close-up Torso",
+                "Wide Angle Full Room",
+                "Lower Angle Full Leg",
+                "Shoulder-up Portrait",
+                "Top-down Desk View",
+                "Extreme High Angle",
+                "Profile Mirror Shot"
+              ],
+              "source": "creative_param"
+            },
+            {
+              "id": "lighting_style",
+              "type": "select",
+              "label": "Lighting Atmosphere",
+              "isAdvanced": true,
+              "multiSelect": false,
+              "defaultValue": "Soft Diffused Daylight",
+              "options": [
+                "Soft Diffused Daylight",
+                "Blue Hour Natural Light",
+                "Golden Hour Warmth",
+                "Studio Softbox",
+                "Dramatic Rim Light",
+                "Neon Glow Accents",
+                "Overcast Window Light",
+                "Candlelight Glow",
+                "Moonlight Ambience",
+                "Bright High-Key"
+              ],
+              "source": "expanded"
+            },
+            {
+              "id": "depth_of_field",
+              "type": "slider",
+              "label": "Depth of Field",
+              "isAdvanced": true,
+              "multiSelect": false,
+              "defaultValue": 8,
+              "min": 1,
+              "max": 10,
+              "step": 1,
+              "minLabel": "Shallow (Bokeh)",
+              "maxLabel": "Deep (Sharp)",
+              "source": "expanded"
+            },
+            {
+              "id": "camera_angle",
+              "type": "select",
+              "label": "Camera Perspective",
+              "isAdvanced": true,
+              "multiSelect": false,
+              "defaultValue": "High Angle",
+              "options": [
+                "High Angle",
+                "Eye Level",
+                "Low Angle",
+                "Dutch Angle",
+                "Bird's Eye",
+                "Worm's Eye",
+                "Over-the-shoulder",
+                "Close-up",
+                "Wide Shot",
+                "Profile"
+              ],
+              "source": "expanded"
+            }
+          ],
+          "preservedDetails": [
+            "25-year-old East Asian woman",
+            "blue and white horizontal striped over-the-knee socks",
+            "slight contrapposto pose, torso leaning slightly back, holding smartphone in front of face",
+            "smartphone rear camera via mirror",
+            "natural smartphone deep depth of field, background clearly visible",
+            "slim body with defined waist",
+            "light neutral skin tone",
+            "blue mascot phone case",
+            "identity hidden by phone",
+            "no beauty filters",
+            "no over-smoothed skin",
+            "no CGI feel",
+            "no logos or brand names"
+          ],
+          "imageProcessingInstructions": [],
+          "internalSignals": {
+            "primaryMood": "cozy and personal",
+            "visualComplexity": "complex",
+            "detectedSubjectType": "person"
+          },
+          "primaryIntent": {
+            "phrase": "Blue Otaku-Style Mirror Selfie",
+            "category": "aesthetic",
+            "confidence": 1
+          },
+          "extractedRatio": "1:1",
+          "contentCategory": "photography",
+          "styleHints": [
+            "otaku-style",
+            "mirror selfie",
+            "natural proportions",
+            "soft diffused lighting",
+            "blue aesthetic"
+          ]
+        },
+        "duration": 32114
+      },
+      "stage2_field": {
+        "success": true,
+        "data": {
+          "core": {
+            "subject": "A 25-year-old East",
+            "action": ""
+          },
+          "narrative_params": {
+            "focal_length": {
+              "value": "26mm",
+              "strength": 0.7
+            },
+            "aperture": {
+              "value": "f/1.8",
+              "strength": 0.7
+            },
+            "exposure_compensation": {
+              "value": "-0.3EV",
+              "strength": 0.7
+            },
+            "outfit_top": {
+              "value": "light blue cropped knit cardigan, top two buttons fastened, blue French-style bra faintly visible",
+              "strength": 0.7
+            },
+            "outfit_bottom": {
+              "value": "denim ultra-short shorts with blue satin ribbon bows on hips",
+              "strength": 0.7
+            },
+            "hairstyle": {
+              "value": "waist-length straight medium brown hair with slightly curled ends",
+              "strength": 0.7
+            },
+            "background_details": {
+              "value": "otaku-style computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp, glass of water, green leafy plant",
+              "strength": 0.7
+            },
+            "color_palette": {
+              "value": "Blue Tones (Baby Blue to Sky Blue)",
+              "strength": 0.7
+            },
+            "photography_framing": {
+              "value": "Mid-thigh to Head, Slightly High Angle",
+              "strength": 0.7
+            },
+            "lighting_style": {
+              "value": "Soft Diffused Daylight",
+              "strength": 0.7
+            },
+            "depth_of_field": {
+              "value": "8",
+              "strength": 0.7
+            },
+            "camera_angle": {
+              "value": "High Angle",
+              "strength": 0.7
+            }
+          },
+          "content_category": "photography",
+          "style_hints": [
+            "otaku-style",
+            "mirror selfie",
+            "natural proportions",
+            "soft diffused lighting",
+            "blue aesthetic"
+          ],
+          "primary_intent": {
+            "phrase": "Blue Otaku-Style Mirror Selfie",
+            "category": "aesthetic",
+            "confidence": 1
+          },
+          "internal_signals": {
+            "primaryMood": "cozy and personal",
+            "visualComplexity": "complex",
+            "detectedSubjectType": "person"
+          },
+          "image_processing_instructions": []
+        },
+        "duration": 0
+      },
+      "stage3_compiler": {
+        "success": true,
+        "data": {
+          "native": "A Blue Otaku-Style Mirror Selfie captures a 25-year-old East Asian woman with natural proportions, framing her from a high angle in a mid-thigh to head composition. She is styled in a light blue cropped knit cardigan with only the top two buttons fastened, allowing a blue French-style bra to be faintly visible, paired with denim ultra-short shorts accented by blue satin ribbon bows at the hips. Her waist-length straight medium brown hair falls smoothly, ending in slightly curled ends that rest against her waist. \n\nThe reflection reveals a meticulously detailed otaku-style computer corner drenched in a cohesive blue tones aesthetic. A white desk serves as the foundation for a monitor with blue wallpaper, a mechanical keyboard, and a blue desk mat. To the side, a PC tower with blue lighting illuminates a curated collection of anime figures, while a pagoda poster and a cat-shaped desk lamp decorate the walls and surface. A glass of water and a green leafy plant provide a touch of lived-in realism to the space. \n\nThe photograph is captured with a 26mm lens at f/1.8 under soft diffused daylight, utilizing an -0.3EV and a 8 to maintain clarity across the subject and her environment. This atmospheric composition stands as an authentic Blue Otaku-Style Mirror Selfie",
+          "english": "A Blue Otaku-Style Mirror Selfie captures a 25-year-old East Asian woman with natural proportions, framing her from a high angle in a mid-thigh to head composition. She is styled in a light blue cropped knit cardigan with only the top two buttons fastened, allowing a blue French-style bra to be faintly visible, paired with denim ultra-short shorts accented by blue satin ribbon bows at the hips. Her waist-length straight medium brown hair falls smoothly, ending in slightly curled ends that rest against her waist. \n\nThe reflection reveals a meticulously detailed otaku-style computer corner drenched in a cohesive blue tones aesthetic. A white desk serves as the foundation for a monitor with blue wallpaper, a mechanical keyboard, and a blue desk mat. To the side, a PC tower with blue lighting illuminates a curated collection of anime figures, while a pagoda poster and a cat-shaped desk lamp decorate the walls and surface. A glass of water and a green leafy plant provide a touch of lived-in realism to the space. \n\nThe photograph is captured with a 26mm lens at f/1.8 under soft diffused daylight, utilizing an -0.3EV and a 8 to maintain clarity across the subject and her environment. This atmospheric composition stands as an authentic Blue Otaku-Style Mirror Selfie",
+          "detectedLang": "English",
+          "highlights": {
+            "native": [
+              {
+                "start": 2,
+                "end": 32,
+                "fieldId": "primary_intent",
+                "fieldLabel": "Primary Intent",
+                "originalValue": "primary_intent",
+                "category": "technical",
+                "transformedTo": "Blue Otaku-Style Mirror Selfie"
+              },
+              {
+                "start": 44,
+                "end": 72,
+                "fieldId": "subject",
+                "fieldLabel": "Subject",
+                "originalValue": "subject",
+                "category": "subject",
+                "transformedTo": "25-year-old East Asian woman"
+              },
+              {
+                "start": 118,
+                "end": 128,
+                "fieldId": "camera_angle",
+                "fieldLabel": "Camera Angle",
+                "originalValue": "High Angle",
+                "category": "technical",
+                "transformedTo": "high angle"
+              },
+              {
+                "start": 134,
+                "end": 151,
+                "fieldId": "photography_framing",
+                "fieldLabel": "Photography Framing",
+                "originalValue": "Mid-thigh to Head, Slightly High Angle",
+                "category": "technical",
+                "transformedTo": "mid-thigh to head"
+              },
+              {
+                "start": 184,
+                "end": 216,
+                "fieldId": "outfit_top",
+                "fieldLabel": "Outfit Top",
+                "originalValue": "light blue cropped knit cardigan, top two buttons fastened, blue French-style bra faintly visible",
+                "category": "technical",
+                "transformedTo": "light blue cropped knit cardigan"
+              },
+              {
+                "start": 268,
+                "end": 289,
+                "fieldId": "outfit_top",
+                "fieldLabel": "Outfit Top",
+                "originalValue": "light blue cropped knit cardigan, top two buttons fastened, blue French-style bra faintly visible",
+                "category": "technical",
+                "transformedTo": "blue French-style bra"
+              },
+              {
+                "start": 325,
+                "end": 349,
+                "fieldId": "outfit_bottom",
+                "fieldLabel": "Outfit Bottom",
+                "originalValue": "denim ultra-short shorts with blue satin ribbon bows on hips",
+                "category": "technical",
+                "transformedTo": "denim ultra-short shorts"
+              },
+              {
+                "start": 362,
+                "end": 384,
+                "fieldId": "outfit_bottom",
+                "fieldLabel": "Outfit Bottom",
+                "originalValue": "denim ultra-short shorts with blue satin ribbon bows on hips",
+                "category": "technical",
+                "transformedTo": "blue satin ribbon bows"
+              },
+              {
+                "start": 402,
+                "end": 441,
+                "fieldId": "hairstyle",
+                "fieldLabel": "Hairstyle",
+                "originalValue": "waist-length straight medium brown hair with slightly curled ends",
+                "category": "technical",
+                "transformedTo": "waist-length straight medium brown hair"
+              },
+              {
+                "start": 468,
+                "end": 488,
+                "fieldId": "hairstyle",
+                "fieldLabel": "Hairstyle",
+                "originalValue": "waist-length straight medium brown hair with slightly curled ends",
+                "category": "technical",
+                "transformedTo": "slightly curled ends"
+              },
+              {
+                "start": 567,
+                "end": 594,
+                "fieldId": "background_details",
+                "fieldLabel": "Background Details",
+                "originalValue": "otaku-style computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp, glass of water, green leafy plant",
+                "category": "environment",
+                "transformedTo": "otaku-style computer corner"
+              },
+              {
+                "start": 618,
+                "end": 628,
+                "fieldId": "color_palette",
+                "fieldLabel": "Color Palette",
+                "originalValue": "Blue Tones (Baby Blue to Sky Blue)",
+                "category": "technical",
+                "transformedTo": "blue tones"
+              },
+              {
+                "start": 642,
+                "end": 652,
+                "fieldId": "background_details",
+                "fieldLabel": "Background Details",
+                "originalValue": "otaku-style computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp, glass of water, green leafy plant",
+                "category": "environment",
+                "transformedTo": "white desk"
+              },
+              {
+                "start": 684,
+                "end": 711,
+                "fieldId": "background_details",
+                "fieldLabel": "Background Details",
+                "originalValue": "otaku-style computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp, glass of water, green leafy plant",
+                "category": "environment",
+                "transformedTo": "monitor with blue wallpaper"
+              },
+              {
+                "start": 715,
+                "end": 734,
+                "fieldId": "background_details",
+                "fieldLabel": "Background Details",
+                "originalValue": "otaku-style computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp, glass of water, green leafy plant",
+                "category": "environment",
+                "transformedTo": "mechanical keyboard"
+              },
+              {
+                "start": 742,
+                "end": 755,
+                "fieldId": "background_details",
+                "fieldLabel": "Background Details",
+                "originalValue": "otaku-style computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp, glass of water, green leafy plant",
+                "category": "environment",
+                "transformedTo": "blue desk mat"
+              },
+              {
+                "start": 772,
+                "end": 799,
+                "fieldId": "background_details",
+                "fieldLabel": "Background Details",
+                "originalValue": "otaku-style computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp, glass of water, green leafy plant",
+                "category": "environment",
+                "transformedTo": "PC tower with blue lighting"
+              },
+              {
+                "start": 836,
+                "end": 849,
+                "fieldId": "background_details",
+                "fieldLabel": "Background Details",
+                "originalValue": "otaku-style computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp, glass of water, green leafy plant",
+                "category": "environment",
+                "transformedTo": "anime figures"
+              },
+              {
+                "start": 859,
+                "end": 872,
+                "fieldId": "background_details",
+                "fieldLabel": "Background Details",
+                "originalValue": "otaku-style computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp, glass of water, green leafy plant",
+                "category": "environment",
+                "transformedTo": "pagoda poster"
+              },
+              {
+                "start": 879,
+                "end": 899,
+                "fieldId": "background_details",
+                "fieldLabel": "Background Details",
+                "originalValue": "otaku-style computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp, glass of water, green leafy plant",
+                "category": "environment",
+                "transformedTo": "cat-shaped desk lamp"
+              },
+              {
+                "start": 934,
+                "end": 948,
+                "fieldId": "background_details",
+                "fieldLabel": "Background Details",
+                "originalValue": "otaku-style computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp, glass of water, green leafy plant",
+                "category": "environment",
+                "transformedTo": "glass of water"
+              },
+              {
+                "start": 955,
+                "end": 972,
+                "fieldId": "background_details",
+                "fieldLabel": "Background Details",
+                "originalValue": "otaku-style computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp, glass of water, green leafy plant",
+                "category": "environment",
+                "transformedTo": "green leafy plant"
+              },
+              {
+                "start": 1059,
+                "end": 1063,
+                "fieldId": "focal_length",
+                "fieldLabel": "Focal Length",
+                "originalValue": "26mm",
+                "category": "technical",
+                "transformedTo": "26mm"
+              },
+              {
+                "start": 1072,
+                "end": 1077,
+                "fieldId": "aperture",
+                "fieldLabel": "Aperture",
+                "originalValue": "f/1.8",
+                "category": "technical",
+                "transformedTo": "f/1.8"
+              },
+              {
+                "start": 1084,
+                "end": 1106,
+                "fieldId": "lighting_style",
+                "fieldLabel": "Lighting Style",
+                "originalValue": "Soft Diffused Daylight",
+                "category": "lighting",
+                "transformedTo": "soft diffused daylight"
+              },
+              {
+                "start": 1121,
+                "end": 1127,
+                "fieldId": "exposure_compensation",
+                "fieldLabel": "Exposure Compensation",
+                "originalValue": "-0.3EV",
+                "category": "technical",
+                "transformedTo": "-0.3EV"
+              },
+              {
+                "start": 1134,
+                "end": 1135,
+                "fieldId": "depth_of_field",
+                "fieldLabel": "Depth Of Field",
+                "originalValue": "8",
+                "category": "technical",
+                "transformedTo": "8"
+              },
+              {
+                "start": 1248,
+                "end": 1278,
+                "fieldId": "primary_intent",
+                "fieldLabel": "Primary Intent",
+                "originalValue": "primary_intent",
+                "category": "technical",
+                "transformedTo": "Blue Otaku-Style Mirror Selfie"
+              }
+            ],
+            "english": [
+              {
+                "start": 2,
+                "end": 32,
+                "fieldId": "primary_intent",
+                "fieldLabel": "Primary Intent",
+                "originalValue": "primary_intent",
+                "category": "technical",
+                "transformedTo": "Blue Otaku-Style Mirror Selfie"
+              },
+              {
+                "start": 44,
+                "end": 72,
+                "fieldId": "subject",
+                "fieldLabel": "Subject",
+                "originalValue": "subject",
+                "category": "subject",
+                "transformedTo": "25-year-old East Asian woman"
+              },
+              {
+                "start": 118,
+                "end": 128,
+                "fieldId": "camera_angle",
+                "fieldLabel": "Camera Angle",
+                "originalValue": "High Angle",
+                "category": "technical",
+                "transformedTo": "high angle"
+              },
+              {
+                "start": 134,
+                "end": 151,
+                "fieldId": "photography_framing",
+                "fieldLabel": "Photography Framing",
+                "originalValue": "Mid-thigh to Head, Slightly High Angle",
+                "category": "technical",
+                "transformedTo": "mid-thigh to head"
+              },
+              {
+                "start": 184,
+                "end": 216,
+                "fieldId": "outfit_top",
+                "fieldLabel": "Outfit Top",
+                "originalValue": "light blue cropped knit cardigan, top two buttons fastened, blue French-style bra faintly visible",
+                "category": "technical",
+                "transformedTo": "light blue cropped knit cardigan"
+              },
+              {
+                "start": 268,
+                "end": 289,
+                "fieldId": "outfit_top",
+                "fieldLabel": "Outfit Top",
+                "originalValue": "light blue cropped knit cardigan, top two buttons fastened, blue French-style bra faintly visible",
+                "category": "technical",
+                "transformedTo": "blue French-style bra"
+              },
+              {
+                "start": 325,
+                "end": 349,
+                "fieldId": "outfit_bottom",
+                "fieldLabel": "Outfit Bottom",
+                "originalValue": "denim ultra-short shorts with blue satin ribbon bows on hips",
+                "category": "technical",
+                "transformedTo": "denim ultra-short shorts"
+              },
+              {
+                "start": 362,
+                "end": 384,
+                "fieldId": "outfit_bottom",
+                "fieldLabel": "Outfit Bottom",
+                "originalValue": "denim ultra-short shorts with blue satin ribbon bows on hips",
+                "category": "technical",
+                "transformedTo": "blue satin ribbon bows"
+              },
+              {
+                "start": 402,
+                "end": 441,
+                "fieldId": "hairstyle",
+                "fieldLabel": "Hairstyle",
+                "originalValue": "waist-length straight medium brown hair with slightly curled ends",
+                "category": "technical",
+                "transformedTo": "waist-length straight medium brown hair"
+              },
+              {
+                "start": 468,
+                "end": 488,
+                "fieldId": "hairstyle",
+                "fieldLabel": "Hairstyle",
+                "originalValue": "waist-length straight medium brown hair with slightly curled ends",
+                "category": "technical",
+                "transformedTo": "slightly curled ends"
+              },
+              {
+                "start": 567,
+                "end": 594,
+                "fieldId": "background_details",
+                "fieldLabel": "Background Details",
+                "originalValue": "otaku-style computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp, glass of water, green leafy plant",
+                "category": "environment",
+                "transformedTo": "otaku-style computer corner"
+              },
+              {
+                "start": 618,
+                "end": 628,
+                "fieldId": "color_palette",
+                "fieldLabel": "Color Palette",
+                "originalValue": "Blue Tones (Baby Blue to Sky Blue)",
+                "category": "technical",
+                "transformedTo": "blue tones"
+              },
+              {
+                "start": 642,
+                "end": 652,
+                "fieldId": "background_details",
+                "fieldLabel": "Background Details",
+                "originalValue": "otaku-style computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp, glass of water, green leafy plant",
+                "category": "environment",
+                "transformedTo": "white desk"
+              },
+              {
+                "start": 684,
+                "end": 711,
+                "fieldId": "background_details",
+                "fieldLabel": "Background Details",
+                "originalValue": "otaku-style computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp, glass of water, green leafy plant",
+                "category": "environment",
+                "transformedTo": "monitor with blue wallpaper"
+              },
+              {
+                "start": 715,
+                "end": 734,
+                "fieldId": "background_details",
+                "fieldLabel": "Background Details",
+                "originalValue": "otaku-style computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp, glass of water, green leafy plant",
+                "category": "environment",
+                "transformedTo": "mechanical keyboard"
+              },
+              {
+                "start": 742,
+                "end": 755,
+                "fieldId": "background_details",
+                "fieldLabel": "Background Details",
+                "originalValue": "otaku-style computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp, glass of water, green leafy plant",
+                "category": "environment",
+                "transformedTo": "blue desk mat"
+              },
+              {
+                "start": 772,
+                "end": 799,
+                "fieldId": "background_details",
+                "fieldLabel": "Background Details",
+                "originalValue": "otaku-style computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp, glass of water, green leafy plant",
+                "category": "environment",
+                "transformedTo": "PC tower with blue lighting"
+              },
+              {
+                "start": 836,
+                "end": 849,
+                "fieldId": "background_details",
+                "fieldLabel": "Background Details",
+                "originalValue": "otaku-style computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp, glass of water, green leafy plant",
+                "category": "environment",
+                "transformedTo": "anime figures"
+              },
+              {
+                "start": 859,
+                "end": 872,
+                "fieldId": "background_details",
+                "fieldLabel": "Background Details",
+                "originalValue": "otaku-style computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp, glass of water, green leafy plant",
+                "category": "environment",
+                "transformedTo": "pagoda poster"
+              },
+              {
+                "start": 879,
+                "end": 899,
+                "fieldId": "background_details",
+                "fieldLabel": "Background Details",
+                "originalValue": "otaku-style computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp, glass of water, green leafy plant",
+                "category": "environment",
+                "transformedTo": "cat-shaped desk lamp"
+              },
+              {
+                "start": 934,
+                "end": 948,
+                "fieldId": "background_details",
+                "fieldLabel": "Background Details",
+                "originalValue": "otaku-style computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp, glass of water, green leafy plant",
+                "category": "environment",
+                "transformedTo": "glass of water"
+              },
+              {
+                "start": 955,
+                "end": 972,
+                "fieldId": "background_details",
+                "fieldLabel": "Background Details",
+                "originalValue": "otaku-style computer corner, white desk, monitor with blue wallpaper, mechanical keyboard, blue desk mat, PC tower with blue lighting, anime figures, pagoda poster, cat-shaped desk lamp, glass of water, green leafy plant",
+                "category": "environment",
+                "transformedTo": "green leafy plant"
+              },
+              {
+                "start": 1059,
+                "end": 1063,
+                "fieldId": "focal_length",
+                "fieldLabel": "Focal Length",
+                "originalValue": "26mm",
+                "category": "technical",
+                "transformedTo": "26mm"
+              },
+              {
+                "start": 1072,
+                "end": 1077,
+                "fieldId": "aperture",
+                "fieldLabel": "Aperture",
+                "originalValue": "f/1.8",
+                "category": "technical",
+                "transformedTo": "f/1.8"
+              },
+              {
+                "start": 1084,
+                "end": 1106,
+                "fieldId": "lighting_style",
+                "fieldLabel": "Lighting Style",
+                "originalValue": "Soft Diffused Daylight",
+                "category": "lighting",
+                "transformedTo": "soft diffused daylight"
+              },
+              {
+                "start": 1121,
+                "end": 1127,
+                "fieldId": "exposure_compensation",
+                "fieldLabel": "Exposure Compensation",
+                "originalValue": "-0.3EV",
+                "category": "technical",
+                "transformedTo": "-0.3EV"
+              },
+              {
+                "start": 1134,
+                "end": 1135,
+                "fieldId": "depth_of_field",
+                "fieldLabel": "Depth Of Field",
+                "originalValue": "8",
+                "category": "technical",
+                "transformedTo": "8"
+              },
+              {
+                "start": 1248,
+                "end": 1278,
+                "fieldId": "primary_intent",
+                "fieldLabel": "Primary Intent",
+                "originalValue": "primary_intent",
+                "category": "technical",
+                "transformedTo": "Blue Otaku-Style Mirror Selfie"
+              }
+            ]
+          }
+        },
+        "duration": 14620
+      }
+    },
+    "finalOutput": {
+      "nativePrompt": "A Blue Otaku-Style Mirror Selfie captures a 25-year-old East Asian woman with natural proportions, framing her from a high angle in a mid-thigh to head composition. She is styled in a light blue cropped knit cardigan with only the top two buttons fastened, allowing a blue French-style bra to be faintly visible, paired with denim ultra-short shorts accented by blue satin ribbon bows at the hips. Her waist-length straight medium brown hair falls smoothly, ending in slightly curled ends that rest against her waist. \n\nThe reflection reveals a meticulously detailed otaku-style computer corner drenched in a cohesive blue tones aesthetic. A white desk serves as the foundation for a monitor with blue wallpaper, a mechanical keyboard, and a blue desk mat. To the side, a PC tower with blue lighting illuminates a curated collection of anime figures, while a pagoda poster and a cat-shaped desk lamp decorate the walls and surface. A glass of water and a green leafy plant provide a touch of lived-in realism to the space. \n\nThe photograph is captured with a 26mm lens at f/1.8 under soft diffused daylight, utilizing an -0.3EV and a 8 to maintain clarity across the subject and her environment. This atmospheric composition stands as an authentic Blue Otaku-Style Mirror Selfie",
+      "englishPrompt": "A Blue Otaku-Style Mirror Selfie captures a 25-year-old East Asian woman with natural proportions, framing her from a high angle in a mid-thigh to head composition. She is styled in a light blue cropped knit cardigan with only the top two buttons fastened, allowing a blue French-style bra to be faintly visible, paired with denim ultra-short shorts accented by blue satin ribbon bows at the hips. Her waist-length straight medium brown hair falls smoothly, ending in slightly curled ends that rest against her waist. \n\nThe reflection reveals a meticulously detailed otaku-style computer corner drenched in a cohesive blue tones aesthetic. A white desk serves as the foundation for a monitor with blue wallpaper, a mechanical keyboard, and a blue desk mat. To the side, a PC tower with blue lighting illuminates a curated collection of anime figures, while a pagoda poster and a cat-shaped desk lamp decorate the walls and surface. A glass of water and a green leafy plant provide a touch of lived-in realism to the space. \n\nThe photograph is captured with a 26mm lens at f/1.8 under soft diffused daylight, utilizing an -0.3EV and a 8 to maintain clarity across the subject and her environment. This atmospheric composition stands as an authentic Blue Otaku-Style Mirror Selfie"
+    }
+  },
+  {
+    "testCaseId": "test_case_3_image",
+    "testCaseName": "带图片的测试用例（冲突检测）",
+    "version": "optimized",
+    "timestamp": "2026-01-13T21:40:50.817Z",
+    "stages": {
+      "stage1_intent": {
+        "success": true,
+        "data": {
+          "context": "Identity Transformation Portrait",
+          "followUpQuestion": null,
+          "fields": [
+            {
+              "id": "subject_identity",
+              "type": "select",
+              "label": "Should the subject's ethnicity and gender follow the photo or the text description?",
+              "isAdvanced": false,
+              "multiSelect": false,
+              "defaultValue": "Western woman",
+              "options": [
+                "Western woman",
+                "East Asian man",
+                "European woman",
+                "Nordic woman",
+                "Mixed-race woman",
+                "Mediterranean woman",
+                "Slavic woman",
+                "Anglo-Saxon woman",
+                "East Asian woman",
+                "Central Asian woman"
+              ],
+              "source": "ambiguity_resolution"
+            },
+            {
+              "id": "hair_and_beard",
+              "type": "select",
+              "label": "Which hair and facial hair style should be applied to the subject?",
+              "isAdvanced": false,
+              "multiSelect": false,
+              "defaultValue": "Long blonde hair, bearded",
+              "options": [
+                "Long blonde hair, bearded",
+                "Short dark hair, clean-shaven",
+                "Long blonde hair, light stubble",
+                "Long blonde hair, full thick beard",
+                "Wavy blonde hair, braided beard",
+                "Platinum blonde hair, groomed beard",
+                "Straight blonde hair, goatee",
+                "Messy blonde hair, designer stubble",
+                "Shoulder-length blonde, clean-shaven",
+                "Long blonde hair, mustache and beard"
+              ],
+              "source": "ambiguity_resolution"
+            },
+            {
+              "id": "facelock_identity",
+              "type": "toggle",
+              "label": "Preserve Facial Structure",
+              "isAdvanced": false,
+              "multiSelect": false,
+              "defaultValue": true,
+              "source": "image_derived"
+            },
+            {
+              "id": "face_similarity",
+              "type": "slider",
+              "label": "Face Similarity Strength",
+              "isAdvanced": true,
+              "multiSelect": false,
+              "defaultValue": 0.8,
+              "min": 0.5,
+              "max": 1,
+              "step": 0.05,
+              "minLabel": "Creative",
+              "maxLabel": "Exact Match",
+              "source": "image_derived"
+            },
+            {
+              "id": "color_palette",
+              "type": "select",
+              "label": "Color Palette",
+              "isAdvanced": false,
+              "multiSelect": true,
+              "defaultValue": "Black and white monochrome",
+              "options": [
+                "Black and white monochrome",
+                "High contrast B&W",
+                "Sepia tones",
+                "Silver gelatin print style",
+                "Noir lighting",
+                "Vintage film monochrome",
+                "Muted grey tones",
+                "Deep charcoal and white",
+                "Soft grey gradients",
+                "Film noir style"
+              ],
+              "source": "creative_param"
+            },
+            {
+              "id": "background_env",
+              "type": "select",
+              "label": "Background Environment",
+              "isAdvanced": false,
+              "multiSelect": false,
+              "defaultValue": "Urban night street with bokeh",
+              "options": [
+                "Urban night street with bokeh",
+                "Empty city alleyway",
+                "Busy metropolitan square",
+                "Rainy neon street",
+                "Dimly lit subway entrance",
+                "Modern glass skyscraper backdrop",
+                "Cobblestone old town street",
+                "Underground parking lot",
+                "Rooftop city view",
+                "Blurry traffic light background"
+              ],
+              "source": "creative_param"
+            },
+            {
+              "id": "lighting_style",
+              "type": "select",
+              "label": "Lighting Style",
+              "isAdvanced": true,
+              "multiSelect": true,
+              "defaultValue": "Cinematic side lighting",
+              "options": [
+                "Cinematic side lighting",
+                "Dramatic rim lighting",
+                "Soft bokeh street lights",
+                "Hard neon contrast",
+                "Low-key noir lighting",
+                "Moonlight atmosphere",
+                "Urban street lamp glow",
+                "Subtle fill lighting",
+                "High-key studio lighting",
+                "Strobe flash effect"
+              ],
+              "source": "creative_param"
+            },
+            {
+              "id": "mood",
+              "type": "select",
+              "label": "Atmospheric Mood",
+              "isAdvanced": false,
+              "multiSelect": true,
+              "defaultValue": "Contemplative",
+              "options": [
+                "Contemplative",
+                "Serious",
+                "Melancholic",
+                "Mysterious",
+                "Sophisticated",
+                "Edgy",
+                "Nostalgic",
+                "Intense",
+                "Calm",
+                "Cinematic"
+              ],
+              "source": "image_derived"
+            },
+            {
+              "id": "composition",
+              "type": "select",
+              "label": "Composition",
+              "isAdvanced": true,
+              "multiSelect": false,
+              "defaultValue": "Close-up portrait",
+              "options": [
+                "Close-up portrait",
+                "Extreme close-up",
+                "Medium shot",
+                "Shoulder-level portrait",
+                "Profile view",
+                "Three-quarter view",
+                "Symmetric composition",
+                "Rule of thirds",
+                "Low angle close-up",
+                "Framed within urban elements"
+              ],
+              "source": "image_derived"
+            },
+            {
+              "id": "depth_of_field",
+              "type": "slider",
+              "label": "Depth of Field",
+              "isAdvanced": true,
+              "multiSelect": false,
+              "defaultValue": 3,
+              "min": 1,
+              "max": 10,
+              "step": 1,
+              "minLabel": "Shallow (Bokeh)",
+              "maxLabel": "Deep (Sharp)",
+              "source": "expanded"
+            },
+            {
+              "id": "camera_angle",
+              "type": "select",
+              "label": "Camera Angle",
+              "isAdvanced": true,
+              "multiSelect": false,
+              "defaultValue": "Eye Level",
+              "options": [
+                "Eye Level",
+                "Low Angle",
+                "High Angle",
+                "Dutch Angle",
+                "Bird's Eye",
+                "Worm's Eye",
+                "Over-the-shoulder",
+                "Close-up",
+                "Wide Shot",
+                "Profile"
+              ],
+              "source": "expanded"
+            }
+          ],
+          "preservedDetails": [
+            "urban night street background",
+            "cinematic lighting with bokeh",
+            "black and white photography style",
+            "shallow depth of field",
+            "looking off-camera",
+            "A black and white close-up portrait of an East Asian man with short dark hair, wearing a dark coat. He is looking away from the camera against a blurred city street background with glowing bokeh lights."
+          ],
+          "imageProcessingInstructions": [
+            {
+              "imageIndex": 0,
+              "role": "face_source",
+              "instruction": "Use the facial structure and composition from this image as a base. Transform the subject's identity to match the text description: a bearded Western woman with long blonde hair."
+            }
+          ],
+          "internalSignals": {
+            "referenceIntent": "face_swap",
+            "primaryMood": "moody",
+            "visualComplexity": "focused",
+            "detectedSubjectType": "person"
+          },
+          "extractedRatio": null,
+          "contentCategory": "photography",
+          "styleHints": [
+            "black and white",
+            "cinematic",
+            "urban night",
+            "bokeh",
+            "film grain"
+          ],
+          "imageDescriptions": [
+            "A black and white close-up portrait of an East Asian man with short dark hair, wearing a dark coat. He is looking away from the camera against a blurred city street background with glowing bokeh lights."
+          ]
+        },
+        "duration": 49948
+      },
+      "stage2_field": {
+        "success": true,
+        "data": {
+          "core": {
+            "subject": "Western woman",
+            "action": ""
+          },
+          "narrative_params": {
+            "hair_and_beard": {
+              "value": "Long blonde hair, bearded",
+              "strength": 0.7
+            },
+            "face_similarity": {
+              "value": "0.8",
+              "strength": 0.7
+            },
+            "color_palette": {
+              "value": "Black and white monochrome",
+              "strength": 0.7
+            },
+            "background_env": {
+              "value": "Urban night street with bokeh",
+              "strength": 0.7
+            },
+            "lighting_style": {
+              "value": "Cinematic side lighting",
+              "strength": 0.7
+            },
+            "mood": {
+              "value": "Contemplative",
+              "strength": 0.7
+            },
+            "composition": {
+              "value": "Close-up portrait",
+              "strength": 0.7
+            },
+            "depth_of_field": {
+              "value": "3",
+              "strength": 0.7
+            },
+            "camera_angle": {
+              "value": "Eye Level",
+              "strength": 0.7
+            }
+          },
+          "content_category": "photography",
+          "style_hints": [
+            "black and white",
+            "cinematic",
+            "urban night",
+            "bokeh",
+            "film grain"
+          ],
+          "image_descriptions": [
+            "A black and white close-up portrait of an East Asian man with short dark hair, wearing a dark coat. He is looking away from the camera against a blurred city street background with glowing bokeh lights."
+          ],
+          "internal_signals": {
+            "referenceIntent": "face_swap",
+            "primaryMood": "moody",
+            "visualComplexity": "focused",
+            "detectedSubjectType": "person"
+          },
+          "image_processing_instructions": [
+            {
+              "imageIndex": 0,
+              "role": "face_source",
+              "instruction": "Use the facial structure and composition from this image as a base. Transform the subject's identity to match the text description: a bearded Western woman with long blonde hair."
+            }
+          ]
+        },
+        "duration": 0
+      },
+      "stage3_compiler": {
+        "success": true,
+        "data": {
+          "native": "A close-up portrait captured at eye level preserving the facial structure and composition from the provided photo, reimagining the subject as a Western woman with long blonde hair and a beard. Her expression is deeply contemplative, maintaining a 0.8 structural likeness to the source while fully adopting her new identity. Set against the shimmering backdrop of an urban night street with bokeh, the scene is illuminated by cinematic side lighting that carves out the textures of her hair and facial features. The entire frame is rendered in a rich black and white monochrome, where a 3 creates a soft separation between the subject and the glowing city lights, evoking a timeless cinematic quality with a fine layer of film grain",
+          "english": "A close-up portrait captured at eye level preserving the facial structure and composition from the provided photo, reimagining the subject as a Western woman with long blonde hair and a beard. Her expression is deeply contemplative, maintaining a 0.8 structural likeness to the source while fully adopting her new identity. Set against the shimmering backdrop of an urban night street with bokeh, the scene is illuminated by cinematic side lighting that carves out the textures of her hair and facial features. The entire frame is rendered in a rich black and white monochrome, where a 3 creates a soft separation between the subject and the glowing city lights, evoking a timeless cinematic quality with a fine layer of film grain",
+          "detectedLang": "English",
+          "highlights": {
+            "native": [
+              {
+                "start": 2,
+                "end": 19,
+                "fieldId": "composition",
+                "fieldLabel": "Composition",
+                "originalValue": "Close-up portrait",
+                "category": "technical",
+                "transformedTo": "close-up portrait"
+              },
+              {
+                "start": 32,
+                "end": 41,
+                "fieldId": "camera_angle",
+                "fieldLabel": "Camera Angle",
+                "originalValue": "Eye Level",
+                "category": "technical",
+                "transformedTo": "eye level"
+              },
+              {
+                "start": 95,
+                "end": 113,
+                "fieldId": "reference",
+                "fieldLabel": "Reference",
+                "originalValue": "reference",
+                "category": "technical",
+                "transformedTo": "the provided photo"
+              },
+              {
+                "start": 163,
+                "end": 191,
+                "fieldId": "hair_and_beard",
+                "fieldLabel": "Hair And Beard",
+                "originalValue": "Long blonde hair, bearded",
+                "category": "technical",
+                "transformedTo": "long blonde hair and a beard"
+              },
+              {
+                "start": 218,
+                "end": 231,
+                "fieldId": "mood",
+                "fieldLabel": "Mood",
+                "originalValue": "Contemplative",
+                "category": "mood",
+                "transformedTo": "contemplative"
+              },
+              {
+                "start": 247,
+                "end": 250,
+                "fieldId": "face_similarity",
+                "fieldLabel": "Face Similarity",
+                "originalValue": "0.8",
+                "category": "technical",
+                "transformedTo": "0.8"
+              },
+              {
+                "start": 366,
+                "end": 395,
+                "fieldId": "background_env",
+                "fieldLabel": "Background Env",
+                "originalValue": "Urban night street with bokeh",
+                "category": "environment",
+                "transformedTo": "urban night street with bokeh"
+              },
+              {
+                "start": 425,
+                "end": 448,
+                "fieldId": "lighting_style",
+                "fieldLabel": "Lighting Style",
+                "originalValue": "Cinematic side lighting",
+                "category": "lighting",
+                "transformedTo": "cinematic side lighting"
+              },
+              {
+                "start": 550,
+                "end": 576,
+                "fieldId": "color_palette",
+                "fieldLabel": "Color Palette",
+                "originalValue": "Black and white monochrome",
+                "category": "technical",
+                "transformedTo": "black and white monochrome"
+              },
+              {
+                "start": 586,
+                "end": 587,
+                "fieldId": "depth_of_field",
+                "fieldLabel": "Depth Of Field",
+                "originalValue": "3",
+                "category": "technical",
+                "transformedTo": "3"
+              }
+            ],
+            "english": [
+              {
+                "start": 2,
+                "end": 19,
+                "fieldId": "composition",
+                "fieldLabel": "Composition",
+                "originalValue": "Close-up portrait",
+                "category": "technical",
+                "transformedTo": "close-up portrait"
+              },
+              {
+                "start": 32,
+                "end": 41,
+                "fieldId": "camera_angle",
+                "fieldLabel": "Camera Angle",
+                "originalValue": "Eye Level",
+                "category": "technical",
+                "transformedTo": "eye level"
+              },
+              {
+                "start": 95,
+                "end": 113,
+                "fieldId": "reference",
+                "fieldLabel": "Reference",
+                "originalValue": "reference",
+                "category": "technical",
+                "transformedTo": "the provided photo"
+              },
+              {
+                "start": 163,
+                "end": 191,
+                "fieldId": "hair_and_beard",
+                "fieldLabel": "Hair And Beard",
+                "originalValue": "Long blonde hair, bearded",
+                "category": "technical",
+                "transformedTo": "long blonde hair and a beard"
+              },
+              {
+                "start": 218,
+                "end": 231,
+                "fieldId": "mood",
+                "fieldLabel": "Mood",
+                "originalValue": "Contemplative",
+                "category": "mood",
+                "transformedTo": "contemplative"
+              },
+              {
+                "start": 247,
+                "end": 250,
+                "fieldId": "face_similarity",
+                "fieldLabel": "Face Similarity",
+                "originalValue": "0.8",
+                "category": "technical",
+                "transformedTo": "0.8"
+              },
+              {
+                "start": 366,
+                "end": 395,
+                "fieldId": "background_env",
+                "fieldLabel": "Background Env",
+                "originalValue": "Urban night street with bokeh",
+                "category": "environment",
+                "transformedTo": "urban night street with bokeh"
+              },
+              {
+                "start": 425,
+                "end": 448,
+                "fieldId": "lighting_style",
+                "fieldLabel": "Lighting Style",
+                "originalValue": "Cinematic side lighting",
+                "category": "lighting",
+                "transformedTo": "cinematic side lighting"
+              },
+              {
+                "start": 550,
+                "end": 576,
+                "fieldId": "color_palette",
+                "fieldLabel": "Color Palette",
+                "originalValue": "Black and white monochrome",
+                "category": "technical",
+                "transformedTo": "black and white monochrome"
+              },
+              {
+                "start": 586,
+                "end": 587,
+                "fieldId": "depth_of_field",
+                "fieldLabel": "Depth Of Field",
+                "originalValue": "3",
+                "category": "technical",
+                "transformedTo": "3"
+              }
+            ]
+          }
+        },
+        "duration": 11799
+      }
+    },
+    "finalOutput": {
+      "nativePrompt": "A close-up portrait captured at eye level preserving the facial structure and composition from the provided photo, reimagining the subject as a Western woman with long blonde hair and a beard. Her expression is deeply contemplative, maintaining a 0.8 structural likeness to the source while fully adopting her new identity. Set against the shimmering backdrop of an urban night street with bokeh, the scene is illuminated by cinematic side lighting that carves out the textures of her hair and facial features. The entire frame is rendered in a rich black and white monochrome, where a 3 creates a soft separation between the subject and the glowing city lights, evoking a timeless cinematic quality with a fine layer of film grain",
+      "englishPrompt": "A close-up portrait captured at eye level preserving the facial structure and composition from the provided photo, reimagining the subject as a Western woman with long blonde hair and a beard. Her expression is deeply contemplative, maintaining a 0.8 structural likeness to the source while fully adopting her new identity. Set against the shimmering backdrop of an urban night street with bokeh, the scene is illuminated by cinematic side lighting that carves out the textures of her hair and facial features. The entire frame is rendered in a rich black and white monochrome, where a 3 creates a soft separation between the subject and the glowing city lights, evoking a timeless cinematic quality with a fine layer of film grain"
+    }
+  }
+]

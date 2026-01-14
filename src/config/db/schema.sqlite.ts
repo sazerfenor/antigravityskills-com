@@ -577,6 +577,7 @@ export const communityPost = sqliteTable(
     aspectRatio: text('aspect_ratio'),
     // Gallery 大类分类字段
     category: text('category').default('photography'),
+    subcategory: text('subcategory'),  // 二级分类 (如: Portrait, Quote Card, Logo...)
     title: text('title'),
     description: text('description'),
     status: text('status').notNull().default('pending'),
@@ -615,6 +616,7 @@ export const communityPost = sqliteTable(
     index('idx_community_post_user').on(table.userId),
     index('idx_community_post_seo_slug').on(table.seoSlug),
     index('idx_community_post_category').on(table.category, table.status),
+    index('idx_community_post_category_subcategory').on(table.category, table.subcategory, table.status),
   ]
 );
 
@@ -779,5 +781,177 @@ export const preset = sqliteTable(
     index('idx_preset_type_order').on(table.type, table.displayOrder),
     index('idx_preset_user').on(table.userId),
     index('idx_preset_category').on(table.category),
+  ]
+);
+
+// ============================================
+// 虚拟用户人格机器人系统表
+// ============================================
+
+/**
+ * 虚拟人格表 - 存储虚拟用户的人格特征和配置
+ * 与 user 表 1:1 关联，扩展虚拟用户的行为能力
+ */
+export const virtualPersona = sqliteTable(
+  'virtual_persona',
+  {
+    id: text('id').primaryKey(),
+    userId: text('user_id')
+      .notNull()
+      .unique()
+      .references(() => user.id, { onDelete: 'cascade' }),
+
+    // 基础信息
+    displayName: text('display_name').notNull(),
+    username: text('username').notNull().unique(),
+
+    // 分类与专长
+    primaryCategory: text('primary_category').notNull(), // photography | art-illustration | design | commercial-product | character-design
+    secondaryCategories: text('secondary_categories'), // JSON array
+    specialties: text('specialties'), // JSON array: ["portrait", "landscape", "street"]
+    styleKeywords: text('style_keywords'), // JSON array: ["cinematic", "moody", "vibrant"]
+
+    // 工作流相关（v2.0 新增）
+    workflowType: text('workflow_type').default('pure_ai').notNull(), // pure_ai | ai_enhanced | hybrid
+    workflowDescription: text('workflow_description'), // 工作流描述
+    preferredTools: text('preferred_tools'), // JSON array: ["Stable Diffusion", "Midjourney"]
+    dislikes: text('dislikes'), // JSON array: ["oversaturated HDR", "generic anime"]
+    sampleInteraction: text('sample_interaction'), // JSON: {scenario, response} 用于灵魂验证
+
+    // 人格特质
+    personalityTraits: text('personality_traits').notNull(), // JSON: {warmth, professionalism, humor, creativity}
+    communicationStyle: text('communication_style').notNull(), // formal | casual | enthusiastic | reserved
+    responsePatterns: text('response_patterns'), // JSON: {greeting[], closing[], emojiUsage}
+
+    // 活跃度与调度（令牌桶机制）
+    activityLevel: text('activity_level').default('moderate').notNull(), // low | moderate | high | very_high
+    activeHoursStart: integer('active_hours_start').default(9).notNull(),
+    activeHoursEnd: integer('active_hours_end').default(22).notNull(),
+    dailyTokenBalance: integer('daily_token_balance').default(0).notNull(), // 令牌桶余额
+    lastInteractionMap: text('last_interaction_map'), // JSON: { "userId": timestamp } 用于冷却追踪
+
+    // 网站评价
+    siteReview: text('site_review'),
+    siteRating: integer('site_rating').default(5).notNull(),
+
+    // 生成辅助
+    promptStyleGuide: text('prompt_style_guide'), // 生成 Prompt 的风格指南
+    commentTemplates: text('comment_templates'), // JSON array: 评论模板
+
+    // 状态
+    isActive: integer('is_active', { mode: 'boolean' }).default(true).notNull(),
+    lastActiveAt: integer('last_active_at', { mode: 'timestamp' }),
+
+    // 统计
+    totalPostsMade: integer('total_posts_made').default(0).notNull(),
+    totalCommentsMade: integer('total_comments_made').default(0).notNull(),
+    totalFollowsGiven: integer('total_follows_given').default(0).notNull(),
+
+    // 元数据
+    createdAt: integer('created_at', { mode: 'timestamp' }).notNull().$defaultFn(() => new Date()),
+    updatedAt: integer('updated_at', { mode: 'timestamp' }).notNull().$defaultFn(() => new Date()).$onUpdate(() => new Date()),
+  },
+  (table) => [
+    index('idx_virtual_persona_user').on(table.userId),
+    index('idx_virtual_persona_category').on(table.primaryCategory),
+    index('idx_virtual_persona_active').on(table.isActive, table.activityLevel),
+  ]
+);
+
+/**
+ * Prompt 队列表 - 管理员输入的待发布 Prompt
+ */
+export const promptQueue = sqliteTable(
+  'prompt_queue',
+  {
+    id: text('id').primaryKey(),
+    prompt: text('prompt').notNull(),
+    category: text('category'), // 可选：指定分类
+
+    // 分配
+    assignedPersonaId: text('assigned_persona_id').references(() => virtualPersona.id, { onDelete: 'set null' }),
+    scheduledAt: integer('scheduled_at', { mode: 'timestamp' }),
+
+    // 状态
+    status: text('status').default('pending').notNull(), // pending | assigned | processing | completed | failed
+    priority: integer('priority').default(5).notNull(), // 1-10
+
+    // 来源
+    source: text('source'), // manual | hotword | api
+    sourceMetadata: text('source_metadata'), // JSON
+
+    // 结果
+    postId: text('post_id').references(() => communityPost.id, { onDelete: 'set null' }),
+    errorMessage: text('error_message'),
+
+    createdAt: integer('created_at', { mode: 'timestamp' }).notNull().$defaultFn(() => new Date()),
+    processedAt: integer('processed_at', { mode: 'timestamp' }),
+  },
+  (table) => [
+    index('idx_prompt_queue_status').on(table.status, table.priority),
+    index('idx_prompt_queue_assigned').on(table.assignedPersonaId, table.status),
+  ]
+);
+
+/**
+ * 虚拟用户互动日志表 - 记录所有互动行为
+ */
+export const virtualInteractionLog = sqliteTable(
+  'virtual_interaction_log',
+  {
+    id: text('id').primaryKey(),
+    personaId: text('persona_id')
+      .notNull()
+      .references(() => virtualPersona.id, { onDelete: 'cascade' }),
+
+    interactionType: text('interaction_type').notNull(), // comment | follow | like
+    targetUserId: text('target_user_id').references(() => user.id, { onDelete: 'set null' }),
+    targetPostId: text('target_post_id').references(() => communityPost.id, { onDelete: 'set null' }),
+    targetCommentId: text('target_comment_id').references(() => comment.id, { onDelete: 'set null' }),
+
+    generatedContent: text('generated_content'), // 生成的评论内容
+    threadDepth: integer('thread_depth').default(0).notNull(), // 对话深度
+
+    status: text('status').default('completed').notNull(), // pending | completed | failed
+    createdAt: integer('created_at', { mode: 'timestamp' }).notNull().$defaultFn(() => new Date()),
+  },
+  (table) => [
+    index('idx_virtual_interaction_persona').on(table.personaId, table.createdAt),
+    index('idx_virtual_interaction_target').on(table.targetUserId, table.createdAt),
+    index('idx_virtual_interaction_type').on(table.interactionType, table.status),
+  ]
+);
+
+/**
+ * 虚拟用户发帖计划表 - 追踪发帖任务状态
+ */
+export const virtualPostSchedule = sqliteTable(
+  'virtual_post_schedule',
+  {
+    id: text('id').primaryKey(),
+    personaId: text('persona_id')
+      .notNull()
+      .references(() => virtualPersona.id, { onDelete: 'cascade' }),
+    promptQueueId: text('prompt_queue_id').references(() => promptQueue.id, { onDelete: 'set null' }),
+
+    // 生成内容
+    generatedPrompt: text('generated_prompt'),
+    generatedImageUrl: text('generated_image_url'),
+    postId: text('post_id').references(() => communityPost.id, { onDelete: 'set null' }),
+
+    // 调度
+    scheduledAt: integer('scheduled_at', { mode: 'timestamp' }).notNull(),
+
+    // 状态机: pending → prompt → image → post → seo → completed | failed
+    status: text('status').default('pending').notNull(),
+    currentStep: text('current_step'), // 当前执行步骤
+    lastError: text('last_error'),
+
+    createdAt: integer('created_at', { mode: 'timestamp' }).notNull().$defaultFn(() => new Date()),
+    completedAt: integer('completed_at', { mode: 'timestamp' }),
+  },
+  (table) => [
+    index('idx_virtual_post_schedule_persona').on(table.personaId, table.status),
+    index('idx_virtual_post_schedule_status').on(table.status, table.scheduledAt),
   ]
 );

@@ -35,9 +35,9 @@
               "icon": "ShieldCheck"
             },
             {
-              "title": "虚拟账号池",
-              "url": "/admin/virtual-accounts",
-              "icon": "UserCircle"
+              "title": "虚拟人格中心",
+              "url": "/admin/virtual-hub",
+              "icon": "Bot"
             }
           ]
         },

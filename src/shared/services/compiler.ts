@@ -236,7 +236,23 @@ function buildPLODescription(plo: PLO): string {
     const paramParts = sortedParams.map(([key, param]) => {
       const p = param as NarrativeParam;
       const intensityWord = p.strength >= 0.8 ? 'intensely' : p.strength >= 0.5 ? 'moderately' : 'subtly';
-      return `${key}: ${p.value} (${intensityWord})`;
+
+      // 修复: 将数字值转换为可读描述
+      let readableValue = p.value;
+      if (key === 'depth_of_field') {
+        const dofValue = parseFloat(p.value);
+        if (!isNaN(dofValue)) {
+          if (dofValue <= 3) {
+            readableValue = 'Shallow (Bokeh)';
+          } else if (dofValue >= 8) {
+            readableValue = 'Deep (Sharp)';
+          } else {
+            readableValue = 'Moderate';
+          }
+        }
+      }
+
+      return `${key}: ${readableValue} (${intensityWord})`;
     });
 
     if (paramParts.length > 0) {
@@ -309,7 +325,14 @@ function buildPLODescription(plo: PLO): string {
  * - Descriptive density packed into narrative naturally
  * - Still maintains [[field_id:value]] markers for UI highlighting
  */
-const COMPILER_PROMPT_TEMPLATE = `You are a world-class Visual Director.
+
+// 🧪 A/B Testing Hook: Allow dynamic prompt injection via environment variable
+// This enables testing optimized prompts without modifying production code
+const TEST_PROMPTS = process.env.TEST_PROMPT_OVERRIDE
+  ? JSON.parse(process.env.TEST_PROMPT_OVERRIDE)
+  : null;
+
+const BASE_COMPILER_PROMPT_TEMPLATE = `You are a world-class Visual Director.
 Your task is to write a **Visual Narrative** for a modern AI image generator (Flux/Midjourney v6).
 
 # PRIMARY INTENT ANCHOR (V3.5 - HIGHEST PRIORITY RULE)
@@ -469,6 +492,9 @@ Output:
 - Parameters are woven INTO the narrative, not listed after it.
 - **V3.5: If PRIMARY CREATIVE INTENT exists, it MUST appear in the FIRST sentence.**
 - Output ONLY the visual narrative with markers. No explanations.`;
+
+// 🧪 A/B Testing: Use test prompt if provided, otherwise use base prompt
+const COMPILER_PROMPT_TEMPLATE = TEST_PROMPTS?.compiler || BASE_COMPILER_PROMPT_TEMPLATE;
 
 /**
  * Bilingual prompt result

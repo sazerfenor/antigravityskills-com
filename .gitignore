@@ -77,3 +77,7 @@ wrangler.toml
 
 # 废弃脚本归档目录
 scripts-archive/
+
+# Scratch目录 (AI Agent临时文件)
+scratch/
+mcp-credentials.md

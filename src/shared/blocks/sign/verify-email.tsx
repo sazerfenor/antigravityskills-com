@@ -276,7 +276,7 @@ export function VerifyEmailPage({
               headers: { 'content-type': 'application/json' },
               body: JSON.stringify({ email: targetEmail }),
             });
-            const json = await res.json().catch(() => null);
+            const json = await res.json().catch(() => null) as any;
             const verified = Boolean(json?.data?.emailVerified);
             if (verified) {
               hardNavigateToSignIn(targetEmail);

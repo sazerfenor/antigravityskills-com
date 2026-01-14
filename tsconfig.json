@@ -47,6 +47,8 @@
     ".next",
     "out",
     "dist",
-    "scripts"
+    "scripts",
+    "scripts-archive",
+    "tests"
   ]
 }

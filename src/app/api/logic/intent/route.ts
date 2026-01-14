@@ -6,6 +6,7 @@ import { z } from 'zod';
 import { getUserInfo, isPaidUser } from '@/shared/models/user';
 import { checkRateLimit, getClientIP, RATE_LIMITS } from '@/shared/lib/rate-limit';
 import { handleApiError } from '@/shared/lib/api-error-handler';
+import { hasAnyRole, ROLES } from '@/shared/services/rbac';
 
 /**
  * POST /api/logic/intent
@@ -32,36 +33,49 @@ export async function POST(request: NextRequest) {
 
     let rateLimitConfig;
     let identifier;
+    let isAdminUser = false;
 
     if (!user) {
       // Guest: 3 req/day
       rateLimitConfig = RATE_LIMITS.VL_BUILD_GUEST;
       identifier = `ip:${ip}`;
     } else {
-      const paid = await isPaidUser(user.id);
-      if (paid) {
-        // Paid User: 100 req/day + Dynamic Restore
-        rateLimitConfig = RATE_LIMITS.VL_BUILD_PAID_USER;
-        identifier = `user:${user.id}`;
+      // Check if user is Admin (super_admin or admin) - exempt from rate limiting
+      isAdminUser = await hasAnyRole(user.id, [ROLES.SUPER_ADMIN, ROLES.ADMIN]);
+
+      if (isAdminUser) {
+        // Admin: No rate limiting - skip check entirely
+        rateLimitConfig = null;
+        identifier = `admin:${user.id}`;
       } else {
-        // Free User: 10 req/day
-        rateLimitConfig = RATE_LIMITS.VL_BUILD_FREE_USER;
-        identifier = `user:${user.id}`;
+        const paid = await isPaidUser(user.id);
+        if (paid) {
+          // Paid User: 100 req/day + Dynamic Restore
+          rateLimitConfig = RATE_LIMITS.VL_BUILD_PAID_USER;
+          identifier = `user:${user.id}`;
+        } else {
+          // Free User: 10 req/day
+          rateLimitConfig = RATE_LIMITS.VL_BUILD_FREE_USER;
+          identifier = `user:${user.id}`;
+        }
       }
     }
 
-    const rateLimitResult = await checkRateLimit(
-      `vl:build:${identifier}`,
-      rateLimitConfig.limit,
-      rateLimitConfig.window
-    );
+    // Skip rate limiting for Admin users
+    if (rateLimitConfig) {
+      const rateLimitResult = await checkRateLimit(
+        `vl:build:${identifier}`,
+        rateLimitConfig.limit,
+        rateLimitConfig.window
+      );
 
-    if (!rateLimitResult.success) {
-      if (!user) {
-        // Guest specific error code to trigger login modal
-        return respErr('GUEST_BUILD_LIMIT', 429);
+      if (!rateLimitResult.success) {
+        if (!user) {
+          // Guest specific error code to trigger login modal
+          return respErr('GUEST_BUILD_LIMIT', 429);
+        }
+        return respErr('Daily build limit reached. Upgrade for more.', 429);
       }
-      return respErr('Daily build limit reached. Upgrade for more.', 429);
     }
 
     const contentType = request.headers.get('content-type') || '';

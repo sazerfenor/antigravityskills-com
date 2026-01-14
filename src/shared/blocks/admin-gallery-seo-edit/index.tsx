@@ -37,7 +37,7 @@ import { BlockCard } from '@/shared/components/admin/block-card';
 import { getContentSections } from '@/shared/lib/content-sections-converter';
 import { getModelDisplayName } from '@/shared/lib/model-names';
 import type { ContentSection, ContentSections } from '@/shared/schemas/api-schemas';
-import { GALLERY_CATEGORIES } from '@/shared/models/community_post';
+import { GALLERY_CATEGORIES } from '@/shared/constants/gallery-categories';
 
 // Category 显示名称映射
 const CATEGORY_LABELS: Record<string, string> = {

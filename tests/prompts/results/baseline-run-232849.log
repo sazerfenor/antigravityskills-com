@@ -1,0 +1,58 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🧪 Intent Analyzer Baseline Test Runner
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 Loaded 9 test cases from /Users/lixuanying/Documents/GitHub/nanobananaultra/tests/prompts/test-cases/intent-test-cases.json
+🎯 API Endpoint: http://localhost:3000/api/logic/intent
+
+
+📝 Running: Edge Case: 无风格意图 - 应返回 primary_intent=null (edge_no_primary_intent)
+✅ PASSED (24034ms)
+
+📝 Running: Edge Case: 隐式风格 - 应检测到 Clay (edge_implicit_style)
+✅ PASSED (25471ms)
+
+📝 Running: Normal: 摄影场景 - Golden Hour (normal_photography)
+✅ PASSED (28381ms)
+
+📝 Running: Normal: Anime 风格 - 明确风格关键词 (normal_anime_style)
+✅ PASSED (22582ms)
+
+📝 Running: Complex: 3D Clay Style Portrait (complex_3d_clay)
+✅ PASSED (38230ms)
+
+📝 Running: Edge Case: Style Transfer - 用户照片 + 引用图片 (edge_style_transfer)
+✅ PASSED (30806ms)
+
+📝 Running: Edge Case: Ambiguity Detection - 冲突检测 (edge_ambiguity)
+❌ FAILED: Expected ambiguities to be non-empty array
+
+📝 Running: Performance: 最短 Prompt - Token 消耗基准 (performance_short_prompt)
+✅ PASSED (24222ms)
+
+📝 Running: Performance: 长 Prompt - Token 消耗上限 (performance_long_prompt)
+✅ PASSED (38673ms)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 BASELINE REPORT SUMMARY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ Passed: 8/9
+❌ Failed: 1/9
+💥 Errors: 0/9
+📈 Success Rate: 89%
+
+⚡ Performance:
+   Average Response Time: 29461ms
+   Min: 22582ms | Max: 38673ms
+   Average Input Tokens: 22
+
+📂 Category Breakdown:
+   edge_case: 3/4 passed (75%)
+   normal: 2/2 passed (100%)
+   complex: 1/1 passed (100%)
+   performance: 2/2 passed (100%)
+
+💾 Full report saved to: /Users/lixuanying/Documents/GitHub/nanobananaultra/tests/prompts/results/baseline-2026-01-13.json
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+

@@ -1,0 +1,194 @@
+{
+  "metadata": {
+    "version": "baseline-v1.0",
+    "created": "2026-01-13",
+    "description": "Intent Analyzer API 测试用例集 - 覆盖 Edge Cases 和正常场景",
+    "api_endpoint": "http://localhost:3000/api/logic/intent"
+  },
+  "test_cases": [
+    {
+      "id": "edge_no_primary_intent",
+      "name": "Edge Case: 无风格意图 - 应返回 primary_intent=null",
+      "category": "edge_case",
+      "input": {
+        "input": "一个女孩",
+        "imageUrls": []
+      },
+      "expected": {
+        "primary_intent": null,
+        "context": "should_exist",
+        "fields": "should_be_array"
+      },
+      "validation_rules": {
+        "primary_intent_must_be_null": true,
+        "context_not_empty": true,
+        "fields_count_gte": 3
+      }
+    },
+    {
+      "id": "edge_implicit_style",
+      "name": "Edge Case: 隐式风格 - 应检测到 Clay",
+      "category": "edge_case",
+      "input": {
+        "input": "Clay texture, cute proportions, handcrafted look",
+        "imageUrls": []
+      },
+      "expected": {
+        "primary_intent": {
+          "phrase_contains": "Clay",
+          "category": ["technique", "style"],
+          "confidence_gte": 0.8
+        }
+      },
+      "validation_rules": {
+        "primary_intent_not_null": true,
+        "phrase_includes_clay": true,
+        "confidence_high": true
+      }
+    },
+    {
+      "id": "normal_photography",
+      "name": "Normal: 摄影场景 - Golden Hour",
+      "category": "normal",
+      "input": {
+        "input": "Golden hour beach portrait",
+        "imageUrls": []
+      },
+      "expected": {
+        "content_category": "photography",
+        "primary_intent": {
+          "phrase_contains": "Golden Hour",
+          "category": ["style", "technique"]
+        }
+      },
+      "validation_rules": {
+        "content_category_is_photography": true,
+        "primary_intent_exists": true
+      }
+    },
+    {
+      "id": "normal_anime_style",
+      "name": "Normal: Anime 风格 - 明确风格关键词",
+      "category": "normal",
+      "input": {
+        "input": "Anime girl with blue hair, studio ghibli style",
+        "imageUrls": []
+      },
+      "expected": {
+        "content_category": "photography",
+        "primary_intent": {
+          "phrase_contains": ["Anime", "Ghibli"],
+          "category": "style"
+        },
+        "styleHints_includes": ["anime"]
+      },
+      "validation_rules": {
+        "primary_intent_not_null": true,
+        "style_hints_not_empty": true
+      }
+    },
+    {
+      "id": "complex_3d_clay",
+      "name": "Complex: 3D Clay Style Portrait",
+      "category": "complex",
+      "input": {
+        "input": "3D clay style portrait of a young woman, tactile sculpted details, soft pastel colors",
+        "imageUrls": []
+      },
+      "expected": {
+        "primary_intent": {
+          "phrase_contains": "3D Clay Style",
+          "confidence_gte": 1.0
+        },
+        "creative_params": {
+          "should_include": ["art_style", "color_palette"]
+        }
+      },
+      "validation_rules": {
+        "primary_intent_exact_match": true,
+        "creative_params_not_empty": true
+      }
+    },
+    {
+      "id": "edge_style_transfer",
+      "name": "Edge Case: Style Transfer - 用户照片 + 引用图片",
+      "category": "edge_case",
+      "input": {
+        "input": "Use my face, but with the dramatic lighting from the reference image",
+        "imageUrls": []
+      },
+      "expected": {
+        "internalSignals": {
+          "referenceIntent": ["style_ref", "face_swap"]
+        },
+        "imageProcessingInstructions": "should_exist"
+      },
+      "validation_rules": {
+        "reference_intent_detected": true
+      },
+      "note": "此场景需要图片，简化测试用文本暗示"
+    },
+    {
+      "id": "edge_ambiguity",
+      "name": "Edge Case: Ambiguity Detection - 多模态冲突检测",
+      "category": "edge_case",
+      "input": {
+        "input": "一位中东的大胡子男性",
+        "imageUrls": ["https://media.nanobananaultra.com/ai/image/reference/253e6c75f16470e71077ea5943a47883.webp"]
+      },
+      "expected": {
+        "ambiguities": "should_be_array_with_length_gte_1"
+      },
+      "validation_rules": {
+        "ambiguities_detected": true
+      },
+      "note": "图片：东亚男性（干净脸），文本：中东大胡子男性 → 应触发 subject_identity ambiguity"
+    },
+    {
+      "id": "performance_short_prompt",
+      "name": "Performance: 最短 Prompt - Token 消耗基准",
+      "category": "performance",
+      "input": {
+        "input": "一个女孩",
+        "imageUrls": []
+      },
+      "expected": {
+        "performance": {
+          "response_time_ms_lt": 5000,
+          "estimated_input_tokens_lt": 4000
+        }
+      },
+      "validation_rules": {
+        "context_not_empty": true,
+        "fields_count_gte": true,
+        "content_category_is_photography": true
+      }
+    },
+    {
+      "id": "performance_long_prompt",
+      "name": "Performance: 长 Prompt - Token 消耗上限",
+      "category": "performance",
+      "input": {
+        "input": "A highly detailed 3D clay style portrait of a young East Asian woman with flowing long black hair, wearing an elegant golden dress with intricate embroidery, set against a soft pastel background with dreamy bokeh effects, captured during golden hour with warm diffused sunlight, utilizing a shallow depth of field to create a cinematic atmosphere, emphasizing tactile sculpted details and handcrafted aesthetic",
+        "imageUrls": []
+      },
+      "expected": {
+        "performance": {
+          "response_time_ms_lt": 10000,
+          "estimated_input_tokens_gte": 3500
+        }
+      },
+      "validation_rules": {
+        "context_not_empty": true,
+        "fields_count_gte": true
+      }
+    }
+  ],
+  "baseline_expectations": {
+    "average_response_time_ms": 3000,
+    "average_input_tokens": 3500,
+    "success_rate_percentage": 100,
+    "edge_case_accuracy": 90,
+    "normal_case_accuracy": 95
+  }
+}

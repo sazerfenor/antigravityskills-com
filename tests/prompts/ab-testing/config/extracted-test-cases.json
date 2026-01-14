@@ -1,0 +1,55 @@
+{
+  "case1": {
+    "id": "test_case_1_short",
+    "name": "超短内容",
+    "description": "测试最小输入场景的拓展是否合理",
+    "input": {
+      "userInput": "cute cat",
+      "images": []
+    },
+    "expectedBehavior": {
+      "stage1": "生成字段帮助描述细节（颜色、姿态、背景），不过度猜测",
+      "stage2": "忠实反映用户原始意图，强调 \"cute\" 和 \"cat\"",
+      "stage3": "SEO 围绕猫咪主题，避免无关内容"
+    }
+  },
+  "case2": {
+    "id": "test_case_2_long",
+    "name": "超长 Prompt",
+    "description": "测试表单是否丢失用户原本的意图",
+    "input": {
+      "userInput": "A 25-year-old East Asian woman taking a mirror selfie in an otaku-style computer corner. She has a slim body with a defined waist and natural proportions, light neutral skin tone, and waist-length straight medium brown hair with slightly curled ends. She is standing in a slight contrapposto pose, holding a smartphone in front of her face (identity hidden) with her right hand, and her left arm naturally hanging down. Her torso is leaning slightly back, exposing her waist and abdomen. She's wearing a light blue cropped knit cardigan (top two buttons fastened, a blue French-style bra faintly visible), denim ultra-short shorts with a blue satin ribbon bow on each side of the hips, and blue and white horizontal striped over-the-knee socks. A blue cute mascot phone case is visible. The bedroom computer corner is seen through a wall-mounted mirror, featuring a white desk, a single monitor showing a soft blue wallpaper, a mechanical keyboard with white keycaps on a blue desk mat, a mouse on a small blue mouse pad, a PC tower with blue case lighting, three anime figures, a poster of a pagoda, a cat-shaped desk lamp with blue accents, a transparent glass of water, and a tall green leafy plant by the window. All originally pink elements are replaced with blue tones (baby blue to sky blue/periwinkle blue). Shot with a smartphone rear camera via the mirror, equivalent focal length 26mm, focus on the torso and shorts in the mirror image, natural smartphone deep depth of field, background clearly visible with no artificial blur. Crop from the top of the head to mid-thigh, including the desk, monitor, PC tower, and plant in the frame. Slightly high angle from the mirror’s point of view, subject centered, avoiding wide-angle edge distortion. No pink/magenta, beauty filters, over-smoothed skin, exaggerated or distorted anatomy, NSFW elements, logos, brand names, or readable user interface text, fake portrait-mode blur, or CGI/illustration feel. Daylight coming from a large window on the left side, through sheer curtains, soft diffused light, white balance 5200K. Aperture f/1.8, ISO 100, shutter speed 0.01s, exposure compensation -0.3EV. Aspect ratio 1:1.",
+      "images": []
+    },
+    "dbRecord": {
+      "id": "bc65f9fe-0351-4195-89a0-57de07fcb3ce",
+      "title": null,
+      "prompt": "A 25-year-old East Asian woman taking a mirror selfie in an otaku-style computer corner. She has a slim body with a defined waist and natural proportions, light neutral skin tone, and waist-length straight medium brown hair with slightly curled ends. She is standing in a slight contrapposto pose, holding a smartphone in front of her face (identity hidden) with her right hand, and her left arm naturally hanging down. Her torso is leaning slightly back, exposing her waist and abdomen. She's wearing a light blue cropped knit cardigan (top two buttons fastened, a blue French-style bra faintly visible), denim ultra-short shorts with a blue satin ribbon bow on each side of the hips, and blue and white horizontal striped over-the-knee socks. A blue cute mascot phone case is visible. The bedroom computer corner is seen through a wall-mounted mirror, featuring a white desk, a single monitor showing a soft blue wallpaper, a mechanical keyboard with white keycaps on a blue desk mat, a mouse on a small blue mouse pad, a PC tower with blue case lighting, three anime figures, a poster of a pagoda, a cat-shaped desk lamp with blue accents, a transparent glass of water, and a tall green leafy plant by the window. All originally pink elements are replaced with blue tones (baby blue to sky blue/periwinkle blue). Shot with a smartphone rear camera via the mirror, equivalent focal length 26mm, focus on the torso and shorts in the mirror image, natural smartphone deep depth of field, background clearly visible with no artificial blur. Crop from the top of the head to mid-thigh, including the desk, monitor, PC tower, and plant in the frame. Slightly high angle from the mirror’s point of view, subject centered, avoiding wide-angle edge distortion. No pink/magenta, beauty filters, over-smoothed skin, exaggerated or distorted anatomy, NSFW elements, logos, brand names, or readable user interface text, fake portrait-mode blur, or CGI/illustration feel. Daylight coming from a large window on the left side, through sheer curtains, soft diffused light, white balance 5200K. Aperture f/1.8, ISO 100, shutter speed 0.01s, exposure compensation -0.3EV. Aspect ratio 1:1.",
+      "category": "photography",
+      "subcategory": "Portrait"
+    },
+    "expectedBehavior": {
+      "stage1": "表单保留所有关键信息，不能\"缩没了\"用户的详细描述",
+      "stage2": "忠实反映用户所有原始意图",
+      "stage3": "SEO 准确反映 prompt 主题"
+    }
+  },
+  "case3": {
+    "id": "test_case_3_image",
+    "name": "带图片的测试用例（冲突检测）",
+    "description": "测试能否正确读出图片，识别图片与文本冲突",
+    "input": {
+      "userInput": "portrait of a bearded Western woman with long blonde hair",
+      "images": [
+        "https://media.nanobananaultra.com/ai/image/reference/253e6c75f16470e71077ea5943a47883.webp"
+      ]
+    },
+    "dbRecord": null,
+    "actualImageContent": "东亚无胡须男性照片",
+    "expectedBehavior": {
+      "stage1": "正确读取图片内容（东亚男性、无胡须），识别与文本的冲突（描述是西方女性、有胡须），生成 subject_identity 让用户选择",
+      "stage2": "强调用户图片的原始内容（东亚男性），而非错误的文本描述",
+      "stage3": "SEO 与用户生成的图片关联（东亚男性肖像），不基于错误的文本描述"
+    }
+  }
+}

@@ -579,6 +579,14 @@ export class GeminiProvider implements AIProvider {
         temperature,
         maxOutputTokens: maxTokens,
       },
+      // Safety settings: 使用 BLOCK_NONE 完全禁用安全过滤
+      // 内部批量生成场景，不需要 Gemini 的安全过滤
+      safetySettings: [
+        { category: 'HARM_CATEGORY_HARASSMENT', threshold: 'BLOCK_NONE' },
+        { category: 'HARM_CATEGORY_HATE_SPEECH', threshold: 'BLOCK_NONE' },
+        { category: 'HARM_CATEGORY_SEXUALLY_EXPLICIT', threshold: 'BLOCK_NONE' },
+        { category: 'HARM_CATEGORY_DANGEROUS_CONTENT', threshold: 'BLOCK_NONE' },
+      ],
     };
 
     // JSON 模式：添加响应 MIME 类型
@@ -604,6 +612,17 @@ export class GeminiProvider implements AIProvider {
     const data = (await resp.json()) as any;
 
     if (!data.candidates || data.candidates.length === 0) {
+      // 诊断：检查 Gemini 的 block reason 和 safety ratings
+      const blockReason = data.promptFeedback?.blockReason;
+      const safetyRatings = data.promptFeedback?.safetyRatings;
+
+      if (blockReason) {
+        console.error('[Gemini] Request blocked:', blockReason, safetyRatings);
+        throw new Error(`Gemini blocked: ${blockReason}`);
+      }
+
+      // 打印完整响应用于调试
+      console.error('[Gemini] No candidates, full response:', JSON.stringify(data, null, 2));
       throw new Error('No candidates returned from Gemini');
     }
 

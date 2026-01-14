@@ -35,9 +35,9 @@
               "icon": "ShieldCheck"
             },
             {
-              "title": "Virtual Accounts",
-              "url": "/admin/virtual-accounts",
-              "icon": "UserCircle"
+              "title": "Virtual Persona Hub",
+              "url": "/admin/virtual-hub",
+              "icon": "Bot"
             }
           ]
         },

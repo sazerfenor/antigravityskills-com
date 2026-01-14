@@ -90,10 +90,12 @@ export async function getCommunityPostsCount({
   userId,
   status,
   model,
+  category,
 }: {
   userId?: string;
   status?: CommunityPostStatus | CommunityPostStatus[];
   model?: string;
+  category?: string;
 }): Promise<number> {
   const statusArray = Array.isArray(status) ? status : status ? [status] : undefined;
 
@@ -104,7 +106,8 @@ export async function getCommunityPostsCount({
       and(
         userId ? eq(communityPost.userId, userId) : undefined,
         statusArray ? inArray(communityPost.status, statusArray) : undefined,
-        model ? eq(communityPost.model, model) : undefined
+        model ? eq(communityPost.model, model) : undefined,
+        category ? eq(communityPost.category, category) : undefined
       )
     );
 
@@ -118,6 +121,8 @@ export async function getCommunityPosts({
   userId,
   status,
   model,
+  category,
+  subcategory,
   sort = 'newest',
   page = 1,
   limit = 30,
@@ -126,6 +131,8 @@ export async function getCommunityPosts({
   userId?: string;
   status?: CommunityPostStatus | CommunityPostStatus[];
   model?: string;
+  category?: string;
+  subcategory?: string;
   sort?: 'newest' | 'trending' | 'weighted';
   page?: number;
   limit?: number;
@@ -202,13 +209,18 @@ export async function getCommunityPosts({
       visualTags: communityPost.visualTags,
       relatedPosts: communityPost.relatedPosts,
       expertCommentary: communityPost.expertCommentary,
+      // Classification fields
+      category: communityPost.category,
+      subcategory: communityPost.subcategory,
     })
     .from(communityPost)
     .where(
       and(
         userId ? eq(communityPost.userId, userId) : undefined,
         statusArray ? inArray(communityPost.status, statusArray) : undefined,
-        model ? eq(communityPost.model, model) : undefined
+        model ? eq(communityPost.model, model) : undefined,
+        category ? eq(communityPost.category, category) : undefined,
+        subcategory ? eq(communityPost.subcategory, subcategory) : undefined
       )
     )
     .orderBy(...orderBy)
@@ -247,6 +259,9 @@ export async function getCommunityPostById(
       model: communityPost.model,
       params: communityPost.params,
       aspectRatio: communityPost.aspectRatio,
+      // Classification fields
+      category: communityPost.category,
+      subcategory: communityPost.subcategory,
       title: communityPost.title,
       description: communityPost.description,
       status: communityPost.status,
@@ -330,6 +345,9 @@ export async function getCommunityPostBySlug(
       model: communityPost.model,
       params: communityPost.params,
       aspectRatio: communityPost.aspectRatio,
+      // Classification fields
+      category: communityPost.category,
+      subcategory: communityPost.subcategory,
       title: communityPost.title,
       description: communityPost.description,
       status: communityPost.status,
@@ -440,18 +458,8 @@ export async function recalculateLikeCount(postId: string): Promise<void> {
 // Gallery Entrance 相关方法
 // ============================================
 
-/**
- * Gallery 分类常量
- */
-export const GALLERY_CATEGORIES = [
-  'photography',        // 摄影 (50.2%)
-  'art-illustration',   // 艺术与插画 (18.0%)
-  'design',             // 设计 (15.0%)
-  'commercial-product', // 商业与产品 (7.1%)
-  'character-design',   // 角色设计 (5.4%)
-] as const;
-
-export type GalleryCategory = (typeof GALLERY_CATEGORIES)[number];
+// Re-export gallery categories from constants (avoid server-only import in client components)
+export { GALLERY_CATEGORIES, type GalleryCategory } from '@/shared/constants/gallery-categories';
 
 /**
  * 按分类统计帖子数量，并获取每个分类的封面图
@@ -549,4 +557,28 @@ export async function getHotPosts(options: {
     .limit(limit);
 
   return result as unknown as CommunityPost[];
+}
+
+/**
+ * Get subcategory statistics for a specific category
+ */
+export async function getSubcategoryStats(category: string): Promise<Array<{ subcategory: string; count: number }>> {
+  const stats = await db()
+    .select({
+      subcategory: communityPost.subcategory,
+      count: sql<number>`count(*)`.as('count'),
+    })
+    .from(communityPost)
+    .where(
+      and(
+        eq(communityPost.category, category),
+        eq(communityPost.status, CommunityPostStatus.PUBLISHED)
+      )
+    )
+    .groupBy(communityPost.subcategory);
+
+  return stats.map((s: { subcategory: string | null; count: number }) => ({
+    subcategory: s.subcategory || '',
+    count: Number(s.count)
+  }));
 }

@@ -57,7 +57,7 @@ export async function GET(
       .offset(offset);
 
     // 获取每个顶级评论的回复
-    const commentIds = topLevelComments.map(c => c.id);
+    const commentIds = topLevelComments.map((c: any) => c.id);
     let repliesMap: Record<string, any[]> = {};
     
     if (commentIds.length > 0) {
@@ -98,7 +98,7 @@ export async function GET(
     }
 
     // 组装评论列表
-    const commentsWithReplies = topLevelComments.map(c => ({
+    const commentsWithReplies = topLevelComments.map((c: any) => ({
       ...c,
       replies: repliesMap[c.id] || [],
     }));
@@ -218,7 +218,7 @@ export async function POST(
           )
         );
 
-      const uniqueRepliers = new Set(existingReplies.map(r => r.userId));
+      const uniqueRepliers = new Set(existingReplies.map((r: any) => r.userId));
       if (!uniqueRepliers.has(currentUser.id)) {
         // 新回复者，增加计数
         await db()

@@ -6,6 +6,7 @@ import { getClientIP, checkRateLimit, RATE_LIMITS } from '@/shared/lib/rate-limi
 import { getUserInfo, isPaidUser } from '@/shared/models/user';
 import { getRemainingCredits, consumeCredits } from '@/shared/models/credit';
 import { handleApiError } from '@/shared/lib/api-error-handler';
+import { hasAnyRole, ROLES } from '@/shared/services/rbac';
 
 /**
  * POST /api/logic/compile
@@ -30,29 +31,42 @@ export async function POST(request: NextRequest) {
 
     let rateLimitConfig;
     let identifier;
+    let isAdminUser = false;
 
     if (!user) {
       rateLimitConfig = RATE_LIMITS.VL_BUILD_GUEST;
       identifier = `ip:${ip}`;
     } else {
-      const paid = await isPaidUser(user.id);
-      rateLimitConfig = paid 
-        ? RATE_LIMITS.VL_BUILD_PAID_USER 
-        : RATE_LIMITS.VL_BUILD_FREE_USER;
-      identifier = `user:${user.id}`;
+      // Check if user is Admin (super_admin or admin) - exempt from rate limiting
+      isAdminUser = await hasAnyRole(user.id, [ROLES.SUPER_ADMIN, ROLES.ADMIN]);
+
+      if (isAdminUser) {
+        // Admin: No rate limiting - skip check entirely
+        rateLimitConfig = null;
+        identifier = `admin:${user.id}`;
+      } else {
+        const paid = await isPaidUser(user.id);
+        rateLimitConfig = paid
+          ? RATE_LIMITS.VL_BUILD_PAID_USER
+          : RATE_LIMITS.VL_BUILD_FREE_USER;
+        identifier = `user:${user.id}`;
+      }
     }
 
-    const rateLimitResult = await checkRateLimit(
-      `vl:build:${identifier}`,
-      rateLimitConfig.limit,
-      rateLimitConfig.window
-    );
+    // Skip rate limiting for Admin users
+    if (rateLimitConfig) {
+      const rateLimitResult = await checkRateLimit(
+        `vl:build:${identifier}`,
+        rateLimitConfig.limit,
+        rateLimitConfig.window
+      );
 
-    if (!rateLimitResult.success) {
-      if (!user) {
-        return respErr('GUEST_BUILD_LIMIT', 429);
+      if (!rateLimitResult.success) {
+        if (!user) {
+          return respErr('GUEST_BUILD_LIMIT', 429);
+        }
+        return respErr('Daily limit reached. Upgrade for more.', 429);
       }
-      return respErr('Daily limit reached. Upgrade for more.', 429);
     }
 
     const { plo, skipCreditDeduction } = validation.data;

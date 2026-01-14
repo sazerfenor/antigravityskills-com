@@ -49,7 +49,7 @@ export async function POST(request: NextRequest) {
 
     // 从 email 中提取 username 进行匹配
     // 前端发送的 username 格式是: email.split('@')[0] (不含 virtual+ 前缀)
-    const targetUser = virtualUsers.find(u => {
+    const targetUser = virtualUsers.find((u: any) => {
       // 从 email 提取 username: neko.mancer.art@gmail.com -> neko.mancer.art
       const emailUsername = u.email.split('@')[0].replace('virtual+', '');
       console.log('[Impersonate] Checking:', emailUsername, 'vs', targetUsername);
@@ -57,7 +57,7 @@ export async function POST(request: NextRequest) {
     });
 
     if (!targetUser) {
-      console.log('[Impersonate] Available users:', virtualUsers.map(u => u.email.split('@')[0]));
+      console.log('[Impersonate] Available users:', virtualUsers.map((u: any) => u.email.split('@')[0]));
       throw new Error(`Virtual user ${targetUsername} not found`);
     }
 

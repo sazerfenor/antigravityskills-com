@@ -1,0 +1,188 @@
+============================================================
+🚀 Prompt Pipeline V2 - 完整用户路径 + 虚拟作者支持
+============================================================
+📂 输入文件: logs/prompts-input.json
+📊 Prompt 数量: 200
+🧪 模式: 执行
+🔄 从断点继续
+
+📈 已加载进度: 200 个 prompts
+🧠 使用 AI 智能分配 (200 个映射)
+
+[1/200] 处理: prompt-553
+----------------------------------------
+⏭️ [Step 1] prompt-553 已分析，跳过
+⏭️ [Step 2] prompt-553 已编译，跳过
+⏭️ [Step 3] prompt-553 已生成，跳过
+⏭️ [Step 4] prompt-553 已创建，跳过
+⏭️ [Step 5] prompt-553 已生成 SEO，跳过
+
+[2/200] 处理: prompt-78
+----------------------------------------
+🔄 [Step 1] 分析意图: prompt-78
+✅ [Step 1] 分析完成: prompt-78 (ratio: 4:5)
+🔄 [Step 2] 编译 Prompt: prompt-78
+✅ [Step 2] 编译完成: prompt-78 (highlights: 13)
+🔄 [Step 3] 生成图片: prompt-78
+✅ [Step 3] 生成完成: prompt-78 (aiTaskId: fa93abd1-005b-41c7-aa8a-a533f9255ee6)
+🔄 [Step 4] 创建帖子: prompt-78 (userId: d0ec125d-380d-4f9e-9f1f-f90e41d87a62)
+[dotenv@17.2.2] injecting env (0) from .env.development -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+[dotenv@17.2.2] injecting env (16) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+✅ [Step 4] 帖子创建完成: 58694997-7689-46ec-9b48-5a2c18d0346f (虚拟作者: d0ec125d-380d-4f9e-9f1f-f90e41d87a62)
+🔄 [Step 5] 生成 SEO: prompt-78
+✅ [Step 5] SEO 生成完成: prompt-78 (slug: alternative-fashion-photography-study-lighting-18d0346f)
+✅ [Step 5] 帖子已发布: alternative-fashion-photography-study-lighting-18d0346f
+
+[3/200] 处理: prompt-2784
+----------------------------------------
+⏭️ [Step 1] prompt-2784 已分析，跳过
+⏭️ [Step 2] prompt-2784 已编译，跳过
+⏭️ [Step 3] prompt-2784 已生成，跳过
+⏭️ [Step 4] prompt-2784 已创建，跳过
+⏭️ [Step 5] prompt-2784 已生成 SEO，跳过
+
+[4/200] 处理: prompt-4435
+----------------------------------------
+🔄 [Step 1] 分析意图: prompt-4435
+✅ [Step 1] 分析完成: prompt-4435 (ratio: 1:1)
+🔄 [Step 2] 编译 Prompt: prompt-4435
+✅ [Step 2] 编译完成: prompt-4435 (highlights: 12)
+🔄 [Step 3] 生成图片: prompt-4435
+✅ [Step 3] 生成完成: prompt-4435 (aiTaskId: 9dcf462d-347e-495c-964f-87a0aa9d5dac)
+🔄 [Step 4] 创建帖子: prompt-4435 (userId: 3ea971c9-266a-4f0c-9b8b-1fec04486ca3)
+✅ [Step 4] 帖子创建完成: 94f96dc0-209b-4e9b-8133-d1bc082e7a8c (虚拟作者: 3ea971c9-266a-4f0c-9b8b-1fec04486ca3)
+🔄 [Step 5] 生成 SEO: prompt-4435
+✅ [Step 5] SEO 生成完成: prompt-4435 (slug: cinematic-shanghai-street-portrait-grading-082e7a8c)
+✅ [Step 5] 帖子已发布: cinematic-shanghai-street-portrait-grading-082e7a8c
+
+[5/200] 处理: prompt-4369
+----------------------------------------
+🔄 [Step 1] 分析意图: prompt-4369
+✅ [Step 1] 分析完成: prompt-4369 (ratio: 3:4)
+🔄 [Step 2] 编译 Prompt: prompt-4369
+✅ [Step 2] 编译完成: prompt-4369 (highlights: 22)
+🔄 [Step 3] 生成图片: prompt-4369
+✅ [Step 3] 生成完成: prompt-4369 (aiTaskId: 52270587-5096-4966-849f-5e1bb4d5e846)
+🔄 [Step 4] 创建帖子: prompt-4369 (userId: 21bc54c2-f0b2-45a8-8093-7e8c220d2ea8)
+✅ [Step 4] 帖子创建完成: 50f96b56-c4c3-4739-b7b7-67d6ebcd7a72 (虚拟作者: 21bc54c2-f0b2-45a8-8093-7e8c220d2ea8)
+🔄 [Step 5] 生成 SEO: prompt-4369
+✅ [Step 5] SEO 生成完成: prompt-4369 (slug: low-light-editorial-lifestyle-portrait-bar-ambience-ebcd7a72)
+✅ [Step 5] 帖子已发布: low-light-editorial-lifestyle-portrait-bar-ambience-ebcd7a72
+
+[6/200] 处理: prompt-4296
+----------------------------------------
+🔄 [Step 1] 分析意图: prompt-4296
+✅ [Step 1] 分析完成: prompt-4296 (ratio: 4:5)
+🔄 [Step 2] 编译 Prompt: prompt-4296
+✅ [Step 2] 编译完成: prompt-4296 (highlights: 9)
+🔄 [Step 3] 生成图片: prompt-4296
+✅ [Step 3] 生成完成: prompt-4296 (aiTaskId: 395c3677-6a36-442a-ab5c-543a52ac0de0)
+🔄 [Step 4] 创建帖子: prompt-4296 (userId: 70a71623-ab31-40d3-818b-c132bef7dd2a)
+✅ [Step 4] 帖子创建完成: 48c1f23c-146a-47ef-bfc7-b80214c6506b (虚拟作者: 70a71623-ab31-40d3-818b-c132bef7dd2a)
+🔄 [Step 5] 生成 SEO: prompt-4296
+✅ [Step 5] SEO 生成完成: prompt-4296 (slug: high-fashion-gown-refueling-editorial-14c6506b)
+✅ [Step 5] 帖子已发布: high-fashion-gown-refueling-editorial-14c6506b
+
+[7/200] 处理: prompt-4398
+----------------------------------------
+🔄 [Step 1] 分析意图: prompt-4398
+✅ [Step 1] 分析完成: prompt-4398 (ratio: 4:5)
+🔄 [Step 2] 编译 Prompt: prompt-4398
+✅ [Step 2] 编译完成: prompt-4398 (highlights: 10)
+🔄 [Step 3] 生成图片: prompt-4398
+✅ [Step 3] 生成完成: prompt-4398 (aiTaskId: 610a06a6-050c-49d3-9afc-6bdde321deb2)
+🔄 [Step 4] 创建帖子: prompt-4398 (userId: bfe09bf7-80d2-40ac-902a-4ecb809126be)
+✅ [Step 4] 帖子创建完成: fe2670ab-83ac-49ec-8820-b2ede4a2af8b (虚拟作者: bfe09bf7-80d2-40ac-902a-4ecb809126be)
+🔄 [Step 5] 生成 SEO: prompt-4398
+✅ [Step 5] SEO 生成完成: prompt-4398 (slug: urban-lifestyle-street-portrait-mural-e4a2af8b)
+✅ [Step 5] 帖子已发布: urban-lifestyle-street-portrait-mural-e4a2af8b
+
+[8/200] 处理: prompt-4086
+----------------------------------------
+🔄 [Step 1] 分析意图: prompt-4086
+✅ [Step 1] 分析完成: prompt-4086 (ratio: 4:5)
+🔄 [Step 2] 编译 Prompt: prompt-4086
+✅ [Step 2] 编译完成: prompt-4086 (highlights: 13)
+🔄 [Step 3] 生成图片: prompt-4086
+✅ [Step 3] 生成完成: prompt-4086 (aiTaskId: 31215f1d-624d-49a8-b5ea-d1ac6961b7b1)
+🔄 [Step 4] 创建帖子: prompt-4086 (userId: b1b1a7be-068c-4bf7-ac2c-5f97802303bb)
+✅ [Step 4] 帖子创建完成: 877751bb-91cb-4ecc-8062-0845d7d8ff21 (虚拟作者: b1b1a7be-068c-4bf7-ac2c-5f97802303bb)
+🔄 [Step 5] 生成 SEO: prompt-4086
+✅ [Step 5] SEO 生成完成: prompt-4086 (slug: editorial-sports-portrait-medium-format-d7d8ff21)
+✅ [Step 5] 帖子已发布: editorial-sports-portrait-medium-format-d7d8ff21
+
+[9/200] 处理: prompt-4092
+----------------------------------------
+🔄 [Step 1] 分析意图: prompt-4092
+✅ [Step 1] 分析完成: prompt-4092 (ratio: 9:16)
+🔄 [Step 2] 编译 Prompt: prompt-4092
+✅ [Step 2] 编译完成: prompt-4092 (highlights: 12)
+🔄 [Step 3] 生成图片: prompt-4092
+✅ [Step 3] 生成完成: prompt-4092 (aiTaskId: 5b036308-3ac3-4cd9-80c6-f0c56a3c0e4d)
+🔄 [Step 4] 创建帖子: prompt-4092 (userId: f2dc6284-f195-48f4-98a3-f05a212d3091)
+✅ [Step 4] 帖子创建完成: 48e48d56-7c27-439c-b25a-a2aadc4b3e46 (虚拟作者: f2dc6284-f195-48f4-98a3-f05a212d3091)
+🔄 [Step 5] 生成 SEO: prompt-4092
+✅ [Step 5] SEO 生成完成: prompt-4092 (slug: trompe-loeil-mirror-selfie-photography-dc4b3e46)
+✅ [Step 5] 帖子已发布: trompe-loeil-mirror-selfie-photography-dc4b3e46
+
+[10/200] 处理: prompt-4170
+----------------------------------------
+🔄 [Step 1] 分析意图: prompt-4170
+✅ [Step 1] 分析完成: prompt-4170 (ratio: 1:1)
+🔄 [Step 2] 编译 Prompt: prompt-4170
+✅ [Step 2] 编译完成: prompt-4170 (highlights: 10)
+🔄 [Step 3] 生成图片: prompt-4170
+✅ [Step 3] 生成完成: prompt-4170 (aiTaskId: 26291f29-b166-4d3f-8d73-485fefe1e591)
+🔄 [Step 4] 创建帖子: prompt-4170 (userId: 7f05f767-2c65-4486-b5d0-9632d3194be0)
+✅ [Step 4] 帖子创建完成: d3971c53-37c3-49cb-ac20-23e04695b3aa (虚拟作者: 7f05f767-2c65-4486-b5d0-9632d3194be0)
+🔄 [Step 5] 生成 SEO: prompt-4170
+✅ [Step 5] SEO 生成完成: prompt-4170 (slug: butterfly-mural-fashion-portrait-symmetry-4695b3aa)
+✅ [Step 5] 帖子已发布: butterfly-mural-fashion-portrait-symmetry-4695b3aa
+
+[11/200] 处理: prompt-4172
+----------------------------------------
+🔄 [Step 1] 分析意图: prompt-4172
+✅ [Step 1] 分析完成: prompt-4172 (ratio: 4:5)
+🔄 [Step 2] 编译 Prompt: prompt-4172
+✅ [Step 2] 编译完成: prompt-4172 (highlights: 13)
+🔄 [Step 3] 生成图片: prompt-4172
+✅ [Step 3] 生成完成: prompt-4172 (aiTaskId: a0d40de9-c2bb-41b1-92a9-c6e8cdfc4d58)
+🔄 [Step 4] 创建帖子: prompt-4172 (userId: 36d566e5-4046-48d6-8c24-79b30d22970c)
+✅ [Step 4] 帖子创建完成: 582c12cc-8678-4c05-9ecd-37679b50a256 (虚拟作者: 36d566e5-4046-48d6-8c24-79b30d22970c)
+🔄 [Step 5] 生成 SEO: prompt-4172
+✅ [Step 5] SEO 生成完成: prompt-4172 (slug: cool-red-gen-z-flash-pizza-portrait-9b50a256)
+✅ [Step 5] 帖子已发布: cool-red-gen-z-flash-pizza-portrait-9b50a256
+
+[12/200] 处理: prompt-4083
+----------------------------------------
+🔄 [Step 1] 分析意图: prompt-4083
+✅ [Step 1] 分析完成: prompt-4083 (ratio: 4:5)
+🔄 [Step 2] 编译 Prompt: prompt-4083
+✅ [Step 2] 编译完成: prompt-4083 (highlights: 16)
+🔄 [Step 3] 生成图片: prompt-4083
+❌ [Step 3] 生成失败: That didn't work as expected. Please refresh.
+⚠️ [Step 4] prompt-4083 未生成图片，跳过创建帖子
+⚠️ [Step 5] prompt-4083 帖子未创建，跳过 SEO 生成
+
+[13/200] 处理: prompt-4072
+----------------------------------------
+🔄 [Step 1] 分析意图: prompt-4072
+✅ [Step 1] 分析完成: prompt-4072 (ratio: 9:16)
+🔄 [Step 2] 编译 Prompt: prompt-4072
+✅ [Step 2] 编译完成: prompt-4072 (highlights: 10)
+🔄 [Step 3] 生成图片: prompt-4072
+✅ [Step 3] 生成完成: prompt-4072 (aiTaskId: 22ce19a1-86e5-4ef1-9fe8-f5e04888fa28)
+🔄 [Step 4] 创建帖子: prompt-4072 (userId: 1f47fa3d-a2c2-47d5-a00c-c8158a2ee8ac)
+✅ [Step 4] 帖子创建完成: a5313379-7699-4f91-b76a-29693624e5d9 (虚拟作者: 1f47fa3d-a2c2-47d5-a00c-c8158a2ee8ac)
+🔄 [Step 5] 生成 SEO: prompt-4072
+✅ [Step 5] SEO 生成完成: prompt-4072 (slug: high-intensity-gen-z-flash-lifestyle-photography-3624e5d9)
+✅ [Step 5] 帖子已发布: high-intensity-gen-z-flash-lifestyle-photography-3624e5d9
+
+[14/200] 处理: prompt-4168
+----------------------------------------
+🔄 [Step 1] 分析意图: prompt-4168
+✅ [Step 1] 分析完成: prompt-4168 (ratio: 9:16)
+🔄 [Step 2] 编译 Prompt: prompt-4168
+✅ [Step 2] 编译完成: prompt-4168 (highlights: 12)
+🔄 [Step 3] 生成图片: prompt-4168
+✅ [Step 3] 生成完成: prompt-4168 (aiTaskId: 67082d05-1ba0-4ecb-a8f3-64534e413cf7)

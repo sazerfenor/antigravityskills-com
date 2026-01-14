@@ -365,7 +365,13 @@ function extractJSON(response: string): string {
 // Stage 1: Intent Analyzer (Multimodal)
 // ============================================
 
-const INTENT_ANALYZER_PROMPT = `You are an Intent Analyzer AI for image/design generation. Your job is to UNDERSTAND user intent from text AND images.
+// 🧪 A/B Testing Hook: Allow dynamic prompt injection via environment variable
+// This enables testing optimized prompts without modifying production code
+const TEST_PROMPTS = process.env.TEST_PROMPT_OVERRIDE
+  ? JSON.parse(process.env.TEST_PROMPT_OVERRIDE)
+  : null;
+
+const BASE_INTENT_ANALYZER_PROMPT = `You are an Intent Analyzer AI for image/design generation. Your job is to UNDERSTAND user intent from text AND images.
 
 # CURRENT USER CONTEXT
 - **Detected Language:** **{{user_language}}**
@@ -657,11 +663,15 @@ For each ambiguity:
    - **visual_complexity**: "focused" (single subject), "balanced" (subject + elements), "complex" (busy scene)
 11. **NEVER return null internal_signals when images exist** - if user_apparent_intent is detected, reference_intent MUST be set`;
 
+// 🧪 A/B Testing: Use test prompt if provided, otherwise use base prompt
+const INTENT_ANALYZER_PROMPT = TEST_PROMPTS?.intentAnalyzer || BASE_INTENT_ANALYZER_PROMPT;
+
+
 // ============================================
 // Stage 2: Field Generator (Adaptive)
 // ============================================
 
-const FIELD_GENERATOR_PROMPT = `You are a Field Generator AI. Create a complete Dynamic Form Schema based on the analyzed intent.
+const BASE_FIELD_GENERATOR_PROMPT = `You are a Field Generator AI. Create a complete Dynamic Form Schema based on the analyzed intent.
 
 # CURRENT USER CONTEXT
 - **Detected Language:** **{{user_language}}**
@@ -1218,6 +1228,9 @@ These are model-level parameters, NOT user-facing fields!
     - DO NOT generate fields that conflict with the primary intent (see Step -1)
     - This is CRITICAL for first-sentence anchoring in the Compiler`;
 
+// 🧪 A/B Testing: Use test prompt if provided, otherwise use base prompt
+const FIELD_GENERATOR_PROMPT = TEST_PROMPTS?.fieldGenerator || BASE_FIELD_GENERATOR_PROMPT;
+
 // ============================================
 // Stage 1 Caller
 // ============================================
@@ -1369,12 +1382,8 @@ export async function analyzeIntent(
     }
 
     if (!intent || !intent.subject) {
-      console.error('[IntentAnalyzer V3] Intent analysis failed, falling back to legacy');
-      const legacySchema = await analyzeIntentLegacy(userInput, language);
-      if (legacySchema) {
-        legacySchema.extractedRatio = mappedRatio;
-      }
-      return legacySchema;
+      console.error('[IntentAnalyzer V3] Intent analysis failed, returning null (fallback disabled)');
+      return null;
     }
     console.log('[IntentAnalyzer V3] Intent:', JSON.stringify(intent, null, 2));
     
@@ -1388,66 +1397,10 @@ export async function analyzeIntent(
     // Stage 2: Generate Fields
     console.log('[IntentAnalyzer V3] Stage 2: Generating fields...');
     const schema = await callFieldGenerator(intent, language);
-    
+
     if (!schema) {
-      console.error('[IntentAnalyzer V3] Field generation failed, falling back to legacy');
-      const legacySchema = await analyzeIntentLegacy(userInput, language);
-      if (legacySchema) {
-        legacySchema.extractedRatio = mappedRatio;
-
-        // V3.1: Preserve image descriptions (existing logic)
-        if (intent.image_analysis && intent.image_analysis.length > 0) {
-          const imageDescriptions = intent.image_analysis
-            .map(img => img.content_description)
-            .filter((desc): desc is string => Boolean(desc));
-          if (imageDescriptions.length > 0) {
-            legacySchema.preservedDetails = [
-              ...(legacySchema.preservedDetails || []),
-              ...imageDescriptions
-            ];
-            // V3.1 NEW: Also set imageDescriptions for Compiler
-            legacySchema.imageDescriptions = imageDescriptions;
-            console.log('[IntentAnalyzer V3] Legacy: Preserved image descriptions:', imageDescriptions);
-          }
-        }
-
-        // ========== V3.1 NEW: Inject signals from Stage 1 into Legacy schema ==========
-
-        // 1. Inject contentCategory
-        if (intent.content_category) {
-          legacySchema.contentCategory = intent.content_category as ContentCategory;
-          console.log(`[IntentAnalyzer V3] Legacy: Injected contentCategory: ${intent.content_category}`);
-        }
-
-        // 2. Inject styleHints
-        if (intent.style_hints && intent.style_hints.length > 0) {
-          legacySchema.styleHints = intent.style_hints;
-          console.log(`[IntentAnalyzer V3] Legacy: Injected styleHints: ${intent.style_hints.join(', ')}`);
-        }
-
-        // 3. Inject internalSignals (CRITICAL for reference_intent)
-        if (intent.internal_signals) {
-          legacySchema.internalSignals = {
-            referenceIntent: parseReferenceIntentFromAnalyzer(intent.internal_signals.reference_intent),
-            primaryMood: intent.internal_signals.primary_mood || undefined,
-            visualComplexity: intent.internal_signals.visual_complexity || undefined,
-            detectedSubjectType: detectSubjectTypeFromIntent(intent),
-          };
-          console.log(`[IntentAnalyzer V3] Legacy: Injected internalSignals:`, legacySchema.internalSignals);
-        } else if (intent.image_analysis && intent.image_analysis.length > 0) {
-          // Fallback: Infer from image_analysis if internal_signals missing
-          const firstImage = intent.image_analysis[0];
-          legacySchema.internalSignals = {
-            referenceIntent: parseReferenceIntentFromAnalyzer(firstImage.user_apparent_intent),
-            primaryMood: (firstImage.detected_features as any)?.mood || undefined,
-            visualComplexity: 'balanced',
-            detectedSubjectType: detectSubjectTypeFromIntent(intent),
-          };
-          console.log(`[IntentAnalyzer V3] Legacy: Inferred internalSignals from image_analysis:`, legacySchema.internalSignals);
-        }
-        // ========== END V3.1 NEW ==========
-      }
-      return legacySchema;
+      console.error('[IntentAnalyzer V3] Field generation failed, returning null (fallback disabled)');
+      return null;
     }
 
     // Add extracted ratio to schema

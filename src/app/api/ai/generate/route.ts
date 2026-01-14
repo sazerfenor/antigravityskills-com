@@ -181,7 +181,7 @@ export async function POST(request: Request) {
       taskId: result.taskId,
       taskInfo: result.taskInfo ? JSON.stringify(result.taskInfo) : null,
       taskResult: result.taskResult ? JSON.stringify(result.taskResult) : null,
-      optimizationData, // Pass optimization metadata (JSONB)
+      optimizationData: optimizationData ? JSON.stringify(optimizationData) : null,
     };
     await createAITask(newAITask);
 

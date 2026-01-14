@@ -41,6 +41,7 @@ export async function PATCH(
       seoSlug: seoData.seoSlug,
       seoTitle: seoData.seoTitle,
       h1Title: seoData.h1Title, // 🆕 独立 H1
+      title: seoData.h1Title || seoData.seoTitle || seoData.anchor || 'Untitled Post', // 🔧 P0 Fix: 自动填充 title (优先级: h1Title > seoTitle > anchor)
       seoDescription: seoData.seoDescription,
       seoKeywords: seoData.seoKeywords,
       seoSlugKeywords: seoData.seoSlugKeywords,

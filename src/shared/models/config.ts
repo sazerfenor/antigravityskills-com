@@ -45,7 +45,7 @@ export async function clearConfigCache(): Promise<void> {
 }
 
 export async function saveConfigs(configs: Record<string, string>) {
-  const result = await db().transaction(async (tx) => {
+  const result = await db().transaction(async (tx: any) => {
     const configEntries = Object.entries(configs);
     const results = [];
 

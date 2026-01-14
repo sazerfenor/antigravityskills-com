@@ -153,7 +153,7 @@ export async function broadcastAnnouncement(previewText: string): Promise<number
     .from(user);
 
   // 批量插入通知
-  const notifications = users.map((u) => ({
+  const notifications = users.map((u: any) => ({
     id: nanoid(),
     userId: u.id,
     type: NotificationType.SYSTEM_ANNOUNCE,

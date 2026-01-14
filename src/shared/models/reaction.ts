@@ -91,7 +91,7 @@ export async function getReactionCounts(postId: string): Promise<Record<string, 
     .where(eq(reaction.postId, postId));
 
   const counts: Record<string, number> = {};
-  result.forEach((r) => {
+  result.forEach((r: any) => {
     counts[r.type] = (counts[r.type] || 0) + 1;
   });
 

@@ -15,7 +15,6 @@ import { NextRequest } from 'next/server';
 import { respData, respErr } from '@/shared/lib/resp';
 import { getGalleryEntranceData } from '@/shared/services/gallery-entrance';
 
-export const runtime = 'edge';
 export const dynamic = 'force-dynamic';
 
 export async function GET(_request: NextRequest) {

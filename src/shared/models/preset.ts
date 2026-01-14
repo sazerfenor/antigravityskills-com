@@ -81,7 +81,7 @@ export async function getSystemPresets(): Promise<PresetListItem[]> {
     )
     .orderBy(asc(preset.displayOrder));
 
-  return rows.map((row) => ({
+  return rows.map((row: any) => ({
     ...row,
     params: row.params ? JSON.parse(row.params) : null,
   }));
@@ -111,7 +111,7 @@ export async function getUserPresets(userId: string): Promise<PresetListItem[]> 
     )
     .orderBy(asc(preset.displayOrder));
 
-  return rows.map((row) => ({
+  return rows.map((row: any) => ({
     ...row,
     params: row.params ? JSON.parse(row.params) : null,
   }));

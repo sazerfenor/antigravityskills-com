@@ -14,12 +14,12 @@ export type NewAITask = typeof aiTask.$inferInsert;
 export type UpdateAITask = Partial<Omit<NewAITask, 'id' | 'createdAt'>>;
 
 export async function createAITask(newAITask: NewAITask) {
-  const result = await db().transaction(async (tx) => {
+  const result = await db().transaction(async (tx: any) => {
     // 1. create task record
     const [taskResult] = await tx.insert(aiTask).values(newAITask).returning();
 
     if (newAITask.costCredits && newAITask.costCredits > 0) {
-      // 2. consume credits
+      // 2. consume credits - 传入 tx 避免嵌套事务冲突
       const consumedCredit = await consumeCredits({
         userId: newAITask.userId,
         credits: newAITask.costCredits,
@@ -30,6 +30,7 @@ export async function createAITask(newAITask: NewAITask) {
           mediaType: taskResult.mediaType,
           taskId: taskResult.id,
         }),
+        tx, // 🔧 传入当前事务，避免 SQLite 嵌套事务冲突
       });
 
       // 3. update task record with consumed credit id
@@ -54,7 +55,7 @@ export async function findAITaskById(id: string) {
 }
 
 export async function updateAITaskById(id: string, updateAITask: UpdateAITask) {
-  const result = await db().transaction(async (tx) => {
+  const result = await db().transaction(async (tx: any) => {
     // task failed, Revoke credit consumption record
     if (updateAITask.status === AITaskStatus.FAILED && updateAITask.creditId) {
       // get consumed credit record

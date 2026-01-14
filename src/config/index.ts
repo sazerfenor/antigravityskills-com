@@ -6,7 +6,8 @@ import packageJson from '../../package.json';
 if (
   typeof process !== 'undefined' &&
   typeof process.cwd === 'function' &&
-  !process.env.NEXT_RUNTIME // Skip if in Next.js runtime (already loaded)
+  !process.env.NEXT_RUNTIME && // Skip if in Next.js runtime (already loaded)
+  !('EdgeRuntime' in globalThis) // Skip if in Edge Runtime
 ) {
   try {
     const dotenv = require('dotenv');
@@ -49,7 +50,7 @@ export const envConfigs: ConfigMap = {
     process.env.DB_MIGRATIONS_OUT ?? './src/config/db/migrations',
   db_singleton_enabled: process.env.DB_SINGLETON_ENABLED || 'false',
   db_max_connections: process.env.DB_MAX_CONNECTIONS || '10',
-  auth_url: process.env.AUTH_URL || process.env.NEXT_PUBLIC_APP_URL || '',
+  auth_url: process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000',
   auth_secret: process.env.AUTH_SECRET ?? '', // openssl rand -base64 32
   version: packageJson.version,
   locale_detect_enabled:

@@ -1,0 +1,102 @@
+{
+  "versions": {
+    "baseline": {
+      "id": "v1.0-baseline",
+      "description": "当前生产版本的 Prompt（未优化）",
+      "total_estimated_tokens": 12900,
+      "layers": {
+        "intent-analyzer": {
+          "estimated_tokens": 3500,
+          "prompt_file": "baseline/intent-analyzer.txt",
+          "source": "src/shared/services/intent-analyzer.ts:368-658"
+        },
+        "field-generator": {
+          "estimated_tokens": 6800,
+          "prompt_file": "baseline/field-generator.txt",
+          "source": "src/shared/services/intent-analyzer.ts:664-1219"
+        },
+        "compiler": {
+          "estimated_tokens": 2000,
+          "prompt_file": "baseline/compiler.txt",
+          "source": "src/shared/services/compiler.ts:312-471"
+        },
+        "scene-addons": {
+          "estimated_tokens": 600,
+          "prompt_files": {
+            "photography": "baseline/scene-photography.txt",
+            "graphic_design": "baseline/scene-graphic-design.txt",
+            "illustration": "baseline/scene-illustration.txt",
+            "infographic": "baseline/scene-infographic.txt"
+          },
+          "source": "src/shared/services/compiler.ts:473-623"
+        }
+      }
+    },
+    "optimized": {
+      "id": "v2.0-optimized",
+      "description": "优化后的 Prompt（P0 优化措施）",
+      "total_estimated_tokens": 9500,
+      "token_reduction": {
+        "absolute": 3400,
+        "percentage": 26.4
+      },
+      "changes": [
+        "移除 style_hints 字段输出（Layer 1 Stage 1）",
+        "合并 content_description → processing_instruction（Layer 1 Stage 1）",
+        "精简 Primary Intent 示例（11 → 6）",
+        "精简 EXCLUDED PARAMETERS（24 行 → 10 行）",
+        "精简 THE GOLDEN RULE（37 行 → 12 行）",
+        "删除 LEGACY EXAMPLES（Layer 2）",
+        "精简 V3.5 EXAMPLES（5 → 3）",
+        "添加去重逻辑到 buildPLODescription",
+        "精简 Scene Addon 示例（各减少 30-50%）"
+      ],
+      "layers": {
+        "intent-analyzer": {
+          "estimated_tokens": 2600,
+          "prompt_file": "optimized/intent-analyzer.txt",
+          "reduction": {
+            "absolute": 900,
+            "percentage": 25.7
+          }
+        },
+        "field-generator": {
+          "estimated_tokens": 5100,
+          "prompt_file": "optimized/field-generator.txt",
+          "reduction": {
+            "absolute": 1700,
+            "percentage": 25.0
+          }
+        },
+        "compiler": {
+          "estimated_tokens": 1400,
+          "prompt_file": "optimized/compiler.txt",
+          "reduction": {
+            "absolute": 600,
+            "percentage": 30.0
+          }
+        },
+        "scene-addons": {
+          "estimated_tokens": 400,
+          "prompt_files": {
+            "photography": "optimized/scene-photography.txt",
+            "graphic_design": "optimized/scene-graphic-design.txt",
+            "illustration": "optimized/scene-illustration.txt",
+            "infographic": "optimized/scene-infographic.txt"
+          },
+          "reduction": {
+            "absolute": 200,
+            "percentage": 33.3
+          }
+        }
+      }
+    }
+  },
+  "active_version": "baseline",
+  "test_config": {
+    "test_cases_file": "../test-cases/intent-test-cases.json",
+    "min_semantic_similarity": 0.9,
+    "min_token_reduction": 20,
+    "max_performance_degradation_percent": 10
+  }
+}

@@ -1,0 +1,523 @@
+{
+  "inputFile": "test-pipeline-input-updated.json",
+  "startedAt": "2026-01-12T14:35:48.797Z",
+  "lastUpdated": "2026-01-12T14:36:55.324Z",
+  "config": {
+    "userId": "test-user-id"
+  },
+  "prompts": {
+    "151": {
+      "step1_intent": "done",
+      "step2_compile": "done",
+      "step3_generate": "error",
+      "step4_post": "error",
+      "step5_seo": "error",
+      "schema": {
+        "context": "Steve Jobs Quote Card Design",
+        "followUpQuestion": null,
+        "fields": [
+          {
+            "id": "text_content",
+            "type": "text",
+            "label": "Text Content",
+            "isAdvanced": false,
+            "multiSelect": false,
+            "defaultValue": "Stay Hungry, Stay Foolish\n—Steve Jobs",
+            "source": "user_constraint"
+          },
+          {
+            "id": "background_color",
+            "type": "select",
+            "label": "Background Color",
+            "isAdvanced": false,
+            "multiSelect": false,
+            "defaultValue": "Brown",
+            "options": [
+              "Brown",
+              "Deep Charcoal",
+              "Midnight Black",
+              "Slate Grey",
+              "Warm Beige",
+              "Navy Blue",
+              "Forest Green",
+              "Burgundy",
+              "Soft Cream",
+              "Dusty Rose"
+            ],
+            "source": "creative_param"
+          },
+          {
+            "id": "typography_font",
+            "type": "select",
+            "label": "Typography Font",
+            "isAdvanced": false,
+            "multiSelect": false,
+            "defaultValue": "Light-gold Serif",
+            "options": [
+              "Light-gold Serif",
+              "Classic Roman Serif",
+              "Elegant Garamond",
+              "Luxury Didot",
+              "Modern Sans-serif",
+              "Vintage Typewriter",
+              "Minimalist Grotesque",
+              "Bold Slab Serif",
+              "Handwritten Script",
+              "Clean Helvetica"
+            ],
+            "source": "creative_param"
+          },
+          {
+            "id": "layout_composition",
+            "type": "select",
+            "label": "Layout Composition",
+            "isAdvanced": false,
+            "multiSelect": false,
+            "defaultValue": "Portrait on left (1/3), text on right (2/3)",
+            "options": [
+              "Portrait on left (1/3), text on right (2/3)",
+              "Portrait on right (1/3), text on left (2/3)",
+              "Centered text, portrait background",
+              "Split screen 50/50",
+              "Text at bottom, portrait top",
+              "Text at top, portrait bottom",
+              "Portrait circle with side text",
+              "Asymmetric collage style"
+            ],
+            "source": "creative_param"
+          },
+          {
+            "id": "mood_atmosphere",
+            "type": "select",
+            "label": "Mood and Atmosphere",
+            "isAdvanced": false,
+            "multiSelect": true,
+            "defaultValue": "Inspirational",
+            "options": [
+              "Inspirational",
+              "Minimalist",
+              "Elegant",
+              "Professional",
+              "Sophisticated",
+              "Nostalgic",
+              "Modernist",
+              "Serene",
+              "Authoritative",
+              "Melancholic"
+            ],
+            "source": "expanded"
+          },
+          {
+            "id": "quotation_mark_style",
+            "type": "select",
+            "label": "Quotation Mark Style",
+            "isAdvanced": true,
+            "multiSelect": false,
+            "defaultValue": "Large, Subtle",
+            "options": [
+              "Large, Subtle",
+              "Small, Bold",
+              "Double Quotes, Modern",
+              "Single Quote, Artistic",
+              "Bracketed Style",
+              "No Quotation Marks",
+              "Iconic Symbol",
+              "Floating Gradient Quotes",
+              "Transparent Outline",
+              "Hand-drawn Style"
+            ],
+            "source": "creative_param"
+          },
+          {
+            "id": "portrait_transition",
+            "type": "select",
+            "label": "Portrait Transition Effect",
+            "isAdvanced": true,
+            "multiSelect": false,
+            "defaultValue": "Gradient Transition",
+            "options": [
+              "Gradient Transition",
+              "Soft Blur Fade",
+              "Hard Edge Cut",
+              "Double Exposure",
+              "Halftone Pattern",
+              "Brush Stroke Edge",
+              "Geometric Mask",
+              "Watercolor Bleed",
+              "Film Grain Dissolve",
+              "Torn Paper Effect"
+            ],
+            "source": "creative_param"
+          },
+          {
+            "id": "author_text_style",
+            "type": "select",
+            "label": "Author Attribution Style",
+            "isAdvanced": true,
+            "multiSelect": false,
+            "defaultValue": "Smaller Text",
+            "options": [
+              "Smaller Text",
+              "Italicized",
+              "Bold Accent",
+              "Same Size",
+              "Faded Opacity",
+              "Uppercase Spaced",
+              "Underlined",
+              "Right Aligned",
+              "Muted Color",
+              "Serif Script"
+            ],
+            "source": "creative_param"
+          },
+          {
+            "id": "visual_texture",
+            "type": "select",
+            "label": "Visual Texture Overlay",
+            "isAdvanced": true,
+            "multiSelect": false,
+            "defaultValue": "None",
+            "options": [
+              "None",
+              "Fine Paper",
+              "Subtle Grain",
+              "Canvas",
+              "Dust & Scratches",
+              "Old Film",
+              "Linen Texture",
+              "Brushed Metal",
+              "Soft Vignette",
+              "Light Leak"
+            ],
+            "source": "expanded"
+          }
+        ],
+        "preservedDetails": [
+          "Large subtle quotation mark before the text",
+          "Gradient transition effect on the portrait",
+          "Text occupies two-thirds of the image and the portrait one-third",
+          "Portrait of the person is on the left, the text on the right"
+        ],
+        "imageProcessingInstructions": [],
+        "internalSignals": {
+          "primaryMood": "inspirational",
+          "visualComplexity": "balanced",
+          "detectedSubjectType": "person"
+        },
+        "primaryIntent": {
+          "phrase": "Wide Quote Card Design",
+          "category": "format",
+          "confidence": 1
+        },
+        "extractedRatio": null,
+        "contentCategory": "graphic_design",
+        "styleHints": [
+          "minimalist",
+          "elegant",
+          "serif typography",
+          "portrait card",
+          "inspirational"
+        ]
+      },
+      "extractedRatio": "1:1",
+      "promptNative": "A Wide Quote Card Design featuring a portrait of Steve Jobs on the left that seamlessly integrates into a rich brown background using a gradient transition effect. The portrait occupies one-third of the layout, while the text occupies the right two-thirds, anchored by a large, subtle quotation mark at the start of the message. The text \"Stay Hungry, Stay Foolish —Steve Jobs\" is displayed in a sophisticated light-gold serif font, with the author's name rendered in smaller text to maintain a clear hierarchy. This minimalist and elegant composition evokes an inspirational atmosphere, characterized by clean serif typography and no background texture, meticulously crafted as a professional Wide Quote Card Design",
+      "promptEnglish": "A Wide Quote Card Design featuring a portrait of Steve Jobs on the left that seamlessly integrates into a rich brown background using a gradient transition effect. The portrait occupies one-third of the layout, while the text occupies the right two-thirds, anchored by a large, subtle quotation mark at the start of the message. The text \"Stay Hungry, Stay Foolish —Steve Jobs\" is displayed in a sophisticated light-gold serif font, with the author's name rendered in smaller text to maintain a clear hierarchy. This minimalist and elegant composition evokes an inspirational atmosphere, characterized by clean serif typography and no background texture, meticulously crafted as a professional Wide Quote Card Design",
+      "promptHighlights": {
+        "native": [
+          {
+            "start": 2,
+            "end": 24,
+            "fieldId": "primary_intent",
+            "fieldLabel": "Primary Intent",
+            "originalValue": "primary_intent",
+            "category": "technical",
+            "transformedTo": "Wide Quote Card Design"
+          },
+          {
+            "start": 49,
+            "end": 59,
+            "fieldId": "subject",
+            "fieldLabel": "Subject",
+            "originalValue": "subject",
+            "category": "subject",
+            "transformedTo": "Steve Jobs"
+          },
+          {
+            "start": 111,
+            "end": 127,
+            "fieldId": "background_color",
+            "fieldLabel": "Background Color",
+            "originalValue": "Brown",
+            "category": "environment",
+            "transformedTo": "brown background"
+          },
+          {
+            "start": 136,
+            "end": 162,
+            "fieldId": "portrait_transition",
+            "fieldLabel": "Portrait Transition",
+            "originalValue": "Gradient Transition",
+            "category": "technical",
+            "transformedTo": "gradient transition effect"
+          },
+          {
+            "start": 168,
+            "end": 209,
+            "fieldId": "layout_composition",
+            "fieldLabel": "Layout Composition",
+            "originalValue": "Portrait on left (1/3), text on right (2/3)",
+            "category": "technical",
+            "transformedTo": "portrait occupies one-third of the layout"
+          },
+          {
+            "start": 221,
+            "end": 255,
+            "fieldId": "layout_composition",
+            "fieldLabel": "Layout Composition",
+            "originalValue": "Portrait on left (1/3), text on right (2/3)",
+            "category": "technical",
+            "transformedTo": "text occupies the right two-thirds"
+          },
+          {
+            "start": 271,
+            "end": 299,
+            "fieldId": "quotation_mark_style",
+            "fieldLabel": "Quotation Mark Style",
+            "originalValue": "Large, Subtle",
+            "category": "technical",
+            "transformedTo": "large, subtle quotation mark"
+          },
+          {
+            "start": 339,
+            "end": 376,
+            "fieldId": "text_content",
+            "fieldLabel": "Text Content",
+            "originalValue": "Stay Hungry, Stay Foolish\n—Steve Jobs",
+            "category": "technical",
+            "transformedTo": "Stay Hungry, Stay Foolish —Steve Jobs"
+          },
+          {
+            "start": 410,
+            "end": 431,
+            "fieldId": "typography_font",
+            "fieldLabel": "Typography Font",
+            "originalValue": "Light-gold Serif",
+            "category": "technical",
+            "transformedTo": "light-gold serif font"
+          },
+          {
+            "start": 468,
+            "end": 480,
+            "fieldId": "author_text_style",
+            "fieldLabel": "Author Text Style",
+            "originalValue": "Smaller Text",
+            "category": "technical",
+            "transformedTo": "smaller text"
+          },
+          {
+            "start": 517,
+            "end": 527,
+            "fieldId": "style",
+            "fieldLabel": "Style",
+            "originalValue": "style",
+            "category": "style",
+            "transformedTo": "minimalist"
+          },
+          {
+            "start": 532,
+            "end": 539,
+            "fieldId": "style",
+            "fieldLabel": "Style",
+            "originalValue": "style",
+            "category": "style",
+            "transformedTo": "elegant"
+          },
+          {
+            "start": 562,
+            "end": 575,
+            "fieldId": "mood_atmosphere",
+            "fieldLabel": "Mood Atmosphere",
+            "originalValue": "Inspirational",
+            "category": "mood",
+            "transformedTo": "inspirational"
+          },
+          {
+            "start": 611,
+            "end": 627,
+            "fieldId": "style",
+            "fieldLabel": "Style",
+            "originalValue": "style",
+            "category": "style",
+            "transformedTo": "serif typography"
+          },
+          {
+            "start": 632,
+            "end": 653,
+            "fieldId": "visual_texture",
+            "fieldLabel": "Visual Texture",
+            "originalValue": "None",
+            "category": "technical",
+            "transformedTo": "no background texture"
+          },
+          {
+            "start": 694,
+            "end": 716,
+            "fieldId": "primary_intent",
+            "fieldLabel": "Primary Intent",
+            "originalValue": "primary_intent",
+            "category": "technical",
+            "transformedTo": "Wide Quote Card Design"
+          }
+        ],
+        "english": [
+          {
+            "start": 2,
+            "end": 24,
+            "fieldId": "primary_intent",
+            "fieldLabel": "Primary Intent",
+            "originalValue": "primary_intent",
+            "category": "technical",
+            "transformedTo": "Wide Quote Card Design"
+          },
+          {
+            "start": 49,
+            "end": 59,
+            "fieldId": "subject",
+            "fieldLabel": "Subject",
+            "originalValue": "subject",
+            "category": "subject",
+            "transformedTo": "Steve Jobs"
+          },
+          {
+            "start": 111,
+            "end": 127,
+            "fieldId": "background_color",
+            "fieldLabel": "Background Color",
+            "originalValue": "Brown",
+            "category": "environment",
+            "transformedTo": "brown background"
+          },
+          {
+            "start": 136,
+            "end": 162,
+            "fieldId": "portrait_transition",
+            "fieldLabel": "Portrait Transition",
+            "originalValue": "Gradient Transition",
+            "category": "technical",
+            "transformedTo": "gradient transition effect"
+          },
+          {
+            "start": 168,
+            "end": 209,
+            "fieldId": "layout_composition",
+            "fieldLabel": "Layout Composition",
+            "originalValue": "Portrait on left (1/3), text on right (2/3)",
+            "category": "technical",
+            "transformedTo": "portrait occupies one-third of the layout"
+          },
+          {
+            "start": 221,
+            "end": 255,
+            "fieldId": "layout_composition",
+            "fieldLabel": "Layout Composition",
+            "originalValue": "Portrait on left (1/3), text on right (2/3)",
+            "category": "technical",
+            "transformedTo": "text occupies the right two-thirds"
+          },
+          {
+            "start": 271,
+            "end": 299,
+            "fieldId": "quotation_mark_style",
+            "fieldLabel": "Quotation Mark Style",
+            "originalValue": "Large, Subtle",
+            "category": "technical",
+            "transformedTo": "large, subtle quotation mark"
+          },
+          {
+            "start": 339,
+            "end": 376,
+            "fieldId": "text_content",
+            "fieldLabel": "Text Content",
+            "originalValue": "Stay Hungry, Stay Foolish\n—Steve Jobs",
+            "category": "technical",
+            "transformedTo": "Stay Hungry, Stay Foolish —Steve Jobs"
+          },
+          {
+            "start": 410,
+            "end": 431,
+            "fieldId": "typography_font",
+            "fieldLabel": "Typography Font",
+            "originalValue": "Light-gold Serif",
+            "category": "technical",
+            "transformedTo": "light-gold serif font"
+          },
+          {
+            "start": 468,
+            "end": 480,
+            "fieldId": "author_text_style",
+            "fieldLabel": "Author Text Style",
+            "originalValue": "Smaller Text",
+            "category": "technical",
+            "transformedTo": "smaller text"
+          },
+          {
+            "start": 517,
+            "end": 527,
+            "fieldId": "style",
+            "fieldLabel": "Style",
+            "originalValue": "style",
+            "category": "style",
+            "transformedTo": "minimalist"
+          },
+          {
+            "start": 532,
+            "end": 539,
+            "fieldId": "style",
+            "fieldLabel": "Style",
+            "originalValue": "style",
+            "category": "style",
+            "transformedTo": "elegant"
+          },
+          {
+            "start": 562,
+            "end": 575,
+            "fieldId": "mood_atmosphere",
+            "fieldLabel": "Mood Atmosphere",
+            "originalValue": "Inspirational",
+            "category": "mood",
+            "transformedTo": "inspirational"
+          },
+          {
+            "start": 611,
+            "end": 627,
+            "fieldId": "style",
+            "fieldLabel": "Style",
+            "originalValue": "style",
+            "category": "style",
+            "transformedTo": "serif typography"
+          },
+          {
+            "start": 632,
+            "end": 653,
+            "fieldId": "visual_texture",
+            "fieldLabel": "Visual Texture",
+            "originalValue": "None",
+            "category": "technical",
+            "transformedTo": "no background texture"
+          },
+          {
+            "start": 694,
+            "end": 716,
+            "fieldId": "primary_intent",
+            "fieldLabel": "Primary Intent",
+            "originalValue": "primary_intent",
+            "category": "technical",
+            "transformedTo": "Wide Quote Card Design"
+          }
+        ]
+      },
+      "detectedLang": "English",
+      "error": "Step 3: For your security, please sign in again."
+    }
+  }
+}
