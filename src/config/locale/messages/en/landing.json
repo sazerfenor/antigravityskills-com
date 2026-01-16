@@ -4,13 +4,13 @@
     "_comment": "Control which sections are displayed on the landing page. Set to false to hide a section.",
     "show_header": true,
     "show_hero": true,
-    "show_hero_buttons": false,
+    "show_hero_buttons": true,
     "show_hero_avatars": false,
     "show_hero_award": false,
-    "show_hero_tip": false,
+    "show_hero_tip": true,
     "show_generator": true,
     "show_logos": true,
-    "show_benefits": false,
+    "show_benefits": true,
     "show_features": true,
     "show_stats": true,
     "show_gallery": true,
@@ -19,59 +19,43 @@
     "show_cta": true,
     "show_subscribe": true,
     "show_footer": true,
-    "show_core_modules": true
+    "show_core_modules": false
   },
   "header": {
     "id": "header",
     "brand": {
-      "title": "Nano Banana Ultra",
+      "title": "Antigravity Skills",
       "logo": {
         "src": "/logo.png",
-        "alt": "Nano Banana Ultra - AI Image Generator powered by Banana Pro"
+        "alt": "Antigravity Skills - The Open Standard for AI Agent Skills"
       },
       "url": "/"
     },
     "nav": {
       "items": [
         {
-          "title": "Generator",
-          "url": "/ai-image-generator",
+          "title": "Converter",
+          "url": "/#converter",
           "icon": "Zap"
         },
         {
-          "title": "Explore",
-          "url": "/prompts",
+          "title": "Skills",
+          "url": "/skills",
           "icon": "Telescope"
         },
         {
-          "title": "Pricing",
-          "url": "/pricing",
-          "icon": "CreditCard"
-        },
-        {
-          "title": "Changelog",
-          "url": "/changelog",
-          "icon": "Megaphone"
+          "title": "Docs",
+          "url": "/docs",
+          "icon": "BookOpen"
         }
       ]
     },
     "buttons": [],
     "user_nav": {
       "show_name": true,
-      "show_credits": true,
+      "show_credits": false,
       "show_sign_out": true,
-      "items": [
-        {
-          "title": "Billing",
-          "url": "/settings/billing",
-          "icon": "CreditCard"
-        },
-        {
-          "title": "Activity",
-          "url": "/activity",
-          "icon": "Activity"
-        }
-      ]
+      "items": []
     },
     "show_sign": true,
     "show_theme": false,
@@ -79,130 +63,123 @@
   },
   "hero": {
     "id": "hero",
-    "title": "Nano Banana Ultra: Your Professional AI Art Studio",
-    "highlight_text": "Nano Banana Ultra",
-    "description": "Enter a few words. <strong>Nano Banana Ultra</strong> fills in the professional logic. Just click to generate stable, high-fidelity art that matches your vision.",
+    "title": "Antigravity Skills",
+    "highlight_text": "Antigravity Skills",
+    "description": "Pre-built AI superpowers for <strong>Antigravity</strong>. Browse community favorites, create your own, or let AI design the perfect Skill for you. <strong>Save thousands of tokens. Work 10x faster.</strong>",
     "announcement": {
-      "badge": "✨ New",
-      "title": "V2.0 Logic Matrix is Live!",
-      "url": "/ai-image-generator"
+      "badge": "🚀 New",
+      "title": "AI Skill Designer is Live — Free to Try",
+      "url": "/#converter"
     },
-    "tip": "🎁 Try it now: Type 'a cat' and get a pro prompt",
+    "tip": "💡 Each Skill saves 2,000-5,000 tokens per conversation",
     "buttons": [
       {
-        "title": "Start Creating",
-        "icon": "Zap",
-        "url": "/ai-image-generator",
+        "title": "Browse Skills",
+        "icon": "Telescope",
+        "url": "/skills",
         "target": "_self",
         "variant": "default"
       },
       {
-        "title": "Explore Gallery",
-        "icon": "Telescope",
-        "url": "/prompts",
+        "title": "Create a Skill",
+        "icon": "Zap",
+        "url": "/#converter",
         "target": "_self",
         "variant": "outline"
       }
     ],
     "input": {
-      "placeholder": "Describe your idea...",
-      "button": "Generate"
+      "placeholder": "Describe your skill idea...",
+      "button": "Convert"
     },
-    "show_buttons": false,
+    "show_buttons": true,
     "show_avatars": false,
-    "avatars_tip": "Creators are generating stunning AI art every day",
+    "avatars_tip": "Developers are converting skills every day",
     "show_award": false,
-    "show_tip": false
+    "show_tip": true
   },
   "logos": {
-    "title": "Trusted by creators using the world's top AI models:",
+    "title": "Works with your favorite AI coding tools:",
     "items": [
       {
-        "title": "Midjourney",
-        "url": "https://www.midjourney.com",
-        "size": "h-20 w-20",
+        "title": "Cursor",
+        "url": "https://cursor.sh",
+        "size": "h-12 w-12",
         "image": {
-          "src": "/imgs/logos/midjourney.svg",
-          "alt": "Midjourney AI image generator logo - Nano Banana compatible"
+          "src": "/imgs/logos/cursor.svg",
+          "alt": "Cursor AI IDE - Antigravity Skills compatible"
         }
       },
       {
-        "title": "DALL-E 3",
-        "url": "https://openai.com/dall-e-3",
-        "size": "h-15 w-15",
+        "title": "Claude Code",
+        "url": "https://claude.ai",
+        "size": "h-12 w-12",
         "image": {
-          "src": "/imgs/logos/openai.svg",
-          "alt": "OpenAI DALL-E 3 logo - Nano Banana compatible"
+          "src": "/imgs/logos/claude.svg",
+          "alt": "Claude Code CLI - Antigravity Skills compatible"
         }
       },
       {
-        "title": "Stable Diffusion",
-        "url": "https://stability.ai",
-        "size": "h-15 w-15",
-        "featured": true,
+        "title": "Gemini",
+        "url": "https://ai.google.dev",
+        "size": "h-12 w-12",
         "image": {
-          "src": "/imgs/logos/stability.svg",
-          "alt": "Stability AI Stable Diffusion logo - Nano Banana compatible"
+          "src": "/imgs/logos/gemini.svg",
+          "alt": "Gemini - Antigravity Skills compatible"
         }
       },
       {
-        "title": "Flux",
-        "url": "https://blackforestlabs.ai",
-        "size": "h-15 w-15",
+        "title": "Amp",
+        "url": "https://amp.dev",
+        "size": "h-12 w-12",
         "image": {
-          "src": "/imgs/logos/flux.svg",
-          "alt": "Black Forest Labs Flux logo - Nano Banana compatible"
-        }
-      },
-      {
-        "title": "Leonardo",
-        "url": "https://leonardo.ai",
-        "size": "h-15 w-15",
-        "image": {
-          "src": "/imgs/logos/leonardo.svg",
-          "alt": "Leonardo AI logo - Nano Banana compatible"
+          "src": "/imgs/logos/amp.svg",
+          "alt": "Amp AI - Antigravity Skills compatible"
         }
       }
     ]
   },
   "benefits": {
     "id": "benefits",
-    "title": "Create Prompts That Make People Say WOW",
-    "label": "Results",
-    "description": "Stop wasting credits on bad generations. Our optimizer ensures your prompt is perfect before you hit generate.",
+    "title": "Why Developers Choose Antigravity Skills",
+    "label": "Benefits",
+    "description": "Stop wasting tokens. Start building faster.",
     "items": [
       {
-        "title": "Instant Expert Tuning",
-        "description": "Don't know technical camera settings? Our AI inserts professional lighting, composition, and lens terms into your prompt.",
-        "icon": "RiNextjsFill",
+        "title": "Stop Repeating Yourself",
+        "description": "Every conversation without a Skill wastes 2,000-5,000 tokens on context. Antigravity Skills remember your stack, your patterns, your preferences — so you explain once and build forever.",
+        "icon": "RiRepeatLine",
         "image": {
-          "src": "/imgs/features/user-billing.png",
-          "alt": "benefits"
+          "src": "/imgs/features/token-savings.png",
+          "alt": "Antigravity Skills token savings illustration"
         }
       },
       {
-        "title": "Smart Style Transfer",
-        "description": "Like a style? One click applies that exact visual vibe to your text prompt. No complex engineering required.",
-        "icon": "RiClapperboardAiLine",
+        "title": "Work 10x Faster",
+        "description": "No more 20-message warm-ups. Your Skills give AI the full context upfront. Ask once, get professional results.",
+        "icon": "RiFlashlightFill",
         "image": {
-          "src": "/imgs/features/admin-settings.png",
-          "alt": "benefits"
+          "src": "/imgs/features/fast-workflow.png",
+          "alt": "Antigravity Skills fast workflow illustration"
         }
       },
       {
-        "title": "Maximize Your Token Value",
-        "description": "Optimized prompts mean fewer failed generations on your paid AI tools. Get the best out of every model.",
-        "icon": "RiCodeFill",
+        "title": "Build Like an Expert",
+        "description": "Not a senior developer? No problem. Community Skills encode years of experience into reusable patterns. Instant expertise, zero learning curve.",
+        "icon": "RiUserStarLine",
         "image": {
-          "src": "/imgs/features/user-billing.png",
-          "alt": "benefits"
+          "src": "/imgs/features/expertise.png",
+          "alt": "Antigravity Skills expert patterns illustration"
         }
       }
     ]
   },
   "generator": {
-    "title": "Ultra Prompt Lab: Input Ideas, Output Masterpieces",
-    "description": "Type a simple idea. Nano Banana Ultra adds the professional logic."
+    "id": "converter",
+    "badge": "AI SKILL DESIGNER",
+    "heading": "Create Your",
+    "heading_highlight": "Antigravity Skill",
+    "description": "Describe what you need, or paste an existing prompt. Get a production-ready Skill in seconds."
   },
   "core_modules": {
     "id": "core-modules",
@@ -211,227 +188,184 @@
   },
   "features": {
     "id": "features",
-    "header_badge": "Powered by Nano Banana™",
-    "header_title": "The Ultra Engine Explained",
-    "header_highlight": "Ultra Engine",
-    "header_description": "See how the <strong>Ultra Intent Analysis</strong> deconstructs your raw input into a structured Ultra Matrix ready for <span class=\"text-white\">any AI image generator</span>.",
-    "title": "Ultra Features, Zero Complexity",
-    "description": "You provide the idea. Nano Banana Ultra handles the complexity.",
+    "header_badge": "Why Antigravity Skills",
+    "header_title": "Skills That Supercharge Your Workflow",
+    "header_highlight": "Supercharge",
+    "header_description": "Stop explaining your project from scratch every time. Antigravity Skills give your AI the context it needs — so you can focus on <span class=\"text-white\">building</span>.",
+    "title": "Built for Vibe Coders",
+    "description": "Focus on building. Let your skills work everywhere.",
     "items": [
       {
-        "title": "Ultra Intent Reading",
-        "description": "Don't know camera settings? Don't care. Nano Banana Ultra infers the perfect lighting and style from your short idea.",
-        "icon": "RiNextjsFill"
+        "title": "Save Thousands of Tokens",
+        "description": "Stop repeating context every conversation. Your Skills remember everything, so you pay less for better results.",
+        "icon": "RiCoinLine"
       },
       {
-        "title": "Ultra Stable Output",
-        "description": "No more random lottery. Get consistent, ultra-fidelity results every time you generate.",
-        "icon": "RiKey2Fill"
+        "title": "10x Faster Workflows",
+        "description": "Skip the 20-message warm-up. Get professional results in one shot, not endless back-and-forth.",
+        "icon": "RiFlashlightLine"
       },
       {
-        "title": "Ultra Prompt Polish",
-        "description": "Advanced grammar correction and keyword enhancement for superior AI understanding.",
-        "icon": "RiDatabase2Line"
+        "title": "Community-Tested Skills",
+        "description": "Browse Skills created by experienced developers. Battle-tested patterns ready to use.",
+        "icon": "RiTeamLine"
       },
       {
-        "title": "Ultra Visual Breakdown",
-        "description": "Understand why a prompt works. Our Ultra tool breaks down the visual elements.",
-        "icon": "RiBarChart2Line"
+        "title": "AI Skill Designer",
+        "description": "Describe what you need. Our AI creates a production-ready Skill with all the right structure.",
+        "icon": "RiMagicLine"
       },
       {
-        "title": "Ultra Model Optimization",
-        "description": "Automatically formats parameters like --v, --ar, and --stylize for any model.",
-        "icon": "RiCloudy2Fill"
+        "title": "Free to Start",
+        "description": "Browse and download Skills for free. No subscription required for basic use.",
+        "icon": "RiGiftLine"
       },
       {
-        "title": "Ultra Community",
-        "description": "Join thousands of Ultra creators. Get help, share results, discover tips.",
-        "icon": "RiRobot2Line"
+        "title": "One-Click Install",
+        "description": "Copy any Skill to your Antigravity setup instantly. No complex configuration.",
+        "icon": "RiDownloadLine"
       }
     ]
   },
   "stats": {
     "id": "stats",
-    "title": "Ultra in Numbers",
-    "description": "Simple prompts. Ultra results.",
+    "title": "Antigravity Skills in Numbers",
+    "description": "Real savings. Real efficiency.",
     "items": [
       {
-        "title": "10+",
-        "description": "AI Models Supported"
+        "title": "2,000+",
+        "description": "Tokens Saved Per Skill"
       },
       {
-        "title": "500+",
-        "description": "Prompt Templates"
+        "title": "10x",
+        "description": "Faster Workflows"
       },
       {
-        "title": "99%",
-        "description": "User Satisfaction"
+        "title": "$0",
+        "description": "To Get Started"
       }
     ]
   },
   "gallery": {
     "id": "gallery",
-    "title": "Ultra Gallery: Community Creations",
-    "description": "Explore prompts by style and category",
+    "title": "Skills Gallery: Community Favorites",
+    "description": "Explore skills by style and category",
     "_comment": "categories and trending data are now fetched dynamically from the database via getGalleryEntranceData() service",
     "buttons": [
       {
         "text": "View All Collections",
-        "url": "/prompts",
+        "url": "/skills",
         "icon": "ArrowRight"
       }
     ]
   },
   "testimonials": {
     "id": "testimonials",
-    "title": "Ultra Creators Speak",
-    "description": "Top creators powering their workflow with Nano Banana Ultra.",
+    "title": "Developers Love Antigravity Skills",
+    "description": "See how developers are saving time and tokens.",
     "items": [
       {
-        "name": "AdMaster Pro",
-        "role": "Commercial Visuals",
-        "quote": "My client needed 'high-conversion food photography' instantly. Nano Banana Ultra's Intent Analysis nailed the lighting logic without me guessing keywords. It's not just a generator; it's a creative director.",
+        "name": "Alex Chen",
+        "role": "Indie Developer",
+        "quote": "I was spending $50/month just explaining my project context over and over. Now I load one Skill and the AI just gets it. Antigravity Skills paid for itself on day one.",
         "rating": 5,
         "image": {
-          "src": "https://r2.bananaprompts.info/avatars/1765554543494-85b048ce-9e83-48a5-a91c-c4dc3bcedda9.webp",
-          "alt": "AdMaster Pro avatar"
+          "src": "/imgs/avatars/avatar-1.webp",
+          "alt": "Alex Chen - Antigravity Skills user"
         }
       },
       {
-        "name": "Sarah Vogue",
-        "role": "Virtual Fashion Blogger",
-        "quote": "Achieving ultimate photorealism in digital fashion used to be hit-or-miss. With Nano Banana Ultra, the fabric textures and skin tones are consistent across every shot. Essential for my virtual runway.",
+        "name": "Sarah K.",
+        "role": "No-Code Builder",
+        "quote": "I'm not a developer — I learned to code with AI. These Skills make me feel like I have 10 years of experience. The AI finally understands what I want.",
         "rating": 5,
         "image": {
-          "src": "https://r2.bananaprompts.info/avatars/1765552329130-162a3b57-949b-4a78-8e84-578e60067ae0.webp",
-          "alt": "Sarah Vogue avatar"
+          "src": "/imgs/avatars/avatar-2.webp",
+          "alt": "Sarah K. - Antigravity Skills user"
         }
       },
       {
-        "name": "Dr. Linus Graph",
-        "role": "Data Viz Specialist",
-        "quote": "I turn complex data into clear infographics. Nano Banana understands abstract logical structures better than any other model. It respects the hierarchy of information in my prompts perfectly.",
+        "name": "Marcus Dev",
+        "role": "Full-Stack Engineer",
+        "quote": "My workflow that used to take 20 messages now takes 3. That's not just convenience — that's real money saved. Antigravity Skills is essential for any serious dev.",
         "rating": 5,
         "image": {
-          "src": "https://r2.bananaprompts.info/avatars/1765551824866-b8b09b1d-77e3-404e-9e34-64a990b113e0.webp",
-          "alt": "Dr. Linus Graph avatar"
+          "src": "/imgs/avatars/avatar-3.webp",
+          "alt": "Marcus Dev - Antigravity Skills user"
         }
       },
       {
-        "name": "Render Foundry",
-        "role": "3D Product Studio",
-        "quote": "For commercial assets, 'close enough' isn't enough. The Logic Engine gives us precise control over studio lighting and material properties. It's automated our entire product mockup workflow.",
+        "name": "Jamie Torres",
+        "role": "AI Workflow Specialist",
+        "quote": "The community Skills are incredible. I found one for React patterns that saved me hours of setup. Now I contribute my own Skills back to the community.",
         "rating": 5,
         "image": {
-          "src": "https://r2.bananaprompts.info/avatars/1765554024600-5f5d7771-780a-48b7-a524-1d6738c49240.webp",
-          "alt": "Render Foundry avatar"
+          "src": "/imgs/avatars/avatar-4.webp",
+          "alt": "Jamie Torres - Antigravity Skills user"
         }
       },
       {
-        "name": "void_walker",
-        "role": "Digital Surrealist",
-        "quote": "Exploring the boundaries of reality requires a tool that understands dream logic. Nano Banana Ultra allows me to mine deep subconscious intent and translate it into visual surrealism.",
+        "name": "Riley Zhang",
+        "role": "Startup Founder",
+        "quote": "We were burning through API credits explaining our codebase to AI. Antigravity Skills cut our AI costs by 60%. That's thousands saved monthly.",
         "rating": 5,
         "image": {
-          "src": "https://r2.bananaprompts.info/avatars/1765554777125-5d545f98-5993-4b7a-8074-996c92402b27.webp",
-          "alt": "void_walker avatar"
+          "src": "/imgs/avatars/avatar-5.webp",
+          "alt": "Riley Zhang - Antigravity Skills user"
         }
       }
     ]
   },
   "faq": {
     "id": "faq",
-    "title": "Ultra FAQ",
-    "description": "Have another question? Contact us on Discord or by email.",
-    "tip": "Can't find what you're looking for? <a href='mailto:support@nanobananaultra.com' class='text-primary font-medium hover:underline'>Contact our support team</a>",
+    "title": "Frequently Asked Questions",
+    "description": "Everything you need to know about Antigravity Skills.",
+    "tip": "Can't find what you're looking for? <a href='mailto:support@antigravityskills.com' class='text-primary font-medium hover:underline'>Contact our support team</a>",
     "items": [
       {
-        "question": "What makes Nano Banana Ultra different?",
-        "answer": "Nano Banana Ultra is the official Ultra-level optimization platform for Nano Banana AI models. Our proprietary Ultra Intent Analysis technology transforms short ideas into professional prompts, delivering consistent Ultra-quality results. Note: Nano Banana Ultra is an independent platform not affiliated with Google."
+        "question": "What is Antigravity Skills?",
+        "answer": "Antigravity Skills is a platform for discovering, creating, and using AI agent skills. Browse community-tested Skills that save you thousands of tokens, or create your own custom Skills with our AI Skill Designer."
       },
       {
-        "question": "How is Ultra different from standard Nano Banana?",
-        "answer": "While Nano Banana and Nano Banana Pro are Google's AI image models, Nano Banana Ultra is our optimization layer that maximizes their potential. Think of Ultra as the professional studio that brings out the best in these powerful models."
+        "question": "How do Antigravity Skills save me money?",
+        "answer": "Every AI conversation without a Skill wastes 2,000-5,000 tokens explaining context. Antigravity Skills remember your preferences, tech stack, and patterns — so you explain once and the AI understands forever. That's real money saved on every conversation."
       },
       {
-        "question": "What's included in the free Ultra tier?",
-        "answer": "Free Ultra users get 3 prompt generations per day without signup. Create an account to receive bonus Ultra credits for image generation. Premium credit packages are available for power users."
+        "question": "Is Antigravity Skills free?",
+        "answer": "Yes! Browsing and downloading community Skills is completely free. You can also create basic Skills with our AI Skill Designer at no cost. Premium features for power users are coming soon."
       },
       {
-        "question": "Does Ultra support image generation?",
-        "answer": "Yes! The Ultra Prompt Lab generates both optimized prompts and instant image previews. Export your Ultra-enhanced prompts to any compatible AI image platform."
+        "question": "Who is Antigravity Skills for?",
+        "answer": "Antigravity Skills is designed for Vibe Coders — people who use AI to build products, write content, and automate workflows. Whether you're a no-code builder, indie developer, or startup founder, our Skills help you work 10x faster."
       },
       {
-        "question": "Do I need technical skills to use Ultra?",
-        "answer": "Zero technical skills required. Simply type a short idea like 'sunset portrait' and Ultra Intent Analysis automatically adds professional parameters—lighting, composition, camera settings, and artistic style."
+        "question": "What kind of Skills are available?",
+        "answer": "We offer Skills for frontend design, code review, task planning, marketing copywriting, competitor analysis, and more. Each Skill is community-tested and optimized to save you time and tokens."
       },
       {
-        "question": "What are Ultra and Ultra Pro modes?",
-        "answer": "Ultra mode uses the fast Nano Banana model for quick iterations. Ultra Pro mode leverages Nano Banana Pro for maximum fidelity and semantic depth—ideal for professional and commercial work."
+        "question": "Can I create my own Skills?",
+        "answer": "Absolutely! Describe what you need in plain text, and our AI Skill Designer will generate a production-ready Skill with all the right structure. You can also contribute your Skills to the community."
       },
       {
-        "question": "How does Ultra Refinement work?",
-        "answer": "Ultra Refinement is our one-click enhancement system. Adjust lighting, perspective, style intensity, and more through intuitive controls—no prompt editing required."
-      },
-      {
-        "question": "Can I remix prompts from the Ultra Gallery?",
-        "answer": "Absolutely! Browse the Ultra Gallery, find inspiring styles, and click 'Ultra Remix' to use any prompt as your creative starting point. Full prompt transparency on every creation."
-      },
-      {
-        "question": "Are Ultra-generated prompts commercially usable?",
-        "answer": "Yes. All prompts created with Nano Banana Ultra are yours to use commercially. For generated images, see our terms of service for full licensing details."
-      }
-    ]
-  },
-  "ai_image_generator_faq": {
-    "id": "ai_image_generator_faq",
-    "title": "AI Image Generator FAQ",
-    "description": "Common questions about our AI image generation tool.",
-    "items": [
-      {
-        "question": "What is Nano Banana Ultra AI Image Generator?",
-        "answer": "Nano Banana Ultra is a cutting-edge web tool that allows anyone to create professional images using artificial intelligence. It transforms text descriptions into visuals and can even edit existing photos using advanced models like Gemini and FLUX."
-      },
-      {
-        "question": "Is Nano Banana Ultra AI Image Generator free?",
-        "answer": "Yes, we offer free daily credits for all users. You can generate high-quality AI images using Gemini and other models without any subscription."
-      },
-      {
-        "question": "Can I use generated images for commercial purposes?",
-        "answer": "Yes! Images generated on Nano Banana Ultra come with a commercial usage license, meaning you own the rights to your creations for marketing, products, or creative projects."
-      },
-      {
-        "question": "How does the Image-to-Image feature work?",
-        "answer": "Image-to-Image allows you to upload an existing photo as a reference. The AI then uses your text prompts to modify the image's style, composition, or details while preserving the core structure of your upload."
-      },
-      {
-        "question": "Which AI models are supported?",
-        "answer": "We support multiple state-of-the-art models including Google Gemini, OpenAI GPT-4o, and FLUX.1 for diverse artistic styles, from photorealistic to anime."
-      },
-      {
-        "question": "How do I write effective prompts?",
-        "answer": "Be specific about subject, style, lighting, and mood. You can also use our built-in 'AI Prompt Optimizer' to automatically enhance your simple ideas into professional prompts."
-      },
-      {
-        "question": "What formats are the images downloaded in?",
-        "answer": "Images are provided in high-resolution PNG or JPG formats, optimized for both web use and printing."
+        "question": "Which AI tools work with Antigravity Skills?",
+        "answer": "Antigravity Skills work with Cursor, Claude Code, Antigravity, Amp, and any AI coding tool that supports skill files. Write once, use everywhere."
       }
     ]
   },
   "cta": {
     "id": "cta",
-    "title": "Start Your Ultra Journey Today",
-    "description": "Enter a short idea. Nano Banana Ultra handles the rest. Start free today.",
+    "title": "Every Day Without Skills Costs You Tokens",
+    "description": "The average developer saves 2,000+ tokens per conversation with Antigravity Skills. How much are you throwing away?",
     "buttons": [
       {
-        "title": "Start Creating",
-        "url": "/ai-image-generator",
+        "title": "Start Creating — It's Free",
+        "url": "/#converter",
         "target": "_self",
         "icon": "Zap"
       },
       {
-        "title": "Explore Gallery",
-        "url": "/prompts",
+        "title": "Browse Community Skills",
+        "url": "/skills",
         "target": "_self",
         "variant": "outline",
         "icon": "Telescope"
@@ -440,8 +374,8 @@
   },
   "subscribe": {
     "id": "subscribe",
-    "title": "Get Exclusive Banana Pro Tips Weekly",
-    "description": "Subscribe for exclusive Banana Pro prompts, tips, and early access to new features.",
+    "title": "Get Exclusive Antigravity Skills Tips Weekly",
+    "description": "Subscribe for exclusive skill templates, prompt engineering tips, and early access to new features.",
     "submit": {
       "input": {
         "placeholder": "Enter your email"
@@ -456,44 +390,29 @@
   "footer": {
     "id": "footer",
     "brand": {
-      "title": "Nano Banana Ultra",
-      "description": "The Ultra-level AI art studio. Transform ideas into professional visuals with our proprietary Ultra optimization technology.",
+      "title": "Antigravity Skills",
+      "description": "The open standard for AI agent skills. Convert Claude Skills to portable format that works with Cursor, Antigravity, Claude Code, Amp, and beyond.",
       "logo": {
         "src": "/logo.png",
-        "alt": "Nano Banana Ultra - Ultra-Level AI Image Generation Platform"
+        "alt": "Antigravity Skills - The Open Standard for AI Agent Skills"
       },
       "url": "/"
     },
-    "copyright": "© 2026 Nano Banana Ultra. All rights reserved.",
-    "disclaimer": "Nano Banana Ultra is the official Ultra optimization platform. This is an independent service not affiliated with, endorsed by, or sponsored by Google LLC or its subsidiaries. Nano Banana™ and Nano Banana Pro™ are trademarks owned by Google LLC.",
+    "copyright": "© 2026 Antigravity Skills. All rights reserved.",
+    "disclaimer": "Antigravity Skills is an independent open standard project. This service is not affiliated with, endorsed by, or sponsored by Anthropic, Google, Cursor, or any other AI platform mentioned.",
     "nav": {
       "items": [
         {
           "title": "Product",
           "children": [
             {
-              "title": "Generator",
-              "url": "/ai-image-generator",
+              "title": "Converter",
+              "url": "/#converter",
               "target": "_self"
             },
             {
-              "title": "Gallery",
-              "url": "/prompts",
-              "target": "_self"
-            },
-            {
-              "title": "Pricing",
-              "url": "/pricing",
-              "target": "_self"
-            }
-          ]
-        },
-        {
-          "title": "Resources",
-          "children": [
-            {
-              "title": "Blog",
-              "url": "/blog",
+              "title": "Skills",
+              "url": "/skills",
               "target": "_self"
             },
             {
@@ -515,26 +434,6 @@
               "title": "Terms of Service",
               "url": "/terms-of-service",
               "target": "_self"
-            },
-            {
-              "title": "Refund Policy",
-              "url": "/refund-policy",
-              "target": "_self"
-            },
-            {
-              "title": "Cookie Policy",
-              "url": "/cookie-policy",
-              "target": "_self"
-            },
-            {
-              "title": "Community Guidelines",
-              "url": "/community-guidelines",
-              "target": "_self"
-            },
-            {
-              "title": "DMCA Policy",
-              "url": "/dmca-policy",
-              "target": "_self"
             }
           ]
         }
@@ -545,7 +444,7 @@
         {
           "title": "Email",
           "icon": "Mail",
-          "url": "mailto:support@nanobananaultra.com",
+          "url": "mailto:support@antigravityskills.com",
           "target": "_self"
         }
       ]
@@ -559,10 +458,6 @@
         {
           "title": "Terms of Service",
           "url": "/terms-of-service"
-        },
-        {
-          "title": "Refund Policy",
-          "url": "/refund-policy"
         }
       ]
     },

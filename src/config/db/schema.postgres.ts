@@ -657,7 +657,7 @@ export const communityPost = pgTable(
     downloadCount: integer('download_count').default(0).notNull(),
     
     // SEO slug字段（用于SEO友好的URL）
-    seoSlug: text('seo_slug').unique(), // 格式: nano-banana-woman-portrait-771ee6
+    seoSlug: text('seo_slug').unique(), // 格式: antigravity-woman-portrait-771ee6
     
     createdAt: timestamp('created_at').defaultNow().notNull(),
     updatedAt: timestamp('updated_at')

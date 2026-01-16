@@ -1,0 +1,286 @@
+{
+  "metadata": {
+    "title": "Antigravity Skills 定價 | AI Skill 客製化積分",
+    "description": "獲取 AI 驅動的 Skill 客製化積分。將您的提示詞轉化為專業 Skills，節省 tokens 並提升生產力。免費試用。",
+    "keywords": "antigravity skills, ai skill 生成器, 提示詞優化, vibe coding, claude skills, cursor rules, 節省 tokens, ai 程式助手"
+  },
+  "pricing": {
+    "id": "pricing",
+    "sr_only_title": "Antigravity Skills 積分方案",
+    "title": "投資您的 AI 工作流程",
+    "description": "每個 Skill 每次對話可節省數千 tokens。別再重複解釋 — 讓您的 Skills 幫您說話。",
+    "groups": [
+      {
+        "name": "credit-packs",
+        "title": "積分包",
+        "description": "一次購買，永不過期"
+      },
+      {
+        "name": "monthly",
+        "title": "月繳"
+      },
+      {
+        "name": "yearly",
+        "title": "年繳",
+        "is_featured": true,
+        "label": "最超值"
+      }
+    ],
+    "items": [
+      {
+        "title": "入門版",
+        "description": "體驗魔法",
+        "features": [
+          "150 積分",
+          "約 15 個客製 Skills",
+          "AI 驅動優化",
+          "永不過期"
+        ],
+        "interval": "one-time",
+        "amount": 900,
+        "currency": "USD",
+        "price": "$9",
+        "original_price": "",
+        "unit": "",
+        "is_featured": false,
+        "tip": "適合測試工作流程。看看您能節省多少時間。",
+        "button": {
+          "title": "開始使用",
+          "url": "/sign-up?plan=starter",
+          "icon": "RiFlashlightFill"
+        },
+        "product_id": "pack-starter",
+        "product_name": "入門版積分包",
+        "credits": 150,
+        "valid_days": -1,
+        "group": "credit-packs"
+      },
+      {
+        "title": "成長版",
+        "description": "創作者首選",
+        "features": [
+          "1,000 積分",
+          "約 100 個客製 Skills",
+          "優先處理",
+          "永不過期"
+        ],
+        "interval": "one-time",
+        "amount": 3700,
+        "currency": "USD",
+        "price": "$37",
+        "original_price": "",
+        "unit": "",
+        "is_featured": false,
+        "tip": "建立您的個人 Skill 資料庫。一次投資，終身價值。",
+        "button": {
+          "title": "獲取積分",
+          "url": "/sign-up?plan=growth",
+          "icon": "RiFlashlightFill"
+        },
+        "product_id": "pack-growth",
+        "product_name": "成長版積分包",
+        "credits": 1000,
+        "valid_days": -1,
+        "group": "credit-packs"
+      },
+      {
+        "title": "專業版",
+        "description": "進階用戶",
+        "label": "熱門",
+        "features": [
+          "2,700 積分",
+          "約 270 個客製 Skills",
+          "進階客製化",
+          "優先支援"
+        ],
+        "interval": "one-time",
+        "amount": 9700,
+        "currency": "USD",
+        "price": "$97",
+        "original_price": "",
+        "unit": "",
+        "is_featured": true,
+        "tip": "$100 以下囤積積分。為每個專案建立 Skills。",
+        "button": {
+          "title": "獲取積分",
+          "url": "/sign-up?plan=pro",
+          "icon": "RiFlashlightFill"
+        },
+        "product_id": "pack-pro",
+        "product_name": "專業版積分包",
+        "credits": 2700,
+        "valid_days": -1,
+        "group": "credit-packs"
+      },
+      {
+        "title": "工作室版",
+        "description": "最高價值",
+        "features": [
+          "7,000 積分",
+          "約 700 個客製 Skills",
+          "批次操作",
+          "專屬支援"
+        ],
+        "interval": "one-time",
+        "amount": 19700,
+        "currency": "USD",
+        "price": "$197",
+        "original_price": "",
+        "unit": "",
+        "is_featured": false,
+        "tip": "每積分最佳價值。適合認真的開發者。",
+        "button": {
+          "title": "獲取積分",
+          "url": "/sign-up?plan=studio",
+          "icon": "RiFlashlightFill"
+        },
+        "product_id": "pack-studio",
+        "product_name": "工作室版積分包",
+        "credits": 7000,
+        "valid_days": -1,
+        "group": "credit-packs"
+      },
+      {
+        "title": "基本版",
+        "description": "穩定創作者",
+        "features": [
+          "每月 1,200 積分",
+          "約 120 個 Skills/月",
+          "持續創作",
+          "隨時取消"
+        ],
+        "interval": "month",
+        "amount": 2700,
+        "currency": "USD",
+        "price": "$27",
+        "original_price": "",
+        "unit": "/ 月",
+        "is_featured": false,
+        "tip": "適合持續建立 Skills。靈活且可預期。",
+        "button": {
+          "title": "訂閱",
+          "url": "/sign-up?plan=basic-monthly",
+          "icon": "RiFlashlightFill"
+        },
+        "product_id": "basic-monthly",
+        "product_name": "基本版月繳",
+        "credits": 1200,
+        "valid_days": 30,
+        "group": "monthly",
+        "plan_name": "Basic"
+      },
+      {
+        "title": "專業版",
+        "description": "活躍創作者",
+        "label": "熱門",
+        "features": [
+          "每月 4,000 積分",
+          "約 400 個 Skills/月",
+          "優先處理",
+          "進階功能"
+        ],
+        "interval": "month",
+        "amount": 4700,
+        "currency": "USD",
+        "price": "$47",
+        "original_price": "",
+        "unit": "/ 月",
+        "is_featured": true,
+        "tip": "適合團隊和活躍開發者。最大化生產力。",
+        "button": {
+          "title": "訂閱",
+          "url": "/sign-up?plan=pro-monthly",
+          "icon": "RiFlashlightFill"
+        },
+        "product_id": "pro-monthly",
+        "product_name": "專業版月繳",
+        "credits": 4000,
+        "valid_days": 30,
+        "group": "monthly",
+        "plan_name": "Pro"
+      },
+      {
+        "title": "基本版",
+        "description": "精明省錢",
+        "features": [
+          "每年 12,000 積分",
+          "約 1,200 個 Skills/年",
+          "相當於 4 個月免費",
+          "鎖定優惠"
+        ],
+        "interval": "year",
+        "amount": 19700,
+        "currency": "USD",
+        "price": "$197",
+        "original_price": "",
+        "unit": "/ 年",
+        "equivalent_monthly": "$16/月",
+        "is_featured": false,
+        "tip": "相當於 4 個月免費。年繳最佳價值。",
+        "button": {
+          "title": "年繳訂閱",
+          "url": "/sign-up?plan=basic-yearly",
+          "icon": "RiFlashlightFill"
+        },
+        "product_id": "basic-yearly",
+        "product_name": "基本版年繳",
+        "credits": 12000,
+        "valid_days": 365,
+        "group": "yearly",
+        "plan_name": "Basic"
+      },
+      {
+        "title": "專業版",
+        "description": "最佳價值",
+        "label": "🔥 最超值",
+        "features": [
+          "每年 48,000 積分",
+          "約 4,800 個 Skills/年",
+          "⚡ 永久鎖定 $29/月",
+          "所有專業版功能"
+        ],
+        "interval": "year",
+        "amount": 34700,
+        "currency": "USD",
+        "price": "$347",
+        "original_price": "$497",
+        "unit": "/ 年",
+        "equivalent_monthly": "$29/月",
+        "is_featured": true,
+        "tip": "⚡ 鎖定 $29/月費率。認真開發者的最大節省。",
+        "button": {
+          "title": "年繳訂閱",
+          "url": "/sign-up?plan=pro-yearly",
+          "icon": "RiFlashlightFill"
+        },
+        "product_id": "pro-yearly",
+        "product_name": "專業版年繳",
+        "credits": 48000,
+        "valid_days": 365,
+        "group": "yearly",
+        "plan_name": "Pro"
+      }
+    ]
+  },
+  "page": {
+    "current_plan": "目前方案",
+    "processing": "處理中"
+  },
+  "value_props": {
+    "title": "為何積分物超所值",
+    "items": [
+      {
+        "title": "節省數千 Tokens",
+        "description": "精心設計的 Skill 每次對話可節省 2,000-5,000+ tokens。數月累積下來，就是數萬 tokens 的節省。"
+      },
+      {
+        "title": "不再重複解釋",
+        "description": "停止每次都解釋脈絡、偏好和需求。您的 Skills 記住一切。"
+      },
+      {
+        "title": "專業結果，任何工作流程",
+        "description": "無論是程式開發、寫作、設計或任何 AI 任務 — 立即獲得專家級輸出。"
+      }
+    ]
+  }
+}

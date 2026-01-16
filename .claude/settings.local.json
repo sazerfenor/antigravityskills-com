@@ -90,7 +90,25 @@
       "Bash(kill -9 78204)",
       "Bash(tee /tmp/deploy-log-2.txt)",
       "Bash(dig @8.8.8.8 nanobananaultra.com A +short)",
-      "Bash(sqlite3 local.db \"SELECT id, userId, prompt, status FROM ai_task LIMIT 1\")"
+      "Bash(sqlite3 local.db \"SELECT id, userId, prompt, status FROM ai_task LIMIT 1\")",
+      "mcp__puppeteer__puppeteer_navigate",
+      "mcp__puppeteer__puppeteer_screenshot",
+      "Bash(turso db shell antigravityskills \"PRAGMA table_info\\(user\\);\")",
+      "Bash(turso db shell antigravityskills \"SELECT * FROM __drizzle_migrations ORDER BY id DESC LIMIT 5;\")",
+      "Bash(turso db shell antigravityskills \"SELECT * FROM user;\")",
+      "Bash(turso db shell antigravityskills \"SELECT * FROM role;\")",
+      "Bash(turso db shell antigravityskills \"SELECT u.name, u.email, r.name as role_name, r.title as role_title FROM user u JOIN user_role ur ON u.id = ur.user_id JOIN role r ON ur.role_id = r.id;\")",
+      "mcp__github__get_file_contents",
+      "Bash(turso db shell antigravityskills-lier \"DELETE FROM __drizzle_migrations\")",
+      "Bash(turso db shell antigravityskills \"DELETE FROM __drizzle_migrations\")",
+      "Bash(claude marketplace add obra/superpowers-marketplace)",
+      "Bash(turso db shell antigravityskills \"CREATE UNIQUE INDEX IF NOT EXISTS antigravity_skills_slug_unique ON antigravity_skills\\(slug\\);\")",
+      "Bash(turso db shell antigravityskills \"SELECT * FROM __drizzle_migrations;\")",
+      "mcp__reddit__search_reddit",
+      "mcp__reddit__get_post_details",
+      "Bash(gh api repos/treylom/prompt-engineering-skills --jq '.stargazers_count, .forks_count, .updated_at')",
+      "Bash(gh api repos/ThamJiaHe/claude-prompt-engineering-guide --jq '.stargazers_count, .forks_count, .updated_at')",
+      "Bash(gh api repos/ckelsoe/claude-skill-prompt-architect --jq '.stargazers_count, .forks_count, .updated_at')"
     ]
   }
 }

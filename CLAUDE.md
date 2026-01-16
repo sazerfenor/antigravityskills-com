@@ -33,7 +33,7 @@
 
 ---
 
-# Nano Banana Ultra 项目开发指南
+# Antigravity Skills 项目开发指南
 
 > 本文档面向 AI 编程助手，定义项目架构约束和开发规范
 
@@ -41,13 +41,33 @@
 
 ## 项目概述
 
-**Nano Banana Ultra** - AI 提示词社区平台
+**Antigravity Skills** (antigravityskills.com) - AI Agent Skills 开放标准平台
 
-核心功能：
-- AI 图片/音乐生成（Gemini/Replicate/Fal/Kie.ai）
-- Case-Based RAG 提示词优化
-- 社区画廊系统 + SEO 优化
-- 虚拟作者系统
+**品牌定位**: The Open Standard for AI Agent Skills
+
+**主打关键词**: Antigravity Skills
+
+### 核心功能
+
+1. **Skills 转换器** ⭐ 核心卖点
+   - 将 Claude Skills 转换为 Antigravity Skills 开放格式
+   - 兼容 Cursor、Claude Code、Amp、Windsurf 等主流 AI 编程工具
+   - 支持从自然语言想法创建 Skills
+
+2. **AI 内容生成**
+   - 图片生成（Gemini/Replicate/Fal）
+   - 音乐生成（Kie.ai）
+   - 视频生成（待扩展）
+
+3. **社区画廊系统**
+   - AI 生成作品展示
+   - SEO 优化的详情页
+   - 社交互动（点赞、评论、关注）
+
+4. **虚拟作者系统**
+   - AI 驱动的虚拟用户人格
+   - 自动化社区互动
+   - 令牌桶调度机制
 
 ---
 
@@ -75,20 +95,26 @@ src/
 ├── app/
 │   ├── [locale]/              # 国际化页面
 │   │   ├── (admin)/           # 管理后台
-│   │   ├── (auth)/            # 认证
-│   │   ├── (chat)/            # 聊天
-│   │   ├── (docs)/            # 文档
+│   │   ├── (auth)/            # 认证页面
+│   │   ├── (chat)/            # AI 聊天
+│   │   ├── (docs)/            # 文档系统
 │   │   └── (landing)/         # 前台页面
-│   └── api/                   # API Routes (~77 个端点)
+│   │       ├── skills/        # ⭐ Skills 列表和详情 (核心页面)
+│   │       ├── explore/       # 画廊探索
+│   │       ├── pricing/       # 定价页
+│   │       └── ...
+│   └── api/                   # API Routes
+│       ├── skills/            # ⭐ Skills 转换 API
 │       ├── ai/                # AI 生成、优化
 │       ├── admin/             # 管理后台 API
 │       ├── community/         # 社区帖子
 │       ├── payment/           # 支付
-│       ├── user/              # 用户
 │       └── ...
 │
 ├── config/
-│   └── db/schema.ts           # Drizzle Schema (SQLite/Turso)
+│   ├── brand.ts               # 品牌配置 (Antigravity Skills)
+│   ├── index.ts               # 环境配置
+│   └── db/schema.ts           # Drizzle Schema
 │
 ├── core/                      # 核心模块（谨慎修改）
 │   ├── auth/                  # Better-Auth 配置
@@ -102,13 +128,25 @@ src/
 │   ├── storage/               # R2/S3
 │   └── email/                 # Resend
 │
-└── shared/                    # 共享层
-    ├── models/                # 数据模型 (~24 个)
-    ├── services/              # 业务服务 (~23 个)
-    ├── lib/                   # 工具函数 (~32 个)
-    ├── blocks/                # UI 组件块
-    ├── components/            # 基础组件
-    └── types/                 # 类型定义
+├── shared/
+│   ├── models/                # 数据模型
+│   │   ├── antigravity_skill.ts  # ⭐ Skills 数据操作
+│   │   ├── community_post.ts
+│   │   ├── user.ts
+│   │   └── ...
+│   ├── services/              # 业务服务
+│   │   ├── skill-converter.ts    # ⭐ Skills 转换核心逻辑
+│   │   ├── gemini-text.ts
+│   │   ├── intent-analyzer.ts
+│   │   └── ...
+│   ├── prompts/               # AI Prompts
+│   │   └── skill-converter.ts    # ⭐ 转换 Prompt 模板
+│   ├── lib/                   # 工具函数
+│   ├── blocks/                # UI 组件块
+│   ├── components/            # 基础组件
+│   └── types/                 # 类型定义
+│
+└── prompts/                   # 系统级 Prompts
 ```
 
 ---
@@ -145,17 +183,16 @@ src/
 
 ```typescript
 // ❌ API Route 直接调用数据库
-const posts = await db.select().from(communityPost);
+const skills = await db.select().from(antigravitySkills);
 
 // ✅ 通过 Model
-const posts = await getCommunityPosts({ status: 'published' });
+const skills = await getAntigravitySkills({ status: 'published' });
 
 // ❌ 直接调用外部 API
 const response = await fetch('https://api.gemini...');
 
 // ✅ 通过 Extension/Service
-const aiService = await getAIService();
-const result = await aiService.generate({ ... });
+const result = await generateText(prompt, { model: 'gemini-3-flash-preview' });
 ```
 
 ### 2. 先查再写
@@ -178,6 +215,67 @@ const result = await aiService.generate({ ... });
 - 先查数据、打日志，确认根因
 - 列出所有可能原因，逐一验证
 - 不要基于单一现象武断推测
+
+---
+
+## Skills 转换系统 (核心功能)
+
+### 数据流
+
+```
+用户输入 (Claude Skill / 自然语言)
+    ↓
+API: /api/skills/convert
+    ↓
+Service: skill-converter.ts
+    ↓
+Prompt: shared/prompts/skill-converter.ts
+    ↓
+Gemini API (gemini-3-flash-preview)
+    ↓
+Model: antigravity_skill.ts (保存到数据库)
+    ↓
+返回: { name, description, skillMd, skillId }
+```
+
+### 关键文件
+
+| 文件 | 职责 |
+|------|------|
+| `src/app/api/skills/convert/route.ts` | 转换 API 端点 |
+| `src/shared/services/skill-converter.ts` | 转换核心逻辑 |
+| `src/shared/prompts/skill-converter.ts` | Prompt 模板 |
+| `src/shared/models/antigravity_skill.ts` | 数据库操作 |
+| `src/config/db/schema.sqlite.ts` | `antigravitySkills` 表定义 |
+
+### Antigravity Skills 格式规范
+
+```markdown
+---
+name: skill-name
+description: Third-person description with keywords. Use when [specific scenarios].
+---
+
+# Skill Title
+
+[Overview paragraph]
+
+## When to use this skill
+
+- Use when [scenario 1]
+- Use when [scenario 2]
+
+## How to use it
+
+[Step-by-step instructions]
+
+## Original Metadata
+
+| Field | Value |
+|-------|-------|
+| Author | ... |
+| Version | ... |
+```
 
 ---
 
@@ -243,8 +341,19 @@ if (!(await hasPermission(user.id, 'admin.xxx.write'))) {
 ### Schema 位置
 
 - `src/config/db/schema.ts` - 入口（重导出 SQLite schema）
-- `src/config/db/schema.sqlite.ts` - SQLite/Turso schema
-- `src/config/db/schema.postgres.ts` - PostgreSQL 备份
+- `src/config/db/schema.sqlite.ts` - SQLite/Turso schema 定义
+
+### 核心表
+
+| 表名 | 用途 |
+|------|------|
+| `antigravitySkills` | ⭐ Skills 主表 |
+| `skillConversionHistory` | ⭐ 转换历史记录 |
+| `communityPost` | 社区画廊帖子 |
+| `user` | 用户表 |
+| `virtualPersona` | 虚拟人格配置 |
+| `credit` | 积分系统 |
+| `order` / `subscription` | 支付订单 |
 
 ### 迁移流程
 
@@ -252,6 +361,8 @@ if (!(await hasPermission(user.id, 'admin.xxx.write'))) {
 2. `pnpm db:generate` - 生成迁移
 3. `pnpm db:migrate` - 执行迁移
 4. 更新对应 Model
+
+> ⚠️ **重要**：避免使用 `db:push`，它有已知 bug（会尝试删除不存在的索引导致失败）。始终使用 `db:generate` + `db:migrate` 组合。<!-- 2026-01-15 -->
 
 ### SQLite 事务规则
 
@@ -280,7 +391,7 @@ async function B({ tx: externalTx }) {
 
 | 用途 | 模型 ID |
 |------|---------|
-| 文本/聊天 | `gemini-3-flash-preview` |
+| 文本/Skills 转换 | `gemini-3-flash-preview` |
 | 图片生成 | `gemini-3-pro-image-preview` |
 | 向量嵌入 | `text-embedding-004` |
 
@@ -303,7 +414,6 @@ pnpm dev                # 启动开发服务器 (Turbopack)
 # 数据库
 pnpm db:generate        # 生成迁移文件
 pnpm db:migrate         # 执行迁移
-pnpm db:push            # 直接推送 Schema
 pnpm db:studio          # Drizzle Studio
 
 # 构建部署
@@ -326,26 +436,23 @@ pnpm lint               # ESLint
 
 | Model | 职责 |
 |-------|------|
+| `antigravity_skill.ts` | ⭐ Skills CRUD |
 | `user.ts` | 用户 CRUD |
-| `ai_task.ts` | AI 任务管理 |
 | `community_post.ts` | 社区帖子 |
 | `credit.ts` | 积分系统 |
 | `config.ts` | 配置中心 |
-| `error_report.ts` | 错误报告 |
-| `preset.ts` | 模板预设 |
 | `virtual_persona.ts` | 虚拟作者 |
 
 ### Services (服务层)
 
 | Service | 职责 |
 |---------|------|
-| `ai.ts` | AI 服务管理器 |
+| `skill-converter.ts` | ⭐ Skills 转换核心 |
+| `gemini-text.ts` | Gemini 文本/Embedding |
+| `intent-analyzer.ts` | 用户意图分析 |
 | `payment.ts` | 支付管理器 |
 | `storage.ts` | 存储管理器 |
-| `gemini-text.ts` | Gemini 文本/Embedding |
-| `vector-search.ts` | 向量搜索 |
 | `rbac.ts` | 权限管理 |
-| `notification.ts` | 通知系统 |
 
 ### Lib (工具函数)
 
@@ -355,9 +462,7 @@ pnpm lint               # ESLint
 | `zod.ts` | 参数校验 |
 | `rate-limit.ts` | 限流 |
 | `error-logger.ts` | 错误日志 |
-| `cache.ts` | KV 缓存 |
-| `seo-slug-generator.ts` | SEO Slug |
-| `image-naming.ts` | 图片命名 |
+| `hash.ts` | UUID/哈希生成 |
 
 ---
 
@@ -365,31 +470,25 @@ pnpm lint               # ESLint
 
 ### 抽象的错误模式
 
-这些错误在不同场景下有不同表现，但根因相同：
-
 1. **绕过封装层**
    - 根因：直接调用底层而非通过封装
-   - 表现：直接操作数据库、直接调用外部 API、硬编码配置
    - 原则：通过封装层调用
 
 2. **假设而非验证**
    - 根因：基于假设行动而不先验证
-   - 表现：猜测 API 路径、猜测错误原因、猜测数据格式
    - 原则：先确认事实再行动
 
 3. **重复实现**
    - 根因：不检查现有实现就新建
-   - 表现：重写工具函数、重复封装、新建类似组件
    - 原则：先查现有代码
 
 4. **直接修改**
    - 根因：未沟通就动手
-   - 表现：直接重构、直接"优化"、直接改架构
    - 原则：非小修改必须先确认
 
 ### 调试原则
 
-1. **先查原始数据** - 打印原始响应，确认是截断、格式错误还是其他问题
+1. **先查原始数据** - 打印原始响应，确认问题来源
 2. **追踪完整调用链** - 理解 API → Service → Model → DB 的完整流程
 3. **一次改一个变量** - 验证假设是否正确
 4. **简单方案优先** - 先检查配置、环境，再做复杂分析
@@ -401,11 +500,11 @@ pnpm lint               # ESLint
 ```env
 # 数据库
 DATABASE_URL=libsql://...
-TURSO_AUTH_TOKEN=...
+DATABASE_AUTH_TOKEN=...
 
 # 认证
-BETTER_AUTH_SECRET=...
-BETTER_AUTH_URL=...
+AUTH_SECRET=...
+NEXT_PUBLIC_APP_URL=https://antigravityskills.com
 
 # AI
 GOOGLE_GEMINI_API_KEY=...
@@ -440,7 +539,7 @@ CLOUDFLARE_ACCOUNT_ID=...
 
 ### SEO Slug 格式
 
-`nano-banana-{subject}-{6位哈希}`
+`antigravity-{subject}-{6位哈希}`
 
 ### 虚拟作者
 
@@ -454,7 +553,7 @@ CLOUDFLARE_ACCOUNT_ID=...
 
 ### 等价性原则
 
-批量操作必须和手动操作产生相同的结果。如果用户手动做一件事会产生 10 个字段，批量做同样的事也必须产生同样的 10 个字段。
+批量操作必须和手动操作产生相同的结果。
 
 ### 数据流追踪
 
@@ -462,12 +561,11 @@ CLOUDFLARE_ACCOUNT_ID=...
 - 这个数据结构有哪些字段？
 - 每个字段从哪来？
 - 每个字段被谁使用？
-- 漏掉会导致什么后果？
 
 ### 验证标准
 
-功能完成后，必须验证产出物和预期完全一致，不是"看起来能跑"就算完成。
+功能完成后，必须验证产出物和预期完全一致。
 
 ---
 
-**最后更新**: 2026-01-11
+**最后更新**: 2026-01-16

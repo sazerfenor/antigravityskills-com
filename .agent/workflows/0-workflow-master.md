@@ -21,16 +21,17 @@ description: Workflow Master - 主脉络优先的工作流生成器 (Backbone-Fi
 
 ## 📚 Agent Roster
 
-| Agent | 文件路径 | 阶段 | V2.0 变更 |
+| Agent | 文件路径 | 阶段 | V3.0 变更 |
 |-------|---------|------|----------|
 | **health-checker** | [health-checker.md](workflow-master/health-checker.md) | Phase -2 (仅优化时) | - |
 | **intent-analyzer** | [intent-analyzer.md](workflow-master/intent-analyzer.md) | Phase -1 | - |
 | **rule-injector** | [rule-injector.md](workflow-master/rule-injector.md) | Phase 0 | - |
 | **resource-scanner** | [resource-scanner.md](workflow-master/resource-scanner.md) | Phase 0.5 (可选) | - |
-| **sop-architect** | [sop-architect.md](workflow-master/sop-architect.md) | **Phase 1** | **[NEW]** 方法论设计 |
-| **logic-architect** | [logic-architect.md](workflow-master/logic-architect.md) | **Phase 2** | **[MOD]** 系统映射 |
-| **prompt-engineer** | 使用现有 `/0-prompt-gen` 工作流 | Phase 3 | - |
-| **compliance-guard** | [compliance-guard.md](workflow-master/compliance-guard.md) | Phase 4 | - |
+| **sop-architect** | [sop-architect.md](workflow-master/sop-architect.md) | Phase 1 | 方法论设计 |
+| **logic-architect** | [logic-architect.md](workflow-master/logic-architect.md) | Phase 2 | **[MOD]** 增加 Skill 需求列 |
+| **skill-mapper** | [skill-mapper.md](workflow-master/skill-mapper.md) | **Phase 2.5** | **[NEW]** Skill 映射 |
+| **content-writer** | [content-writer.md](workflow-master/content-writer.md) | **Phase 3** | **[NEW]** 调用 Skill 撰写 |
+| **compliance-guard** | [compliance-guard.md](workflow-master/compliance-guard.md) | Phase 4 | **[MOD]** 增加 Skill 检查 |
 
 ---
 
@@ -174,7 +175,9 @@ Call /logic-architect
 ### Step 2.1: SOP 到系统映射
 
 **INPUT**: SOP 蓝图 (from Phase 1)
-**OUTPUT**: Workflow Blueprint (Mermaid 流程图 + 映射表)
+**OUTPUT**: 
+- Workflow Blueprint (Mermaid 流程图 + 映射表)
+- **skill_requirements**: 每个 Agent 是否需要 Skill 的清单 ⭐ V3.0 NEW
 
 **执行**:
 1. **SOP 步骤分类**: 每个 SOP Step 是否需要 Agent？
@@ -193,30 +196,67 @@ Call /logic-architect
 
 ---
 
-## 📋 Phase 3: 内容撰写
+## 📋 Phase 2.5: Skill 映射 ⭐ V3.0 NEW
 
-**Agent**: 使用现有 `/0-prompt-gen` 工作流
-**位置**: `.agent/workflows/0-prompt-gen.md`
+Call [skill-mapper](workflow-master/skill-mapper.md)
 
-**Fallback**: 如果 `/0-prompt-gen` 不可用，使用以下内联指令：
-- 为每个 Sub-Agent 定义 Role + Input + Output
-- 应用 CoT (Chain-of-Thought) 让模型分步思考
-- 目标 < 10,000 chars
+### 跳过条件
+
+```
+如果 skill_requirements 全为 false (无 Skill 需求):
+  → 跳过 Phase 2.5，直接进入 Phase 3
+```
+
+### Step 2.5.1: Skill 发现与匹配
+
+**INPUT**: 
+- Workflow Blueprint (from Phase 2)
+- skill_requirements (from Phase 2)
+
+**OUTPUT**: 
+- skill_mapping (匹配结果 + 生成计划)
+
+**执行**:
+1. 扫描 `.agent/skills/` 获取可用 Skill
+2. 匹配 skill_requirements 中需要 Skill 的项
+3. 如无匹配 → 调用 antigravity-skill-creator Skill 生成
+
+**GATE**:
+- ❌ REJECT: 目录无法访问
+- ⏸️ PAUSE: 有"需生成"项 → 确认后生成
+- ✅ PASS: 匹配完成
+
+### ⏸️ CHECKPOINT 2.5
+> **回复**: "继续" 或 "调整匹配"
+
+---
+
+## 📋 Phase 3: 内容撰写 ⭐ V3.0 重写
+
+Call [content-writer](workflow-master/content-writer.md)
+
+> [!IMPORTANT]
+> **Prompt 工程专家**
+>
+> 调用 `prompt-engineering` Skill，撰写即审核。
 
 ### Step 3.0: 预检与备份
 
 **执行**:
-1. 检查 `/0-prompt-gen` 工作流是否可用
-2. 如覆盖现有工作流，先备份到 `.agent/workflows/.backup/`
+1. 如覆盖现有工作流，先备份到 `.agent/workflows/.backup/`
+2. 初始化 `iteration_count = 1`
 
-### Step 3.1: 转换为 Markdown
+### Step 3.1: 调用 Skill 撰写
 
 **INPUT**: 
 - Workflow Blueprint (from Phase 2)
-- `iteration_count`: 当前迭代轮次 (首次=1)
+- skill_mapping (from Phase 2.5)
+- `iteration_count`: 当前迭代轮次
+- `improvement_hints` (from Phase 4，仅迭代时)
 
 **OUTPUT**: 
 - 草稿工作流文件 (`.agent/workflows/.draft/{name}.md`)
+- 草稿 Sub-Agent (`.agent/workflows/.draft/{name}/*.md`)
 
 **约束**: **每个文件**目标 < 10,000 chars (留 2k buffer)
 

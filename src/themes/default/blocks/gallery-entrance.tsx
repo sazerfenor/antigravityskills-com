@@ -104,7 +104,7 @@ export async function GalleryEntrance({
           <GalleryEntranceClient
             categories={categories}
             trending={trending}
-            ctaUrl={ctaButton?.url || '/prompts'}
+            ctaUrl={ctaButton?.url || '/skills'}
             ctaText={ctaButton?.text || 'View All Collections'}
           />
         </ScrollAnimation>

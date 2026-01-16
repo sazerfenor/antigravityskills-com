@@ -1,0 +1,18 @@
+{
+  "metadata": {
+    "title": "部落格",
+    "description": "閱讀我們最新的產品功能、解決方案和更新。"
+  },
+  "blog": {
+    "id": "blog",
+    "sr_only_title": "Antigravity Skills 部落格",
+    "title": "部落格",
+    "description": "閱讀我們最新的產品功能、解決方案和更新。"
+  },
+  "page": {
+    "all": "全部",
+    "no_content": "暫無內容",
+    "crumb": "部落格",
+    "toc": "目錄"
+  }
+}

@@ -226,13 +226,18 @@ export const RATE_LIMITS: Record<string, RateLimitConfig> = {
   COMMUNITY_POST_GUEST: { limit: 1, window: 60 },
   /** 社区发布 - 登录用户 */
   COMMUNITY_POST_USER: { limit: 30, window: 60 },
-  
+
   /** VisionLogic Build/Compile - 游客 (3次/24h) */
   VL_BUILD_GUEST: { limit: 3, window: 86400 },
   /** VisionLogic Build/Compile - 免费用户 (6次/24h) - 足够完整体验1-2次流程 */
   VL_BUILD_FREE_USER: { limit: 6, window: 86400 },
   /** VisionLogic Build/Compile - 付费用户 (100次/24h + 动态返还) */
   VL_BUILD_PAID_USER: { limit: 100, window: 86400 },
+
+  /** Skill 转换接口 - 游客 (5次/小时) */
+  SKILL_CONVERT_GUEST: { limit: 5, window: 3600 },
+  /** Skill 转换接口 - 登录用户 (20次/小时) */
+  SKILL_CONVERT_USER: { limit: 20, window: 3600 },
 };
 
 // ============================================

@@ -1,0 +1,22 @@
+{
+  "metadata": {
+    "title": "更新日誌 | Antigravity Skills",
+    "description": "關注我們的旅程。每個功能、修復和改進。"
+  },
+  "page": {
+    "title": "更新日誌",
+    "description": "公開開發。關注我們發布的每個更新。",
+    "back": "返回更新日誌",
+    "toc": "本頁內容",
+    "related_links": "試試看",
+    "no_content": "尚無更新。請稍後再來！",
+    "from_feedback": "來自用戶回饋"
+  },
+  "tags": {
+    "new": "新功能",
+    "improved": "改進",
+    "fixed": "修復",
+    "deprecated": "已棄用",
+    "security": "安全性"
+  }
+}

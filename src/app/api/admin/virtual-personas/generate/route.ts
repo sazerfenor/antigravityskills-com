@@ -49,7 +49,7 @@ const generateSchema = z.object({
 const PLATFORM_CONTEXT = `
 ## CRITICAL: Platform Context (READ THIS FIRST)
 
-You are creating personas for **Nano Banana Ultra**, an AI image generation community.
+You are creating personas for **Antigravity Skills**, an AI image generation community.
 
 ### Core Philosophy: "Declassifying Creativity"
 - Users input **vague intent** ("make it sad") → Engine extracts logic → AI generates **professional results**
@@ -263,7 +263,7 @@ ${PLATFORM_CONTEXT}
 
 # Task: Generate a Virtual AI Creator Persona
 
-You are creating persona #${batchIndex + 1} for NanoBananaUltra, an AI image generation community.
+You are creating persona #${batchIndex + 1} for Antigravity Skills, an AI image generation community.
 This persona will share AI-generated artworks and interact with other AI creators.
 
 ## Category: ${category}

@@ -17,7 +17,7 @@ const Testimonials = dynamic(() => import('@/themes/default/blocks/testimonials'
 const Subscribe = dynamic(() => import('@/themes/default/blocks/subscribe').then(mod => ({ default: mod.Subscribe })));
 const FAQ = dynamic(() => import('@/themes/default/blocks/faq').then(mod => ({ default: mod.Faq })));
 const CTA = dynamic(() => import('@/themes/default/blocks/cta').then(mod => ({ default: mod.Cta })));
-const GeneratorSection = dynamic(() => import('@/themes/default/blocks/generator-section').then(mod => ({ default: mod.GeneratorSection })));
+const SkillConverterSection = dynamic(() => import('@/themes/default/blocks/skill-converter-section').then(mod => ({ default: mod.SkillConverterSection })));
 
 export default async function LandingPage({
   locale,
@@ -41,10 +41,10 @@ export default async function LandingPage({
       {/* Features - Logic Declassified section */}
       {v.show_features !== false && page.features && <Features features={page.features} />}
 
-      {/* Generator wrapped in Suspense for streaming render */}
-      {v.show_generator !== false && page.generator && (
+      {/* Skill Converter wrapped in Suspense for streaming render */}
+      {v.show_generator !== false && (
         <Suspense fallback={<GeneratorSectionSkeleton />}>
-          <GeneratorSection title={page.generator.title} description={page.generator.description} />
+          <SkillConverterSection />
         </Suspense>
       )}
 

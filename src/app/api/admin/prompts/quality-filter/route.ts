@@ -117,7 +117,7 @@ export async function POST(request: Request) {
     return respData({
       success: true,
       summary,
-      outputPath: '/Users/lixuanying/Documents/GitHub/nanobananaultra/docs/output/quality-filter/',
+      outputPath: '/Users/lixuanying/Documents/GitHub/antigravityskills-com/docs/output/quality-filter/',
     });
   } catch (error: any) {
     console.error('[QualityFilter] Error:', error);
@@ -147,7 +147,7 @@ export async function GET(request: Request) {
     const fs = await import('fs');
     const path = await import('path');
 
-    const outputPath = '/Users/lixuanying/Documents/GitHub/nanobananaultra/docs/output/quality-filter/quality-filtered-prompts.json';
+    const outputPath = '/Users/lixuanying/Documents/GitHub/antigravityskills-com/docs/output/quality-filter/quality-filtered-prompts.json';
 
     if (!fs.existsSync(outputPath)) {
       return respData({

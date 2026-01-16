@@ -1,19 +1,19 @@
 {
   "metadata": {
-    "title": "Nano Banana Pro Pricing | Buy Credits for Google's Nano Banana AI Art",
-    "description": "Get affordable Nano Banana Pro credits starting at $9. Unlock advanced prompt optimization for Google Gemini Nano & Photoshop workflows. Fast generation, no expiry.",
-    "keywords": "nano banana pro, nano banana ai, google nano banana, gemini nano banana, nano banana photoshop, nano banana prompt generator, buy nano banana credits"
+    "title": "Antigravity Skills Pricing | Credits for AI Skill Customization",
+    "description": "Get credits for AI-powered skill customization. Transform your prompts into professional Skills that save tokens and boost productivity. Start with a free trial.",
+    "keywords": "antigravity skills, ai skill generator, prompt optimization, vibe coding, claude skills, cursor rules, save tokens, ai coding assistant"
   },
   "pricing": {
     "id": "pricing",
-    "sr_only_title": "Nano Banana Pro Pricing & Credit Packs",
-    "title": "Get Nano Banana Pro Credits for Premium AI Art",
-    "description": "Unlock the full power of Google's Nano Banana AI. Choose credits that never expire, or subscribe for maximum savings.",
+    "sr_only_title": "Antigravity Skills Credit Packs",
+    "title": "Invest in Your AI Workflow",
+    "description": "Every Skill saves thousands of tokens per conversation. Stop repeating yourself — let your Skills do the talking.",
     "groups": [
       {
         "name": "credit-packs",
-        "title": "Pay as you go",
-        "description": "No subscription, no strings attached"
+        "title": "Credit Packs",
+        "description": "One-time purchase, never expires"
       },
       {
         "name": "monthly",
@@ -24,20 +24,16 @@
         "title": "Yearly",
         "is_featured": true,
         "label": "Best Value"
-      },
-      {
-        "name": "team",
-        "title": "Team Plans"
       }
     ],
     "items": [
       {
-        "title": "Trial",
-        "description": "Try Nano Banana AI",
+        "title": "Starter",
+        "description": "Try the Magic",
         "features": [
-          "150 Flexible Credits",
-          "~15 images OR 150 optimizations",
-          "Mix & match freely",
+          "150 Credits",
+          "~15 custom Skills",
+          "AI-powered optimization",
           "Never expires"
         ],
         "interval": "one-time",
@@ -47,26 +43,26 @@
         "original_price": "",
         "unit": "",
         "is_featured": false,
-        "tip": "Test Google Nano Banana quality. No auto-renew.",
+        "tip": "Perfect for testing the workflow. See how much time you save.",
         "button": {
-          "title": "Buy Credits",
-          "url": "/sign-up?plan=trial",
+          "title": "Get Started",
+          "url": "/sign-up?plan=starter",
           "icon": "RiFlashlightFill"
         },
-        "product_id": "pack-trial",
-        "product_name": "Trial Pack",
+        "product_id": "pack-starter",
+        "product_name": "Starter Pack",
         "credits": 150,
         "valid_days": -1,
         "group": "credit-packs"
       },
       {
-        "title": "Starter",
-        "description": "For Banana Pro",
+        "title": "Growth",
+        "description": "Creator's Choice",
         "features": [
-          "1,000 Flexible Credits",
-          "~100 images OR 1,000 optimizations",
-          "Mix & match freely",
-          "Priority support included"
+          "1,000 Credits",
+          "~100 custom Skills",
+          "Priority processing",
+          "Never expires"
         ],
         "interval": "one-time",
         "amount": 3700,
@@ -75,26 +71,27 @@
         "original_price": "",
         "unit": "",
         "is_featured": false,
-        "tip": "Perfect for mastering Nano Banana tutorials.",
+        "tip": "Build your personal Skill library. One-time investment, lifetime value.",
         "button": {
-          "title": "Buy Credits",
-          "url": "/sign-up?plan=starter",
+          "title": "Get Credits",
+          "url": "/sign-up?plan=growth",
           "icon": "RiFlashlightFill"
         },
-        "product_id": "pack-starter",
-        "product_name": "Starter Pack",
+        "product_id": "pack-growth",
+        "product_name": "Growth Pack",
         "credits": 1000,
         "valid_days": -1,
         "group": "credit-packs"
       },
       {
-        "title": "Growth",
-        "description": "Creator's Choice",
+        "title": "Pro",
+        "description": "Power User",
+        "label": "Popular",
         "features": [
-          "2,700 Flexible Credits",
-          "~270 images OR 2,700 optimizations",
-          "Mix & match freely",
-          "Priority support included"
+          "2,700 Credits",
+          "~270 custom Skills",
+          "Advanced customization",
+          "Priority support"
         ],
         "interval": "one-time",
         "amount": 9700,
@@ -103,26 +100,26 @@
         "original_price": "",
         "unit": "",
         "is_featured": true,
-        "tip": "Stock up under $100.",
+        "tip": "Stock up under $100. Build Skills for every project.",
         "button": {
-          "title": "Buy Credits",
-          "url": "/sign-up?plan=growth",
+          "title": "Get Credits",
+          "url": "/sign-up?plan=pro",
           "icon": "RiFlashlightFill"
         },
-        "product_id": "pack-growth",
-        "product_name": "Growth Pack",
+        "product_id": "pack-pro",
+        "product_name": "Pro Pack",
         "credits": 2700,
         "valid_days": -1,
         "group": "credit-packs"
       },
       {
-        "title": "Pro Pack",
-        "description": "Nano Banana Pro Power",
+        "title": "Studio",
+        "description": "Maximum Value",
         "features": [
-          "7,000 Flexible Credits",
-          "~700 images OR 7,000 optimizations",
-          "Mix & match freely",
-          "Priority support included"
+          "7,000 Credits",
+          "~700 custom Skills",
+          "Batch operations",
+          "Dedicated support"
         ],
         "interval": "one-time",
         "amount": 19700,
@@ -131,53 +128,25 @@
         "original_price": "",
         "unit": "",
         "is_featured": false,
-        "tip": "Ideal for Photoshop & Architecture workflows.",
+        "tip": "Best value per credit. For serious builders.",
         "button": {
-          "title": "Buy Credits",
-          "url": "/sign-up?plan=pro-pack",
-          "icon": "RiFlashlightFill"
-        },
-        "product_id": "pack-pro",
-        "product_name": "Pro Pack",
-        "credits": 7000,
-        "valid_days": -1,
-        "group": "credit-packs"
-      },
-      {
-        "title": "Studio",
-        "description": "Bulk Savings",
-        "features": [
-          "40,000 Flexible Credits",
-          "~4,000 images OR 40,000 optimizations",
-          "Mix & match freely",
-          "Dedicated support · 52% savings"
-        ],
-        "interval": "one-time",
-        "amount": 99700,
-        "currency": "USD",
-        "price": "$997",
-        "original_price": "",
-        "unit": "",
-        "is_featured": false,
-        "tip": "🔥 Save 52% instantly.",
-        "button": {
-          "title": "Buy Credits",
+          "title": "Get Credits",
           "url": "/sign-up?plan=studio",
           "icon": "RiFlashlightFill"
         },
         "product_id": "pack-studio",
         "product_name": "Studio Pack",
-        "credits": 40000,
+        "credits": 7000,
         "valid_days": -1,
         "group": "credit-packs"
       },
       {
         "title": "Basic",
-        "description": "Lite - Dip your toes in",
+        "description": "Steady Builder",
         "features": [
-          "1,200 Flexible Credits/month",
-          "~120 images OR 1,200 optimizations",
-          "Mix & match freely",
+          "1,200 Credits/month",
+          "~120 Skills/month",
+          "Continuous creation",
           "Cancel anytime"
         ],
         "interval": "month",
@@ -187,7 +156,7 @@
         "original_price": "",
         "unit": "/ month",
         "is_featured": false,
-        "tip": "Cancel anytime.",
+        "tip": "For consistent Skill building. Flexible and predictable.",
         "button": {
           "title": "Subscribe",
           "url": "/sign-up?plan=basic-monthly",
@@ -202,13 +171,13 @@
       },
       {
         "title": "Pro",
-        "description": "Most Popular",
+        "description": "Active Creator",
         "label": "Popular",
         "features": [
-          "4,000 Flexible Credits/month",
-          "~400 images OR 4,000 optimizations",
-          "Mix & match freely",
-          "Priority support included"
+          "4,000 Credits/month",
+          "~400 Skills/month",
+          "Priority processing",
+          "Advanced features"
         ],
         "interval": "month",
         "amount": 4700,
@@ -217,7 +186,7 @@
         "original_price": "",
         "unit": "/ month",
         "is_featured": true,
-        "tip": "Enough to ship your product.",
+        "tip": "For teams and active builders. Maximum productivity.",
         "button": {
           "title": "Subscribe",
           "url": "/sign-up?plan=pro-monthly",
@@ -234,10 +203,10 @@
         "title": "Basic",
         "description": "Smart Saver",
         "features": [
-          "12,000 Flexible Credits/year",
-          "~1,200 images OR 12,000 optimizations",
-          "Mix & match freely",
-          "4 months free equivalent"
+          "12,000 Credits/year",
+          "~1,200 Skills/year",
+          "4 months free equivalent",
+          "Lock in savings"
         ],
         "interval": "year",
         "amount": 19700,
@@ -247,7 +216,7 @@
         "unit": "/ year",
         "equivalent_monthly": "$16/mo",
         "is_featured": false,
-        "tip": "Get 4 months free equivalent.",
+        "tip": "Get 4 months free equivalent. Best yearly value.",
         "button": {
           "title": "Subscribe Yearly",
           "url": "/sign-up?plan=basic-yearly",
@@ -265,10 +234,10 @@
         "description": "Best Value",
         "label": "🔥 Best Value",
         "features": [
-          "48,000 Flexible Credits/year",
-          "~4,800 images OR 48,000 optimizations",
-          "Mix & match freely",
-          "⚡ Lock in $29/mo forever"
+          "48,000 Credits/year",
+          "~4,800 Skills/year",
+          "⚡ Lock in $29/mo forever",
+          "All Pro features"
         ],
         "interval": "year",
         "amount": 34700,
@@ -278,7 +247,7 @@
         "unit": "/ year",
         "equivalent_monthly": "$29/mo",
         "is_featured": true,
-        "tip": "⚡ Launch Special: Lock in the $29/mo rate forever.",
+        "tip": "⚡ Lock in the $29/mo rate. Maximum savings for serious builders.",
         "button": {
           "title": "Subscribe Yearly",
           "url": "/sign-up?plan=pro-yearly",
@@ -290,103 +259,28 @@
         "valid_days": 365,
         "group": "yearly",
         "plan_name": "Pro"
-      },
-      {
-        "title": "Power",
-        "description": "Pro Studio",
-        "features": [
-          "200,000 Flexible Credits/year",
-          "~20,000 images OR 200K optimizations",
-          "Mix & match freely",
-          "Dedicated support · Commercial license"
-        ],
-        "interval": "year",
-        "amount": 99700,
-        "currency": "USD",
-        "price": "$997",
-        "original_price": "",
-        "unit": "/ year",
-        "equivalent_monthly": "$83/mo",
-        "is_featured": false,
-        "tip": "Maximum output, minimum cost.",
-        "button": {
-          "title": "Subscribe Yearly",
-          "url": "/sign-up?plan=power-yearly",
-          "icon": "RiFlashlightFill"
-        },
-        "product_id": "power-yearly",
-        "product_name": "Power Yearly",
-        "credits": 200000,
-        "valid_days": 365,
-        "group": "yearly",
-        "plan_name": "Power"
-      },
-      {
-        "title": "Team Pro",
-        "description": "Department Ready",
-        "label": "🔥 Ultra Value",
-        "features": [
-          "500,000 Flexible Credits/year",
-          "~50,000 images OR 500K optimizations",
-          "10 team seats included",
-          "Centralized billing & collab tools"
-        ],
-        "interval": "year",
-        "amount": 299700,
-        "currency": "USD",
-        "price": "$2,997",
-        "original_price": "",
-        "unit": "/ year",
-        "is_featured": false,
-        "tip": "10 Seats, Centralized Billing, Priority Support",
-        "button": {
-          "title": "Contact Sales",
-          "url": "/contact?plan=team-pro",
-          "icon": "RiFlashlightFill"
-        },
-        "product_id": "team-pro-yearly",
-        "product_name": "Team Pro Yearly",
-        "credits": 500000,
-        "valid_days": 365,
-        "group": "team",
-        "plan_name": "Team Pro"
-      },
-      {
-        "title": "Team Max",
-        "description": "Enterprise Scale",
-        "features_title": "Includes",
-        "features": [
-          "2,000,000 credits/year (200,000 images)",
-          "Unlimited team seats",
-          "API access included",
-          "Dedicated account manager",
-          "P-Card Friendly (Under $10k)",
-          "Lowest cost per unit"
-        ],
-        "interval": "year",
-        "amount": 999700,
-        "currency": "USD",
-        "price": "$9,997",
-        "original_price": "",
-        "unit": "/ year",
-        "is_featured": true,
-        "tip": "Lowest Cost Per Unit, API Access, P-Card Friendly",
-        "button": {
-          "title": "Contact Sales",
-          "url": "/contact?plan=team-max",
-          "icon": "RiFlashlightFill"
-        },
-        "product_id": "team-max-yearly",
-        "product_name": "Team Max Yearly",
-        "credits": 2000000,
-        "valid_days": 365,
-        "group": "team",
-        "plan_name": "Team Max"
       }
     ]
   },
   "page": {
     "current_plan": "Current Plan",
     "processing": "Processing"
+  },
+  "value_props": {
+    "title": "Why Credits Pay for Themselves",
+    "items": [
+      {
+        "title": "Save Thousands of Tokens",
+        "description": "A well-crafted Skill saves 2,000-5,000+ tokens per conversation. Over months, that's tens of thousands saved."
+      },
+      {
+        "title": "No More Repeating Yourself",
+        "description": "Stop explaining context, preferences, and requirements every time. Your Skills remember everything."
+      },
+      {
+        "title": "Professional Results, Any Workflow",
+        "description": "Whether coding, writing, designing, or any AI task — get expert-level output instantly."
+      }
+    ]
   }
 }

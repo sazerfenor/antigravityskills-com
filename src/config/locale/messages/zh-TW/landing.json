@@ -4,13 +4,13 @@
     "_comment": "控制主頁各區塊的顯示/隱藏。設為 false 可隱藏對應區塊。",
     "show_header": true,
     "show_hero": true,
-    "show_hero_buttons": false,
+    "show_hero_buttons": true,
     "show_hero_avatars": false,
     "show_hero_award": false,
-    "show_hero_tip": false,
+    "show_hero_tip": true,
     "show_generator": true,
     "show_logos": true,
-    "show_benefits": false,
+    "show_benefits": true,
     "show_features": true,
     "show_stats": true,
     "show_gallery": true,
@@ -19,59 +19,43 @@
     "show_cta": true,
     "show_subscribe": true,
     "show_footer": true,
-    "show_core_modules": true
+    "show_core_modules": false
   },
   "header": {
     "id": "header",
     "brand": {
-      "title": "Nano Banana Ultra",
+      "title": "Antigravity Skills",
       "logo": {
         "src": "/logo.png",
-        "alt": "Nano Banana Ultra - Banana Pro 驅動的 AI 圖像生成器"
+        "alt": "Antigravity Skills - AI Agent Skills 開放標準"
       },
       "url": "/"
     },
     "nav": {
       "items": [
         {
-          "title": "生成器",
-          "url": "/ai-image-generator",
+          "title": "轉換器",
+          "url": "/#converter",
           "icon": "Zap"
         },
         {
-          "title": "探索",
-          "url": "/prompts",
+          "title": "Skills",
+          "url": "/skills",
           "icon": "Telescope"
         },
         {
-          "title": "定價",
-          "url": "/pricing",
-          "icon": "CreditCard"
-        },
-        {
-          "title": "更新日誌",
-          "url": "/changelog",
-          "icon": "Megaphone"
+          "title": "文件",
+          "url": "/docs",
+          "icon": "BookOpen"
         }
       ]
     },
     "buttons": [],
     "user_nav": {
       "show_name": true,
-      "show_credits": true,
+      "show_credits": false,
       "show_sign_out": true,
-      "items": [
-        {
-          "title": "帳單",
-          "url": "/settings/billing",
-          "icon": "CreditCard"
-        },
-        {
-          "title": "活動紀錄",
-          "url": "/activity",
-          "icon": "Activity"
-        }
-      ]
+      "items": []
     },
     "show_sign": true,
     "show_theme": false,
@@ -79,261 +63,255 @@
   },
   "hero": {
     "id": "hero",
-    "title": "Nano Banana Ultra：少打字，多創作",
-    "highlight_text": "Ultra",
-    "description": "輸入幾個字，<strong>Nano Banana Ultra</strong> 自動補全專業參數邏輯。輕鬆一點即可生成穩定、高保真的藝術作品，完美呈現您的創意。",
+    "title": "Antigravity Skills",
+    "highlight_text": "Antigravity Skills",
+    "description": "為 <strong>Antigravity</strong> 預先打造的 AI 超能力。瀏覽社群精選、創建專屬 Skill，或讓 AI 為您設計完美的 Skill。<strong>節省數千 tokens，效率提升 10 倍。</strong>",
     "announcement": {
-      "badge": "✨ 新功能",
-      "title": "V2.0 邏輯矩陣正式上線！",
-      "url": "/ai-image-generator"
+      "badge": "🚀 全新上線",
+      "title": "AI Skill 設計器已上線 — 免費體驗",
+      "url": "/#converter"
     },
-    "tip": "🎁 立即體驗：輸入「一隻貓」獲取專業提示詞",
+    "tip": "💡 每個 Skill 每次對話可節省 2,000-5,000 tokens",
     "buttons": [
       {
-        "title": "開始創作",
-        "icon": "Zap",
-        "url": "/ai-image-generator",
+        "title": "瀏覽 Skills",
+        "icon": "Telescope",
+        "url": "/skills",
         "target": "_self",
         "variant": "default"
       },
       {
-        "title": "探索畫廊",
-        "icon": "Telescope",
-        "url": "/prompts",
+        "title": "創建 Skill",
+        "icon": "Zap",
+        "url": "/#converter",
         "target": "_self",
         "variant": "outline"
       }
     ],
     "input": {
-      "placeholder": "描述您的創意...",
-      "button": "生成"
+      "placeholder": "描述您的 Skill 構想...",
+      "button": "轉換"
     },
-    "show_buttons": false,
+    "show_buttons": true,
     "show_avatars": false,
-    "avatars_tip": "創作者每天都在生成驚艷的 AI 藝術作品",
+    "avatars_tip": "開發者每天都在轉換 Skills",
     "show_award": false,
-    "show_tip": false
+    "show_tip": true
   },
   "logos": {
-    "title": "深受全球創作者信賴，支援主流 AI 模型：",
+    "title": "相容您喜愛的 AI 程式開發工具：",
     "items": [
       {
-        "title": "Midjourney",
-        "url": "https://www.midjourney.com",
-        "size": "h-20 w-20",
+        "title": "Cursor",
+        "url": "https://cursor.sh",
+        "size": "h-12 w-12",
         "image": {
-          "src": "/imgs/logos/midjourney.svg",
-          "alt": "Midjourney AI 圖像生成器標誌 - Nano Banana 相容"
+          "src": "/imgs/logos/cursor.svg",
+          "alt": "Cursor AI IDE - 相容 Antigravity Skills"
         }
       },
       {
-        "title": "DALL-E 3",
-        "url": "https://openai.com/dall-e-3",
-        "size": "h-15 w-15",
+        "title": "Claude Code",
+        "url": "https://claude.ai",
+        "size": "h-12 w-12",
         "image": {
-          "src": "/imgs/logos/openai.svg",
-          "alt": "OpenAI DALL-E 3 標誌 - Nano Banana 相容"
+          "src": "/imgs/logos/claude.svg",
+          "alt": "Claude Code CLI - 相容 Antigravity Skills"
         }
       },
       {
-        "title": "Stable Diffusion",
-        "url": "https://stability.ai",
-        "size": "h-15 w-15",
-        "featured": true,
+        "title": "Gemini",
+        "url": "https://ai.google.dev",
+        "size": "h-12 w-12",
         "image": {
-          "src": "/imgs/logos/stability.svg",
-          "alt": "Stability AI Stable Diffusion 標誌 - Nano Banana 相容"
+          "src": "/imgs/logos/gemini.svg",
+          "alt": "Gemini - 相容 Antigravity Skills"
         }
       },
       {
-        "title": "Flux",
-        "url": "https://blackforestlabs.ai",
-        "size": "h-15 w-15",
+        "title": "Amp",
+        "url": "https://amp.dev",
+        "size": "h-12 w-12",
         "image": {
-          "src": "/imgs/logos/flux.svg",
-          "alt": "Black Forest Labs Flux 標誌 - Nano Banana 相容"
-        }
-      },
-      {
-        "title": "Leonardo",
-        "url": "https://leonardo.ai",
-        "size": "h-15 w-15",
-        "image": {
-          "src": "/imgs/logos/leonardo.svg",
-          "alt": "Leonardo AI 標誌 - Nano Banana 相容"
+          "src": "/imgs/logos/amp.svg",
+          "alt": "Amp AI - 相容 Antigravity Skills"
         }
       }
     ]
   },
   "benefits": {
     "id": "benefits",
-    "title": "創建令人讚嘆的提示詞",
-    "label": "效果",
-    "description": "不再浪費積分生成失敗的圖片。我們的優化器確保您的提示詞在生成前就已完美。",
+    "title": "開發者為何選擇 Antigravity Skills",
+    "label": "優勢",
+    "description": "停止浪費 tokens。加速開發效率。",
     "items": [
       {
-        "title": "一鍵專家調參",
-        "description": "不懂專業相機設定？我們的 AI 會自動為您的提示詞添加專業燈光、構圖和鏡頭參數。",
-        "icon": "RiNextjsFill",
+        "title": "告別重複解釋",
+        "description": "每次對話沒有 Skill 就會浪費 2,000-5,000 tokens 在說明上。Antigravity Skills 記住您的技術堆疊、開發模式和偏好 — 只需解釋一次，永久生效。",
+        "icon": "RiRepeatLine",
         "image": {
-          "src": "/imgs/features/user-billing.png",
-          "alt": "benefits"
+          "src": "/imgs/features/token-savings.png",
+          "alt": "Antigravity Skills 節省 tokens 示意圖"
         }
       },
       {
-        "title": "智慧風格遷移",
-        "description": "喜歡某個風格？一鍵將該視覺風格套用到您的文字提示詞，無需複雜的工程操作。",
-        "icon": "RiClapperboardAiLine",
+        "title": "效率提升 10 倍",
+        "description": "不再需要 20 則訊息的暖身過程。您的 Skills 讓 AI 一開始就掌握完整脈絡。問一次，就能得到專業結果。",
+        "icon": "RiFlashlightFill",
         "image": {
-          "src": "/imgs/features/admin-settings.png",
-          "alt": "benefits"
+          "src": "/imgs/features/fast-workflow.png",
+          "alt": "Antigravity Skills 快速工作流程示意圖"
         }
       },
       {
-        "title": "最大化積分價值",
-        "description": "優化後的提示詞意味著更少的失敗生成。充分發揮您付費 AI 工具的最大價值。",
-        "icon": "RiCodeFill",
+        "title": "像專家一樣開發",
+        "description": "不是資深開發者？沒問題。社群 Skills 將多年經驗編碼為可重複使用的模式。即時獲得專業能力，零學習曲線。",
+        "icon": "RiUserStarLine",
         "image": {
-          "src": "/imgs/features/user-billing.png",
-          "alt": "benefits"
+          "src": "/imgs/features/expertise.png",
+          "alt": "Antigravity Skills 專家模式示意圖"
         }
       }
     ]
   },
   "generator": {
-    "title": "AI 提示詞生成器：簡單輸入，專業輸出",
-    "description": "輸入一個簡單的創意，Nano Banana 自動補全專業邏輯。"
+    "id": "converter",
+    "badge": "AI SKILL 設計器",
+    "heading": "創建您的",
+    "heading_highlight": "Antigravity Skill",
+    "description": "描述您的需求，或貼上現有提示詞。幾秒內獲得可用的 Skill。"
   },
   "core_modules": {
     "id": "core-modules",
-    "title": "Nano Banana Ultra 的運作原理",
-    "description": "簡單輸入。智慧邏輯。驚艷輸出。"
+    "title": "深入 Ultra 引擎",
+    "description": "簡單輸入。Ultra 邏輯。驚艷輸出。"
   },
   "features": {
     "id": "features",
-    "header_badge": "Powered by Nano Banana™",
-    "header_title": "邏輯解密",
-    "header_highlight": "解密",
-    "header_description": "看看<strong>意圖挖掘引擎</strong>如何將您的原始輸入解構為結構化的邏輯矩陣，適用於<span class=\"text-white\">任何 AI 圖像生成器</span>。",
-    "title": "專業功能，零複雜度",
-    "description": "您只需提供創意，Nano Banana 處理所有複雜細節。",
+    "header_badge": "為何選擇 Antigravity Skills",
+    "header_title": "加速您工作流程的 Skills",
+    "header_highlight": "加速",
+    "header_description": "不再每次都從頭解釋您的專案。Antigravity Skills 為 AI 提供所需的脈絡 — 讓您專注於<span class=\"text-white\">開發</span>。",
+    "title": "專為 Vibe Coders 打造",
+    "description": "專注開發。讓您的 Skills 在任何地方都能運作。",
     "items": [
       {
-        "title": "心智閱讀邏輯",
-        "description": "不懂相機設定？沒關係。Nano Banana 會從您的簡短創意中推斷出完美的燈光和風格。",
-        "icon": "RiNextjsFill"
+        "title": "節省數千 Tokens",
+        "description": "停止每次對話都重複說明脈絡。您的 Skills 記住一切，讓您花更少錢獲得更好結果。",
+        "icon": "RiCoinLine"
       },
       {
-        "title": "穩定可預測",
-        "description": "不再靠運氣。每次生成都能獲得一致、高保真的結果。",
-        "icon": "RiKey2Fill"
+        "title": "效率提升 10 倍",
+        "description": "跳過 20 則訊息的暖身過程。一次就得到專業結果，不用來回往返。",
+        "icon": "RiFlashlightLine"
       },
       {
-        "title": "提示詞潤色",
-        "description": "進階文法修正和關鍵詞增強，讓 AI 更準確理解您的意圖。",
-        "icon": "RiDatabase2Line"
+        "title": "社群驗證的 Skills",
+        "description": "瀏覽資深開發者創建的 Skills。經過實戰驗證的模式，隨時可用。",
+        "icon": "RiTeamLine"
       },
       {
-        "title": "視覺除錯",
-        "description": "了解為什麼某個提示詞有效。我們的工具會分解視覺元素。",
-        "icon": "RiBarChart2Line"
+        "title": "AI Skill 設計器",
+        "description": "描述您的需求，AI 為您創建結構完整的生產級 Skill。",
+        "icon": "RiMagicLine"
       },
       {
-        "title": "模型專屬優化",
-        "description": "自動格式化 --v、--ar、--stylize 等參數。",
-        "icon": "RiCloudy2Fill"
+        "title": "免費開始",
+        "description": "免費瀏覽和下載 Skills。基本使用不需要訂閱。",
+        "icon": "RiGiftLine"
       },
       {
-        "title": "社群與支援",
-        "description": "加入數千名創作者。獲取幫助、分享成果、發現技巧。",
-        "icon": "RiRobot2Line"
+        "title": "一鍵安裝",
+        "description": "立即將任何 Skill 複製到您的 Antigravity 設定。無需複雜配置。",
+        "icon": "RiDownloadLine"
       }
     ]
   },
   "stats": {
     "id": "stats",
-    "title": "深受全球創作者信賴",
-    "description": "簡單提示詞，驚艷成果。",
+    "title": "Antigravity Skills 數據",
+    "description": "真實節省。真實效率。",
     "items": [
       {
-        "title": "10+",
-        "description": "支援的 AI 模型"
+        "title": "2,000+",
+        "description": "每個 Skill 節省的 Tokens"
       },
       {
-        "title": "500+",
-        "description": "提示詞範本"
+        "title": "10 倍",
+        "description": "更快的工作流程"
       },
       {
-        "title": "99%",
-        "description": "用戶滿意度"
+        "title": "$0",
+        "description": "免費開始"
       }
     ]
   },
   "gallery": {
     "id": "gallery",
-    "title": "探索 Nano Banana Ultra 資料庫",
-    "description": "每張圖片都始於一個簡單創意。複製提示詞，創作您自己的作品。",
+    "title": "Skills 畫廊：社群精選",
+    "description": "按風格和類別探索 Skills",
+    "_comment": "categories and trending data are now fetched dynamically from the database via getGalleryEntranceData() service",
     "buttons": [
       {
-        "text": "探索熱門提示詞",
-        "url": "/prompts",
+        "text": "查看所有收藏",
+        "url": "/skills",
         "icon": "ArrowRight"
       }
     ]
   },
   "testimonials": {
     "id": "testimonials",
-    "title": "社群回饋",
-    "description": "頂尖創作者使用 Nano Banana 驅動他們的工作流程。",
+    "title": "開發者愛用 Antigravity Skills",
+    "description": "看看開發者如何節省時間和 tokens。",
     "items": [
       {
-        "name": "AdMaster Pro",
-        "role": "商業視覺設計",
-        "quote": "我的客戶需要「高轉換率的食品攝影」，而且要立即交付。Nano Banana 的意圖挖掘完美掌握了燈光邏輯，無需我猜測關鍵詞。這不只是生成器，更是創意總監。",
+        "name": "Alex Chen",
+        "role": "獨立開發者",
+        "quote": "我每個月花 $50 只是在反覆解釋專案脈絡。現在我載入一個 Skill，AI 就完全理解了。Antigravity Skills 第一天就回本了。",
         "rating": 5,
         "image": {
-          "src": "https://r2.bananaprompts.info/avatars/1765554543494-85b048ce-9e83-48a5-a91c-c4dc3bcedda9.webp",
-          "alt": "AdMaster Pro 頭像"
+          "src": "/imgs/avatars/avatar-1.webp",
+          "alt": "Alex Chen - Antigravity Skills 使用者"
         }
       },
       {
-        "name": "Sarah Vogue",
-        "role": "虛擬時尚部落客",
-        "quote": "在數位時尚中達到極致擬真以前總是碰運氣。有了 Nano Banana Ultra，布料質感和膚色在每張照片中都保持一致。對我的虛擬伸展台來說不可或缺。",
+        "name": "Sarah K.",
+        "role": "No-Code 開發者",
+        "quote": "我不是開發者 — 我是用 AI 學程式的。這些 Skills 讓我感覺有 10 年經驗。AI 終於理解我想要什麼了。",
         "rating": 5,
         "image": {
-          "src": "https://r2.bananaprompts.info/avatars/1765552329130-162a3b57-949b-4a78-8e84-578e60067ae0.webp",
-          "alt": "Sarah Vogue 頭像"
+          "src": "/imgs/avatars/avatar-2.webp",
+          "alt": "Sarah K. - Antigravity Skills 使用者"
         }
       },
       {
-        "name": "Dr. Linus Graph",
-        "role": "資料視覺化專家",
-        "quote": "我將複雜數據轉化為清晰的資訊圖表。Nano Banana 比任何其他模型都更能理解抽象邏輯結構，完美遵循我提示詞中的資訊層級。",
+        "name": "Marcus Dev",
+        "role": "全端工程師",
+        "quote": "以前需要 20 則訊息的工作流程，現在只要 3 則。這不只是方便 — 這是真金白銀的節省。Antigravity Skills 是認真開發者的必備工具。",
         "rating": 5,
         "image": {
-          "src": "https://r2.bananaprompts.info/avatars/1765551824866-b8b09b1d-77e3-404e-9e34-64a990b113e0.webp",
-          "alt": "Dr. Linus Graph 頭像"
+          "src": "/imgs/avatars/avatar-3.webp",
+          "alt": "Marcus Dev - Antigravity Skills 使用者"
         }
       },
       {
-        "name": "Render Foundry",
-        "role": "3D 產品工作室",
-        "quote": "對於商業素材，「差不多」是不夠的。邏輯引擎讓我們精確控制攝影棚燈光和材質屬性，自動化了我們整個產品模型工作流程。",
+        "name": "Jamie Torres",
+        "role": "AI 工作流程專家",
+        "quote": "社群 Skills 太棒了。我找到一個 React 模式的 Skill，省了好幾小時的設定時間。現在我也把自己的 Skills 貢獻回社群。",
         "rating": 5,
         "image": {
-          "src": "https://r2.bananaprompts.info/avatars/1765554024600-5f5d7771-780a-48b7-a524-1d6738c49240.webp",
-          "alt": "Render Foundry 頭像"
+          "src": "/imgs/avatars/avatar-4.webp",
+          "alt": "Jamie Torres - Antigravity Skills 使用者"
         }
       },
       {
-        "name": "void_walker",
-        "role": "數位超現實主義者",
-        "quote": "探索現實的邊界需要一個理解夢境邏輯的工具。Nano Banana Ultra 讓我能挖掘深層潛意識意圖，並將其轉化為視覺超現實主義。",
+        "name": "Riley Zhang",
+        "role": "新創創辦人",
+        "quote": "我們以前每個月燒掉大量 API 積分在向 AI 解釋程式碼庫。Antigravity Skills 讓我們的 AI 成本降低 60%。每月省下數千美元。",
         "rating": 5,
         "image": {
-          "src": "https://r2.bananaprompts.info/avatars/1765554777125-5d545f98-5993-4b7a-8074-996c92402b27.webp",
-          "alt": "void_walker 頭像"
+          "src": "/imgs/avatars/avatar-5.webp",
+          "alt": "Riley Zhang - Antigravity Skills 使用者"
         }
       }
     ]
@@ -341,96 +319,53 @@
   "faq": {
     "id": "faq",
     "title": "常見問題",
-    "description": "還有其他問題？歡迎透過 Discord 或電子郵件聯繫我們。",
-    "tip": "找不到想要的答案？<a href='mailto:support@nanobananaultra.com' class='text-primary font-medium hover:underline'>聯繫我們的客服團隊</a>",
+    "description": "關於 Antigravity Skills 您需要知道的一切。",
+    "tip": "找不到想要的答案？<a href='mailto:support@antigravityskills.com' class='text-primary font-medium hover:underline'>聯繫我們的客服團隊</a>",
     "items": [
       {
-        "question": "什麼是 Nano Banana Ultra？",
-        "answer": "Nano Banana Ultra 是一個獨立的優化平台，幫助您從 Nano Banana AI 模型獲得 Ultra 級別的效果。輸入幾個字，我們的意圖挖掘引擎會將其擴展為專業提示詞——然後使用 Nano Banana 或 Nano Banana Pro 生成驚艷圖像。注意：Nano Banana Ultra 與 Google 或其 Nano Banana 模型沒有隸屬、認可或贊助關係。"
+        "question": "什麼是 Antigravity Skills？",
+        "answer": "Antigravity Skills 是一個用於發現、創建和使用 AI agent skills 的平台。瀏覽社群驗證的 Skills 為您節省數千 tokens，或使用我們的 AI Skill 設計器創建專屬 Skills。"
       },
       {
-        "question": "Nano Banana Ultra 和 Nano Banana Pro 一樣嗎？",
-        "answer": "不一樣。Nano Banana 和 Nano Banana Pro 是 Google 開發的 AI 圖像生成模型。Nano Banana Ultra 是我們的獨立優化平台，幫助您打造更好的提示詞，從這些模型獲得 Ultra 級別的品質。"
+        "question": "Antigravity Skills 如何幫我省錢？",
+        "answer": "每次沒有 Skill 的 AI 對話會浪費 2,000-5,000 tokens 在解釋脈絡上。Antigravity Skills 記住您的偏好、技術堆疊和模式 — 只需解釋一次，AI 永遠理解。這是每次對話都能省下的真金白銀。"
       },
       {
-        "question": "Nano Banana Ultra 免費使用嗎？",
-        "answer": "是的！您無需註冊即可免費生成提示詞——每天最多 3 次。註冊後可獲得免費積分用於圖像生成。需要更多？請查看我們的定價頁面了解積分方案。"
+        "question": "Antigravity Skills 免費嗎？",
+        "answer": "是的！瀏覽和下載社群 Skills 完全免費。您也可以免費使用我們的 AI Skill 設計器創建基礎 Skills。進階功能即將推出。"
       },
       {
-        "question": "我可以在 Nano Banana Ultra 上生成圖片嗎？",
-        "answer": "可以。我們的 Live Logic Lab 讓您使用 Nano Banana 模型同時生成優化後的提示詞和即時圖像預覽。您也可以複製提示詞在其他 AI 圖像工具中使用。"
+        "question": "Antigravity Skills 適合誰？",
+        "answer": "Antigravity Skills 專為 Vibe Coders 設計 — 使用 AI 建構產品、撰寫內容和自動化工作流程的人。無論您是 no-code 開發者、獨立開發者還是新創創辦人，我們的 Skills 都能幫助您提升 10 倍效率。"
       },
       {
-        "question": "我需要提示詞工程技能嗎？",
-        "answer": "完全不需要。只需輸入簡單的創意，如「人像」或「海邊夕陽」。我們的意圖挖掘引擎會分析您的意圖，自動添加專業細節——燈光、構圖、風格等。"
+        "question": "有哪些類型的 Skills 可用？",
+        "answer": "我們提供前端設計、程式碼審查、任務規劃、行銷文案、競爭分析等各種 Skills。每個 Skill 都經過社群驗證，並針對節省時間和 tokens 進行優化。"
       },
       {
-        "question": "Banana 和 Banana Pro 模式有什麼區別？",
-        "answer": "這是指我們用於生成的 AI 模型。Banana 模式使用輕量級 Nano Banana 模型，快速生成連貫結果——適合日常使用。Banana Pro 模式使用進階 Nano Banana Pro 模型，進行深度語義擴展，輸出更高保真度。"
+        "question": "我可以創建自己的 Skills 嗎？",
+        "answer": "當然可以！用純文字描述您的需求，我們的 AI Skill 設計器會生成結構完整的生產級 Skill。您也可以將 Skills 貢獻給社群。"
       },
       {
-        "question": "智慧調整功能如何運作？",
-        "answer": "智慧調整讓您一鍵微調提示詞。調整燈光、相機角度、風格和其他參數，無需打字——只需從選項中選擇，觀看您的提示詞演變。"
-      },
-      {
-        "question": "我可以使用社群畫廊的提示詞嗎？",
-        "answer": "當然可以。瀏覽我們的畫廊，找到您喜歡的風格，點擊「Remix」作為起點。每個作品都包含完整提示詞——複製它、自訂它、創作屬於您的作品。"
-      },
-      {
-        "question": "提示詞可以商用嗎？",
-        "answer": "可以。您擁有在 Nano Banana Ultra 上創建的提示詞，可用於任何用途。對於在我們平台上生成的圖像，請查看我們的服務條款了解商業使用細節。"
-      }
-    ]
-  },
-  "ai_image_generator_faq": {
-    "id": "ai_image_generator_faq",
-    "title": "AI 圖像生成器常見問題",
-    "description": "關於我們 AI 圖像生成工具的常見問題。",
-    "items": [
-      {
-        "question": "什麼是 Nano Banana Ultra AI 圖像生成器？",
-        "answer": "Nano Banana Ultra 是一款前沿的網頁工具，讓任何人都能使用人工智慧創建專業圖像。它將文字描述轉化為視覺作品，還能使用 Gemini 和 FLUX 等先進模型編輯現有照片。"
-      },
-      {
-        "question": "Nano Banana Ultra AI 圖像生成器免費嗎？",
-        "answer": "是的，我們為所有用戶提供每日免費積分。您可以無需訂閱，使用 Gemini 等模型生成高品質 AI 圖像。"
-      },
-      {
-        "question": "生成的圖像可以商用嗎？",
-        "answer": "可以！在 Nano Banana Ultra 生成的圖像附帶商業使用授權，您可將其用於行銷、產品或創意專案。"
-      },
-      {
-        "question": "以圖生圖功能如何運作？",
-        "answer": "以圖生圖功能讓您上傳一張現有照片作為參考。AI 會根據您的文字提示修改圖像的風格、構圖或細節，同時保留您上傳內容的核心結構。"
-      },
-      {
-        "question": "支援哪些 AI 模型？",
-        "answer": "我們支援多種頂尖模型，包括 Google Gemini、OpenAI GPT-4o 和 FLUX.1，涵蓋從寫實到動漫等多種藝術風格。"
-      },
-      {
-        "question": "如何寫出有效的提示詞？",
-        "answer": "請具體描述主題、風格、燈光和氛圍。您也可以使用我們內建的「AI 提示詞優化器」，自動將簡單創意增強為專業提示詞。"
-      },
-      {
-        "question": "下載的圖像是什麼格式？",
-        "answer": "圖像提供高解析度 PNG 或 JPG 格式，適用於網頁展示和印刷。"
+        "question": "哪些 AI 工具可以使用 Antigravity Skills？",
+        "answer": "Antigravity Skills 可以與 Cursor、Claude Code、Antigravity、Amp 以及任何支援 skill 檔案的 AI 程式開發工具一起使用。一次編寫，到處使用。"
       }
     ]
   },
   "cta": {
     "id": "cta",
-    "title": "準備好創作了嗎？只需輸入幾個字。",
-    "description": "輸入一個簡短的創意，Nano Banana 處理剩下的一切。立即免費開始。",
+    "title": "每天沒有 Skills 就是在浪費 Tokens",
+    "description": "一般開發者使用 Antigravity Skills 每次對話可節省 2,000+ tokens。您浪費了多少？",
     "buttons": [
       {
-        "title": "開始創作",
-        "url": "/ai-image-generator",
+        "title": "開始創建 — 免費",
+        "url": "/#converter",
         "target": "_self",
         "icon": "Zap"
       },
       {
-        "title": "探索畫廊",
-        "url": "/prompts",
+        "title": "瀏覽社群 Skills",
+        "url": "/skills",
         "target": "_self",
         "variant": "outline",
         "icon": "Telescope"
@@ -439,8 +374,8 @@
   },
   "subscribe": {
     "id": "subscribe",
-    "title": "每週獲取獨家 Banana Pro 技巧",
-    "description": "訂閱獲取獨家 Banana Pro 提示詞、技巧，以及新功能搶先體驗。",
+    "title": "每週獲取獨家 Antigravity Skills 技巧",
+    "description": "訂閱獲取獨家 Skill 模板、提示詞工程技巧，以及新功能搶先體驗。",
     "submit": {
       "input": {
         "placeholder": "輸入您的電子郵件"
@@ -455,44 +390,29 @@
   "footer": {
     "id": "footer",
     "brand": {
-      "title": "Nano Banana Ultra",
-      "description": "將簡單創意轉化為專業 AI 藝術。適用於任何平台的終極 AI 提示詞工程工具，打造驚艷視覺作品。",
+      "title": "Antigravity Skills",
+      "description": "AI agent skills 的開放標準。將 Claude Skills 轉換為可攜格式，相容 Cursor、Antigravity、Claude Code、Amp 等工具。",
       "logo": {
         "src": "/logo.png",
-        "alt": "Nano Banana Ultra - Banana Pro 驅動的 AI 圖像生成器"
+        "alt": "Antigravity Skills - AI Agent Skills 開放標準"
       },
       "url": "/"
     },
-    "copyright": "© 2026 Nano Banana Ultra. 保留所有權利。",
-    "disclaimer": "Nano Banana Ultra 為獨立平台，與 Google LLC 無隸屬、認可或贊助關係。Nano Banana 和 Nano Banana Pro 為 Google LLC 的商標。",
+    "copyright": "© 2026 Antigravity Skills. 保留所有權利。",
+    "disclaimer": "Antigravity Skills 是一個獨立的開放標準專案。本服務與 Anthropic、Google、Cursor 或其他提及的 AI 平台無隸屬、認可或贊助關係。",
     "nav": {
       "items": [
         {
           "title": "產品",
           "children": [
             {
-              "title": "生成器",
-              "url": "/ai-image-generator",
+              "title": "轉換器",
+              "url": "/#converter",
               "target": "_self"
             },
             {
-              "title": "畫廊",
-              "url": "/prompts",
-              "target": "_self"
-            },
-            {
-              "title": "定價",
-              "url": "/pricing",
-              "target": "_self"
-            }
-          ]
-        },
-        {
-          "title": "資源",
-          "children": [
-            {
-              "title": "部落格",
-              "url": "/blog",
+              "title": "Skills",
+              "url": "/skills",
               "target": "_self"
             },
             {
@@ -514,26 +434,6 @@
               "title": "服務條款",
               "url": "/terms-of-service",
               "target": "_self"
-            },
-            {
-              "title": "退款政策",
-              "url": "/refund-policy",
-              "target": "_self"
-            },
-            {
-              "title": "Cookie 政策",
-              "url": "/cookie-policy",
-              "target": "_self"
-            },
-            {
-              "title": "社群準則",
-              "url": "/community-guidelines",
-              "target": "_self"
-            },
-            {
-              "title": "DMCA 政策",
-              "url": "/dmca-policy",
-              "target": "_self"
             }
           ]
         }
@@ -544,7 +444,7 @@
         {
           "title": "電子郵件",
           "icon": "Mail",
-          "url": "mailto:support@nanobananaultra.com",
+          "url": "mailto:support@antigravityskills.com",
           "target": "_self"
         }
       ]
@@ -558,10 +458,6 @@
         {
           "title": "服務條款",
           "url": "/terms-of-service"
-        },
-        {
-          "title": "退款政策",
-          "url": "/refund-policy"
         }
       ]
     },

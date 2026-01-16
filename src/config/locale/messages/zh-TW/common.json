@@ -1,0 +1,74 @@
+{
+  "metadata": {
+    "title": "Antigravity Skills - 將 Claude Skills 轉換為開放格式 | AI 程式開發 Skills",
+    "description": "Antigravity Skills 將 Claude Skills 轉換為開放格式，相容 Cursor、Antigravity、Claude Code 和 Amp。免費線上轉換器，專為 vibe coding 實踐者打造。",
+    "keywords": "antigravity skills, claude skills 轉換器, ai 程式開發 skills, vibe coding, cursor skills, Antigravity skills, claude code, 提示詞工程, ai 自動化"
+  },
+  "sign": {
+    "sign_in_title": "登入",
+    "sign_in_description": "登入您的帳號",
+    "sign_up_title": "註冊",
+    "sign_up_description": "建立帳號",
+    "email_title": "電子郵件",
+    "email_placeholder": "請輸入您的電子郵件",
+    "password_title": "密碼",
+    "password_placeholder": "請輸入您的密碼",
+    "forgot_password": "忘記密碼？",
+    "or": "或",
+    "continue": "繼續",
+    "no_account": "還沒有帳號？",
+    "already_have_account": "已經有帳號了？",
+    "email_sign_in": "使用電子郵件登入",
+    "google_sign_in_title": "使用 Google 登入",
+    "github_sign_in_title": "使用 GitHub 登入",
+    "close_title": "關閉",
+    "cancel_title": "取消",
+    "sign_out_title": "登出",
+    "billing_title": "帳單",
+    "name_title": "姓名",
+    "name_placeholder": "請輸入您的姓名",
+    "admin_title": "管理系統",
+    "credits_title": "積分：{credits}",
+    "email_verification_hint": "請使用您可以存取的電子郵件地址。註冊後需要驗證電子郵件。",
+    "verify_email_sent": "驗證郵件已發送，請檢查您的收件匣。",
+    "verify_email_required": "請先驗證您的電子郵件地址再登入。",
+    "resend_verification": "重新發送驗證郵件",
+    "resend_verification_sent": "驗證郵件已重新發送，請檢查您的收件匣。",
+    "verify_email_page_title": "檢查您的電子郵件",
+    "verify_email_page_description": "請點擊發送到以下地址的連結以繼續",
+    "verify_email_continue": "繼續",
+    "verify_email_tip": "驗證完成後，請點擊「繼續」。",
+    "verify_email_not_verified_yet": "尚未驗證。請先點擊電子郵件中的連結。",
+    "verify_email_account_mismatch": "目前登入帳號為 {current}。此頁面正在等待 {expected}。",
+    "resend_verification_countdown": "重新發送驗證郵件（{seconds} 秒）",
+    "resend_verification_wait": "請等待 {seconds} 秒後再重新發送。",
+    "back_to_sign_in": "返回登入"
+  },
+  "payment": {
+    "choose_payment_method": "選擇付款方式",
+    "choose_payment_method_description": "",
+    "cancel_title": "取消"
+  },
+  "locale_detector": {
+    "title": "偵測到您的瀏覽器語言為 {locale}，是否切換？",
+    "switch_to": "切換至 {locale}"
+  },
+  "imageGeneration": {
+    "status": {
+      "creating": "正在創建您的圖片...",
+      "retrying": "正在添加一點額外的魔法...",
+      "almostDone": "正在完成細節..."
+    },
+    "error": {
+      "title": "遇到問題了。",
+      "timeout": "糟糕！連線逾時。",
+      "serverError": "目前無法創建您的圖片。",
+      "noCreditsUsed": "未扣除積分",
+      "tryAgain": "再試一次"
+    },
+    "safetyFilter": {
+      "title": "內容不被允許",
+      "message": "由於我們的內容安全準則，無法生成該圖片。請調整您的提示詞後再試。"
+    }
+  }
+}

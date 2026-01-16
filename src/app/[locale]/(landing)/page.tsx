@@ -68,9 +68,9 @@ export default async function LandingPage({
   const softwareAppSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": `${brandConfig.name} Prompt Optimizer`,
+    "name": `${brandConfig.name} Converter`,
     "description": brandConfig.description,
-    "applicationCategory": "DesignApplication",
+    "applicationCategory": "DeveloperApplication",
     "operatingSystem": "Web Browser",
     "offers": {
       "@type": "Offer",
@@ -105,18 +105,25 @@ export default async function LandingPage({
     }]
   };
 
-  // ItemList Schema for Gallery Prompts (triggers Carousel/List snippets)
-  const galleryItems = page.gallery?.items?.slice(0, 5) || [];
+  // ItemList Schema for Skills (triggers Carousel/List snippets)
   const itemListSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "name": "Featured AI Prompts",
-    "itemListElement": galleryItems.map((item: any, index: number) => ({
-      "@type": "ListItem",
-      "position": index + 1,
-      "name": item.name,
-      "url": `${brandConfig.domain}${item.url || '/prompts'}`
-    }))
+    "name": "Featured Antigravity Skills",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Skill Converter",
+        "url": `${brandConfig.domain}/#converter`
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Browse Skills",
+        "url": `${brandConfig.domain}/skills`
+      }
+    ]
   };
 
   // Add SearchAction to WebSite Schema (Sitelinks Search Box)
@@ -124,7 +131,7 @@ export default async function LandingPage({
     ...websiteSchema,
     "potentialAction": {
       "@type": "SearchAction",
-      "target": `${brandConfig.domain}/prompts?q={search_term_string}`,
+      "target": `${brandConfig.domain}/skills?q={search_term_string}`,
       "query-input": "required name=search_term_string"
     }
   };

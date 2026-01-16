@@ -128,7 +128,7 @@ const CONFIG = {
     '/Users/lixuanying/Documents/GitHub/agents/bananaprompts-analysis/output/intent-mining-progress.json',
 
   // 输出路径
-  OUTPUT_DIR: '/Users/lixuanying/Documents/GitHub/nanobananaultra/docs/prompt-scoring/output',
+  OUTPUT_DIR: '/Users/lixuanying/Documents/GitHub/antigravityskills-com/docs/prompt-scoring/output',
 
   // 批次处理配置
   // 注意：批次大小设为 10，减少 LLM 输出复杂度，提高 JSON 格式稳定性
@@ -164,7 +164,7 @@ type VerticalType = 'Photography' | 'Design' | 'Art' | 'Commercial' | 'Character
 
 /**
  * 各类型的 Detail 评估维度
- * 参考来源：Google 官方 Nano Banana Pro 指南（2025-11-20）
+ * 参考来源：Google 官方 Antigravity Skills 指南（2025-11-20）
  */
 const DETAIL_CRITERIA: Record<VerticalType, string> = {
   Photography: `**Photography 类型 Detail 评估维度**:
@@ -415,7 +415,7 @@ const QUALITY_EVALUATION_SYSTEM_PROMPT = `# Role
    - ✅ "mirror selfie" (精准)
 2. **用户视角**: 普通人会怎么搜？不是 SEO 专家会怎么写
 3. **去掉冗余**: 不要加 a/the/for 等停用词，也不要加类别词 (prompt/photography/art/image)
-4. **品牌词可以用**: 如 "nano banana" 是有效的品牌词
+4. **品牌词可以用**: 如 "antigravity skills" 是有效的品牌词
 5. **多样化**: 不同搜索意图的词都要覆盖
    - 场景型：mirror selfie, cat on windowsill
    - 风格型：anime portrait, watercolor landscape

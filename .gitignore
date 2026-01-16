@@ -73,7 +73,7 @@ wrangler.toml
 .claude/tsc-cache
 
 # Agent工作目录 (临时产物)
-.agent/
+
 
 # 废弃脚本归档目录
 scripts-archive/

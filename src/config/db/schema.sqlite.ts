@@ -50,8 +50,8 @@ export const user = sqliteTable(
     postCount: integer('post_count').default(0).notNull(),
     // 用户注册来源统计 (v1.6.3)
     utmSource: text('utm_source').default('').notNull(),
-    registrationIp: text('registration_ip').default('').notNull(),
-    registrationLocale: text('registration_locale').default('').notNull(),
+    registrationIp: text('ip').default('').notNull(),
+    registrationLocale: text('locale').default('').notNull(),
   },
   (table) => [
     index('idx_user_name').on(table.name),
@@ -953,5 +953,78 @@ export const virtualPostSchedule = sqliteTable(
   (table) => [
     index('idx_virtual_post_schedule_persona').on(table.personaId, table.status),
     index('idx_virtual_post_schedule_status').on(table.status, table.scheduledAt),
+  ]
+);
+
+// ============================================
+// Antigravity Skills 相关表
+// ============================================
+
+/**
+ * Antigravity Skills 主表
+ * 存储转换后的 Antigravity Skills
+ */
+export const antigravitySkills = sqliteTable(
+  'antigravity_skills',
+  {
+    id: text('id').primaryKey(), // nanoid
+    name: text('name').notNull(), // skill-name (from frontmatter)
+    slug: text('slug').notNull().unique(), // URL-friendly (暂时与 name 相同)
+    description: text('description').notNull(), // 一句话描述
+    content: text('content').notNull(), // SKILL.md 完整内容
+
+    // 源信息
+    sourceType: text('source_type').notNull(), // 'claude-skill' | 'user-idea' | 'other'
+    sourceContent: text('source_content'), // 原始输入
+
+    // 统计
+    viewCount: integer('view_count').default(0).notNull(),
+    downloadCount: integer('download_count').default(0).notNull(),
+
+    // 分类（暂时不用，为未来扩展预留）
+    category: text('category'),
+    tags: text('tags'), // JSON array
+
+    // 作者（可选，暂时允许匿名）
+    authorId: text('author_id').references(() => user.id, { onDelete: 'set null' }),
+
+    // 状态
+    status: text('status').notNull().default('published'), // 'draft' | 'published'
+
+    // 时间戳
+    createdAt: integer('created_at', { mode: 'timestamp' })
+      .notNull()
+      .$defaultFn(() => new Date()),
+    updatedAt: integer('updated_at', { mode: 'timestamp' })
+      .notNull()
+      .$defaultFn(() => new Date())
+      .$onUpdate(() => new Date()),
+  },
+  (table) => [
+    index('idx_skills_slug').on(table.slug),
+    index('idx_skills_created_at').on(table.createdAt),
+  ]
+);
+
+/**
+ * Skills 转换历史表
+ * 记录每次转换的输入输出，用于审计和优化
+ */
+export const skillConversionHistory = sqliteTable(
+  'skill_conversion_history',
+  {
+    id: text('id').primaryKey(),
+    skillId: text('skill_id').references(() => antigravitySkills.id, { onDelete: 'set null' }),
+    inputContent: text('input_content').notNull(),
+    outputContent: text('output_content').notNull(),
+    sourceType: text('source_type').notNull(),
+    userId: text('user_id').references(() => user.id, { onDelete: 'set null' }),
+    createdAt: integer('created_at', { mode: 'timestamp' })
+      .notNull()
+      .$defaultFn(() => new Date()),
+  },
+  (table) => [
+    index('idx_conversion_history_created_at').on(table.createdAt),
+    index('idx_conversion_history_user').on(table.userId),
   ]
 );

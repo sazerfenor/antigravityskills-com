@@ -72,8 +72,8 @@ function CategoryCard({
 }: CategoryCardProps) {
   return (
     <Link
-      href={`/prompts?category=${slug}`}
-      aria-label={`Browse ${title} - ${count} prompts`}
+      href={`/skills?category=${slug}`}
+      aria-label={`Browse ${title} - ${count} skills`}
     >
       <m.div
         variants={isHero ? heroVariants : cardVariants}
@@ -185,7 +185,7 @@ interface TrendingPillProps extends GalleryTrendingItem {
  */
 function TrendingPill({ slug, title, count, index = 0 }: TrendingPillProps) {
   return (
-    <Link href={`/prompts/trending/${slug}`} aria-label={`Trending: ${title}`}>
+    <Link href={`/skills/trending/${slug}`} aria-label={`Trending: ${title}`}>
       <m.div
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -242,7 +242,7 @@ interface GalleryEntranceClientProps {
 export function GalleryEntranceClient({
   categories,
   trending,
-  ctaUrl = '/prompts',
+  ctaUrl = '/skills',
   ctaText = 'View All Collections',
 }: GalleryEntranceClientProps) {
   return (

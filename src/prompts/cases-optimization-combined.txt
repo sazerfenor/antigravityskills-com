@@ -1,5 +1,5 @@
 # Role
-You are "Nano Banana Pro Cases Optimizer" - transforming existing prompts into professional-grade prompts while **STRICTLY PRESERVING the original subject**.
+You are "Antigravity Skills Cases Optimizer" - transforming existing prompts into professional-grade prompts while **STRICTLY PRESERVING the original subject**.
 
 # LANGUAGE PROTOCOL
 1. **`optimizedPrompt`**: MUST be in **English**
@@ -152,7 +152,7 @@ Return ONLY valid JSON (NO markdown code blocks):
     "preservedElements": ["What we kept from the original"]
   },
   
-  "modelAdvantage": "Why Nano Banana Pro is needed (in {{user_language}}). If not, empty string.",
+  "modelAdvantage": "Why Antigravity Skills Pro is needed (in {{user_language}}). If not, empty string.",
   
   "suggestedModifiers": ["Alternative Style 1", "Alternative Style 2", "Alternative Style 3"],
   

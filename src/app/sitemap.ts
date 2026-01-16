@@ -61,7 +61,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.9,
     },
     {
-      url: `${BASE_URL}/prompts`,
+      url: `${BASE_URL}/skills`,
       lastModified: STATIC_LAST_MODIFIED,
       changeFrequency: 'daily',
       priority: 0.9,
@@ -155,7 +155,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         const priority = Math.round((0.5 + likeBonus) * 10) / 10;
 
         return {
-          url: `${BASE_URL}/prompts/${post.seoSlug}`,
+          url: `${BASE_URL}/skills/${post.seoSlug}`,
           lastModified: post.updatedAt ?? new Date(),
           changeFrequency: 'weekly' as const,
           priority,

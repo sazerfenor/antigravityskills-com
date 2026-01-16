@@ -154,7 +154,7 @@ export async function POST(request: Request) {
     await db().insert(user).values({
       id: userId,
       name: data.username,  // 只用 username 作为名字
-      email: `${data.username}@virtual.nanobananaultra.local`,
+      email: `${data.username}@virtual.antigravityskills.local`,
       emailVerified: true,
       image: data.avatarUrl || null,
       isVirtual: true,

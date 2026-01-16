@@ -1,19 +1,18 @@
 {
-  "name": "nanobananaultra",
+  "name": "antigravityskills",
   "version": "1.0.0",
   "private": true,
-  "author": "Nano Banana Ultra Team",
-  "homepage": "https://nanobananaultra.com",
-  "description": "Nano Banana Ultra - AI Image Generator powered by Banana & Banana Pro",
+  "author": "Antigravity Skills Team",
+  "homepage": "https://antigravityskills.com",
+  "description": "Antigravity Skills - Convert Claude Skills to Open Format",
   "keywords": [
-    "ai prompt generator",
-    "ai image generator",
-    "nano banana ultra",
-    "banana pro",
-    "text to image generator",
-    "ai art prompts",
+    "claude skills",
+    "antigravity skills",
+    "skill converter",
+    "ai skills",
+    "claude code",
     "prompt engineering",
-    "ai image prompts"
+    "ai automation"
   ],
   "scripts": {
     "dev": "next dev --turbopack",
@@ -123,6 +122,7 @@
     "react-dom": "19.2.0",
     "react-hook-form": "^7.62.0",
     "react-icons": "^5.5.0",
+    "react-markdown": "^10.1.0",
     "react-masonry-css": "^1.0.16",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-slug": "^6.0.0",
