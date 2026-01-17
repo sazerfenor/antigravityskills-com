@@ -179,13 +179,13 @@ pre {
   --animate-highlight-flash: highlight-flash 1.5s ease-in-out;
   @keyframes highlight-flash {
     0%, 100% {
-      box-shadow: 0 0 0 0 rgba(250, 204, 21, 0);
+      box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
     }
     25%, 75% {
-      box-shadow: 0 0 20px 5px rgba(250, 204, 21, 0.3);
+      box-shadow: 0 0 20px 5px rgba(37, 99, 235, 0.3);
     }
     50% {
-      box-shadow: 0 0 30px 10px rgba(250, 204, 21, 0.5);
+      box-shadow: 0 0 30px 10px rgba(37, 99, 235, 0.5);
     }
   }
 }
@@ -253,9 +253,9 @@ pre {
   background: rgba(255, 255, 255, 0.4);
 }
 
-/* Text Selection Highlight - Yellow tint */
+/* Text Selection Highlight - Blue tint */
 ::selection {
-  background-color: rgba(250, 204, 21, 0.3);
+  background-color: rgba(37, 99, 235, 0.3);
 }
 
 /* Native Select Styling */
@@ -271,8 +271,8 @@ select.premium-select {
 
 /* Card Glow Effect */
 .card-glow {
-  box-shadow: 
-    0 0 20px -5px rgba(250, 204, 21, 0.4),
+  box-shadow:
+    0 0 20px -5px rgba(37, 99, 235, 0.4),
     0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
@@ -281,7 +281,7 @@ select.premium-select {
   position: absolute;
   width: 16rem;
   height: 16rem;
-  background: rgba(250, 204, 21, 0.1);
+  background: rgba(37, 99, 235, 0.1);
   filter: blur(80px);
   pointer-events: none;
 }

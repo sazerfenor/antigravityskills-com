@@ -346,7 +346,7 @@ function ComparisonTableSection({
               {columns.map((col: string, i: number) => (
                 <th
                   key={i}
-                  className="text-left py-2 px-2 font-medium text-foreground/80 drop-shadow-[0_0_4px_rgba(250,204,21,0.2)]"
+                  className="text-left py-2 px-2 font-medium text-foreground/80 drop-shadow-[0_0_4px_var(--color-primary)]"
                 >
                   {col}
                 </th>

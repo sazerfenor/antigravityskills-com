@@ -87,7 +87,7 @@ export function Features({
                 </span>
                 <div className="flex items-center gap-3">
                   {/* Static cursor bar - no animate-pulse per Motion Discipline */}
-                  <div className="w-1.5 h-6 bg-primary rounded-full shadow-[0_0_8px_2px_rgba(250,204,21,0.4)]"></div>
+                  <div className="w-1.5 h-6 bg-primary rounded-full shadow-[0_0_8px_2px_rgba(37,99,235,0.4)]"></div>
                   <p className="text-2xl font-medium text-foreground tracking-tight">"Portrait"</p>
                 </div>
                 <p className="mt-4 text-xs text-muted-foreground flex items-center gap-1.5">

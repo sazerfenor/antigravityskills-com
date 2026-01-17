@@ -60,14 +60,14 @@ export function PromptOptimizationInline({
 
   // Tag Styles (Smart Abbreviations)
   const TAGS = {
-    anchor: { 
-      label: 'Subject', 
-      color: 'border-b-2 border-yellow-400/50 bg-yellow-400/10 hover:bg-yellow-400/20 text-yellow-300 shadow-[0_0_10px_-3px_rgba(250,204,21,0.3)]',
+    anchor: {
+      label: 'Subject',
+      color: 'border-b-2 border-primary/50 bg-primary/10 hover:bg-primary/20 text-primary shadow-[0_0_10px_-3px_var(--color-primary)]',
       tooltip: 'Core subject of the image'
     },
     subject: {
-      label: 'Subject', 
-      color: 'border-b-2 border-yellow-400/50 bg-yellow-400/10 hover:bg-yellow-400/20 text-yellow-300 shadow-[0_0_10px_-3px_rgba(250,204,21,0.3)]',
+      label: 'Subject',
+      color: 'border-b-2 border-primary/50 bg-primary/10 hover:bg-primary/20 text-primary shadow-[0_0_10px_-3px_var(--color-primary)]',
       tooltip: 'Core subject of the image'
     },
     atmos: { 

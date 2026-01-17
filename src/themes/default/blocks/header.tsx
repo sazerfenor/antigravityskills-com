@@ -310,7 +310,7 @@ export function Header({ header }: { header: HeaderType }) {
                     <X className="absolute inset-0 m-auto size-5 scale-0 -rotate-180 opacity-0 duration-200 in-data-[state=active]:scale-100 in-data-[state=active]:rotate-0 in-data-[state=active]:opacity-100" />
                   </button>
                   
-                  <DrawerContent className="max-h-[85vh] bg-glass-subtle backdrop-blur-xl border-t border-primary/20 shadow-[0_-10px_40px_-15px_rgba(250,204,21,0.15)]">
+                  <DrawerContent className="max-h-[85vh] bg-glass-subtle backdrop-blur-xl border-t border-primary/20 shadow-[0_-10px_40px_-15px_rgba(37,99,235,0.15)]">
                     <DrawerHeader className="border-b border-primary/20">
                       <DrawerTitle className="text-center">Menu</DrawerTitle>
                     </DrawerHeader>

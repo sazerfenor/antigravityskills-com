@@ -11,7 +11,7 @@
     "show_generator": true,
     "show_logos": true,
     "show_benefits": true,
-    "show_features": true,
+    "show_features": false,
     "show_stats": true,
     "show_gallery": true,
     "show_testimonials": true,
@@ -34,7 +34,7 @@
     "nav": {
       "items": [
         {
-          "title": "Converter",
+          "title": "AI Skill Builder",
           "url": "/#converter",
           "icon": "Zap"
         },
@@ -58,40 +58,36 @@
       "items": []
     },
     "show_sign": true,
-    "show_theme": false,
+    "show_theme": true,
     "show_locale": true
   },
   "hero": {
     "id": "hero",
     "title": "Antigravity Skills",
     "highlight_text": "Antigravity Skills",
-    "description": "Pre-built AI superpowers for <strong>Antigravity</strong>. Browse community favorites, create your own, or let AI design the perfect Skill for you. <strong>Save thousands of tokens. Work 10x faster.</strong>",
+    "description": "Your AI upgrade pack.<br>Plug & play expert skills. No coding needed.",
     "announcement": {
       "badge": "🚀 New",
-      "title": "AI Skill Designer is Live — Free to Try",
+      "title": "Customize Your Own Skills",
       "url": "/#converter"
     },
-    "tip": "💡 Each Skill saves 2,000-5,000 tokens per conversation",
+    "tip": "✓ Native Integration · ✓ Verified · ✓ 10x Efficiency",
     "buttons": [
       {
-        "title": "Browse Skills",
+        "title": "Browse Library",
         "icon": "Telescope",
         "url": "/skills",
         "target": "_self",
         "variant": "default"
       },
       {
-        "title": "Create a Skill",
-        "icon": "Zap",
-        "url": "/#converter",
+        "title": "How it Works",
+        "icon": "BookOpen",
+        "url": "/docs",
         "target": "_self",
-        "variant": "outline"
+        "variant": "secondary"
       }
     ],
-    "input": {
-      "placeholder": "Describe your skill idea...",
-      "button": "Convert"
-    },
     "show_buttons": true,
     "show_avatars": false,
     "avatars_tip": "Developers are converting skills every day",
@@ -99,7 +95,7 @@
     "show_tip": true
   },
   "logos": {
-    "title": "Works with your favorite AI coding tools:",
+    "title": "Powering your workflow in:",
     "items": [
       {
         "title": "Cursor",
@@ -111,75 +107,86 @@
         }
       },
       {
-        "title": "Claude Code",
+        "title": "Claude",
         "url": "https://claude.ai",
         "size": "h-12 w-12",
         "image": {
           "src": "/imgs/logos/claude.svg",
-          "alt": "Claude Code CLI - Antigravity Skills compatible"
+          "alt": "Claude AI - Antigravity Skills compatible"
         }
       },
       {
-        "title": "Gemini",
+        "title": "Codex",
+        "url": "https://openai.com/index/openai-codex",
+        "size": "h-12 w-12",
+        "image": {
+          "src": "/imgs/logos/codex.svg",
+          "alt": "OpenAI Codex - Antigravity Skills compatible"
+        }
+      },
+      {
+        "title": "Antigravity",
         "url": "https://ai.google.dev",
         "size": "h-12 w-12",
         "image": {
-          "src": "/imgs/logos/gemini.svg",
-          "alt": "Gemini - Antigravity Skills compatible"
-        }
-      },
-      {
-        "title": "Amp",
-        "url": "https://amp.dev",
-        "size": "h-12 w-12",
-        "image": {
-          "src": "/imgs/logos/amp.svg",
-          "alt": "Amp AI - Antigravity Skills compatible"
+          "src": "/imgs/logos/antigravity.svg",
+          "alt": "Antigravity - Antigravity Skills compatible"
         }
       }
     ]
   },
   "benefits": {
     "id": "benefits",
-    "title": "Why Developers Choose Antigravity Skills",
+    "title": "Why Choose Antigravity Skills?",
     "label": "Benefits",
-    "description": "Stop wasting tokens. Start building faster.",
+    "description": "Create. Discover. Use.",
     "items": [
       {
-        "title": "Stop Repeating Yourself",
-        "description": "Every conversation without a Skill wastes 2,000-5,000 tokens on context. Antigravity Skills remember your stack, your patterns, your preferences — so you explain once and build forever.",
-        "icon": "RiRepeatLine",
+        "title": "AI-Powered Generation",
+        "description": "Describe what you need. AI Skill Builder generates production-ready skills following the Agent Skills open standard. No prompt writing required.",
+        "icon": "RiMagicLine",
         "image": {
-          "src": "/imgs/features/token-savings.png",
-          "alt": "Antigravity Skills token savings illustration"
+          "src": "/imgs/features/ai-generation.png",
+          "alt": "Antigravity Skills AI-powered skill generation"
         }
       },
       {
-        "title": "Work 10x Faster",
-        "description": "No more 20-message warm-ups. Your Skills give AI the full context upfront. Ask once, get professional results.",
-        "icon": "RiFlashlightFill",
+        "title": "Curated Skill Library",
+        "description": "Community skills validated through 3-source cross-checking (cursor.directory + GitHub + Reddit). Quality guaranteed. Download and use.",
+        "icon": "RiCheckboxCircleLine",
         "image": {
-          "src": "/imgs/features/fast-workflow.png",
-          "alt": "Antigravity Skills fast workflow illustration"
+          "src": "/imgs/features/curated-library.png",
+          "alt": "Antigravity Skills curated skill library"
         }
       },
       {
-        "title": "Build Like an Expert",
-        "description": "Not a senior developer? No problem. Community Skills encode years of experience into reusable patterns. Instant expertise, zero learning curve.",
-        "icon": "RiUserStarLine",
+        "title": "Works Everywhere",
+        "description": "Built on the Agent Skills open standard. Skills you create work with Cursor, Claude Code, Antigravity, and all compatible tools.",
+        "icon": "RiGlobalLine",
         "image": {
-          "src": "/imgs/features/expertise.png",
-          "alt": "Antigravity Skills expert patterns illustration"
+          "src": "/imgs/features/cross-platform.png",
+          "alt": "Antigravity Skills cross-platform compatibility"
         }
       }
     ]
   },
-  "generator": {
+  "skill_builder": {
     "id": "converter",
-    "badge": "AI SKILL DESIGNER",
-    "heading": "Create Your",
-    "heading_highlight": "Antigravity Skill",
-    "description": "Describe what you need, or paste an existing prompt. Get a production-ready Skill in seconds."
+    "badge": "AGENT SKILLS · OPEN STANDARD",
+    "title": "Build Skills That",
+    "title_highlight": "Work Everywhere",
+    "description": "Generate SKILL.md following the Agent Skills open standard. Works with Claude Code, Antigravity, and any compatible agent.",
+    "tip": "Follows agentskills.io specification. Edit anytime.",
+    "input_label": "Describe Your Skill",
+    "input_placeholder": "Example: Create a skill that helps write commit messages following Conventional Commits format, analyzes git diffs, and suggests appropriate prefixes like feat:, fix:, docs:...",
+    "input_hint": "Describe a new skill in natural language, or paste an existing SKILL.md to refactor.",
+    "output_label": "Generated Skill",
+    "output_empty_title": "Your generated skill will appear here",
+    "output_empty_hint": "Enter a description and click Generate",
+    "button_generate": "Build My Skill",
+    "button_generating": "Generating...",
+    "button_reset": "Create New Skill",
+    "button_download": "Download"
   },
   "core_modules": {
     "id": "core-modules",
@@ -191,7 +198,7 @@
     "header_badge": "Why Antigravity Skills",
     "header_title": "Skills That Supercharge Your Workflow",
     "header_highlight": "Supercharge",
-    "header_description": "Stop explaining your project from scratch every time. Antigravity Skills give your AI the context it needs — so you can focus on <span class=\"text-white\">building</span>.",
+    "header_description": "Stop explaining your project from scratch every time. <strong>Antigravity Skills</strong> give your AI the context it needs — so you can focus on <span class=\"text-white\">building</span>.",
     "title": "Built for Vibe Coders",
     "description": "Focus on building. Let your skills work everywhere.",
     "items": [
@@ -247,13 +254,25 @@
     ]
   },
   "gallery": {
-    "id": "gallery",
-    "title": "Skills Gallery: Community Favorites",
-    "description": "Explore skills by style and category",
-    "_comment": "categories and trending data are now fetched dynamically from the database via getGalleryEntranceData() service",
+    "id": "skills-gallery",
+    "title": "Curated Skills: The Vibe Coder's Toolkit",
+    "description": "Based on 3-source cross-validation (cursor.directory + GitHub + Reddit)",
+    "_comment": "skills array for Library Marquee display",
+    "skills": [
+      { "name": "Frontend Expert", "tag": "Next.js/React", "description": "Build modern web apps with React 19, Next.js 15, and TypeScript best practices.", "stars": 5, "icon": "⚛️" },
+      { "name": "UIUX Designer", "tag": "Tailwind/shadcn", "description": "Create beautiful interfaces with Tailwind CSS, shadcn/ui, and Radix primitives.", "stars": 5, "icon": "🎨" },
+      { "name": "Code Reviewer", "tag": "Auto audit", "description": "Automated code review with best practices, security checks, and performance tips.", "stars": 4, "icon": "🔍" },
+      { "name": "Data Analyst", "tag": "Python/Pandas", "description": "Analyze data with Python, Pandas, and create insightful visualizations.", "stars": 4, "icon": "📊" },
+      { "name": "API Builder", "tag": "FastAPI/Django", "description": "Design and build RESTful APIs with proper authentication and documentation.", "stars": 4, "icon": "🔌" },
+      { "name": "AI/ML Developer", "tag": "PyTorch/LLM", "description": "Develop machine learning models and integrate LLMs into your applications.", "stars": 4, "icon": "🤖" },
+      { "name": "Docs Generator", "tag": "Auto docs", "description": "Generate comprehensive documentation from your codebase automatically.", "stars": 4, "icon": "📝" },
+      { "name": "Mobile Expert", "tag": "React Native", "description": "Build cross-platform mobile apps with React Native and Expo.", "stars": 4, "icon": "📱" },
+      { "name": "Excel Master", "tag": "Power Query", "description": "Automate Excel workflows with Power Query and advanced formulas.", "stars": 3, "icon": "📈" },
+      { "name": "SQL Expert", "tag": "DB Design", "description": "Design efficient database schemas and write optimized SQL queries.", "stars": 3, "icon": "🗄️" }
+    ],
     "buttons": [
       {
-        "text": "View All Collections",
+        "text": "Browse All",
         "url": "/skills",
         "icon": "ArrowRight"
       }
@@ -261,57 +280,57 @@
   },
   "testimonials": {
     "id": "testimonials",
-    "title": "Developers Love Antigravity Skills",
-    "description": "See how developers are saving time and tokens.",
+    "title": "What Developers Are Saying",
+    "description": "Based on early adopter feedback",
     "items": [
       {
-        "name": "Alex Chen",
-        "role": "Indie Developer",
-        "quote": "I was spending $50/month just explaining my project context over and over. Now I load one Skill and the AI just gets it. Antigravity Skills paid for itself on day one.",
+        "name": "A Cursor User",
+        "role": "Indie Dev",
+        "quote": "Before: 20+ messages to get AI to understand my stack. After: One Skill loaded, first response was exactly what I needed.",
         "rating": 5,
         "image": {
           "src": "/imgs/avatars/avatar-1.webp",
-          "alt": "Alex Chen - Antigravity Skills user"
+          "alt": "Cursor user testimonial"
         }
       },
       {
-        "name": "Sarah K.",
+        "name": "Vibe Coder",
         "role": "No-Code Builder",
-        "quote": "I'm not a developer — I learned to code with AI. These Skills make me feel like I have 10 years of experience. The AI finally understands what I want.",
+        "quote": "I don't know how to code. But with these Skills, Claude writes production-ready code on the first try.",
         "rating": 5,
         "image": {
           "src": "/imgs/avatars/avatar-2.webp",
-          "alt": "Sarah K. - Antigravity Skills user"
+          "alt": "Vibe Coder testimonial"
         }
       },
       {
-        "name": "Marcus Dev",
-        "role": "Full-Stack Engineer",
-        "quote": "My workflow that used to take 20 messages now takes 3. That's not just convenience — that's real money saved. Antigravity Skills is essential for any serious dev.",
+        "name": "r/ClaudeAI Member",
+        "role": "Full-Stack",
+        "quote": "Token usage dropped 40% in the first week. The AI stopped asking 'what framework are you using?'",
         "rating": 5,
         "image": {
           "src": "/imgs/avatars/avatar-3.webp",
-          "alt": "Marcus Dev - Antigravity Skills user"
+          "alt": "Reddit user testimonial"
         }
       },
       {
-        "name": "Jamie Torres",
-        "role": "AI Workflow Specialist",
-        "quote": "The community Skills are incredible. I found one for React patterns that saved me hours of setup. Now I contribute my own Skills back to the community.",
+        "name": "Discord User",
+        "role": "Workflow Specialist",
+        "quote": "Found a React patterns Skill that saved me 3 hours of setup. Now I'm building my own Skills.",
         "rating": 5,
         "image": {
           "src": "/imgs/avatars/avatar-4.webp",
-          "alt": "Jamie Torres - Antigravity Skills user"
+          "alt": "Discord user testimonial"
         }
       },
       {
-        "name": "Riley Zhang",
+        "name": "Early Adopter",
         "role": "Startup Founder",
-        "quote": "We were burning through API credits explaining our codebase to AI. Antigravity Skills cut our AI costs by 60%. That's thousands saved monthly.",
+        "quote": "API costs dropped 60% after we standardized on Skills. That's real money back in the budget.",
         "rating": 5,
         "image": {
           "src": "/imgs/avatars/avatar-5.webp",
-          "alt": "Riley Zhang - Antigravity Skills user"
+          "alt": "Early adopter testimonial"
         }
       }
     ]
@@ -319,52 +338,56 @@
   "faq": {
     "id": "faq",
     "title": "Frequently Asked Questions",
-    "description": "Everything you need to know about Antigravity Skills.",
+    "description": "Everything you need to know about Agent Skills",
     "tip": "Can't find what you're looking for? <a href='mailto:support@antigravityskills.com' class='text-primary font-medium hover:underline'>Contact our support team</a>",
     "items": [
       {
         "question": "What is Antigravity Skills?",
-        "answer": "Antigravity Skills is a platform for discovering, creating, and using AI agent skills. Browse community-tested Skills that save you thousands of tokens, or create your own custom Skills with our AI Skill Designer."
+        "answer": "Antigravity Skills is a skill creation platform built on the Agent Skills open standard. Skills you create can be used across platforms including Cursor, Claude Code, and more."
       },
       {
-        "question": "How do Antigravity Skills save me money?",
-        "answer": "Every AI conversation without a Skill wastes 2,000-5,000 tokens explaining context. Antigravity Skills remember your preferences, tech stack, and patterns — so you explain once and the AI understands forever. That's real money saved on every conversation."
+        "question": "How do I get started?",
+        "answer": "There are two ways to get started on Antigravity Skills: 1) Browse our curated skill library and download ready-to-use skills; 2) Use AI Skill Builder to generate custom skills with one click."
       },
       {
-        "question": "Is Antigravity Skills free?",
-        "answer": "Yes! Browsing and downloading community Skills is completely free. You can also create basic Skills with our AI Skill Designer at no cost. Premium features for power users are coming soon."
+        "question": "What tools are compatible?",
+        "answer": "Skills created on Antigravity Skills follow the Agent Skills open standard, making them compatible with Cursor, Claude Code, Antigravity, OpenAI Codex, and all other tools that support the specification."
       },
       {
-        "question": "Who is Antigravity Skills for?",
-        "answer": "Antigravity Skills is designed for Vibe Coders — people who use AI to build products, write content, and automate workflows. Whether you're a no-code builder, indie developer, or startup founder, our Skills help you work 10x faster."
-      },
-      {
-        "question": "What kind of Skills are available?",
-        "answer": "We offer Skills for frontend design, code review, task planning, marketing copywriting, competitor analysis, and more. Each Skill is community-tested and optimized to save you time and tokens."
+        "question": "How do Skills improve my workflow?",
+        "answer": "Expert-level skills work plug-and-play. No need to repeatedly explain context — AI delivers high-quality output on the first response."
       },
       {
         "question": "Can I create my own Skills?",
-        "answer": "Absolutely! Describe what you need in plain text, and our AI Skill Designer will generate a production-ready Skill with all the right structure. You can also contribute your Skills to the community."
+        "answer": "Yes! Use Antigravity Skills' AI Skill Builder to describe what you need and generate a SKILL.md that follows the open standard. Works with any compatible platform."
       },
       {
-        "question": "Which AI tools work with Antigravity Skills?",
-        "answer": "Antigravity Skills work with Cursor, Claude Code, Antigravity, Amp, and any AI coding tool that supports skill files. Write once, use everywhere."
+        "question": "How are Skills curated?",
+        "answer": "Antigravity Skills community skills are validated through 3-source cross-checking (cursor.directory + GitHub Stars + Reddit) to ensure quality."
+      },
+      {
+        "question": "Is Antigravity Skills affiliated with Anthropic?",
+        "answer": "No, Antigravity Skills is an independent project. We build on the Agent Skills open standard (initiated by Anthropic), but we have no affiliation with Anthropic."
+      },
+      {
+        "question": "Is Antigravity Skills free?",
+        "answer": "Completely free. Browsing and downloading community skills is free, and the AI Skill Builder is also free to use."
       }
     ]
   },
   "cta": {
     "id": "cta",
-    "title": "Every Day Without Skills Costs You Tokens",
-    "description": "The average developer saves 2,000+ tokens per conversation with Antigravity Skills. How much are you throwing away?",
+    "title": "Ready to Build Your First Skill?",
+    "description": "Free forever. No credit card required.",
     "buttons": [
       {
-        "title": "Start Creating — It's Free",
+        "title": "Build My First Skill — Free",
         "url": "/#converter",
         "target": "_self",
         "icon": "Zap"
       },
       {
-        "title": "Browse Community Skills",
+        "title": "Explore Skills Library",
         "url": "/skills",
         "target": "_self",
         "variant": "outline",
@@ -391,7 +414,7 @@
     "id": "footer",
     "brand": {
       "title": "Antigravity Skills",
-      "description": "The open standard for AI agent skills. Convert Claude Skills to portable format that works with Cursor, Antigravity, Claude Code, Amp, and beyond.",
+      "description": "The Open Standard for AI Agent Skills. Create and discover AI agent skills following the open standard. Works with Cursor, Claude Code, Antigravity, and more.",
       "logo": {
         "src": "/logo.png",
         "alt": "Antigravity Skills - The Open Standard for AI Agent Skills"
@@ -406,7 +429,7 @@
           "title": "Product",
           "children": [
             {
-              "title": "Converter",
+              "title": "AI Skill Builder",
               "url": "/#converter",
               "target": "_self"
             },

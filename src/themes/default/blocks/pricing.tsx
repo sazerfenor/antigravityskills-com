@@ -403,7 +403,7 @@ export function Pricing({
                         'group', // Enable child state reactivity
                         'transition-all duration-300',
                         'text-muted-foreground hover:text-foreground',
-                        'data-[state=active]:bg-primary data-[state=active]:text-black data-[state=active]:shadow-[0_0_20px_rgba(250,204,21,0.5)]'
+                        'data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-[0_0_20px_var(--color-primary)]'
                       )}
                     >
                       {item.title}
@@ -467,12 +467,12 @@ export function Pricing({
                       'relative h-full flex flex-col transition-all duration-300',
                       'backdrop-blur-xl bg-card/40 border-border-medium',
                       'hover:bg-card/60 hover:border-primary/30',
-                      isFeatured && 'border-primary/50 shadow-[0_0_30px_-10px_rgba(250,204,21,0.2)]'
+                      isFeatured && 'border-primary/50 shadow-[0_0_30px_-10px_var(--color-primary)]'
                     )}
                   >
                     {item.label && (
                       <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
-                        <Badge variant="outline" className="bg-black text-primary border-primary shadow-[0_0_10px_rgba(250,204,21,0.3)]">
+                        <Badge variant="outline" className="bg-black text-primary border-primary shadow-[0_0_10px_var(--color-primary)]">
                           {item.label}
                         </Badge>
                       </div>
@@ -578,7 +578,7 @@ export function Pricing({
                           variant={isFeatured ? 'default' : 'outline'}
                           className={cn(
                             'w-full h-11 transition-all',
-                            !isFeatured && 'hover:border-primary hover:text-primary hover:shadow-[0_0_15px_rgba(250,204,21,0.2)]'
+                            !isFeatured && 'hover:border-primary hover:text-primary hover:shadow-[0_0_15px_var(--color-primary)]'
                           )}
                         >
                           {isLoading && item.product_id === productId ? (

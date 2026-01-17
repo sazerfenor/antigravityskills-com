@@ -58,7 +58,7 @@ export const RemixLauncher = ({
         // Neon border (CBDS §5.2)
         'border-primary/20',
         // Glow shadow (CBDS §11.1)
-        'shadow-[0_0_30px_-10px_rgba(250,204,21,0.15)]',
+        'shadow-[0_0_30px_-10px_var(--color-primary)]',
         // Layout
         'rounded-xl p-6 space-y-5'
       )}
@@ -67,7 +67,7 @@ export const RemixLauncher = ({
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-2">
           {/* Icon with glow (CBDS §11.3) */}
-          <Sparkles className="h-[18px] w-[18px] text-primary drop-shadow-[0_0_8px_rgba(250,204,21,0.5)]" />
+          <Sparkles className="h-[18px] w-[18px] text-primary drop-shadow-[0_0_8px_var(--color-primary)]" />
           <h2 className="font-bold text-base text-foreground">Remix Station</h2>
         </div>
         <button
@@ -106,7 +106,7 @@ export const RemixLauncher = ({
         disabled={isRedirecting || !prompt}
         variant="glow-shimmer"
         size="xl"
-        className="w-full h-12 rounded-lg shadow-[0_0_30px_-8px_rgba(250,204,21,0.5)] hover:shadow-[0_0_40px_-8px_rgba(250,204,21,0.7)]"
+        className="w-full h-12 rounded-lg shadow-[0_0_30px_-8px_var(--color-primary)] hover:shadow-[0_0_40px_-8px_var(--color-primary)]"
       >
         {isRedirecting ? (
           <>

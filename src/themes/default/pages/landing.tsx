@@ -6,8 +6,9 @@ import {
   CoreModules,
   Features,
   FeaturesAccordion,
-  GalleryEntrance,
+  SkillsEntrance,
   Hero,
+  Library,
 } from '@/themes/default/blocks';
 import { LandingGallerySkeleton, GeneratorSectionSkeleton } from '@/themes/default/components/skeletons';
 
@@ -38,19 +39,19 @@ export default async function LandingPage({
         />
       )}
 
+      {/* Library - Skills Showcase with Infinite Scroll Marquee (MOVED UP) */}
+      {v.show_gallery !== false && page.gallery && (
+        <Library gallery={page.gallery} />
+      )}
+
       {/* Features - Logic Declassified section */}
       {v.show_features !== false && page.features && <Features features={page.features} />}
 
       {/* Skill Converter wrapped in Suspense for streaming render */}
       {v.show_generator !== false && (
         <Suspense fallback={<GeneratorSectionSkeleton />}>
-          <SkillConverterSection />
+          <SkillConverterSection config={page.skill_builder} />
         </Suspense>
-      )}
-
-      {/* Gallery Entrance - Curated Collections */}
-      {v.show_gallery !== false && page.gallery && (
-        <GalleryEntrance gallery={page.gallery} />
       )}
 
       {v.show_core_modules !== false && <CoreModules coreModules={page.core_modules} />}

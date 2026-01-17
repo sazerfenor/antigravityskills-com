@@ -319,7 +319,7 @@ export function InstantGenerator({ initialPrompt, postId, initialModel, initialA
 
   // ===== Render =====
   return (
-    <Card variant="feature" padding="default" className="relative space-y-6 bg-card/60 backdrop-blur-xl border-primary/20 shadow-[0_0_30px_-10px_rgba(250,204,21,0.15)] overflow-hidden">
+    <Card variant="feature" padding="default" className="relative space-y-6 bg-card/60 backdrop-blur-xl border-primary/20 shadow-[0_0_30px_-10px_var(--color-primary)] overflow-hidden">
 
       {/* 🌟 Glass Overlay for Loading State - Deeper Glass, Centered Progress */}
       {isGenerating && (

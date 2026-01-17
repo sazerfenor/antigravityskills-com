@@ -131,7 +131,7 @@ function GlassOverlay({
       <div className="relative z-10 flex flex-col items-center gap-3">
         {/* Icon - Simple Sparkles with pulse animation */}
         {icon ?? (
-          <Sparkles className="h-8 w-8 text-primary animate-pulse drop-shadow-[0_0_10px_rgba(250,204,21,0.5)]" />
+          <Sparkles className="h-8 w-8 text-primary animate-pulse drop-shadow-[0_0_10px_var(--color-primary)]" />
         )}
 
         {/* Loading Text */}
@@ -153,7 +153,7 @@ function GlassOverlay({
             {/* Glowing track and fill */}
             <div className="h-1 w-full bg-primary/10 rounded-full overflow-hidden">
               <div
-                className="h-full bg-primary shadow-[0_0_12px_rgba(250,204,21,0.6)] transition-all duration-300 ease-out rounded-full"
+                className="h-full bg-primary shadow-[0_0_12px_var(--color-primary)] transition-all duration-300 ease-out rounded-full"
                 style={{ width: `${displayProgress}%` }}
               />
             </div>

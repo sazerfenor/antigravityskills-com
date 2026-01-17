@@ -311,7 +311,7 @@ export function CommentSection({ postId }: CommentSectionProps) {
               onChange={(e) => setReplyContent(e.target.value)}
               onFocus={handleInputFocus}
               placeholder={`Reply to ${comment.user.name}...`}
-              className="flex-1 bg-glass-hint-alt rounded-lg border border-primary/20 px-3 py-1.5 text-xs focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 focus:shadow-[0_0_12px_-4px_rgba(250,204,21,0.3)]"
+              className="flex-1 bg-glass-hint-alt rounded-lg border border-primary/20 px-3 py-1.5 text-xs focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 focus:shadow-[0_0_12px_-4px_var(--color-primary)]"
               onKeyDown={(e) => {
                 if (e.key === 'Enter' && !e.shiftKey) {
                   e.preventDefault();
@@ -359,7 +359,7 @@ export function CommentSection({ postId }: CommentSectionProps) {
               onChange={(e) => setNewComment(e.target.value)}
               onFocus={handleInputFocus}
               placeholder="Share your thoughts..."
-              className="w-full min-h-[60px] bg-glass-hint-alt rounded-lg border border-primary/20 px-3 py-2 text-sm resize-none focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 focus:shadow-[0_0_12px_-4px_rgba(250,204,21,0.3)]"
+              className="w-full min-h-[60px] bg-glass-hint-alt rounded-lg border border-primary/20 px-3 py-2 text-sm resize-none focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 focus:shadow-[0_0_12px_-4px_var(--color-primary)]"
               onKeyDown={(e) => {
                 if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) {
                   handleSubmit();

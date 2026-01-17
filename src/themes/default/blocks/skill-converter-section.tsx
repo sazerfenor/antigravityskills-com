@@ -1,6 +1,6 @@
 /**
  * Skill Converter Section
- * 主题包装层 - 将核心组件包装在 Matrix 主题风格中
+ * 主题包装层 - 将 Skill Builder 包装在 Matrix 主题风格中
  */
 
 'use client';
@@ -9,19 +9,31 @@ import { Sparkles } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import { Badge } from '@/shared/components/ui/badge';
 import { cn } from '@/shared/lib/utils';
+import type { SkillBuilder } from '@/shared/types/blocks/landing';
 
-const SkillConverterPlayground = dynamic(
+const SkillBuilderPlayground = dynamic(
   () =>
-    import('@/shared/blocks/skill-converter/skill-converter-playground').then(
-      (mod) => ({ default: mod.SkillConverterPlayground })
+    import('@/features/skill-builder/components/SkillBuilderPlayground').then(
+      (mod) => ({ default: mod.SkillBuilderPlayground })
     ),
   { ssr: false }
 );
 
-export function SkillConverterSection() {
+interface SkillConverterSectionProps {
+  config?: SkillBuilder;
+}
+
+export function SkillConverterSection({ config }: SkillConverterSectionProps) {
+  // Default values for backwards compatibility
+  const badge = config?.badge || 'AI SKILL BUILDER';
+  const title = config?.title || 'Create Your';
+  const titleHighlight = config?.title_highlight || 'Antigravity Skill';
+  const description = config?.description || 'Describe what you need in natural language. Get a production-ready Skill with proper structure in seconds.';
+  const sectionId = config?.id || 'converter';
+
   return (
     <section
-      id="converter"
+      id={sectionId}
       className="relative overflow-hidden py-16 md:py-24"
     >
       {/* Background effects - Matrix theme */}
@@ -45,23 +57,22 @@ export function SkillConverterSection() {
             className="mb-4 border-primary/30 bg-primary/10"
           >
             <Sparkles className="w-3 h-3 mr-1.5" />
-            AI SKILL DESIGNER
+            {badge}
           </Badge>
 
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
-            Create Your{' '}
+            {title}{' '}
             <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-              Antigravity Skill
+              {titleHighlight}
             </span>
           </h2>
 
           <p className="text-sm text-muted-foreground max-w-2xl">
-            Describe what you need, or paste an existing prompt. Get a
-            production-ready Skill in seconds.
+            {description}
           </p>
         </div>
 
-        <SkillConverterPlayground />
+        <SkillBuilderPlayground config={config} />
       </div>
     </section>
   );

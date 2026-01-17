@@ -11,7 +11,7 @@
     "show_generator": true,
     "show_logos": true,
     "show_benefits": true,
-    "show_features": true,
+    "show_features": false,
     "show_stats": true,
     "show_gallery": true,
     "show_testimonials": true,
@@ -58,40 +58,36 @@
       "items": []
     },
     "show_sign": true,
-    "show_theme": false,
+    "show_theme": true,
     "show_locale": true
   },
   "hero": {
     "id": "hero",
     "title": "Antigravity Skills",
     "highlight_text": "Antigravity Skills",
-    "description": "為 <strong>Antigravity</strong> 預先打造的 AI 超能力。瀏覽社群精選、創建專屬 Skill，或讓 AI 為您設計完美的 Skill。<strong>節省數千 tokens，效率提升 10 倍。</strong>",
+    "description": "你的 AI 升級包。<br>專家技能，即插即用。無需編程。",
     "announcement": {
-      "badge": "🚀 全新上線",
-      "title": "AI Skill 設計器已上線 — 免費體驗",
+      "badge": "🚀 新功能",
+      "title": "定制您的專屬技能",
       "url": "/#converter"
     },
-    "tip": "💡 每個 Skill 每次對話可節省 2,000-5,000 tokens",
+    "tip": "✓ 原生集成 · ✓ 專家驗證 · ✓ 10 倍效率",
     "buttons": [
       {
-        "title": "瀏覽 Skills",
+        "title": "瀏覽技能庫",
         "icon": "Telescope",
         "url": "/skills",
         "target": "_self",
         "variant": "default"
       },
       {
-        "title": "創建 Skill",
-        "icon": "Zap",
-        "url": "/#converter",
+        "title": "使用指南",
+        "icon": "BookOpen",
+        "url": "/docs",
         "target": "_self",
-        "variant": "outline"
+        "variant": "secondary"
       }
     ],
-    "input": {
-      "placeholder": "描述您的 Skill 構想...",
-      "button": "轉換"
-    },
     "show_buttons": true,
     "show_avatars": false,
     "avatars_tip": "開發者每天都在轉換 Skills",
@@ -99,7 +95,7 @@
     "show_tip": true
   },
   "logos": {
-    "title": "相容您喜愛的 AI 程式開發工具：",
+    "title": "完美支援：",
     "items": [
       {
         "title": "Cursor",
@@ -111,75 +107,86 @@
         }
       },
       {
-        "title": "Claude Code",
+        "title": "Claude",
         "url": "https://claude.ai",
         "size": "h-12 w-12",
         "image": {
           "src": "/imgs/logos/claude.svg",
-          "alt": "Claude Code CLI - 相容 Antigravity Skills"
+          "alt": "Claude AI - 相容 Antigravity Skills"
         }
       },
       {
-        "title": "Gemini",
+        "title": "Codex",
+        "url": "https://openai.com/index/openai-codex",
+        "size": "h-12 w-12",
+        "image": {
+          "src": "/imgs/logos/codex.svg",
+          "alt": "OpenAI Codex - 相容 Antigravity Skills"
+        }
+      },
+      {
+        "title": "Antigravity",
         "url": "https://ai.google.dev",
         "size": "h-12 w-12",
         "image": {
-          "src": "/imgs/logos/gemini.svg",
-          "alt": "Gemini - 相容 Antigravity Skills"
-        }
-      },
-      {
-        "title": "Amp",
-        "url": "https://amp.dev",
-        "size": "h-12 w-12",
-        "image": {
-          "src": "/imgs/logos/amp.svg",
-          "alt": "Amp AI - 相容 Antigravity Skills"
+          "src": "/imgs/logos/antigravity.svg",
+          "alt": "Antigravity - 相容 Antigravity Skills"
         }
       }
     ]
   },
   "benefits": {
     "id": "benefits",
-    "title": "開發者為何選擇 Antigravity Skills",
+    "title": "為什麼選擇 Antigravity Skills？",
     "label": "優勢",
-    "description": "停止浪費 tokens。加速開發效率。",
+    "description": "創建、發現、即用。",
     "items": [
       {
-        "title": "告別重複解釋",
-        "description": "每次對話沒有 Skill 就會浪費 2,000-5,000 tokens 在說明上。Antigravity Skills 記住您的技術堆疊、開發模式和偏好 — 只需解釋一次，永久生效。",
-        "icon": "RiRepeatLine",
+        "title": "AI 一鍵生成",
+        "description": "描述你的需求，AI Skill Builder 自動生成符合 Agent Skills 開放標準的專業技能。無需手寫 Prompt。",
+        "icon": "RiMagicLine",
         "image": {
-          "src": "/imgs/features/token-savings.png",
-          "alt": "Antigravity Skills 節省 tokens 示意圖"
+          "src": "/imgs/features/ai-generation.png",
+          "alt": "Antigravity Skills AI 生成技能"
         }
       },
       {
-        "title": "效率提升 10 倍",
-        "description": "不再需要 20 則訊息的暖身過程。您的 Skills 讓 AI 一開始就掌握完整脈絡。問一次，就能得到專業結果。",
-        "icon": "RiFlashlightFill",
+        "title": "精選技能庫",
+        "description": "經過三源交叉驗證的社區技能（cursor.directory + GitHub + Reddit）。質量有保障，下載即用。",
+        "icon": "RiCheckboxCircleLine",
         "image": {
-          "src": "/imgs/features/fast-workflow.png",
-          "alt": "Antigravity Skills 快速工作流程示意圖"
+          "src": "/imgs/features/curated-library.png",
+          "alt": "Antigravity Skills 精選技能庫"
         }
       },
       {
-        "title": "像專家一樣開發",
-        "description": "不是資深開發者？沒問題。社群 Skills 將多年經驗編碼為可重複使用的模式。即時獲得專業能力，零學習曲線。",
-        "icon": "RiUserStarLine",
+        "title": "跨平台通用",
+        "description": "基於 Agent Skills 開放標準。創建的技能可用於 Cursor、Claude Code、Antigravity 等所有相容工具。",
+        "icon": "RiGlobalLine",
         "image": {
-          "src": "/imgs/features/expertise.png",
-          "alt": "Antigravity Skills 專家模式示意圖"
+          "src": "/imgs/features/cross-platform.png",
+          "alt": "Antigravity Skills 跨平台相容"
         }
       }
     ]
   },
-  "generator": {
+  "skill_builder": {
     "id": "converter",
-    "badge": "AI SKILL 設計器",
-    "heading": "創建您的",
-    "heading_highlight": "Antigravity Skill",
-    "description": "描述您的需求，或貼上現有提示詞。幾秒內獲得可用的 Skill。"
+    "badge": "AGENT SKILLS · 開放標準",
+    "title": "打造跨平台通用的",
+    "title_highlight": "Skill",
+    "description": "生成符合 Agent Skills 開放標準的 SKILL.md。相容 Claude Code、Antigravity 及所有支援 Agent Skills 的工具。",
+    "tip": "遵循 agentskills.io 規範。隨時可編輯。",
+    "input_label": "描述您的 Skill",
+    "input_placeholder": "範例：創建一個幫助撰寫 commit message 的 skill，遵循 Conventional Commits 格式，分析 git diff，建議合適的前綴如 feat:、fix:、docs:...",
+    "input_hint": "用自然語言描述新 skill，或貼上現有的 SKILL.md 進行重構。",
+    "output_label": "生成的 Skill",
+    "output_empty_title": "您生成的 skill 將顯示在這裡",
+    "output_empty_hint": "輸入描述並點擊生成",
+    "button_generate": "Build My Skill",
+    "button_generating": "生成中...",
+    "button_reset": "創建新 Skill",
+    "button_download": "下載"
   },
   "core_modules": {
     "id": "core-modules",
@@ -247,13 +254,25 @@
     ]
   },
   "gallery": {
-    "id": "gallery",
-    "title": "Skills 畫廊：社群精選",
-    "description": "按風格和類別探索 Skills",
-    "_comment": "categories and trending data are now fetched dynamically from the database via getGalleryEntranceData() service",
+    "id": "skills-gallery",
+    "title": "精選技能：Vibe Coder 的工具箱",
+    "description": "基於三源交叉驗證 (cursor.directory + GitHub + Reddit)",
+    "_comment": "skills array for Library Marquee display",
+    "skills": [
+      { "name": "Frontend Expert", "tag": "Next.js/React", "description": "使用 React 19、Next.js 15 和 TypeScript 最佳實踐構建現代 Web 應用。", "stars": 5, "icon": "⚛️" },
+      { "name": "UIUX Designer", "tag": "Tailwind/shadcn", "description": "使用 Tailwind CSS、shadcn/ui 和 Radix 原語創建精美界面。", "stars": 5, "icon": "🎨" },
+      { "name": "Code Reviewer", "tag": "自動審核", "description": "自動化代碼審查，包含最佳實踐、安全檢查和性能建議。", "stars": 4, "icon": "🔍" },
+      { "name": "Data Analyst", "tag": "Python/Pandas", "description": "使用 Python、Pandas 分析數據並創建有洞察力的可視化。", "stars": 4, "icon": "📊" },
+      { "name": "API Builder", "tag": "FastAPI/Django", "description": "設計和構建具有適當身份驗證和文檔的 RESTful API。", "stars": 4, "icon": "🔌" },
+      { "name": "AI/ML Dev", "tag": "PyTorch/LLM", "description": "開發機器學習模型並將 LLM 集成到您的應用中。", "stars": 4, "icon": "🤖" },
+      { "name": "Docs Generator", "tag": "自動文檔", "description": "從代碼庫自動生成全面的文檔。", "stars": 4, "icon": "📝" },
+      { "name": "Mobile Expert", "tag": "React Native", "description": "使用 React Native 和 Expo 構建跨平台移動應用。", "stars": 4, "icon": "📱" },
+      { "name": "Excel Master", "tag": "Power Query", "description": "使用 Power Query 和高級公式自動化 Excel 工作流程。", "stars": 3, "icon": "📈" },
+      { "name": "SQL Expert", "tag": "DB Design", "description": "設計高效的數據庫架構並編寫優化的 SQL 查詢。", "stars": 3, "icon": "🗄️" }
+    ],
     "buttons": [
       {
-        "text": "查看所有收藏",
+        "text": "瀏覽全部",
         "url": "/skills",
         "icon": "ArrowRight"
       }
@@ -261,57 +280,57 @@
   },
   "testimonials": {
     "id": "testimonials",
-    "title": "開發者愛用 Antigravity Skills",
-    "description": "看看開發者如何節省時間和 tokens。",
+    "title": "開發者的真實回饋",
+    "description": "來自早期使用者的反饋",
     "items": [
       {
-        "name": "Alex Chen",
-        "role": "獨立開發者",
-        "quote": "我每個月花 $50 只是在反覆解釋專案脈絡。現在我載入一個 Skill，AI 就完全理解了。Antigravity Skills 第一天就回本了。",
+        "name": "A Cursor User",
+        "role": "Indie Dev",
+        "quote": "以前：20+ 條訊息才能讓 AI 理解我的技術棧。現在：載入一個 Skill，第一個回覆就是我要的。",
         "rating": 5,
         "image": {
           "src": "/imgs/avatars/avatar-1.webp",
-          "alt": "Alex Chen - Antigravity Skills 使用者"
+          "alt": "Cursor 使用者回饋"
         }
       },
       {
-        "name": "Sarah K.",
-        "role": "No-Code 開發者",
-        "quote": "我不是開發者 — 我是用 AI 學程式的。這些 Skills 讓我感覺有 10 年經驗。AI 終於理解我想要什麼了。",
+        "name": "Vibe Coder",
+        "role": "No-Code Builder",
+        "quote": "我不會寫代碼。但有了這些 Skills，Claude 第一次就能寫出可用的代碼。",
         "rating": 5,
         "image": {
           "src": "/imgs/avatars/avatar-2.webp",
-          "alt": "Sarah K. - Antigravity Skills 使用者"
+          "alt": "Vibe Coder 回饋"
         }
       },
       {
-        "name": "Marcus Dev",
-        "role": "全端工程師",
-        "quote": "以前需要 20 則訊息的工作流程，現在只要 3 則。這不只是方便 — 這是真金白銀的節省。Antigravity Skills 是認真開發者的必備工具。",
+        "name": "r/ClaudeAI Member",
+        "role": "Full-Stack",
+        "quote": "Token 使用量第一週就降了 40%。AI 不再問『你用什麼框架？』",
         "rating": 5,
         "image": {
           "src": "/imgs/avatars/avatar-3.webp",
-          "alt": "Marcus Dev - Antigravity Skills 使用者"
+          "alt": "Reddit 使用者回饋"
         }
       },
       {
-        "name": "Jamie Torres",
-        "role": "AI 工作流程專家",
-        "quote": "社群 Skills 太棒了。我找到一個 React 模式的 Skill，省了好幾小時的設定時間。現在我也把自己的 Skills 貢獻回社群。",
+        "name": "Discord User",
+        "role": "Workflow Specialist",
+        "quote": "找到一個 React 模式 Skill，省了 3 小時設置。現在我開始自己做 Skills 了。",
         "rating": 5,
         "image": {
           "src": "/imgs/avatars/avatar-4.webp",
-          "alt": "Jamie Torres - Antigravity Skills 使用者"
+          "alt": "Discord 使用者回饋"
         }
       },
       {
-        "name": "Riley Zhang",
-        "role": "新創創辦人",
-        "quote": "我們以前每個月燒掉大量 API 積分在向 AI 解釋程式碼庫。Antigravity Skills 讓我們的 AI 成本降低 60%。每月省下數千美元。",
+        "name": "Early Adopter",
+        "role": "Startup Founder",
+        "quote": "統一用 Skills 後，API 成本降了 60%。這是實打實省下的錢。",
         "rating": 5,
         "image": {
           "src": "/imgs/avatars/avatar-5.webp",
-          "alt": "Riley Zhang - Antigravity Skills 使用者"
+          "alt": "早期使用者回饋"
         }
       }
     ]
@@ -319,52 +338,56 @@
   "faq": {
     "id": "faq",
     "title": "常見問題",
-    "description": "關於 Antigravity Skills 您需要知道的一切。",
+    "description": "關於 Agent Skills、安裝和使用的一切",
     "tip": "找不到想要的答案？<a href='mailto:support@antigravityskills.com' class='text-primary font-medium hover:underline'>聯繫我們的客服團隊</a>",
     "items": [
       {
         "question": "什麼是 Antigravity Skills？",
-        "answer": "Antigravity Skills 是一個用於發現、創建和使用 AI agent skills 的平台。瀏覽社群驗證的 Skills 為您節省數千 tokens，或使用我們的 AI Skill 設計器創建專屬 Skills。"
+        "answer": "Antigravity Skills 是基於 Agent Skills 開放標準的技能創建平台。創建的技能可跨平台使用（Cursor、Claude Code 等）。"
       },
       {
-        "question": "Antigravity Skills 如何幫我省錢？",
-        "answer": "每次沒有 Skill 的 AI 對話會浪費 2,000-5,000 tokens 在解釋脈絡上。Antigravity Skills 記住您的偏好、技術堆疊和模式 — 只需解釋一次，AI 永遠理解。這是每次對話都能省下的真金白銀。"
+        "question": "如何開始使用？",
+        "answer": "在 Antigravity Skills 上有兩種方式：1) 瀏覽精選技能庫，下載即用；2) 使用 AI Skill Builder 一鍵生成專屬技能。"
+      },
+      {
+        "question": "支援哪些工具？",
+        "answer": "在 Antigravity Skills 創建的技能基於 Agent Skills 開放標準，可用於 Cursor、Claude Code、Antigravity、OpenAI Codex 等所有相容工具。"
+      },
+      {
+        "question": "Skill 如何提升效率？",
+        "answer": "專家級技能即插即用。無需重複解釋上下文，AI 首次回覆就是高質量輸出。"
+      },
+      {
+        "question": "我可以創建自己的 Skill 嗎？",
+        "answer": "可以！使用 Antigravity Skills 的 AI Skill Builder，描述需求即可生成符合開放標準的 SKILL.md，可用於任何相容平台。"
+      },
+      {
+        "question": "技能是如何精選的？",
+        "answer": "Antigravity Skills 社區技能經過三源交叉驗證 (cursor.directory + GitHub Stars + Reddit)，確保質量。"
+      },
+      {
+        "question": "Antigravity Skills 與 Anthropic 有關聯嗎？",
+        "answer": "不，Antigravity Skills 是獨立項目。我們基於 Agent Skills 開放標準（由 Anthropic 發起），但與 Anthropic 無隸屬關係。"
       },
       {
         "question": "Antigravity Skills 免費嗎？",
-        "answer": "是的！瀏覽和下載社群 Skills 完全免費。您也可以免費使用我們的 AI Skill 設計器創建基礎 Skills。進階功能即將推出。"
-      },
-      {
-        "question": "Antigravity Skills 適合誰？",
-        "answer": "Antigravity Skills 專為 Vibe Coders 設計 — 使用 AI 建構產品、撰寫內容和自動化工作流程的人。無論您是 no-code 開發者、獨立開發者還是新創創辦人，我們的 Skills 都能幫助您提升 10 倍效率。"
-      },
-      {
-        "question": "有哪些類型的 Skills 可用？",
-        "answer": "我們提供前端設計、程式碼審查、任務規劃、行銷文案、競爭分析等各種 Skills。每個 Skill 都經過社群驗證，並針對節省時間和 tokens 進行優化。"
-      },
-      {
-        "question": "我可以創建自己的 Skills 嗎？",
-        "answer": "當然可以！用純文字描述您的需求，我們的 AI Skill 設計器會生成結構完整的生產級 Skill。您也可以將 Skills 貢獻給社群。"
-      },
-      {
-        "question": "哪些 AI 工具可以使用 Antigravity Skills？",
-        "answer": "Antigravity Skills 可以與 Cursor、Claude Code、Antigravity、Amp 以及任何支援 skill 檔案的 AI 程式開發工具一起使用。一次編寫，到處使用。"
+        "answer": "完全免費。瀏覽、下載社區技能免費，AI Skill Builder 也免費使用。"
       }
     ]
   },
   "cta": {
     "id": "cta",
-    "title": "每天沒有 Skills 就是在浪費 Tokens",
-    "description": "一般開發者使用 Antigravity Skills 每次對話可節省 2,000+ tokens。您浪費了多少？",
+    "title": "準備好創建你的第一個 Skill 了嗎？",
+    "description": "永久免費。無需信用卡。",
     "buttons": [
       {
-        "title": "開始創建 — 免費",
+        "title": "立即創建 — 免費",
         "url": "/#converter",
         "target": "_self",
         "icon": "Zap"
       },
       {
-        "title": "瀏覽社群 Skills",
+        "title": "探索技能庫",
         "url": "/skills",
         "target": "_self",
         "variant": "outline",
@@ -391,7 +414,7 @@
     "id": "footer",
     "brand": {
       "title": "Antigravity Skills",
-      "description": "AI agent skills 的開放標準。將 Claude Skills 轉換為可攜格式，相容 Cursor、Antigravity、Claude Code、Amp 等工具。",
+      "description": "AI Agent 技能的開放標準。創建和發現符合開放標準的 AI 技能。支援 Cursor、Claude Code、Antigravity 等工具。",
       "logo": {
         "src": "/logo.png",
         "alt": "Antigravity Skills - AI Agent Skills 開放標準"
@@ -399,14 +422,14 @@
       "url": "/"
     },
     "copyright": "© 2026 Antigravity Skills. 保留所有權利。",
-    "disclaimer": "Antigravity Skills 是一個獨立的開放標準專案。本服務與 Anthropic、Google、Cursor 或其他提及的 AI 平台無隸屬、認可或贊助關係。",
+    "disclaimer": "Antigravity Skills 是獨立的開放標準項目。本服務與 Anthropic、Google、Cursor 或任何其他提及的 AI 平台無關聯、認可或贊助關係。",
     "nav": {
       "items": [
         {
           "title": "產品",
           "children": [
             {
-              "title": "轉換器",
+              "title": "AI Skill Builder",
               "url": "/#converter",
               "target": "_self"
             },

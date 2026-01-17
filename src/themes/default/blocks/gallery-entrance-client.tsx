@@ -90,7 +90,7 @@ function CategoryCard({
           // Cyberpunk neon hover effect
           'hover:border-primary/40',
           'transition-all duration-500',
-          'hover:shadow-[0_20px_60px_-15px_rgba(250,204,21,0.15)]'
+          'hover:shadow-[0_20px_60px_-15px_rgba(37,99,235,0.15)]'
         )}
       >
         {/* Full Bleed Image - Magazine Core */}
@@ -145,7 +145,7 @@ function CategoryCard({
                 isHero ? 'text-lg' : 'text-sm',
                 'font-light tabular-nums',
                 'text-primary', // Neon yellow
-                'drop-shadow-[0_0_8px_rgba(250,204,21,0.5)]' // Glow effect
+                'drop-shadow-[0_0_8px_rgba(37,99,235,0.5)]' // Glow effect
               )}
             >
               {formatCount(count)}
@@ -166,7 +166,7 @@ function CategoryCard({
             'absolute inset-0 rounded-xl pointer-events-none',
             'border border-primary/0 transition-all duration-500',
             'group-hover:border-primary/30',
-            'group-hover:shadow-[inset_0_0_20px_-10px_rgba(250,204,21,0.2)]'
+            'group-hover:shadow-[inset_0_0_20px_-10px_rgba(37,99,235,0.2)]'
           )}
         />
       </m.div>
@@ -208,7 +208,7 @@ function TrendingPill({ slug, title, count, index = 0 }: TrendingPillProps) {
           'transition-all duration-300',
           'hover:border-primary/50',
           'hover:text-foreground',
-          'hover:shadow-[0_0_20px_-5px_rgba(250,204,21,0.3)]'
+          'hover:shadow-[0_0_20px_-5px_rgba(37,99,235,0.3)]'
         )}
       >
         <span className="font-medium">{title}</span>

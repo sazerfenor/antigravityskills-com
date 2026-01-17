@@ -70,7 +70,7 @@ function DialogContent({
             // Primary-tinted border for visibility
             "border border-primary/30 rounded-xl",
             // Deep shadow with primary glow for floating effect
-            "shadow-[0_0_50px_-10px_rgba(250,204,21,0.15),0_25px_50px_-12px_rgba(0,0,0,0.8)]",
+            "shadow-[0_0_50px_-10px_var(--color-primary),0_25px_50px_-12px_rgba(0,0,0,0.8)]",
             // Animation (simplified without transform conflicts)
             "duration-200 animate-in fade-in-0 zoom-in-95",
             className

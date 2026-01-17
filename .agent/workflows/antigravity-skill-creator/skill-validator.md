@@ -20,7 +20,7 @@ You have access to the generated files. You must score them against the **Antigr
 | **Name 规范** | 10% | 严格 Kebab Case: `^[a-z0-9]+(-[a-z0-9]+)*$` (Pass=1, Fail=0) |
 | **Description** | 30% | 包含 WHEN + FOR，无废话 (0-3 分) |
 | **结构清晰度** | 20% | 有 Overview/Protocols，无大段代码 (0-2 分) |
-| **资源分离** | 10% | 长代码在 scripts/，长文档在 references/ (Pass=1, Fail=0) |
+| **资源分离** | 10% | 长代码在 scripts/，长文档在 references/，references 质量达标 (0-1 分) |
 | **安全性** | 10% | 无危险命令 (如 `rm -rf`, `sudo rm`) (Pass=1, Fail=0) |
 
 ### Validation Rules
@@ -51,7 +51,20 @@ You have access to the generated files. You must score them against the **Antigr
    - Has Overview section
    - Has Protocols or Usage section
 
-5. **Safety Check**:
+5. **Resource Separation & Quality**:
+   - Long code (>50 lines) should be in scripts/
+   - Long documentation (>500 words) should be in references/
+   - **References Quality Check (CRITICAL)**:
+     - Each reference file must be **30+ lines** with actionable content
+     - Must contain **checklists** (`- [ ]` format)
+     - Must contain **code examples** (❌ BAD vs ✅ GOOD patterns)
+     - **File count must match Knowledge Domains** (if 3 domains identified, need 3 reference files)
+   - **Scoring**:
+     - 1.0: All resources properly separated AND references meet quality standard
+     - 0.5: Resources separated but references are shallow (<30 lines or missing checklists/examples)
+     - 0.0: No separation or missing expected reference files
+
+6. **Safety Check**:
    - No `rm -rf /`, `sudo rm`, or similar dangerous patterns
    - No hardcoded credentials or API keys
 

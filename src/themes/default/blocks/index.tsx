@@ -8,6 +8,8 @@ export { FeaturesStep } from './features-step';
 export { Footer } from './footer';
 export { Gallery } from './gallery';
 export { GalleryEntrance } from './gallery-entrance';
+export { SkillsEntrance } from './skills-entrance';
+export { Library } from './library';
 export { Header } from './header';
 export { Hero } from './hero';
 export { Logos } from './logos';

@@ -5,7 +5,7 @@
 
 import { db } from '@/core/db';
 import { antigravitySkills, skillConversionHistory } from '@/config/db/schema';
-import { eq, desc } from 'drizzle-orm';
+import { eq, desc, sql, and } from 'drizzle-orm';
 
 // ============================================
 // 类型定义
@@ -150,6 +150,84 @@ export async function getAllConversionHistory(options?: {
     .select()
     .from(skillConversionHistory)
     .orderBy(desc(skillConversionHistory.createdAt))
+    .limit(limit)
+    .offset(offset);
+}
+
+// ============================================
+// Skills 入口组件数据查询
+// ============================================
+
+/**
+ * 分类统计结果类型
+ */
+export interface SkillCategoryStat {
+  category: string;
+  count: number;
+}
+
+/**
+ * 获取各分类的 Skills 数量统计
+ */
+export async function getSkillCategoryStats(): Promise<SkillCategoryStat[]> {
+  const result = await db()
+    .select({
+      category: antigravitySkills.category,
+      count: sql<number>`count(*)`.as('count'),
+    })
+    .from(antigravitySkills)
+    .where(
+      and(
+        eq(antigravitySkills.status, 'published'),
+        sql`${antigravitySkills.category} IS NOT NULL`
+      )
+    )
+    .groupBy(antigravitySkills.category);
+
+  return result.map((r) => ({
+    category: r.category || '',
+    count: Number(r.count),
+  }));
+}
+
+/**
+ * 获取热门 Skills（按下载次数排序）
+ */
+export async function getTrendingSkills(options?: {
+  limit?: number;
+}): Promise<AntigravitySkill[]> {
+  const { limit = 5 } = options || {};
+
+  return db()
+    .select()
+    .from(antigravitySkills)
+    .where(eq(antigravitySkills.status, 'published'))
+    .orderBy(desc(antigravitySkills.downloadCount))
+    .limit(limit);
+}
+
+/**
+ * 根据分类获取 Skills 列表
+ */
+export async function getSkillsByCategory(
+  category: string,
+  options?: {
+    limit?: number;
+    offset?: number;
+  }
+): Promise<AntigravitySkill[]> {
+  const { limit = 20, offset = 0 } = options || {};
+
+  return db()
+    .select()
+    .from(antigravitySkills)
+    .where(
+      and(
+        eq(antigravitySkills.status, 'published'),
+        eq(antigravitySkills.category, category)
+      )
+    )
+    .orderBy(desc(antigravitySkills.downloadCount))
     .limit(limit)
     .offset(offset);
 }

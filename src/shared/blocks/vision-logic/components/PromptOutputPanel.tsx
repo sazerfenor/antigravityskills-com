@@ -324,8 +324,8 @@ export const PromptOutputPanel = forwardRef<HTMLDivElement, PromptOutputPanelPro
           {/* Credits Display */}
           <div className="flex items-center justify-between mt-4 mb-2">
             <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/30">
-              <Zap className="w-4 h-4 text-primary drop-shadow-[0_0_6px_rgba(250,204,21,0.5)]" />
-              <span className="text-sm font-semibold text-primary drop-shadow-[0_0_8px_rgba(250,204,21,0.3)]">
+              <Zap className="w-4 h-4 text-primary drop-shadow-[0_0_6px_var(--color-primary)]" />
+              <span className="text-sm font-semibold text-primary drop-shadow-[0_0_8px_var(--color-primary)]">
                 {generateCost} credits
               </span>
             </div>
@@ -450,7 +450,7 @@ export const PromptOutputPanel = forwardRef<HTMLDivElement, PromptOutputPanelPro
             <div className="mt-4 p-4 rounded-xl bg-glass-subtle backdrop-blur-sm border border-primary/20">
               <div className="flex items-start gap-3">
                 <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-                  <Sparkles className="w-5 h-5 text-primary drop-shadow-[0_0_8px_rgba(250,204,21,0.5)]" />
+                  <Sparkles className="w-5 h-5 text-primary drop-shadow-[0_0_8px_var(--color-primary)]" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-medium text-foreground">Preview your prompt for free!</p>

@@ -28,7 +28,10 @@ If the user's input is vague, ask *one* clarifying question at a time. Do not ov
 
 3. **Knowledge Extraction (The "HOW")**:
    - Does the Agent need external knowledge (API docs, company policies)?
-   - *Goal*: Determine if `references/` are needed.
+   - **IDENTIFY DOMAINS**: List each distinct knowledge area separately. For example:
+     - "前端代码审查，关注性能、无障碍、安全" → 3 domains: `["performance", "accessibility", "security"]`
+     - "API 设计最佳实践" → 1 domain: `["api-design"]`
+   - *Goal*: Determine if `references/` are needed, and identify how many reference files.
 
 ### Trigger-First Description 标准
 
@@ -64,4 +67,9 @@ Description 必须满足:
 
 ### Trigger Keywords
 {List of keywords that should activate this skill}
+
+### Knowledge Domains
+{List of distinct knowledge areas, one reference file per domain}
+- `{domain-1}` - {brief description}
+- `{domain-2}` - {brief description}
 ```

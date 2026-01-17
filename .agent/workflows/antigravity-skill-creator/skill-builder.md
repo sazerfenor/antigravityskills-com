@@ -62,6 +62,53 @@ You are the **Skill Builder**. You generate the physical artifacts for the skill
 - **Rule 2**: `SKILL.md` 禁止包含超过 500 词的静态知识库。知识必须移入 `references/`。
 - **Rule 3**: `scripts/` 中的脚本必须支持 `--help` 参数。
 
+### References Quality Standard (CRITICAL)
+
+> **IMPORTANT**: 如果 `Knowledge Domains` 包含多个领域，必须为每个领域创建独立的 reference 文件。
+
+**质量要求：**
+- 每个 reference 文件必须 **50+ 行**，内容具体可执行
+- 必须包含 **Checklist** 格式 `- [ ]`，便于逐项检查
+- 必须包含 **Code Examples**，展示 ❌ BAD vs ✅ GOOD 对比
+
+**Few-Shot Example:**
+
+---BEGIN EXAMPLE references/performance-checklist.md---
+# Performance Checklist
+
+## Component Rendering Optimization
+- [ ] **Memoization**: Are expensive calculations wrapped in `useMemo`?
+- [ ] **Stable Callbacks**: Are event handlers passed to children wrapped in `useCallback`?
+- [ ] **Pure Components**: Are functional components wrapped in `React.memo` where appropriate?
+
+## Bundle & Loading Strategy
+- [ ] **Code Splitting**: Are large routes loaded via `React.lazy` and `Suspense`?
+- [ ] **Tree-Shaking**: Are imports specific?
+  - ❌ `import _ from 'lodash';` (70KB)
+  - ✅ `import debounce from 'lodash/debounce';` (2KB)
+
+## Code Example: Optimization
+
+### ❌ BAD: Re-renders on every parent change
+```javascript
+const List = ({ items }) => {
+  const sortedItems = items.sort((a, b) => a.value - b.value);
+  return <ul>{sortedItems.map(i => <li key={i.id}>{i.text}</li>)}</ul>;
+};
+```
+
+### ✅ GOOD: Memoized calculation
+```javascript
+const List = ({ items }) => {
+  const sortedItems = useMemo(() =>
+    [...items].sort((a, b) => a.value - b.value),
+    [items]
+  );
+  return <ul>{sortedItems.map(i => <li key={i.id}>{i.text}</li>)}</ul>;
+};
+```
+---END EXAMPLE---
+
 ---
 
 ## CREATE 模式

@@ -1,4 +1,4 @@
-import * as React from "react"
+ import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
 import { Loader2 } from "lucide-react"
@@ -12,20 +12,20 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-primary/20 border border-primary/80 text-primary shadow-[0_0_12px_-3px_rgba(250,204,21,0.3)] hover:bg-primary/30 hover:border-primary hover:shadow-[0_0_15px_-3px_rgba(250,204,21,0.4)] active:scale-[0.98] transition-all duration-300",
+          "bg-primary/20 border border-primary/80 text-primary shadow-glow-primary hover:bg-primary/30 hover:border-primary hover:shadow-[0_0_25px_-5px_var(--color-primary)] active:scale-[0.98] transition-all duration-300",
         destructive:
           "bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
         outline:
           "border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:border-primary/20 dark:text-primary/80 dark:hover:border-primary dark:hover:bg-primary/10 dark:hover:text-primary transition-colors",
         secondary:
-          "bg-glass-subtle border border-border-medium text-foreground hover:bg-glass-hint hover:border-primary/30 hover:text-primary dark:hover:shadow-[0_0_15px_-5px_rgba(250,204,21,0.2)]",
+          "bg-glass-subtle border border-border-medium text-foreground hover:bg-glass-hint hover:border-primary/30 hover:text-primary dark:hover:shadow-[0_0_15px_-5px_var(--color-primary)]",
         // 霓虹玻璃按钮 - 次要 CTA，明确的霓虹边框 + 玻璃背景
         "neon-glass":
-          "bg-primary/10 border border-primary/40 text-primary hover:bg-primary/20 hover:border-primary/60 hover:shadow-[0_0_15px_-5px_rgba(250,204,21,0.3)] transition-all",
+          "bg-primary/10 border border-primary/40 text-primary hover:bg-primary/20 hover:border-primary/60 hover:shadow-[0_0_15px_-5px_var(--color-primary)] transition-all",
         // Premium 按钮 - 用于 Get Credits / 升级会员等高价值操作
         // 设计语言：纯黑底 + 霓虹光晕 + 清晰文字 = 高端克制
         "premium":
-          "bg-black text-primary font-semibold shadow-[0_0_25px_-5px_rgba(250,204,21,0.6)] hover:shadow-[0_0_35px_-5px_rgba(250,204,21,0.8)] transition-all duration-300",
+          "bg-black text-primary font-semibold shadow-[0_0_25px_-5px_var(--color-primary)] hover:shadow-[0_0_35px_-5px_var(--color-primary)] transition-all duration-300",
         ghost:
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-primary/10 dark:hover:text-primary",
         link: "text-primary underline-offset-4 hover:underline",

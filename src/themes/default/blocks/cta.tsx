@@ -53,7 +53,7 @@ export function Cta({
           )} />
 
           {/* Radial gradient top highlight */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(250,204,21,0.08),transparent_60%)] pointer-events-none" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(37,99,235,0.08),transparent_60%)] pointer-events-none" />
 
           <div className="relative px-6 py-20 sm:px-12 sm:py-24 text-center">
             <FadeIn>

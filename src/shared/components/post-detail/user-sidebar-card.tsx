@@ -21,7 +21,7 @@ export function UserSidebarCard({ user, createdAt }: UserSidebarCardProps) {
       "rounded-xl p-4 flex items-center justify-between gap-3",
       "bg-card/20 backdrop-blur-sm border border-white/5",
       "transition-all duration-300",
-      "hover:border-primary/50 hover:shadow-[0_0_15px_rgba(250,204,21,0.1)]"
+      "hover:border-primary/50 hover:shadow-[0_0_15px_var(--color-primary)]"
     )}>
       <Link href={`/user/${user.id}`} className="flex items-center gap-3 min-w-0 group">
         {/* Gradient Avatar Border */}

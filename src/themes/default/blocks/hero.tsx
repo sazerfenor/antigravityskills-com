@@ -69,13 +69,13 @@ export function Hero({
                 {hero.announcement.title}
               </span>
               {/* Static dot with subtle glow - no ping animation per Motion Discipline */}
-              <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_8px_2px_rgba(250,204,21,0.6)]" />
+              <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_8px_2px_rgba(37,99,235,0.6)]" />
             </Link>
           </div>
         )}
 
         {/* 7.1 Section Gradient: Hero - Warm Ignition - NO FADE ANIMATION FOR LCP */}
-        <h1 className="mx-auto max-w-4xl text-5xl font-bold tracking-tight text-foreground sm:text-7xl mb-6">
+        <h1 className="mx-auto max-w-4xl text-5xl font-bold tracking-tight text-foreground sm:text-7xl mb-4">
           {hero.title ? (
             <>
               {hero.title.split(hero.highlight_text || '')[0]}
@@ -95,7 +95,7 @@ export function Hero({
         {/* Description - From JSON config - NO FADE ANIMATION FOR LCP */}
         {hero.description && (
           <p
-            className="mx-auto max-w-2xl text-lg leading-8 text-muted-foreground mb-10"
+            className="mx-auto max-w-2xl text-lg leading-8 text-muted-foreground mb-6"
             dangerouslySetInnerHTML={{ __html: hero.description }}
           />
         )}
@@ -142,7 +142,7 @@ export function Hero({
 
         {hero.tip && hero.show_tip !== false && (
            <p
-              className="text-muted-foreground mt-8 text-sm opacity-70"
+              className="text-muted-foreground mt-4 text-sm opacity-70"
               dangerouslySetInnerHTML={{ __html: hero.tip ?? '' }}
             />
         )}
@@ -155,9 +155,9 @@ export function Hero({
 
         {/* Logos - Trust indicators inside Hero for first-screen visibility */}
         {logos && logos.items && logos.items.length > 0 && (
-          <div className="mt-16 w-full">
-            <p className="text-xs font-mono uppercase text-muted-foreground/90 mb-6 text-center tracking-widest">
-              Trusted by creators using the world's top AI models:
+          <div className="mt-8 w-full">
+            <p className="text-xs font-mono uppercase text-muted-foreground/90 mb-4 text-center tracking-widest">
+              {logos.title || 'Powering your workflow in:'}
             </p>
             <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-x-12">
               {logos.items.map((item, idx) => {
@@ -165,7 +165,7 @@ export function Hero({
                 const url = (item as any).url;
 
                 const content = (
-                  <div className="flex items-center justify-center transition-transform duration-300 hover:scale-110 opacity-80 hover:opacity-100">
+                  <div className="flex items-center justify-center transition-all duration-300 hover:scale-110 grayscale opacity-60 hover:grayscale-0 hover:opacity-100">
                     <Image
                       className={cn(size, "object-contain")}
                       src={item.image?.src ?? ''}

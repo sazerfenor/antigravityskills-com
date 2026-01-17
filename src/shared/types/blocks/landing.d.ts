@@ -182,15 +182,31 @@ export interface Gallery extends Section {
   trending?: GalleryTrendingItem[];
 }
 
+// Skill Builder section configuration
+export interface SkillBuilder {
+  id?: string;
+  badge?: string;
+  title?: string;
+  title_highlight?: string;
+  description?: string;
+  input_label?: string;
+  input_placeholder?: string;
+  input_hint?: string;
+  output_label?: string;
+  output_empty_title?: string;
+  output_empty_hint?: string;
+  button_generate?: string;
+  button_generating?: string;
+  button_reset?: string;
+  button_download?: string;
+}
+
 // landing props for landing page component
 export interface Landing {
   section_visibility?: SectionVisibility;
   header?: Header;
   hero?: Hero;
-  generator?: {
-    title: string;
-    description: string;
-  };
+  skill_builder?: SkillBuilder;
   core_modules?: {
     id?: string;
     title?: string;

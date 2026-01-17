@@ -206,7 +206,7 @@ export function AddDimensionDialog({
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             {/* Plus icon with neon glow */}
-            <Plus className="w-5 h-5 text-primary drop-shadow-[0_0_8px_rgba(250,204,21,0.5)]" />
+            <Plus className="w-5 h-5 text-primary drop-shadow-[0_0_8px_var(--color-primary)]" />
             <span>Add Custom Dimensions</span>
           </DialogTitle>
         </DialogHeader>
@@ -297,7 +297,7 @@ export function AddDimensionDialog({
                               "px-4 py-2.5 rounded-lg text-sm font-medium transition-all min-h-[44px] flex items-center gap-1.5",
                               "border",
                               isSelected
-                                ? "bg-primary/20 border-primary text-primary shadow-[0_0_12px_-3px_rgba(250,204,21,0.5)]"
+                                ? "bg-primary/20 border-primary text-primary shadow-[0_0_12px_-3px_var(--color-primary)]"
                                 : "bg-glass-subtle border-border-medium/50 text-muted-foreground hover:border-primary/50 hover:text-foreground hover:bg-glass-hint"
                             )}
                           >

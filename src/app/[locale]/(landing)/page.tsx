@@ -33,7 +33,7 @@ export default async function LandingPage({
     benefits: t.raw('benefits'),
     features: t.raw('features'),
     stats: t.raw('stats'),
-    generator: t.raw('generator'),
+    skill_builder: t.raw('skill_builder'),
     core_modules: t.raw('core_modules'),
     gallery: t.raw('gallery'),
     testimonials: t.raw('testimonials'),

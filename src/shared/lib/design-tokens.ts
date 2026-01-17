@@ -19,9 +19,9 @@ export const VS = {
 
   // 5.2 The Neon System
   neon: {
-    primary: "text-primary drop-shadow-[0_0_15px_rgba(250,204,21,0.5)]",
+    primary: "text-primary drop-shadow-[0_0_15px_rgba(37,99,235,0.5)]",
     secondary: "text-purple-400 drop-shadow-[0_0_15px_rgba(192,132,252,0.5)]",
-    accent: "text-blue-400 drop-shadow-[0_0_15px_rgba(96,165,250,0.5)]",
+    accent: "text-cyan-400 drop-shadow-[0_0_15px_rgba(34,211,238,0.5)]",
   },
 
   // 5.3 The Form System
@@ -34,7 +34,7 @@ export const VS = {
 
   // 5.4 The Poster Layout
   poster: {
-    hero: "min-h-[85vh] flex flex-col justify-center items-center py-20 text-center",
+    hero: "min-h-[65vh] flex flex-col justify-center items-center py-12 text-center",
     aurora: "bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-background to-background pointer-events-none sticky top-0",
   },
 
@@ -58,10 +58,10 @@ export const VS = {
     faq: "text-primary",
     cta: "text-primary",
 
-    // Payment/Premium: Golden gradient for payment CTAs
-    // 付费按钮专用：深金色渐变，与普通 primary 区分
+    // Payment/Premium: Blue gradient for payment CTAs
+    // 付费按钮专用：蓝色渐变
     // ⚠️ A11Y Note: Elements using this must have aria-label for screen readers
-    premium: "bg-clip-text text-transparent bg-gradient-to-r from-amber-400 via-primary to-orange-400",
+    premium: "bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-primary to-indigo-500",
   },
 
   // 10. Typography Scale (v5.1) - Unified sizing
@@ -84,7 +84,7 @@ export const VS = {
     glowCenter: "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full pointer-events-none",
 
     // Generator: Diagonal light band
-    glowDiagonal: "bg-[linear-gradient(135deg,transparent_0%,rgba(250,204,21,0.05)_25%,transparent_50%,rgba(147,51,234,0.03)_75%,transparent_100%)]",
+    glowDiagonal: "bg-[linear-gradient(135deg,transparent_0%,rgba(37,99,235,0.05)_25%,transparent_50%,rgba(147,51,234,0.03)_75%,transparent_100%)]",
 
     // Generator: Matrix grid with radial mask
     matrixGrid: "bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_70%)]",
@@ -93,7 +93,7 @@ export const VS = {
     noiseOverlay: "opacity-[0.02] pointer-events-none",
 
     // Stats: Scanline effect
-    scanline: "bg-[linear-gradient(transparent_50%,rgba(250,204,21,0.02)_50%)] bg-[size:100%_4px]",
+    scanline: "bg-[linear-gradient(transparent_50%,rgba(37,99,235,0.02)_50%)] bg-[size:100%_4px]",
 
     // The Matrix Moment: Dark gradient for Generator
     matrixMoment: "bg-gradient-to-b from-background via-[hsl(0,0%,2%)] to-background",

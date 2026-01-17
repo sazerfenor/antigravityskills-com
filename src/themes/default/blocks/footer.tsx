@@ -86,7 +86,7 @@ export function Footer({ footer }: { footer: FooterType }) {
             {footer.nav?.items.map((item, idx) => (
               <div key={idx} className="space-y-4">
                 {/* Column header with neon accent */}
-                <span className="text-xs font-bold text-primary uppercase tracking-[0.2em] drop-shadow-[0_0_8px_rgba(250,204,21,0.3)]">
+                <span className="text-xs font-bold text-primary uppercase tracking-[0.2em] drop-shadow-[0_0_8px_rgba(37,99,235,0.3)]">
                   {item.title}
                 </span>
                 <div className="flex flex-col gap-3">
@@ -95,7 +95,7 @@ export function Footer({ footer }: { footer: FooterType }) {
                       key={iidx}
                       href={subItem.url || ''}
                       target={subItem.target || '_self'}
-                      className="text-muted-foreground text-sm transition-all duration-300 hover:text-primary hover:drop-shadow-[0_0_8px_rgba(250,204,21,0.5)] hover:translate-x-1"
+                      className="text-muted-foreground text-sm transition-all duration-300 hover:text-primary hover:drop-shadow-[0_0_8px_rgba(37,99,235,0.5)] hover:translate-x-1"
                     >
                       {subItem.title || ''}
                     </Link>
@@ -141,7 +141,7 @@ export function Footer({ footer }: { footer: FooterType }) {
                     variant="ghost"
                     size="icon"
                     asChild
-                    className="text-muted-foreground hover:text-primary hover:bg-primary/10 hover:shadow-[0_0_15px_-3px_rgba(250,204,21,0.5)] transition-all duration-300"
+                    className="text-muted-foreground hover:text-primary hover:bg-primary/10 hover:shadow-[0_0_15px_-3px_rgba(37,99,235,0.5)] transition-all duration-300"
                   >
                     <Link
                       href={item.url || ''}

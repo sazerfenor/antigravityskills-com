@@ -8,16 +8,16 @@ const inputVariants = cva(
     variants: {
       variant: {
         // 1. 标准款 (用于表单) - Enhanced Cyberpunk focus with glow
-        default: "h-9 bg-glass-subtle border-border-medium focus:border-primary/60 focus:ring-1 focus:ring-primary/40 focus:shadow-[0_0_12px_-4px_rgba(250,204,21,0.3)]",
+        default: "h-9 bg-glass-subtle border-border-medium focus:border-primary/60 focus:ring-1 focus:ring-primary/40 focus:shadow-[0_0_12px_-4px_var(--color-primary)]",
 
         // 2. 霓虹款 (用于主生成器 - Hero Input)
-        neon: "h-12 md:h-14 lg:h-16 bg-glass-strong backdrop-blur-xl border-border-medium focus:border-primary/60 focus:ring-1 focus:ring-primary/50 focus:shadow-[0_0_20px_-4px_rgba(250,204,21,0.4)] shadow-inner text-base md:text-lg",
+        neon: "h-12 md:h-14 lg:h-16 bg-glass-strong backdrop-blur-xl border-border-medium focus:border-primary/60 focus:ring-1 focus:ring-primary/50 focus:shadow-[0_0_20px_-4px_var(--color-primary)] shadow-inner text-base md:text-lg",
 
         // 3. 幽灵款 (用于无边框场景)
         ghost: "h-9 border-none bg-transparent shadow-none focus:ring-0",
 
         // 4. 搜索款 (用于搜索框)
-        search: "h-10 bg-glass-subtle border-border-subtle focus:border-primary/60 focus:ring-1 focus:ring-primary/40 focus:shadow-[0_0_12px_-4px_rgba(250,204,21,0.3)] pl-10",
+        search: "h-10 bg-glass-subtle border-border-subtle focus:border-primary/60 focus:ring-1 focus:ring-primary/40 focus:shadow-[0_0_12px_-4px_var(--color-primary)] pl-10",
       },
     },
     defaultVariants: {

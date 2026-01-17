@@ -139,7 +139,7 @@ export function CreationRecipe({
     >
       {/* Header */}
       <div className="p-4 bg-card/10 border-b border-border-medium flex items-center gap-2">
-        <Palette className="w-4 h-4 text-primary drop-shadow-[0_0_8px_rgba(250,204,21,0.5)]" />
+        <Palette className="w-4 h-4 text-primary drop-shadow-[0_0_8px_var(--color-primary)]" />
         <h2 className="font-semibold text-sm">Creation Recipe</h2>
         <Badge variant="outline" className="ml-auto text-xs">
           {displayFields.length} settings
