@@ -29,7 +29,7 @@ export const VS = {
   button: {
     base: "rounded-full h-12 px-8 transition-all duration-300 flex items-center justify-center font-medium",
     glow: "shadow-[0_0_30px_-10px_var(--color-primary)] hover:shadow-[0_0_40px_-5px_var(--color-primary)] hover:scale-105",
-    ghost: "border border-white/5 bg-white/5 hover:bg-white/10 hover:border-white/10 text-white",
+    ghost: "border-2 border-foreground/50 bg-transparent hover:bg-foreground/10 hover:border-foreground/70 text-foreground/90 font-medium shadow-sm",
   },
 
   // 5.4 The Poster Layout

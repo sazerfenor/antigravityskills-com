@@ -45,7 +45,7 @@
         },
         {
           "title": "Docs",
-          "url": "/docs",
+          "url": "/docs/what-is-antigravity-skills",
           "icon": "BookOpen"
         }
       ]
@@ -68,8 +68,8 @@
     "description": "Your AI upgrade pack.<br>Plug & play expert skills. No coding needed.",
     "announcement": {
       "badge": "🚀 New",
-      "title": "Customize Your Own Skills",
-      "url": "/#converter"
+      "title": "Build Your First Skill →",
+      "url": "#converter"
     },
     "tip": "✓ Native Integration · ✓ Verified · ✓ 10x Efficiency",
     "buttons": [
@@ -83,7 +83,7 @@
       {
         "title": "How it Works",
         "icon": "BookOpen",
-        "url": "/docs",
+        "url": "/docs/what-is-antigravity-skills",
         "target": "_self",
         "variant": "secondary"
       }
@@ -289,7 +289,7 @@
         "quote": "Before: 20+ messages to get AI to understand my stack. After: One Skill loaded, first response was exactly what I needed.",
         "rating": 5,
         "image": {
-          "src": "/imgs/avatars/avatar-1.webp",
+          "src": "https://asset.antigravityskills.com/avatars/1768858423882-8anxw997.webp",
           "alt": "Cursor user testimonial"
         }
       },
@@ -299,7 +299,7 @@
         "quote": "I don't know how to code. But with these Skills, Claude writes production-ready code on the first try.",
         "rating": 5,
         "image": {
-          "src": "/imgs/avatars/avatar-2.webp",
+          "src": "https://asset.antigravityskills.com/avatars/1768858423882-8anxw997.webp",
           "alt": "Vibe Coder testimonial"
         }
       },
@@ -309,7 +309,7 @@
         "quote": "Token usage dropped 40% in the first week. The AI stopped asking 'what framework are you using?'",
         "rating": 5,
         "image": {
-          "src": "/imgs/avatars/avatar-3.webp",
+          "src": "https://asset.antigravityskills.com/avatars/1768858423882-8anxw997.webp",
           "alt": "Reddit user testimonial"
         }
       },
@@ -319,7 +319,7 @@
         "quote": "Found a React patterns Skill that saved me 3 hours of setup. Now I'm building my own Skills.",
         "rating": 5,
         "image": {
-          "src": "/imgs/avatars/avatar-4.webp",
+          "src": "https://asset.antigravityskills.com/avatars/1768858423882-8anxw997.webp",
           "alt": "Discord user testimonial"
         }
       },
@@ -329,7 +329,7 @@
         "quote": "API costs dropped 60% after we standardized on Skills. That's real money back in the budget.",
         "rating": 5,
         "image": {
-          "src": "/imgs/avatars/avatar-5.webp",
+          "src": "https://asset.antigravityskills.com/avatars/1768858423882-8anxw997.webp",
           "alt": "Early adopter testimonial"
         }
       }
@@ -371,14 +371,14 @@
       },
       {
         "question": "Is Antigravity Skills free?",
-        "answer": "Completely free. Browsing and downloading community skills is free, and the AI Skill Builder is also free to use."
+        "answer": "Browsing and downloading community skills is completely free. The AI Skill Builder offers free trials, with credits required for continued use."
       }
     ]
   },
   "cta": {
     "id": "cta",
     "title": "Ready to Build Your First Skill?",
-    "description": "Free forever. No credit card required.",
+    "description": "Start free. No credit card required.",
     "buttons": [
       {
         "title": "Build My First Skill — Free",
@@ -440,7 +440,7 @@
             },
             {
               "title": "Docs",
-              "url": "/docs",
+              "url": "/docs/what-is-antigravity-skills",
               "target": "_self"
             }
           ]
@@ -456,6 +456,26 @@
             {
               "title": "Terms of Service",
               "url": "/terms-of-service",
+              "target": "_self"
+            },
+            {
+              "title": "Cookie Policy",
+              "url": "/cookie-policy",
+              "target": "_self"
+            },
+            {
+              "title": "Refund Policy",
+              "url": "/refund-policy",
+              "target": "_self"
+            },
+            {
+              "title": "DMCA Policy",
+              "url": "/dmca-policy",
+              "target": "_self"
+            },
+            {
+              "title": "Community Guidelines",
+              "url": "/community-guidelines",
               "target": "_self"
             }
           ]

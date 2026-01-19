@@ -44,9 +44,7 @@ export function Marquee({
       ref={containerRef}
       className={cn(
         'relative overflow-hidden',
-        // Gradient masks for seamless fade edges
-        'before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-24 before:bg-gradient-to-r before:from-background before:to-transparent',
-        'after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-24 after:bg-gradient-to-l after:from-background after:to-transparent',
+        // Removed gradient masks to allow particles to show through
         className
       )}
       onMouseEnter={() => pauseOnHover && setIsPaused(true)}

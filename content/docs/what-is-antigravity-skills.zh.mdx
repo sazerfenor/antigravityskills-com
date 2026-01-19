@@ -1,0 +1,324 @@
+---
+title: "Antigravity Skills：AI Agent 技能完整指南"
+description: "學習如何創建、整合和優化 AI Agent 技能。全面涵蓋 SKILL.md 格式、目錄結構、最佳實踐，以及 Antigravity Skills 平台整合的完整教程。"
+---
+
+# Antigravity Skills：AI Agent 技能完整指南
+
+歡迎閱讀 **Antigravity Skills** 終極指南 — 這是一個開放格式標準，用於擴展 AI Agent 的能力，賦予其專業知識和工作流程。
+
+> **您將學到**：如何創建專業的 Agent Skills、理解 SKILL.md 規範，以及如何利用 Antigravity Skills 平台提升生產力。
+
+---
+
+## 什麼是 Agent Skills？
+
+**Agent Skills** 是一種輕量級、開放的格式，用於賦予 AI Agent 新的能力和領域專業知識。您可以把它想像成「插件」，用來教導 AI 助手專業知識和工作流程。
+
+### 核心特性
+
+| 特性 | 描述 |
+|------|------|
+| **自文檔化** | 技能可被人類和 Agent 閱讀 — 易於審計和改進 |
+| **可擴展** | 從簡單文字指令開始，擴展到可執行代碼和模板 |
+| **可移植** | 技能只是檔案 — 易於編輯、版本控制和分享 |
+
+### Skills 能做什麼？
+
+| 能力 | 描述 | 範例 |
+|------|------|------|
+| **領域專業知識** | 將專業知識打包成可重複使用的指令 | 法律審查流程、數據分析管道 |
+| **新能力** | 賦予 Agent 全新的能力 | 創建簡報、構建 MCP 伺服器、分析資料集 |
+| **可重複工作流** | 將多步驟任務轉換為一致、可審計的流程 | 代碼審查、文件生成 |
+| **跨平台** | 在不同 AI 產品間重複使用相同技能 | 適用於 Claude Code、Antigravity 等 |
+
+---
+
+## Agent Skills 如何運作
+
+Skills 遵循三階段工作流程：
+
+```mermaid
+flowchart LR
+    A[發現] --> B[激活] --> C[執行]
+```
+
+### 第一階段：發現
+
+啟動時，Agent 僅載入每個可用技能的 `name` 和 `description` — 足以識別技能何時可能相關。
+
+### 第二階段：激活
+
+當用戶的任務與技能描述匹配時，Agent 將完整的 SKILL.md 指令讀入上下文。
+
+### 第三階段：執行
+
+Agent 按照指令執行，根據需要載入引用的檔案或執行捆綁的腳本。
+
+> **Token 效率**：這種漸進式披露模式只在必要時載入內容，優化了 Token 使用。
+
+---
+
+## 目錄結構
+
+### 最小結構
+
+最簡單的技能只需要一個檔案：
+
+```text
+my-skill/
+└── SKILL.md    # 必需：指令 + 元數據
+```
+
+### 完整結構
+
+複雜的技能可以包含可選目錄：
+
+```text
+my-skill/
+├── SKILL.md        # 必需：核心定義檔案
+├── scripts/        # 可選：可執行代碼
+├── references/     # 可選：文檔和參考資料
+└── assets/         # 可選：模板和資源
+```
+
+### 目錄說明
+
+| 目錄 | 用途 | 內容 |
+|------|------|------|
+| `scripts/` | 可執行代碼 | 具有明確依賴的自包含腳本 |
+| `references/` | 技術文檔 | 詳細參考資料、模式、領域特定指南 |
+| `assets/` | 資源 | 模板、圖像、數據檔案 |
+
+> [!IMPORTANT]
+> **禁止的檔案**：切勿在技能中包含 `README.md`、`CHANGELOG.md` 或 `INSTALLATION.md`。這些是給人類閱讀的，不是給 Agent 的 — 會浪費 Token。
+
+---
+
+## SKILL.md 檔案格式
+
+每個技能都需要一個 `SKILL.md` 檔案，包含兩個部分：
+
+1. **YAML Frontmatter**（必需）— 元數據
+2. **Markdown Body** — 詳細指令
+
+### Frontmatter 規範
+
+```yaml
+---
+name: skill-name
+description: 描述此技能的功能以及何時使用它。
+license: Apache-2.0                    # 可選
+compatibility: 需要 Python 3.10+       # 可選
+metadata:                              # 可選
+  author: your-name
+  version: "1.0"
+---
+```
+
+### 必填欄位
+
+| 欄位 | 格式 | 規則 |
+|------|------|------|
+| `name` | 1-64 字元 | 僅限小寫字母和連字符。必須與目錄名稱匹配。 |
+| `description` | 1-1024 字元 | 描述技能的功能「以及」何時使用它。包含觸發關鍵詞。 |
+
+### name 欄位規則
+
+✅ **有效名稱：**
+```yaml
+name: pdf-processing
+name: code-review
+name: data-analysis
+```
+
+❌ **無效名稱：**
+```yaml
+name: PDF-Processing   # 不允許大寫
+name: -pdf             # 不能以連字符開頭
+name: pdf--processing  # 不允許連續連字符
+```
+
+### description 最佳實踐
+
+`description` 欄位至關重要 — 它決定了 Agent 何時激活您的技能。
+
+✅ **好的描述：**
+```yaml
+description: 從 PDF 檔案中提取文字和表格，填寫 PDF 表單，合併多個 PDF。在處理 PDF 文件或用戶提到 PDF、表單或文件提取時使用。
+```
+
+❌ **差的描述：**
+```yaml
+description: 處理 PDF。  # 太模糊，缺少關鍵詞
+```
+
+---
+
+## Body 內容指南
+
+Markdown body 是給 Agent 的操作指南。應包含：
+
+| 區塊 | 用途 |
+|------|------|
+| **分步驟指令** | 清晰的執行步驟 |
+| **輸入/輸出範例** | 幫助 Agent 理解預期 |
+| **邊緣情況** | 優雅地處理異常 |
+| **角色/期望** | 定義 Agent 使用此技能時的角色 |
+| **檢查清單** | 分步驟的驗證項目 |
+| **協議** | 輸出格式（例如「始終返回 JSON」） |
+
+### 範例：代碼審查技能
+
+```markdown
+---
+name: code-review
+description: 審查代碼變更中的 Bug、風格問題和最佳實踐。在處理 PR 或檢查代碼質量時使用。
+---
+
+# 代碼審查技能
+
+執行代碼審查時，請遵循以下步驟：
+
+## 1. 審查檢查清單
+
+- **正確性**：代碼是否實現了預期功能？
+- **邊緣情況**：是否處理了錯誤條件和異常？
+- **風格**：是否符合專案命名和結構規範？
+- **性能**：是否存在明顯的效率低下或資源洩漏？
+
+## 2. 提供反饋
+
+- 指出需要改進的具體行號
+- 解釋「為什麼要改」，而不僅僅是「怎麼改」
+- 盡可能提供重構後的代碼範例
+```
+
+---
+
+## Token 優化
+
+Antigravity Skills 專為 Token 效率而設計：
+
+| 層級 | 預算 | 載入時機 | 內容 |
+|------|------|----------|------|
+| **元數據** | ~100 tokens | 啟動時 | 僅 `name` 和 `description` |
+| **指令** | &lt;500 行 | 激活時 | 完整 SKILL.md body |
+| **資源** | 按需載入 | 需要時 | `scripts/`、`references/`、`assets/` 中的檔案 |
+
+> [!CAUTION]
+> **硬性限制**：SKILL.md body 必須控制在 **500 行以內**。更長的內容應拆分到 `references/` 目錄。
+
+### 優化技巧
+
+1. **黑盒腳本**：指導 Agent 使用 `--help` 而不是閱讀腳本原始碼
+2. **漸進式載入**：將詳細文檔放在 `references/` 中以便按需存取
+3. **模組化設計**：創建專注的單一用途技能，而不是龐大的多功能技能
+
+---
+
+## 自由度控制
+
+根據任務特性選擇合適的實現方式：
+
+| 層級 | 適用場景 | 實現方式 |
+|------|----------|----------|
+| **高自由度** | 創意任務、探索性工作 | 純文字指令 |
+| **中自由度** | 有最佳實踐但需彈性的任務 | 偽代碼 / 模板 |
+| **低自由度** | 易出錯、需要確定性的任務 | 腳本（Python/Bash） |
+
+**範例：**
+- 🎨 **高**：網頁設計、創意寫作、腦力激盪
+- 📝 **中**：代碼審查、Commit 訊息生成
+- 🔧 **低**：PDF 旋轉、格式轉換、數學計算
+
+---
+
+## Antigravity Skills 平台整合
+
+### 儲存位置
+
+| 類型 | 路徑 | 範圍 |
+|------|------|------|
+| **專案技能** | `<workspace-root>/.agent/skills/` | 僅當前專案 |
+| **全局技能** | `~/.gemini/antigravity/skills/` | 所有專案可用 |
+
+### 檔案命名
+
+Antigravity 支援兩種模式：
+
+| 模式 | 範例 | 適用場景 |
+|------|------|----------|
+| **單檔案** | `skill-name.md` | 簡單技能 |
+| **目錄** | `skill-name/SKILL.md` | 帶資源的複雜技能 |
+
+### 激活機制
+
+技能透過**語義匹配**激活。Agent 會：
+1. 掃描可用技能的描述
+2. 將描述與用戶任務匹配
+3. 自主激活相關技能
+
+---
+
+## 安全考量
+
+整合技能時，請實施以下安全措施：
+
+| 措施 | 描述 |
+|------|------|
+| **沙箱化** | 在隔離環境中執行腳本 |
+| **白名單** | 僅執行來自受信任技能的腳本 |
+| **確認** | 在執行危險操作前提示用戶 |
+| **日誌記錄** | 記錄所有腳本執行以供審計 |
+
+---
+
+## 驗證工具
+
+使用官方的 `skills-ref` 工具驗證技能：
+
+```bash
+# 驗證技能
+skills-ref validate ./my-skill
+
+# 生成提示 XML
+skills-ref to-prompt <path>...
+```
+
+---
+
+## 最佳實踐總結
+
+| 實踐 | 益處 |
+|------|------|
+| **精確的描述** | 更好的激活匹配 |
+| **模組化設計** | 單一用途技能更易維護 |
+| **包含決策樹** | 複雜場景的清晰邏輯 |
+| **控制 Token 預算** | SKILL.md 保持在 500 行以內 |
+| **使用 references 資料夾** | 單獨儲存詳細文檔 |
+
+---
+
+## 官方資源
+
+| 資源 | 連結 |
+|------|------|
+| Agent Skills 規範 | [agentskills.io](https://agentskills.io/) |
+| 規範儲存庫 | [GitHub](https://github.com/agentskills/agentskills) |
+| 範例技能 | [Anthropic Skills](https://github.com/anthropics/skills) |
+| 最佳實踐指南 | [Claude Platform](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices) |
+
+---
+
+## 下一步
+
+準備好創建您的第一個 Antigravity Skill 了嗎？
+
+1. **從簡單開始** — 創建一個只有 name 和 description 的最小 SKILL.md
+2. **迭代測試** — 根據 Agent 行為優化您的技能
+3. **與社群分享** — 發布到 [Antigravity Skills 市場](/skills)
+
+---
+
+*有問題嗎？加入我們的[社群討論](https://github.com/anthropics/skills/discussions)或聯繫 [support@antigravityskills.com](mailto:support@antigravityskills.com)*

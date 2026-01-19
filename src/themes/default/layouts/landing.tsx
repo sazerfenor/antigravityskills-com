@@ -21,7 +21,7 @@ export default async function LandingLayout({
   const v = sectionVisibility || {};
 
   return (
-    <div className="min-h-screen w-full flex flex-col bg-background font-sans antialiased relative overflow-x-hidden">
+    <div className="min-h-screen w-full flex flex-col font-sans antialiased relative overflow-x-hidden">
       {v.show_header !== false && <Header header={header} />}
       <main className="flex-1">{children}</main>
       {v.show_footer !== false && <Footer footer={footer} />}

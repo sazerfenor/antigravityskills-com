@@ -1,143 +1,138 @@
+/**
+ * Skills 列表页
+ * 展示 Antigravity Skills 库，支持分类筛选和排序
+ *
+ * 数据源：community_post 表（Skills 发布后存储在这里）
+ * 筛选条件：seoSlug 以 'skill-' 开头
+ */
+
 import { Suspense } from 'react';
 import { Metadata } from 'next';
-import { getTranslations } from 'next-intl/server';
 
-import { CommunityGallery, InitialGalleryData } from '@/shared/blocks/community-gallery';
-import { CommunityGalleryLoading } from '@/shared/blocks/community-gallery/loading';
+import {
+  SkillGallery,
+  SkillGalleryLoading,
+  InitialSkillGalleryData,
+} from '@/shared/blocks/skill-gallery';
 import { Section, Container } from '@/shared/components/ui/layout';
 import { getCommunityPosts, getCommunityPostsCount, CommunityPostStatus } from '@/shared/models/community_post';
-import { brandConfig } from '@/config';
 
 export const revalidate = 3600;
 
-/**
- * Model-specific SEO metadata configuration
- * TODO: 根据你的 AI 模型配置自定义 SEO
- */
-const MODEL_SEO_CONFIG: Record<string, { title: string; description: string; h1: string }> = {
-  'gemini-2.5-flash-image': {
-    title: 'AI Image Prompts Library - Fast Generation',
-    description: 'Explore AI art prompts optimized for fast image generation. Discover stunning image prompts, get inspired, and create your own masterpieces.',
-    h1: 'Fast AI Prompts',
-  },
-  'gemini-3-pro-image-preview': {
-    title: 'Premium AI Prompts Library - High Quality Images',
-    description: 'Explore premium AI art prompts for high-quality image generation. Professional-grade prompts for stunning AI art.',
-    h1: 'Premium AI Prompts',
-  },
-  'black-forest-labs/flux-schnell': {
-    title: 'FLUX Prompts Library - Fast AI Image Generation',
-    description: 'Explore AI art prompts optimized for FLUX Schnell. Lightning-fast image generation prompts for creative AI artwork.',
-    h1: 'FLUX Schnell Prompts',
-  },
-};
+// ============================================
+// SEO Metadata
+// ============================================
 
-const DEFAULT_SEO = {
-  title: 'AI Prompt Gallery: Copy High-Fidelity Recipes',
-  description: 'See what minimal input can do. Browse the best AI prompts. Copy the recipes and create your own masterpiece — start exploring now.',
-  h1: 'See What AI Can Do.',
-};
-
-/**
- * Generate dynamic metadata based on model filter
- */
-export async function generateMetadata({
-  searchParams,
-}: {
-  searchParams: Promise<{ model?: string }>;
-}): Promise<Metadata> {
-  const params = await searchParams;
-  const model = params.model;
-  
-  const config = model && MODEL_SEO_CONFIG[model] 
-    ? MODEL_SEO_CONFIG[model] 
-    : DEFAULT_SEO;
-
+export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: config.title,
-    description: config.description,
+    title: 'AI Skills Library | Antigravity Skills',
+    description:
+      'Modular logic blocks for your autonomous agents. Download and use with Claude Code, Cursor, Windsurf, and other AI coding assistants.',
     openGraph: {
-      title: config.title,
-      description: config.description,
+      title: 'AI Skills Library | Antigravity Skills',
+      description:
+        'Modular logic blocks for your autonomous agents. Download and use with Claude Code, Cursor, Windsurf, and other AI coding assistants.',
     },
   };
 }
 
-export default async function PromptsPage({
+// ============================================
+// Page Component
+// ============================================
+
+export default async function SkillsPage({
   searchParams,
 }: {
-  searchParams: Promise<{ sort?: string; model?: string }>;
+  searchParams: Promise<{ sort?: string; category?: string }>;
 }) {
-  const t = await getTranslations('landing');
   const params = await searchParams;
 
-  // Dynamic H1 based on model filter
-  const model = params.model;
-  const sort = (params.sort as 'newest' | 'trending') || 'newest';
-  const config = model && MODEL_SEO_CONFIG[model]
-    ? MODEL_SEO_CONFIG[model]
-    : null;
-  const pageTitle = config?.h1 || t('gallery.title');
+  const category = params.category || undefined;
+  const sortParam = params.sort || 'newest';
 
-  // 🚀 SSR: Fetch initial posts on server to eliminate Resource Load Delay
-  const LIMIT = 15;
-  const [posts, total] = await Promise.all([
+  // 映射排序参数
+  const sort = sortParam === 'popular' || sortParam === 'downloads'
+    ? 'trending' as const
+    : 'newest' as const;
+
+  // SSR: 从 community_post 表获取初始数据
+  const LIMIT = 12;
+  const [posts, totalCount] = await Promise.all([
     getCommunityPosts({
       status: CommunityPostStatus.PUBLISHED,
-      model,
+      category,
       sort,
       page: 1,
       limit: LIMIT,
-      getUser: true,
     }),
     getCommunityPostsCount({
       status: CommunityPostStatus.PUBLISHED,
-      model,
     }),
   ]);
 
-  const initialData: InitialGalleryData = {
-    posts: posts.map(p => ({
-      id: p.id,
-      imageUrl: p.imageUrl,
-      thumbnailUrl: p.thumbnailUrl || undefined,
-      prompt: p.prompt || '',
-      model: p.model || '',
-      seoSlug: p.seoSlug || '',
-      likeCount: p.likeCount || 0,
-      viewCount: p.viewCount || 0,
-      aspectRatio: p.aspectRatio || '1:1',
-      imageAlt: p.imageAlt || undefined,
-      user: p.user ? { name: p.user.name, image: p.user.image || undefined } : undefined,
+  // 筛选出 Skills（seoSlug 以 'skill-' 开头）
+  const skillPosts = posts.filter(
+    (post) => post.seoSlug && post.seoSlug.startsWith('skill-')
+  );
+
+  // 转换为 SkillGallery 需要的格式
+  const initialData: InitialSkillGalleryData = {
+    skills: skillPosts.map((post) => ({
+      id: post.id,
+      title: post.title || 'Untitled Skill',
+      seoSlug: post.seoSlug || post.id,
+      seoDescription: post.seoDescription || post.description,
+      visualTags: parseJsonArray(post.visualTags),
+      downloadCount: post.downloadCount || 0,
+      skillIcon: post.skillIcon,
+      createdAt: post.createdAt,
     })),
     pagination: {
       page: 1,
-      totalPages: Math.ceil(total / LIMIT),
+      totalPages: Math.ceil(totalCount / LIMIT) || 1,
     },
   };
 
   return (
     <Section spacing="default" className="min-h-screen">
-      <Container>
-        {/* Header - Dynamic SEO H1 */}
-        <div className="mb-8 space-y-4">
-          <h1 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-            {pageTitle}
+      <Container size="wide">
+        {/* 页面标题 */}
+        <div className="mb-10">
+          <h1 className="text-4xl font-bold tracking-tight text-foreground mb-4">
+            AI Skills Library
           </h1>
-          <p className="text-muted-foreground max-w-2xl text-lg">
-            {t('gallery.description')}
+          <p className="text-muted-foreground text-lg max-w-2xl leading-relaxed">
+            Modular logic blocks for your autonomous agents. Download and use
+            with Claude Code, Cursor, Windsurf, and other AI coding assistants.
           </p>
         </div>
 
-        {/* Gallery with SSR initial data - eliminates 7.5s Resource Load Delay */}
-        <Suspense fallback={<CommunityGalleryLoading />}>
-          <CommunityGallery
-            sort={sort}
-            model={params.model}
+        {/* Skills Gallery with SSR initial data */}
+        <Suspense fallback={<SkillGalleryLoading />}>
+          <SkillGallery
             initialData={initialData}
+            category={category}
+            sort={sortParam as 'newest' | 'popular' | 'downloads'}
           />
         </Suspense>
       </Container>
     </Section>
   );
+}
+
+// ============================================
+// Helpers
+// ============================================
+
+/**
+ * 解析 JSON 数组字符串
+ */
+function parseJsonArray(value: string | null | undefined): string[] {
+  if (!value) return [];
+  try {
+    const parsed = JSON.parse(value);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
 }

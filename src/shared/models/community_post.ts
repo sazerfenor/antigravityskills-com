@@ -212,6 +212,9 @@ export async function getCommunityPosts({
       // Classification fields
       category: communityPost.category,
       subcategory: communityPost.subcategory,
+      // 🆕 Skill card fields - for proper icon rendering in list view
+      skillIcon: communityPost.skillIcon,
+      downloadCount: communityPost.downloadCount,
     })
     .from(communityPost)
     .where(
@@ -293,6 +296,17 @@ export async function getCommunityPostById(
       contentSections: communityPost.contentSections,
       anchor: communityPost.anchor,
       microFocus: communityPost.microFocus,
+      // 🆕 V19.0 Skill landing page fields - CRITICAL for SkillDetail rendering!
+      zipUrl: communityPost.zipUrl,
+      quickStart: communityPost.quickStart,
+      capabilities: communityPost.capabilities,
+      usageExamples: communityPost.usageExamples,
+      heroSection: communityPost.heroSection,
+      presets: communityPost.presets,
+      triggerPhrases: communityPost.triggerPhrases,
+      skillIcon: communityPost.skillIcon,
+      skillContent: communityPost.skillContent,
+      readmeContent: communityPost.readmeContent,
       // Calculate real-time like count from reaction table
       likeCount: sql<number>`CAST(COUNT(DISTINCT ${reaction.id}) AS INTEGER)`.as('like_count'),
     })
@@ -379,6 +393,18 @@ export async function getCommunityPostBySlug(
       contentSections: communityPost.contentSections,
       anchor: communityPost.anchor,
       microFocus: communityPost.microFocus,
+      // 🆕 Skill download fields - CRITICAL for ZIP download!
+      zipUrl: communityPost.zipUrl,
+      // 🆕 V19.0 Skill landing page fields - CRITICAL for SkillDetail rendering!
+      quickStart: communityPost.quickStart,
+      capabilities: communityPost.capabilities,
+      usageExamples: communityPost.usageExamples,
+      heroSection: communityPost.heroSection,
+      presets: communityPost.presets,
+      triggerPhrases: communityPost.triggerPhrases,
+      skillIcon: communityPost.skillIcon,
+      skillContent: communityPost.skillContent,
+      readmeContent: communityPost.readmeContent,
       likeCount: sql<number>`CAST(COUNT(DISTINCT ${reaction.id}) AS INTEGER)`.as('like_count'),
     })
     .from(communityPost)

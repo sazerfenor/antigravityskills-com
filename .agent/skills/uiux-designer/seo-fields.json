@@ -1,0 +1,126 @@
+{
+  "skillId": "uiux-designer",
+  "skillIcon": "🎨",
+
+  "seoTitle": "UIUX Designer - AI Design System Generator | Antigravity Skills",
+  "seoDescription": "Struggling with design decisions? Generate complete design systems with one command. 50+ styles, 97 color palettes, 57 font pairings, and guidelines for React, Vue, Next.js, Flutter. Get professional UI/UX recommendations instantly.",
+  "seoKeywords": "UI UX design system, color palette generator, font pairing tool, responsive layout, accessibility guidelines, React design, Vue design, Next.js UI, Flutter design, SwiftUI design, landing page design, dashboard design, SaaS UI",
+  
+  "h1Title": "UIUX Designer: AI-Powered Design Intelligence for Web and Mobile",
+  
+  "heroSection": {
+    "headline": "Generate Complete Design Systems with One Command",
+    "subheadline": "Stop guessing colors, fonts, and styles. Get AI-powered recommendations for your product type, industry, and tech stack.",
+    "cta": {
+      "primary": "Download Skill",
+      "secondary": "Copy SKILL.md"
+    }
+  },
+  
+  "quickStart": {
+    "title": "Quick Start",
+    "steps": [
+      "Copy the uiux-designer skill folder to your .agent/skills/ directory",
+      "Run the design system generator with your product keywords",
+      "Apply the recommended styles, colors, and typography to your project"
+    ],
+    "exampleCommand": "python3 .agent/skills/uiux-designer/scripts/search.py \"saas fintech dashboard\" --design-system -p \"My Project\""
+  },
+  
+  "capabilities": [
+    {
+      "icon": "palette",
+      "title": "Design System Generation",
+      "description": "One command to get complete design recommendations: pattern, style, colors, typography, and effects tailored to your product type"
+    },
+    {
+      "icon": "layers",
+      "title": "Multi-Domain Search",
+      "description": "Query 50+ styles, 97 color palettes, 57 font pairings, 25 chart types, and 99 UX guidelines with BM25 relevance ranking"
+    },
+    {
+      "icon": "code",
+      "title": "Stack-Specific Guidelines",
+      "description": "Best practices for 12 tech stacks: React, Vue, Next.js, Svelte, Flutter, SwiftUI, React Native, shadcn/ui, and more"
+    },
+    {
+      "icon": "check-circle",
+      "title": "Pre-Delivery Checklists",
+      "description": "Catch common mistakes before shipping: accessibility, touch targets, color contrast, hover states, and responsive layouts"
+    },
+    {
+      "icon": "bar-chart-3",
+      "title": "Data Visualization",
+      "description": "Chart type recommendations based on data patterns with accessible color guidance and library suggestions"
+    }
+  ],
+  
+  "presets": null,
+  
+  "usageExamples": [
+    {
+      "input": "Build a landing page for a professional skincare service",
+      "output": "Complete design system with elegant soft style, blush/rose color palette, Playfair Display + Lora typography, and conversion-optimized landing pattern"
+    },
+    {
+      "input": "Create a healthcare SaaS dashboard",
+      "output": "Clean minimalist design with trust-building blue palette, Inter + Roboto fonts, chart recommendations for medical data, and WCAG AA accessibility guidelines"
+    },
+    {
+      "input": "Review my React component for UX issues",
+      "output": "Priority-ordered checklist covering accessibility (color contrast, focus states), interaction (touch targets, hover feedback), and performance (animation timing, reduced motion)"
+    }
+  ],
+  
+  "contentIntro": "Tired of endless design decisions slowing down your development? UIUX Designer is an AI-powered design intelligence system with 50+ styles, 97 color palettes, 57 font pairings, and guidelines for 12 tech stacks. Generate complete design systems with a single command, tailored to your product type and industry.",
+  
+  "faqItems": [
+    {
+      "question": "What tech stacks does UIUX Designer support?",
+      "answer": "UIUX Designer supports 12 tech stacks: HTML/Tailwind (default), React, Next.js, Vue, Svelte, Nuxt.js, SwiftUI, React Native, Flutter, Jetpack Compose, shadcn/ui, and Nuxt UI. Each stack has specific guidelines for best practices, performance patterns, and common pitfalls."
+    },
+    {
+      "question": "How do I generate a design system for my project?",
+      "answer": "Run the command: python3 .agent/skills/uiux-designer/scripts/search.py \"<product_type> <industry> <keywords>\" --design-system -p \"Project Name\". For example, for a fintech SaaS: python3 .agent/skills/uiux-designer/scripts/search.py \"fintech saas dashboard\" --design-system -p \"PayFlow\""
+    },
+    {
+      "question": "Can I search for specific design elements?",
+      "answer": "Yes! Use domain-specific searches: --domain style for UI styles (glassmorphism, minimalism), --domain typography for font pairings, --domain color for palettes, --domain ux for guidelines, --domain chart for data visualization recommendations."
+    },
+    {
+      "question": "What accessibility guidelines are included?",
+      "answer": "The skill includes 99 UX guidelines covering: color contrast (4.5:1 minimum), focus states, touch targets (44x44px minimum), keyboard navigation, ARIA labels, form accessibility, and prefers-reduced-motion support. All rules are prioritized from CRITICAL to LOW."
+    }
+  ],
+  
+  "triggerPhrases": [
+    "design a landing page",
+    "choose color palette",
+    "pick font pairing",
+    "review UI for accessibility",
+    "build responsive layout",
+    "create dashboard design",
+    "implement dark mode",
+    "check UX best practices"
+  ],
+  
+  "visualTags": [
+    "UI Design",
+    "UX Guidelines",
+    "Color Palette",
+    "Typography",
+    "Responsive",
+    "Accessibility",
+    "React",
+    "Vue",
+    "Next.js",
+    "Flutter",
+    "SwiftUI",
+    "Landing Page",
+    "Dashboard"
+  ],
+  
+  "skillContent": "---\nname: uiux-designer\ndescription: \"Use this skill when designing UI components, choosing color palettes, implementing responsive layouts, or reviewing code for UX issues. For landing pages, dashboards, e-commerce, SaaS, and mobile apps. Provides 50+ design styles, 97 color palettes, 57 font pairings, and stack-specific guidelines for React, Vue, Next.js, Flutter, SwiftUI, and more.\"\n---\n\n# UIUX Designer - Design Intelligence\n\nComprehensive design guide for web and mobile applications. Contains 50+ styles, 97 color palettes, 57 font pairings, 99 UX guidelines, and 25 chart types across 12 technology stacks. Searchable database with priority-based recommendations.\n\n## Overview\n\nReference these guidelines when:\n- Designing new UI components or pages\n- Choosing color palettes and typography\n- Reviewing code for UX issues\n- Building landing pages or dashboards\n- Implementing accessibility requirements\n\n## Protocols\n\nWhen user requests UI/UX work (design, build, create, implement, review, fix, improve), follow this workflow:\n\n### Step 1: Analyze User Requirements\n- Product type: SaaS, e-commerce, portfolio, dashboard, landing page, etc.\n- Style keywords: minimal, playful, professional, elegant, dark mode, etc.\n- Industry: healthcare, fintech, gaming, education, etc.\n- Stack: React, Vue, Next.js, or default to html-tailwind\n\n### Step 2: Generate Design System (REQUIRED)\npython3 .agent/skills/uiux-designer/scripts/search.py \"<keywords>\" --design-system -p \"Project Name\"\n\n### Step 3: Supplement with Detailed Searches\npython3 .agent/skills/uiux-designer/scripts/search.py \"<keyword>\" --domain <domain>\n\n### Step 4: Stack Guidelines\npython3 .agent/skills/uiux-designer/scripts/search.py \"<keyword>\" --stack html-tailwind",
+  
+  "readmeContent": "# UIUX Designer\n\nYour AI-powered UI/UX design intelligence system with 50+ design styles, 97 color palettes, 57 font pairings, and comprehensive guidelines for 12 technology stacks.\n\n## 🚀 Quick Start\n\n```bash\n# Generate a complete design system for your project\npython3 .agent/skills/uiux-designer/scripts/search.py \"saas fintech dashboard\" --design-system -p \"My Project\"\n\n# Search specific domains\npython3 .agent/skills/uiux-designer/scripts/search.py \"glassmorphism\" --domain style\n\n# Get stack-specific guidelines\npython3 .agent/skills/uiux-designer/scripts/search.py \"performance\" --stack react\n```\n\n## ✨ What It Does\n\n- Design System Generation: One command to get pattern, style, colors, typography, and effects\n- Multi-Domain Search: Query styles, colors, fonts, charts, UX guidelines, and more\n- Stack-Specific Guidelines: Best practices for React, Vue, Next.js, Flutter, SwiftUI, and 7 more\n- Priority-Based Rules: Focus on what matters most (Accessibility > Interaction > Performance > Layout)\n- Pre-Delivery Checklists: Catch common mistakes before shipping\n\n## 🔔 When to Use\n\nUse this skill when:\n- Starting a new UI/UX project and need design direction\n- Choosing color palettes, fonts, or visual style\n- Reviewing code for accessibility and UX issues\n- Building landing pages, dashboards, or mobile apps\n- Implementing responsive layouts or animations"
+}

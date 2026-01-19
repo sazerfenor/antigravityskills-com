@@ -4,6 +4,7 @@ import { Sparkles } from 'lucide-react';
 import { Link } from '@/core/i18n/navigation';
 import { SmartIcon } from '@/shared/blocks/common';
 import { Button } from '@/shared/components/ui/button';
+import { ParticlesBackground } from '@/shared/components/ui/particles-background';
 import { VS } from '@/shared/lib/design-tokens';
 import { cn } from '@/shared/lib/utils';
 import { Hero as HeroType, Logos as LogosType } from '@/shared/types/blocks/landing';
@@ -52,7 +53,7 @@ export function Hero({
       <div className="relative z-10 w-full max-w-5xl px-4 flex flex-col items-center text-center">
 
         {hero.announcement && (
-          <div>
+          <div className="mt-8">
             {/* 5.3 Form System: Pill Badge - static dot with glow (no ping) */}
             <Link
               href={hero.announcement.url || ''}
@@ -75,7 +76,7 @@ export function Hero({
         )}
 
         {/* 7.1 Section Gradient: Hero - Warm Ignition - NO FADE ANIMATION FOR LCP */}
-        <h1 className="mx-auto max-w-4xl text-5xl font-bold tracking-tight text-foreground sm:text-7xl mb-4">
+        <h1 className="mx-auto max-w-4xl text-5xl font-bold tracking-tight text-foreground sm:text-7xl mb-6">
           {hero.title ? (
             <>
               {hero.title.split(hero.highlight_text || '')[0]}
@@ -95,14 +96,14 @@ export function Hero({
         {/* Description - From JSON config - NO FADE ANIMATION FOR LCP */}
         {hero.description && (
           <p
-            className="mx-auto max-w-2xl text-lg leading-8 text-muted-foreground mb-6"
+            className="mx-auto max-w-2xl text-lg leading-8 text-muted-foreground mb-10"
             dangerouslySetInnerHTML={{ __html: hero.description }}
           />
         )}
 
         {/* Hero Search Island */}
         {hero.input && (
-          <div className="w-full max-w-2xl mb-8 relative z-20">
+          <div className="w-full max-w-2xl mb-12 relative z-20">
              <div className="p-1 rounded-full bg-linear-to-b from-white/20 to-white/0">
                 <HeroSearchClient
                   placeholder={hero.input.placeholder || ''}
@@ -153,25 +154,25 @@ export function Hero({
           </div>
         )}
 
-        {/* Logos - Trust indicators inside Hero for first-screen visibility */}
+        {/* Logos - Trust indicators inside Hero - reduced visual weight */}
         {logos && logos.items && logos.items.length > 0 && (
-          <div className="mt-8 w-full">
-            <p className="text-xs font-mono uppercase text-muted-foreground/90 mb-4 text-center tracking-widest">
+          <div className="mt-16 w-full opacity-60 hover:opacity-90 transition-opacity duration-300">
+            <p className="text-[10px] font-mono uppercase text-muted-foreground/70 mb-4 text-center tracking-widest">
               {logos.title || 'Powering your workflow in:'}
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-x-12">
+            <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-x-10">
               {logos.items.map((item, idx) => {
-                const size = (item as any).size || 'h-8 w-auto sm:h-10';
+                const size = 'h-6 w-auto sm:h-8';
                 const url = (item as any).url;
 
                 const content = (
-                  <div className="flex items-center justify-center transition-all duration-300 hover:scale-110 grayscale opacity-60 hover:grayscale-0 hover:opacity-100">
+                  <div className="flex items-center justify-center transition-all duration-300 hover:scale-110 grayscale hover:grayscale-0">
                     <Image
                       className={cn(size, "object-contain")}
                       src={item.image?.src ?? ''}
                       alt={item.image?.alt ?? ''}
-                      width={100}
-                      height={40}
+                      width={80}
+                      height={32}
                       loading="eager"
                     />
                   </div>

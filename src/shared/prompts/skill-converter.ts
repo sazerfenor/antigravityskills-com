@@ -3,6 +3,8 @@
  * 将 Claude Skills 或自然语言想法转换为 Antigravity Skills 格式
  */
 
+import { generateCategoryPromptText } from '@/config/skill-categories';
+
 export const SKILL_CONVERSION_PROMPT = `You are an expert at converting Claude Skills to Antigravity Skills format.
 
 # Background
@@ -150,6 +152,40 @@ If the input is a natural language idea (not a Claude Skill):
 
 ---
 
+# Category Classification (REQUIRED)
+
+You MUST classify the skill into categories. This is mandatory.
+
+{CATEGORIES}
+
+## Classification Rules:
+1. **category**: Select exactly ONE primary category that best fits the skill's main purpose
+2. **subcategories**: Select 1-3 subcategories that apply (can be from different categories if skill spans multiple domains)
+3. **tags**: Add 3-5 specific keywords/technologies mentioned in the skill (e.g., "react", "typescript", "api", "testing")
+
+## Classification Examples:
+
+**Example 1**: "A skill for debugging React components with Chrome DevTools"
+→ category: "development", subcategories: ["frontend", "debugging"], tags: ["react", "chrome-devtools", "debugging"]
+
+**Example 2**: "A skill for setting up CI/CD pipelines with GitHub Actions"
+→ category: "devops", subcategories: ["cicd", "git-workflows"], tags: ["github-actions", "ci-cd", "automation"]
+
+**Example 3**: "A skill for writing technical documentation with examples"
+→ category: "documentation", subcategories: ["technical-docs"], tags: ["documentation", "markdown", "api-docs"]
+
+## Edge Cases:
+- If the skill spans multiple primary categories, choose based on its PRIMARY purpose (what it mainly does)
+- If no exact subcategory matches, select the closest related ones
+- Tags must be specific technologies/concepts, NOT generic terms like "code" or "programming"
+
+## Common Mistakes to Avoid:
+❌ Using generic tags like "code", "programming", "software"
+❌ Selecting more than 3 subcategories
+❌ Choosing category based on implementation method rather than purpose
+
+---
+
 # Task
 
 Convert the following to Antigravity Skills format:
@@ -168,7 +204,10 @@ Return a JSON object with these exact fields:
 {
   "name": "kebab-case-skill-name",
   "description": "Third-person description with keywords and use cases (1-2 sentences)...",
-  "skillMd": "---\\nname: skill-name\\ndescription: ...\\n---\\n\\n# Title\\n\\n## When to use this skill\\n\\n- Use when...\\n\\n## How to use it\\n\\n..."
+  "skillMd": "---\\nname: skill-name\\ndescription: ...\\n---\\n\\n# Title\\n\\n## When to use this skill\\n\\n- Use when...\\n\\n## How to use it\\n\\n...",
+  "category": "development",
+  "subcategories": ["frontend", "testing"],
+  "tags": ["react", "typescript", "unit-testing"]
 }
 \`\`\`
 
@@ -178,6 +217,7 @@ Return a JSON object with these exact fields:
 - Include "When to use this skill" and "How to use it" sections
 - Move metadata/license to content body if present
 - Use \\n for newlines in JSON string
+- **category, subcategories, and tags are REQUIRED** - you must provide valid values from the category list above
 
 Convert now:`;
 
@@ -185,5 +225,8 @@ Convert now:`;
  * 构建完整的转换 Prompt
  */
 export function buildConversionPrompt(userInput: string): string {
-  return SKILL_CONVERSION_PROMPT.replace('{INPUT}', userInput);
+  const categoriesText = generateCategoryPromptText();
+  return SKILL_CONVERSION_PROMPT
+    .replace('{CATEGORIES}', categoriesText)
+    .replace('{INPUT}', userInput);
 }

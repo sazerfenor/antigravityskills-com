@@ -148,8 +148,8 @@ python3 .agent/skills/antigravity-skill-creator/scripts/meta_init.py {name} --pa
 
 | 参数 | 类型 | 来源 |
 |:---|:---|:---|
-| `_original` | object | skill-parser (透传) |
-| `user_decisions` | object | form-generator |
+| `_original` | object | capability-analyzer (透传) |
+| `user_decisions` | object | Phase 2 用户审核结果 |
 
 ### 执行步骤
 

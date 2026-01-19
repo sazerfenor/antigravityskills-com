@@ -1,8 +1,8 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { Metadata } from 'next';
 
 import { brandConfig } from '@/config';
 import { getThemePage } from '@/core/theme';
-import { getMetadata } from '@/shared/lib/seo';
 import { getCurrentSubscription } from '@/shared/models/subscription';
 import { getUserInfo } from '@/shared/models/user';
 import {
@@ -13,10 +13,13 @@ import { Pricing as PricingType } from '@/shared/types/blocks/pricing';
 
 export const revalidate = 3600;
 
-export const generateMetadata = getMetadata({
-  metadataKey: 'pricing.metadata',
-  canonicalUrl: '/pricing',
-});
+// Block search engines from indexing this page
+export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default async function PricingPage({
   params,

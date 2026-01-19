@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <!-- Background with brand gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="50%" style="stop-color:#16213e"/>
+      <stop offset="100%" style="stop-color:#0f3460"/>
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e94560"/>
+      <stop offset="100%" style="stop-color:#ff6b6b"/>
+    </linearGradient>
+    <linearGradient id="codeGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4ecca3" stop-opacity="0.8"/>
+      <stop offset="100%" style="stop-color:#4ecca3" stop-opacity="0.2"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+
+  <!-- Grid pattern -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-opacity="0.03" stroke-width="1"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Decorative code blocks -->
+  <g opacity="0.15">
+    <!-- Left code block -->
+    <rect x="80" y="120" width="200" height="12" rx="2" fill="#4ecca3"/>
+    <rect x="80" y="140" width="150" height="12" rx="2" fill="#4ecca3"/>
+    <rect x="80" y="160" width="180" height="12" rx="2" fill="#4ecca3"/>
+    <rect x="100" y="180" width="160" height="12" rx="2" fill="#e94560"/>
+    <rect x="100" y="200" width="120" height="12" rx="2" fill="#e94560"/>
+    <rect x="80" y="220" width="140" height="12" rx="2" fill="#4ecca3"/>
+
+    <!-- Right code block -->
+    <rect x="920" y="400" width="200" height="12" rx="2" fill="#4ecca3"/>
+    <rect x="920" y="420" width="150" height="12" rx="2" fill="#4ecca3"/>
+    <rect x="940" y="440" width="180" height="12" rx="2" fill="#e94560"/>
+    <rect x="940" y="460" width="140" height="12" rx="2" fill="#e94560"/>
+    <rect x="920" y="480" width="160" height="12" rx="2" fill="#4ecca3"/>
+  </g>
+
+  <!-- Central icon container -->
+  <circle cx="600" cy="280" r="80" fill="#1a1a2e" stroke="url(#accentGradient)" stroke-width="3"/>
+
+  <!-- Skill icon (lightning bolt / magic wand style) -->
+  <g transform="translate(600, 280)">
+    <!-- Outer glow -->
+    <circle r="60" fill="url(#accentGradient)" opacity="0.1"/>
+
+    <!-- Lightning/Skill symbol -->
+    <path d="M-15 -35 L10 -5 L0 -5 L15 35 L-10 5 L0 5 Z"
+          fill="url(#accentGradient)"
+          stroke="#ffffff"
+          stroke-width="2"/>
+
+    <!-- Sparkles -->
+    <circle cx="-35" cy="-20" r="3" fill="#4ecca3"/>
+    <circle cx="35" cy="20" r="2" fill="#4ecca3"/>
+    <circle cx="30" cy="-25" r="2.5" fill="#e94560"/>
+    <circle cx="-30" cy="25" r="2" fill="#e94560"/>
+  </g>
+
+  <!-- Text: Antigravity Skills -->
+  <text x="600" y="420"
+        font-family="system-ui, -apple-system, sans-serif"
+        font-size="48"
+        font-weight="700"
+        fill="#ffffff"
+        text-anchor="middle">
+    Antigravity Skills
+  </text>
+
+  <!-- Tagline -->
+  <text x="600" y="470"
+        font-family="system-ui, -apple-system, sans-serif"
+        font-size="20"
+        font-weight="400"
+        fill="#4ecca3"
+        text-anchor="middle">
+    The Open Standard for AI Agent Skills
+  </text>
+
+  <!-- Bottom accent line -->
+  <rect x="450" y="520" width="300" height="3" rx="1.5" fill="url(#accentGradient)"/>
+
+  <!-- Corner accents -->
+  <path d="M0 0 L60 0 L0 60 Z" fill="url(#accentGradient)" opacity="0.3"/>
+  <path d="M1200 630 L1140 630 L1200 570 Z" fill="url(#accentGradient)" opacity="0.3"/>
+</svg>

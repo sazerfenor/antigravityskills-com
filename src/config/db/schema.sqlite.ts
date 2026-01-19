@@ -609,6 +609,30 @@ export const communityPost = sqliteTable(
     contentSections: text('content_sections'),
     anchor: text('anchor'),
     microFocus: text('micro_focus'),
+    // Skill ZIP 下载链接 (R2 存储)
+    zipUrl: text('zip_url'), // 完整 ZIP 包的 R2 链接，用于 Skill 类 Post 的下载
+
+    // ============================================
+    // Skill 落地页增强字段 (v19.0)
+    // ============================================
+    // Hero 区域 (JSON: { headline, subheadline, cta: { primary, secondary } })
+    heroSection: text('hero_section'),
+    // 快速上手 (JSON: { title, steps[], exampleCommand })
+    quickStart: text('quick_start'),
+    // 核心能力 (JSON array: [{ icon, title, description }])
+    capabilities: text('capabilities'),
+    // 预设展示 (JSON array: [{ name, colors[], fonts: { heading, body }, bestFor }])
+    presets: text('presets'),
+    // 使用示例 (JSON array: [{ input, output, beforeAfter?: { before, after } }])
+    usageExamples: text('usage_examples'),
+    // 触发词 (JSON array: string[])
+    triggerPhrases: text('trigger_phrases'),
+    // Skill 图标 (Lucide icon 名称，如 "Code", "Palette")
+    skillIcon: text('skill_icon'),
+    // Skill 完整内容 (SKILL.md 原文)
+    skillContent: text('skill_content'),
+    // README 内容 (可选的 README.md)
+    readmeContent: text('readme_content'),
   },
   (table) => [
     index('idx_community_post_status_created').on(table.status, table.createdAt),
@@ -968,7 +992,9 @@ export const antigravitySkills = sqliteTable(
   'antigravity_skills',
   {
     id: text('id').primaryKey(), // nanoid
-    name: text('name').notNull(), // skill-name (from frontmatter)
+    name: text('name').notNull(), // skill-name (from frontmatter, kebab-case)
+    displayName: text('display_name'), // 人类可读展示名称 (如 "UIUX Designer")
+    icon: text('icon'), // Lucide icon 名称 (如 "Palette", "Code")
     slug: text('slug').notNull().unique(), // URL-friendly (暂时与 name 相同)
     description: text('description').notNull(), // 一句话描述
     content: text('content').notNull(), // SKILL.md 完整内容
@@ -981,15 +1007,21 @@ export const antigravitySkills = sqliteTable(
     viewCount: integer('view_count').default(0).notNull(),
     downloadCount: integer('download_count').default(0).notNull(),
 
-    // 分类（暂时不用，为未来扩展预留）
-    category: text('category'),
-    tags: text('tags'), // JSON array
+    // 分类
+    category: text('category'), // 一级分类 (如 'development', 'tools')
+    subcategory: text('subcategory'), // 二级分类 (JSON array，支持多个，如 '["frontend", "testing"]')
+    tags: text('tags'), // 自由标签 (JSON array)
 
     // 作者（可选，暂时允许匿名）
     authorId: text('author_id').references(() => user.id, { onDelete: 'set null' }),
 
     // 状态
     status: text('status').notNull().default('published'), // 'draft' | 'published'
+
+    // R2 存储 (完整 ZIP 包)
+    zipUrl: text('zip_url'), // R2 下载链接，如 "https://r2.antigravityskills.com/skills/brand-guidelines/skill.zip"
+    zipSize: integer('zip_size'), // ZIP 文件大小（字节）
+    fileCount: integer('file_count'), // Skill 文件夹内文件数量
 
     // 时间戳
     createdAt: integer('created_at', { mode: 'timestamp' })
@@ -1003,6 +1035,7 @@ export const antigravitySkills = sqliteTable(
   (table) => [
     index('idx_skills_slug').on(table.slug),
     index('idx_skills_created_at').on(table.createdAt),
+    index('idx_skills_category').on(table.category),
   ]
 );
 

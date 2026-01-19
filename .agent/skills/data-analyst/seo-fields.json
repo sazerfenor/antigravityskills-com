@@ -1,0 +1,124 @@
+{
+  "skillId": "data-analyst",
+  "displayName": "Data Analyst",
+  "skillIcon": "📊",
+  "seoTitle": "Data Analyst - Statistical Methods & Data Storytelling",
+  "seoDescription": "Transform data into actionable insights with rigorous statistical methodology and compelling narratives. From trend detection to executive presentations.",
+  "seoKeywords": [
+    "Data Analysis",
+    "Statistical Methods",
+    "A/B Testing",
+    "Attribution Modeling",
+    "User Segmentation",
+    "Data Visualization",
+    "Business Intelligence",
+    "Machine Learning",
+    "Data Storytelling"
+  ],
+  "h1Title": "Data Analyst: From Raw Data to Actionable Insights",
+  "heroSection": {
+    "title": "Make Data-Driven Decisions with Confidence",
+    "subtitle": "Combine rigorous statistical methodology with effective data storytelling. Choose the right methods, design meaningful metrics, and communicate insights that drive action.",
+    "primaryAction": {
+      "label": "Add to Agent",
+      "command": "cp -r data-analyst .agent/skills/"
+    },
+    "secondaryAction": {
+      "label": "View Methods",
+      "link": "#capabilities"
+    }
+  },
+  "quickStart": {
+    "title": "Start Analyzing in Seconds",
+    "steps": [
+      "Describe your data analysis challenge",
+      "Get recommended statistical or ML methods",
+      "Design metrics and thresholds with guidance",
+      "Structure findings as compelling narratives"
+    ]
+  },
+  "capabilities": [
+    {
+      "title": "Statistical Method Selection",
+      "description": "Choose the right test for your data: t-tests, ANOVA, regression, clustering, and more with decision trees and best practices.",
+      "icon": "Calculator"
+    },
+    {
+      "title": "A/B Testing & Experiments",
+      "description": "Design statistically sound experiments, calculate sample sizes, interpret results with effect sizes and confidence intervals.",
+      "icon": "FlaskConical"
+    },
+    {
+      "title": "Trend & Anomaly Detection",
+      "description": "Detect growth patterns, change points, and outliers using time series analysis, stationarity tests, and threshold design.",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Attribution Modeling",
+      "description": "Understand what drives conversions with first-touch, last-touch, linear, position-based, and data-driven attribution models.",
+      "icon": "GitBranch"
+    },
+    {
+      "title": "User Segmentation",
+      "description": "Group users effectively using K-means, hierarchical clustering, and classification with proper validation techniques.",
+      "icon": "Users"
+    },
+    {
+      "title": "Data Storytelling",
+      "description": "Transform analysis into compelling narratives with problem-solution frameworks, visualization techniques, and executive templates.",
+      "icon": "Presentation"
+    }
+  ],
+  "presets": [],
+  "usageExamples": [
+    {
+      "title": "Trend Detection",
+      "description": "Identify if a metric or keyword is genuinely trending or just noise.",
+      "code": "User: \"How do I detect if this keyword is trending up?\"\n\nAgent: Uses time series analysis with change point detection, growth ratio calculation (2x = significant), and coefficient of variation for stability assessment."
+    },
+    {
+      "title": "A/B Test Analysis",
+      "description": "Determine if two groups are statistically different with proper methodology.",
+      "code": "User: \"Are these two conversion rates statistically different?\"\n\nAgent: Recommends appropriate test (t-test or Mann-Whitney), calculates effect size (Cohen's d), and reports confidence intervals."
+    },
+    {
+      "title": "Executive Presentation",
+      "description": "Structure data findings for leadership communication.",
+      "code": "User: \"How do I present these churn findings to leadership?\"\n\nAgent: Structures as Problem-Solution story: Hook → Problem → Insight → Solution → Expected Impact → Call to Action."
+    }
+  ],
+  "triggerPhrases": [
+    "Analyze this data",
+    "What statistical test should I use",
+    "Detect if trending",
+    "Compare these groups",
+    "Attribution model",
+    "Segment users",
+    "Present to executives",
+    "Design thresholds"
+  ],
+  "skillContent": "---\nname: data-analyst\ndescription: Use when analyzing data for business decisions, designing statistical or ML algorithms, creating data visualizations, or presenting insights to stakeholders. For trend detection, attribution modeling, A/B testing, user segmentation, and executive reporting.\n---\n\n# Data Analyst\n\nTransform data into actionable insights and compelling narratives that drive business decisions.\n\n## Overview\n\nThis skill combines rigorous statistical methodology with effective data storytelling. It helps you:\n1. **Analyze**: Choose and apply the right statistical/ML methods\n2. **Design**: Create thresholds, metrics, and decision logic\n3. **Communicate**: Present insights that inspire action\n\n## When to Use This Skill\n\n- **Algorithm Design**: Designing data analysis algorithms or judgment logic\n- **Method Selection**: Choosing between statistical tests, regression, or ML methods\n- **Threshold Design**: Setting decision boundaries or classification criteria\n- **Trend Analysis**: Detecting changes, growth patterns, or anomalies\n- **Attribution**: Understanding what drives conversion or outcomes\n- **Executive Reporting**: Presenting analytics to stakeholders\n- **A/B Testing**: Designing and interpreting experiments\n\n## Workflow\n\n```\nProblem → Classify → Select Method → Design Metrics → Set Thresholds → Tell Story\n```\n\n### Core Methodology\n\n**Trend Detection**:\n- Growth ratio = current_mean / baseline_mean\n- CV (Coefficient of Variation) for stability\n- Change point detection for inflection\n\n**Statistical Comparison**:\n| Scenario | Normal Data | Non-Normal |\n|----------|-------------|------------|\n| 2 groups | t-test | Mann-Whitney |\n| 3+ groups | ANOVA | Kruskal-Wallis |\n\n**Attribution Models**:\n- First-touch (awareness)\n- Last-touch (conversion)\n- Linear (balanced)\n- Position-based (40/20/40)\n- Data-driven (ML)\n\n### Reference Files\n\n| File | Content |\n|------|---------|\n| `method_selection.md` | Decision tree for all analysis types |\n| `time_series.md` | Stationarity, trends, forecasting |\n| `statistical_inference.md` | Hypothesis testing, effect sizes |\n| `regression_attribution.md` | Regression, attribution models |\n| `ml_methods.md` | Clustering, classification, PCA |\n| `threshold_design.md` | Threshold setting methodologies |",
+  "readmeContent": "# Data Analyst\n\nTransform data into actionable insights and compelling narratives that drive business decisions.\n\n## 🚀 Quick Start\n\nSimply describe your data analysis challenge, and this skill will:\n1. Recommend the right statistical or ML method\n2. Help design metrics and thresholds\n3. Structure your findings as a compelling story\n\n## ✨ What It Does\n\n**Analysis**:\n- Trend detection and time series analysis\n- A/B testing and statistical comparisons\n- Attribution modeling and conversion analysis\n- User segmentation and clustering\n- Threshold design for decision logic\n\n**Storytelling**:\n- Transform findings into executive narratives\n- Create compelling data visualizations\n- Build persuasive presentations\n\n## 🔧 How It Works\n\n```\nProblem → Classify → Select Method → Design Metrics → Set Thresholds → Tell Story\n```\n\n1. **Classify** your problem (trend, comparison, attribution, segmentation)\n2. **Select** appropriate statistical/ML methods from reference guides\n3. **Design** metrics with clear calculations and edge case handling\n4. **Set** thresholds using statistical, business, or data-driven approaches\n5. **Tell** the story with narrative arc and visualization\n\n## 📚 Reference Files\n\n| File | Content |\n|------|---------|\n| `method_selection.md` | Quick decision tree for all analysis types |\n| `time_series.md` | Stationarity, trends, forecasting |\n| `statistical_inference.md` | Hypothesis testing, effect sizes |\n| `regression_attribution.md` | Regression, attribution models |\n| `ml_methods.md` | Clustering, classification, PCA |\n| `threshold_design.md` | Threshold setting methodologies |",
+  "contentIntro": "Get instant access to a comprehensive toolkit for data analysis—from choosing the right statistical test to presenting findings that drive executive decisions.",
+  "faqItems": [
+    {
+      "question": "What's the difference between correlation and causation?",
+      "answer": "Correlation shows variables move together; causation means one actually causes changes in another. Use regression with controls, A/B tests, or causal inference methods to establish causation."
+    },
+    {
+      "question": "How do I choose between ML and statistical methods?",
+      "answer": "Use statistics when testing hypotheses, understanding 'why', or with small samples. Use ML when discovering patterns, predicting 'what', with large datasets, or when accuracy matters more than interpretability."
+    },
+    {
+      "question": "What should I report beyond p-values?",
+      "answer": "Always report effect sizes (Cohen's d, odds ratios), confidence intervals, and sample sizes. Statistical significance doesn't mean practical significance—a tiny effect can be 'significant' with enough data."
+    }
+  ],
+  "visualTags": [
+    "Statistics",
+    "Machine Learning",
+    "Data Visualization",
+    "Business Intelligence",
+    "A/B Testing"
+  ]
+}

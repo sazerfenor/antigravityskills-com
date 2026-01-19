@@ -1,0 +1,105 @@
+{
+  "skillId": "code-review",
+  
+  "seoTitle": "Code Review Skill - AI-Powered PR Audits | Antigravity Skills",
+  "seoDescription": "Drowning in noisy AI code reviews? Get structured, prioritized feedback on bugs, security, and performance. Agent-native skill with Critical/Improvement/Suggestion tiers.",
+  "seoKeywords": "code review, PR review, pull request review, security audit, performance optimization, bug detection, code quality, best practices, AI code reviewer",
+  
+  "h1Title": "Code Review: Expert AI Auditor for Bugs, Security & Performance",
+  
+  "heroSection": {
+    "headline": "Structured Code Reviews That Cut Through the Noise",
+    "subheadline": "Stop wasting time on 70% useless AI comments. Get prioritized, actionable feedback on what actually matters.",
+    "cta": {
+      "primary": "Download Skill",
+      "secondary": "Copy SKILL.md"
+    }
+  },
+  
+  "quickStart": {
+    "title": "Quick Start",
+    "steps": [
+      "Copy the SKILL.md to your .agent/skills/ directory",
+      "Ask your AI agent to review any code",
+      "Get structured feedback in Critical/Improvement/Suggestion tiers"
+    ],
+    "exampleCommand": "Review this function for potential issues"
+  },
+  
+  "capabilities": [
+    {
+      "icon": "bug",
+      "title": "Bug Detection",
+      "description": "Identifies logic errors, edge cases, resource leaks, and thread safety issues before they reach production."
+    },
+    {
+      "icon": "shield",
+      "title": "Security Audit",
+      "description": "Catches SQL injection, XSS vulnerabilities, authentication gaps, and sensitive data exposure."
+    },
+    {
+      "icon": "zap",
+      "title": "Performance Analysis",
+      "description": "Analyzes algorithm complexity, database query efficiency, and suggests caching optimizations."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Quality Assessment",
+      "description": "Evaluates DRY/SOLID principles adherence, readability, and test coverage adequacy."
+    }
+  ],
+  
+  "presets": null,
+  
+  "usageExamples": [
+    {
+      "input": "Review this Python function for issues",
+      "output": "Analyzes for logic errors, type safety, naming conventions with improvement suggestions and code examples."
+    },
+    {
+      "input": "Check this PR for security vulnerabilities",
+      "output": "Focuses on SQL injection, XSS, authentication bypass, and sensitive data handling with CRITICAL flags."
+    },
+    {
+      "input": "Audit this module's performance",
+      "output": "Identifies O(n²) patterns, suggests data structure optimizations and caching opportunities."
+    }
+  ],
+  
+  "contentIntro": "Most AI code review tools generate 80% noise. This skill delivers structured, prioritized feedback organized into Critical (must-fix), Improvements (should-consider), and Suggestions (nice-to-have) tiers. Works offline in any AI agent without external service dependencies.",
+  
+  "faqItems": [
+    {
+      "question": "How is this different from GitHub Copilot or CodeRabbit?",
+      "answer": "Unlike SaaS tools, this is an agent-native skill that runs locally without external API calls. You get consistent, private code reviews with a structured output format."
+    },
+    {
+      "question": "What programming languages does it support?",
+      "answer": "The skill is language-agnostic. It analyzes code structure, patterns, and best practices that apply across Python, JavaScript, TypeScript, Go, Java, and more."
+    },
+    {
+      "question": "How does it prioritize issues?",
+      "answer": "Issues are categorized into Critical (security/bugs that must be fixed), Improvements (should consider), and Suggestions (nice to have), helping you focus on what matters most."
+    },
+    {
+      "question": "Can it review entire PRs or just functions?",
+      "answer": "Both. Point it at a single function, a file, or describe your PR scope. It adapts its review depth based on the context provided."
+    }
+  ],
+  
+  "triggerPhrases": [
+    "review this code",
+    "check this PR",
+    "audit for security",
+    "find bugs in",
+    "code review",
+    "PR review",
+    "performance audit"
+  ],
+  
+  "visualTags": ["code-review", "security", "performance", "quality", "PR", "bugs", "best-practices"],
+  
+  "skillContent": "---\nname: code-review\ndescription: Use this skill when reviewing code for bugs, security issues, performance problems, or best practices. For PR reviews, code audits, refactoring assessments, and identifying potential issues before production.\nmetadata:\n  version: \"1.0.0\"\n  author: \"antigravity-skill-creator\"\n---\n\n# Code Review\n\n## Overview\n\nA comprehensive code review skill that analyzes code for correctness, maintainability, performance, and security. Helps identify potential issues before they reach production by providing structured, actionable feedback.\n\n## Protocols\n\n### 1. Gather Context\n\n- Identify the files to review using Glob patterns\n- Understand the project structure and conventions\n- Check for existing linting/formatting rules\n\n### 2. Analyze Code Structure\n\n- Review file organization and module structure\n- Check for proper separation of concerns\n- Verify naming conventions are consistent\n\n### 3. Check for Common Issues\n\n- Logic errors and edge cases\n- Error handling completeness\n- Resource management (memory leaks, unclosed handles)\n- Thread safety issues in concurrent code\n- Input validation gaps\n\n### 4. Evaluate Code Quality\n\n- Readability and clarity\n- DRY principle adherence\n- SOLID principles compliance\n- Appropriate abstraction levels\n- Test coverage adequacy\n\n### 5. Performance Review\n\n- Algorithm complexity analysis\n- Database query efficiency\n- Memory usage patterns\n- Caching opportunities\n\n### 6. Security Review\n\n- SQL injection vulnerabilities\n- XSS attack vectors\n- Authentication/authorization gaps\n- Sensitive data exposure\n\n## Best Practices\n\n1. **Be Specific**: Point to exact lines and provide concrete suggestions\n2. **Prioritize Issues**: Distinguish between critical bugs and style preferences\n3. **Explain Why**: Don't just say what's wrong, explain the reasoning\n4. **Suggest Solutions**: Provide alternative implementations when possible\n5. **Acknowledge Good Code**: Recognize well-written sections\n6. **Consider Context**: Understand the constraints and trade-offs\n7. **Be Constructive**: Frame feedback positively and professionally\n\n## Usage Examples\n\n**User**: \"Review this Python function for issues\"\n**Action**: Analyze the function for logic errors, type safety, naming conventions, and provide improvement suggestions with code examples.\n\n**User**: \"Check this PR for security vulnerabilities\"\n**Action**: Focus on security-critical patterns like SQL injection, XSS, authentication bypass, and sensitive data handling.\n\n**User**: \"Audit this module's performance\"\n**Action**: Analyze algorithm complexity, identify O(n²) patterns, suggest optimizations like caching or data structure changes.\n\n## Review Output Format\n\nStructure your review as follows:\n\n```markdown\n## Summary\n{Overall assessment in 1-2 sentences}\n\n## Critical Issues 🔴\n{Must fix before merge}\n\n## Improvements 🟡\n{Should consider}\n\n## Suggestions 🟢\n{Nice to have}\n\n## Positive Notes ✨\n{What's done well}\n```\n",
+  
+  "readmeContent": "# Code Review\n\n> Expert code reviewer for bugs, security, performance, and best practices\n\n## 🚀 Quick Start\n\nSimply ask for a code review:\n\n```\nReview this function for potential issues\nCheck this PR for security vulnerabilities  \nAudit this module's performance\n```\n\n## ✨ What It Does\n\nThis skill performs comprehensive code reviews covering:\n\n- **Correctness**: Logic errors, edge cases, error handling\n- **Security**: SQL injection, XSS, authentication gaps\n- **Performance**: Algorithm complexity, query efficiency, caching opportunities\n- **Quality**: DRY/SOLID principles, readability, test coverage\n\n## 🔧 How It Works\n\n1. **Gathers Context** - Understands project structure and conventions\n2. **Analyzes Structure** - Reviews file organization and separation of concerns\n3. **Checks Issues** - Identifies bugs, vulnerabilities, and performance problems\n4. **Evaluates Quality** - Assesses readability, principles adherence, test coverage\n5. **Provides Feedback** - Delivers prioritized, actionable suggestions\n\n## 🔔 When to Use\n\n- Before merging a Pull Request\n- When auditing existing code for issues\n- During refactoring to ensure quality\n- For security-focused code audits\n- When optimizing performance-critical code\n\n## 📝 Examples\n\n### Example 1: General Code Review\n\n**User**: \"Review this authentication function\"\n\n**Output**:\n```markdown\n## Summary\nThe function has a critical security issue and several code quality improvements.\n\n## Critical Issues 🔴\n- Line 15: Password comparison vulnerable to timing attacks\n\n## Improvements 🟡\n- Add rate limiting for failed attempts\n- Use parameterized queries\n\n## Positive Notes ✨\n- Good separation of concerns\n- Clear error messages\n```\n\n### Example 2: Performance Audit\n\n**User**: \"Audit this data processing module for performance\"\n\n**Output**:\n```markdown\n## Summary\nO(n²) complexity in the main loop causing slowdowns with large datasets.\n\n## Critical Issues 🔴\n- Line 42: Nested loop with list membership check - convert to set\n\n## Improvements 🟡\n- Add caching for repeated calculations\n- Use generator expressions for memory efficiency\n```\n\n## 📊 Review Output Structure\n\nAll reviews follow a consistent format:\n\n| Section | Purpose |\n|:--------|:--------|\n| **Summary** | 1-2 sentence overall assessment |\n| **Critical Issues 🔴** | Must fix before merge |\n| **Improvements 🟡** | Should consider |\n| **Suggestions 🟢** | Nice to have |\n| **Positive Notes ✨** | What's done well |\n"
+}

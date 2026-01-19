@@ -34,19 +34,10 @@ export function Library({
     <Section
       id={gallery.id || 'library'}
       spacing="none"
-      className={cn(gallery.className, className, 'relative overflow-hidden py-12 md:py-16')}
+      className={cn(gallery.className, className, 'relative overflow-hidden py-12 md:py-16 bg-transparent')}
       aria-label="Skills Library"
     >
-      {/* Cyberpunk Center Glow */}
-      <div
-        className={cn(
-          VS.atmosphere.glowCenter,
-          'w-[800px] h-[300px]',
-          'bg-gradient-to-br from-primary/5 via-purple-500/5 to-cyan-500/5',
-          'blur-[150px]',
-          VS.motion.decorative.glowSlow
-        )}
-      />
+      {/* Removed: Cyberpunk Center Glow - now using global particles */}
 
       <Container className="relative z-10">
         {/* Section Header - Compact */}

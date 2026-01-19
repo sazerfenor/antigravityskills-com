@@ -104,9 +104,9 @@
           "icon": "MessageCircle"
         },
         {
-          "title": "Community Gallery",
-          "url": "/admin/gallery",
-          "icon": "Images"
+          "title": "Skills Management",
+          "url": "/admin/skills",
+          "icon": "Sparkles"
         },
         {
           "title": "R2 Storage",

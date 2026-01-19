@@ -145,11 +145,11 @@ def validate_skill(skill_path: str) -> tuple[float, list[str], list[str]]:
         scores['structure'] = 0.5
     
     # === Dimension 5: Resource Separation (10%) ===
-    # Check if scripts/ and references/ exist when needed
-    token_count = count_tokens_approximate(content)
+    # Check if SKILL.md exceeds 500 line limit
+    line_count = content.count('\n') + 1
     
-    if token_count > 5000:
-        warnings.append(f"SKILL.md has ~{token_count} tokens (recommended < 5000)")
+    if line_count > 500:
+        errors.append(f"SKILL.md has {line_count} lines (maximum 500 - must split to references/)")
         
         # Check if resources are properly separated
         scripts_dir = skill_path / 'scripts'

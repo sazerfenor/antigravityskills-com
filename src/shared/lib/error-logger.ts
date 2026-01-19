@@ -10,6 +10,29 @@ import { generateErrorId } from './error-id-generator';
 import { getErrorConfig } from './error-config';
 
 /**
+ * 简化版 logError 函数
+ * 兼容旧调用方式，内部调用 ErrorLogger.log
+ */
+export async function logError(
+  error: any,
+  context?: { context?: string; [key: string]: any }
+): Promise<void> {
+  try {
+    await ErrorLogger.log({
+      error,
+      context: {
+        feature: context?.context || 'unknown',
+        userId: 'system', // 简化版不要求 userId，使用默认值
+        requestParams: context,
+      },
+    });
+  } catch (e) {
+    // 日志记录失败不应该影响主流程
+    console.error('[logError] Failed to log error:', e);
+  }
+}
+
+/**
  * ErrorLogger - 后端错误日志服务
  * 负责将错误记录到数据库并返回结构化错误信息
  */

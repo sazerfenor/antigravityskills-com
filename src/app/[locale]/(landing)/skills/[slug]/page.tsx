@@ -3,7 +3,7 @@ import { notFound, redirect } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
 
 import { getCommunityPostBySlug, getCommunityPostById } from '@/shared/models/community_post';
-import { PromptDetail } from '@/shared/blocks/prompt-detail';
+import { SkillDetail } from '@/shared/blocks/skill-detail';
 import { brandConfig } from '@/config';
 
 export const revalidate = 3600;
@@ -61,7 +61,7 @@ export async function generateMetadata({
   const description = post.seoDescription ||
     `Created with ${modelName} by ${post.user?.name || 'Anonymous'}. ${post.prompt?.slice(0, 130) || 'Explore this AI-generated masterpiece.'}`;
 
-  const canonicalUrl = `${brandConfig.domain}/prompts/${post.seoSlug || slug}`;
+  const canonicalUrl = `${brandConfig.domain}/skills/${post.seoSlug || slug}`;
 
   return {
     title,
@@ -90,9 +90,9 @@ export async function generateMetadata({
 }
 
 /**
- * SEO-friendly prompt/image detail page
- * Route: /prompts/[slug]
- * Example: /skills/antigravity-woman-chinese-golden-dress-twilight-771ee6
+ * SEO-friendly skill detail page
+ * Route: /skills/[slug]
+ * Example: /skills/skill-brand-guidelines-35c8ee00
  */
 export default async function PromptsSlugPage({
   params,
@@ -134,7 +134,7 @@ export default async function PromptsSlugPage({
 
   // If post has a different seoSlug, 301 redirect to correct URL
   if (post.seoSlug && post.seoSlug !== slug) {
-    redirect(`/prompts/${post.seoSlug}`);
+    redirect(`/skills/${post.seoSlug}`);
   }
 
   // Parse FAQ items for schema generation (V14.0: Prefer contentSections, fallback to legacy faqItems)
@@ -159,65 +159,22 @@ export default async function PromptsSlugPage({
     console.warn('Failed to parse FAQ for JSON-LD');
   }
 
-  // Helper: Get dynamic artMedium based on AI model
-  // TODO: 根据你的 AI 模型配置自定义 artMedium
-  const getArtMedium = (model: string | null | undefined): string => {
-    if (!model) return 'AI Generated Digital Art';
-    const m = model.toLowerCase();
-    if (m.includes('flux')) return 'FLUX AI Generated Art';
-    if (m.includes('gemini')) {
-      return m.includes('3-pro') || m.includes('pro')
-        ? 'Pro AI Art'
-        : 'AI Art';
-    }
-    if (m.includes('midjourney')) return 'Midjourney AI Art';
-    if (m.includes('dalle') || m.includes('dall-e')) return 'DALL-E AI Art';
-    if (m.includes('stable')) return 'Stable Diffusion AI Art';
-    return 'AI Generated Digital Art';
-  };
-
-  // Build JSON-LD @graph for Rich Results
+  // Build JSON-LD @graph for Rich Results (Skill-specific)
   const jsonLdGraph: any[] = [
-    // 1. ImageObject Schema (Image License Metadata)
+    // 1. SoftwareSourceCode Schema (for Skills)
     {
-      "@type": "ImageObject",
-      "contentUrl": post.imageUrl,
-      "license": `${brandConfig.domain}/terms-of-service`,
-      "acquireLicensePage": `${brandConfig.domain}/prompts/${post.seoSlug || slug}`,
-      "creditText": `${brandConfig.name} User: ${post.user?.name || 'Anonymous'}`,
-      "creator": {
-        "@type": "Person",
-        "name": post.user?.name || "Anonymous"
-      },
-      "copyrightNotice": `© ${new Date().getFullYear()} ${brandConfig.name}`,
-      "name": post.seoTitle || post.prompt?.slice(0, 60),
+      "@type": "SoftwareSourceCode",
+      "name": (post as any).h1Title || post.seoTitle || post.title,
       "description": post.seoDescription || post.prompt?.slice(0, 160),
-      // InteractionStatistic for engagement signals
-      "interactionStatistic": [
-        {
-          "@type": "InteractionCounter",
-          "interactionType": { "@type": "ViewAction" },
-          "userInteractionCount": post.viewCount || 0
-        },
-        {
-          "@type": "InteractionCounter",
-          "interactionType": { "@type": "LikeAction" },
-          "userInteractionCount": post.likeCount || 0
-        }
-      ]
-    },
-    // 2. VisualArtwork Schema (SEO Enhancement for AI-generated art)
-    {
-      "@type": "VisualArtwork",
-      "name": (post as any).h1Title || post.seoTitle || post.prompt?.slice(0, 60),
-      "creator": {
-        "@type": "Person",
-        "name": post.user?.name || "Anonymous"
+      "codeRepository": post.zipUrl || `${brandConfig.domain}/skills/${post.seoSlug || slug}`,
+      "programmingLanguage": "Markdown",
+      "runtimePlatform": "Claude Code, Cursor, Windsurf, AI Agents",
+      "author": {
+        "@type": "Organization",
+        "name": brandConfig.name
       },
-      "dateCreated": post.publishedAt ? new Date(post.publishedAt).toISOString().split('T')[0] : undefined,
-      "artMedium": getArtMedium(post.model),
-      "artworkSurface": "Digital",
-      "image": post.imageUrl,
+      "datePublished": post.publishedAt ? new Date(post.publishedAt).toISOString().split('T')[0] : undefined,
+      "license": `${brandConfig.domain}/terms-of-service`,
       ...(post.visualTags ? {
         "keywords": (() => {
           try {
@@ -227,8 +184,18 @@ export default async function PromptsSlugPage({
         })()
       } : {})
     },
-    // NOTE: SoftwareApplication Schema has been moved to the Landing Page (/)
-    // to avoid duplication across thousands of prompt pages.
+    // 2. SoftwareApplication Schema (lightweight version for Skill)
+    {
+      "@type": "SoftwareApplication",
+      "name": post.title,
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Cross-platform",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
   ];
 
   // 3. FAQPage Schema (if FAQ items exist)
@@ -316,8 +283,8 @@ export default async function PromptsSlugPage({
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "Prompts",
-        "item": `${brandConfig.domain}/prompts`
+        "name": "Skills",
+        "item": `${brandConfig.domain}/skills`
       },
       {
         "@type": "ListItem",
@@ -345,14 +312,14 @@ export default async function PromptsSlugPage({
     "@graph": jsonLdGraph
   };
 
-  // Render the prompt detail page with JSON-LD
+  // Render the skill detail page with JSON-LD
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <PromptDetail post={post} />
+      <SkillDetail skill={post} />
     </>
   );
 }

@@ -1,0 +1,102 @@
+{
+  "skillId": "brand-guidelines",
+  
+  "seoTitle": "Brand Guidelines - Apply Colors & Fonts Instantly",
+  "seoDescription": "Struggling with brand consistency? Apply brand colors, typography, and visual identity to any document with a single command. Zero design skills needed. Download now.",
+  "seoKeywords": "brand guidelines, brand colors, typography, visual identity, design consistency, corporate style, AI design, brand kit",
+  
+  "h1Title": "Brand Guidelines: Apply Brand Colors & Typography with a Single Command",
+  
+  "heroSection": {
+    "headline": "Apply Brand Styling with a Single Command",
+    "subheadline": "No more manual color-picking or font-hunting. Enforce brand consistency across all your design outputs automatically.",
+    "cta": {
+      "primary": "Download Skill",
+      "secondary": "Copy SKILL.md"
+    }
+  },
+  
+  "quickStart": {
+    "title": "Quick Start",
+    "steps": [
+      "Tell the agent: 'Apply our brand colors to this document'",
+      "Provide your brand colors and fonts when asked",
+      "Get consistent, on-brand outputs"
+    ],
+    "exampleCommand": "Apply our brand colors to this presentation"
+  },
+  
+  "capabilities": [
+    {
+      "icon": "palette",
+      "title": "Color System Enforcement",
+      "description": "Apply primary, secondary, and accent colors consistently across all design outputs."
+    },
+    {
+      "icon": "type",
+      "title": "Typography Management",
+      "description": "Match fonts to element hierarchy—headings, body, captions—with smart fallbacks."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Style Guide Compliance",
+      "description": "Ensure all outputs follow brand standards without manual checking."
+    },
+    {
+      "icon": "layers",
+      "title": "Cross-Format Support",
+      "description": "Works with presentations, documents, and design files seamlessly."
+    }
+  ],
+  
+  "presets": null,
+  
+  "usageExamples": [
+    {
+      "input": "Apply our brand colors to this presentation",
+      "output": "Loads brand config → Applies colors and fonts → Returns styled presentation"
+    },
+    {
+      "input": "Set up brand colors for our new project",
+      "output": "Collects color palette → Documents typography rules → Creates reusable brand config"
+    },
+    {
+      "input": "Make this document match our corporate style",
+      "output": "Identifies brand guide → Applies heading and body fonts → Uses accent colors for emphasis"
+    }
+  ],
+  
+  "triggerPhrases": [
+    "Creating presentations that need corporate styling",
+    "Formatting documents to match brand guidelines",
+    "Setting up brand standards for a new project",
+    "Ensuring visual consistency across team outputs"
+  ],
+  
+  "contentIntro": "Tired of manually applying brand colors and fonts to every document? This skill enforces your brand's color palettes, typography systems, and visual styling rules automatically. Works with any brand—just provide your colors and fonts, and get consistent on-brand outputs every time.",
+  
+  "faqItems": [
+    {
+      "question": "Do I need to have design skills to use this skill?",
+      "answer": "No design skills needed. Just tell the agent what brand colors and fonts you want to use, and it handles the rest automatically."
+    },
+    {
+      "question": "Can I save my brand settings for reuse?",
+      "answer": "Yes! Create a brand-config.yaml file in the references folder with your colors, fonts, and rules. The skill will load it automatically."
+    },
+    {
+      "question": "What file formats are supported?",
+      "answer": "The skill works with presentations (PPTX), documents, and design files. It applies brand styling to any text and shape elements."
+    },
+    {
+      "question": "What if my custom fonts aren't installed?",
+      "answer": "The skill automatically falls back to system fonts (Arial for headings, Georgia for body) while maintaining the design hierarchy."
+    }
+  ],
+  
+  "visualTags": ["brand", "colors", "typography", "design", "consistency", "visual identity", "corporate style"],
+  
+  "skillContent": "---\nname: brand-guidelines\ndescription: Use this skill when applying brand colors, typography, or visual identity standards to documents, slides, or design outputs. For brand compliance formatting, style guide enforcement, and corporate design consistency.\nmetadata:\n  version: \"1.0.0\"\n  author: \"antigravity-skill-creator\"\n  license: \"Apache-2.0\"\n---\n\n# Brand Guidelines\n\n## Overview\n\nApply consistent brand identity across all design outputs. This skill helps you enforce color palettes, typography systems, and visual styling rules for any brand.\n\n## Protocols\n\n1. **Load Brand Definition**: First, check if user has a brand config in `references/` or ask for brand colors and fonts\n2. **Identify Target Elements**: Determine what needs styling (headings, body text, accents, shapes)\n3. **Apply Color System**: Use primary colors for main elements, accent colors for emphasis\n4. **Apply Typography**: Match fonts to element hierarchy (headings vs body)\n5. **Verify Consistency**: Ensure all outputs follow the brand guide\n\n## Color System Structure\n\nDefine your brand colors in this format:\n\n```yaml\n# Primary Colors\nprimary_dark: \"#000000\"      # Main text, dark backgrounds\nprimary_light: \"#FFFFFF\"     # Light backgrounds, text on dark\nmid_gray: \"#808080\"          # Secondary elements\nlight_gray: \"#F0F0F0\"        # Subtle backgrounds\n\n# Accent Colors (for emphasis and visual interest)\naccent_primary: \"#FF5733\"    # Primary accent\naccent_secondary: \"#3498DB\"  # Secondary accent\naccent_tertiary: \"#2ECC71\"   # Tertiary accent\n```\n\n## Typography System\n\n```yaml\n# Font Hierarchy\nheadings:\n  font: \"Your Heading Font\"\n  fallback: \"Arial, sans-serif\"\n  min_size: \"24pt\"\n\nbody:\n  font: \"Your Body Font\"\n  fallback: \"Georgia, serif\"\n\n# Application Rules\n- Headings (24pt+): Use heading font\n- Body text: Use body font\n- Smart fallback when custom fonts unavailable\n```\n\n## Usage Examples\n\n**User**: \"Apply our brand colors to this presentation\"\n**Action**: Load brand config → Apply primary colors to backgrounds → Apply accent colors to highlights → Apply typography hierarchy\n\n**User**: \"Make this document match our corporate style\"\n**Action**: Identify brand guide → Apply heading font to titles → Apply body font to paragraphs → Use accent colors for emphasis\n\n**User**: \"Set up brand colors for a new project\"\n**Action**: Ask for color palette → Create brand config file → Document typography rules → Provide usage examples\n\n## Creating Your Brand Config\n\nCreate `references/brand-config.yaml` with your specific brand values:\n\n```yaml\nbrand_name: \"Your Company\"\n\ncolors:\n  primary:\n    dark: \"#141413\"\n    light: \"#FAF9F5\"\n  accent:\n    - \"#D97757\"  # Orange\n    - \"#6A9BCC\"  # Blue\n    - \"#788C5D\"  # Green\n\ntypography:\n  heading: \"Poppins\"\n  body: \"Lora\"\n\nrules:\n  - \"Headings 24pt+ use heading font\"\n  - \"Non-text shapes cycle through accent colors\"\n  - \"Maintain visual hierarchy and formatting\"\n```\n\n## Technical Notes\n\n- Use RGB/Hex values for precise color matching\n- Provide font fallbacks for cross-system compatibility\n- Document all brand rules for team consistency\n",
+  
+  "readmeContent": "# Brand Guidelines\n\nApply consistent brand identity across all design outputs—colors, typography, and visual styling rules for any brand.\n\n## 🚀 Quick Start\n\n1. Tell the agent: \"Apply our brand colors to this document\"\n2. Provide your brand colors and fonts when asked\n3. Get consistent, on-brand outputs\n\n## ✨ What It Does\n\n- **Color System Enforcement**: Apply primary, secondary, and accent colors consistently\n- **Typography Management**: Match fonts to element hierarchy (headings, body, captions)\n- **Style Guide Compliance**: Ensure all outputs follow brand standards\n- **Cross-Format Support**: Works with presentations, documents, and design files\n\n## 🔧 How It Works\n\n1. Loads your brand definition (colors, fonts, rules)\n2. Identifies target elements that need styling\n3. Applies brand colors and typography systematically\n4. Verifies consistency across the output\n\n## 🔔 When to Use\n\n- Creating presentations that need corporate styling\n- Formatting documents to match brand guidelines\n- Setting up brand standards for a new project\n- Ensuring visual consistency across team outputs\n\n## 📝 Examples\n\n**Example 1: Apply Brand to Presentation**\n```\n\"Apply our brand colors to this presentation\"\n→ Loads brand config\n→ Applies colors and fonts\n→ Returns styled presentation\n```\n\n**Example 2: Setup Brand Config**\n```\n\"Set up brand colors for our new project\"\n→ Collects color palette\n→ Documents typography rules\n→ Creates reusable brand config\n```\n\n**Example 3: Corporate Document**\n```\n\"Make this document match our corporate style\"\n→ Identifies brand guide\n→ Applies heading and body fonts\n→ Uses accent colors for emphasis\n```\n\n## 🎨 Creating Your Brand Config\n\nCreate a `references/brand-config.yaml` file:\n\n```yaml\nbrand_name: \"Your Company\"\n\ncolors:\n  primary:\n    dark: \"#141413\"\n    light: \"#FAF9F5\"\n  accent:\n    - \"#D97757\"\n    - \"#6A9BCC\"\n    - \"#788C5D\"\n\ntypography:\n  heading: \"Poppins\"\n  body: \"Lora\"\n```\n"
+}

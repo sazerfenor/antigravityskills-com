@@ -3,6 +3,8 @@
  * 将 Claude Skills 或自然语言想法转换为 Antigravity Skills
  */
 
+import { eq } from 'drizzle-orm';
+
 import { generateText } from '@/shared/services/gemini-text';
 import {
   createAntigravitySkill,
@@ -10,6 +12,12 @@ import {
 } from '@/shared/models/antigravity_skill';
 import { getUuid } from '@/shared/lib/hash';
 import { buildConversionPrompt } from '@/shared/prompts/skill-converter';
+import {
+  isValidCategory,
+  isValidSubcategory,
+} from '@/config/skill-categories';
+import { db } from '@/core/db';
+import { user } from '@/config/db/schema';
 
 // ============================================
 // 类型定义
@@ -27,6 +35,9 @@ interface ConvertSkillResult {
   description: string;
   skillMd: string;
   skillId?: string;
+  category: string;
+  subcategories: string[];
+  tags: string[];
 }
 
 // ============================================
@@ -59,16 +70,53 @@ export async function convertSkillToAntigravity(
     throw new Error('Failed to parse AI response as JSON. Response: ' + rawResponse.substring(0, 200));
   }
 
-  const { name, description, skillMd } = parsedResult;
+  const { name, description, skillMd, category, subcategories, tags } = parsedResult;
 
+  // 3. 验证必填字段
   if (!name || !description || !skillMd) {
     throw new Error(
       `AI response missing required fields. Got: ${JSON.stringify(Object.keys(parsedResult))}`
     );
   }
 
-  // 3. 保存到数据库（如果需要）
+  // 4. 验证分类字段（必填，验证失败则报错）
+  if (!category || typeof category !== 'string') {
+    throw new Error('AI response missing required field: category');
+  }
+  if (!isValidCategory(category)) {
+    throw new Error(`Invalid category: "${category}". Must be a valid category ID.`);
+  }
+
+  if (!Array.isArray(subcategories) || subcategories.length === 0) {
+    throw new Error('AI response missing required field: subcategories (must be non-empty array)');
+  }
+  for (const sub of subcategories) {
+    if (!isValidSubcategory(sub)) {
+      throw new Error(`Invalid subcategory: "${sub}". Must be a valid subcategory ID.`);
+    }
+  }
+
+  if (!Array.isArray(tags) || tags.length === 0 || !tags.every((t) => typeof t === 'string')) {
+    throw new Error('AI response missing required field: tags (must be non-empty string array)');
+  }
+
+  // 5. 保存到数据库（如果需要）
   let skillId: string | undefined;
+  let validUserId = userId;
+
+  // 验证 userId 是否真实存在于 user 表（防止外键约束失败）
+  if (validUserId) {
+    const userExists = await db()
+      .select({ id: user.id })
+      .from(user)
+      .where(eq(user.id, validUserId))
+      .limit(1);
+
+    if (userExists.length === 0) {
+      console.warn('[skill-converter] userId not found in user table, setting to null:', validUserId);
+      validUserId = undefined;
+    }
+  }
 
   if (saveToDatabase) {
     skillId = getUuid();
@@ -82,11 +130,14 @@ export async function convertSkillToAntigravity(
       content: skillMd,
       sourceType,
       sourceContent: input,
-      authorId: userId || null,
+      authorId: validUserId || null,
       status: 'published',
+      category,
+      subcategory: JSON.stringify(subcategories),
+      tags: JSON.stringify(tags),
     });
 
-    // 4. 记录转换历史
+    // 6. 记录转换历史
     await createConversionHistory({
       id: getUuid(),
       skillId,
@@ -102,6 +153,9 @@ export async function convertSkillToAntigravity(
     description,
     skillMd,
     skillId,
+    category,
+    subcategories,
+    tags,
   };
 }
 

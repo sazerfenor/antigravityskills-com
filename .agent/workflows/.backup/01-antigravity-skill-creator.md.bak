@@ -1,0 +1,303 @@
+---
+description: Antigravity Skill Creator - 制作高质量 Antigravity Skill 的工作流
+---
+
+# Antigravity Skill Creator v2.0
+
+> **核心理念**: 掌控感优先 + 自然语言审核 + 渐进式披露
+> **版本**: 2.0
+> **适用场景**: 从零创建或重构 Antigravity Skill
+> 
+> **SKILL.md 三大特性**:
+> - **自文档化 (Self-documenting)**: 便于阅读、审计和改进
+> - **可扩展 (Extensible)**: 从文本指令到可执行代码
+> - **可移植 (Portable)**: 易于编辑、版本控制和分享
+
+## 🚫 架构约束
+
+> [!CAUTION]
+> **Antigravity Skill 硬性规范**
+> 
+> 1. `name`: 1-64 字符，仅限 `a-z` 和 `-`，严格 Kebab Case
+> 2. `description`: 1-1024 字符，必须包含 WHEN (触发时机) 和 FOR (目标任务)
+> 3. 路径: `.agent/skills/{name}/` (项目级) 或 `~/.gemini/antigravity/skills/` (全局)
+> 4. 渐进式披露: SKILL.md < 500 行 (硬性限制)，长代码移入 `scripts/`，长文档移入 `references/`
+
+## 📚 Agent Roster
+
+| Agent | 文件路径 | 阶段 | 说明 |
+|-------|---------|------|------|
+| **intent-router** | [intent-router.md](antigravity-skill-creator/intent-router.md) | Phase 0 | 入口路由 + 阶段地图展示 |
+| **capability-analyzer** | [capability-analyzer.md](antigravity-skill-creator/capability-analyzer.md) | Phase 1A | REFACTOR 入口分析 |
+| **design-architect** | [design-architect.md](antigravity-skill-creator/design-architect.md) | Phase 1B | CREATE 入口设计 |
+| **skill-builder** | [skill-builder.md](antigravity-skill-creator/skill-builder.md) | Phase 3 | Skill 构建 |
+| **skill-validator** | [skill-validator.md](antigravity-skill-creator/skill-validator.md) | Phase 4 | 质量验证 |
+| **readme-generator** | [readme-generator.md](antigravity-skill-creator/readme-generator.md) | Phase 5 | README 生成 |
+| **pain-point-searcher** | [pain-point-searcher.md](antigravity-skill-creator/pain-point-searcher.md) | Phase 6A | Reddit 痛点搜索 |
+| **detail-page-builder** | [detail-page-builder.md](antigravity-skill-creator/detail-page-builder.md) | Phase 6B | SEO 落地页构建 |
+
+---
+
+## 📋 Phase 0: 入口路由 + 阶段地图
+
+Call /intent-router
+
+### Step 0.1: 判断意图
+
+**INPUT**: 用户自然语言请求
+**OUTPUT**: 
+- `intent`: CREATE | REFACTOR
+- `payload`: 提取的核心内容
+
+**路由逻辑**:
+```
+如果用户输入包含 文件路径/代码块/现有 Skill 内容:
+  → intent = REFACTOR → Phase 1A
+如果用户输入是功能描述:
+  → intent = CREATE → Phase 1B
+```
+
+### Step 0.2: 展示阶段地图 ⭐ NEW
+
+**执行**: 向用户展示完整流程预览
+
+```markdown
+🗺️ **您的 Skill 创建之旅**
+
+您的请求已识别为 [CREATE/REFACTOR] 模式。接下来将经过以下阶段：
+
+1️⃣ **深度分析** → 生成 [能力报告/设计规划]
+2️⃣ **您的审核** → 确认或提出修改意见
+3️⃣ **Skill 构建** → 生成 SKILL.md 和资源
+4️⃣ **质量验证** → 自动评分
+5️⃣ **README 生成** → 使用说明
+6️⃣ **落地页生成** → SEO 优化页面
+
+预计完成时间: 约 2-3 分钟
+```
+
+**GATE**: 无法判断意图 → PAUSE，询问用户
+
+---
+
+## 📋 Phase 1A: 深度分析 (REFACTOR 入口)
+
+Call /capability-analyzer
+
+### Step 1A.1: 功能分析
+
+**INPUT**: 现有 Skill 文件/路径
+**OUTPUT**: 
+- `能力报告.md` (对外发布)
+- `_original` 对象 (必须透传至 Phase 3)
+
+**_original 透传规则**:
+```typescript
+_original: {
+  path: string;
+  skill_md: string;
+  structure: {
+    has_scripts: boolean;
+    script_files: string[];
+    has_references: boolean;
+    reference_files: string[];
+  };
+}
+```
+
+**GATE**: 解析失败 → 报错并终止
+
+### ⏸️ CHECKPOINT 1A
+> **展示**: 能力报告
+> **回复**: "继续" / "修改：[建议]" / "取消"
+
+---
+
+## 📋 Phase 1B: 深度分析 (CREATE 入口)
+
+Call /design-architect
+
+### Step 1B.1: 设计规划
+
+**INPUT**: 用户需求描述
+**OUTPUT**: `设计规划.md` (对外发布)
+
+**Trigger-First 访谈**:
+1. **Trigger (WHEN)**: 什么情况下触发此 Skill？
+2. **Outcome (WHAT)**: 交付物是什么？
+3. **Knowledge (HOW)**: 需要加载什么外部知识？
+
+**GATE**: Trigger 或 Outcome 未明确 → 继续追问
+
+### ⏸️ CHECKPOINT 1B
+> **展示**: 设计规划
+> **回复**: "继续" / "修改：[建议]" / "取消"
+
+---
+
+## 📋 Phase 2: 用户审核
+
+**迭代上限**: 最多 3 次
+
+### 交互设计 (自然语言)
+
+```markdown
+📋 **您的 Skill [能力报告/设计规划] 已准备好**
+
+请查看上方报告，您可以：
+- 回复 **"继续"** → 开始构建 Skill
+- 回复 **"修改：[您的建议]"** → 例如「修改：增加 XX 能力」
+- 回复 **"取消"** → 放弃此次创建
+
+💡 任何想法都可以直接说，无需选择 A 或 B
+```
+
+### 迭代控制
+
+```
+如果 iteration_count >= 3:
+  → 提示 "已达到最大迭代次数，建议继续或取消"
+  → 仍允许继续修改，但不再主动邀请
+如果用户回复 "修改":
+  → 返回 Phase 1A/1B，iteration_count += 1
+如果用户回复 "继续":
+  → 进入 Phase 3
+```
+
+---
+
+## 📋 Phase 3: Skill 构建
+
+Call /skill-builder
+
+### Step 3.1: 创建目录结构
+
+**INPUT**: 
+- 确认后的报告数据
+- `_original` (仅 REFACTOR 模式)
+**OUTPUT**: 完整的 Skill 目录
+
+**执行**:
+1. 创建 `.agent/skills/{name}/`
+2. 生成 `SKILL.md` (含 Frontmatter + Body)
+3. 根据配置创建 `scripts/`、`references/`、`assets/` 子目录
+4. REFACTOR 模式: 原样复制 `_original` 中的资源文件
+
+---
+
+## 📋 Phase 4: 质量验证
+
+Call /skill-validator
+
+### Step 4.1: 六维评分
+
+**INPUT**: 生成的 Skill 目录
+**OUTPUT**: 验证报告 (Pass/Fail + 评分)
+
+**评分标准 (总分 10 分)**:
+
+| 维度 | 权重 | 评分逻辑 |
+|:---|:---|:---|
+| **Frontmatter** | 20% | `name` 和 `description` 存在且格式正确 |
+| **Name 规范** | 10% | 严格 Kebab Case |
+| **Description** | 30% | 包含 WHEN + FOR，无废话 |
+| **结构清晰度** | 20% | 有 Overview/Protocols，无大段代码 |
+| **资源分离** | 10% | 长代码在 scripts/，长文档在 references/ |
+| **安全性** | 10% | 无危险命令 |
+
+### Step 4.2: 迭代判断
+
+```
+如果 总分 < 8.0:
+  如果 iteration_count < 3:
+    → 返回 Phase 3，自动修正
+  否则:
+    → 标记 "需人工审核" 后输出
+如果 总分 >= 8.0:
+  → ✅ 通过，进入 Phase 5
+```
+
+---
+
+## 📋 Phase 5: README 生成
+
+Call /readme-generator
+
+**INPUT**: 验证通过的 Skill 目录
+**OUTPUT**: `{skill}/README.md`
+
+**README 结构**:
+```markdown
+# {Skill Title}
+
+## 🚀 Quick Start
+## ✨ What It Does
+## 🔧 How It Works
+## 🔔 When to Use
+## 📝 Examples
+```
+
+---
+
+## 📋 Phase 6: SEO 落地页
+
+### Phase 6A: 痛点搜索
+
+Call /pain-point-searcher
+
+**INPUT**: README 关键词
+**OUTPUT**: `痛点分析.md` (或 fallback 时为空)
+
+**Fallback 机制**:
+```
+如果 Reddit MCP 失败:
+  → fallback_mode = true
+  → 跳过痛点分析
+  → 直接进入 Phase 6B
+```
+
+### Phase 6B: 落地页构建
+
+Call /detail-page-builder
+
+**INPUT**: 
+- 能力报告/设计规划
+- README
+- 痛点分析 (或 fallback_mode=true)
+**OUTPUT**: `src/pages/skills/{name}.astro`
+
+---
+
+## ✅ 最终输出
+
+**输出位置**: `.agent/skills/{name}/`
+
+**目录结构**:
+```
+{name}/
+├── SKILL.md           # 必需
+├── README.md          # 必需
+├── scripts/           # 可选
+├── references/        # 可选
+└── assets/            # 可选
+```
+
+**额外产出**:
+- `src/pages/skills/{name}.astro` (SEO 落地页)
+
+---
+
+## Quality Checklist
+
+- [ ] 阶段地图已展示 (Phase 0)
+- [ ] 用户自然语言审核通过 (Phase 2)
+- [ ] SKILL.md 生成完整 (Phase 3)
+- [ ] 六维评分 >= 8.0 (Phase 4)
+- [ ] README.md 生成 (Phase 5)
+- [ ] 落地页生成 (Phase 6)
+- [ ] Description 是 Trigger-First 格式
+- [ ] name 是严格 Kebab Case
+
+---
+
+**Version**: 2.0 | **Created**: 2026-01-19

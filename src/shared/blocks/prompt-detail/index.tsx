@@ -398,7 +398,29 @@ function StatsBar({ post }: { post: CommunityPost }) {
     }
     
     // Trigger actual download
-    if (post.imageUrl) {
+    // 判断是否为 Skill 类 Post（使用占位图或 category 以 skill 开头）
+    const isSkillPost = post.imageUrl === '/images/skill-default.svg' ||
+                        post.category?.startsWith('skill');
+
+    if (isSkillPost) {
+      // Skill 类 Post：必须有 ZIP
+      if (post.zipUrl) {
+        // 有完整 ZIP
+        const link = document.createElement('a');
+        link.href = post.zipUrl;
+        const fileName = (post.title || 'skill').replace(/[^a-zA-Z0-9-_]/g, '-');
+        link.download = `${fileName}.zip`;
+        link.target = '_blank';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        toast.success('Skill package download started!');
+      } else {
+        // 无 ZIP → 报错
+        console.error('[Download] No zipUrl for skill post:', { id: post.id, zipUrl: post.zipUrl });
+        toast.error('Download not available. Please contact support.');
+      }
+    } else if (post.imageUrl) {
       const link = document.createElement('a');
       link.href = post.imageUrl;
       // TODO: 自定义你的下载文件名前缀

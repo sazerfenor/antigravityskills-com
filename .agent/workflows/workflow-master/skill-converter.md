@@ -40,7 +40,7 @@ recommended_skill_name: string
 读取 antigravity-skill-creator SKILL.md 并应用：
 - skill_name = 从 agent 名称推导（如 sop-architect → sop-methodology）
 - description = Trigger-First 格式
-- content = 提取的专业知识（< 5000 tokens）
+- content = 提取的专业知识（< 500 行）
 
 ### Step 3: 更新原 Agent
 
@@ -70,7 +70,7 @@ recommended_skill_name: string
 | user_confirmation = false | ⏸️ PAUSE "用户取消转化" |
 | skill_name 不符合 kebab-case | ❌ REJECT "名称格式错误" |
 | extracted_knowledge 为空 | ❌ REJECT "无知识内容" |
-| 生成后 > 5000 tokens | ⏸️ PAUSE "超限，需拆分到 references/" |
+| 生成后 > 500 行 | ⏸️ PAUSE "超限，需拆分到 references/" |
 | 验证失败 | ❌ REJECT "回滚，恢复原 Agent" |
 | 全部通过 | ✅ PASS |
 
@@ -121,4 +121,4 @@ recommended_skill_name: string
 |--------|---------|
 | name 格式 | kebab-case |
 | description 格式 | Trigger-First |
-| body 限制 | < 5000 tokens |
+| body 限制 | < 500 行 |

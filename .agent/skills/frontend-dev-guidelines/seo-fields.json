@@ -1,0 +1,113 @@
+{
+  "skillId": "frontend-dev-guidelines",
+  
+  "seoTitle": "Frontend Dev Guidelines - React Suspense & TanStack Patterns",
+  "seoDescription": "Stop wrestling with loading states and data fetching. Modern React patterns with useSuspenseQuery, lazy loading, MUI v7 styling. Production-ready code included.",
+  "seoKeywords": "react suspense, useSuspenseQuery, TanStack Query, lazy loading, MUI v7, React TypeScript, frontend best practices, code splitting",
+  
+  "h1Title": "Frontend Dev Guidelines: Modern React Patterns with Suspense & TanStack Query",
+  
+  "heroSection": {
+    "headline": "Modern React Development Made Simple",
+    "subheadline": "No more manual isLoading checks. Use Suspense-based data fetching, lazy loading, and production-ready patterns that just work.",
+    "cta": {
+      "primary": "Download Skill",
+      "secondary": "Copy SKILL.md"
+    }
+  },
+  
+  "quickStart": {
+    "title": "Quick Start",
+    "steps": [
+      "Tell the agent: 'Create a UserProfile component'",
+      "Get production-ready code with Suspense and useSuspenseQuery",
+      "Apply to any React/TypeScript project"
+    ],
+    "exampleCommand": "Create a posts feature with CRUD operations"
+  },
+  
+  "capabilities": [
+    {
+      "icon": "zap",
+      "title": "Suspense-Based Data Fetching",
+      "description": "Declarative loading states with useSuspenseQuery. No more isLoading boilerplate."
+    },
+    {
+      "icon": "layers",
+      "title": "Smart Code Splitting",
+      "description": "React.lazy() for heavy components—routes, charts, data grids—with automatic bundling."
+    },
+    {
+      "icon": "folder",
+      "title": "Feature-Based Architecture",
+      "description": "Organized structure: features/api/, components/, hooks/, helpers/, types/."
+    },
+    {
+      "icon": "palette",
+      "title": "MUI v7 Styling System",
+      "description": "Type-safe sx prop, theme access, responsive sizing with Grid v7 syntax."
+    },
+    {
+      "icon": "git-branch",
+      "title": "TanStack Router Integration",
+      "description": "File-based routing with createFileRoute, lazy loading, and breadcrumb support."
+    },
+    {
+      "icon": "gauge",
+      "title": "Performance Optimization",
+      "description": "useMemo, useCallback, React.memo patterns with debounced search."
+    }
+  ],
+  
+  "presets": null,
+  
+  "usageExamples": [
+    {
+      "input": "Create a UserProfile component that fetches user data",
+      "output": "Generates React.FC with useSuspenseQuery, proper TypeScript types, and SuspenseLoader wrapper"
+    },
+    {
+      "input": "Build a posts feature with CRUD operations",
+      "output": "Creates full feature structure: api/, components/, hooks/, types/ with all files"
+    },
+    {
+      "input": "Refactor this component to use Suspense and lazy loading",
+      "output": "Converts loading spinners to SuspenseLoader, adds React.lazy for heavy imports"
+    }
+  ],
+  
+  "triggerPhrases": [
+    "Creating React components or pages",
+    "Fetching data with TanStack Query",
+    "Setting up TanStack Router routes",
+    "Styling with MUI v7",
+    "Organizing frontend code structure"
+  ],
+  
+  "contentIntro": "Tired of writing isLoading checks everywhere? This skill provides modern React patterns with Suspense-based data fetching, lazy loading, and organized feature architecture. Every pattern is production-tested and TypeScript-first.",
+  
+  "faqItems": [
+    {
+      "question": "What is useSuspenseQuery and why should I use it?",
+      "answer": "useSuspenseQuery from TanStack Query integrates with React Suspense to handle loading states declaratively. Instead of checking isLoading in every component, Suspense boundaries catch the loading state and show a fallback. This eliminates boilerplate and prevents layout shift."
+    },
+    {
+      "question": "When should I use lazy loading?",
+      "answer": "Use React.lazy() for heavy components like DataGrid, charts, rich text editors, and route pages. This splits your bundle so users only download code they need, improving initial load time."
+    },
+    {
+      "question": "What's the recommended file structure for features?",
+      "answer": "Create features/{feature-name}/ with subdirectories: api/ for data services, components/ for UI, hooks/ for custom hooks, helpers/ for utilities, and types/ for TypeScript interfaces. Export the public API from index.ts."
+    },
+    {
+      "question": "Why no early returns for loading states?",
+      "answer": "Early returns like 'if (isLoading) return <Spinner />' cause Cumulative Layout Shift (CLS) because the component unmounts and remounts. SuspenseLoader maintains consistent layout during loading, improving Core Web Vitals."
+    }
+  ],
+  
+  "visualTags": ["react", "suspense", "tanstack", "typescript", "mui", "lazy loading", "performance", "code splitting"],
+  
+  "skillContent": "---\nname: frontend-dev-guidelines\ndescription: Use when creating React/TypeScript components, pages, or features. For modern patterns including Suspense, useSuspenseQuery, lazy loading, MUI v7 styling, TanStack Router, and performance optimization.\n---\n\n# Frontend Development Guidelines\n\n> **Purpose**: Comprehensive guide for modern React development with Suspense-based data fetching, lazy loading, and performance optimization.\n\n## When to Use\n\n- Creating new components or pages\n- Building features with TanStack Query\n- Setting up TanStack Router routes\n- Styling with MUI v7\n- Performance optimization\n- Organizing frontend code\n\n---\n\n## Quick Start Checklists\n\n### New Component Checklist\n\n- [ ] Use `React.FC<Props>` pattern with TypeScript\n- [ ] Lazy load if heavy: `React.lazy(() => import())`\n- [ ] Wrap in `<SuspenseLoader>` for loading states\n- [ ] Use `useSuspenseQuery` for data fetching\n- [ ] Import aliases: `@/`, `~types`, `~components`, `~features`\n- [ ] Styles: Inline if <100 lines, separate if >100 lines\n- [ ] Use `useCallback` for handlers passed to children\n- [ ] Default export at bottom\n- [ ] No early returns with loading spinners\n- [ ] Use `useMuiSnackbar` for notifications\n\n### New Feature Checklist\n\n- [ ] Create `features/{feature-name}/` directory\n- [ ] Subdirectories: `api/`, `components/`, `hooks/`, `helpers/`, `types/`\n- [ ] API service: `api/{feature}Api.ts`\n- [ ] Route: `routes/{feature-name}/index.tsx`\n- [ ] Lazy load feature components\n- [ ] Export public API from `index.ts`\n\n---\n\n## Import Aliases\n\n| Alias | Resolves To | Example |\n|-------|-------------|--------- |\n| `@/` | `src/` | `import { apiClient } from '@/lib/apiClient'` |\n| `~types` | `src/types` | `import type { User } from '~types/user'` |\n| `~components` | `src/components` | `import { SuspenseLoader } from '~components/SuspenseLoader'` |\n| `~features` | `src/features` | `import { authApi } from '~features/auth'` |\n\n---\n\n## Core Principles\n\n1. **Lazy Load Heavy Components**: Routes, DataGrid, charts, editors\n2. **Suspense for Loading**: Use SuspenseLoader, not early returns\n3. **useSuspenseQuery**: Primary data fetching for new code\n4. **Organized Features**: `api/`, `components/`, `hooks/`, `helpers/`\n5. **Styles by Size**: <100 inline, >100 separate file\n6. **Import Aliases**: `@/`, `~types`, `~components`, `~features`\n7. **No Early Returns**: Prevents Cumulative Layout Shift\n8. **useMuiSnackbar**: For all user notifications\n",
+  
+  "readmeContent": "# Frontend Dev Guidelines\n\nModern React/TypeScript development guidelines with Suspense-based data fetching, lazy loading, and performance optimization.\n\n## 🚀 Quick Start\n\nThis skill provides:\n- **Component Checklists** - Step-by-step for new components/features\n- **Import Aliases** - `@/`, `~types`, `~components`, `~features`\n- **Topic Guides** - 10 detailed reference documents\n\n## ✨ What It Does\n\nProvides comprehensive guidelines for:\n- React component patterns (`React.FC`, lazy loading, Suspense)\n- Data fetching with TanStack Query (`useSuspenseQuery`)\n- Routing with TanStack Router\n- Styling with MUI v7\n- Performance optimization (`useMemo`, `useCallback`)\n- TypeScript best practices (strict mode)\n\n## 🔧 How It Works\n\n1. Agent reads `SKILL.md` for quick reference\n2. Loads specific guides from `references/` when needed\n3. Applies patterns to your code\n\n## 🔔 When to Use\n\n- Creating new React components or pages\n- Building new features\n- Fetching data with TanStack Query\n- Setting up routing\n- Styling with MUI v7\n- Optimizing frontend performance\n\n## 📝 Examples\n\n**Create a component:**\n```\nCreate a UserProfile component that fetches user data\n```\n\n**Build a feature:**\n```\nBuild a posts feature with CRUD operations\n```\n\n**Apply patterns:**\n```\nRefactor this component to use Suspense and lazy loading\n```\n"
+}

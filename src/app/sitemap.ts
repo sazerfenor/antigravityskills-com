@@ -20,7 +20,7 @@ const STATIC_LAST_MODIFIED = new Date('2025-12-18');
  * When ready to expand SEO, uncomment the code below to restore full sitemap.
  */
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  // Only 3 pages allowed for crawling (matching robots.txt)
+  // Core pages for crawling
   return [
     {
       url: BASE_URL,
@@ -29,13 +29,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1.0,
     },
     {
-      url: `${BASE_URL}/pricing`,
-      lastModified: STATIC_LAST_MODIFIED,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${BASE_URL}/ai-image-generator`,
+      url: `${BASE_URL}/docs/what-is-antigravity-skills`,
       lastModified: STATIC_LAST_MODIFIED,
       changeFrequency: 'weekly',
       priority: 0.9,

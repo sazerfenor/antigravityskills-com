@@ -45,7 +45,7 @@ You have access to the generated files. You must score them against the **Antigr
    - 0 points: No trigger, only WHAT
 
 4. **Lean Body & Token Budget**:
-   - SKILL.md < 5000 tokens (recommended)
+   - SKILL.md < 500 行 (硬性限制，超过必须拆分)
    - No code blocks > 50 lines
    - No prose sections > 500 words
    - Has Overview section

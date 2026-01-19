@@ -1,0 +1,172 @@
+{
+  "skillId": "api-builder",
+  "displayName": "API Builder",
+  "skillIcon": "🔗",
+  "seoTitle": "API Builder Skill - FastAPI & Django REST API Development Guide",
+  "seoDescription": "End-to-end Python API development skill covering FastAPI and Django REST Framework. Includes authentication, documentation, testing, observability, and production deployment patterns.",
+  "seoKeywords": "FastAPI, Django REST Framework, Python API, JWT authentication, OAuth2, OpenAPI, API documentation, pytest, Docker deployment, Kubernetes, microservices",
+  "h1Title": "API Builder: Complete Python API Development Guide",
+  "heroSection": {
+    "headline": "Build Production-Grade APIs with FastAPI or Django",
+    "subheadline": "From authentication to deployment - everything you need for professional Python API development",
+    "primaryCTA": {
+      "text": "Get Started",
+      "action": "scroll-to-quick-start"
+    },
+    "secondaryCTA": {
+      "text": "View Examples",
+      "action": "scroll-to-examples"
+    }
+  },
+  "quickStart": {
+    "title": "Quick Start",
+    "steps": [
+      "Choose your framework: FastAPI for high-concurrency, Django for full-featured apps",
+      "Set up project structure with the provided templates",
+      "Implement authentication using JWT or OAuth2 patterns",
+      "Add observability with structured logging and metrics",
+      "Deploy with Docker and CI/CD pipelines"
+    ]
+  },
+  "capabilities": [
+    {
+      "title": "FastAPI Development",
+      "description": "High-performance async APIs with Pydantic V2, SQLAlchemy 2.0, and modern Python patterns",
+      "icon": "Zap"
+    },
+    {
+      "title": "Django REST Framework",
+      "description": "Enterprise-grade apps with DRF viewsets, ORM optimization, Celery, and Django Channels",
+      "icon": "Building2"
+    },
+    {
+      "title": "API Documentation",
+      "description": "OpenAPI 3.1 specs, SDK generation, interactive Swagger UI, and developer portals",
+      "icon": "FileText"
+    },
+    {
+      "title": "Testing & Mocking",
+      "description": "Mock servers, contract testing, pytest integration, and performance testing",
+      "icon": "TestTube"
+    },
+    {
+      "title": "Security Patterns",
+      "description": "JWT/OAuth2 authentication, RBAC, rate limiting, and security headers",
+      "icon": "Shield"
+    },
+    {
+      "title": "Observability",
+      "description": "Structured logging, OpenTelemetry tracing, Prometheus metrics, and health checks",
+      "icon": "Activity"
+    },
+    {
+      "title": "Production Deployment",
+      "description": "Docker multi-stage builds, Kubernetes manifests, CI/CD pipelines, and scaling strategies",
+      "icon": "Rocket"
+    }
+  ],
+  "presets": [
+    {
+      "name": "FastAPI Microservice",
+      "description": "High-performance async API with SQLAlchemy 2.0",
+      "config": {
+        "framework": "fastapi",
+        "database": "postgresql-async",
+        "auth": "jwt"
+      }
+    },
+    {
+      "name": "Django SaaS Backend",
+      "description": "Full-featured application with DRF and Celery",
+      "config": {
+        "framework": "django",
+        "database": "postgresql",
+        "auth": "jwt",
+        "tasks": "celery"
+      }
+    },
+    {
+      "name": "API Gateway",
+      "description": "Service mesh with authentication and rate limiting",
+      "config": {
+        "framework": "fastapi",
+        "features": ["rate-limiting", "oauth2", "tracing"]
+      }
+    }
+  ],
+  "usageExamples": [
+    {
+      "title": "Create FastAPI Microservice",
+      "prompt": "I need to build a high-performance API for a recommendation engine with async database access",
+      "outcome": "Complete FastAPI project with async SQLAlchemy, Pydantic models, JWT auth, and Docker deployment"
+    },
+    {
+      "title": "Django REST API Setup",
+      "prompt": "Building a SaaS backend with user management, billing, and background jobs",
+      "outcome": "Django project with DRF, custom user model, Celery tasks, and production-ready settings"
+    },
+    {
+      "title": "API Documentation",
+      "prompt": "Need to create developer docs for our public API with SDK generation",
+      "outcome": "OpenAPI 3.1 specification with interactive Swagger UI, Python/TypeScript SDK generation"
+    },
+    {
+      "title": "Add Observability",
+      "prompt": "Set up logging, tracing, and metrics for our FastAPI service",
+      "outcome": "Structured logging with structlog, OpenTelemetry integration, Prometheus metrics endpoint"
+    }
+  ],
+  "triggerPhrases": [
+    "build REST API",
+    "create FastAPI project",
+    "Django REST Framework",
+    "API authentication",
+    "JWT implementation",
+    "OAuth2 setup",
+    "API documentation",
+    "OpenAPI specification",
+    "API testing",
+    "mock server",
+    "API deployment",
+    "microservices Python"
+  ],
+  "skillContent": "",
+  "readmeContent": "",
+  "contentIntro": "API Builder provides end-to-end guidance for Python API development with FastAPI or Django REST Framework. Whether you're building high-performance microservices or full-featured SaaS backends, this skill covers authentication, documentation, testing, observability, and production deployment.",
+  "faqItems": [
+    {
+      "question": "When should I use FastAPI vs Django REST Framework?",
+      "answer": "Use FastAPI for high-concurrency APIs, microservices, and ML/AI backends where async performance matters. Choose Django REST Framework for full-featured applications that benefit from Django's ORM, admin panel, and 'batteries-included' ecosystem."
+    },
+    {
+      "question": "How do I implement JWT authentication?",
+      "answer": "The skill provides complete JWT patterns including access/refresh token flows, secure token storage, blacklisting, and integration with FastAPI's OAuth2PasswordBearer or Django REST Framework's SimpleJWT."
+    },
+    {
+      "question": "What testing strategies are covered?",
+      "answer": "The skill covers unit tests with pytest, integration tests with TestClient, mock servers for parallel development, contract testing against OpenAPI specs, and performance testing with Locust."
+    },
+    {
+      "question": "How do I deploy a Python API to production?",
+      "answer": "The skill provides Docker multi-stage builds, Kubernetes manifests with HPA, Gunicorn/Uvicorn production configs, and GitHub Actions CI/CD pipelines for both FastAPI and Django."
+    },
+    {
+      "question": "What observability tools are recommended?",
+      "answer": "The skill recommends structlog or loguru for structured logging, OpenTelemetry for distributed tracing, Prometheus for metrics, and Sentry for error tracking. Health check endpoints are also covered."
+    }
+  ],
+  "visualTags": [
+    "Python",
+    "FastAPI",
+    "Django",
+    "REST API",
+    "GraphQL",
+    "JWT",
+    "OAuth2",
+    "OpenAPI",
+    "Docker",
+    "Kubernetes",
+    "pytest",
+    "Prometheus"
+  ]
+}

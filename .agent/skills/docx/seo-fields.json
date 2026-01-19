@@ -1,0 +1,95 @@
+{
+  "skillId": "docx",
+  "seoTitle": "Docx Skill - Automate Word Redlining | Antigravity",
+  "seoDescription": "Automate Microsoft Word tasks in chat. Create professional reports, apply redlines with tracked changes, and analyze XML structure. Zero setup.",
+  "seoKeywords": "programmatic word redlining, automate track changes, generate docx javascript, edit word python, business document automation, legal document review",
+  "h1Title": "Docx: Programmatic Redlining & Document Creation",
+  
+  "heroSection": {
+    "headline": "Redline, Create, and Analyze Word Docs via Chat",
+    "subheadline": "Stop manual editing. Automate tracked changes, generate legal-grade documents, and inspect XML structure with a single prompt.",
+    "cta": {
+      "primary": "Install Skill",
+      "secondary": "View Source"
+    }
+  },
+  
+  "quickStart": {
+    "title": "Quick Start",
+    "steps": [
+      "To read with tracked changes: 'Read contract.docx and show changes'",
+      "To create a document: 'Create a new invoice template'"
+    ],
+    "exampleCommand": "Read \"contract-v1.docx\" and show me what changed."
+  },
+  
+  "capabilities": [
+    {
+      "icon": "search",
+      "title": "Deep Analysis",
+      "description": "Extracts text while preserving tracked changes, comments, and structure."
+    },
+    {
+      "icon": "edit-3",
+      "title": "Precise Redlining",
+      "description": "Edits documents with accurate 'Tracked Changes' markers, essential for legal review."
+    },
+    {
+      "icon": "file-plus",
+      "title": "Document Creation",
+      "description": "Generates professional .docx files from scratch using JavaScript templates."
+    },
+    {
+      "icon": "code",
+      "title": "XML Manipulation",
+      "description": "Provides low-level access to Open Office XML for complex structural tasks."
+    }
+  ],
+  
+  "usageExamples": [
+    {
+      "input": "Change the deadline from 'May 1st' to 'June 1st' in agreement.docx and show track changes.",
+      "output": "The skill unpacks the document, applies XML-level <w:del> and <w:ins> tags, and saves the new version."
+    },
+    {
+      "input": "Read proposal.docx",
+      "output": "Converts to Markdown where [deleted text] and [inserted text] are clearly annotated."
+    }
+  ],
+  
+  "contentIntro": "Manual document review is slow and prone to errors. The Docx skill brings professional-grade Word document processing to your AI workflow. Whether you need to programmatically apply redlines to a contract, generate bulk reports from scratch, or inspect deep XML structures, this skill handles it all with precision.",
+  
+  "faqItems": [
+    {
+      "question": "Can I preserve tracked changes when reading a document?",
+      "answer": "Yes. The skill uses pandoc to convert the .docx file to markdown, ensuring that all insertions and deletions remain visible and contextually accurate."
+    },
+    {
+      "question": "Is this suitable for legal documents?",
+      "answer": "Absolutely. The Redlining Workflow is specifically designed for legal and business use cases where maintaining an audit trail of changes is mandatory."
+    },
+    {
+      "question": "Do I need Microsoft Word installed?",
+      "answer": "No. All operations are performed using programmatic libraries (ooxml, docx-js, pandoc) and do not require a Word installation."
+    }
+  ],
+  
+  "triggerPhrases": [
+    "redline",
+    "track changes",
+    "word",
+    "docx",
+    "document",
+    "comment"
+  ],
+  
+  "visualTags": [
+    "Redlining",
+    "Automation",
+    "Legal Tech",
+    "Office XML"
+  ],
+  
+  "skillContent": "---\nname: docx\ndescription: Use this skill when you need to create, edit, or analyze Microsoft Word (.docx) documents, especially for tasks involving tracked changes (redlining), comments, authentic formatting, or deep XML inspection.\nmetadata:\n  version: \"2.0.0\"\n  author: \"antigravity-skill-creator\"\n---\n\n# Docx\n\n## Overview\n\nComprehensive document creation, editing, and analysis toolset for professional Word documents (.docx). Support includes tracked changes (redlining), comments, formatting preservation, and text extraction via both high-level APIs and low-level XML manipulation.\n\n## Protocols\n\n### 1. Decision Tree\n\n#### Reading/Analyzing Content\n1. **Text Extraction**: Use `pandoc` to convert to markdown (preserves tracked changes).\n   - Command: `pandoc --track-changes=all input.docx -o output.md`\n2. **Raw XML Access**: Use `ooxml/scripts/unpack.py` to inspect `word/document.xml`, comments, or media.\n\n#### Creating New Documents\n1. **Method**: Use **docx-js** (JavaScript/TypeScript).\n2. **Reference**: Read `references/docx-js.md` completely before starting.\n\n#### Editing Existing Documents\n- **Simple Changes (Own Doc)**: Use \"Basic OOXML editing\" workflow.\n- **Redlining / Review (External Doc)**: Use **Redlining workflow** (Mandatory for legal/business docs).\n- **Complex Edits**: Use **Document Library** (Python OOXML manipulation).\n\n### 2. Redlining Workflow (Tracked Changes)\n\nUse this for legal, academic, or business documents requiring review traces.\n\n1. **Convert to Markdown**: `pandoc --track-changes=all doc.docx -o current.md`\n2. **Identify Changes**: Group edits into batches (3-10 changes per batch).\n3. **Study Documentation**: Read `references/ooxml.md` completely.\n4. **Implementation**:\n   - Unpack: `python ooxml/scripts/unpack.py doc.docx unpacked_dir`\n   - Edit: Write Python script using XML manipulation (see `references/ooxml.md`).\n   - Pack: `python ooxml/scripts/pack.py unpacked_dir new_doc.docx`\n5. **Verify**: Convert back to MD and grep for expected changes.\n\n### 3. XML & Scripting Resources\n\n- **Document Library & Python OOXML**: See `references/ooxml.md`\n- **JS Document Creation**: See `references/docx-js.md`\n\n## Usage Examples\n\n**User**: \"Read this contract and tell me the termination date.\"\n**Action**: Convert to markdown using `pandoc` to extract text while preserving structure.\n\n**User**: \"Create a new invoice template in Word.\"\n**Action**: Use `docx-js` workflow. Read `references/docx-js.md` first.\n\n**User**: \"Change 'Vendor' to 'Client' in this agreement and show tracked changes.\"\n**Action**: Use Redlining workflow. Unpack document, use Python to modify XML with `<w:ins>` and `<w:del>` tags, then repack.\n\n## Dependencies\n\n- **pandoc**: Text extraction (`sudo apt-get install pandoc`)\n- **docx**: JS creation (`npm install -g docx`)\n- **Poppler**: PDF to Image (`sudo apt-get install poppler-utils`)\n- **defusedxml**: XML security (`pip install defusedxml`)\n\n## Resources\n\n- **Creation Guide**: `references/docx-js.md`\n- **Editing & XML Guide**: `references/ooxml.md`\n- **Unpack Script**: `ooxml/scripts/unpack.py`\n- **Pack Script**: `ooxml/scripts/pack.py`\n",
+  "readmeContent": "# Docx Skill\n\n> Use this skill when you need to create, edit, or analyze Microsoft Word (.docx) documents, especially for tasks involving tracked changes (redlining), comments, authentic formatting, or deep XML inspection.\n\n## 🚀 Quick Start\n\nTo read a Word document and see tracked changes:\n\n```\nRead \"contract-v1.docx\" and show me what changed.\n```\n\nTo create a new Word document:\n\n```\nCreate a new legal memo template in Word format.\n```\n\n## ✨ What It Does\n\n- **Deep Analysis**: Extracts text while preserving tracked changes, comments, and structure.\n- **Redlining**: Edits documents with precise \"Tracked Changes\" (insertions/deletions), essential for legal and business review.\n- **Creation**: Generates professional .docx files from scratch using JavaScript templates.\n- **XML Manipulation**: Provides low-level access to Open Office XML for complex tasks.\n\n## 🔧 How It Works\n\nThis skill combines multiple tools to handle different document tasks:\n\n- **Analysis**: Uses `pandoc` to convert .docx to markdown for reading.\n- **Creation**: Uses `docx-js` (Node.js) to build new documents.\n- **Editing**: Uses Python (ooxml library) to unpack, modify, and repack XML.\n\n### Directory Structure\n```\ndocx/\n├── SKILL.md           # Entry point and protocols\n├── scripts/           # Utility scripts (unpack/pack)\n└── references/        # Documentation (ooxml check, docx-js guide)\n```\n\n## 🔔 When to Use\n\n**Trigger Keywords**: `word`, `docx`, `document`, `redline`, `track changes`, `comment`\n\n**Typical Scenarios**:\n- \"Summarize this contract and list all redlined changes.\"\n- \"Update the date in this agreement but keep the change tracking on.\"\n- \"Extract all comments from this student essay.\"\n- \"Create a report with specific formatting.\"\n\n## 📝 Examples\n\n### Example 1: Redlining (Tracked Changes)\n\n**User**: \"Change the deadline from 'May 1st' to 'June 1st' in `agreement.docx` and show track changes.\"\n\n**Result**: The skill unpacks the document, modifies the XML to wrap the change in `<w:del>` (May 1st) and `<w:ins>` (June 1st) tags, and saves it as a new version.\n\n### Example 2: Reading with Context\n\n**User**: \"Read `proposal.docx`.\"\n\n**Result**: Converts the document to Markdown. If there are existing tracked changes, they appear as `[deleted text]{.delete}` and `[inserted text]{.insert}` so you don't miss context.\n\n---\n\n*Generated by Antigravity Skill Creator*\n"
+}

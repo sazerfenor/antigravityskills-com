@@ -20,10 +20,11 @@ function SkillCard({ skill }: { skill: SkillItem }) {
       className={cn(
         // Card base - larger, more informative
         'group flex flex-col gap-3 p-5 rounded-2xl w-[280px] shrink-0',
-        'bg-white/5 border border-white/10',
-        'backdrop-blur-sm',
+        // Glass effect - semi-transparent with blur
+        'bg-white/30 dark:bg-white/10 border border-white/40 dark:border-white/20',
+        'backdrop-blur-lg shadow-md',
         // Hover: Neon glow effect
-        'hover:border-primary/50 hover:bg-primary/5',
+        'hover:border-primary/50 hover:bg-white/50 dark:hover:bg-white/20',
         'hover:shadow-[0_0_30px_-10px_var(--color-primary)]',
         'transition-all duration-300',
         'cursor-pointer'

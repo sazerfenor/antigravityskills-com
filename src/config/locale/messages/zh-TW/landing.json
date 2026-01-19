@@ -45,7 +45,7 @@
         },
         {
           "title": "文件",
-          "url": "/docs",
+          "url": "/docs/what-is-antigravity-skills",
           "icon": "BookOpen"
         }
       ]
@@ -83,7 +83,7 @@
       {
         "title": "使用指南",
         "icon": "BookOpen",
-        "url": "/docs",
+        "url": "/docs/what-is-antigravity-skills",
         "target": "_self",
         "variant": "secondary"
       }
@@ -289,7 +289,7 @@
         "quote": "以前：20+ 條訊息才能讓 AI 理解我的技術棧。現在：載入一個 Skill，第一個回覆就是我要的。",
         "rating": 5,
         "image": {
-          "src": "/imgs/avatars/avatar-1.webp",
+          "src": "https://asset.antigravityskills.com/avatars/1768858423882-8anxw997.webp",
           "alt": "Cursor 使用者回饋"
         }
       },
@@ -299,7 +299,7 @@
         "quote": "我不會寫代碼。但有了這些 Skills，Claude 第一次就能寫出可用的代碼。",
         "rating": 5,
         "image": {
-          "src": "/imgs/avatars/avatar-2.webp",
+          "src": "https://asset.antigravityskills.com/avatars/1768858423882-8anxw997.webp",
           "alt": "Vibe Coder 回饋"
         }
       },
@@ -309,7 +309,7 @@
         "quote": "Token 使用量第一週就降了 40%。AI 不再問『你用什麼框架？』",
         "rating": 5,
         "image": {
-          "src": "/imgs/avatars/avatar-3.webp",
+          "src": "https://asset.antigravityskills.com/avatars/1768858423882-8anxw997.webp",
           "alt": "Reddit 使用者回饋"
         }
       },
@@ -319,7 +319,7 @@
         "quote": "找到一個 React 模式 Skill，省了 3 小時設置。現在我開始自己做 Skills 了。",
         "rating": 5,
         "image": {
-          "src": "/imgs/avatars/avatar-4.webp",
+          "src": "https://asset.antigravityskills.com/avatars/1768858423882-8anxw997.webp",
           "alt": "Discord 使用者回饋"
         }
       },
@@ -329,7 +329,7 @@
         "quote": "統一用 Skills 後，API 成本降了 60%。這是實打實省下的錢。",
         "rating": 5,
         "image": {
-          "src": "/imgs/avatars/avatar-5.webp",
+          "src": "https://asset.antigravityskills.com/avatars/1768858423882-8anxw997.webp",
           "alt": "早期使用者回饋"
         }
       }
@@ -440,7 +440,7 @@
             },
             {
               "title": "文件",
-              "url": "/docs",
+              "url": "/docs/what-is-antigravity-skills",
               "target": "_self"
             }
           ]

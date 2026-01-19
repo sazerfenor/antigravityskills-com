@@ -73,6 +73,7 @@ export async function getLocalPostWithBody({
 
 /**
  * Get a local page with full MDX body rendering.
+ * Falls back to English if the requested locale doesn't exist.
  */
 export async function getLocalPageWithBody({
   slug,
@@ -81,7 +82,16 @@ export async function getLocalPageWithBody({
   slug: string;
   locale: string;
 }): Promise<BlogPostType | null> {
-  const localPage = await pagesSource.getPage([slug], locale);
+  // Try requested locale first
+  let localPage = await pagesSource.getPage([slug], locale);
+  let actualLocale = locale;
+
+  // Fallback to English if not found
+  if (!localPage && locale !== 'en') {
+    localPage = await pagesSource.getPage([slug], 'en');
+    actualLocale = 'en';
+  }
+
   if (!localPage) {
     return null;
   }
@@ -108,7 +118,7 @@ export async function getLocalPageWithBody({
     created_at: frontmatter.created_at
       ? getPostDate({
           created_at: frontmatter.created_at,
-          locale,
+          locale: actualLocale,
         })
       : '',
     author_name: frontmatter.author_name || '',

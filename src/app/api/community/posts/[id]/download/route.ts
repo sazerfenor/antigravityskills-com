@@ -4,6 +4,7 @@ import { getUserInfo } from '@/shared/models/user';
 import { db } from '@/core/db';
 import { communityPost, user } from '@/config/db/schema';
 import { eq, sql } from 'drizzle-orm';
+import { checkRateLimit } from '@/shared/lib/rate-limit';
 
 // 下载频率限制配置
 const DOWNLOAD_RATE_LIMIT = {
@@ -39,7 +40,18 @@ export async function POST(
       return respErr('Please sign in to download');
     }
 
-    // 2. 防刷检查 - 同一用户对同一帖子在时间窗口内只算一次
+    // 2. 总体限流检查（20次/小时）
+    const { success: rateLimitOk } = await checkRateLimit(
+      `community:download:user:${currentUser.id}`,
+      20,
+      3600
+    );
+
+    if (!rateLimitOk) {
+      return respErr("You've been busy! Take a short break and try again in an hour.", 429);
+    }
+
+    // 3. 防刷检查 - 同一用户对同一帖子在时间窗口内只算一次
     const cacheKey = `${currentUser.id}:${postId}`;
     const lastDownload = downloadCache.get(cacheKey);
     const now = Date.now();
@@ -55,7 +67,7 @@ export async function POST(
       });
     }
 
-    // 3. 验证帖子存在并获取作者 ID
+    // 4. 验证帖子存在并获取作者 ID
     const postResult = await db()
       .select({ 
         id: communityPost.id, 
@@ -72,10 +84,10 @@ export async function POST(
 
     const post = postResult[0];
 
-    // 4. 更新下载记录缓存
+    // 5. 更新下载记录缓存
     downloadCache.set(cacheKey, now);
 
-    // 5. 更新帖子下载计数
+    // 6. 更新帖子下载计数
     await db()
       .update(communityPost)
       .set({
@@ -83,7 +95,7 @@ export async function POST(
       })
       .where(eq(communityPost.id, postId));
 
-    // 6. 更新作者总下载数
+    // 7. 更新作者总下载数
     await db()
       .update(user)
       .set({

@@ -11,7 +11,6 @@ import {
   Library,
 } from '@/themes/default/blocks';
 import { LandingGallerySkeleton, GeneratorSectionSkeleton } from '@/themes/default/components/skeletons';
-
 // 🚀 Dynamic imports for below-the-fold components (code splitting)
 const Stats = dynamic(() => import('@/themes/default/blocks/stats').then(mod => ({ default: mod.Stats })));
 const Testimonials = dynamic(() => import('@/themes/default/blocks/testimonials').then(mod => ({ default: mod.Testimonials })));

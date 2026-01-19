@@ -415,7 +415,7 @@ async function createPersonaRecords(
   await db().insert(user).values({
     id: userId,
     name: persona.username,  // 只用 username 作为名字
-    email: `${persona.username}@virtual.nanobananaultra.local`, // 内部虚拟邮箱
+    email: `${persona.username}@virtual.antigravityskills.local`, // 内部虚拟邮箱
     emailVerified: true,
     image: avatarUrl,
     isVirtual: true,

@@ -1,0 +1,105 @@
+{
+  "skillId": "frontend-expert",
+  "skillIcon": "⚛️",
+  "seoTitle": "Frontend Expert - Modern React & TypeScript Patterns",
+  "seoDescription": "Master modern React development with production-grade patterns for Suspense architecture, Type-Safe components, MUI v7 styling system, and TanStack Router.",
+  "seoKeywords": [
+    "React",
+    "TypeScript",
+    "Suspense",
+    "MUI v7",
+    "TanStack Router",
+    "Frontend Architecture",
+    "Performance Optimization",
+    "React Patterns",
+    "Web Development"
+  ],
+  "h1Title": "Frontend Expert: Production-Grade React Patterns",
+  "heroSection": {
+    "title": "Build Better React Apps, Faster",
+    "subtitle": "Stop reinventing the wheel. Use battle-tested, production-ready frontend patterns that prioritize performance and type safety from day one.",
+    "primaryAction": {
+      "label": "Add to Agent",
+      "command": "cp -r frontend-expert .agent/skills/"
+    },
+    "secondaryAction": {
+      "label": "View Patterns",
+      "link": "#capabilities"
+    }
+  },
+  "quickStart": {
+    "title": "Start Building in Seconds",
+    "steps": [
+      "Copy the skill to your .agent/skills directory",
+      "Ask 'Create a new feature for user management'",
+      "Follow the generated checklist for components and API",
+      "Implement using the provided type-safe templates"
+    ]
+  },
+  "capabilities": [
+    {
+      "title": "Suspense-First Architecture",
+      "description": "Eliminate loading spinners and layout shifts with proper React Suspense boundaries for a smoother user experience.",
+      "icon": "zap"
+    },
+    {
+      "title": "Type-Safe Development",
+      "description": "Enforce strict TypeScript patterns and no-any policies to catch errors at compile time, not runtime.",
+      "icon": "shield-check"
+    },
+    {
+      "title": "Modern Styling System",
+      "description": "Leverage MUI v7 efficiently with performance-optimized styling patterns and responsive design best practices.",
+      "icon": "palette"
+    },
+    {
+      "title": "Feature-Based Architecture",
+      "description": "Scale your application effortlessly with a domain-driven file structure that keeps code organized and maintainable.",
+      "icon": "folder-tree"
+    }
+  ],
+  "presets": [],
+  "usageExamples": [
+    {
+      "title": "Create a New Component",
+      "description": "Generate a production-ready component with Suspense data fetching and MUI styling.",
+      "code": "User: \"Create a user profile component\"\n\nAgent: Generates a distinct React.FC component using `useSuspenseQuery`, proper types, and layout-shift-free loading states."
+    },
+    {
+      "title": "Setup Feature Module",
+      "description": "Scaffold a complete feature directory structure with API, hooks, and types.",
+      "code": "User: \"Create an orders feature\"\n\nAgent: Creates `features/orders/` with `api/`, `components/`, `types/`, and exports everything cleanly."
+    }
+  ],
+  "triggerPhrases": [
+    "Create a new component",
+    "Set up data fetching",
+    "Add a new feature",
+    "Refactor frontend code",
+    "Optimize react performance"
+  ],
+  "skillContent": "---\nname: frontend-expert\ndescription: Use when creating React/TypeScript components, pages, or features. For modern patterns including Suspense, useSuspenseQuery, lazy loading, MUI v7 styling, TanStack Router, and performance optimization.\n---\n\n# Frontend Expert\n\nModern React/TypeScript development patterns for high-performance applications.\n\n## 🎯 Overview\n\nThis skill provides comprehensive guidelines for building production-grade React applications with:\n- **Suspense-first architecture** - No loading spinners, no early returns\n- **Type-safe patterns** - Strict TypeScript, no `any` types\n- **Performance by default** - Lazy loading, memoization, cache strategies\n- **Organized structure** - Feature-based directory organization\n\n## 📋 Quick Start: Component Checklist\n\n```markdown\n- [ ] Use `React.FC<Props>` pattern with TypeScript\n- [ ] Lazy load if heavy component: `React.lazy(() => import())`\n- [ ] Wrap in `<SuspenseLoader>` for loading states\n- [ ] Use `useSuspenseQuery` for data fetching\n- [ ] Import aliases: `@/`, `~types`, `~components`, `~features`\n- [ ] Styles: Inline if <100 lines, separate file if >100 lines\n- [ ] Use `useCallback` for event handlers passed to children\n- [ ] Default export at bottom\n- [ ] No early returns with loading spinners\n- [ ] Use `useMuiSnackbar` for user notifications\n```\n\n## 📋 Quick Start: Feature Checklist\n\n```markdown\n- [ ] Create `features/{feature-name}/` directory\n- [ ] Create subdirectories: `api/`, `components/`, `hooks/`, `helpers/`, `types/`\n- [ ] Create API service file: `api/{feature}Api.ts`\n- [ ] Set up TypeScript types in `types/`\n- [ ] Create route in `routes/{feature-name}/index.tsx`\n- [ ] Lazy load feature components\n- [ ] Use Suspense boundaries\n- [ ] Export public API from feature `index.ts`\n```\n\n---\n\n## 🧩 Import Aliases\n\n| Alias | Resolves To | Example |\n|-------|-------------|---------|\n| `@/` | `src/` | `import { apiClient } from '@/lib/apiClient'` |\n| `~types` | `src/types` | `import type { User } from '~types/user'` |\n| `~components` | `src/components` | `import { SuspenseLoader } from '~components/SuspenseLoader'` |\n| `~features` | `src/features` | `import { authApi } from '~features/auth'` |\n\n---\n\n## 🚫 Critical Rules\n\n### No Early Returns for Loading\n\n```typescript\n// ❌ NEVER - Causes layout shift\nif (isLoading) {\n    return <LoadingSpinner />;\n}\n\n// ✅ ALWAYS - Consistent layout\n<SuspenseLoader>\n    <Content />\n</SuspenseLoader>\n```\n\n### MUI v7 Grid Syntax\n\n```typescript\n<Grid size={{ xs: 12, md: 6 }}>  // ✅ v7 syntax\n<Grid xs={12} md={6}>             // ❌ Old syntax\n```\n\n### API Route Format\n\n```typescript\n'/form/route'      // ✅ Correct\n'/api/form/route'  // ❌ Wrong\n```\n\n---\n\n## 📂 Topic Guides\n\n### Component Patterns\n- `React.FC<Props>` for type safety\n- `React.lazy()` for code splitting\n- Named const + default export pattern\n- **[📖 Full Guide: references/component-patterns.md](references/component-patterns.md)**\n\n### Data Fetching\n- `useSuspenseQuery` as primary pattern\n- Cache-first strategy\n- API service layer in `features/{feature}/api/`\n- **[📖 Full Guide: references/data-fetching.md](references/data-fetching.md)**\n\n### File Organization\n- `features/`: Domain-specific code\n- `components/`: Truly reusable\n- **[📖 Full Guide: references/file-organization.md](references/file-organization.md)**\n\n### Styling with MUI v7\n- `sx` prop with `SxProps<Theme>`\n- Inline if <100 lines, separate if >100 lines\n- **[📖 Full Guide: references/styling-guide.md](references/styling-guide.md)**\n\n### TanStack Router\n- Folder-based routing\n- `createFileRoute` with lazy loading\n- **[📖 Full Guide: references/routing-guide.md](references/routing-guide.md)**\n\n### Loading & Error States\n- SuspenseLoader for all loading states\n- `useMuiSnackbar` for notifications\n- **[📖 Full Guide: references/loading-and-error-states.md](references/loading-and-error-states.md)**\n\n### Performance\n- `useMemo` for expensive computations\n- `useCallback` for handlers passed to children\n- `React.memo` for expensive components\n- **[📖 Full Guide: references/performance.md](references/performance.md)**\n\n### TypeScript Standards\n- Strict mode, no `any`\n- Explicit return types\n- Type imports with `import type`\n- **[📖 Full Guide: references/typescript-standards.md](references/typescript-standards.md)**\n\n### Common Patterns\n- React Hook Form + Zod\n- DataGrid wrappers\n- Dialog standards\n- **[📖 Full Guide: references/common-patterns.md](references/common-patterns.md)**\n\n### Complete Examples\n- Full component examples\n- Feature structure template\n- **[📖 Full Guide: references/complete-examples.md](references/complete-examples.md)**\n\n---\n\n## 🔧 Modern Component Template\n\n```typescript\nimport React, { useState, useCallback } from 'react';\nimport { Box, Paper } from '@mui/material';\nimport { useSuspenseQuery } from '@tanstack/react-query';\nimport { featureApi } from '../api/featureApi';\nimport type { FeatureData } from '~types/feature';\n\ninterface MyComponentProps {\n    id: number;\n    onAction?: () => void;\n}\n\nexport const MyComponent: React.FC<MyComponentProps> = ({ id, onAction }) => {\n    const [state, setState] = useState<string>('');\n\n    const { data } = useSuspenseQuery({\n        queryKey: ['feature', id],\n        queryFn: () => featureApi.getFeature(id),\n    });\n\n    const handleAction = useCallback(() => {\n        setState('updated');\n        onAction?.();\n    }, [onAction]);\n\n    return (\n        <Box sx={{ p: 2 }}>\n            <Paper sx={{ p: 3 }}>\n                {/* Content */}\n            </Paper>\n        </Box>\n    );\n};\n\nexport default MyComponent;\n```\n\n---\n\n## 📚 Core Principles\n\n1. **Lazy Load Everything Heavy** - Routes, DataGrid, charts, editors\n2. **Suspense for Loading** - SuspenseLoader, not early returns\n3. **useSuspenseQuery** - Primary data fetching pattern\n4. **Features are Organized** - api/, components/, hooks/, helpers/ subdirs\n5. **Styles Based on Size** - <100 inline, >100 separate\n6. **Import Aliases** - Use @/, ~types, ~components, ~features\n7. **No Early Returns** - Prevents layout shift\n8. **useMuiSnackbar** - All user notifications\n",
+  "readmeContent": "# Frontend Expert\n\n> Modern React/TypeScript development patterns for high-performance applications.\n\n## 🚀 Quick Start\n\n1. **Add to your project:**\n   ```bash\n   # Copy to project skills directory\n   cp -r frontend-expert .agent/skills/\n   ```\n\n2. **Trigger naturally:**\n   - \"Create a new component for user profiles\"\n   - \"Set up data fetching with TanStack Query\"\n   - \"Add a new feature module\"\n\n## ✨ What It Does\n\nFrontend Expert provides battle-tested patterns for:\n\n| Category | Patterns |\n|----------|----------|\n| **Components** | `React.FC<Props>`, lazy loading, Suspense boundaries |\n| **Data Fetching** | `useSuspenseQuery`, cache-first, API service layer |\n| **Styling** | MUI v7 `sx` prop, inline vs separate rules |\n| **Routing** | TanStack Router, folder-based, lazy routes |\n| **Performance** | `useMemo`, `useCallback`, `React.memo` |\n| **TypeScript** | Strict mode, no `any`, explicit types |\n\n## 🔧 How It Works\n\nThe skill activates when you work on frontend code and provides:\n\n1. **Checklists** - Step-by-step guidance for components/features\n2. **Critical Rules** - Non-negotiable patterns (no early returns!)\n3. **Templates** - Ready-to-copy code snippets\n4. **Deep Guides** - 10 reference documents for detailed patterns\n\n### Reference Documents\n\n| Topic | File |\n|-------|------|\n| Component Patterns | `references/component-patterns.md` |\n| Data Fetching | `references/data-fetching.md` |\n| File Organization | `references/file-organization.md` |\n| Styling Guide | `references/styling-guide.md` |\n| Routing Guide | `references/routing-guide.md` |\n| Loading & Errors | `references/loading-and-error-states.md` |\n| Performance | `references/performance.md` |\n| TypeScript | `references/typescript-standards.md` |\n| Common Patterns | `references/common-patterns.md` |\n| Complete Examples | `references/complete-examples.md` |\n\n## 🔔 When to Use\n\n- Creating new React components or pages\n- Building feature modules with proper structure\n- Fetching data with TanStack Query\n- Setting up routes with TanStack Router\n- Styling with MUI v7\n- Optimizing frontend performance\n- Organizing project file structure\n\n## 📝 Examples\n\n### Example 1: Create a New Component\n\n**Request:** \"Create a user profile component\"\n\n**Skill Response:**\n```typescript\nimport React from 'react';\nimport { Box, Paper, Avatar, Typography } from '@mui/material';\nimport { useSuspenseQuery } from '@tanstack/react-query';\nimport { userApi } from '../api/userApi';\n\ninterface UserProfileProps {\n    userId: string;\n}\n\nexport const UserProfile: React.FC<UserProfileProps> = ({ userId }) => {\n    const { data: user } = useSuspenseQuery({\n        queryKey: ['user', userId],\n        queryFn: () => userApi.getUser(userId),\n    });\n\n    return (\n        <Paper sx={{ p: 3 }}>\n            <Box sx={{ display: 'flex', gap: 2 }}>\n                <Avatar src={user.avatar} />\n                <Typography variant=\"h6\">{user.name}</Typography>\n            </Box>\n        </Paper>\n    );\n};\n\nexport default UserProfile;\n```\n\n### Example 2: Set Up a New Feature\n\n**Request:** \"Create an orders feature\"\n\n**Skill Response:**\n```\nfeatures/\n  orders/\n    api/\n      ordersApi.ts        # API service\n    components/\n      OrderList.tsx       # Main component\n      OrderCard.tsx       # Card component\n    hooks/\n      useOrders.ts        # Custom hooks\n    types/\n      index.ts            # TypeScript types\n    index.ts              # Public exports\n```\n\n---\n\n## 🎯 Core Principles\n\n1. **Lazy Load Everything Heavy** - Routes, DataGrid, charts\n2. **Suspense for Loading** - Never early returns\n3. **useSuspenseQuery** - Primary data fetching\n4. **Feature Organization** - api/, components/, hooks/, types/\n5. **Styles by Size** - <100 inline, >100 separate\n6. **Import Aliases** - @/, ~types, ~components, ~features\n7. **useMuiSnackbar** - All user notifications\n",
+  "contentIntro": "Get instant access to a library of best practices, templates, and architectural decisions that define modern React development.",
+  "faqItems": [
+    {
+      "question": "Why use Suspense-first architecture?",
+      "answer": "Suspense prevents 'popcorn UI' loading glitches and eliminates the need for manual loading state handling in every component, leading to a smoother user experience and cleaner code."
+    },
+    {
+      "question": "How does this differ from standard React practices?",
+      "answer": "We enforce strict strict-mode TypeScript, mandatory lazy loading for heavy assets, and feature-slice architecture, which are often overlooked in standard tutorials but essential for scaling apps."
+    },
+    {
+      "question": "Is this compatible with Next.js?",
+      "answer": "Yes, while the routing patterns are optimized for TanStack Router (SPA), the component, styling, and data fetching patterns apply perfectly to Next.js App Router client components."
+    }
+  ],
+  "visualTags": [
+    "React 19",
+    "TypeScript",
+    "MUI v7",
+    "TanStack Query",
+    "Production Ready"
+  ]
+}

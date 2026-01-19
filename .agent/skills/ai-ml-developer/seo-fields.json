@@ -1,0 +1,118 @@
+{
+  "skillId": "ai-ml-developer",
+  "displayName": "AI/ML Developer",
+  "skillIcon": "🤖",
+
+  "seoTitle": "AI/ML Developer - Build Production LLM Apps | Antigravity Skills",
+  "seoDescription": "Build production-grade LLM applications, RAG systems, and AI agents. Master GPT-4o/Claude integration, LangChain orchestration, vector search, prompt engineering, and ML pipelines with expert guidance.",
+  "seoKeywords": "LLM application development, RAG system, AI agent, vector search, prompt engineering, model evaluation, LangChain, GPT-4o, Claude, machine learning",
+
+  "h1Title": "AI/ML Developer: Build Production-Ready LLM Applications and RAG Systems",
+
+  "heroSection": {
+    "headline": "Build Production-Ready AI Applications",
+    "subheadline": "Expert guidance for LLM integration, RAG systems, AI agents, and ML pipelines. From prototype to production with best practices.",
+    "cta": {
+      "primary": "Download Skill",
+      "secondary": "Copy SKILL.md"
+    }
+  },
+
+  "quickStart": {
+    "title": "Quick Start",
+    "steps": [
+      "Add this skill to your .agent/skills/ directory",
+      "Trigger by asking about LLM apps, RAG systems, or AI agents",
+      "Get expert implementation guidance with production patterns"
+    ],
+    "exampleCommand": "Build a RAG system for our documentation with hybrid search"
+  },
+
+  "capabilities": [
+    {
+      "icon": "brain",
+      "title": "LLM Integration",
+      "description": "Integrate GPT-4o, Claude, Llama with function calling, structured outputs, and multi-model orchestration"
+    },
+    {
+      "icon": "database",
+      "title": "RAG Systems",
+      "description": "Build retrieval-augmented generation with Pinecone, Qdrant, hybrid search, and reranking"
+    },
+    {
+      "icon": "bot",
+      "title": "Agent Frameworks",
+      "description": "Design multi-agent workflows with LangChain, LlamaIndex, CrewAI, and tool integration"
+    },
+    {
+      "icon": "type",
+      "title": "Prompt Engineering",
+      "description": "Master chain-of-thought, few-shot learning, constitutional AI, and A/B testing"
+    },
+    {
+      "icon": "gauge",
+      "title": "LLM Evaluation",
+      "description": "Implement automated metrics, LLM-as-Judge patterns, and regression testing"
+    },
+    {
+      "icon": "bar-chart-3",
+      "title": "ML Methods",
+      "description": "Apply clustering, classification, and statistical methods for business intelligence"
+    }
+  ],
+
+  "presets": null,
+
+  "usageExamples": [
+    {
+      "input": "Build a RAG system for our internal wiki with 50K documents",
+      "output": "Vector database recommendation (Qdrant), semantic chunking (512 tokens), hybrid search implementation, cross-encoder reranking, evaluation metrics setup"
+    },
+    {
+      "input": "This prompt is unreliable, sometimes returns wrong format",
+      "output": "Root cause analysis, structured output with JSON mode, few-shot examples, self-verification pattern, A/B testing setup"
+    },
+    {
+      "input": "Segment our customers based on purchase behavior",
+      "output": "ML vs Statistics decision guide, K-Means/DBSCAN recommendation, feature engineering approach, cluster interpretation, validation metrics"
+    }
+  ],
+
+  "contentIntro": "Building production AI applications is complex. This skill provides expert guidance for LLM integration, RAG architectures, agent frameworks, and ML pipelines. Covers GPT-4o, Claude, LangChain, vector databases, prompt engineering, and evaluation - everything you need from prototype to production.",
+
+  "faqItems": [
+    {
+      "question": "When should I use this skill vs the prompt-engineering skill?",
+      "answer": "Use AI/ML Developer for full application development including RAG, agents, and infrastructure. Use prompt-engineering when you're only focused on crafting better prompts without building the surrounding system."
+    },
+    {
+      "question": "Which vector database should I choose for my RAG system?",
+      "answer": "Choose Pinecone for managed scalability, Weaviate for open-source with hybrid search, Qdrant for high performance, Chroma for prototyping, or pgvector if you're already using PostgreSQL."
+    },
+    {
+      "question": "How do I reduce hallucinations in my LLM application?",
+      "answer": "Implement grounded prompts with retrieved context, add verification steps, use structured outputs, and set up evaluation metrics to detect and monitor hallucination rates."
+    },
+    {
+      "question": "Can this skill help with ML for business analytics?",
+      "answer": "Yes! The skill includes guidance on clustering (K-Means, DBSCAN), classification (Random Forest, Decision Trees), and a decision framework for when to use ML vs traditional statistics."
+    }
+  ],
+
+  "triggerPhrases": [
+    "Build a RAG system",
+    "LLM application development",
+    "AI agent design",
+    "Prompt optimization",
+    "Model evaluation",
+    "Vector search implementation",
+    "LangChain workflow",
+    "Customer segmentation ML"
+  ],
+
+  "visualTags": ["LLM", "RAG", "AI Agent", "Vector Search", "Prompt Engineering", "Evaluation", "Machine Learning", "GPT-4o", "Claude", "LangChain"],
+
+  "skillContent": "---\nname: ai-ml-developer\ndescription: Use when building LLM applications, RAG systems, or AI agents with production requirements. For implementing vector search, prompt engineering, model evaluation, and ML pipelines. Masters GPT-4o/Claude integration, LangChain orchestration, and statistical methods for business intelligence.\n---\n\n# AI/ML Developer\n\nExpert AI/ML engineer specializing in production-grade LLM applications, RAG systems, intelligent agents, and machine learning pipelines. Masters the modern AI stack including vector databases, embedding models, agent frameworks, and evaluation methodologies.\n\n## When to Use This Skill\n\n- Building production LLM applications with GPT-4o, Claude, or Llama\n- Implementing RAG systems for document Q&A and knowledge retrieval\n- Designing multi-agent workflows with LangChain or LlamaIndex\n- Optimizing prompts for reliability, cost, and performance\n- Evaluating LLM outputs with automated metrics and human feedback\n- Implementing vector search with Pinecone, Qdrant, or pgvector\n- Applying ML methods for clustering, classification, or pattern discovery\n\n## Core Capabilities\n\n### 1. LLM Integration & Model Management\n\n**Supported Models:**\n- **OpenAI**: GPT-4o, GPT-4o-mini, o1-preview with function calling\n- **Anthropic**: Claude 4.5 Sonnet/Haiku with tool use\n- **Open Source**: Llama 3.2, Mixtral 8x7B, Qwen 2.5, DeepSeek\n- **Local Deployment**: Ollama, vLLM, TGI\n\n### 2. RAG Systems\n\n**Architecture Components:**\n- Vector databases: Pinecone, Qdrant, Weaviate, Chroma, pgvector\n- Embeddings: text-embedding-3-large, BGE-large, e5-large-v2\n- Chunking: Semantic, recursive, document-structure aware\n- Retrieval: Dense, sparse (BM25), hybrid search\n- Reranking: Cross-encoders, Cohere rerank-3\n\n### 3. Agent Frameworks\n\n**Orchestration Tools:**\n- LangChain/LangGraph: Complex workflows, state management\n- LlamaIndex: Data-centric AI, advanced retrieval\n- CrewAI: Multi-agent collaboration\n- OpenAI Assistants: Code interpreter, file search\n\n### 4. Prompt Engineering\n\n- Chain-of-thought (CoT) reasoning\n- Few-shot learning with dynamic example selection\n- Constitutional AI for self-correction\n- Prompt versioning and A/B testing\n\n### 5. LLM Evaluation\n\n- Automated metrics: BLEU, ROUGE, BERTScore, Groundedness\n- LLM-as-Judge (pointwise, pairwise)\n- A/B testing with statistical significance\n- Regression testing for prompt changes\n\n### 6. ML Methods\n\n- Clustering: K-Means, Hierarchical, DBSCAN\n- Classification: Logistic Regression, Decision Trees, Random Forest\n- Dimensionality reduction: PCA",
+
+  "readmeContent": "# AI/ML Developer\n\n> Build production-grade LLM applications, RAG systems, and intelligent agents with comprehensive ML capabilities.\n\n## 🚀 Quick Start\n\nSimply reference this skill in your AI coding assistant, and it will be activated when you work on:\n- LLM application development (GPT-4o, Claude, Llama)\n- RAG system implementation\n- AI agent design\n- Prompt engineering\n- Model evaluation\n- ML/Statistics for business intelligence\n\n**Example prompts:**\n```\n\"Build a RAG system for our documentation with hybrid search\"\n\"Design a multi-agent workflow for customer support\"\n\"Optimize this prompt for better accuracy and lower cost\"\n```\n\n## ✨ What It Does\n\nThis skill transforms your AI assistant into an expert AI/ML developer with deep knowledge of LLM integration, RAG systems, agent frameworks, prompt engineering, evaluation, and ML methods.\n\n## 🔔 When to Use\n\n- 🏗️ Build LLM-powered applications from scratch\n- 🔍 Implement semantic search or document Q&A\n- 🤖 Design AI agents with tool use and memory\n- ✍️ Optimize prompts for reliability and cost\n- 📊 Evaluate LLM performance systematically\n- 📈 Apply ML for customer segmentation or prediction"
+}

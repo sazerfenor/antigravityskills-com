@@ -39,7 +39,7 @@ This meta-skill guides the creation of high-quality Antigravity Skills that conf
 - ✅ Good: "Use this skill when the user asks to review code for bugs, style violations, or best practices"
 
 ### Progressive Disclosure
-- SKILL.md < 5000 tokens (recommended)
+- SKILL.md < 500 行 (硬性限制，超过必须拆分到 references/)
 - Code blocks < 50 lines (move to `scripts/`)
 - Documentation > 500 words (move to `references/`)
 

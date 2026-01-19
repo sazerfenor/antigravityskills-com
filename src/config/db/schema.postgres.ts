@@ -720,6 +720,28 @@ export const communityPost = pgTable(
 
     // 🆕 V15.0 预设系统已迁移到独立的 preset 表
     // 旧字段 isPreset, presetSlug, presetName, presetOrder, presetCategory 已删除
+
+    // ============================================
+    // Skill 落地页增强字段 (v19.0)
+    // ============================================
+    // Skill ZIP 下载链接 (R2 存储)
+    zipUrl: text('zip_url'),
+    // Hero 区域 (JSON: { headline, subheadline, cta: { primary, secondary } })
+    heroSection: text('hero_section'),
+    // 快速上手 (JSON: { title, steps[], exampleCommand })
+    quickStart: text('quick_start'),
+    // 核心能力 (JSON array: [{ icon, title, description }])
+    capabilities: text('capabilities'),
+    // 预设展示 (JSON array: [{ name, colors[], fonts: { heading, body }, bestFor }])
+    presets: text('presets'),
+    // 使用示例 (JSON array: [{ input, output, beforeAfter?: { before, after } }])
+    usageExamples: text('usage_examples'),
+    // 触发词 (JSON array: string[])
+    triggerPhrases: text('trigger_phrases'),
+    // Skill 完整内容 (SKILL.md 原文)
+    skillContent: text('skill_content'),
+    // README 内容 (可选的 README.md)
+    readmeContent: text('readme_content'),
   },
   (table) => [
     // 首页瀑布流查询 (最常用)

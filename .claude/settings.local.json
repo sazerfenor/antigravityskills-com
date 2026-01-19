@@ -108,7 +108,11 @@
       "mcp__reddit__get_post_details",
       "Bash(gh api repos/treylom/prompt-engineering-skills --jq '.stargazers_count, .forks_count, .updated_at')",
       "Bash(gh api repos/ThamJiaHe/claude-prompt-engineering-guide --jq '.stargazers_count, .forks_count, .updated_at')",
-      "Bash(gh api repos/ckelsoe/claude-skill-prompt-architect --jq '.stargazers_count, .forks_count, .updated_at')"
+      "Bash(gh api repos/ckelsoe/claude-skill-prompt-architect --jq '.stargazers_count, .forks_count, .updated_at')",
+      "mcp__turso__list_tables",
+      "mcp__turso__list_databases",
+      "mcp__turso__describe_table",
+      "mcp__turso__execute_query"
     ]
   }
 }

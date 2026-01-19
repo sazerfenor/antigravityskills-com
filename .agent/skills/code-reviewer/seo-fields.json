@@ -1,0 +1,97 @@
+{
+  "skillId": "02DA0B1E-F666-407A-84B6-0AC0B74A0D82",
+  "displayName": "Code Reviewer",
+  "skillIcon": "🔍",
+  "seoTitle": "Code Reviewer: Automate PR Analysis & Static Checks",
+  "seoDescription": "Automated code review agent for TypeScript, Python, and more. Enforce coding standards, detect anti-patterns, and generate review reports automatically.",
+  "seoKeywords": "code review automation, static analysis, pull request analyzer, automated code review, code quality tools",
+  "h1Title": "Automated Code Reviewer Agent",
+  "heroSection": {
+    "title": "Automate Your Code Reviews",
+    "subtitle": "Stop wasting time on style nits. Let the Code Reviewer agent handle the tedious parts of code review with static analysis and automated reporting.",
+    "actions": [
+      {
+        "label": "Start Reviewing",
+        "href": "#quick-start",
+        "variant": "primary"
+      },
+      {
+        "label": "View Capabilities",
+        "href": "#capabilities",
+        "variant": "secondary"
+      }
+    ]
+  },
+  "quickStart": {
+    "steps": [
+      "Install the Antigravity CLI if you haven't already.",
+      "Run `python .agent/skills/code-reviewer/scripts/pr_analyzer.py <project-path>` to structure-check your PR.",
+      "Run `python .agent/skills/code-reviewer/scripts/code_quality_checker.py <target-path>` for deep analysis."
+    ]
+  },
+  "capabilities": [
+    {
+      "title": "Automated PR Analysis",
+      "description": "Validates Pull Request structure, checks for scaffolding issues, and enforces basic contribution guidelines automatically.",
+      "icon": "git-pull-request"
+    },
+    {
+      "title": "Deep Static Analysis",
+      "description": "Scans codebase for performance bottlenecks, security vulnerabilities, and complex anti-patterns across multiple languages.",
+      "icon": "microscope"
+    },
+    {
+      "title": "Review Report Generation",
+      "description": "Compiles findings into a professional, human-readable report suitable for sharing with stakeholders or attaching to PRs.",
+      "icon": "file-text"
+    }
+  ],
+  "presets": [
+    {
+      "title": "Pre-Merge Check",
+      "description": "Standard checklist for every PR before merging.",
+      "scenario": "Run `pr_analyzer.py` followed by `code_quality_checker.py --fast`."
+    },
+    {
+      "title": "Weekly Health Audit",
+      "description": "Deep scan of the entire codebase to catch regression.",
+      "scenario": "Run `review_report_generator.py --full-scan` on the main branch."
+    }
+  ],
+  "usageExamples": [
+    {
+      "title": "Analyzing a Front-end PR",
+      "code": "python .agent/skills/code-reviewer/scripts/pr_analyzer.py ./frontend --type react",
+      "explanation": "Checks a React project PR for component structure and hook usage patterns."
+    },
+    {
+      "title": "Checking Python Backend Quality",
+      "code": "python .agent/skills/code-reviewer/scripts/code_quality_checker.py ./backend --lang python",
+      "explanation": "Runs Python-specific static analysis rules including PEP8 and security checks."
+    }
+  ],
+  "triggerPhrases": [
+    "Review this PR",
+    "Check code quality",
+    "Analyze this repository",
+    "Generate review report"
+  ],
+  "contentIntro": "The Code Reviewer skill is your automated partner for maintaining code quality. It handles the repetitive tasks of code review.",
+  "faqItems": [
+    {
+      "question": "Which languages are supported?",
+      "answer": "Currently supports TypeScript, JavaScript, Python, Go, Swift, and Kotlin."
+    },
+    {
+      "question": "Can I customize the rules?",
+      "answer": "Yes, you can modify the rule definitions in the `references/` directory."
+    }
+  ],
+  "visualTags": [
+    "Productivity",
+    "DevTools",
+    "Automation"
+  ],
+  "skillContent": "---\nname: code-reviewer\ndescription: Automated code review assistant for analyzing Pull Requests and enforcing coding standards. Use when you need to review complex PRs, check for anti-patterns, or generate quality reports.\n---\n\n# Code Reviewer\n\nAutomated code review assistant that integrates static analysis, best practice auditing, and report generation.\n\n## Agent Protocols\n\n1.  **Context Analysis**: Always start by analyzing the project context and `references/coding_standards.md` to understand the rules.\n2.  **Progressive Review**:\n    - Step 1: Run `pr_analyzer.py` for structural and high-level checks.\n    - Step 2: Run `code_quality_checker.py` for deep static analysis.\n    - Step 3: Use `review_report_generator.py` to compile findings.\n3.  **Constructive Feedback**: When providing feedback, reference specific items from `references/code_review_checklist.md`.\n\n## Tool Definitions\n\n### 1. PR Analyzer (Script)\n\nAnalyzes a Pull Request or a local branch for common issues and structural constraints.\n\n-   **Execution**: `python .agent/skills/code-reviewer/scripts/pr_analyzer.py [options] <path>`\n-   **When to use**: At the beginning of a review to catch obvious errors.\n\n### 2. Code Quality Checker (Script)\n\nPerforms deep static analysis to identify performance bottlenecks and anti-patterns.\n\n-   **Execution**: `python .agent/skills/code-reviewer/scripts/code_quality_checker.py [options] <path>`\n-   **When to use**: Before merging, to ensure codebase health.\n\n### 3. Review Report Generator (Script)\n\nGenerates a formatted report for stakeholders.\n\n-   **Execution**: `python .agent/skills/code-reviewer/scripts/review_report_generator.py [options]`\n-   **When to use**: To summarize findings for non-technical stakeholders or final approval.\n",
+  "readmeContent": "# Code Reviewer\n\nComprehensive automated code review toolkit for analyzing Pull Requests and enforcing coding standards.\n\n## 🚀 Quick Start\n\n```bash\n# Analyze a PR\npython .agent/skills/code-reviewer/scripts/pr_analyzer.py <project-path>\n\n# Check Code Quality\npython .agent/skills/code-reviewer/scripts/code_quality_checker.py <target-path>\n```\n\n## ✨ What It Does\n\nThis skill provides a suite of tools to automate the code review process:\n\n1.  **PR Analysis**: Scaffolding checks, structural validation, and best practice enforcement.\n2.  **Quality Checking**: Deep static analysis to find performance issues and complex anti-patterns.\n3.  **Report Generation**: Creates professional review reports suitable for team consumption.\n\n## 🔧 How It Works\n\nThe skill operates through three main scripts located in the `scripts/` directory:\n\n-   `pr_analyzer.py`: Validates PR structure and basic sanity checks.\n-   `code_quality_checker.py`: Runs deeper analysis rules.\n-   `review_report_generator.py`: Aggregates data into a readable format.\n\nIt references rules and standards defined in the `references/` directory:\n-   `code_review_checklist.md`: The rulebook for reviews.\n-   `coding_standards.md`: The definitive guide for coding style.\n-   `common_antipatterns.md`: Examples of what to avoid.\n\n## 🔔 When to Use\n\n-   **Pre-Merge**: Run the `pr_analyzer` on every Pull Request.\n-   **Periodic Audit**: Run the `code_quality_checker` on the main branch weekly.\n-   **Review Session**: Consult the checklists when performing manual reviews.\n\n## 📝 Examples\n\n### Running a full quality check\n\n```bash\npython .agent/skills/code-reviewer/scripts/code_quality_checker.py ./src --verbose\n```\n\n### Generating a weekly report\n\n```bash\npython .agent/skills/code-reviewer/scripts/review_report_generator.py --format markdown --output weekly-report.md\n```\n\n## Tech Stack Support\n\n-   **Languages**: TypeScript, JavaScript, Python, Go, Swift, Kotlin\n-   **Frontend**: React, Next.js, React Native, Flutter\n-   **Backend**: Node.js, Express, GraphQL, REST APIs\n"
+}

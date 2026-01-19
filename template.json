@@ -1,11 +1,11 @@
 {
-  "templateName": "nanobananaultra",
+  "templateName": "antigravityskills",
   "templateVersion": "1.0.0",
   "coreVersion": "1.0.0",
   "schemaVersion": "28",
-  "lastUpdated": "2026-01-05",
-  "description": "Nano Banana Ultra - AI Image Generator",
-  "repository": "https://github.com/nanobananaultra/nanobananaultra",
+  "lastUpdated": "2026-01-19",
+  "description": "Antigravity Skills - The Open Standard for AI Agent Skills",
+  "repository": "https://github.com/antigravityskills/antigravityskills",
   "documentation": {
     "setup": "参见 TEMPLATE_SETUP.md",
     "brandConfig": "src/config/brand.ts",
